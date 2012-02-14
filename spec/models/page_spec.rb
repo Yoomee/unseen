@@ -1,12 +1,12 @@
 require 'spec_helper'  
-  
+
 describe Page do
   it { should belong_to(:parent) }
   it { should have_many(:children) }
-  
+
   it { should validate_presence_of(:title) }
-  
-  describe "default factory" do  
+
+  describe do  
     let(:page) { Factory(:page) }  
     it "should be valid" do
       page.should be_valid
@@ -14,7 +14,19 @@ describe Page do
     
     it "should validate presence of title" do
       page.title = nil
-      page.should_not be_valid
+      page.should have(1).error_on(:title)
     end
-  end  
+    
+    it "cannot be it's own parent" do
+      page.parent_id = page.id
+      page.should have(1).error_on(:parent)
+    end
+
+    it "cannot be a child of it's child" do
+      child_page = Factory.create(:page, :title => "Child page", :parent => page, :id => page.id + 1)
+      page.parent_id = child_page.id
+      page.should have(1).error_on(:parent)
+    end
+
+  end
 end
