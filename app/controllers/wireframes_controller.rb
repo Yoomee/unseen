@@ -5,7 +5,7 @@ class WireframesController < ApplicationController
   end
   
   def index
-    wireframes = Dir.new(Rails.root + "app/views/wireframes").entries.select{|f| f.match(/html/)}.map{|f| f.split(/\./)[0]]}
+    wireframes = Dir.new(Rails.root + "app/views/wireframes").entries.select{|f| f.match(/html/)}.map{|f| f.split(/\./)[0]}
      render :inline => "
         <h1>Wireframes</h1>
         <ul>
