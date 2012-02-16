@@ -10,8 +10,6 @@ gem "rake", "0.8.7"
 gem 'haml'
 
 # Project specific
-gem 'ym_cms', :path => 'vendor/gems'
-
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -22,6 +20,11 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+group :production do 
+  gem 'ym_core', :git => "git://git.yoomee.com:4321/gems/ym_core.git"
+  gem 'ym_cms', :git => "git://git.yoomee.com:4321/gems/ym_cms.git"
+end
 
 group :development do
   gem 'growl'
