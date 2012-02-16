@@ -5,6 +5,29 @@
     =stylesheet_link_tag("application")
     =javascript_include_tag("application")
     =csrf_meta_tags
-  %body
-    =yield_with_bootstrap(yield)
-      
+  -body_tag do
+    .big_background.fade_in
+    .container
+      #header.row
+        .span10
+          %h1#site_logo
+            %span
+              unseen photo fair
+            %span
+            19-23 sept 2012
+          #header_right  
+            %h2
+              %span
+                wetergasfabriek
+              %span  
+                amsterdam
+      #main.row
+        #nav.span2
+          %ul
+            %li.active=link_to "fair", "/"
+            %li=link_to "galleries", "/wireframes/galleries"
+            %li=link_to "news", "#"
+            %li=link_to "blog", "#"
+            %li=link_to "press", "#", :rel=>"popover", :data_original_title=>"coming soon!"
+            %li=link_to "about", "/wireframes/about"
+        =yield

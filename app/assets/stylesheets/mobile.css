@@ -1,0 +1,6 @@
+// Landscape phones and down
+  @media (max-width: 480px) {
+	#nav {
+  		min-height: 0px;
+	}
+}

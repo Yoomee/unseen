@@ -1,3 +1,5 @@
+/* @override http://localhost:3000/assets/application.css?body=1 */
+
 /*
  * This is a manifest file that'll automatically include all the stylesheets available in this directory
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
@@ -5,3 +7,217 @@
  *= require_tree . 
  *= require_self
 */
+
+
+
+/*CSS3 magic*/
+
+@-webkit-keyframes reset {
+0% {
+    opacity: 0;
+}
+100% {
+    opacity: 0;
+}
+}
+ 
+@-webkit-keyframes fade_in {
+0% {
+    opacity: 0;
+}
+60% {
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+}
+}
+
+.fade_in {
+    -webkit-animation-name: reset, fade_in;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: ease-in;
+    -webkit-animation-iteration-count: 1;
+}
+ 
+.fade_in.fade_one {-webkit-animation-delay: 0, 0;}
+.fade_in.fade_two {-webkit-animation-delay: 0, 0.3s;}
+.fade_in.fade_three {-webkit-animation-delay: 0, 0.6s;}
+.fade_in.fade_four {-webkit-animation-delay: 0, 0.9s;}
+.fade_in.fade_five {-webkit-animation-delay: 0, 1.2s;}
+.fade_in.fade_six {-webkit-animation-delay: 0, 1.5s;}
+
+
+/*---------   Structure*/
+
+body {
+  background: #000;
+  color: #fff;
+}
+a {
+  color: #fff;
+  text-decoration: underline;
+}
+a:hover {
+  color: #ccc;
+  color: rgba(255,255,255,0.7);
+  
+  	 -webkit-transition: .1s ease-in;
+     -moz-transition: .1s ease-in;
+     transition: .1s ease-in;
+}
+p {
+  font-family: georgia;
+}
+h1#page_title, h2 {
+  font-size: 19px;
+  line-height: 22px;
+  margin: 0 0 15px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #fff;
+}
+.padding {
+  padding: 10px;
+}
+#header {
+  height: 140px;
+}
+
+#site_logo, #header_right h2 {
+	font-size: 19px;
+	line-height: 22px;
+	margin: 25px 0 0 0;
+	float: left;
+
+  
+}
+#site_logo span {
+  float: left;
+  clear: left;
+}
+#header_right {
+  float: right;
+}
+#header_right h2 {
+  text-align: right;
+  float: right;
+}
+#header_right h2 span {
+	float: right;
+	clear: right;
+}
+#nav {
+  min-height: 0px;
+}
+#nav ul, #nav li {
+  list-style-type: none;
+  margin: 0;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 22px;
+}
+#nav a {
+  text-decoration: none;
+  
+}
+/*#nav .active a {
+  background: url(/assets/nav_active.png) no-repeat bottom left;
+  padding-bottom: 4px;
+}*/
+
+#home .big_background {
+  float: left;
+  width: 100%;
+  height: 500px;
+  position: absolute;
+  top: 0;
+  z-index: 0;
+}
+#home .big_background {
+  background: url(/assets/photo_bg.jpg) no-repeat 0 -500px;
+}
+.container {
+  z-index: 1;
+  position: relative;
+}
+
+
+#intro_box {
+  margin-top: 0px;
+  background:rgba(0,0,0,0.6);
+  padding: 0px;
+}
+#intro_box p {
+  font-size: 16px;
+  line-height: 21px;
+  margin: 10px 0 0;
+}
+
+.intro_box {
+	margin-bottom: 30px;
+}
+
+.gallery_box {
+	height: 200px;
+	margin-bottom: 30px;
+	overflow: hidden;
+	position: relative;
+  
+}
+.gallery_image {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  
+}
+.gallery_text {
+  padding: 10px;
+  position: relative;
+  height: 200px;
+  z-index: 20;
+  
+  /*-webkit-box-shadow:inset 0px 1px 5px rgba(255,255,255,0.3), inset 0px 1px 0px rgba(255,255,255,0.3);*/
+  
+  border-radius:2px
+}
+.gallery_box:hover {
+  opacity: 0.8;
+}
+.gallery_box a {
+  color: rgba(255,255,255,0);
+  float: left;
+  width: 100%;
+  height: 200px;
+}
+.gallery_box h3 {
+  background: rgba(0,0,0,0.4);
+  float: left;
+  position: absolute;
+  bottom: 20px;
+  width: 370px;
+  left: 0px;
+  font-size: 15px;
+  line-height: 15px;
+  padding: 5px 10px 10px;
+
+
+}
+.gallery_box a:hover {
+  color: rgba(255,255,255,1);
+  text-decoration: none;
+  
+}
+.gallery_box a:hover .gallery_image {
+	opacity: 0.6;
+}
+#about_intro {
+  background: url(/assets/about_page.png) no-repeat 90px 20px;
+}
+
