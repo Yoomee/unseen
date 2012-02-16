@@ -82,6 +82,10 @@ h5,
 h6 {
   color: #fff;
 }
+br.clear {
+	clear: both;
+  
+}
 .padding {
   padding: 10px;
 }
@@ -131,16 +135,16 @@ h6 {
   padding-bottom: 4px;
 }*/
 
-#home .big_background {
+.big_background {
   float: left;
   width: 100%;
-  height: 500px;
+  height: 600px;
   position: absolute;
   top: 0;
   z-index: 0;
 }
 #home .big_background {
-  background: url(/assets/photo_bg.jpg) no-repeat 0 -500px;
+  background: url(/assets/photo_bg.jpg) repeat-x 0 -300px;
 }
 .container {
   z-index: 1;
@@ -150,8 +154,12 @@ h6 {
 
 #intro_box {
   margin-top: 0px;
+  margin-bottom: 20px;
   background:rgba(0,0,0,0.6);
   padding: 0px;
+}
+#intro_box .padding {
+  padding-bottom: 20px;
 }
 #intro_box p {
   font-size: 16px;
@@ -161,6 +169,15 @@ h6 {
 
 .intro_box {
 	margin-bottom: 30px;
+}
+.home_box h3 {
+  font-size: 19px;
+  line-height: 22px;
+  margin: 0 0 10px;
+}
+.amsterdam_text {
+  margin-top: 25px;
+  margin-bottom: 40px;
 }
 
 .gallery_box {
@@ -221,3 +238,15 @@ h6 {
   background: url(/assets/about_page.png) no-repeat 90px 20px;
 }
 
+.gallery_slideshow {
+  margin-bottom: 20px;
+}
+.gallery_description p {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.news_image {
+  clear: both;
+  margin-bottom: 20px;
+}
