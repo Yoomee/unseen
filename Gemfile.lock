@@ -1,10 +1,16 @@
-PATH
-  remote: vendor/gems
+GIT
+  remote: git://git.yoomee.com:4321/gems/ym_cms.git
+  revision: 499c7c5876ba663a410ae386c919ad09135506b9
   specs:
     ym_cms (0.0.1)
       decent_exposure (~> 1.0.1)
       formtastic (~> 2.0.2)
       rails (~> 3.1.0)
+
+GIT
+  remote: git://git.yoomee.com:4321/gems/ym_core.git
+  revision: 4757c00ca2384a58ea2d84b4f5a84ae0e8c42999
+  specs:
     ym_core (0.0.1)
       rails (~> 3.1.0)
 
