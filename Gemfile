@@ -5,6 +5,7 @@ source 'http://rubygems.org'
 gem 'rails', '3.1.0'
 gem 'mysql2'
 gem "rake", "0.8.7"
+gem 'ym_core', :path => 'vendor/gems'
 
 #Frequently used
 gem 'haml'
