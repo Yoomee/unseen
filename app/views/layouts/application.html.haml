@@ -30,4 +30,4 @@
             %li=link_to "blog", "#"
             %li=link_to "press", "#", :rel=>"popover", :data_original_title=>"coming soon!"
             %li=link_to "about", "/wireframes/about"
-        =yield
+        =yield_with_span(yield, :span_class => "span8")

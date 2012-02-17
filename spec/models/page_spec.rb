@@ -27,6 +27,10 @@ describe Page do
       page.parent_id = child_page.id
       page.should have(1).error_on(:parent)
     end
-
+    
+    it "should have the default view name" do
+      page.view_name.should eq('basic')
+    end
+    
   end
 end

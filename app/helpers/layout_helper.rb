@@ -14,6 +14,15 @@ module LayoutHelper
     end
     yield_content
   end
+  
+  def yield_with_span(yield_content, options = {})
+    options.reverse_merge!(:span_class => "span10")
+    first_div_class = yield_content.match(/^<div\s+[^>]*class=[\"\']([^\"\']+)[\"\']/i).try(:[], 1).to_s
+    if !first_div_class.match(/span/)
+      yield_content = content_tag(:div, yield_content, :class => options[:span_class])
+    end
+    yield_content
+  end
 
   def body_tag(options = {}, &block)
     options[:id] ||= id_for_body_tag
