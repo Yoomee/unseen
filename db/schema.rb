@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120213133844) do
+ActiveRecord::Schema.define(:version => 20120217171931) do
 
   create_table "pages", :force => true do |t|
     t.integer  "parent_id"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20120213133844) do
     t.text     "text"
     t.boolean  "published",  :default => false
     t.integer  "position"
+    t.string   "view_name",  :default => "basic"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

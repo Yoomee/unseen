@@ -1,5 +1,5 @@
 class Page < ActiveRecord::Base
   
-  include YmCMS::Page
+  include YmCms::Page
   
 end

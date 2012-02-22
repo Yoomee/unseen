@@ -1,3 +1,5 @@
 class PagesController < ApplicationController
-  include YmCMS::PagesController
+  
+  include YmCms::PagesController
+  
 end

@@ -1,15 +1,27 @@
 source 'http://rubygems.org'
 
 
-#Always used
+### Always used
 gem 'rails', '3.1.0'
 gem 'mysql2'
 gem "rake", "0.8.7"
 
-#Frequently used
+### Frequently used
 gem 'haml'
 
-# Project specific
+### Yoomee gems
+
+# production
+# gem 'ym_core', :git => "git://git.yoomee.com:4321/gems/ym_core.git"
+# gem 'ym_cms', :git => "git://git.yoomee.com:4321/gems/ym_cms.git"
+
+# development
+gem 'ym_core', :path => "vendor/gems"
+gem 'ym_cms', :path => "vendor/gems"
+
+### Project specific
+
+### Groups
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -21,13 +33,9 @@ end
 
 gem 'jquery-rails'
 
-group :production do 
-  gem 'ym_core', :git => "git://git.yoomee.com:4321/gems/ym_core.git"
-  gem 'ym_cms', :git => "git://git.yoomee.com:4321/gems/ym_cms.git"
-end
-
 group :development do
   gem 'growl'
+  # comment this when deploying
 end
 
 # Use unicorn as the web server
