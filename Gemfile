@@ -8,6 +8,7 @@ gem "rake", "0.8.7"
 
 ### Frequently used
 gem 'haml'
+gem "formtastic-bootstrap", "~> 1.2.0"
 
 ### Yoomee gems
 
