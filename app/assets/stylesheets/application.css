@@ -224,8 +224,6 @@ br.clear {
   font-size: 15px;
   line-height: 15px;
   padding: 5px 10px 10px;
-
-
 }
 .gallery_box a:hover {
   color: rgba(255,255,255,1);
@@ -250,4 +248,19 @@ br.clear {
 .news_image {
   clear: both;
   margin-bottom: 20px;
+}
+
+/*========== Formtastic ==========*/
+
+form.formtastic {
+  background-color: white;
+}
+form.formtastic fieldset {
+  padding: 20px 20px 0 20px;
+}
+form.formtastic .form-actions input {
+  margin: 0;
+}
+form.formtastic .form-actions a.btn {
+  text-decoration: none;
 }

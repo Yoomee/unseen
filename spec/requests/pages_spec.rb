@@ -11,10 +11,24 @@ describe "Pages" do
   end
 
   describe "GET /pages#show" do
+    let(:cms_page) { Factory(:page, :view_name => "basic") }
     it "should show page title" do
-      cms_page = Factory(:page)  
       visit page_path(cms_page)
       page.should have_content(cms_page.title)
+    end
+    it "should render views/basic if view_name is basic" do
+      get page_path(cms_page)
+      response.should render_template("views/basic")
+    end
+    it "should render views/tiled if view_name is tiled" do
+      cms_page.update_attribute(:view_name, "tiled")
+      get page_path(cms_page)
+      response.should render_template("views/tiled")
+    end
+    it "should render views/basic if view_name is list" do
+      cms_page.update_attribute(:view_name, "list")
+      get page_path(cms_page)
+      response.should render_template("views/list")
     end
   end
   

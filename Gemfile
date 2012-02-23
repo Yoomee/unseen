@@ -8,7 +8,8 @@ gem "rake", "0.8.7"
 
 ### Frequently used
 gem 'haml'
-gem "formtastic-bootstrap", "~> 1.2.0"
+# gem "formtastic-bootstrap", "~> 1.2.0"
+gem 'formtastic-bootstrap', :git => "git://github.com/cgunther/formtastic-bootstrap.git", :branch => "bootstrap-2"
 
 ### Yoomee gems
 
@@ -19,8 +20,6 @@ gem "formtastic-bootstrap", "~> 1.2.0"
 # development
 gem 'ym_core', :path => "vendor/gems"
 gem 'ym_cms', :path => "vendor/gems"
-
-### Project specific
 
 ### Groups
 
