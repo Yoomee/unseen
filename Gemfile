@@ -14,12 +14,12 @@ gem 'formtastic-bootstrap', :git => "git://github.com/cgunther/formtastic-bootst
 ### Yoomee gems
 
 # production
-# gem 'ym_core', :git => "git://git.yoomee.com:4321/gems/ym_core.git"
-# gem 'ym_cms', :git => "git://git.yoomee.com:4321/gems/ym_cms.git"
+gem 'ym_core', :git => "git://git.yoomee.com:4321/gems/ym_core.git"
+gem 'ym_cms', :git => "git://git.yoomee.com:4321/gems/ym_cms.git"
 
 # development
-gem 'ym_core', :path => "vendor/gems"
-gem 'ym_cms', :path => "vendor/gems"
+# gem 'ym_core', :path => "vendor/gems"
+# gem 'ym_cms', :path => "vendor/gems"
 
 ### Groups
 
