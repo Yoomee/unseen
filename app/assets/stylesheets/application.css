@@ -291,3 +291,7 @@ form.formtastic .form-actions a.btn {
   text-decoration: none;
   font-size: 15px;
 }
+
+.mercury-textarea{
+  color:#fff;
+}

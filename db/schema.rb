@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120217171931) do
+ActiveRecord::Schema.define(:version => 20120229131324) do
+
+  create_table "mercury_images", :force => true do |t|
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "pages", :force => true do |t|
     t.integer  "parent_id"
@@ -20,10 +29,22 @@ ActiveRecord::Schema.define(:version => 20120217171931) do
     t.boolean  "published",  :default => false
     t.integer  "position"
     t.string   "view_name",  :default => "basic"
+    t.string   "image_uid"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "pages", ["parent_id"], :name => "index_pages_on_parent_id"
+
+  create_table "snippets", :force => true do |t|
+    t.string   "item_type"
+    t.integer  "item_id"
+    t.string   "name"
+    t.text     "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "snippets", ["item_type", "item_id"], :name => "index_snippets_on_item_type_and_item_id"
 
 end

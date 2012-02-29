@@ -24,12 +24,13 @@
       #main.row
         #nav.span2
           %ul
-            %li.active=link_to "fair", "/"
-            %li=link_to "galleries", "/wireframes/galleries"
-            %li=link_to "news", "/wireframes/news"
-            %li=link_to "blog", "#"
-            %li=link_to "press", "#", :rel=>"popover", :data_original_title=>"coming soon!"
-            %li=link_to "about", "/wireframes/about"
+            -if false
+              %li.active=link_to "fair", "/"
+              %li=link_to "galleries", "/wireframes/galleries"
+              %li=link_to "news", "/wireframes/news"
+              %li=link_to "blog", "#"
+              %li=link_to "press", "#", :rel=>"popover", :data_original_title=>"coming soon!"
+              %li=link_to "about", "/wireframes/about"
             -Page.root.each do |page|
               %li=link_to_self(page)
           %br
