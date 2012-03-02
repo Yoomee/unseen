@@ -10,23 +10,27 @@
     .span2
       %h2 Contact
       %ul.unstyled
-        %li
-          %span#page_gallery_address.mercury-region{:"data-type" => "textable"}
-            =raw(page.gallery_address)
-        %li
-          t:
-          %span#page_gallery_phone.mercury-region{:"data-type" => "textable"}
-            =page.gallery_phone
-        %li
-          e:
-          %span#page_gallery_email.mercury-region{:"data-type" => "textable"}
-            =page.gallery_email
-        %li
-          w:
-          %span#page_gallery_website.mercury-region{:"data-type" => "textable"}
-            =page.gallery_website
-      %h2 Gallery hours
-      %span#page_gallery_hours.mercury-region{:"data-type" => "textable"}
+        -if page.gallery_address.present?        
+          %li
+            #page_gallery_address.mercury-region{:"data-type" => "textable"}
+              =raw(page.gallery_address)
+        -if page.gallery_phone.present?        
+          %li
+            t:
+            %span#page_gallery_phone.mercury-region{:"data-type" => "textable"}
+              =page.gallery_phone
+        -if page.gallery_email.present?
+          %li
+            e:
+            %span#page_gallery_email.mercury-region{:"data-type" => "textable"}
+              =page.gallery_email
+        -if page.gallery_website.present?
+          %li
+            w:
+            %span#page_gallery_website.mercury-region{:"data-type" => "textable"}
+              =page.gallery_website
+      -if page.gallery_hours.present?
+        %h2 Gallery hours
         =raw(page.gallery_hours)
     
   .row
