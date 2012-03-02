@@ -1,0 +1,6 @@
+=semantic_form_for(page, :multipart => true) do |form|
+  =tabs('details', ['gallery', 'Gallery details'], :form => form)
+
+  =form.buttons do
+    =form.commit_button "Save"
+    =#link_to("Cancel", page.new_record? ? pages_path : page, :class => "btn")

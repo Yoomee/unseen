@@ -5,6 +5,7 @@
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require formtastic-bootstrap
+ *= require ym_core 
  *= require_tree . 
  *= require_self
 */
@@ -59,13 +60,18 @@ a {
   color: #fff;
   text-decoration: underline;
 }
+form a {
+  color: #08C;
+}
+form a:hover {
+  color: #ccc;
+}
 a:hover {
   color: #ccc;
-  color: rgba(255,255,255,0.7);
-  
-  	 -webkit-transition: .1s ease-in;
-     -moz-transition: .1s ease-in;
-     transition: .1s ease-in;
+  color: rgba(255,255,255,0.7);  
+ -webkit-transition: .1s ease-in;
+ -moz-transition: .1s ease-in;
+ transition: .1s ease-in;
 }
 p {
   font-family: georgia;
@@ -105,16 +111,14 @@ br.clear {
   padding: 10px;
 }
 #header {
-  height: 140px;
+  height: 100px;
 }
 
-#site_logo, #header_right h2 {
+#site_logo {
 	font-size: 19px;
 	line-height: 22px;
-	margin: 25px 0 0 0;
 	float: left;
-
-  
+	font-weight:normal;
 }
 #site_logo span {
   float: left;
@@ -122,6 +126,7 @@ br.clear {
 }
 #header_right {
   float: right;
+  margin-top:15px;
 }
 #header_right h2 {
   text-align: right;
@@ -135,11 +140,12 @@ br.clear {
   min-height: 0px;
 }
 #nav ul, #nav li {
-  list-style-type: none;
-  margin: 0;
-  font-weight: bold;
   font-size: 19px;
   line-height: 22px;
+}
+#nav li{
+  float:left;
+  margin-left:10px;
 }
 #nav a {
   text-decoration: none;

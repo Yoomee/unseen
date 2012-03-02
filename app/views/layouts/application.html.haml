@@ -9,30 +9,32 @@
     .big_background.fade_in
     .container
       #header.row
-        .span10
+        .span8
+          professionals
+          public
+        .span4
+          .pull-right
+            login
+            contact
+            %i.icon-search.icon-white
+            f
+            t
+        .span4
           %h1#site_logo
             %span
               unseen photo fair
             %span
             19-23 sept 2012
-          #header_right  
-            %h2
-              %span
-                wetergasfabriek
-              %span  
-                amsterdam
-      #main.row
-        #nav.span2
-          %ul
-            -if false
-              %li.active=link_to "fair", "/"
-              %li=link_to "galleries", "/wireframes/galleries"
-              %li=link_to "news", "/wireframes/news"
-              %li=link_to "blog", "#"
-              %li=link_to "press", "#", :rel=>"popover", :data_original_title=>"coming soon!"
-              %li=link_to "about", "/wireframes/about"
-            -Page.root.each do |page|
-              %li=link_to_self(page)
-          %br
-          =link_to("Add a page", new_page_path)
-        =yield_with_span(yield, :span_class => "span8")
+        .span8
+          #nav.pull-right
+            %ul.unstyled
+              -#
+                %li.active=link_to "fair", "/"
+                %li=link_to "galleries", "/wireframes/galleries"
+                %li=link_to "news", "/wireframes/news"
+                %li=link_to "blog", "#"
+                %li=link_to "press", "#", :rel=>"popover", :data_original_title=>"coming soon!"
+                %li=link_to "about", "/wireframes/about"
+              -Page.root.each do |page|
+                %li=link_to_self(page)          
+    =yield_with_bootstrap(yield)

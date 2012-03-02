@@ -10,6 +10,7 @@ gem "rake", "0.8.7"
 gem 'haml'
 # gem "formtastic-bootstrap", "~> 1.2.0"
 gem 'formtastic-bootstrap', :git => "git://github.com/cgunther/formtastic-bootstrap.git", :branch => "bootstrap-2"
+gem 'rinku'
 
 ### Yoomee gems
 
