@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120229131324) do
+ActiveRecord::Schema.define(:version => 20120302170405) do
 
   create_table "mercury_images", :force => true do |t|
     t.string   "image_file_name"
@@ -35,6 +35,26 @@ ActiveRecord::Schema.define(:version => 20120229131324) do
   end
 
   add_index "pages", ["parent_id"], :name => "index_pages_on_parent_id"
+
+  create_table "slides", :force => true do |t|
+    t.integer  "slideshow_id"
+    t.text     "caption"
+    t.string   "image_uid"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "slides", ["slideshow_id"], :name => "index_slides_on_slideshow_id"
+
+  create_table "slideshows", :force => true do |t|
+    t.integer  "attachable_id"
+    t.string   "attachable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "slideshows", ["attachable_type", "attachable_id"], :name => "index_slideshows_on_attachable_type_and_attachable_id"
 
   create_table "snippets", :force => true do |t|
     t.string   "item_type"
