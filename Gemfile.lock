@@ -1,6 +1,14 @@
 GIT
-  remote: git://git.yoomee.com:4321/gems/ym_cms.git
-  revision: b2024e4a7947732e005718213fb79fd10fd49627
+  remote: git://github.com/cgunther/formtastic-bootstrap.git
+  revision: 85d7931c4c6c9007f4de99eb66c891b8ee02fe43
+  branch: bootstrap-2
+  specs:
+    formtastic-bootstrap (1.2.0)
+      formtastic
+      rails (>= 3.1.0)
+
+PATH
+  remote: vendor/gems
   specs:
     ym_cms (0.0.1)
       decent_exposure (~> 1.0.1)
@@ -9,22 +17,8 @@ GIT
       mercury-rails (~> 0.3.1)
       rack-cache
       rails (~> 3.1.0)
-
-GIT
-  remote: git://git.yoomee.com:4321/gems/ym_core.git
-  revision: 62d322da22d639cd575d5cc0a7caf71dc5c32dd5
-  specs:
     ym_core (0.0.1)
       rails (~> 3.1.0)
-
-GIT
-  remote: git://github.com/cgunther/formtastic-bootstrap.git
-  revision: 85d7931c4c6c9007f4de99eb66c891b8ee02fe43
-  branch: bootstrap-2
-  specs:
-    formtastic-bootstrap (1.2.0)
-      formtastic
-      rails (>= 3.1.0)
 
 GEM
   remote: http://rubygems.org/
