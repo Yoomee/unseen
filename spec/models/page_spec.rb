@@ -2,6 +2,12 @@ require 'spec_helper'
 
 describe Page do
   
+  # client only
+  
+  it { should have_one(:slideshow) }  
+  
+  # gem only
+  
   it { should belong_to(:parent) }
   it { should have_many(:children) }
   it { should validate_presence_of(:title) }

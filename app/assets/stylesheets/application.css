@@ -6,6 +6,7 @@
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require formtastic-bootstrap
  *= require ym_core 
+ *= require ym_cms 
  *= require_tree . 
  *= require_self
 */
@@ -300,4 +301,15 @@ form.formtastic .form-actions a.btn {
 
 .mercury-textarea{
   color:#fff;
+}
+
+/*========== Slideshow ==========*/
+
+#add_slide_link {
+  text-decoration: none;  
+}
+div.slideshow {
+  margin: 20px 0 50px 0;
+  float: left;
+  clear: both;
 }
