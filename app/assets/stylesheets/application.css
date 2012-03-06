@@ -375,6 +375,7 @@ form.formtastic .form-actions a.btn {
   background: url(/assets/home_bg_5.jpg) 50% 0 no-repeat fixed;
 }
 #seventh {
+  height: 850px;
   background: rgb(0, 0, 0);
   opacity: 0.8;
   z-index: 3;
