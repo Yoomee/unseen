@@ -12,8 +12,7 @@
 */
 
 
-
-/*CSS3 magic*/
+/*========== CSS3 magic ==========*/
 
 @-webkit-keyframes reset {
 0% {
@@ -51,7 +50,17 @@
 .fade_in.fade_six {-webkit-animation-delay: 0, 1.5s;}
 
 
-/*---------   Structure*/
+/*========== Font ==========*/
+
+body { 
+  font-family:"Apercu Medium", Calibri, sans-serif; 
+  font-size-adjust: 0.508;
+  font-weight: 600;
+  font-style:normal;
+}
+
+
+/*========== Structure ==========*/
 
 body {
   background: #000;
@@ -312,4 +321,20 @@ div.slideshow {
   margin: 20px 0 50px 0;
   float: left;
   clear: both;
+}
+
+/*========== Fair ==========*/
+
+#fair.container .row {
+  margin-bottom: 150px;
+}
+#fair.container .row h1, #fair.container .row h2 {
+  font-size: 35px;
+  text-transform:uppercase;  
+  text-align: center;
+  margin-bottom: 20px;
+}
+#fair.container .row p {
+  font-size: 20px;
+  line-height: 25px;
 }

@@ -2,6 +2,7 @@ Unseen::Application.routes.draw do
   
   root :to => 'home#index'
   resources :wireframes, :only => [:index, :show]
+  match 'fair' => 'fair#index' 
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
