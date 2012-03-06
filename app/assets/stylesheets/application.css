@@ -52,7 +52,15 @@
 
 /*========== Font ==========*/
 
-body { 
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div { 
   font-family:"Apercu Medium", Calibri, sans-serif; 
   font-size-adjust: 0.508;
   font-weight: 600;
@@ -84,7 +92,7 @@ a:hover {
  transition: .1s ease-in;
 }
 p {
-  font-family: georgia;
+/*  font-family: georgia;*/
 }
 h1#page_title, h2 {
   font-size: 19px;
@@ -332,7 +340,7 @@ div.slideshow {
   font-size: 35px;
   text-transform:uppercase;  
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 #fair.container .row p {
   font-size: 20px;
