@@ -16,4 +16,12 @@ Factory.define :slide do |f|
   f.association :slideshow
   f.sequence(:caption) {|n| "Slide caption #{n}"}
   f.sequence(:position)
+  f.after_build do |slide|
+    image_mock = f.double('image_mock')
+    image_mock.stub(:size => 100.kilobytes)
+    image_mock.stub(:mime_type => 'image/png')
+    image_mock.stub(:url => '/url/to/image.png')
+    image_mock.stub(:process => image_mock)
+    slide.stub(:image => image_mock)
+  end
 end
