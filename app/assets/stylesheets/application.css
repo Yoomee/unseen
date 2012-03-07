@@ -401,9 +401,21 @@ form.formtastic .form-actions a.btn {
   text-decoration: none;
   font-size: 15px;
 }
-
 .mercury-textarea{
   color:#fff;
+}
+#new_page_box a {
+  width: 100%;
+  text-align: center;
+  float: none;
+  display: block;
+  font-size: 22px;
+  padding: 70px 0;
+  border: 2px dashed white;
+  text-decoration: none;
+}
+#new_page_box.span4 a {
+  font-size: 30px;
 }
 
 /*========== Slideshow ==========*/

@@ -9,5 +9,12 @@ class PagesController < ApplicationController
       Page.scoped
     end
   end
+
+  def new
+    page.parent_id = params[:parent_id]
+    if page.parent.try(:slug) == "galleries"
+      page.view_name = "gallery"
+    end
+  end
   
 end
