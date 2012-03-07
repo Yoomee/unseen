@@ -32,6 +32,10 @@
           %li
             t:
             =page.gallery_phone
+        -if page.gallery_fax.present?
+          %li
+            f:
+            =page.gallery_fax
         -if page.gallery_email.present?
           %li
             e:
@@ -40,6 +44,10 @@
           %li
             w:
             =link_to_url(page.gallery_website)
+        -if page.gallery_facebook.present?
+          %li
+            fb:
+            =link_to_url(page.gallery_facebook.gsub(/(http:\/\/)?(www\.)?/, ""))
     -if page.gallery_hours.present?
       %h2 Gallery hours
       =simple_format(page.gallery_hours)
