@@ -6,12 +6,16 @@
     .row
       .span6#latest_news
         %h2 Latest news
-        -2.times do
+        -[news_pages.shift(2), news_pages.shift(2)].each do |pages|
           .row
-            -2.times do
+            -pages.each do |page|
               .span3
-                =image_placeholder("200x150")
-                %p Unseen is fair with a festival flair
+                =link_to(image_for(page, "220x160"), page)
+                =link_to_self(page)
+        -if news_page.present?
+          .row
+            .span2
+              =link_to("More news", news_page)
       .span6
         .span4.offset2
           %h4 Follow us

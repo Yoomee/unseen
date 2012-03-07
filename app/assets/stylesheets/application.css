@@ -328,8 +328,11 @@ form.formtastic .form-actions a.btn {
   margin-top: -800px;
   height: 610px;
   padding-top: 30px;
-  background: rgba(0, 0, 0, 0.88);
   z-index: 3;
+}
+#second,
+#seventh {
+  background: rgba(0, 0, 0, 0.87);  
 }
 #second h2 {
   text-transform: uppercase;
@@ -341,6 +344,9 @@ form.formtastic .form-actions a.btn {
 }
 #second #latest_news .span3 {
   margin-bottom: 20px;
+}
+#second #latest_news .span3 a {
+  text-decoration: none;
 }
 #second .span6 .span4 {
   margin-bottom: 10px;
@@ -380,8 +386,6 @@ form.formtastic .form-actions a.btn {
 }
 #seventh {
   height: 850px;
-  background: rgb(0, 0, 0);
-  opacity: 0.8;
   z-index: 3;
 }
 

@@ -8,6 +8,7 @@
 #= require jquery_ujs
 #= require ym_core
 #= require ym_cms
+#= require mercury
 #= require_tree .
 
 window.YmCms.Page.Form.showSlideshowTab = () ->
