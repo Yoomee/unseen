@@ -1,7 +1,7 @@
 .row
   .span12
     %h1
-      %span#page_title.mercury-region{:"data-type" => "textable"}
+      %span#page_title.mercury-region{:"data-type" => "editable"}
         =raw(page.title)
 -if page.slideshow
   .row
@@ -11,8 +11,7 @@
 .row
   .span4
     %h2
-      %span#page_title.mercury-region{:"data-type" => "textable"}
-        =raw(page.title)
+      =raw(page.title)
     .gallery_description
       -if page.text.blank? && !viewing_mercury_edit?
         #page_text
