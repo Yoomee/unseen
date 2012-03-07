@@ -4,7 +4,7 @@ Factory.define :page do |f|
 end
 
 Factory.define :snippet do |f|  
-  f.name "snippet_name"
+  f.name "test_snippet"
   f.text "Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi."  
 end
 

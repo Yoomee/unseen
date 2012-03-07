@@ -90,34 +90,44 @@ describe Page do
     
   end
   
-  describe "has snippets" do  
-    Page.has_snippets(:snippet_name)
+  describe "that has snippets" do
+    Page.has_snippets(:test_snippet)
     
     let(:page) { Factory(:page) }
     
-    it "should have many snippets" do
+    it "has many snippets" do
       page.should have_many(:snippets)
     end
     
-    it "should respond to snippet name getter" do
-      page.should respond_to(:snippet_name)
+    it "responds to snippet name getter" do
+      page.should respond_to(:test_snippet)
     end
     
-    it "should return text of snippet" do
-      page1 = Factory.create(:page)
-      snippet = Factory.create(:snippet, :item => page1)
-      page1.send(snippet.name).should eq(snippet.text)
+    it "responds to snippet name setter" do
+      page.should respond_to("test_snippet=")
     end
     
-    it "should respond to snippet name setter" do
-      page.should respond_to("snippet_name=")
+    it "can set text of snippet" do
+      page1 = Factory.create(:page, :test_snippet => "New snippet text")
+      page1.test_snippet.should eq("New snippet text")
     end
     
-    it "be able to set text of snippet" do
-      page1 = Factory.create(:page)
-      snippet = Factory.create(:snippet, :item => page1)
-      page1.send("#{snippet.name}=", "New snippet text")
-      page1.send(snippet.name).should eq("New snippet text")
+    it "won't create snippet until page is created" do
+      page1 = Factory.build(:page)
+      page1.test_snippet = "New snippet text"
+      Snippet.where(:item_id => nil).count.should == 0
+    end
+
+    it "can update snippet" do
+      page1 = Factory.create(:page, :test_snippet => "Old snippet text")
+      page1.test_snippet = "New snippet text"
+      page1.test_snippet.should == "New snippet text"
+    end
+    
+    it "destroy blank snippets" do
+      page1 = Factory.create(:page, :test_snippet => "Snippet text")
+      page1.test_snippet = ""
+      page1.snippets.where(:name => "test_snippet").count == 0
     end
       
   end
