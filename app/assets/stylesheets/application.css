@@ -131,6 +131,9 @@ br.clear {
 #header {
   height: 100px;
 }
+#header a {
+  text-decoration: none;
+}
 
 #site_logo {
 	font-size: 19px;

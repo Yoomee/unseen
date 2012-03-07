@@ -6,7 +6,7 @@
     .span4
       .pull-right
         login
-        contact
+        =link_to("contact", Page.find_by_slug("contact") || "#")
         %i.icon-search.icon-white
         f
         t
@@ -19,7 +19,10 @@
     .span8
       #nav.pull-right
         %ul.unstyled
-          %li=link_to "home", root_path
-          %li=link_to "fair", fair_path
-          -Page.root.each do |page|
-            %li=link_to_self(page)
+          %li=link_to("home", root_path)
+          %li=link_to("news", Page.find_by_slug("news") || "#")
+          %li=link_to("fair", fair_path)
+          %li=link_to("galleries", Page.find_by_slug("galleries") || "#")
+          %li=link_to("blog", Page.find_by_slug("blog") || "#")
+          %li=link_to("press", Page.find_by_slug("press") || "#")
+          %li=link_to("about", Page.find_by_slug("about") || "#")
