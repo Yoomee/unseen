@@ -11,6 +11,7 @@ gem 'haml'
 # gem "formtastic-bootstrap", "~> 1.2.0"
 gem 'formtastic-bootstrap', :git => "git://github.com/cgunther/formtastic-bootstrap.git", :branch => "bootstrap-2"
 gem 'rinku'
+gem 'exception_notifier'
 
 ### Yoomee gems
 gem 'ym_core', :path => "vendor/gems"
