@@ -1,4 +1,5 @@
 Unseen::Application.configure do
+  
   # Settings specified here will take precedence over those in config/application.rb
 
   # Code is not reloaded between requests
@@ -57,4 +58,9 @@ Unseen::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+  
+  config.action_mailer.default_url_options = { :host => 'unseen.yoomee.com' }
+  # TODO: uncomment this once DNS has changed
+  # config.action_mailer.default_url_options = { :host => 'unseenamsterdam.com' }
+  
 end

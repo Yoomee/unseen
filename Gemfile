@@ -12,6 +12,9 @@ gem 'haml'
 gem 'formtastic-bootstrap', :git => "git://github.com/cgunther/formtastic-bootstrap.git", :branch => "bootstrap-2"
 gem 'rinku'
 gem 'exception_notification'
+gem 'jquery-rails'
+gem 'devise'
+gem 'cancan'
 
 ### Yoomee gems
 gem 'ym_core', :path => "vendor/gems"
@@ -26,8 +29,6 @@ group :assets do
   gem 'coffee-rails', "~> 3.1.0"
   gem 'uglifier'
 end
-
-gem 'jquery-rails'
 
 group :development do
   gem 'growl'

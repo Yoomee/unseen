@@ -1,4 +1,5 @@
-require 'spec_helper'
+require File.dirname(__FILE__) + '/../spec_helper'
+include Devise::TestHelpers
 
 describe "Pages" do
   
@@ -34,6 +35,7 @@ describe "Pages" do
   
   describe "GET /pages#new" do
     it "should show page form" do
+      login_user
       visit new_page_path
       page.has_css? "form#new_page"
     end
@@ -41,6 +43,7 @@ describe "Pages" do
   
   describe "GET /pages#edit" do
     it "should show page form" do
+      login_user      
       cms_page = Factory(:page)      
       visit edit_page_path(cms_page)
       page.has_css? "form#edit_page_#{cms_page.id}"
@@ -48,6 +51,9 @@ describe "Pages" do
   end
   
   describe "create a page" do
+    before do
+      login_user
+    end
     it "should redirect to pages#show if valid" do
       visit new_page_path
       fill_in 'Title', :with => "New page title"
@@ -65,6 +71,9 @@ describe "Pages" do
   end
   
   describe "update a page" do
+    before do
+      login_user
+    end
     it "should redirect to pages#show if valid" do
       cms_page = Factory(:page, :title => "Old page title")
       visit edit_page_path(cms_page)
