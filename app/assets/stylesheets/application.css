@@ -70,12 +70,12 @@ div {
 /*========== Structure ==========*/
 
 body {
-  background: #000;
-  color: #fff;
+  background: #fff;
+  color: #000;
   padding-bottom: 100px;
 }
 a {
-  color: #fff;
+  color: #000;
   text-decoration: underline;
 }
 form a {
@@ -105,7 +105,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #fff;
+  color: #000;
 }
 h1 a,
 h1 a:hover,
@@ -250,7 +250,7 @@ br.clear {
   opacity: 0.8;
 }
 .gallery_box a {
-  color: rgba(255,255,255,0);
+  color: rgba(0,0,0,0);
   float: left;
   width: 100%;
   height: 200px;
@@ -267,7 +267,7 @@ br.clear {
   padding: 5px 10px 10px;
 }
 .gallery_box a:hover {
-  color: rgba(255,255,255,1);
+  color: rgba(0,0,0,1);
   text-decoration: none;
   
 }
@@ -289,6 +289,15 @@ br.clear {
 .news_image {
   clear: both;
   margin-bottom: 20px;
+}
+div.slideshow {
+  height:800px;
+  float:left;
+}
+div.slideshow .slide {
+  height: 800px;
+}
+div.slideshow .slide .slide_inner {
 }
 
 /*========== Formtastic ==========*/
