@@ -29,7 +29,9 @@ PATH
       rack-cache
       rails (~> 3.1.0)
     ym_core (0.0.1)
+      dragonfly (~> 0.9.10)
       rails (~> 3.1.0)
+      rails_config (~> 0.2.6)
 
 GEM
   remote: http://rubygems.org/
@@ -174,6 +176,8 @@ GEM
       activesupport (= 3.1.0)
       bundler (~> 1.0)
       railties (= 3.1.0)
+    rails_config (0.2.6)
+      activesupport (>= 3.0)
     railties (3.1.0)
       actionpack (= 3.1.0)
       activesupport (= 3.1.0)
