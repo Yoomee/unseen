@@ -1,24 +1,13 @@
 .container
   #header.row
-    .span8
-      professionals
-      public
-    .span4
-      .pull-right
-        -if user_signed_in?
-          =link_to(t(:logout).downcase, sign_out_path, :method => :delete)
-        -else
-          =link_to(t(:login).downcase, sign_in_path)
-        =link_to("contact", Page.find_by_slug("contact") || "#")
-        %i.icon-search.icon-white
-        f
-        t
     .span4
       %h1#site_logo
         %span
           unseen photo fair
         %span
-        19-23 sept 2012
+          19-23 sept 2012
+        %span
+          amsterdam        
     .span8
       #nav.pull-right
         %ul.unstyled
@@ -29,3 +18,17 @@
           %li=link_to("blog", Page.find_by_slug("blog") || "#")
           %li=link_to("press", Page.find_by_slug("press") || "#")
           %li=link_to("about", Page.find_by_slug("about") || "#")
+      #header_links.pull-right
+        =link_to "Twitter", "http://twitter.com/UnseenPhotoFair", :class=>"header_icon", :id=>"twitter_icon"        
+        =link_to "Facebook", "http://www.facebook.com/UnseenPhotoFairAmsterdam", :class=>"header_icon", :id=>"facebook_icon"        
+        =link_to "Search", "#", :class=>"header_icon", :id=>"search_icon"
+        =link_to("contact", Page.find_by_slug("contact") || "#", :class=>"header_link", :id=>"contact_link")
+        -if user_signed_in?
+          =link_to(t(:logout).downcase, sign_out_path, :method => :delete, :class=>"header_link", :id=>"login_link")
+        -else
+          =link_to(t(:login).downcase, sign_in_path, :class=>"header_link", :id=>"login_link")
+        
+
+
+
+        
