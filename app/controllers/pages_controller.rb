@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   
   include YmCms::PagesController
+  load_and_authorize_resource
   
   expose(:page_children) do
     if page

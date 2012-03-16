@@ -60,19 +60,10 @@ module LayoutHelper
   end
 
   def classes_for_body_tag
-    [].tap do |classes|
-      classes << case
-      when @section && @section.is_a?(Section) && @section.id
-        out = "section_#{@section.id}"
-        @section.slug.blank? ? out : out + " section_#{@section.slug.downcase.fully_underscore}"
-      when @page && @page.is_a?(Page)          
-        out = "page_#{@page.id} section_#{@page.section_id}"
-        out << " page_#{@page.slug.downcase.fully_underscore}" if !@page.slug.blank?
-        @page.section_slug.blank? ? out : out + " section_#{@page.section_slug.downcase.fully_underscore}"
-      end
+    [].tap do |classes|      
       classes << "controller_#{controller_name}"
       classes << "action_#{action_name}"
-      #classes << (logged_in_member ? 'logged_in' : 'logged_out')
+      classes << (user_signed_in? ? 'logged_in' : 'logged_out')
     end
   end
 

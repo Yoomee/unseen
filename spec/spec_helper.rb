@@ -4,6 +4,7 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'capybara/rspec'
 require 'rspec/autorun'
+require 'requests_helper'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -30,4 +31,13 @@ RSpec.configure do |config|
   # automatically. This will be the default behavior in future versions of
   # rspec-rails.
   config.infer_base_class_for_anonymous_controllers = false
+  
+  config.backtrace_clean_patterns = [
+      /\/lib\d*\/ruby\//,
+      /bin\//,
+      #/gems/,
+      /spec\/spec_helper\.rb/,
+      /lib\/rspec\/(core|expectations|matchers|mocks)/
+  ]
+  config.include(RequestsHelper)
 end

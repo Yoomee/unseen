@@ -25,3 +25,10 @@ Factory.define :slide do |f|
     slide.stub(:image => image_mock)
   end
 end
+
+Factory.define :user do |f|
+  f.first_name "Charles"
+  f.last_name "Barrett"
+  f.email "charles@barrett.com"
+  f.password "password"
+end
