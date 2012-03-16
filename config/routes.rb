@@ -1,8 +1,14 @@
 Unseen::Application.routes.draw do
-  
+
   root :to => 'home#index'
   resources :wireframes, :only => [:index, :show]
   match 'fair' => 'fair#index' 
+  
+  devise_for :users
+  devise_scope :user do
+    get "sign_in", :to => "devise/sessions#new"
+    delete "sign_out", :to => "devise/sessions#destroy"    
+  end
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
