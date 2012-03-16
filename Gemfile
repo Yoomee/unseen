@@ -32,6 +32,7 @@ end
 
 group :development do
   gem 'growl'
+  gem 'yoomee', :git => "git://git.yoomee.com:4321/gems/yoomee.git", :branch => "rails3"
   # comment this when deploying
 end
 
