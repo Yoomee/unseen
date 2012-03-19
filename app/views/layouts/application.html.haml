@@ -22,6 +22,9 @@
           }(document, 'script', 'facebook-jssdk')
         );
       =yield
+    -elsif current_page?(fair_path)
+      =yield
     -else
       =render("layouts/header")
       =yield_with_bootstrap(yield)
+      =render('layouts/footer')
