@@ -547,24 +547,24 @@ body.controller_home #search_icon {
   line-height: 25px;
 }
 .fair_bg_1 {
-  background: #211d1d url(/assets/home_bg_1.png) 50% 0 no-repeat fixed;
+  background: #211d1d url(/assets/home_bg_1.jpg) 50% 0 no-repeat fixed;
   height:800px;
   z-index: 3;  
 }
 .fair_bg_2 {
-  background: #211d1d url(/assets/home_bg_2.png) 50% 0 no-repeat fixed;
+  background: #211d1d url(/assets/home_bg_4.jpg) 50% 0 no-repeat fixed;
   z-index: 3;  
 }
 .fair_bg_3 {
-  background: #211d1d url(/assets/home_bg_3.png) 50% 0 no-repeat fixed;
+  background: #211d1d url(/assets/home_bg_6.jpg) 50% 0 no-repeat fixed;
   z-index: 3;  
 }
 .fair_bg_4 {
-  background: #211d1d url(/assets/home_bg_4.png) 50% 0 no-repeat fixed;
+  background: #211d1d url(/assets/home_bg_8.jpg) 50% 0 no-repeat fixed;
   z-index: 3;  
 }
 .fair_bg_5 {
-  background: #211d1d url(/assets/home_bg_5.png) 50% 0 no-repeat fixed;
+  background: #211d1d url(/assets/home_bg_10.jpg) 50% 0 no-repeat fixed;
   z-index: 3;  
 }
 
