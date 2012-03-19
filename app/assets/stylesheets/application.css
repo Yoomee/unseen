@@ -148,6 +148,9 @@ br.clear {
 .upcase {
   text-transform:uppercase;
 }
+.italic {
+  font-style: italic;
+}
 .black_btn {
  color: white;
  background: black;
@@ -607,7 +610,7 @@ a.home_small_title, a.home_small_title:hover {
 
 .fair_box {
   margin-bottom: 0 0 150px 0;
-  padding: 120px 0;
+  padding: 150px 0;
   position: relative;
   z-index: 3;
 }
