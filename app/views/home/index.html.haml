@@ -9,7 +9,7 @@
   .container
     .row
       .span8#latest_news
-        %h2 What's on?
+        %h2.upcase What's on?
         -[news_pages.shift(2), news_pages.shift(2)].each do |pages|
           .row
             -pages.each do |page|
@@ -20,16 +20,16 @@
                 =link_to raw('&rarr; Read more'), page, :class => 'list_read_more'
         -if news_page.present?
           .row
-            .span2
-              =link_to("More news", news_page)
-      .span4
-        .span4
-          %h2 Share us
-        .span4.fb_like_links
+            .span2.offset2
+              =link_to("More news", news_page, :class => "black_btn")
+      .span3.offset1
+        .span3
+          %h2.upcase Share us
+        .span3.facebook
           %h4 Facebook
-          .fb-like{:"data-href" => "http://www.facebook.com/UnseenPhotoFairAmsterdam", :"data-send" => "false", :"data-width" => "300", :"data-show-faces" => "false"}
+          .fb-like{:"data-href" => "http://www.facebook.com/UnseenPhotoFairAmsterdam", :"data-send" => "false", :"data-width" => "220", :"data-show-faces" => "false"}
           .fb-like-box{:"data-href" => "http://www.facebook.com/UnseenPhotoFairAmsterdam", :"data-width" => "300", :"data-height" => "300", :"data-colorscheme" => "light", :"data-show-faces" => "true", :"data-border-color" => "#fff", :"data-stream" => "false", :"data-header" => "false"}
-        .span4
+        .span3.twitter
           %h4 Twitter
           .tweet_box
             Check out our new website http://bt.co/KJklj
@@ -37,12 +37,10 @@
             @UnseenPhotoFair
             %br
             about 2 hours ago
-        .span4#newsletter_signup
-          %h4 Sign up for newsletter
-          =text_field_tag "email", "", :class => "span4"
-          =link_to "#" do
-            %i.icon-play.icon-white
-            submit
+        .span3#newsletter_signup
+          %h2.upcase Sign up for our newsletter
+          =text_field_tag "email", "", :class => "span3"
+          =link_to("Submit", "#", :class => "black_btn")
 #third.home_box
 #fourth.home_box{:class => "home_bg_#{cycle(*bg_nums)}"}
   .container

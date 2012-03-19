@@ -67,7 +67,6 @@ div {
   font-style:normal;
 }
 
-
 /*body, p,
 h1,
 h2,
@@ -141,11 +140,19 @@ h6 a:hover {
   text-decoration: none;
 }
 br.clear {
-	clear: both;
-  
+  clear: both;
 }
 .padding {
   padding: 10px;
+}
+.upcase {
+  text-transform:uppercase;
+}
+.black_btn {
+ color: white;
+ background: black;
+ padding: 5px 8px;
+ text-decoration: none;
 }
 #header {
   height: 100px;
@@ -377,12 +384,12 @@ body.controller_home #twitter_icon {
 body.controller_home #search_icon {
 	background-position: 0px -20px;
 }
-.fb_like_links {
+#second .facebook {
   position: relative;
   height: 230px;
   overflow: hidden;
 }
-.fb_like_links h4 {
+#second .facebook h4 {
   margin: 0;
   padding-top: 5px;
   height: 26px;
@@ -391,18 +398,22 @@ body.controller_home #search_icon {
   position: absolute;
   width: 100%;
 }
-.fb_like_links .fb-like {
+#second .facebook .fb-like {
   position: absolute;  
   background: white;
   z-index: 10;
-  top: 35px;
+  top: 32px;
+  padding: 5px 0;
 }
-.fb_like_links .fb-like-box {
+#second .facebook .fb-like-box {
   position: absolute;  
-  top: -50px;
+  top: -47px;
   left: -10px;
   overflow: hidden;
   height: 267px;
+}
+#second .twitter h4 {
+  margin-bottom: 10px;
 }
 .home_box {
   height: 800px;
@@ -445,8 +456,7 @@ body.controller_home #search_icon {
   background: #fff;  
 }
 #second h2 {
-  text-transform: uppercase;
-  font-size: 22px;
+  font-size: 20px;
 }
 #second #latest_news .span3 {
   margin-bottom: 20px;
@@ -472,9 +482,11 @@ body.controller_home #search_icon {
   font-size: 12px;
   margin: 5px 0 0 20px;
 }
-#second #newsletter_signup a, #second #newsletter_signup a:hover {
-  text-decoration: none;
-  color: white;
+#second #newsletter_signup {
+  margin-top: 40px;
+}
+#second #newsletter_signup h2 {
+  margin-bottom: 10px;
 }
 #third {
   background: #211d1d url(/assets/home_bg_3.png) 50% 0 no-repeat fixed;
