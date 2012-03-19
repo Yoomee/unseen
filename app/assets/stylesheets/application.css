@@ -531,7 +531,21 @@ div.slideshow {
 }
 
 /*========== Fair ==========*/
-
+.fair_box h2 {
+  font-size:60px;
+  line-height:60px;
+  margin:0 0 30px 0;
+  text-align:center;
+  text-transform:uppercase;
+}
+.fair_box {
+  margin-bottom:150px;
+}
+.fair_box p {
+  font-size: 20px;
+  line-height: 25px;
+}
+/*
 #fair.container .row {
   margin-bottom: 150px;
 }
@@ -545,3 +559,4 @@ div.slideshow {
   font-size: 20px;
   line-height: 25px;
 }
+*/

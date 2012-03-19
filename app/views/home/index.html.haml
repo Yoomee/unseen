@@ -1,6 +1,5 @@
--bg_nums = [1,2,3,4,5].shuffle
 #unseen_big_logo
-#intro.home_box{:class => "home_bg_#{cycle(*bg_nums)}"}
+#intro.home_box{:class => next_home_background_class}
   =render("layouts/header")
 #second.home_box
   .container
@@ -36,10 +35,10 @@
             %i.icon-play.icon-white
             submit
 #third.home_box
-#fourth.home_box{:class => "home_bg_#{cycle(*bg_nums)}"}
+#fourth.home_box{:class => next_home_background_class}
 #fifth.home_box
-#sixth.home_box{:class => "home_bg_#{cycle(*bg_nums)}"}
+#sixth.home_box{:class => next_home_background_class}
 #seventh.home_box
-#eighth.home_box{:class => "home_bg_#{cycle(*bg_nums)}"}
+#eighth.home_box{:class => next_home_background_class}
 #ninth.home_box
-#tenth.home_box{:class => "home_bg_#{cycle(*bg_nums)}"}
+#tenth.home_box{:class => next_home_background_class}
