@@ -23,7 +23,11 @@ $(document).ready(function() { //when the document is ready...
 	var $thirdBG = $('#third');
 	var $fourthBG = $('#fourth');
 	var $fifthBG = $('#fifth');
-	var $sixthBG = $('#sixth');	
+	var $sixthBG = $('#sixth');
+	var $seventhBG = $('#seventh');
+	var $eighthBG = $('#eighth');
+	var $ninthBG = $('#ninth');
+	var $tenthBG = $('#tenth');			
 	var inner_image = $(".scroll_box .bg");
 	var inner_image2 = $(".scroll_box .bg2");
 	var inner_image3 = $(".scroll_box .bg3");	
@@ -33,7 +37,7 @@ $(document).ready(function() { //when the document is ready...
 	
 	
 	//apply the class "inview" to a section that is in the viewport
-	$('#intro, #second, #third, #fourth, #fifth, #sixth').bind('inview', function (event, visible) {
+	$('#intro, #second, #third, #fourth, #fifth, #sixth, #seventh, #eighth, #ninth, #tenth').bind('inview', function (event, visible) {
 			if (visible == true) {
 			$(this).addClass("inview");
 			} else {
