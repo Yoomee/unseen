@@ -240,7 +240,7 @@ a.header_link {
 h1 {
   margin: 70px 0;
 }
-#page_title {
+span#page_title {
   font-size: 70px;
   text-transform: uppercase;
 }
