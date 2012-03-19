@@ -1,6 +1,5 @@
--bg_nums = [1,2,3,4,5].shuffle
 #unseen_big_logo
-#intro.home_box{:class => "home_bg_#{cycle(*bg_nums)}"}
+#intro.home_box{:class => next_home_background_class}
   =render("layouts/header")
   .container
     .row
@@ -42,17 +41,17 @@
           =text_field_tag "email", "", :class => "span3"
           =link_to("Submit", "#", :class => "black_btn")
 #third.home_box
-#fourth.home_box{:class => "home_bg_#{cycle(*bg_nums)}"}
+#fourth.home_box{:class => next_home_background_class}
   .container
     .row
       .artist_name
 #fifth.home_box
-#sixth.home_box{:class => "home_bg_#{cycle(*bg_nums)}"}
+#sixth.home_box{:class => next_home_background_class}
   .container
     .row
       .artist_name
 #seventh.home_box
-#eighth.home_box{:class => "home_bg_#{cycle(*bg_nums)}"}
+#eighth.home_box{:class => next_home_background_class}
   .container
     .row
       .artist_name
@@ -60,7 +59,7 @@
   .container
     .row
       .artist_name
-#tenth.home_box{:class => "home_bg_#{cycle(*bg_nums)}"}
+#tenth.home_box{:class => next_home_background_class}
   .container
     .row
       .artist_name
