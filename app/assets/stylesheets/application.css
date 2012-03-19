@@ -198,6 +198,18 @@ br.clear {
 	float: right;
 	clear: right;
 }
+#footer_site_logo {
+  font-size:24px;
+}
+#footer h2 {
+  line-height:26px;
+}
+#footer h2 span {
+  display:block;
+}
+#footer #nav {
+  margin-top:0;
+}
 #nav {
   min-height: 0px;
   margin: 14px 0 0;
@@ -557,7 +569,48 @@ body.controller_home #search_icon {
 }
 
 /*========== Fair ==========*/
+.fair_box h2 {
+  font-size:60px;
+  line-height:60px;
+  margin:0 0 30px 0;
+  text-align:center;
+  text-transform:uppercase;
+}
+.fair_box {
+  height: 800px;
+  margin-bottom: 0 0 150px 0;
+  padding: 0px;
+  position: relative;
+  z-index: 1;
+}
+.fair_box p {
+  font-size: 20px;
+  line-height: 25px;
+}
+.fair_bg_1 {
+  background: #211d1d url(/assets/home_bg_1.jpg) 50% 0 no-repeat fixed;
+  height:800px;
+  z-index: 3;  
+}
+.fair_bg_2 {
+  background: #211d1d url(/assets/home_bg_4.jpg) 50% 0 no-repeat fixed;
+  z-index: 3;  
+}
+.fair_bg_3 {
+  background: #211d1d url(/assets/home_bg_6.jpg) 50% 0 no-repeat fixed;
+  z-index: 3;  
+}
+.fair_bg_4 {
+  background: #211d1d url(/assets/home_bg_8.jpg) 50% 0 no-repeat fixed;
+  z-index: 3;  
+}
+.fair_bg_5 {
+  background: #211d1d url(/assets/home_bg_10.jpg) 50% 0 no-repeat fixed;
+  z-index: 3;  
+}
 
+
+/*
 #fair.container .row {
   margin-bottom: 150px;
 }
@@ -571,3 +624,4 @@ body.controller_home #search_icon {
   font-size: 20px;
   line-height: 25px;
 }
+*/

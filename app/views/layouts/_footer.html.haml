@@ -1,0 +1,19 @@
+.container
+  #footer.row
+    .span4
+      %h2#footer_site_logo
+        %span
+          unseen photo fair
+        %span
+          19-23 sept 2012
+        %span
+          amsterdam        
+    .span8
+      #nav.pull-right
+        %ul.unstyled
+          %li=link_to("home", root_path)
+          %li=link_to("news", Page.find_by_slug("news") || "#")
+          %li=link_to("fair", fair_path)
+          %li=link_to("galleries", Page.find_by_slug("galleries") || "#")
+          %li=link_to("press", Page.find_by_slug("press") || "#")
+          %li=link_to("about", Page.find_by_slug("about") || "#")
