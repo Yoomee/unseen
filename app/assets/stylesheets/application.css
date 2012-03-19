@@ -322,10 +322,6 @@ a.header_link {
 #about_intro {
   background: url(/assets/about_page.png) no-repeat 90px 20px;
 }
-
-.gallery_slideshow {
-  margin-bottom: 20px;
-}
 .gallery_description p {
   font-size: 16px;
   line-height: 20px;
@@ -334,15 +330,6 @@ a.header_link {
 .news_image {
   clear: both;
   margin-bottom: 20px;
-}
-div.slideshow {
-  height:800px;
-  float:left;
-}
-div.slideshow .slide {
-  height: 800px;
-}
-div.slideshow .slide .slide_inner {
 }
 
 /*========== Formtastic ==========*/
@@ -484,10 +471,8 @@ body.controller_home {
 #add_slide_link {
   text-decoration: none;  
 }
-div.slideshow {
-  margin: 20px 0 50px 0;
-  float: left;
-  clear: both;
+.slideshow_container {
+  margin-bottom: 50px;
 }
 
 /*========== Fair ==========*/

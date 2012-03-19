@@ -1,61 +1,60 @@
-.row
-  .span12
-    %h1
-      %span#page_title.mercury-region{:"data-type" => "editable"}
-        =raw(page.title)
--if page.slideshow
+.container
   .row
     .span12
-      .gallery_slideshow.fade_in
-        =render("slideshows/slideshow", :slideshow => page.slideshow)
-.row
-  .span4
-    %h2
-      =raw(page.title)
-    .gallery_description
-      -if page.text.blank? && !viewing_mercury_edit? && can?(:edit, page)
-        #page_text
-          =mercury_edit_link("Click here to add some page content", mercury_update_page_path(page))
-      -else
-        #page_text.mercury-region{:"data-type" => "editable"}
-          =raw(page.text)
-  .span4
-    =image_for(page, "250x")
-  .span4
-    -if page.has_gallery_contact_details?
-      %h2 Contact
-      %ul.unstyled
-        -if page.gallery_address.present?
-          %li
-            =simple_format(page.gallery_address)
-        -if page.gallery_phone.present?
-          %li
-            t:
-            =page.gallery_phone
-        -if page.gallery_fax.present?
-          %li
-            f:
-            =page.gallery_fax
-        -if page.gallery_email.present?
-          %li
-            e:
-            =auto_link(page.gallery_email)
-        -if page.gallery_website.present?
-          %li
-            w:
-            =link_to_url(page.gallery_website)
-        -if page.gallery_facebook.present?
-          %li
-            fb:
-            =link_to_url(page.gallery_facebook.gsub(/(http:\/\/)?(www\.)?/, ""))
-    -if page.gallery_hours.present?
-      %h2 Gallery hours
-      =simple_format(page.gallery_hours)
+      %h1
+        %span#page_title.mercury-region{:"data-type" => "editable"}
+          =raw(page.title)
+-if page.slideshow
+  =render("slideshows/slideshow", :slideshow => page.slideshow)
+.container
+  .row
+    .span4
+      %h2
+        =raw(page.title)
+      .gallery_description
+        -if page.text.blank? && !viewing_mercury_edit? && can?(:edit, page)
+          #page_text
+            =mercury_edit_link("Click here to add some page content", mercury_update_page_path(page))
+        -else
+          #page_text.mercury-region{:"data-type" => "editable"}
+            =raw(page.text)
+    .span4
+      =image_for(page, "250x")
+    .span4
+      -if page.has_gallery_contact_details?
+        %h2 Contact
+        %ul.unstyled
+          -if page.gallery_address.present?
+            %li
+              =simple_format(page.gallery_address)
+          -if page.gallery_phone.present?
+            %li
+              t:
+              =page.gallery_phone
+          -if page.gallery_fax.present?
+            %li
+              f:
+              =page.gallery_fax
+          -if page.gallery_email.present?
+            %li
+              e:
+              =auto_link(page.gallery_email)
+          -if page.gallery_website.present?
+            %li
+              w:
+              =link_to_url(page.gallery_website)
+          -if page.gallery_facebook.present?
+            %li
+              fb:
+              =link_to_url(page.gallery_facebook.gsub(/(http:\/\/)?(www\.)?/, ""))
+      -if page.gallery_hours.present?
+        %h2 Gallery hours
+        =simple_format(page.gallery_hours)
   
-.row
-  .span12
-    =options_panel do
-      -if can?(:edit, page)
-        =mercury_edit_link("Edit page content", mercury_update_page_path(page), :id => "mercury_edit_link")
-      =link_if_allowed("Edit page details", [:edit, page])
-      =link_if_allowed("Delete page", [:destroy, page], :confirm => "Are you sure?") unless page.slug.present?
+  .row
+    .span12
+      =options_panel do
+        -if can?(:edit, page)
+          =mercury_edit_link("Edit page content", mercury_update_page_path(page), :id => "mercury_edit_link")
+        =link_if_allowed("Edit page details", [:edit, page])
+        =link_if_allowed("Delete page", [:destroy, page], :confirm => "Are you sure?") unless page.slug.present?
