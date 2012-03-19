@@ -68,7 +68,7 @@ div {
 }
 
 
-body, p,
+/*body, p,
 h1,
 h2,
 h3,
@@ -78,7 +78,7 @@ h6,
 div  {
   font-family: "Apercu";
   -webkit-font-smoothing: antialiased;
-}
+}*/
 
 #nav ul, #nav li, #site_logo {
 	font-size: 29px;
