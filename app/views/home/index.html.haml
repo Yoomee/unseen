@@ -22,8 +22,11 @@
               =link_to("More news", news_page)
       .span6
         .span4.offset2
-          %h4 Follow us
-          .fb-like-box{:"data-href" => "http://www.facebook.com/UnseenPhotoFairAmsterdam", :"data-width" => "300", :"data-height" => "300", :"data-colorscheme" => "dark", :"data-show-faces" => "true", :"data-border-color" => "#000", :"data-stream" => "false", :"data-header" => "false"}
+          %h3 Share us
+        .span4.offset2.fb_like_links
+          %h4 Facebook
+          .fb-like{:"data-href" => "http://www.facebook.com/UnseenPhotoFairAmsterdam", :"data-send" => "false", :"data-width" => "300", :"data-show-faces" => "false"}
+          .fb-like-box{:"data-href" => "http://www.facebook.com/UnseenPhotoFairAmsterdam", :"data-width" => "300", :"data-height" => "300", :"data-colorscheme" => "light", :"data-show-faces" => "true", :"data-border-color" => "#fff", :"data-stream" => "false", :"data-header" => "false"}
         .span4.offset2
           %h4 Twitter
           .tweet_box

@@ -376,15 +376,39 @@ body.controller_home #header a, body.controller_home h1#site_logo {
 }
 body.controller_home #facebook_icon {
 	background-position: -20px -20px;
-  
 }
 body.controller_home #twitter_icon {
 	background-position: -40px -20px;
-  
 }
 body.controller_home #search_icon {
 	background-position: 0px -20px;
-  
+}
+.fb_like_links {
+  position: relative;
+  height: 230px;
+  overflow: hidden;
+}
+.fb_like_links h4 {
+  margin: 0;
+  padding-top: 5px;
+  height: 26px;
+  z-index: 12;
+  background: white;
+  position: absolute;
+  width: 100%;
+}
+.fb_like_links .fb-like {
+  position: absolute;  
+  background: white;
+  z-index: 10;
+  top: 35px;
+}
+.fb_like_links .fb-like-box {
+  position: absolute;  
+  top: -50px;
+  left: -10px;
+  overflow: hidden;
+  height: 267px;
 }
 .home_box {
   height: 800px;
@@ -430,8 +454,7 @@ body.controller_home #search_icon {
   text-transform: uppercase;
   font-size: 26px;
 }
-#second h4 {
-  margin: 8px 0 10px 0;
+#second h3 {
   text-transform: uppercase;
 }
 #second #latest_news .span3 {
@@ -443,14 +466,9 @@ body.controller_home #search_icon {
 #second .span6 .span4 {
   margin-bottom: 10px;
 }
-#second .span6 .fb-like-box {
-  background: black;
-  overflow: hidden;
-  height: 267px;  
-}
 #second .tweet_box {
   padding: 10px;
-  border: 2px solid white;
+  border: 2px solid black;
 }
 #second .twitter_handle {
   font-size: 12px;
