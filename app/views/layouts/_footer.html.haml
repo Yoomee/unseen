@@ -1,5 +1,5 @@
-.container
-  #footer.row
+.container#footer
+  .row
     .span4
       %h2#footer_site_logo
         %span
@@ -9,7 +9,7 @@
         %span
           amsterdam        
     .span8
-      #nav.pull-right
+      #footer_nav.nav.pull-right
         %ul.unstyled
           %li=link_to("home", root_path)
           %li=link_to("news", Page.find_by_slug("news") || "#")

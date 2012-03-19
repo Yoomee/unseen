@@ -79,7 +79,7 @@ div  {
   -webkit-font-smoothing: antialiased;
 }*/
 
-#nav ul, #nav li, #site_logo {
+.nav ul, .nav li, #site_logo {
 	font-size: 29px;
 	line-height: 31px;
   
@@ -206,28 +206,33 @@ br.clear {
 #footer_site_logo {
   font-size:24px;
 }
+#footer.container {
+  padding-top: 20px;
+  z-index: 3;
+  background: white;
+}
 #footer h2 {
   line-height:26px;
 }
 #footer h2 span {
   display:block;
 }
-#footer #nav {
+#footer .nav {
   margin-top:0;
 }
-#nav {
+.nav {
   min-height: 0px;
   margin: 14px 0 0;
 }
-#nav li{
+.nav li{
   float:left;
   margin-left:14px;
 }
-#nav a {
+.nav a {
   text-decoration: none;
   
 }
-/*#nav .active a {
+/*.nav .active a {
   background: url(/assets/nav_active.png) no-repeat bottom left;
   padding-bottom: 4px;
 }*/
@@ -403,7 +408,7 @@ body.controller_home #search_icon {
   margin: 0;
   padding-top: 5px;
   height: 26px;
-  z-index: 12;
+  z-index: 5;
   background: white;
   position: absolute;
   width: 100%;
@@ -411,7 +416,7 @@ body.controller_home #search_icon {
 #second .facebook .fb-like {
   position: absolute;  
   background: white;
-  z-index: 10;
+  z-index: 4;
   top: 32px;
   padding: 5px 0;
 }
@@ -555,6 +560,11 @@ a.home_small_title, a.home_small_title:hover {
 #tenth .artist_name {
   background-image: url(/assets/artist_name_10.png);
 }
+#eleventh {
+  background: white;
+  height: 213px;
+  z-index: 3;
+}
 /*========== Options panel ==========*/
 
 .options_panel {
@@ -594,18 +604,22 @@ a.home_small_title, a.home_small_title:hover {
 }
 
 /*========== Fair ==========*/
+
+.fair_box {
+  margin-bottom: 0 0 150px 0;
+  padding: 120px 0;
+  position: relative;
+  z-index: 3;
+}
 .fair_box h2 {
-  font-size:60px;
-  line-height:60px;
+  font-size: 50px;
+  line-height: 50px;
   margin:0 0 30px 0;
   text-align:center;
   text-transform:uppercase;
 }
-.fair_box {
-  height: 800px;
-  margin-bottom: 0 0 150px 0;
-  padding: 0px;
-  position: relative;
+.fair_window {
+  height: 250px;
   z-index: 1;
 }
 .fair_box p {
@@ -614,24 +628,18 @@ a.home_small_title, a.home_small_title:hover {
 }
 .fair_bg_1 {
   background: #211d1d url(/assets/home_bg_1.jpg) 50% 0 no-repeat fixed;
-  height:800px;
-  z-index: 3;  
 }
 .fair_bg_2 {
   background: #211d1d url(/assets/home_bg_4.jpg) 50% 0 no-repeat fixed;
-  z-index: 3;  
 }
 .fair_bg_3 {
   background: #211d1d url(/assets/home_bg_6.jpg) 50% 0 no-repeat fixed;
-  z-index: 3;  
 }
 .fair_bg_4 {
   background: #211d1d url(/assets/home_bg_8.jpg) 50% 0 no-repeat fixed;
-  z-index: 3;  
 }
 .fair_bg_5 {
   background: #211d1d url(/assets/home_bg_10.jpg) 50% 0 no-repeat fixed;
-  z-index: 3;  
 }
 
 
