@@ -74,7 +74,7 @@ $(document).ready(function() { //when the document is ready...
 		//if the first section is in view...
 		if($firstBG.hasClass("inview")){
 			//call the newPos function and change the background position
-			$firstBG.css({'backgroundPosition': newPos(50, windowHeight, pos, 600, 0.3)}); 
+			$firstBG.css({'backgroundPosition': newPos(50, windowHeight, pos, 600, 0.5)}); 
 			inner_image.css({'backgroundPosition': newPos(50, windowHeight, pos, 900, 0.2)});
 			
 		}
@@ -85,33 +85,47 @@ $(document).ready(function() { //when the document is ready...
 			$secondBG.css({'backgroundPosition': newPos(50, windowHeight, pos, 1000, 0.3)});
 			//call the newPos function and change the secnond background position
 			inner_image.css({'backgroundPosition': newPos(50, windowHeight, pos, 1250, 0.2)});
-			inner_image2.css({'backgroundPosition': newPos(50, windowHeight, pos, 2500, 0.3)});
-			inner_image3.css({'backgroundPosition': newPos(50, windowHeight, pos, 2000, 0.9)});
-			inner_image4.css({'backgroundPosition': newPos(50, windowHeight, pos, 1700, 0.7)});
 			
 		}
 		
 		//if the third section is in view...
 		if($thirdBG.hasClass("inview")){
 			//call the newPos function and change the background position
-			$thirdBG.css({'backgroundPosition': newPos(50, windowHeight, pos, 1500, 0.3)});
+			$thirdBG.css({'backgroundPosition': newPos(50, windowHeight, pos, 2400, 1.2)});
 			inner_image.css({'backgroundPosition': newPos(50, windowHeight, pos, 900, 0.2)});
 		}
 		
 		//if the fourth section is in view...
 		if($fourthBG.hasClass("inview")){
-			$fourthBG.css({'backgroundPosition': newPos(50, windowHeight, pos, 2800, 0.3)});
+			$fourthBG.css({'backgroundPosition': newPos(50, windowHeight, pos, 2200, 0.2)});
 			inner_image.css({'backgroundPosition': newPos(50, windowHeight, pos, 900, 0.2)});
 		}
 		//if the fifth section is in view...
 		if($fifthBG.hasClass("inview")){
-			$fifthBG.css({'backgroundPosition': newPos(50, windowHeight, pos, 3800, 0.3)});
+			$fifthBG.css({'backgroundPosition': newPos(50, windowHeight, pos, 4050, 1.7)});
 		}
 		//if the sixth section is in view...
 		if($sixthBG.hasClass("inview")){
-			$sixthBG.css({'backgroundPosition': newPos(50, windowHeight, pos, 4000, 0.3)});
+			$sixthBG.css({'backgroundPosition': newPos(50, windowHeight, pos, 4200, 0.2)});
+		}	
+		//if the seventh section is in view...
+		if($seventhBG.hasClass("inview")){
+			$seventhBG.css({'backgroundPosition': newPos(50, windowHeight, pos, 5700, 1.2)});
+		}									
+		//if the eighth section is in view...
+		if($eighthBG.hasClass("inview")){
+			$eighthBG.css({'backgroundPosition': newPos(50, windowHeight, pos, 6200, 0.2)});
+		}		
+		//if the ninth section is in view...
+		if($ninthBG.hasClass("inview")){
+			$ninthBG.css({'backgroundPosition': newPos(50, windowHeight, pos, 7250, 0.8)});
+		}				
+		//if the tenth section is in view...
+		if($tenthBG.hasClass("inview")){
+			$tenthBG.css({'backgroundPosition': newPos(50, windowHeight, pos, 7250, 0.2)});
 		}				
 		
+			
 		$('#pixels').html(pos); //display the number of pixels scrolled at the bottom of the page
 	}
 		
