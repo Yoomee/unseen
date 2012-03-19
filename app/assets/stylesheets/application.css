@@ -237,7 +237,13 @@ a.header_link {
   z-index: 1;
   position: relative;
 }
-
+h1 {
+  margin: 70px 0;
+}
+#page_title {
+  font-size: 70px;
+  text-transform: uppercase;
+}
 
 #intro_box {
   margin-top: 0px;
@@ -330,10 +336,21 @@ a.header_link {
   font-size: 16px;
   line-height: 20px;
 }
-
-.news_image {
+.list_box {
+  margin-bottom:42px;
+}
+.list_image {
   clear: both;
   margin-bottom: 20px;
+}
+.list_title {
+  font-size:40px;
+  line-height:40px;
+  margin-bottom:5px;
+}
+.list_read_more {
+  font-size:18px;
+  text-decoration:none;
 }
 div.slideshow {
   height:800px;
