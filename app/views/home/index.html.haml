@@ -1,26 +1,34 @@
 #unseen_big_logo
 #intro.home_box{:class => next_home_background_class}
   =render("layouts/header")
+  .container
+    .row
+      .artist_name
 #second.home_box
   .container
     .row
-      .span6#latest_news
-        %h2 Latest news
+      .span8#latest_news
+        %h2 What's on?
         -[news_pages.shift(2), news_pages.shift(2)].each do |pages|
           .row
             -pages.each do |page|
-              .span3
-                =link_to(image_for(page, "220x160"), page)
-                =link_to_self(page)
+              .list_image.span2.fade_in
+                =link_to(image_for(page, "140x100#"), page)
+              .list_box.span6
+                %h3.list_title=link_to_self(page)
+                =link_to raw('&rarr; Read more'), page, :class => 'list_read_more'
         -if news_page.present?
           .row
             .span2
               =link_to("More news", news_page)
-      .span6
-        .span4.offset2
-          %h4 Follow us
-          .fb-like-box{:"data-href" => "http://www.facebook.com/UnseenPhotoFairAmsterdam", :"data-width" => "300", :"data-height" => "300", :"data-colorscheme" => "dark", :"data-show-faces" => "true", :"data-border-color" => "#000", :"data-stream" => "false", :"data-header" => "false"}
-        .span4.offset2
+      .span4
+        .span4
+          %h2 Share us
+        .span4.fb_like_links
+          %h4 Facebook
+          .fb-like{:"data-href" => "http://www.facebook.com/UnseenPhotoFairAmsterdam", :"data-send" => "false", :"data-width" => "300", :"data-show-faces" => "false"}
+          .fb-like-box{:"data-href" => "http://www.facebook.com/UnseenPhotoFairAmsterdam", :"data-width" => "300", :"data-height" => "300", :"data-colorscheme" => "light", :"data-show-faces" => "true", :"data-border-color" => "#fff", :"data-stream" => "false", :"data-header" => "false"}
+        .span4
           %h4 Twitter
           .tweet_box
             Check out our new website http://bt.co/KJklj
@@ -28,7 +36,7 @@
             @UnseenPhotoFair
             %br
             about 2 hours ago
-        .span4.offset2#newsletter_signup
+        .span4#newsletter_signup
           %h4 Sign up for newsletter
           =text_field_tag "email", "", :class => "span4"
           =link_to "#" do
@@ -36,9 +44,24 @@
             submit
 #third.home_box
 #fourth.home_box{:class => next_home_background_class}
+  .container
+    .row
+      .artist_name
 #fifth.home_box
 #sixth.home_box{:class => next_home_background_class}
+  .container
+    .row
+      .artist_name
 #seventh.home_box
 #eighth.home_box{:class => next_home_background_class}
+  .container
+    .row
+      .artist_name
 #ninth.home_box
+  .container
+    .row
+      .artist_name
 #tenth.home_box{:class => next_home_background_class}
+  .container
+    .row
+      .artist_name

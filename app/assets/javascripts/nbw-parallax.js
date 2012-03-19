@@ -28,10 +28,9 @@ $(document).ready(function() { //when the document is ready...
 	var $eighthBG = $('#eighth');
 	var $ninthBG = $('#ninth');
 	var $tenthBG = $('#tenth');			
-	var inner_image = $(".scroll_box .bg");
-	var inner_image2 = $(".scroll_box .bg2");
-	var inner_image3 = $(".scroll_box .bg3");	
-	var inner_image4 = $("#stars2");	
+	var inner_image = $(".home_box .artist_name");
+	var inner_image2 = $(".home_box .bg2");
+	var inner_image3 = $(".home_box .bg3");	
 	
 	var windowHeight = $window.height(); //get the height of the window
 	
@@ -75,7 +74,7 @@ $(document).ready(function() { //when the document is ready...
 		if($firstBG.hasClass("inview")){
 			//call the newPos function and change the background position
 			$firstBG.css({'backgroundPosition': newPos(50, windowHeight, pos, 600, 0.5)}); 
-			inner_image.css({'backgroundPosition': newPos(50, windowHeight, pos, 900, 0.2)});
+			inner_image.css({'backgroundPosition': newPos(50, windowHeight, pos, 250, 0.1)});
 			
 		}
 		
@@ -98,7 +97,7 @@ $(document).ready(function() { //when the document is ready...
 		//if the fourth section is in view...
 		if($fourthBG.hasClass("inview")){
 			$fourthBG.css({'backgroundPosition': newPos(50, windowHeight, pos, 2200, 0.2)});
-			inner_image.css({'backgroundPosition': newPos(50, windowHeight, pos, 900, 0.2)});
+			inner_image.css({'backgroundPosition': newPos(50, windowHeight, pos, 4400, 0.1)});
 		}
 		//if the fifth section is in view...
 		if($fifthBG.hasClass("inview")){
@@ -110,7 +109,7 @@ $(document).ready(function() { //when the document is ready...
 		}	
 		//if the seventh section is in view...
 		if($seventhBG.hasClass("inview")){
-			$seventhBG.css({'backgroundPosition': newPos(50, windowHeight, pos, 5700, 1.2)});
+			$seventhBG.css({'backgroundPosition': newPos(50, windowHeight, pos, 5650, 1.2)});
 		}									
 		//if the eighth section is in view...
 		if($eighthBG.hasClass("inview")){
@@ -118,7 +117,7 @@ $(document).ready(function() { //when the document is ready...
 		}		
 		//if the ninth section is in view...
 		if($ninthBG.hasClass("inview")){
-			$ninthBG.css({'backgroundPosition': newPos(50, windowHeight, pos, 7250, 0.8)});
+			$ninthBG.css({'backgroundPosition': newPos(50, windowHeight, pos, 7250, 1.2)});
 		}				
 		//if the tenth section is in view...
 		if($tenthBG.hasClass("inview")){
