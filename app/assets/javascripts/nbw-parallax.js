@@ -28,12 +28,11 @@ $(document).ready(function() { //when the document is ready...
 	var $eighthBG = $('#eighth');
 	var $ninthBG = $('#ninth');
 	var $tenthBG = $('#tenth');			
-	var inner_image = $(".home_box .artist_name");
+	var inner_image = $(".home_box .bg1");
 	var inner_image2 = $(".home_box .bg2");
 	var inner_image3 = $(".home_box .bg3");	
 	
 	var windowHeight = $window.height(); //get the height of the window
-	
 	
 	//apply the class "inview" to a section that is in the viewport
 	$('#intro, #second, #third, #fourth, #fifth, #sixth, #seventh, #eighth, #ninth, #tenth').bind('inview', function (event, visible) {
@@ -128,6 +127,7 @@ $(document).ready(function() { //when the document is ready...
 		$('#pixels').html(pos); //display the number of pixels scrolled at the bottom of the page
 	}
 		
+	Move();
 	RepositionNav(); //Reposition the Navigation to center it in the window when the script loads
 	
 	$window.resize(function(){ //if the user resizes the window...
