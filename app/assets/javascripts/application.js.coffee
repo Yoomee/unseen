@@ -17,7 +17,15 @@ window.YmCms.Page.Form.showSlideshowTab = () ->
   else
     $('.tabbable .nav li').has("a[href='#slideshow']").hide()
 
+FairPage =
+  init: () ->
+    $('.scroll_to_fair_box').click (event) ->
+      event.preventDefault()
+      fairBoxId = `$(this).data('fair-box-id')`
+      $.scrollTo($("#fair_box_#{fairBoxId}"), 500)
+
 $(document).ready ->
   YmCms.Page.Form.showSlideshowTab()
+  FairPage.init()
   $('#page_view_name').change =>
     YmCms.Page.Form.showSlideshowTab()

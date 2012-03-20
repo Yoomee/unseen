@@ -644,7 +644,15 @@ a.home_small_title, a.home_small_title:hover {
 .fair_bg_5 {
   background: #211d1d url(/assets/home_bg_10.jpg) 50% 0 no-repeat fixed;
 }
-
+.scroll_to_fair_box {
+  font-size: 25px;
+  text-decoration: none;
+  margin: 10px 5px 0 0;
+  display: inline-block;  
+}
+.scroll_to_fair_box:hover {
+  text-decoration: none;
+}
 
 /*
 #fair.container .row {
