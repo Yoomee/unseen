@@ -81,10 +81,15 @@ div {
 
 /*========== Structure ==========*/
 
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
 body {
   background: #fff;
   color: #000;
-  padding-bottom: 100px;
 }
 a {
   color: #000;
@@ -148,6 +153,9 @@ br.clear {
  padding: 5px 8px;
  text-decoration: none;
 }
+
+/*========== Header ==========*/
+
 #header {
   height: 100px;
 }
@@ -164,18 +172,14 @@ br.clear {
 	background: url(/assets/header_icons.png) 0 -20px;
 	width: 20px;
 	height: 20px;
-	text-indent: -9000em;
-  
+	text-indent: -9000em;  
 }
-
 #facebook_icon {
 	background-position: -20px 0px;
 }
 #twitter_icon {
 	background-position: -40px 0px;
 }
-
-
 #site_logo {
 	float: left;
 	font-weight:normal;
@@ -199,23 +203,6 @@ br.clear {
 	float: right;
 	clear: right;
 }
-#footer_site_logo {
-  font-size:24px;
-}
-#footer.container {
-  padding-top: 40px;
-  z-index: 3;
-  background: white;
-}
-#footer h2 {
-  line-height:26px;
-}
-#footer h2 span {
-  display:block;
-}
-#footer .nav {
-  margin-top:0;
-}
 .nav {
   min-height: 0px;
   margin: 14px 0 0;
@@ -226,7 +213,6 @@ br.clear {
 }
 .nav a {
   text-decoration: none;
-  
 }
 /*.nav .active a {
   background: url(/assets/nav_active.png) no-repeat bottom left;
@@ -362,6 +348,39 @@ span#page_title {
   text-decoration:none;
 }
 
+/*========== Footer ==========*/
+
+#footer_site_logo {
+  font-size:24px;
+}
+#footer.container {
+  z-index: 3;
+  background: white;
+}
+#footer h2 {
+  line-height:26px;
+}
+#footer h2 span {
+  display:block;
+}
+#footer .nav {
+  margin-top:0;
+}
+.main_wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -95px; /* the bottom margin is the negative value of the footer's height */
+}
+.push, .footer_wrapper {
+  clear: both;  
+  height: 95px; /* .push must be the same height as .footer */
+}
+/*
+Sticky Footer by Ryan Fait
+http://ryanfait.com/
+*/
+
 /*========== Formtastic ==========*/
 
 form.formtastic {
@@ -380,8 +399,10 @@ form.formtastic .form-actions a.btn {
 /*========== Homepage ==========*/
 
 body.controller_home {
-  padding-bottom: 0;
   background: black;
+}
+body.controller_home #footer.container, body.controller_fair #footer.container {
+  padding: 40px 0;
 }
 body.controller_home #header a, body.controller_home h1#site_logo {
   color: white;
