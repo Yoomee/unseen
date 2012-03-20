@@ -1,3 +1,9 @@
 #second .facebook .fb-like-box iframe {
   margin-top: -122px;
 }
+span#page_title {
+  line-height: 56px;
+}
+.scroll_to_fair_box {
+  padding-bottom: 5px;
+}
