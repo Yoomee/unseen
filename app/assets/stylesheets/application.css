@@ -716,11 +716,11 @@ a.home_small_title, a.home_small_title:hover {
   text-decoration: none;
 }
 .scroll_to_arrows {
-  position: absolute;
-  bottom: -90px;
-  left: 455px;
-  width: 40px;
-  height: 40px;
+position: absolute;
+bottom: -90px;
+left: 450px;
+width: 50px;
+height: 40px;
 }
 #fair_box_2, #fair_box_3 {
   min-height: 700px;
