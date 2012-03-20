@@ -19,7 +19,11 @@
           #page_text.mercury-region{:"data-type" => "editable"}
             =raw(page.text)
     .span4
-      =image_for(page, "250x")
+      -if page.has_image?
+        =image_for(page, "250x")
+      -else
+        .placeholder250x
+          &nbsp;
     .span4
       -if page.has_gallery_contact_details?
         %h2.contact_title Contact

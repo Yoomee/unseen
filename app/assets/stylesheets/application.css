@@ -293,7 +293,7 @@ span#page_title {
 	position: relative;
   
 }
-.gallery_image {
+.gallery_box {
   position: absolute;
   z-index: 3;
   top: 0;
@@ -661,3 +661,12 @@ a.home_small_title, a.home_small_title:hover {
   line-height: 25px;
 }
 */
+
+/*========== Image placeholders ==========*/
+.placeholder770x446 {
+  height:446px;
+  width:770px;
+}
+.placeholder250x {
+  width:250px;
+}
