@@ -580,9 +580,9 @@ a.home_small_title, a.home_small_title:hover {
   text-align: center;
   float: none;
   display: block;
-  font-size: 22px;
-  padding: 70px 0;
-  border: 2px dashed white;
+  font-size: 19px;
+  padding: 32px 0;
+  border: 2px dashed black;
   text-decoration: none;
 }
 #new_page_box.span4 a {

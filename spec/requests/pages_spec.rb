@@ -17,19 +17,43 @@ describe "Pages" do
       visit page_path(cms_page)
       page.should have_content(cms_page.title)
     end
-    it "should render views/basic if view_name is basic" do
-      get page_path(cms_page)
-      response.should render_template("views/basic")
+    describe "basic view" do
+      it "should render views/basic" do
+        get page_path(cms_page)        
+        response.should render_template("views/basic")
+      end
     end
-    it "should render views/tiled if view_name is tiled" do
-      cms_page.update_attribute(:view_name, "tiled")
-      get page_path(cms_page)
-      response.should render_template("views/tiled")
+    describe "tiled view" do
+      before do
+        cms_page.update_attribute(:view_name, "tiled")
+      end
+      it "should render views/tiled" do
+        get page_path(cms_page)        
+        response.should render_template("views/tiled")
+      end
+      it "should only display published children" do        
+        Factory.create(:page, :title => "An unpublished page", :published => false, :parent => cms_page)
+        Factory.create(:page, :title => "A published page", :published => true, :parent => cms_page)
+        visit page_path(cms_page)        
+        page.should_not have_content("An unpublished page")
+        page.should have_content("A published page")        
+      end
     end
-    it "should render views/basic if view_name is list" do
-      cms_page.update_attribute(:view_name, "list")
-      get page_path(cms_page)
-      response.should render_template("views/list")
+    describe "list view" do
+      before do
+        cms_page.update_attribute(:view_name, "list")
+      end
+      it "should render views/basic" do
+        get page_path(cms_page)        
+        response.should render_template("views/list")
+      end
+      it "should only display published children" do        
+        Factory.create(:page, :title => "An unpublished page", :published => false, :parent => cms_page)
+        Factory.create(:page, :title => "A published page", :published => true, :parent => cms_page)
+        visit page_path(cms_page)        
+        page.should_not have_content("An unpublished page")
+        page.should have_content("A published page") 
+      end
     end
   end
   
