@@ -29,15 +29,9 @@
           .fb-like{:"data-href" => "http://www.facebook.com/UnseenPhotoFairAmsterdam", :"data-send" => "false", :"data-width" => "220", :"data-show-faces" => "false"}
           .fb-like-box{:"data-href" => "http://www.facebook.com/UnseenPhotoFairAmsterdam", :"data-width" => "300", :"data-height" => "300", :"data-colorscheme" => "light", :"data-show-faces" => "true", :"data-border-color" => "#fff", :"data-stream" => "false", :"data-header" => "false"}
         .span3.twitter
-          =link_to("http://twitter.com/UnseenPhotoFair", :class => "home_small_title") do
+          =link_to("http://twitter.com/UnseenPhotoFair", :target => "_blank", :class => "home_small_title") do
             Twitter
             %i.twitter_bird
-          .tweet_box
-            Check out our new website http://bt.co/KJklj
-          .twitter_handle
-            @UnseenPhotoFair
-            %br
-            about 2 hours ago
         .span3#newsletter_signup
           %h2.home_title.upcase Sign up for our newsletter
           =text_field_tag "email", "", :class => "span3"
