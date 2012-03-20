@@ -521,7 +521,6 @@ a.home_small_title, a.home_small_title:hover {
 }
 #intro {
   height: 730px;
-  background: url(/assets/home_bg_1.jpg) 50% 0 no-repeat fixed;
 }
 .artist_name {
   display: block;
@@ -529,11 +528,38 @@ a.home_small_title, a.home_small_title:hover {
   position: absolute;
   top: 70px;
   right: 0px;
-  background: url(/assets/artist_name_1.png) no-repeat 50%;
   width: 170px;
   height: 500px;
-  
+  background: url(/assets/artist_name_1.png) no-repeat 50%;
 }
+.home_bg_1 {
+  background: url(/assets/home_bg_1.jpg) 50% 0 no-repeat fixed;
+}
+.home_bg_2 {
+  background: #7c786f url(/assets/home_bg_4.jpg) 50% 0 no-repeat fixed;
+}
+.home_bg_2 .artist_name {
+  background-image: url(/assets/artist_name_4.png);
+}
+.home_bg_3 {
+  background:#000225 url(/assets/home_bg_6.jpg) 50% 0 no-repeat fixed;
+}
+.home_bg_3 .artist_name {
+  background-image: url(/assets/artist_name_6.png);
+}
+.home_bg_4 {
+  background:#000 url(/assets/home_bg_8.jpg) 50% 0 no-repeat fixed;
+}
+.home_bg_4 .artist_name {
+  background-image: url(/assets/artist_name_8.png);
+}
+.home_bg_5 {
+  background:#000 url(/assets/home_bg_10.jpg) 50% 0 no-repeat fixed;
+}
+.home_bg_5 .artist_name {
+  background-image: url(/assets/artist_name_10.png);
+}
+
 #second {
   margin-top: 0px;
   padding-top: 30px;
@@ -574,44 +600,23 @@ a.home_small_title, a.home_small_title:hover {
   background: #211d1d url(/assets/home_bg_3.png) 50% 0 no-repeat scroll;
   z-index: 3;  
 }
-#fourth {
-  background: #7c786f url(/assets/home_bg_4.jpg) 50% 0 no-repeat fixed;
-}
-#fourth .artist_name {
-  background-image: url(/assets/artist_name_4.png);
-}
 #fifth {
   background: white url(/assets/home_bg_5.png) 50% 0 no-repeat scroll;
   z-index: 3;  
 }
-#sixth {
-  background:#000225 url(/assets/home_bg_6.jpg) 50% 0 no-repeat fixed;
-}
 #sixth .artist_name {
-  background-image: url(/assets/artist_name_6.png);
   right: auto;
-  left: 0;
+  left: 0;  
 }
 #seventh {
   background: white url(/assets/home_bg_7.png) 50% 0 no-repeat scroll;	
   z-index: 3;
 }
-#eighth {
-  background:#000 url(/assets/home_bg_8.jpg) 50% 0 no-repeat fixed;
-}
-#eighth .artist_name {
-  background-image: url(/assets/artist_name_8.png);
-}
 #ninth {
   background: white url(/assets/home_bg_9.png) 50% 0 no-repeat scroll;	
   z-index: 3;
 }
-#tenth {
-  background:#000 url(/assets/home_bg_10.jpg) 50% 0 no-repeat fixed;
-}
-#tenth .artist_name {
-  background-image: url(/assets/artist_name_10.png);
-}
+
 #eleventh {
   background: white;
   height: 213px;
