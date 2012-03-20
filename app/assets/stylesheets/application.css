@@ -180,10 +180,12 @@ br.clear {
 	float: left;
 	font-weight:normal;
 	margin: 14px 0 0;
+	width: 100%;
 }
 #site_logo span {
   float: left;
   clear: left;
+  width: 100%;
 }
 #header_right {
   float: right;
