@@ -22,34 +22,34 @@
       =image_for(page, "250x")
     .span4
       -if page.has_gallery_contact_details?
-        %h2 Contact
-        %ul.unstyled
+        %h2.contact_title Contact
+        %ul.unstyled.gallery_contact_details
           -if page.gallery_address.present?
-            %li
+            %li.gallery_address
               =simple_format(page.gallery_address)
           -if page.gallery_phone.present?
-            %li
+            %li.gallery_phone
               t:
               =page.gallery_phone
           -if page.gallery_fax.present?
-            %li
+            %li.gallery_fax
               f:
               =page.gallery_fax
           -if page.gallery_email.present?
-            %li
+            %li.gallery_email
               e:
               =auto_link(page.gallery_email)
           -if page.gallery_website.present?
-            %li
+            %li.gallery_website
               w:
               =link_to_url(page.gallery_website)
           -if page.gallery_facebook.present?
-            %li
+            %li.gallery_facebook
               fb:
               =link_to_url(page.gallery_facebook.gsub(/(http:\/\/)?(www\.)?/, ""))
       -if page.gallery_hours.present?
-        %h2 Gallery hours
-        =simple_format(page.gallery_hours)
+        %h2.gallery_hours_title Gallery hours
+        %span.gallery_hours=simple_format(page.gallery_hours)
   
   .row
     .span12
