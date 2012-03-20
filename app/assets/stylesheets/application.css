@@ -644,13 +644,30 @@ a.home_small_title, a.home_small_title:hover {
 .scroll_to_fair_box {
   font-size: 25px;
   text-decoration: none;
-  margin: 10px 5px 0 0;
+  margin: 0px 0px 0 0;
+  position: absolute;
   display: inline-block;  
+  top: 0;
+}
+.scroll_down {
+	left: 0;
+}
+.scroll_up {
+  right: 0;
 }
 .scroll_to_fair_box:hover {
   text-decoration: none;
 }
-
+.scroll_to_arrows {
+  position: absolute;
+  bottom: -90px;
+  left: 455px;
+  width: 40px;
+  height: 40px;
+}
+#fair_box_2, #fair_box_3 {
+  min-height: 700px;
+}
 /*
 #fair.container .row {
   margin-bottom: 150px;

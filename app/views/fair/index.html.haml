@@ -8,15 +8,15 @@
     .row
       .span6
         %p 
-          Unseen is an international photography fair giving new photography the platform it deserves. Unseen is a meeting place for young photographic talent and known photographers exhibiting new work, for galleries that focus on new developments and a global audience interested in the contemporary world of photography. With a focus on all that is ‘emerging’ in the world of photography, Unseen juxtaposes new work of established photographers and work of a new generation of young photographers. More than 50 contemporary art and photography galleries from around the world will participate in this first edition of Unseen.
+          Unseen is an international photography fair that provides new photography the platform it deserves. It is a meeting place for young photographic talent and known photographers exhibiting new work, for galleries that focus on new developments and a global audience interested in the contemporary world of photography. We focus on the exciting and ‘emerging’ developments in the world of photography. More than 50 contemporary art and photography galleries from around the world will participate in this first edition of Unseen.        
           %span.italic
             See 
             =link_to("Galleries", Page.find_by_slug("galleries") || "#")
             page for a list of participating galleries.
       .span6
-        %p Unseen will take place from September 19 to 23 in Amsterdam’s Westergasfabriek cultural park, a former gasworks site dating back to 1885. Surrounded by an expansive park, the 19th-century buildings house numerous creative spaces, restaurants, bars and a cinema.
-        %p Unseen challenges the conventional photography fair. The look and layout of Unseen will bring out the best of contemporary photography. The industrial and interior design agency, Müller van Tol, has created a carrousel-like floor plan for the circular hall of the Gashouder. The Gashouder is a 60 meter diameter hall with 14 meter high ceilings, and will host around 50 gallery stands, a restaurant and bar, and a central pavilion that offers visitors a panoramic view of the fair.
-        =link_to(raw("&darr;"), "#", :class => "scroll_to_fair_box", :data => {:"fair-box-id" => 2})
+        %p Unseen will take place from September 19 to 23 in Amsterdam’s Westergasfabriek, a former gasworks site dating back to 1885. Surrounded by a spacious park, the 19th-century buildings house numerous creative spaces, restaurants, bars and a cinema.
+        .scroll_to_arrows
+          =link_to(raw("&darr;"), "#", :class => "scroll_to_fair_box scroll_down", :data => {:"fair-box-id" => 2})
 .fair_window{:class => next_fair_background_class}
 .fair_box#fair_box_2
   .container
@@ -25,11 +25,12 @@
         %h2 An Emphasis On Collecting
     .row
       .span6
-        %p Unseen not only inspires the seasoned collector but also nurtures the passion of an entirely new audience. Unseen encourages potential collectors to take their first step in the collection of contemporary photography. 
+        %p Unseen not only inspires the seasoned collector but also nurtures the passion of an entirely new audience. We encourage potential collectors to take their first steps in the collection of contemporary photography. Online courses and a new television series, co-produced with the Dutch broadcasting company AVRO, are part of this special programme to assist ‘first-time buyers.’
       .span6
-        %p Online courses and a new television series, co-produced by the Dutch broadcasting company AVRO, are part of this special programme to assist ‘first-time buyers.’ Especially for these new collectors, the Unseen Collection was founded, a selection of around 50 photographs for prices under €1,000.
-        =link_to(raw("&uarr;"), "#", :class => "scroll_to_fair_box", :data => {:"fair-box-id" => 1})
-        =link_to(raw("&darr;"), "#", :class => "scroll_to_fair_box", :data => {:"fair-box-id" => 3})
+        %p Especially for these new collectors, we have developed the Unseen Collection, a selection of photographs for prices under €1,000. 
+        .scroll_to_arrows
+          =link_to(raw("&uarr;"), "#", :class => "scroll_to_fair_box scroll_up", :data => {:"fair-box-id" => 1})
+          =link_to(raw("&darr;"), "#", :class => "scroll_to_fair_box scroll_down", :data => {:"fair-box-id" => 3})
 .fair_window{:class => next_fair_background_class}
 .fair_box#fair_box_3
   .container
@@ -39,12 +40,13 @@
     .row
       .span6
         %p
-          Unseen is a fair with a festival flair. In addition to the fair, the wide range of activities will create a festival-like atmosphere. Highlights of the accompanying programme of events, tours, film screenings and exhibitions include the Offprint Amsterdam Book Fair, showcasing the best of contemporary photography publications, and the launch of Foam Magazine’s yearly Talent issue, to be exhibited in the surrounding Westerpark. The cinema Het Ketelhuis will show a special Unseen programme and Dutch Doc will add a documentary component, hosting three international documentary experts. All this will be topped with lively evening events and parties. 
+          Unseen is a fair with a festival flair. In addition to the fair, the wide range of activities will create a festival-like atmosphere. Highlights of the accompanying programme of events, tours, film screenings and exhibitions include Offprint, a fair for independent photography book publishers, and the launch of Foam Magazine’s yearly Talent issue, to be exhibited in the surrounding Westerpark. The cinema Het Ketelhuis will show a special Unseen programme and Dutch Doc will add a documentary component with three international documentary experts. All this will be topped with lively evening events and parties.
           %span.italic Additional events and activities will be announced in May 2012.
-        =link_to(raw("&uarr;"), "#", :class => "scroll_to_fair_box", :data => {:"fair-box-id" => 2})
-        =link_to(raw("&darr;"), "#", :class => "scroll_to_fair_box", :data => {:"fair-box-id" => 4})
       .span5.offset1
         =image_tag('fair_2.jpg')
+        .scroll_to_arrows
+          =link_to(raw("&uarr;"), "#", :class => "scroll_to_fair_box scroll_up", :data => {:"fair-box-id" => 2})
+          =link_to(raw("&darr;"), "#", :class => "scroll_to_fair_box scroll_down", :data => {:"fair-box-id" => 4})
 .fair_window{:class => next_fair_background_class}
 .fair_box#fair_box_4
   .container
@@ -58,9 +60,12 @@
       .span6
         =image_tag('fair_3.jpg')
       .span6
-        %p Amsterdam is the home base of Unseen. With its progressive galleries and renowned art academies, the city offers a fruitful foundation for the arts. Amsterdam and Unseen share an international orientation, with a mentality that blends creativity, innovation and a mercantile spirit. The city stimulates an experimental atmosphere, and is the perfect place for the development of international creative talent.
-        %p September is the start of the cultural season in the Netherlands, and the city of Amsterdam will host a range of art- and photography-related events. Highlights include the contemporary art fair Art Amsterdam 2012, that will be held in the north of Amsterdam (20-23 September), the much-anticipated opening of the Stedelijk Museum, and an Unseen-related exhibition at the photography museum Foam.
+        %p With its progressive galleries and renowned art academies, the city of Amsterdam lays a fruitful foundation for the arts. Amsterdam and Unseen share an international orientation, with a mentality that blends creativity, innovation and a mercantile spirit. The city stimulates an experimental atmosphere, and is the perfect place for the development of international creative talent. 
+        
+        %p September is the start of the cultural season in the Netherlands, and during this month, the city of Amsterdam will host a range of art- and photography-related events. Highlights include the contemporary art fair Art Amsterdam 2012, that will be held in the north of Amsterdam (20-23 September), the much-anticipated opening of the Stedelijk Museum, and an Unseen-related exhibition at the photography museum Foam.
+        
         %p In partnership with the city, we will organize Unseen Amsterdam, a programme of special events taking place at various cultural institutions, restaurants, bars and nightspots. An online Unseen Amsterdam city guide will provide tips on making the most out of your stay from 19 to 23 September.
-        =link_to(raw("&uarr;"), "#", :class => "scroll_to_fair_box", :data => {:"fair-box-id" => 3})
+        .scroll_to_arrows 
+          =link_to(raw("&uarr;"), "#", :class => "scroll_to_fair_box scroll_up", :data => {:"fair-box-id" => 3})
 .fair_window{:class => next_fair_background_class}
 =render('layouts/footer')
