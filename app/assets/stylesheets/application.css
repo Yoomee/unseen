@@ -405,15 +405,9 @@ body.controller_home #search_icon {
 #second .facebook {
   position: relative;
   height: 230px;
-  overflow: hidden;
+  margin-bottom: 10px;
 }
 #second .facebook .home_small_title {
-  margin: 0;
-  padding-top: 5px;
-  height: 26px;
-  z-index: 5;
-  background: white;
-  position: absolute;
   width: 100%;
 }
 #second .facebook .fb-like {
@@ -424,11 +418,16 @@ body.controller_home #search_icon {
   padding: 5px 0;
 }
 #second .facebook .fb-like-box {
-  position: absolute;  
-  top: -47px;
+  position: absolute;
+  top: 70px;
   left: -10px;
   overflow: hidden;
-  height: 267px;
+  height: 150px;
+  width: 100%;
+}
+#second .facebook .fb-like-box iframe {
+  float: left;
+  margin-top: -112px;
 }
 #second .twitter h4 {
   margin-bottom: 10px;
