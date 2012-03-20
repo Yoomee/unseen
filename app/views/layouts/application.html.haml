@@ -7,6 +7,8 @@
     -else
       =stylesheet_link_tag("application", "http://f.fontdeck.com/s/css/SHL1Q62RRv8EROgGSyefc+MAifY/unseen.yoomee.com/16878.css")
     =javascript_include_tag("application")
+    /[if IE 7]
+      =stylesheet_link_tag('ie7')
     =csrf_meta_tags
     =yield :head
   -body_tag do
