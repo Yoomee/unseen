@@ -93,7 +93,7 @@ body {
 }
 a {
   color: #000;
-  text-decoration: underline;
+  text-decoration: none;
 }
 form a {
   color: #08C;
@@ -222,6 +222,8 @@ br.clear {
 }
 #footer h2 span {
   display:block;
+  float: left;
+  clear: both;
 }
 #footer .nav {
   margin-top:0;
@@ -395,9 +397,6 @@ p, li {
   z-index: 3;
   background: white;
 }
-#footer h2 {
-  line-height:26px;
-}
 #footer h2 span {
   display:block;
 }
@@ -408,15 +407,15 @@ p, li {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin: 0 auto -140px; /* the bottom margin is the negative value of the footer's height */
+  margin: 0 auto -160px; /* the bottom margin is the negative value of the footer's height */
 }
 .push {
   clear: both;
-   height: 140px;  
+   height: 160px;  
 }
 .footer_wrapper {
 	clear: both;
-	height: 140px;
+	height: 160px;
   
 }
 
@@ -610,7 +609,7 @@ a.home_small_title, a.home_small_title:hover {
 input#email {
   font-size: 18px;
   line-height: 18px;
-  padding: 10px 7px 5px;
+  padding: 7px;
   color: #ccc;
 }
 #third {
