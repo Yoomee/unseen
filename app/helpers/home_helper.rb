@@ -6,7 +6,10 @@ module HomeHelper
   
   private
   def home_background_numbers
-    @home_background_numbers ||= (1..5).to_a.shuffle
+    return @home_background_numbers if @home_background_numbers
+    @home_background_numbers = (1..5).to_a.shuffle
+    @home_background_numbers.pop if @home_background_numbers.last == 5
+    @home_background_numbers
   end
   
 end
