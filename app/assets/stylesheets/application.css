@@ -276,6 +276,17 @@ span#page_title {
   line-height: 60px;
   text-transform: uppercase;
 }
+.about_page_view #page_title {
+  text-align: center;
+  width: 100%;
+  float: left;
+  margin-bottom: 40px;
+}
+.about_page_view  #page_text_second a {
+	text-decoration: none;
+  
+}
+
 
 #intro_box {
   margin-top: 0px;
@@ -548,7 +559,7 @@ a.home_small_title, a.home_small_title:hover {
   background-image: url(/assets/artist_name_6.png);
 }
 .home_bg_4 {
-  background:#000 url(/assets/home_bg_8.jpg) 50% 0 no-repeat fixed;
+  background:#b7cad9 url(/assets/home_bg_8.jpg) 50% 0 no-repeat fixed;
 }
 .home_bg_4 .artist_name {
   background-image: url(/assets/artist_name_8.png);
