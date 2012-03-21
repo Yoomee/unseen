@@ -63,7 +63,7 @@ h3,
 h4,
 h5,
 h6,
-div { 
+div, input { 
   font-family:"Apercu Medium", Calibri, sans-serif; 
   font-size-adjust: 0.508;
   font-weight: 600;
@@ -606,6 +606,12 @@ a.home_small_title, a.home_small_title:hover {
 }
 #second #newsletter_signup h2 {
   margin-bottom: 10px;
+}
+input#email {
+  font-size: 18px;
+  line-height: 18px;
+  padding: 10px 7px 5px;
+  color: #ccc;
 }
 #third {
   background: #211d1d url(/assets/home_bg_3.png) 50% 0 no-repeat scroll;
