@@ -367,7 +367,7 @@ span#page_title {
 #about_intro {
   background: url(/assets/about_page.png) no-repeat 90px 20px;
 }
-p, li {
+.page_text, p, li {
   font-size: 18px;
   line-height: 22px;
 }
@@ -383,8 +383,16 @@ p, li {
   line-height:40px;
   margin-bottom:5px;
 }
-.list_read_more {
+
+.list_date_and_tag {
+	margin: 0;
+}
+
+.list_read_more, .list_date {
   font-size:18px;
+  line-height: 22px;
+  float: left;
+  clear: left;
   text-decoration:none;
 }
 
@@ -665,6 +673,34 @@ input#email {
 }
 #new_page_box.span4 a {
   font-size: 30px;
+}
+/*========== Press page view ==========*/
+
+#press_visuals {
+	margin-top: 60px;
+  
+}
+
+p.press_visual_txt {
+	font-size: 14px;
+	line-height: 16px;
+}
+/*========== News page view ==========*/
+
+.news_page #page_title {
+  text-transform: none;
+}
+.news_page h1 {
+  margin-bottom: 0;
+}
+.news_page .list_date_and_tag {
+	margin: 15px 0 40px;
+	float: left;
+	clear: left;
+  
+}
+.news_page_image {
+  margin-bottom: 40px;
 }
 
 /*========== Slideshow ==========*/

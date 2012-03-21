@@ -16,6 +16,9 @@
                 =link_to(image_for(page, "140x100#"), page) if page.image
               .list_box.span6
                 %h3.list_title=link_to_self(page)
+                %p.list_date_and_tag
+                  =page.created_at.strftime("%e %B %Y")
+                  =" - #{page.news_category}" if page.news_category.present?
                 =link_to raw('&rarr; Read more'), page, :class => 'list_read_more'
         -if news_page.present?
           .row

@@ -1,13 +1,14 @@
-.span12.about_page_view
+.news_page.span8
   %h1
     %span#page_title.mercury-region{:"data-type" => "editable"}
       =raw(page.title)
+  %p.list_date_and_tag
+    =page.created_at.strftime("%e %B %Y")
+    =" - #{page.news_category}" if page.news_category.present?      
   -if page.image
     .row
-      .span8
-        .gallery_slideshow.fade_in
-          .gallery_slideshow.fade_in
-            =image_for(page, "770x446>")
+      .news_page_image.span8
+        =image_for(page, "5100x380>")
   .row
     .span6
       .page_text
@@ -17,14 +18,6 @@
         -else
           #page_text.mercury-region{:"data-type" => "editable"}
             =raw(page.text)
-    .span4.offset1
-      .page_text
-        -if page.text_second.blank? && !viewing_mercury_edit? && can?(:edit, page)
-          #page_text
-            =mercury_edit_link("Click here to add some page content", mercury_update_page_path(page))
-        -else
-          #page_text_second.mercury-region{:"data-type" => "editable"}
-            =raw(page.text_second)
     .span8
       =options_panel do
         -if can?(:edit, page)

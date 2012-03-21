@@ -1,0 +1,82 @@
+.span12.about_page_view
+  %h1
+    %span#page_title.mercury-region{:"data-type" => "editable"}
+      =raw(page.title)
+  -if page.image
+    .row
+      .span8
+        .gallery_slideshow.fade_in
+          .gallery_slideshow.fade_in
+            =image_for(page, "770x446>")
+  .row
+    .span6
+      .page_text
+        -if page.text.blank? && !viewing_mercury_edit? && can?(:edit, page)
+          #page_text
+            =mercury_edit_link("Click here to add some page content", mercury_update_page_path(page))
+        -else
+          #page_text.mercury-region{:"data-type" => "editable"}
+            =raw(page.text)
+    .span3.offset3
+      .page_text
+        -if page.text_second.blank? && !viewing_mercury_edit? && can?(:edit, page)
+          #page_text
+            =mercury_edit_link("Click here to add some page content", mercury_update_page_path(page))
+        -else
+          #page_text_second.mercury-region{:"data-type" => "editable"}
+            =raw(page.text_second)
+    #press_visuals.span10        
+      .press_visual.span2
+        =image_tag "press_visual_1.jpg", :class=>"press_visual_img"
+        %p.press_visual_txt
+          Kahmann Gallery
+          %br
+          Katrien Franken
+          %br
+          2000
+      .press_visual.span2
+        =image_tag "press_visual_2.jpg", :class=>"press_visual_img"
+        %p.press_visual_txt
+          Les Filles du Calvaire
+          %br
+          Laura Henno
+          %br
+          2007
+      .press_visual.span2
+        =image_tag "press_visual_3.jpg", :class=>"press_visual_img"
+        %p.press_visual_txt
+          m97
+          %br
+          Jiang Zhi
+          %br
+          2011
+      .press_visual.span2
+        =image_tag "press_visual_4.jpg", :class=>"press_visual_img"
+        %p.press_visual_txt
+          Martin Asbaeck
+          %br
+          Ebbe Stub Wittrup
+          %br
+          2011
+      .press_visual.span2
+        =image_tag "press_visual_5.jpg", :class=>"press_visual_img"
+        %p.press_visual_txt
+          Robert Morat
+          %br
+          Andrew Phelps
+          %br
+          2007
+      .press_visual.span2
+        =image_tag "press_visual_6.jpg", :class=>"press_visual_img"
+        %p.press_visual_txt
+          The Third Gallery Aya
+          %br
+          Hiromi Kakimoto
+                                      
+    .span8
+      =options_panel do
+        -if can?(:edit, page)
+          =mercury_edit_link("Edit page content", mercury_update_page_path(page), :id => "mercury_edit_link")
+        =link_if_allowed("Edit page details", [:edit, page])
+        =link_if_allowed("Delete page", [:destroy, page], :confirm => "Are you sure?") unless page.slug.present?
+        =link_if_allowed("New page", [:new, Page])

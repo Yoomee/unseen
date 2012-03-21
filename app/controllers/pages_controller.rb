@@ -5,7 +5,13 @@ class PagesController < ApplicationController
   
   expose(:page_children) do
     if page
-      page.slug=="news" ? page.children.order("created_at DESC") : page.children
+      if page.slug == "news"
+        page.children.order("created_at DESC")
+      elsif page.slug == "galleries"
+        page.children.order("title")
+      else
+        page.children
+      end
     else
       Page.scoped
     end
@@ -15,6 +21,8 @@ class PagesController < ApplicationController
     page.parent_id = params[:parent_id]
     if page.parent.try(:slug) == "galleries"
       page.view_name = "gallery"
+    elsif page.parent.try(:slug) == "news"
+      page.view_name = "news"
     end
   end
   

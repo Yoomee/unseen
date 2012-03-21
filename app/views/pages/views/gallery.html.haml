@@ -11,7 +11,7 @@
     .span4
       %h2
         =raw(page.title)
-      .gallery_description
+      .page_text
         -if page.text.blank? && !viewing_mercury_edit? && can?(:edit, page)
           #page_text
             =mercury_edit_link("Click here to add some page content", mercury_update_page_path(page))
