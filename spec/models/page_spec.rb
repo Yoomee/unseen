@@ -10,6 +10,7 @@ describe Page do
   
   it { should belong_to(:parent) }
   it { should have_many(:children) }
+  it { should have_many(:all_children) }
   it { should validate_presence_of(:title) }
 
   describe do  

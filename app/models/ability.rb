@@ -5,7 +5,7 @@ class Ability
     if user
       can :manage, :all
     else
-      can :read, Page
+      can :show, Page, :published => true
       cannot [:create, :update, :destroy], :all
       cannot [:mercury_update], Page
     end
