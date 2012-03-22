@@ -37,8 +37,10 @@
             %i.twitter_bird
         .span3#newsletter_signup
           %h2.home_title.upcase Sign up for our newsletter
-          =text_field_tag "email", "email", :class => "span3"
-          =link_to("Submit", "#", :class => "black_btn")
+          =form_tag("http://vandejong.us4.list-manage.com/subscribe/post?u=52fb8e1dfe01670076f8db384&id=7b61a45fa2") do
+            =text_field_tag "EMAIL", "email", :class => "span3", :id => 'email'
+            =submit_tag 'Submit', :class => 'black_btn'
+            =#link_to("Submit", "#", :class => "black_btn")
 #third.home_box
 #fourth.home_box{:class => next_home_background_class}
   .container
