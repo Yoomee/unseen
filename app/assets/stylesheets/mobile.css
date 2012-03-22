@@ -1,6 +1,18 @@
+
+@media only screen and (device-width: 768px) {
+  /* For general iPad layouts */
+  	body .home_box {
+	background-attachment: scroll;
+
+}
+  
+}
+
 // Landscape phones and down
   @media (max-width: 480px) {
 	#nav {
   		min-height: 0px;
 	}
+
+	
 }

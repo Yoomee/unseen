@@ -560,7 +560,7 @@ a.home_small_title, a.home_small_title:hover {
   background-image: url(/assets/artist_name_4.png);
 }
 .home_bg_3 {
-  background:#000225 url(/assets/home_bg_6.jpg) 50% 0 no-repeat fixed;
+  background:#000 url(/assets/home_bg_6.jpg) 50% 0 no-repeat fixed;
 }
 .home_bg_3 .artist_name {
   background-image: url(/assets/artist_name_6.png);
@@ -801,3 +801,5 @@ height: 40px;
 .placeholder250x {
   width:250px;
 }
+
+
