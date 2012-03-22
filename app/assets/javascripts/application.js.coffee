@@ -29,3 +29,6 @@ $(document).ready ->
   FairPage.init()
   $('#page_view_name').change =>
     YmCms.Page.Form.showSlideshowTab()
+  $('#email').focus =>
+    console.log $('#email').val() is 'email'
+    $('#email').val('') if $('#email').val() is 'email'
