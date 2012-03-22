@@ -161,6 +161,10 @@ br.clear {
  font-size: 18px;
  border: 2px solid #000;
 }
+input.black_btn {
+  font-weight:600;
+  height:30px;
+}
 .black_btn:hover {
   background: #fff;
   border-color: #000;

@@ -11,6 +11,7 @@
       =stylesheet_link_tag('ie7')
     =csrf_meta_tags
     =yield :head
+    =google_analytics_js
   -body_tag do
     -if current_page?(root_path)
       #fb-root

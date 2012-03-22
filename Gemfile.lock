@@ -252,6 +252,7 @@ DEPENDENCIES
   jquery-rails
   mysql2
   rails (= 3.1.0)
+  rails_config (~> 0.2.6)
   rake (= 0.8.7)
   rinku
   rspec-rails

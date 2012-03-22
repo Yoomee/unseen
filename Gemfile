@@ -15,6 +15,8 @@ gem 'exception_notification'
 gem 'jquery-rails'
 gem 'devise'
 gem 'cancan'
+# TODO: get this working properly as a dependency in ym_core
+gem 'rails_config', "~> 0.2.6"
 
 ### Yoomee gems
 gem 'ym_core', :path => "vendor/gems"
