@@ -171,7 +171,9 @@ input.black_btn {
   text-decoration: none;
 }
 /*========== Header ==========*/
-
+.site_text_hide {
+  display: none;
+}
 #header {
   height: 100px;
 }
