@@ -1,8 +1,10 @@
 .bundle
 .DS_Store
+.sass-cache/
+config/*.sphinx.conf
+data
+db/sphinx
 db/*.sqlite3
 log/*.log
 tmp/
-.sass-cache/
 vendor/gems
-data
