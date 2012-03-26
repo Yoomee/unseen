@@ -9,4 +9,3 @@ log/*.log
 log/*.pid
 tmp/
 vendor/gems
-vendor/gems/*
