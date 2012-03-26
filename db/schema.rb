@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120316112049) do
+ActiveRecord::Schema.define(:version => 20120326120754) do
 
   create_table "mercury_images", :force => true do |t|
     t.string   "image_file_name"
@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(:version => 20120316112049) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "image_uid"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

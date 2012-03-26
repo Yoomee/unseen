@@ -23,7 +23,6 @@ PATH
   specs:
     ym_cms (0.0.1)
       decent_exposure (~> 1.0.1)
-      dragonfly (~> 0.9.10)
       formtastic (~> 2.0.2)
       mercury-rails (~> 0.3.1)
       rack-cache
@@ -32,6 +31,10 @@ PATH
       dragonfly (~> 0.9.10)
       rails (~> 3.1.0)
       rails_config (~> 0.2.6)
+    ym_users (0.0.1)
+      cancan
+      devise
+      rails (~> 3.1.0)
 
 GEM
   remote: http://rubygems.org/
@@ -239,7 +242,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  cancan
   capybara
   coffee-rails (~> 3.1.0)
   devise
@@ -260,4 +262,5 @@ DEPENDENCIES
   uglifier
   ym_cms!
   ym_core!
+  ym_users!
   yoomee!
