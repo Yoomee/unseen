@@ -1,0 +1,9 @@
+%br
+%h3 Search
+=render 'form'
+%ul.unstyled
+  -@results.each do |result|
+    %li
+      %h3=result.excerpts.title.html_safe
+      =result.excerpts.text.html_safe
+      %hr

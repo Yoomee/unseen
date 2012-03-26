@@ -4,6 +4,8 @@ Unseen::Application.routes.draw do
   resources :wireframes, :only => [:index, :show]
   match 'fair' => 'fair#index' 
   
+  resource :search
+  
   devise_for :users
   devise_scope :user do
     get "sign_in", :to => "devise/sessions#new"

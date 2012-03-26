@@ -1,0 +1,3 @@
+%form{:action => search_path, :method => 'get'}
+  =text_field_tag 'q', params[:q]
+  %input{:type => 'submit', :value => "Go"}
