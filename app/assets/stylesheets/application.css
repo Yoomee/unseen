@@ -8,6 +8,7 @@
  *= require formtastic-bootstrap
  *= require ym_core 
  *= require ym_cms
+ *= require ym_search
  *=// require_tree .
  *= require_self
 */
