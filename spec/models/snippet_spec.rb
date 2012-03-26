@@ -6,7 +6,7 @@ describe Snippet do
 
   describe do  
     
-    let(:snippet) { Factory(:snippet) } 
+    let(:snippet) { FactoryGirl.create(:snippet) } 
     
     it "should be valid" do
       snippet.should be_valid

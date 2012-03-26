@@ -8,6 +8,7 @@
  *= require formtastic-bootstrap
  *= require ym_core 
  *= require ym_cms
+ *= require ym_posts 
  *=// require_tree .
  *= require_self
 */
@@ -444,7 +445,7 @@ http://ryanfait.com/
 form.formtastic {
   background-color: white;
 }
-form.formtastic fieldset {
+form .tab-pane fieldset {
   padding: 20px 20px 0 20px;
 }
 form.formtastic .form-actions input {

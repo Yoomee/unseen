@@ -6,6 +6,11 @@ FactoryGirl.define do
     f.published true
   end
 
+  factory :post do |f|
+    f.association :user, :factory => :user
+    f.text "Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac."
+  end
+
   factory :snippet do |f|  
     f.name "test_snippet"
     f.text "Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi."  

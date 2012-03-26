@@ -15,7 +15,7 @@ describe Page do
 
   describe do  
     
-    let(:page) { Factory(:page) } 
+    let(:page) { FactoryGirl.create(:page) } 
     
     it "should be valid" do
       page.should be_valid
@@ -94,7 +94,7 @@ describe Page do
   describe "that has snippets" do
     Page.has_snippets(:test_snippet)
     
-    let(:page) { Factory(:page) }
+    let(:page) { FactoryGirl.create(:page) }
     
     it "has many snippets" do
       page.should have_many(:snippets)

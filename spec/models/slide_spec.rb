@@ -6,7 +6,7 @@ describe Slide do
   
   describe do
     
-    let(:slide) {Factory(:slide)}
+    let(:slide) {FactoryGirl.create(:slide)}
     
     it "should be valid" do
       slide.should be_valid

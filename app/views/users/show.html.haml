@@ -1,0 +1,12 @@
+.row
+  .span2
+    =image_for(user, "140x")
+  .span5
+    %h2=title(user)
+.row
+  .span6
+    =render("posts/remote_form", :post => user.posts.build)
+    =render("posts/posts", :posts => user.posts)
+  .span8
+    =options_panel do
+      =link_if_allowed("Edit user", [:edit, user])

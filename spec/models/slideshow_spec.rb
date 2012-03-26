@@ -7,7 +7,7 @@ describe Slideshow do
   
   describe do
     
-    let(:slideshow) {Factory(:slideshow)}
+    let(:slideshow) {FactoryGirl.create(:slideshow)}
     
     it "should be valid" do
       slideshow.should be_valid

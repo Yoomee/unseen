@@ -16,19 +16,19 @@ describe LinksHelper do
     
     it "returns link_to action if can do show action" do
       helper.stub(:can? => true)
-      page = Factory(:page)
+      page = FactoryGirl.create(:page)
       helper.link_if_allowed("Show page", page).should == link_to("Show page", page)
     end
     
     it "returns link_to action if can do edit action" do
       helper.stub(:can? => true)
-      page = Factory(:page)
+      page = FactoryGirl.create(:page)
       helper.link_if_allowed("Edit page", [:edit, page]).should == link_to("Edit page", edit_page_path(page))
     end
     
     it "returns link_to action if can do destroy action" do
       helper.stub(:can? => true)
-      page = Factory(:page)
+      page = FactoryGirl.create(:page)
       helper.link_if_allowed("Delete page", [:destroy, page]).should == link_to("Delete page", page, :method => :delete)
     end
     

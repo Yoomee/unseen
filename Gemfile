@@ -20,6 +20,7 @@ gem 'thinking-sphinx', '2.0.10'
 gem 'ym_core', :path => "vendor/gems"
 gem 'ym_cms', :path => "vendor/gems"
 gem 'ym_users', :path => 'vendor/gems'
+gem 'ym_posts', :path => 'vendor/gems'
 
 ### Groups
 
