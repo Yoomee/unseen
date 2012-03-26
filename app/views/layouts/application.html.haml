@@ -1,7 +1,9 @@
 !!!5
 %html
   %head
-    %title Unseen
+    %title
+      Unseen
+      ="- #{@page_title}" if @page_title.present?
     -if Rails.env == "development"
       =stylesheet_link_tag("application", "mobile", "http://dl.dropbox.com/u/292336/unseen/apercu.css")
     -else

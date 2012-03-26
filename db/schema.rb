@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120316112049) do
+ActiveRecord::Schema.define(:version => 20120326141805) do
 
   create_table "mercury_images", :force => true do |t|
     t.string   "image_file_name"
@@ -83,6 +83,8 @@ ActiveRecord::Schema.define(:version => 20120316112049) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_uid"
+    t.string   "role"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

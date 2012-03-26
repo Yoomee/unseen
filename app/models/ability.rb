@@ -2,8 +2,10 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    if user
-      can :manage, :all
+    if user.try(:admin?)
+      can :manage, :all      
+    elsif user
+      can :manage, User, :id => user.id
     else
       can :show, Page, :published => true
       cannot [:create, :update, :destroy], :all

@@ -12,32 +12,38 @@ DEFAULT_USERS   = [
   {
     :first_name => 'Si',
     :last_name  => 'Wilkins',
-    :email      => 'si@yoomee.com'
+    :email      => 'si@yoomee.com',
+    :role       => 'admin'
   },
   {
     :first_name => 'Rich',
     :last_name  => 'Wells',
-    :email      => 'rich@yoomee.com'
+    :email      => 'rich@yoomee.com',
+    :role       => 'admin'
   },
   {
     :first_name => 'Ian',
     :last_name  => 'Mooney',
-    :email      => 'ian@yoomee.com'
+    :email      => 'ian@yoomee.com',
+    :role       => 'admin'
   },
   {
     :first_name => 'Matt',
     :last_name  => 'Atkins',
-    :email      => 'matt@yoomee.com'
+    :email      => 'matt@yoomee.com',
+    :role       => 'admin'    
   },
   {
     :first_name => 'Andy',
     :last_name  => 'Mayer',
-    :email      => 'andy@yoomee.com'
+    :email      => 'andy@yoomee.com',
+    :role       => 'admin'    
   },
   {
     :first_name => 'Nicola',
     :last_name  => 'Mayer',
-    :email      => 'nicola@yoomee.com'
+    :email      => 'nicola@yoomee.com',
+    :role       => 'admin'    
   }
 ]
 
