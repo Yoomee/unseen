@@ -23,15 +23,22 @@ PATH
   specs:
     ym_cms (0.0.1)
       decent_exposure (~> 1.0.1)
-      dragonfly (~> 0.9.10)
       formtastic (~> 2.0.2)
       mercury-rails (~> 0.3.1)
       rack-cache
       rails (~> 3.1.0)
+      ym_core
+      ym_search
     ym_core (0.0.1)
+      bootstrap-will_paginate (~> 0.0.6)
       dragonfly (~> 0.9.10)
       rails (~> 3.1.0)
       rails_config (~> 0.2.6)
+      will_paginate (~> 3.0.3)
+    ym_search (0.0.1)
+      rails (~> 3.1.0)
+      thinking-sphinx (~> 2.0.10)
+      ym_core
 
 GEM
   remote: http://rubygems.org/
@@ -68,6 +75,8 @@ GEM
     addressable (2.2.7)
     arel (2.2.3)
     bcrypt-ruby (3.0.1)
+    bootstrap-will_paginate (0.0.6)
+      will_paginate
     builder (3.0.0)
     cancan (1.6.7)
     capybara (1.1.2)
@@ -135,8 +144,8 @@ GEM
     jquery-rails (1.0.19)
       railties (~> 3.0)
       thor (~> 0.14)
-    json (1.6.5)
-    json_pure (1.6.5)
+    json (1.6.6)
+    json_pure (1.6.6)
     launchy (2.0.5)
       addressable (~> 2.2.6)
     mail (2.3.3)
@@ -222,7 +231,7 @@ GEM
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    thinking-sphinx (2.0.10)
+    thinking-sphinx (2.0.11)
       activerecord (>= 3.0.3)
       builder (>= 2.1.2)
       riddle (>= 1.5.0)
@@ -237,6 +246,7 @@ GEM
       multi_json (>= 1.0.2)
     warden (1.1.1)
       rack (>= 1.0)
+    will_paginate (3.0.3)
     xpath (0.1.4)
       nokogiri (~> 1.3)
 
@@ -262,8 +272,8 @@ DEPENDENCIES
   rspec-rails
   sass-rails (~> 3.1.0)
   shoulda-matchers
-  thinking-sphinx (= 2.0.10)
   uglifier
   ym_cms!
   ym_core!
+  ym_search!
   yoomee!
