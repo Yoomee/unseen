@@ -15,6 +15,7 @@ gem 'exception_notification'
 gem 'jquery-rails'
 gem 'devise'
 gem 'cancan'
+gem 'thinking-sphinx', '2.0.10'
 
 ### Yoomee gems
 gem 'ym_core', :path => "vendor/gems"
