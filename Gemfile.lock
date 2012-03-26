@@ -34,18 +34,15 @@ PATH
       dragonfly (~> 0.9.10)
       rails (~> 3.1.0)
       rails_config (~> 0.2.6)
-<<<<<<< HEAD
       will_paginate (~> 3.0.3)
     ym_search (0.0.1)
       rails (~> 3.1.0)
       thinking-sphinx (~> 2.0.10)
       ym_core
-=======
     ym_users (0.0.1)
       cancan
       devise
       rails (~> 3.1.0)
->>>>>>> 2a392024d254feacf7f8ea13936eba91901c2280
 
 GEM
   remote: http://rubygems.org/
@@ -281,9 +278,6 @@ DEPENDENCIES
   uglifier
   ym_cms!
   ym_core!
-<<<<<<< HEAD
   ym_search!
-=======
   ym_users!
->>>>>>> 2a392024d254feacf7f8ea13936eba91901c2280
   yoomee!
