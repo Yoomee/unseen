@@ -1,6 +1,6 @@
 GIT
   remote: git://git.yoomee.com:4321/gems/yoomee.git
-  revision: d3ae3cd68e7cb2967baa535cdb4206818a5deff6
+  revision: 0287020ab693781bafa71a7bd4aaf5cc61e22a78
   branch: rails3
   specs:
     yoomee (0.0.1)
@@ -96,15 +96,15 @@ GEM
     diff-lcs (1.1.3)
     dragonfly (0.9.11)
       rack
-    engineyard (1.4.23)
-      engineyard-serverside-adapter (= 1.5.30)
+    engineyard (1.4.27)
+      engineyard-serverside-adapter (= 1.5.33)
       escape (~> 0.0.4)
       highline (~> 1.6.1)
       json_pure
       launchy (= 2.0.5)
       net-ssh (~> 2.2.1)
       rest-client (~> 1.6.0)
-    engineyard-serverside-adapter (1.5.30)
+    engineyard-serverside-adapter (1.5.33)
       escape (~> 0.0.4)
       json_pure
     erubis (2.7.0)
@@ -113,10 +113,10 @@ GEM
       actionmailer (>= 3.0.4)
     execjs (1.3.0)
       multi_json (~> 1.0)
-    factory_girl (2.6.3)
-      activesupport (>= 2.3.9)
-    factory_girl_rails (1.7.0)
-      factory_girl (~> 2.6.0)
+    factory_girl (3.0.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (3.0.0)
+      factory_girl (~> 3.0.0)
       railties (>= 3.0.0)
     ffi (1.0.11)
     formtastic (2.0.2)
@@ -147,12 +147,12 @@ GEM
       coffee-script
       paperclip
       rails (>= 3.1.0)
-    mime-types (1.17.2)
+    mime-types (1.18)
     multi_json (1.1.0)
     mysql2 (0.3.11)
     net-ssh (2.2.2)
-    nokogiri (1.5.0)
-    orm_adapter (0.0.6)
+    nokogiri (1.5.2)
+    orm_adapter (0.0.7)
     paperclip (2.7.0)
       activerecord (>= 2.3.0)
       activesupport (>= 2.3.2)
@@ -176,7 +176,7 @@ GEM
       activesupport (= 3.1.0)
       bundler (~> 1.0)
       railties (= 3.1.0)
-    rails_config (0.2.6)
+    rails_config (0.2.7)
       activesupport (>= 3.0)
     railties (3.1.0)
       actionpack (= 3.1.0)
@@ -191,25 +191,25 @@ GEM
     rest-client (1.6.7)
       mime-types (>= 1.16)
     rinku (1.5.1)
-    rspec (2.8.0)
-      rspec-core (~> 2.8.0)
-      rspec-expectations (~> 2.8.0)
-      rspec-mocks (~> 2.8.0)
-    rspec-core (2.8.0)
-    rspec-expectations (2.8.0)
-      diff-lcs (~> 1.1.2)
-    rspec-mocks (2.8.0)
-    rspec-rails (2.8.1)
+    rspec (2.9.0)
+      rspec-core (~> 2.9.0)
+      rspec-expectations (~> 2.9.0)
+      rspec-mocks (~> 2.9.0)
+    rspec-core (2.9.0)
+    rspec-expectations (2.9.0)
+      diff-lcs (~> 1.1.3)
+    rspec-mocks (2.9.0)
+    rspec-rails (2.9.0)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       railties (>= 3.0)
-      rspec (~> 2.8.0)
+      rspec (~> 2.9.0)
     rubyzip (0.9.6.1)
     sass (3.1.15)
-    sass-rails (3.1.5)
+    sass-rails (3.1.6)
       actionpack (~> 3.1.0)
       railties (~> 3.1.0)
-      sass (~> 3.1.10)
+      sass (>= 3.1.10)
       tilt (~> 1.3.2)
     selenium-webdriver (2.20.0)
       childprocess (>= 0.2.5)
@@ -252,7 +252,6 @@ DEPENDENCIES
   jquery-rails
   mysql2
   rails (= 3.1.0)
-  rails_config (~> 0.2.6)
   rake (= 0.8.7)
   rinku
   rspec-rails
