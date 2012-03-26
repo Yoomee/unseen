@@ -20,10 +20,10 @@
       #header_links.pull-right
         =link_to "Twitter", "http://twitter.com/UnseenPhotoFair", :class=>"header_icon", :id=>"twitter_icon"        
         =link_to "Facebook", "http://www.facebook.com/UnseenPhotoFairAmsterdam", :class=>"header_icon", :id=>"facebook_icon"        
-        =link_to "Search", "#", :class=>"header_icon", :id=>"search_icon"
         =link_to("contact", Page.find_by_slug("contact") || "#", :class=>"header_link", :id=>"contact_link")
         -if user_signed_in?
           =link_to(t(:logout).downcase, sign_out_path, :method => :delete, :class=>"header_link", :id=>"login_link")
           =link_to("sitemap", pages_path, :class => "header_link")
         -else
           =link_to(t(:login).downcase, sign_in_path, :class=>"header_link", :id=>"login_link")
+        =link_to "search", search_path, :class=>"header_link", :id=>"search_link"  
