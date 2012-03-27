@@ -142,27 +142,6 @@ h6 a,
 h6 a:hover {
   text-decoration: none;
 }
-br.clear {
-  clear: both;
-}
-.padding {
-  padding: 10px;
-}
-.no-margin {
-  margin: 0;
-}
-.margin-bottom {
-  margin-bottom: 20px;
-}
-.margin-top {
-  margin-top: 20px;
-}
-.upcase {
-  text-transform:uppercase;
-}
-.italic {
-  font-style: italic;
-}
 .black-btn {
  color: white;
  background: black;

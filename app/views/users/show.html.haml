@@ -8,7 +8,8 @@
         -if can?(:create, Post)
           .span8
             =render("posts/remote_form", :post => current_user.posts.build(:target => (current_user==user ? nil : user)))
-        =render("posts/posts", :posts => user.wall_posts)
+        .span8
+          =render("users/posts")
   .row
     .span12
       =options_panel do
