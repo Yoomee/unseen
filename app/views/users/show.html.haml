@@ -1,12 +1,15 @@
-.row
-  .span2
-    =image_for(user, "140x")
-  .span5
-    %h2=title(user)
-.row
-  .span6
-    =render("posts/remote_form", :post => user.posts.build)
-    =render("posts/posts", :posts => user.posts)
-  .span8
-    =options_panel do
-      =link_if_allowed("Edit user", [:edit, user])
+.container
+  .row
+    .span2
+      =image_for(user, "140x")
+    .span8
+      %h2=title(user)
+      .row
+        .span8
+          =render("posts/remote_form", :post => current_user.posts.build(:target => (current_user==user ? nil : user)))
+        =render("posts/posts", :posts => user.wall_posts)
+  .row
+    .span12
+      =options_panel do
+        =back_link
+        =link_if_can("Edit user", [:edit, user])
