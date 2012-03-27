@@ -36,7 +36,9 @@ PATH
       rails_config (~> 0.2.6)
       will_paginate (~> 3.0.3)
     ym_posts (0.0.1)
+      jquery-rails
       rails (~> 3.1.0)
+      remotipart (~> 1.0)
       ym_users
     ym_search (0.0.1)
       rails (~> 3.1.0)
@@ -204,6 +206,7 @@ GEM
     rake (0.8.7)
     rdoc (3.12)
       json (~> 1.4)
+    remotipart (1.0.2)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     riddle (1.5.1)

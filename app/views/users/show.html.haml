@@ -2,10 +2,12 @@
   .row
     .span2
       =image_for(user, "140x")
-    .span10
+    .span8
       %h2=title(user)
-      =render("posts/remote_form", :post => current_user.posts.build(:target => (current_user==user ? nil : user)))
-      =render("posts/posts", :posts => user.wall_posts)
+      .row
+        .span8
+          =render("posts/remote_form", :post => current_user.posts.build(:target => (current_user==user ? nil : user)))
+        =render("posts/posts", :posts => user.wall_posts)
   .row
     .span12
       =options_panel do
