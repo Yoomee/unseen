@@ -1,9 +1,9 @@
 .container
-  .row
+  .row.margin-top
     .span2
       =image_for(user, "140x")
     .span8
-      %h2=title(user)
+      %h2.margin-bottom=title(user)
       .row
         -if can?(:create, Post)
           .span8
