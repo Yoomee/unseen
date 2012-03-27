@@ -3,7 +3,7 @@ include Devise::TestHelpers
 
 describe "Users" do
 
-  describe "GET /users#show", :js => true do
+  describe "GET /users#show", :js => true, :driver => :selenium_chrome do
     self.use_transactional_fixtures = false
     let(:user) { FactoryGirl.create(:user) }
     before do
@@ -30,5 +30,6 @@ describe "Users" do
       User.destroy_all
       Post.destroy_all
     end
-  end  
+  end
+  
 end
