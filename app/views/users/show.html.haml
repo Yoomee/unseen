@@ -1,12 +1,13 @@
 .container
-  .row
+  .row.margin-top
     .span2
       =image_for(user, "140x")
     .span8
-      %h2=title(user)
+      %h2.margin-bottom=title(user)
       .row
-        .span8
-          =render("posts/remote_form", :post => current_user.posts.build(:target => (current_user==user ? nil : user)))
+        -if can?(:create, Post)
+          .span8
+            =render("posts/remote_form", :post => current_user.posts.build(:target => (current_user==user ? nil : user)))
         =render("posts/posts", :posts => user.wall_posts)
   .row
     .span12

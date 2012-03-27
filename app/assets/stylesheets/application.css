@@ -71,7 +71,6 @@ div, input {
   font-weight: 600;
   font-style:normal;
 }
-
 .nav ul, .nav li, #site_logo, h2#footer_site_logo, h2 {
 	font-size: 29px;
 	line-height: 31px; 
@@ -149,13 +148,22 @@ br.clear {
 .padding {
   padding: 10px;
 }
+.no-margin {
+  margin: 0;
+}
+.margin-bottom {
+  margin-bottom: 20px;
+}
+.margin-top {
+  margin-top: 20px;
+}
 .upcase {
   text-transform:uppercase;
 }
 .italic {
   font-style: italic;
 }
-.black_btn {
+.black-btn {
  color: white;
  background: black;
  padding: 4px 8px;
@@ -163,11 +171,11 @@ br.clear {
  font-size: 18px;
  border: 2px solid #000;
 }
-input.black_btn {
+input.black-btn {
   font-weight:600;
   height:30px;
 }
-.black_btn:hover {
+.black-btn:hover {
   background: #fff;
   border-color: #000;
   text-decoration: none;
@@ -615,7 +623,7 @@ a.home_small_title, a.home_small_title:hover {
 #second #newsletter_signup {
   margin-top: 40px;
 }
-#second #newsletter_signup a.black_btn {
+#second #newsletter_signup a.black-btn {
 
   float: left;
 }
