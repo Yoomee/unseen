@@ -8,7 +8,6 @@ gem "rake", "0.8.7"
 
 ### Frequently used
 gem 'haml'
-# gem "formtastic-bootstrap", "~> 1.2.0"
 gem 'formtastic-bootstrap', :git => "git://github.com/cgunther/formtastic-bootstrap.git", :branch => "bootstrap-2"
 gem 'rinku'
 gem 'exception_notification'
@@ -18,9 +17,10 @@ gem 'devise'
 ### Yoomee gems
 gem 'ym_core', :path => "vendor/gems"
 gem 'ym_cms', :path => "vendor/gems"
-gem 'ym_search', :path => "vendor/gems"
-gem 'ym_users', :path => 'vendor/gems'
 gem 'ym_posts', :path => 'vendor/gems'
+gem 'ym_search', :path => "vendor/gems"
+gem 'ym_tags', :path => 'vendor/gems'
+gem 'ym_users', :path => 'vendor/gems'
 
 ### Groups
 
