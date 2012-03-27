@@ -6,6 +6,8 @@ class Ability
       can :manage, :all      
     elsif user
       can :manage, User, :id => user.id
+      can [:read, :create], Post
+      can [:update, :destroy], Post, :user_id => user.id
     else
       can :show, Page, :published => true
       cannot [:create, :update, :destroy], :all

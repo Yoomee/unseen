@@ -3,16 +3,16 @@ include Devise::TestHelpers
 
 describe "Users" do
 
-  describe "GET /users#show" do
+  describe "GET /users#show" do #, :js => true do
     let(:user) { FactoryGirl.create(:user) }
-    it "shows user profile" do
+    before do
+      login_user(user)
       visit user_path(user)
+    end
+    it "shows user profile" do
       page.should have_content(user.to_s)
     end
     describe "adding a post" do
-      before do
-        visit user_path(user)
-      end
       it "displays new post when valid" do
         fill_in 'post_text', :with => "A new post"
         click_button 'Post'
