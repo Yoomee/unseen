@@ -3,7 +3,8 @@ include Devise::TestHelpers
 
 describe "Users" do
 
-  describe "GET /users#show" do #, :js => true do
+  describe "GET /users#show", :js => true do
+    self.use_transactional_fixtures = false
     let(:user) { FactoryGirl.create(:user) }
     before do
       login_user(user)
@@ -24,6 +25,10 @@ describe "Users" do
         click_button 'Post'
         page.should have_selector("form.post_form .error")
       end
+    end
+    after do
+      User.destroy_all
+      Post.destroy_all
     end
   end  
 end
