@@ -39,11 +39,15 @@ PATH
       jquery-rails
       rails (~> 3.1.0)
       remotipart (~> 1.0)
+      ym_tags
       ym_users
     ym_search (0.0.1)
       rails (~> 3.1.0)
       thinking-sphinx (~> 2.0.10)
       ym_core
+    ym_tags (0.0.1)
+      acts-as-taggable-on (~> 2.2.2)
+      rails (~> 3.1.0)
     ym_users (0.0.1)
       cancan
       devise
@@ -81,10 +85,12 @@ GEM
       activesupport (= 3.1.0)
     activesupport (3.1.0)
       multi_json (~> 1.0)
+    acts-as-taggable-on (2.2.2)
+      rails (~> 3.0)
     addressable (2.2.7)
     arel (2.2.3)
     bcrypt-ruby (3.0.1)
-    bootstrap-will_paginate (0.0.6)
+    bootstrap-will_paginate (0.0.7)
       will_paginate
     builder (3.0.0)
     cancan (1.6.7)
@@ -171,9 +177,10 @@ GEM
     net-ssh (2.2.2)
     nokogiri (1.5.2)
     orm_adapter (0.0.7)
-    paperclip (2.7.0)
-      activerecord (>= 2.3.0)
-      activesupport (>= 2.3.2)
+    paperclip (3.0.0)
+      activemodel (>= 3.0.0)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
       cocaine (>= 0.0.2)
       mime-types
     polyglot (0.3.3)
@@ -286,5 +293,6 @@ DEPENDENCIES
   ym_core!
   ym_posts!
   ym_search!
+  ym_tags!
   ym_users!
   yoomee!
