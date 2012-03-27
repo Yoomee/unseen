@@ -71,7 +71,6 @@ div, input {
   font-weight: 600;
   font-style:normal;
 }
-
 .nav ul, .nav li, #site_logo, h2#footer_site_logo, h2 {
 	font-size: 29px;
 	line-height: 31px; 
@@ -148,6 +147,9 @@ br.clear {
 }
 .padding {
   padding: 10px;
+}
+.no_margin {
+  margin: 0;
 }
 .upcase {
   text-transform:uppercase;
