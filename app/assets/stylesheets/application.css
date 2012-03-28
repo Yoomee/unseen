@@ -8,8 +8,9 @@
  *= require formtastic-bootstrap
  *= require ym_core 
  *= require ym_cms
- *= require ym_posts 
+ *= require ym_posts
  *= require ym_search
+ *= require ym_tags
  *=// require_tree .
  *= require_self
 */
@@ -65,7 +66,8 @@ h3,
 h4,
 h5,
 h6,
-div, input { 
+div, 
+input { 
   font-family:"Apercu Medium", Calibri, sans-serif; 
   font-size-adjust: 0.508;
   font-weight: 600;
@@ -243,7 +245,6 @@ input.black-btn {
 }*/
 #header_links {
   margin: 14px 0 0 0;
-  width: 350px;
 }
 a.header_link {
   float: right;

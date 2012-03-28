@@ -1,1 +1,1 @@
-$('.posts').html('<%=escape_javascript(render('users/posts'))%>');
+$('.posts').html('<%=escape_javascript(render('posts/posts', :posts => wall_posts))%>');

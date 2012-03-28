@@ -9,7 +9,7 @@
           .span8
             =render("posts/remote_form", :post => current_user.posts.build(:target => (current_user==user ? nil : user)))
         .span8
-          =render("users/posts")
+          =render("posts/posts", :posts => wall_posts)
   .row
     .span12
       =options_panel do
