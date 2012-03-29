@@ -1,6 +1,6 @@
 GIT
   remote: git://git.yoomee.com:4321/gems/yoomee.git
-  revision: 0287020ab693781bafa71a7bd4aaf5cc61e22a78
+  revision: 0ff66dc167fc30e024e9c6bc074332ba5def72c3
   branch: rails3
   specs:
     yoomee (0.0.1)
@@ -173,7 +173,7 @@ GEM
       paperclip
       rails (>= 3.1.0)
     mime-types (1.18)
-    multi_json (1.1.0)
+    multi_json (1.2.0)
     mysql2 (0.3.11)
     net-ssh (2.2.2)
     nokogiri (1.5.2)
