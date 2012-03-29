@@ -1,6 +1,6 @@
 GIT
   remote: git://git.yoomee.com:4321/gems/yoomee.git
-  revision: 0287020ab693781bafa71a7bd4aaf5cc61e22a78
+  revision: 0ff66dc167fc30e024e9c6bc074332ba5def72c3
   branch: rails3
   specs:
     yoomee (0.0.1)
@@ -39,6 +39,7 @@ PATH
       jquery-rails
       rails (~> 3.1.0)
       remotipart (~> 1.0)
+      video_info
       ym_tags
       ym_users
     ym_search (0.0.1)
@@ -156,6 +157,7 @@ GEM
     haml (3.1.4)
     highline (1.6.11)
     hike (1.2.1)
+    hpricot (0.8.6)
     i18n (0.6.0)
     jquery-rails (1.0.19)
       railties (~> 3.0)
@@ -173,7 +175,7 @@ GEM
       paperclip
       rails (>= 3.1.0)
     mime-types (1.18)
-    multi_json (1.1.0)
+    multi_json (1.2.0)
     mysql2 (0.3.11)
     net-ssh (2.2.2)
     nokogiri (1.5.2)
@@ -264,6 +266,8 @@ GEM
     uglifier (1.2.3)
       execjs (>= 0.3.0)
       multi_json (>= 1.0.2)
+    video_info (0.2.11)
+      hpricot (~> 0.8.4)
     warden (1.1.1)
       rack (>= 1.0)
     will_paginate (3.0.3)

@@ -56,8 +56,6 @@
 
 /*========== Font ==========*/
 
-
-
 body,
 p,
 h1,
@@ -66,8 +64,8 @@ h3,
 h4,
 h5,
 h6,
-div, 
-input { 
+div,
+.bold {
   font-family:"Apercu Medium", Calibri, sans-serif; 
   font-size-adjust: 0.508;
   font-weight: 600;
