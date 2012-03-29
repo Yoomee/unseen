@@ -15,6 +15,10 @@
  *= require_self
 */
 
+/*========== Bootstrap extensions ==========*/
+.icon-gray {
+  background-image: url("/assets/core/glyphicons-halflings-gray.png");
+}
 
 /*========== CSS3 magic ==========*/
 
