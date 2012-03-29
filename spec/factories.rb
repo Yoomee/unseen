@@ -5,6 +5,11 @@ FactoryGirl.define do
     f.text "Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi."  
     f.published true
   end
+  
+  factory :permalink do |f|  
+    f.path "page-title"
+    f.association :resource, :factory => :page
+  end
 
   factory :post do |f|
     f.association :user, :factory => :user
