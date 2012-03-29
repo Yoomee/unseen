@@ -10,7 +10,6 @@
 #= require ym_cms
 #= require ym_posts
 #= require ym_tags
-#= require mercury
 #= require_tree .
 
 window.YmCms.Page.Form.showSlideshowTab = () ->

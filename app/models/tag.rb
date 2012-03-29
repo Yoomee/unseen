@@ -1,3 +1,3 @@
-class Tag < ActiveRecord::Base
+class Tag < ActsAsTaggableOn::Tag
   include YmTags::Tag
 end
