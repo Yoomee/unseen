@@ -303,6 +303,7 @@ DEPENDENCIES
   uglifier
   ym_cms!
   ym_core!
+  ym_permalinks!
   ym_posts!
   ym_search!
   ym_tags!

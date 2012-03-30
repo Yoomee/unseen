@@ -13,6 +13,7 @@ gem 'exception_notification'
 ### Yoomee gems
 gem 'ym_core', :path => "vendor/gems"
 gem 'ym_cms', :path => "vendor/gems"
+gem 'ym_permalinks', :path => 'vendor/gems'
 gem 'ym_posts', :path => 'vendor/gems'
 gem 'ym_search', :path => "vendor/gems"
 gem 'ym_tags', :path => 'vendor/gems'
