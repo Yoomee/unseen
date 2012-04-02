@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   private
   def authenticate
     return true unless Rails.env.production? && request.host == "unseen.yoomee.com"
-    authenticate_or_request_with_http_digest do |username|
+    authenticate_or_request_with_http_basic do |username|
       AUTH_USERS[username]
     end
   end
