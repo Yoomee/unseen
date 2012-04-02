@@ -8,7 +8,7 @@ class CreatePosts < ActiveRecord::Migration
       t.string :image_uid
       t.string :video_url
       t.string :video_title
-      t.string :video_description
+      t.text :video_description
       t.timestamps
     end
     add_index :posts, [:target_id, :target_type]

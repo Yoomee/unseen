@@ -22,8 +22,6 @@ PATH
   remote: vendor/gems
   specs:
     ym_cms (0.0.1)
-      decent_exposure (~> 1.0.1)
-      formtastic (~> 2.0.2)
       mercury-rails (~> 0.3.1)
       rack-cache
       rails (~> 3.1.0)
@@ -32,7 +30,11 @@ PATH
       ym_search
     ym_core (0.0.1)
       bootstrap-will_paginate (~> 0.0.6)
+      decent_exposure (~> 1.0.1)
       dragonfly (~> 0.9.10)
+      formtastic (~> 2.0.2)
+      haml
+      jquery-rails
       rails (~> 3.1.0)
       rails_config (~> 0.2.6)
       rinku
@@ -287,18 +289,14 @@ PLATFORMS
 DEPENDENCIES
   capybara
   coffee-rails (~> 3.1.0)
-  devise
   exception_notification
   factory_girl_rails
   formtastic-bootstrap!
   growl
   guard-rspec
-  haml
-  jquery-rails
   mysql2
   rails (= 3.1.0)
   rake (= 0.8.7)
-  rinku
   rspec-rails
   sass-rails (~> 3.1.0)
   shoulda-matchers

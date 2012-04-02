@@ -7,12 +7,8 @@ gem 'mysql2'
 gem "rake", "0.8.7"
 
 ### Frequently used
-gem 'haml'
 gem 'formtastic-bootstrap', :git => "git://github.com/cgunther/formtastic-bootstrap.git", :branch => "bootstrap-2"
-gem 'rinku'
 gem 'exception_notification'
-gem 'jquery-rails'
-gem 'devise'
 
 ### Yoomee gems
 gem 'ym_core', :path => "vendor/gems"
