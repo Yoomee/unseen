@@ -35,6 +35,7 @@ PATH
       dragonfly (~> 0.9.10)
       rails (~> 3.1.0)
       rails_config (~> 0.2.6)
+      rinku
       will_paginate (~> 3.0.3)
     ym_permalinks (0.0.1)
       rails (~> 3.1.0)
@@ -44,6 +45,7 @@ PATH
       rails (~> 3.1.0)
       remotipart (~> 1.0)
       video_info
+      ym_core
       ym_tags
       ym_users
     ym_search (0.0.1)

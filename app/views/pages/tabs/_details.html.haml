@@ -8,8 +8,7 @@
   =form.input :image, :as => :file, :label => "Cover image"
   =form.input :view_name, :as => :select, :collection => Page::view_names, :include_blank => false, :member_label => "titleize", :label => "Layout"
   =form.input :news_category
-  =form.semantic_fields_for :permalink do |permalink|
-    =permalink.input :path, :label => "Permalink"
+  =form.input :permalink_path, :label => "Permalink"
   =form.input :published
   -# TODO: show this only to yoomee staff
   =#form.input :slug
