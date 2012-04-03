@@ -1,6 +1,6 @@
 GIT
   remote: git://git.yoomee.com:4321/gems/yoomee.git
-  revision: 0ff66dc167fc30e024e9c6bc074332ba5def72c3
+  revision: 97e0aae289bfa1111722f37220588fc8afff78e9
   branch: rails3
   specs:
     yoomee (0.0.1)
@@ -132,15 +132,15 @@ GEM
     diff-lcs (1.1.3)
     dragonfly (0.9.11)
       rack
-    engineyard (1.4.27)
-      engineyard-serverside-adapter (= 1.5.33)
+    engineyard (1.4.28)
+      engineyard-serverside-adapter (= 1.6.3)
       escape (~> 0.0.4)
       highline (~> 1.6.1)
       json_pure
       launchy (= 2.0.5)
       net-ssh (~> 2.2.1)
       rest-client (~> 1.6.0)
-    engineyard-serverside-adapter (1.5.33)
+    engineyard-serverside-adapter (1.6.3)
       escape (~> 0.0.4)
       json_pure
     erubis (2.7.0)
