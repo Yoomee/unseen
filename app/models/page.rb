@@ -1,6 +1,5 @@
 class Page < ActiveRecord::Base
   
-  include YmCore::Model
   include YmCms::Page
   
   has_one :slideshow, :as => :attachable
