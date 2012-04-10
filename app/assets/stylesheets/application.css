@@ -782,18 +782,20 @@ p.press_visual_txt {
   position: relative;
   z-index: 3;
 }
-.fair_box h2 {
+.fair_box h2 .mercury-region {
   font-size: 60px;
   line-height: 60px;
-  margin:0 0 30px 0;
+}
+.fair_box h2 {
+  margin:0 0 30px 0;  
   text-align:center;
-  text-transform:uppercase;
+  text-transform:uppercase;  
 }
 .fair_window {
   height: 250px;
   z-index: 1;
 }
-.fair_box p {
+.fair_box .mercury-region {
   font-size: 22px;
   line-height: 26px;
 }
@@ -838,6 +840,9 @@ height: 40px;
 }
 #fair_box_2, #fair_box_3 {
   min-height: 700px;
+}
+#fair_options_panel {
+  z-index: 2;
 }
 /*
 #fair.container .row {

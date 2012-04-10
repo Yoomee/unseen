@@ -6,7 +6,7 @@ class Page < ActiveRecord::Base
   accepts_nested_attributes_for :slideshow, :reject_if => :all_blank
   before_save :delete_slideshow_if_no_slides
   
-  has_snippets :gallery_address, :gallery_phone, :gallery_fax, :gallery_email, :gallery_website, :gallery_facebook, :gallery_hours, :text_second, :news_category
+  has_snippets :gallery_address, :gallery_phone, :gallery_fax, :gallery_email, :gallery_website, :gallery_facebook, :gallery_hours, :text_second, :news_category, :fair_title_1, :fair_title_2, :fair_title_3, :fair_title_4, :fair_1, :fair_2, :fair_3, :fair_4, :fair_5, :fair_6
   
   validates :gallery_email, :email => true, :allow_blank => true
   validates :gallery_website, :url => true, :allow_blank => true
@@ -20,7 +20,7 @@ class Page < ActiveRecord::Base
   
   class << self
     def view_names
-      %w{basic tiled list gallery galleries news news_list about press}
+      %w{basic tiled list gallery galleries news news_list about press fair}
     end
   end
   
