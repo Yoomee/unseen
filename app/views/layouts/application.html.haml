@@ -6,9 +6,9 @@
     %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1.0" }  
       ="- #{@page_title}" if @page_title.present?
     -if Rails.env == "development"
-      =stylesheet_link_tag("application", "mobile", "http://dl.dropbox.com/u/292336/unseen/apercu.css")
+      =stylesheet_link_tag("application", "http://dl.dropbox.com/u/292336/unseen/apercu.css")
     -else
-      =stylesheet_link_tag("application", "mobile", "http://f.fontdeck.com/s/css/SHL1Q62RRv8EROgGSyefc+MAifY/unseen.yoomee.com/16878.css", "http://f.fontdeck.com/s/css/SHL1Q62RRv8EROgGSyefc+MAifY/www.unseenamsterdam.com/10817.css", "http://f.fontdeck.com/s/css/SHL1Q62RRv8EROgGSyefc+MAifY/unseenamsterdam.com/10817.css")
+      =stylesheet_link_tag("application", "http://f.fontdeck.com/s/css/SHL1Q62RRv8EROgGSyefc+MAifY/unseen.yoomee.com/16878.css", "http://f.fontdeck.com/s/css/SHL1Q62RRv8EROgGSyefc+MAifY/www.unseenamsterdam.com/10817.css", "http://f.fontdeck.com/s/css/SHL1Q62RRv8EROgGSyefc+MAifY/unseenamsterdam.com/10817.css")
       
     =javascript_include_tag("application")
     /[if IE 7]
