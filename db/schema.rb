@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(:version => 20120329104456) do
     t.string   "image_uid"
     t.string   "video_url"
     t.string   "video_title"
-    t.string   "video_description"
+    t.text     "video_description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

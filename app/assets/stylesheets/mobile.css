@@ -1,10 +1,18 @@
+/* @override http://localhost:3000/assets/mobile.css?body=1 */
 
+@media (min-width: 768px) and (max-width: 979px) {
+	.list_image {
+  overflow: hidden;
+
+}
+}
 @media only screen and (device-width: 768px) {
   /* For general iPad layouts */
   	body .home_box {
 	background-attachment: scroll;
 
 }
+
   
 }
 

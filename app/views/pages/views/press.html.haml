@@ -25,7 +25,7 @@
         -else
           #page_text_second.mercury-region{:"data-type" => "editable"}
             =raw(page.text_second)
-    #press_visuals.span10        
+    #press_visuals.span8        
       .press_visual.span2
         =image_tag "press_visual_1.jpg", :class=>"press_visual_img"
         %p.press_visual_txt
@@ -79,8 +79,9 @@
           %br
           Koos Breukel/Roy Villevoye
           %br
-          2011          
-                                      
+          2011  
+                  
+    =render("layouts/signup_column")                                  
     .span8
       =options_panel do
         =back_link
