@@ -11,6 +11,13 @@ class Page < ActiveRecord::Base
   validates :gallery_email, :email => true, :allow_blank => true
   validates :gallery_website, :url => true, :allow_blank => true
   
+  define_index do
+    where sanitize_sql(["published", true])
+    indexes title, :sortable => true
+    indexes text
+    has parent_id, published, view_name, created_at, updated_at
+  end
+  
   class << self
     def view_names
       %w{basic tiled list gallery news about press}
