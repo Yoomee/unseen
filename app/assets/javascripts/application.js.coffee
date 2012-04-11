@@ -10,7 +10,7 @@
 #= require ym_cms
 #= require ym_posts
 #= require ym_tags
-#= require_tree .
+#= require_tree ./core
 
 window.YmCms.Page.Form.showSlideshowTab = () ->
   if ($('#page_view_name').val() == "gallery")

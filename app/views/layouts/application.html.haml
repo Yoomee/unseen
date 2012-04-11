@@ -3,8 +3,8 @@
   %head
     %title
       Unseen
-    %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1.0" }  
       ="- #{@page_title}" if @page_title.present?
+    %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1.0" }      
     -if Rails.env == "development"
       =stylesheet_link_tag("application", "http://dl.dropbox.com/u/292336/unseen/apercu.css")
     -else
