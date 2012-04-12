@@ -13,6 +13,7 @@ GIT
   remote: git://github.com/cgunther/formtastic-bootstrap.git
   revision: 3428fef4f7870b01241d65893b882ad32cfc18d8
   branch: bootstrap-2
+  tag: 0.1
   specs:
     formtastic-bootstrap (1.2.0)
       formtastic
@@ -129,7 +130,7 @@ GEM
       railties (~> 3.1)
       warden (~> 1.1.1)
     diff-lcs (1.1.3)
-    dragonfly (0.9.11)
+    dragonfly (0.9.12)
       rack
     engineyard (1.4.28)
       engineyard-serverside-adapter (= 1.6.3)

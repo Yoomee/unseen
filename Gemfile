@@ -1,6 +1,5 @@
 source 'http://rubygems.org'
 
-
 ### Always used
 gem 'rails', '3.1.0'
 gem 'mysql2'
@@ -10,14 +9,25 @@ gem "rake", "0.8.7"
 gem 'formtastic-bootstrap', :git => "git://github.com/cgunther/formtastic-bootstrap.git", :branch => "bootstrap-2"
 gem 'exception_notification'
 
+def ym_gem(gem_name)
+ return true unless gem_name
+ if File.dirname(__FILE__) =~ /^\/data\//
+   # On Engine Yard server - get from git
+   gem gem_name, :git => "git://git.yoomee.com:4321/gems/#{gem_name}.git"
+ else
+   system("git clone -q git://git.yoomee.com:4321/gems/#{gem_name}.git #{gem_path}") if !File.directory?(gem_path = "vendor/gems/#{gem_name}")
+   gem gem_name, :path => "vendor/gems"
+ end
+end
+
 ### Yoomee gems
-gem 'ym_core', :path => "vendor/gems"
-gem 'ym_cms', :path => "vendor/gems"
-gem 'ym_permalinks', :path => 'vendor/gems'
-gem 'ym_posts', :path => 'vendor/gems'
-gem 'ym_search', :path => "vendor/gems"
-gem 'ym_tags', :path => 'vendor/gems'
-gem 'ym_users', :path => 'vendor/gems'
+ym_gem 'ym_core'
+ym_gem 'ym_cms'
+ym_gem 'ym_permalinks'
+ym_gem 'ym_posts'
+ym_gem 'ym_search'
+ym_gem 'ym_tags'
+ym_gem 'ym_users'
 
 ### Groups
 
