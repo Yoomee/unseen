@@ -10,14 +10,18 @@ gem "rake", "0.8.7"
 gem 'formtastic-bootstrap', :git => "git://github.com/cgunther/formtastic-bootstrap.git", :branch => "bootstrap-2"
 gem 'exception_notification'
 
-### Yoomee gems
-gem 'ym_core', :path => "vendor/gems"
-gem 'ym_cms', :path => "vendor/gems"
-gem 'ym_permalinks', :path => 'vendor/gems'
-gem 'ym_posts', :path => 'vendor/gems'
-gem 'ym_search', :path => "vendor/gems"
-gem 'ym_tags', :path => 'vendor/gems'
-gem 'ym_users', :path => 'vendor/gems'
+def ym_gem(gem_name, checkout = nil)
+  return true unless gem_name
+  if !File.directory?(gem_path = "vendor/gems/#{gem_name}")
+    system("git clone -q git://git.yoomee.com:4321/gems/#{gem_name}.git #{gem_path}")
+    system("git checkout #{checkout}") if checkout
+  end
+  gem gem_name, :path => "vendor/gems"
+end
+
+ym_gemfile = File.expand_path('../Gemfile.ym', __FILE__)
+eval(IO.read(ym_gemfile), binding, ym_gemfile)
+
 
 ### Groups
 
