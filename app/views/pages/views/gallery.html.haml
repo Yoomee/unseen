@@ -19,7 +19,7 @@
           #page_text.mercury-region{:"data-type" => "editable"}
             =raw(page.text)
     .span4
-      -if page.has_image?
+      -if page.image
         =image_for(page, "250x")
       -else
         .placeholder250x
