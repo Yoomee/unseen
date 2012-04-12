@@ -16,8 +16,8 @@ end
 
 @ym_gems.each do |gem_name, checkout|
   gem_path = "#{release_path}/vendor/gems/#{gem_name}"
-  system("git clone -q git://git.yoomee.com:4321/gems/#{gem_name}.git #{gem_path}") || raise(RuntimeError, $?, caller)
-  system("cd #{gem_path};git checkout #{checkout}") || raise(RuntimeError, $?, caller) if checkout
+  run "git clone -q git://git.yoomee.com:4321/gems/#{gem_name}.git #{gem_path}"
+  run "cd #{gem_path};git checkout #{checkout}" if checkout
 end
   
 
