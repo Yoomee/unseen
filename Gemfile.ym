@@ -1,6 +1,6 @@
 ### Yoomee gems
-ym_gem 'ym_core', '0.1'
-ym_gem 'ym_cms', '0.1'
+ym_gem 'ym_core'
+ym_gem 'ym_cms'
 ym_gem 'ym_permalinks'
 ym_gem 'ym_posts'
 ym_gem 'ym_search'
