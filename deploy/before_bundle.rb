@@ -1,4 +1,4 @@
-require File.expand_path('../../lib/ym_gem_loader')
+require File.expand_path('../lib/ym_gem_loader')
 
 load_ym_gems!
 
