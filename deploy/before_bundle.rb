@@ -3,6 +3,7 @@ require "#{release_path}/lib/ym_gem_loader"
 @ym_gems = {}
 
 def ym_gem(gem_name, checkout = nil)
+  gem_name = "ym_#{gem_name}" if !(gem_name =~ /^ym_\w+/)
   if @ym_gems[gem_name] && checkout && @ym_gems[gem_name] != checkout
     raise ArgumentError, "Ambiguous checkouts for #{gem_name}: #{@ym_gems[gem_name]}, #{checkout}", caller
   else
