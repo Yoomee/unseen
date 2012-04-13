@@ -1,24 +1,28 @@
-@ym_gems = {}
+require File.expand_path('../../lib/ym_gem_loader')
 
-def ym_gem(gem_name, checkout = nil)
-  if @ym_gems[gem_name] && checkout && @ym_gems[gem_name] != checkout
-    raise ArgumentError, "Ambiguous checkouts for #{gem_name}: #{@ym_gems[gem_name]}, #{checkout}", caller
-  else
-    @ym_gems[gem_name] ||= checkout
-  end
-end
+load_ym_gems!
 
-ym_gemfiles = Dir["#{release_path}/vendor/gems/*/Gemfile.ym"] + ["#{release_path}/Gemfile.ym"]
-
-ym_gemfiles.each do |ym_gemfile|
-  eval(IO.read(ym_gemfile), binding, ym_gemfile)
-end
-
-@ym_gems.each do |gem_name, checkout|
-  gem_path = "#{release_path}/vendor/gems/#{gem_name}"
-  run "git clone -q git://git.yoomee.com:4321/gems/#{gem_name}.git #{gem_path}"
-  run "cd #{gem_path};git checkout #{checkout}" if checkout
-end
+# @ym_gems = {}
+# 
+# def ym_gem(gem_name, checkout = nil)
+#   if @ym_gems[gem_name] && checkout && @ym_gems[gem_name] != checkout
+#     raise ArgumentError, "Ambiguous checkouts for #{gem_name}: #{@ym_gems[gem_name]}, #{checkout}", caller
+#   else
+#     @ym_gems[gem_name] ||= checkout
+#   end
+# end
+# 
+# ym_gemfiles = Dir["#{release_path}/vendor/gems/*/Gemfile.ym"] + ["#{release_path}/Gemfile.ym"]
+# 
+# ym_gemfiles.each do |ym_gemfile|
+#   eval(IO.read(ym_gemfile), binding, ym_gemfile)
+# end
+# 
+# @ym_gems.each do |gem_name, checkout|
+#   gem_path = "#{release_path}/vendor/gems/#{gem_name}"
+#   run "git clone -q git://git.yoomee.com:4321/gems/#{gem_name}.git #{gem_path}"
+#   run "cd #{gem_path};git checkout #{checkout}" if checkout
+# end
   
 
 # gem_regex = /gem ['"]([^'"]*)['"],\s*:path\s*=>\s*['"]vendor\/gems['"]/
