@@ -17,11 +17,11 @@ ym_gemfiles.each do |ym_gemfile|
   eval(IO.read(ym_gemfile), binding, ym_gemfile)
 end
 
-@ym_gems.each do |gem_name, checkout|
-  gem_path = "#{release_path}/vendor/gems/#{gem_name}"
-  run "git clone -q git://git.yoomee.com:4321/gems/#{gem_name}.git #{gem_path}"
-  run "cd #{gem_path};git checkout #{checkout}" if checkout
-end
+# @ym_gems.each do |gem_name, checkout|
+#   gem_path = "#{release_path}/vendor/gems/#{gem_name}"
+#   run "git clone -q git://git.yoomee.com:4321/gems/#{gem_name}.git #{gem_path}"
+#   run "cd #{gem_path};git checkout #{checkout}" if checkout
+# end
   
 
 # gem_regex = /gem ['"]([^'"]*)['"],\s*:path\s*=>\s*['"]vendor\/gems['"]/
