@@ -2,14 +2,18 @@ if File.dirname(__FILE__) =~ /\/data/
   
   # Engine Yard (deployment) behaviour
 
-  @ym_gems = {}
+  class YmGemStore
+    
+    cattr_accessor :ym_gems
+    
+  end
 
   def ym_gem(gem_name, checkout = nil)
     gem_name = ymify_gem_name(gem_name)
-    if @ym_gems[gem_name] && checkout && @ym_gems[gem_name] != checkout
-      raise ArgumentError, "Ambiguous checkouts for #{gem_name}: #{@ym_gems[gem_name]}, #{checkout}", caller
+    if YmGemStore::ym_gems[gem_name] && checkout && YmGemStore::ym_gems[gem_name] != checkout
+      raise ArgumentError, "Ambiguous checkouts for #{gem_name}: #{YmGemStore::ym_gems[gem_name]}, #{checkout}", caller
     else
-      @ym_gems[gem_name] ||= checkout
+      YmGemStore::ym_gems[gem_name] ||= checkout
     end
   end
 
@@ -19,8 +23,7 @@ if File.dirname(__FILE__) =~ /\/data/
     ym_gemfiles.each do |ym_gemfile|
       eval(IO.read(ym_gemfile), binding, ym_gemfile)
     end
-
-    @ym_gems.each do |gem_name, checkout|
+    YmGemStore::ym_gems.each do |gem_name, checkout|
       gem_path = "#{release_path}/vendor/gems/#{gem_name}"
       run "git clone -q git://git.yoomee.com:4321/gems/#{gem_name}.git #{gem_path}"
       run "cd #{gem_path};git checkout #{checkout}" if checkout
