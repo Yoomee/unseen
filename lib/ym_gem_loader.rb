@@ -4,7 +4,13 @@ if File.dirname(__FILE__) =~ /\/data/
 
   class YmGemStore
     
-    cattr_accessor :ym_gems
+    class << self
+      
+      def ym_gems
+        @ym_gems ||= {}
+      end
+      
+    end
     
   end
 
