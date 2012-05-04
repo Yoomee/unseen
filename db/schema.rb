@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120329104456) do
+ActiveRecord::Schema.define(:version => 20120504150022) do
 
   create_table "mercury_images", :force => true do |t|
     t.string   "image_file_name"
@@ -25,17 +25,20 @@ ActiveRecord::Schema.define(:version => 20120329104456) do
   create_table "pages", :force => true do |t|
     t.integer  "parent_id"
     t.string   "title"
+    t.string   "short_title"
     t.text     "text"
-    t.boolean  "published",  :default => false
+    t.integer  "user_id"
     t.integer  "position"
-    t.string   "view_name",  :default => "basic"
+    t.string   "view_name",    :default => "basic"
     t.string   "image_uid"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
+    t.datetime "published_at"
   end
 
   add_index "pages", ["parent_id"], :name => "index_pages_on_parent_id"
+  add_index "pages", ["user_id"], :name => "index_pages_on_user_id"
 
   create_table "permalinks", :force => true do |t|
     t.string   "path"
@@ -70,6 +73,9 @@ ActiveRecord::Schema.define(:version => 20120329104456) do
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "video_url"
+    t.string   "video_title"
+    t.text     "video_description"
   end
 
   add_index "slides", ["slideshow_id"], :name => "index_slides_on_slideshow_id"
@@ -114,6 +120,7 @@ ActiveRecord::Schema.define(:version => 20120329104456) do
   create_table "users", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
+    t.text     "bio"
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
     t.string   "reset_password_token"
