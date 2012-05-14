@@ -4,6 +4,7 @@
 config/*.sphinx.conf
 data
 db/sphinx
+db/schema.rb
 db/*.sqlite3
 log/*.log
 log/*.pid
