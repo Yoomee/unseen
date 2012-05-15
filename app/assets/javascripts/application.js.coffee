@@ -10,6 +10,7 @@
 #= require ym_cms
 #= require ym_posts
 #= require ym_tags
+#= require cocoon
 #= require_tree ./core
 
 window.YmCms.Page.Form.showSlideshowTab = () ->

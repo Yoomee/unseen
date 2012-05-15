@@ -1,0 +1,13 @@
+=form.inputs do
+  =form.input :first_name
+  =form.input :last_name
+  =form.input :email
+  -if photographer.new_record?
+    =form.input :password
+  =form.input :user_tag_list
+  =form.input :bio, :input_html => {:rows => 5, :class => "span4"}
+  -if !photographer.new_record? && photographer.image
+    .control-group
+      =image_for(photographer, "100x100#")
+  =form.input :retained_image, :as => :hidden
+  =form.input :image, :as => :file

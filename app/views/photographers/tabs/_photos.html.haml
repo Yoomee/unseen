@@ -1,0 +1,3 @@
+=form.semantic_fields_for :photos do |photo_form|
+  =render("photographers/photo_fields", :f => photo_form)
+=link_to_add_association "+ Add a photo", form, :photos, :"data-association-insertion-node" => '#photos .add_fields', :class => "btn mt-2 ml-2"

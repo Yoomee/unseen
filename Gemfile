@@ -12,6 +12,8 @@ gem "rake", "0.8.7"
 gem 'formtastic-bootstrap', :git => "git://github.com/cgunther/formtastic-bootstrap.git", :branch => "bootstrap-2"
 gem 'exception_notification'
 
+gem 'cocoon'
+
 # def ym_gem(gem_name, checkout = nil)
 #   return true unless gem_name
 #   if !File.directory?(gem_path = "vendor/gems/#{gem_name}")

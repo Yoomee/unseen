@@ -1,0 +1,21 @@
+-slides ||= slideshow.slides
+
+=content_for(:head) do
+  :javascript
+    $(document).ready(function() {
+      YmCms.Slideshow.init();
+    });
+
+.slideshow_container
+  .slideshow
+    .slideshow_inner
+      -slides.each_with_index do |slide, index|
+        .span11.slide{:class => "#{index == 1 ? 'next_slide' : ''}"}
+          .slide_inner
+            -if slide.has_video?
+              %iframe{:width => 520, :height => 320, :src => slide.video_embed_url, :frameborder => 0, :allowfullscreen => true}
+            -else
+              =image_for(slide, "520x>")
+
+            %h3.slide_caption
+              =slide.caption

@@ -2,7 +2,7 @@ class Page < ActiveRecord::Base
   
   include YmCms::Page
   
-  has_one :slideshow, :as => :attachable
+  has_one :slideshow, :as => :attachable, :dependent => :destroy
   accepts_nested_attributes_for :slideshow, :reject_if => :all_blank
   before_save :delete_slideshow_if_no_slides
   

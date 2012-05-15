@@ -9,9 +9,9 @@
         -photographer.user_tags.each do |tag|
           %li
             =link_to_tag(tag)
-  .row.mt-2.mb-2
-    .span12
-      SLIDESHOW
+-if photographer.photos.present?
+  =render("slideshows/slideshow", :slides => photographer.photos)
+.container
   .row
     .span6
       -if photographer.bio.present?
