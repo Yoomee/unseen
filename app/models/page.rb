@@ -8,8 +8,10 @@ class Page < ActiveRecord::Base
   
   has_snippets :gallery_address, :gallery_phone, :gallery_fax, :gallery_email, :gallery_website, :gallery_facebook, :gallery_hours, :text_second, :news_category, :fair_title_1, :fair_title_2, :fair_title_3, :fair_title_4, :fair_1, :fair_2, :fair_3, :fair_4, :fair_5, :fair_6
   
+  acts_as_taggable_on :categories, :page_tags
+  
   validates :gallery_email, :email => true, :allow_blank => true
-  validates :gallery_website, :url => true, :allow_blank => true
+  validates :gallery_website, :url => true, :allow_blank => true  
   
   define_index do
     where sanitize_sql(["published", true])

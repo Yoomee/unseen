@@ -34,3 +34,12 @@ $(document).ready ->
   $('#email').focus =>
     console.log $('#email').val() is 'email'
     $('#email').val('') if $('#email').val() is 'email'
+  $("select[multiple='multiple']").chosen(
+    persistent_create_option: false,
+    create_option_text: "Add",
+    create_option: (term) ->
+      this.append_option(
+        value: term,
+        text: term
+      )
+  )    
