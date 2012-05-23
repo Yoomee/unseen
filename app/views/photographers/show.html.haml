@@ -15,9 +15,9 @@
   .row
     .span6
       -if photographer.bio.present?
-        .well.mb-1
-          %h3 Bio
-          =simple_format(photographer.bio)
+        %h3 Bio
+        =simple_format(photographer.bio)
+        =render('links/list', :links => photographer.links)
       -if false
         .well
           .row
@@ -27,14 +27,15 @@
             .span3
               -5.times do
                 =dragonfly_image_tag(photographer.default_image, "50x50#", :class => "mr-1 mb-1")
-    .span6
-      -3.times do
-        .row.mb-1
-          .span1
-            =image_placeholder("60x60")
-          .span4
-            %h4.upcase Related
-            %p Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci.
+    -if false
+      .span6
+        -3.times do
+          .row.mb-1
+            .span1
+              =image_placeholder("60x60")
+            .span4
+              %h4.upcase Related
+              %p Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci.
   .row
     .span12
       =options_panel do

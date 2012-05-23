@@ -10,6 +10,7 @@
 #= require ym_cms
 #= require ym_posts
 #= require ym_tags
+#= require ym_links
 #= require cocoon
 #= require_tree ./core
 
