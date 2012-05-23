@@ -1,0 +1,15 @@
+%h1=title('Photographers')
+-if photographers.empty?
+  %p There are no photographers on the site yet.
+-else
+  %ul
+    -photographers.each do |photographer|
+      %li
+        =link_to_self(photographer)
+
+=options_panel do
+  =back_link
+  -if can?(:new, :photographer)
+    =link_to("Add photographer", new_photographer_path)
+  
+      
