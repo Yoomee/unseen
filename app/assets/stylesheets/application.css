@@ -880,3 +880,6 @@ height: 40px;
   font-size: 13px;
   text-shadow: none;
 }
+.tag-label:hover {
+  color: black;
+}

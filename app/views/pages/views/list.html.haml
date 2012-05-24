@@ -18,8 +18,8 @@
             -if page.slug == "news"
               %p.list_date_and_tag
                 =child_page.created_at.strftime("%e %B %Y")
-                -child_page.categories.each do |category|
-                  =tag_label(category)
+                -child_page.category_list.each do |category|
+                  =tag_label(category.titleize)
             =link_to raw('&rarr; Read more'), child_page, :class => 'list_read_more'
       -if can?(:new, Page)
         .row
