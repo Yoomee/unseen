@@ -18,7 +18,7 @@
   #enquiry_country_input.control-group.select.required
     =form.label :country, :class => "control-label"
     .controls
-      =form.country_select(:country, ["Netherlands"])
+      =form.country_select(:country, ["Netherlands"], :include_blank => true)
   =form.input :phone
   =form.input :fax
   =form.input :email
@@ -27,15 +27,15 @@
   %legend Publication details
   =form.input :publication_address1, :label => "Address"
   =form.input :publication_zip_code, :label => "Zip code"
-  =form.input :publication_town
+  =form.input :publication_town, :label => "Town"
   #enquiry_publication_country_input.control-group.select.required
-    =form.label :publication_country, :class => "control-label"
+    =form.label :publication_country, "Country", :class => "control-label"
     .controls
-      =form.country_select(:publication_country, ["Netherlands"])
-  =form.input :publication_phone
-  =form.input :publication_fax
-  =form.input :publication_email
-  =form.input :publication_website
+      =form.country_select(:publication_country, ["Netherlands"], :include_blank => true)
+  =form.input :publication_phone, :label => "Phone"
+  =form.input :publication_fax, :label => "Fax"
+  =form.input :publication_email, :label => "Email"
+  =form.input :publication_website, :label => "Website"
 =form.inputs do
   %legend Legitimation
   =form.input :legitimation, :as => :file, :label => "Legitimation (publication letter, article etc.)"  

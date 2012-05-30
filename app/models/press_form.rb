@@ -11,7 +11,7 @@ module PressForm
   
   email_from "info@unseenamsterdam.com"
   email_subject "New Press accreditation"
-  email_to "ian@yoomee.com"
+  email_to "franklin@vandejong.nl"
 
   response_message "Thank you for submitting your press accreditation"
   
