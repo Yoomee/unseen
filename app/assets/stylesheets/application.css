@@ -19,10 +19,10 @@
 .icon-gray {
   background-image: url("/assets/core/glyphicons-halflings-gray.png");
 }
-.radio, .checkbox {
+.radio {
   padding-left: 0;
 }
-.radio .choices, .checkbox .choices {
+.radio .choices {
   padding-left: 28px;
 }
 dl dd {

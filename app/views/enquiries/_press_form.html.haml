@@ -4,8 +4,8 @@
   =form.input :academic_title, :as => :select, :collection => [["None", ""], "Dr.", "Prof. Dr."], :include_blank => false
   =form.input :first_name
   =form.input :last_name
-  =form.input :retained_image, :as => :hidden
   =form.input :image, :as => :file
+  =form.input :retained_image, :as => :hidden
   =form.input :media
   =form.input :category, :as => :radio, :collection => press_category_options
   =form.input :position, :as => :radio, :collection => press_position_options
@@ -37,5 +37,9 @@
   =form.input :publication_email
   =form.input :publication_website
 =form.inputs do
+  %legend Legitimation
+  =form.input :legitimation, :as => :file, :label => "Legitimation (publication letter, article etc.)"  
   =form.input :retained_legitimation, :as => :hidden
-  =form.input :legitimation, :as => :file, :label => "Legitimation (publication letter, article etc.)"
+=form.inputs do
+  %legend
+  =form.input :agree_to_terms, :as => :boolean, :label => "By entering personal data, I do agree to subscribe (revocably) to the UNSEEN email newsletter and receive the information material ordered from UNSEEN"
