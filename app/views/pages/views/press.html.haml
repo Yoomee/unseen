@@ -20,13 +20,13 @@
     .span3.offset3
       .page_text
         -if page.text_second.blank? && !viewing_mercury_edit? && can?(:edit, page)
-          #page_text
+          #page_text_second
             =mercury_edit_link("Click here to add some page content", mercury_update_page_path(page))
         -else
           #page_text_second.mercury-region{:"data-type" => "editable"}
             =raw(page.text_second)
     #press_visuals.span8
-      -if false      
+      -if false
         .press_visual.span2
           =image_tag "press_visual_1.jpg", :class=>"press_visual_img"
           %p.press_visual_txt
@@ -143,10 +143,12 @@
             %br
             Andrew Phelps
             %br
-            2007                             
-                       
-                  
-    =render("layouts/signup_column")                                  
+            2007
+      .press_accreditation_text.span6
+        %h2.mt-2 Press Accreditation
+        %p
+          ="Media accreditation for Unseen is now available to all members of the media. Please complete your accreditation #{link_to('here', new_enquiry_path(:id => 'press'))}.".html_safe
+    =render("layouts/signup_column")
     .span8
       =options_panel do
         =back_link

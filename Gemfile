@@ -9,6 +9,7 @@ gem 'mysql2'
 gem "rake", "0.8.7"
 
 ### Frequently used
+gem 'country-select'
 gem 'formtastic-bootstrap', :git => "git://github.com/cgunther/formtastic-bootstrap.git", :branch => "bootstrap-2"
 gem 'exception_notification'
 
@@ -41,7 +42,7 @@ end
 group :development do
   gem 'growl'
   gem 'yoomee', :git => "git://git.yoomee.com:4321/gems/yoomee.git", :branch => "rails3"
-  # comment this when deploying
+  gem 'ruby-debug19', :require => 'ruby-debug'
 end
 
 # Use unicorn as the web server

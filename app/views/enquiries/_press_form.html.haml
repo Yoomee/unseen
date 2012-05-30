@@ -1,0 +1,41 @@
+=form.inputs do
+  =form.input :accreditation, :as => :select, :collection => press_accreditation_options
+  =form.input :title, :as => :select, :collection => ["Ms.", "Mr."]
+  =form.input :academic_title, :as => :select, :collection => [["None", ""], "Dr.", "Prof. Dr."], :include_blank => false
+  =form.input :first_name
+  =form.input :last_name
+  =form.input :retained_image, :as => :hidden
+  =form.input :image, :as => :file
+  =form.input :media
+  =form.input :category, :as => :radio, :collection => press_category_options
+  =form.input :position, :as => :radio, :collection => press_position_options
+  =form.input :publication_rhythm, :as => :radio, :collection => publication_rhythm_options
+=form.inputs do
+  %legend Personal details
+  =form.input :address1, :label => "Address"
+  =form.input :zip_code, :label => "Zip code"
+  =form.input :town
+  #enquiry_country_input.control-group.select.required
+    =form.label :country, :class => "control-label"
+    .controls
+      =form.country_select(:country, ["Netherlands"])
+  =form.input :phone
+  =form.input :fax
+  =form.input :email
+  =form.input :mobile_phone
+=form.inputs do
+  %legend Publication details
+  =form.input :publication_address1, :label => "Address"
+  =form.input :publication_zip_code, :label => "Zip code"
+  =form.input :publication_town
+  #enquiry_publication_country_input.control-group.select.required
+    =form.label :publication_country, :class => "control-label"
+    .controls
+      =form.country_select(:publication_country, ["Netherlands"])
+  =form.input :publication_phone
+  =form.input :publication_fax
+  =form.input :publication_email
+  =form.input :publication_website
+=form.inputs do
+  =form.input :retained_legitimation, :as => :hidden
+  =form.input :legitimation, :as => :file, :label => "Legitimation (publication letter, article etc.)"

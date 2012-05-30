@@ -19,6 +19,24 @@
 .icon-gray {
   background-image: url("/assets/core/glyphicons-halflings-gray.png");
 }
+.radio, .checkbox {
+  padding-left: 0;
+}
+.radio .choices, .checkbox .choices {
+  padding-left: 28px;
+}
+dl dd {
+  font-weight: normal;
+}
+.dl-horizontal dt {
+  width: 150px;
+}
+.dl-horizontal dd {
+  margin-left: 160px;
+}
+.underline {
+  text-decoration: underline;
+}
 
 /*========== CSS3 magic ==========*/
 
@@ -717,9 +735,7 @@ input#email {
 
 #press_visuals {
 	margin-top: 60px;
-  
 }
-
 p.press_visual_txt {
 	font-size: 14px;
 	line-height: 16px;
@@ -727,6 +743,12 @@ p.press_visual_txt {
 }
 .press_visual {
   height: 210px;
+}
+.press_accreditation_text {
+  margin-top: 60px;
+}
+.press_accreditation_text a {
+  text-decoration: underline;
 }
 
 /*========== News page view ==========*/
