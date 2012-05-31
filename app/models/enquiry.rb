@@ -8,6 +8,6 @@ class Enquiry < ActiveRecord::Base
 
   validates :image, :legitimation, :length => {:maximum => 10.megabytes}, :allow_blank => true
   validates_property :format, :of => :image, :in => [:jpeg, :jpg, :png, :gif], :message => "must be an image"
-  validates :agree_to_terms, :presence => true
+  validates :image, :agree_to_terms, :presence => true
     
 end
