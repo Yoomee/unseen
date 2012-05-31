@@ -1,11 +1,11 @@
 module PressHelper
   
   def press_accreditation_options
-    ["Media conference and press preview etc.", "Fair etc."]
+    ["Unseen Photo Fair & Festival", "Press Preview"]
   end
   
   def press_category_options
-    ["Newspaper", "TV", "Radio", "Web, Internet-TV, Blog", "Press Office", "News magazine", "Art magazine", "Architecture and Design magazine", "Lifestyle", "News agency", "Photo agency", "Other"]
+    ["Newspaper", "TV", "Radio", "Web, Internet-TV, Blog", "Press Office", "News magazine", "Art/Photography magazine", "Architecture and Design magazine", "Lifestyle", "News agency", "Photo agency", "Other"]
   end
   
   def press_position_options

@@ -10,6 +10,10 @@
             =image_for(page, "770x446>")
   .row
     .span6
+      .press_accreditation_text
+        %h2.mt-2 Press Accreditation
+        %p
+          ="Media accreditation for Unseen is now available to all members of the media. Please complete your accreditation #{link_to('here', new_enquiry_path(:id => 'press'))}.".html_safe
       .page_text
         -if page.text.blank? && !viewing_mercury_edit? && can?(:edit, page)
           #page_text
@@ -144,10 +148,6 @@
             Andrew Phelps
             %br
             2007
-      .press_accreditation_text.span6
-        %h2.mt-2 Press Accreditation
-        %p
-          ="Media accreditation for Unseen is now available to all members of the media. Please complete your accreditation #{link_to('here', new_enquiry_path(:id => 'press'))}.".html_safe
     =render("layouts/signup_column")
     .span8
       =options_panel do

@@ -745,7 +745,7 @@ p.press_visual_txt {
   height: 210px;
 }
 .press_accreditation_text {
-  margin-top: 60px;
+  margin-bottom: 30px;
 }
 .press_accreditation_text a {
   text-decoration: underline;
