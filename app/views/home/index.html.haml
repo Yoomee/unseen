@@ -44,8 +44,8 @@
               %h3.block-title=link_to_self(page)
               %p.list_date_and_tag
                 =page.created_at.strftime("%e %B %Y")
-                =if page.news_category.present?
-                  =link_to "#{page.news_category}", page.news_category, :class=>"tag"
+                -page.category_list.each do |category|
+                  =tag_label(category.titleize)
               =link_to raw('&rarr; Read more'), page, :class => 'list_read_more'
       -if news_page.present?
         .row

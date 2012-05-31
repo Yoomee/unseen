@@ -1,38 +1,41 @@
+.container
 #parallax_1.parallax
-.span12
-  %h1#news_title.big-title.center
-    %span#page_title.mercury-region{:"data-type" => "editable"}
-      =raw(page.title)
+.container
   .row
-    .span8
-      #page_text.mercury-region{:"data-type" => "editable"}
-        =raw(page.text)
-  .row
-    .span8
-      -page_children.each do |child_page|
-        .row
-          .list_image.span2.fade_in
-            -if child_page.image
-              =link_to(image_for(child_page, "140x100#"), child_page)
-          .list_box.span4
-            %h3.small-title.list_title=link_to_self(child_page)
-            -if page.slug == "news"
-              %p.list_date_and_tag
-                =child_page.created_at.strftime("%e %B %Y")
-                =if child_page.news_category.present?
-                  =link_to "#{child_page.news_category}", child_page.news_category, :class=>"tag"
-            =link_to raw('&rarr; Read more'), child_page, :class => 'list_read_more'
-      -if can?(:new, Page)
-        .row
-          .span2.fade_in#new_page_box{:class => "fade_#{(page_children.size/2.0).ceil.to_word}"}
-            =link_to("+ Add a subpage", new_child_page_path(:parent_id => page.id))
-    =render("layouts/signup_column")
+    .span12
+      %h1#news_title.big-title.center
+        %span#page_title.mercury-region{:"data-type" => "editable"}
+          =raw(page.title)
+      .row
+        .span8.offset2
+          #page_text.mercury-region.center{:"data-type" => "editable"}
+            =raw(page.text)
+      .row
+        .span8
+          -page_children.each do |child_page|
+            .row
+              .list_image.span2.fade_in
+                -if child_page.image
+                  =link_to(image_for(child_page, "140x100#"), child_page)
+              .list_box.span4
+                %h3.small-title.list_title=link_to_self(child_page)
+                -if page.slug == "news"
+                  %p.list_date_and_tag
+                    =child_page.created_at.strftime("%e %B %Y")
+                    -child_page.category_list.each do |category|
+                      =tag_label(category.titleize)
+                =link_to raw('&rarr; Read more'), child_page, :class => 'list_read_more'
+          -if can?(:new, Page)
+            .row
+              .span2.fade_in#new_page_box{:class => "fade_#{(page_children.size/2.0).ceil.to_word}"}
+                =link_to("+ Add a subpage", new_child_page_path(:parent_id => page.id))
+        =render("layouts/signup_column")
 
-  .row
-    .span8
-      =options_panel do
-        =back_link
-        =mercury_edit_link("Edit page content", mercury_update_page_path(page), :id => "mercury_edit_link") if can?(:edit, page)
-        =link_if_can("Edit page details", [:edit, page])
-        =link_if_can("Delete page", [:destroy, page], :confirm => "Are you sure?") unless page.slug.present?
-        =link_if_can("New page", [:new, Page])
+      .row
+        .span8
+          =options_panel do
+            =back_link
+            =mercury_edit_link("Edit page content", mercury_update_page_path(page), :id => "mercury_edit_link") if can?(:edit, page)
+            =link_if_can("Edit page details", [:edit, page])
+            =link_if_can("Delete page", [:destroy, page], :confirm => "Are you sure?") unless page.slug.present?
+            =link_if_can("New page", [:new, Page])
