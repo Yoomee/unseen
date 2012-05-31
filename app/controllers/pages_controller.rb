@@ -23,7 +23,9 @@ class PagesController < ApplicationController
       page.view_name = "gallery"
     elsif page.parent.try(:slug) == "news"
       page.view_name = "news"
-    end
+    elsif page.parent.try(:slug) == "welcome"
+      page.view_name = "highlight"
+    end  
   end
   
 end

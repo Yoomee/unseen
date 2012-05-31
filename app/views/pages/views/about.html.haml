@@ -17,7 +17,7 @@
         -else
           #page_text.mercury-region{:"data-type" => "editable"}
             =raw(page.text)
-    .span4.offset1
+    .span4.offset2
       .page_text
         -if page.text_second.blank? && !viewing_mercury_edit? && can?(:edit, page)
           #page_text

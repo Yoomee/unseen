@@ -1,5 +1,6 @@
+#parallax_1.parallax
 .span12
-  %h1#news_title
+  %h1#news_title.big-title.center
     %span#page_title.mercury-region{:"data-type" => "editable"}
       =raw(page.title)
   .row
@@ -13,12 +14,13 @@
           .list_image.span2.fade_in
             -if child_page.image
               =link_to(image_for(child_page, "140x100#"), child_page)
-          .list_box.span6
-            %h3.list_title=link_to_self(child_page)
+          .list_box.span4
+            %h3.small-title.list_title=link_to_self(child_page)
             -if page.slug == "news"
               %p.list_date_and_tag
                 =child_page.created_at.strftime("%e %B %Y")
-                =" - #{child_page.news_category}" if child_page.news_category.present?
+                =if child_page.news_category.present?
+                  =link_to "#{child_page.news_category}", child_page.news_category, :class=>"tag"
             =link_to raw('&rarr; Read more'), child_page, :class => 'list_read_more'
       -if can?(:new, Page)
         .row
