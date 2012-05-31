@@ -4,7 +4,7 @@
   =form.input :email
   -if photographer.new_record?
     =form.input :password
-  =form.input :user_tag_list
+  =form.input :user_tag_list, :label => "Tags", :as => :select, :multiple => true, :collection => tag_list_options(:user_tags, photographer), :input_html => {:class => 'span8'}
   =form.input :bio, :input_html => {:rows => 5, :class => "span4"}
   -if !photographer.new_record? && photographer.image
     .control-group

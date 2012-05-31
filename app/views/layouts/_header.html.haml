@@ -18,9 +18,11 @@
         =link_to("contact", Page.find_by_slug("contact") || "#", :class=>"header-link", :id=>"contact_link")
         =link_to("about", Page.find_by_slug("about") || "#", :class=>"header-link")
         -if user_signed_in?
-          =link_to(t(:logout).downcase, sign_out_path, :method => :delete, :class=>"header-link", :id=>"login_link")
-          =link_to_self(current_user, :class => "header-link")
-          =link_to("sitemap", pages_path, :class => "header-link")
+          =link_to(t(:logout).downcase, sign_out_path, :method => :delete, :class=>"header_link", :id=>"login_link")
+          =link_to_self(current_user, :class => "header_link")
+          =link_to("sitemap", pages_path, :class => "header_link")
+          -if can?(:index, :photographer)
+            =link_to("photographers", photographers_path, :class => "header_link")
         -else
           =link_to(t(:login).downcase, sign_in_path(:next => request.path), :class=>"header-link", :id=>"login_link")
           =link_to "register", "#", :class=>"header-link"

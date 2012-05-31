@@ -1,0 +1,44 @@
+=form.inputs do
+  =form.input :accreditation, :as => :select, :collection => press_accreditation_options
+  =form.input :title, :as => :select, :collection => ["Ms.", "Mr."]
+  =form.input :first_name
+  =form.input :last_name
+  =form.input :image, :as => :file, :label => "Please upload a high resolution photograph for identification purposes (i.e. passport photo, ID photo, etc.)"
+  =form.input :retained_image, :as => :hidden
+  =form.input :media
+  =form.input :category, :as => :radio, :collection => press_category_options
+  =form.input :position, :as => :radio, :collection => press_position_options
+  =form.input :publication_rhythm, :as => :radio, :collection => publication_rhythm_options
+=form.inputs do
+  %legend Personal details
+  =form.input :address1, :label => "Address"
+  =form.input :zip_code, :label => "Zip code"
+  =form.input :town
+  #enquiry_country_input.control-group.select.required
+    =form.label :country, :class => "control-label"
+    .controls
+      =form.country_select(:country, ["Netherlands"], :include_blank => true)
+  =form.input :phone
+  =form.input :fax
+  =form.input :email
+  =form.input :mobile_phone
+=form.inputs do
+  %legend Publication details
+  =form.input :publication_address1, :label => "Address"
+  =form.input :publication_zip_code, :label => "Zip code"
+  =form.input :publication_town, :label => "Town"
+  #enquiry_publication_country_input.control-group.select.required
+    =form.label :publication_country, "Country", :class => "control-label"
+    .controls
+      =form.country_select(:publication_country, ["Netherlands"], :include_blank => true)
+  =form.input :publication_phone, :label => "Phone"
+  =form.input :publication_fax, :label => "Fax"
+  =form.input :publication_email, :label => "Email"
+  =form.input :publication_website, :label => "Website"
+=form.inputs do
+  %legend Legitimation
+  =form.input :legitimation, :as => :file, :label => "Legitimation (publication letter, article etc.)"  
+  =form.input :retained_legitimation, :as => :hidden
+=form.inputs do
+  %legend
+  =form.input :agree_to_terms, :as => :boolean, :label => "By entering personal data, I do agree to subscribe (revocably) to the UNSEEN email newsletter and receive the information material ordered from UNSEEN"

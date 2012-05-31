@@ -6,16 +6,19 @@ class Ability
   def initialize(user)
     
     # open ability
+    can :create, Enquiry
     can :show, Page, :published => true
+    # TODO: uncomment when photographers become public
+    # can :read, :photographer
     
     if user.try(:admin?)
-      can :manage, :all      
+      can :manage, :all
       # admin ability
     elsif user
       # user ability
       can [:read, :create], Post
       can [:update, :destroy], Post, :user_id => user.id
-      can :manage, User, :id => user.id
+      can [:update, :destroy], User, :id => user.id
     end
   end
   

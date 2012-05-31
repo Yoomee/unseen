@@ -1,4 +1,8 @@
 class PhotographersController < ApplicationController
+
+  # authorize_resource :class => false
+  
+  before_filter :custom_authorize
   
   expose(:photographer) do
     user = User.find_by_id(params[:id]) || User.new
@@ -7,6 +11,7 @@ class PhotographersController < ApplicationController
     end
     user
   end
+  expose(:photographers) {User.where(:role => 'photographer')}
 
   def create
     if photographer.update_attributes(:role => 'photographer')
@@ -14,6 +19,10 @@ class PhotographersController < ApplicationController
     else
       render :action => "new"
     end
+  end
+  
+  def index
+    
   end
   
   def update
@@ -27,6 +36,14 @@ class PhotographersController < ApplicationController
   def show
     if !photographer.photographer?
       redirect_to user_path(photographer)
+    end
+  end
+  
+  def custom_authorize
+    if params[:action]=='show' || params[:id].blank?
+      authorize!(params[:action].to_sym, :photographer)
+    else
+      authorize!(params[:action].to_sym, photographer)
     end
   end
   
