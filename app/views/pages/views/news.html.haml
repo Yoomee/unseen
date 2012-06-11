@@ -5,7 +5,8 @@
         =raw(page.title)
     %p.list_date_and_tag
       =page.created_at.strftime("%e %B %Y")
-      =" - #{page.news_category}" if page.news_category.present?      
+      -page.category_list.each do |category|
+        =tag_label(category.titleize)
     -if page.image
       .news_page_image
         =image_for(page, "5100x380>")

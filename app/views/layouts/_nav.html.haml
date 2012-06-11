@@ -1,0 +1,11 @@
+#nav.nav.pull-right
+  %ul.unstyled         
+    %li=link_to("news", Page.find_by_slug("news") || "#")
+    %li=link_to("fair", Page.find_by_slug("fair") || "#")
+    %li=link_to "program", "/wireframes/program"
+    %li=link_to("galleries", Page.find_by_slug("galleries") || "#")
+    %li=link_to "community", "#"
+    %li.amsterdam-link=link_to "amsterdam", "#"
+    -if false
+      %li=link_to("press", Page.find_by_slug("press") || "#")
+      %li=link_to("home", root_path)
