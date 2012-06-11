@@ -1,19 +1,28 @@
+#parallax_2.parallax
+=render('layouts/call_to_actions')
 .container#footer
   .row
-    .span4
+    .span3
       %h2#footer_site_logo
-        %span
-          unseen photo fair
-        %span
-          19-23 sept 2012
-        %span
-          amsterdam        
-    .span8
-      #footer_nav.nav.pull-right
-        %ul.unstyled
-          %li=link_to("home", root_path)
-          %li=link_to("news", Page.find_by_slug("news") || "#")
-          %li=link_to("fair", Page.find_by_slug("fair") || "#")
-          %li=link_to("galleries", Page.find_by_slug("galleries") || "#")
-          %li=link_to("press", Page.find_by_slug("press") || "#")
-          %li=link_to("about", Page.find_by_slug("about") || "#")
+        =link_to root_path do
+          %span
+            unseen photo fair
+          %span
+            19-23 sept 2012
+          %span
+            amsterdam           
+    .span9
+      =render ("/layouts/nav")
+      #header-links.pull-right
+        =link_to "Twitter", "http://twitter.com/UnseenPhotoFair", :class=>"header-icon", :id=>"twitter_icon"
+        =link_to "Facebook", "http://www.facebook.com/UnseenPhotoFairAmsterdam", :class=>"header-icon", :id=>"facebook_icon"
+        =link_to "search", search_path, :class=>"header-link", :id=>"search_link"  
+        =link_to("contact", Page.find_by_slug("contact") || "#", :class=>"header-link", :id=>"contact_link")
+        -if user_signed_in?
+          =link_to(t(:logout).downcase, sign_out_path, :method => :delete, :class=>"header-link", :id=>"login_link")
+          =link_to_self(current_user, :class => "header-link")
+          =link_to("sitemap", pages_path, :class => "header-link")
+        -else
+          =link_to("about", Page.find_by_slug("about") || "#", :class=>"header-link")
+          =link_to(t(:login).downcase, sign_in_path(:next => request.path), :class=>"header-link", :id=>"login_link")
+          =link_to "register", "#", :class=>"header-link"          
