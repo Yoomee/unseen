@@ -15,7 +15,7 @@
 #= require_tree ./core
 
 window.YmCms.Page.Form.showSlideshowTab = () ->
-  if ($('#page_view_name').val() == "gallery")
+  if ($('#page_view_name').val() == "gallery") || ($('#page_view_name').val() == "persona_page")
     $('.tabbable .nav li').has("a[href='#slideshow']").show()
   else
     $('.tabbable .nav li').has("a[href='#slideshow']").hide()

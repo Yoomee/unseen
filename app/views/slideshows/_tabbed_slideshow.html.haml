@@ -1,0 +1,24 @@
+-slides ||= slideshow.slides
+
+-content_for(:head) do
+  :javascript
+    $(document).ready(function() {
+      YmCms.Slideshow.init();
+    });
+.carousel.tabbable
+  .span4.carousel-list
+    %ul
+      -slides.each_with_index do |slide,idx|
+        %li{:class => "#{idx.zero? ? 'active' : ''}"}
+          =link_to(truncate(slide.caption,:length => 50), "#slide#{idx}", :'data-toggle' => "tab")
+  .span8.carousel-image.tab-content
+    -slides.each_with_index do |slide, idx|
+      .slide.tab-pane.fade{:id => "slide#{idx}", :class => "#{idx.zero? ? 'active in' : ''}"}
+        -if slide.has_video?
+          %iframe{:width => 620, :height => 380, :src => slide.video_embed_url, :frameborder => 0, :allowfullscreen => true}
+        -else
+          =image_for(slide, "620x380#")
+        .span6.carousel-text
+          %p=slide.caption
+          %p
+            &rarr; Read more

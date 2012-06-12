@@ -1040,12 +1040,15 @@ a.program-tab {
   width: 180px;
   cursor: pointer;
 }
-.carousel-list li.active {
-  background: #000;
+.carousel-list li.active a{
   color: #fff;
 } 
+.carousel-list li.active{
+  background: #000;
+}
 .carousel-image {
   position: relative;
+  width:inherit;
 }
 .carousel-image img {
 	float: left; 
@@ -1269,11 +1272,3 @@ height: 40px;
 
 
 /*========== Persona pages ==========*/
-
-#persona h1 {
-  
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 59px;
-  line-height: 65px;
-}

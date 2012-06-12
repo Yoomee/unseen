@@ -1,16 +1,21 @@
-.span12#persona
-  %h1
-    %span#page_title.mercury-region{:"data-type" => "editable"}
-      =raw(page.title)
+.container
   .row
-    .span8
-      .gallery_description
-        -if page.text.blank? && !viewing_mercury_edit? && can?(:edit, page)
-          #page_text
-            =mercury_edit_link("Click here to add some page content", mercury_update_page_path(page))
-        -else
-          #page_text.mercury-region{:"data-type" => "editable"}
-            =raw(page.text)
+    .span8.offset2.highlight-intro
+      %h1.big-title.center.highlight-title
+        %span#page_title.mercury-region{:"data-type" => "editable"}
+          =raw(page.title)
+      -if page.text.blank? && !viewing_mercury_edit? && can?(:edit, page)
+        #page_text.small-title
+          =mercury_edit_link("Click here to add some page content", mercury_update_page_path(page))
+      -else
+        %h2#page_text.mercury-region.small-title.highlight-title{:"data-type" => "editable"}
+          =raw(page.text)
+  .row
+    =render('slideshows/tabbed_slideshow', :slideshow => page.slideshow) if page.slideshow
+
+=render('layouts/news_block')
+.container
+  .row
     .span8
       =options_panel do
         -if can?(:edit, page)
