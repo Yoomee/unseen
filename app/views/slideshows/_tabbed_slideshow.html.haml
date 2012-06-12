@@ -3,7 +3,11 @@
 -content_for(:head) do
   :javascript
     $(document).ready(function() {
-      YmCms.Slideshow.init();
+      $('.carousel-list li').hover(function(){
+        if(!$(this).hasClass('active')){
+          $(this).find('a').tab('show');
+        }
+      },function(){});
     });
 .carousel.tabbable
   .span4.carousel-list

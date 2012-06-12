@@ -1049,6 +1049,8 @@ a.program-tab {
 .carousel-image {
   position: relative;
   width:inherit;
+  height:380px;
+  overflow:hidden;
 }
 .carousel-image img {
 	float: left; 
