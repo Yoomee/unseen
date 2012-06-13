@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   
   has_many :photos, :foreign_key => "photographer_id"
   has_many :links, :as => :attachable, :class_name => "YmLinks::Link", :dependent => :destroy
+  has_and_belongs_to_many :galleries, :class_name => "Page", :join_table => "galleries_photographers"
   
   acts_as_taggable_on :user_tags
   

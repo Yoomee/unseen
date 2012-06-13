@@ -1,11 +1,17 @@
+-content_for(:head) do
+  :javascript
+    $(document).ready(function() {
+      $('#photographer_galleries_input select').chosen();  
+    });
 =form.inputs do
   =form.input :first_name
   =form.input :last_name
   =form.input :email
   -if photographer.new_record?
     =form.input :password
-  =form.input :user_tag_list, :label => "Tags", :as => :select, :multiple => true, :collection => tag_list_options(:user_tags, photographer), :input_html => {:class => 'span8'}
   =form.input :bio, :input_html => {:rows => 5, :class => "span4"}
+  =form.input :user_tag_list, :label => "Tags", :as => :select, :multiple => true, :collection => tag_list_options(:user_tags, photographer), :input_html => {:class => 'span8'}
+  =form.input :galleries, :collection => (Page.find_by_slug('galleries').try(:children) || []), :input_html => {:"data-placeholder" => "Select galleries", :class => 'no-chosen span8'}
   -if !photographer.new_record? && photographer.image
     .control-group
       =image_for(photographer, "100x100#")

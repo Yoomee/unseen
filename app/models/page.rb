@@ -3,7 +3,10 @@ class Page < ActiveRecord::Base
   include YmCms::Page
   
   has_one :slideshow, :as => :attachable, :dependent => :destroy
+  has_and_belongs_to_many :photographers, :class_name => "User", :join_table => "galleries_photographers"
+    
   accepts_nested_attributes_for :slideshow, :reject_if => :all_blank
+  
   before_save :delete_slideshow_if_no_slides
   
   has_snippets :gallery_address, :gallery_phone, :gallery_fax, :gallery_email, :gallery_website, :gallery_facebook, :gallery_hours, :text_second, :news_category, :fair_title_1, :fair_title_2, :fair_title_3, :fair_title_4, :fair_1, :fair_2, :fair_3, :fair_4, :fair_5, :fair_6

@@ -1,7 +1,7 @@
 .container
   .row
     .span12
-      %h1
+      %h1.big-title
         %span#page_title.mercury-region{:"data-type" => "editable"}
           =raw(page.title)
 -if page.slideshow
@@ -25,9 +25,20 @@
         .placeholder250x
           &nbsp;
     .span4
+      -if !page.photographers.empty?
+        %h2.small-title.upcase.mb-1 Artists
+        %ul.unstyled.pull-left.clear.mb-2
+          -page.photographers.each do |photographer|
+            %li.pull-left.clear.mb-1
+              .pull-left.mr-1
+                =link_to(image_for(photographer, "60x60#"), photographer)
+              .pull-left
+                =link_to_self(photographer)
+                %br
+                Photographer
       -if page.has_gallery_contact_details?
-        %h2.contact_title Contact
-        %ul.unstyled.gallery_contact_details
+        %h2.small-title.upcase.clear.mb-1 Contact
+        %ul.unstyled.pull-left.clear.mb-2
           -if page.gallery_address.present?
             %li.gallery_address
               =simple_format(page.gallery_address)
@@ -52,7 +63,7 @@
               fb:
               =link_to_url(page.gallery_facebook.gsub(/(http:\/\/)?(www\.)?/, ""))
       -if page.gallery_hours.present?
-        %h2.gallery_hours_title Gallery hours
+        %h2.small-title.upcase.mb-1 Gallery hours
         %span.gallery_hours=simple_format(page.gallery_hours)
   
   .row
