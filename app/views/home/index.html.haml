@@ -1,19 +1,7 @@
 =render("layouts/header")
-#home-slideshow
-  .home-slideshow-inner
-    .home-slide.home-slide-prev
-    .home-slide.active-slide
-      .home-slide-caption
-        %h2.home-slide-title
-          =link_to "Unseen is an international photo fair focussed on...", "#"
-        =link_to raw("&rarr; Read more"), "#", :class=>"read_more"
-        .dots
-          .dot
-          .dot
-          .dot.active-dot
-          .dot
-          .dot
-    .home-slide.home-slide-next
+-if homepage_slideshow
+  =render("slideshows/home_slideshow", :slideshow => homepage_slideshow)
+  =link_if_can("Edit slideshow", [:edit, homepage_slideshow], :class => "pull-right mt-2 mr-2")
 #are-you.strip
   .container
     .row
@@ -21,7 +9,7 @@
         %h2.are-you-title
           We have an emerging program, discover what unseen offers you:
         %ul.are-you-list
-          -Page.find_by_slug('persona_pages').children.each do |page|
+          -persona_pages.each do |page|
             %li=link_to(page.title,page, :class => 'are-you-link category')
 #parallax_1.parallax
 =render('layouts/news_block')

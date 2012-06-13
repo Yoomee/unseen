@@ -1,0 +1,25 @@
+=content_for(:head) do
+  :javascript
+    $(document).ready(function() {
+      HomeSlideshow.init();
+    });
+.container
+  .row
+    .span12
+      #home-slideshow-caption
+.home-slideshow-container
+  .home-slideshow
+    .home-slideshow-inner
+      -slides = slideshow.slides
+      -slides = ([slides.pop] + slides)
+      -slides.each_with_index do |slide, index|
+        .home-slide{:class => home_slide_class(index), :id => "slide_#{index}"}
+          =image_for(slide, "980x450#")
+          .home-slide-caption{:style => 'display:none'}
+            %h2.home-slide-title
+              =link_to(slide.title.to_s, slide.url)
+            =link_to(raw("&rarr; Read more"), slide.url, :class => "read_more")
+            .dots
+              -slides.size.times do |dot_index|
+                -active = (index==0 && dot_index==slides.size-1) || (dot_index==index-1)
+                .dot{:class => "#{active ? 'active-dot' : ''}"}
