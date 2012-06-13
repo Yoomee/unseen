@@ -6,7 +6,8 @@
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_tree ./core
  *= require formtastic-bootstrap
- *= require ym_core 
+ *= require ym_core
+ *= require jquery-ui-bootstrap 
  *= require ym_cms
  *= require ym_posts
  *= require ym_search
@@ -1208,4 +1209,7 @@ height: 40px;
 }
 
 
-/*========== Persona pages ==========*/
+/*========== Events ==========*/
+.event-title{
+  text-transform:none;
+}

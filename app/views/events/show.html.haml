@@ -1,0 +1,32 @@
+.container
+=render('events/nav')
+.container
+  .row
+    .news_page.span8
+      %h2.big-title.event-title.mt-2=@event.title
+      .row.mt-2
+        .span1 Date:
+        .span7=@event.date.strftime('%a %o %B')
+      .row
+        .span1 Time:
+        .span7=@event.time_string
+      .row
+        .span1 Venue:
+        .span7=link_to(@event.venue)
+      -if @event.image
+        .news_page_image.mt-2
+          =image_for(@event, "620x")
+      .page_text.mb-2
+        #page_text
+          =simple_format(@event.description)   
+      -@event.category_list.each do |category|
+        =tag_label(category.titleize)
+    .span4
+      Right col
+    .span8
+      =options_panel do
+        =back_link
+        =link_if_can("Edit event", [:edit, @event])
+        =link_if_can("Delete event", [:destroy, @event], :confirm => "Are you sure?")
+        -if can?(:new, Event)
+          =link_if_can("New event", new_event_path)

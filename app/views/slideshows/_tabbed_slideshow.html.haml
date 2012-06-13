@@ -4,11 +4,10 @@
   :javascript
     $(document).ready(function() {
       $('.carousel-list li').hover(function(){
-        //if(!$(this).hasClass('active')){
+        if(!$(this).hasClass('active')){
           $('.carousel-image .slide.active').removeClass('active').removeClass('in');
-          $(this).find('a').tab('show');
-          
-        //}
+          $(this).find('a').tab('show');  
+        }
       },function(){});
     });
 .carousel.tabbable
