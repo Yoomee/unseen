@@ -1,0 +1,18 @@
+#parallax_1.parallax.parallax-subnav
+  .subnav-strip
+    .container
+      .row
+        .span10.subnav-tabs.program-subnav-tabs  
+          %ul
+            -Event::DATES.each do |date|
+              =li_with_active(@date == date, link_to(date.strftime('%A<br/>%d.%m').html_safe, program_path(:day => date.strftime('%a').downcase, :anchor => 'program'), :class=>"subnav-tab program-tab"))
+        -if action_name.index?
+          .span2.block-or-line
+            =link_to "#", :class=>"block-or-line-icon show-line active" do
+              %span.hide show as line
+              -3.times do
+                .sl        
+            =link_to "#", :class=>"block-or-line-icon show-block" do
+              %span.hide show as block
+              -9.times do
+                .sb

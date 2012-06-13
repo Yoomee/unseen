@@ -1,12 +1,14 @@
 =semantic_form_for @event do |form|
   =form.inputs do
     =form.input :title
-    =form.input :date, :as => :select, :collection => (Date.new(2012,9,19)..Date.new(2012,9,23)).map{|d| [d.strftime('%a %o %B'),d]}, :include_blank => false
+    =form.input :date, :as => :select, :collection => Event::DATES.map{|d| [d.strftime('%a %o %B'),d]}, :include_blank => false
     =form.input :starts_at, :as => :string, :input_html => {:class => 'timepicker'}
     =form.input :ends_at, :as => :string,  :input_html => {:class => 'timepicker'}
     =form.input :venue, :collection => Page.find_by_slug('galleries').children.order(:title)
     =form.input :description, :input_html => {:rows => 8, :class => "span8"}
+    =form.input :category_list, :label => "Categories", :as => :select, :multiple => true, :collection => tag_list_options(:categories, @event), :input_html => {:class => 'span8'}
     =form.input :retained_image, :as => :hidden
     =form.input :image, :as => :file
+    =form.input :buy_tickets_url
   =form.buttons do
     =form.commit_button "Save"

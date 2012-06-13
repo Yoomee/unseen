@@ -1203,4 +1203,7 @@ height: 40px;
 }
 
 
-/*========== Persona pages ==========*/
+/*========== Events ==========*/
+.event-title{
+  text-transform:none;
+}

@@ -26,10 +26,13 @@ class EventsController < ApplicationController
   end
   
   def index
+    @date = Event::DATES.select{|d| d.strftime('%a') == params[:day].to_s.titleize}.first || Event::DATES.first
+    @events = Event.where(:date => @date).order(:starts_at)
   end
   
   def show
     @event = Event.find(params[:id])
+    @date = @event.date
   end
   
   def update

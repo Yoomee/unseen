@@ -6,6 +6,8 @@ class Event < ActiveRecord::Base
   
   validates :title, :date, :starts_at, :ends_at, :venue, :presence => true
   
+  acts_as_taggable_on :categories
+  
   #validates :image, :presence => true
   #validates_property :format, :of => :image, :in => [:jpeg, :jpg, :png, :gif], :message => "must be an image"
   
@@ -19,4 +21,10 @@ class Event < ActiveRecord::Base
   end
   alias_method :ends_at_before_type_cast, :ends_at  
   
+  def time_string
+    "#{starts_at} - #{ends_at}"
+  end
+  
 end
+
+Event::DATES = (Date.new(2012,9,19)..Date.new(2012,9,23)).to_a
