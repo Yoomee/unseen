@@ -727,89 +727,16 @@ input#email {
   background: white url(/assets/home_bg_9.png) 50% 0 no-repeat scroll;	
   z-index: 3;
 }
-
 #eleventh {
   background: white;
   height: 213px;
   z-index: 3;
-}
-
-/*==========  Homepage slideshow ==========*/
-#home-slideshow {
-  width: 100%;
-  overflow: hidden;
-  height: 450px;
-	float: left;
-	clear: left;
-  background: #000;
-  position: relative;
-}
-.home-slideshow-inner {
-  margin: 0 auto;
-  width: 980px;
-  height: 450px;
-  position: relative;
-}
-.home-slide {
-  float: left;
-  width: 980px;
-  height: 450px;
-  background: url(/assets/active-slide.jpg);
-  position: absolute;
-}
-.home-slide-prev {
-	left: -980px;
-	opacity: 0.6;
-	cursor: pointer;
-	background: url(/assets/home-slide-prev.jpg) top right;
-}
-.home-slide-next {
-	right: -980px;
-	opacity: 0.6;
-	cursor: pointer;
-	background: url(/assets/home-slide-next.jpg) top left;
-
-}
-.active-slide {
-	left: 0;
-	top: 0;
-}
-
-.home-slide-caption {
-	position: absolute;
-	bottom: 40px;
-	right: 40px;
-	padding: 15px;
-	float: left;
-	width: 450px;
-	height: 105px;
-	background: rgba(255,255,255,0.9);
-  
-}
-.dots {
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
-  
-}
-.dot {
-  float: left;
-  width: 10px;
-  margin: 0 7px 0 0;
-  height: 10px;
-  border-radius: 10px;
-  background: #ccc;
-  cursor: pointer;
-}
-.active-dot {
-  background: #000;
 }
 a.read_more {
 	font-size: 16px;
 	margin: 10px 0 0;
 	float: left;
 	clear: left;
-  
 }
 .container {
   clear: both;
@@ -869,7 +796,6 @@ a.tag {
 h2.home-title {
 	margin-top: 15px;
 	margin-bottom: 55px;
-  
 }
 /*========== Call to action ==========*/
 #call-to-actions {
