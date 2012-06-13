@@ -1,3 +1,9 @@
+-content_for(:head) do
+  :javascript
+    $(document).ready(function() {
+      $('#page_photographers_input select').chosen();  
+    });
+    
 =form.inputs do
   =form.input :gallery_address, :as => :text, :input_html => {:rows => 4}
   =form.input :gallery_phone
@@ -6,3 +12,4 @@
   =form.input :gallery_website
   =form.input :gallery_facebook
   =form.input :gallery_hours, :as => :text, :input_html => {:rows => 3}
+  =form.input :photographers, :collection => User.where(:role => 'photographer'), :input_html => {:"data-placeholder" => "Select photographers", :class => 'no-chosen span8'}
