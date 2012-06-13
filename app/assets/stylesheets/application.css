@@ -1048,14 +1048,17 @@ a.program-tab {
 }
 .carousel-image {
   position: relative;
-  width:inherit;
+  width:620px;
   height:380px;
   overflow:hidden;
+  float:left;
+  display:block;
 }
 .carousel-image img {
 	float: left; 
 }
-.carousel-text p {
+.carousel-text p,
+.carousel-text a {
   color: #fff;
   margin: 0;
 }

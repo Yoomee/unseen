@@ -5,15 +5,13 @@
         %span#page_title.mercury-region{:"data-type" => "editable"}
           =raw(page.title)
       -if page.text.blank? && !viewing_mercury_edit? && can?(:edit, page)
-        #page_text.small-title
+        %h2#page_text.small-title.highlight-title
           =mercury_edit_link("Click here to add some page content", mercury_update_page_path(page))
       -else
         %h2#page_text.mercury-region.small-title.highlight-title{:"data-type" => "editable"}
           =raw(page.text)
   .row
     =render('slideshows/tabbed_slideshow', :slideshow => page.slideshow) if page.slideshow
-
-=render('layouts/news_block')
 .container
   .row
     .span8
@@ -23,3 +21,4 @@
         =link_if_can("Edit page details", [:edit, page])
         =link_if_can("Delete page", [:destroy, page], :confirm => "Are you sure?") unless page.slug.present?
         =link_if_can("New page", [:new, Page])
+=render('layouts/news_block')
