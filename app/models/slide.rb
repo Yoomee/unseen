@@ -3,7 +3,9 @@ class Slide < ActiveRecord::Base
   include YmCms::Slide
   
   def url=(value)
-    value = "http://#{value}" unless value.match(/^.*:\/\//)
+    if value.present? && !value.match(/^.*:\/\//)    
+      value = "http://#{value}" 
+    end
     write_attribute(:url, value)
   end
   
