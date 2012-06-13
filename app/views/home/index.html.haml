@@ -21,34 +21,8 @@
         %h2.are-you-title
           We have an emerging program, discover what unseen offers you:
         %ul.are-you-list
-          %li=link_to "Public", "/wireframes/highlights", :class=>"are-you-link category"
-          %li=link_to "Collectors", "/wireframes/highlights", :class=>"are-you-link category"
-          %li=link_to "First-time buyers", "/wireframes/highlights", :class=>"are-you-link category"
-          %li=link_to "Professionals", "/wireframes/highlights", :class=>"are-you-link category"
-          %li=link_to "VIP", "/wireframes/highlights", :class=>"are-you-link category"
-          %li=link_to "Press", "/wireframes/highlights", :class=>"are-you-link category"
+          -Page.find_by_slug('persona_pages').children.each do |page|
+            %li=link_to(page.title,page, :class => 'are-you-link category')
 #parallax_1.parallax
-#latest_news.strip
-  .container
-    .row
-      .span12
-        %h2.home-title
-          News
-    #latest_news.block-view.row
-      -[news_pages.shift(4), news_pages.shift(4)].each do |pages|
-        -pages.each do |page|
-          .block-item.span4
-            .block-image.fade_in
-              =link_to(image_for(page, "300x200#"), page) if page.image
-            .block-text
-              %h3.block-title=link_to_self(page)
-              %p.list_date_and_tag
-                =page.created_at.strftime("%e %B %Y")
-                -page.category_list.each do |category|
-                  =tag_label(category.titleize)
-              =link_to raw('&rarr; Read more'), page, :class => 'list_read_more'
-      -if news_page.present?
-        .row
-          .span3.offset5
-            =link_to("More news", news_page, :class => "black-btn more-middle")
+=render('layouts/news_block')
 =render('layouts/footer')

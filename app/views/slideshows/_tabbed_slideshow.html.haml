@@ -1,0 +1,29 @@
+-slides ||= slideshow.slides
+
+-content_for(:head) do
+  :javascript
+    $(document).ready(function() {
+      $('.carousel-list li').hover(function(){
+        //if(!$(this).hasClass('active')){
+          $('.carousel-image .slide.active').removeClass('active').removeClass('in');
+          $(this).find('a').tab('show');
+          
+        //}
+      },function(){});
+    });
+.carousel.tabbable
+  .span4.carousel-list
+    %ul
+      -slides.each_with_index do |slide,idx|
+        %li{:class => "#{idx.zero? ? 'active' : ''}"}
+          =link_to(slide.title, "#slide#{idx}", :'data-toggle' => "tab")
+  .span8.carousel-image.tab-content
+    -slides.each_with_index do |slide, idx|
+      .slide.tab-pane{:id => "slide#{idx}", :class => "#{idx.zero? ? 'active' : ''}"}
+        -if slide.has_video?
+          %iframe{:width => 620, :height => 380, :src => slide.video_embed_url, :frameborder => 0, :allowfullscreen => true}
+        -else
+          =image_for(slide, "620x380#")
+        .span6.carousel-text
+          %p=slide.caption
+          %p=link_to_url(slide.url, :title => '&rarr; Read more'.html_safe, :auto_target => true)
