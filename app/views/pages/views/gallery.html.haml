@@ -27,12 +27,12 @@
     .span4
       -if !page.photographers.empty?
         %h2.small-title.upcase.mb-1 Artists
-        %ul.unstyled.pull-left.clear.mb-2
+        .pull-left.clear.mb-2
           -page.photographers.each do |photographer|
-            %li.pull-left.clear.mb-1
-              .pull-left.mr-1
+            .row.mb-1
+              .span1
                 =link_to(image_for(photographer, "60x60#"), photographer)
-              .pull-left
+              .span3
                 =link_to_self(photographer)
                 %br
                 Photographer

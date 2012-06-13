@@ -128,6 +128,9 @@ input, a.call-to-action-link, .carousel-text p {
 .center {
   text-align: center;
 }
+.nocase {
+  text-transform: none;
+}
 
 /*========== Structure ==========*/
 
@@ -1088,6 +1091,9 @@ p.press_visual_txt {
 }
 .slideshow_container {
   margin-bottom: 50px;
+}
+.slideshow .slide-caption {
+  color: gray;
 }
 
 /*========== Fair ==========*/
