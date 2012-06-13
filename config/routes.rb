@@ -2,6 +2,7 @@ Unseen::Application.routes.draw do
 
   root :to => 'home#index'
   resources :wireframes, :only => [:index, :show]
+  resources :events
   resources :photographers
   match "press_accreditations", :to => "enquiries#index", :as => "press_accreditations"
   resources :enquiries, :only => [] do
