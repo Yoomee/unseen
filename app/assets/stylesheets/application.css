@@ -951,7 +951,7 @@ a.subnav-back-link {
 a.subnav-tab:hover {
   text-decoration: none;
 } 
-.subnav-tabs a.active {
+.subnav-tabs .active a {
   background: #fff;
 } 
 .highlight-title {

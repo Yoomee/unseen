@@ -21,12 +21,8 @@
         %h2.are-you-title
           We have an emerging program, discover what unseen offers you:
         %ul.are-you-list
-          %li=link_to "Public", "/wireframes/highlights", :class=>"are-you-link category"
-          %li=link_to "Collectors", "/wireframes/highlights", :class=>"are-you-link category"
-          %li=link_to "First-time buyers", "/wireframes/highlights", :class=>"are-you-link category"
-          %li=link_to "Professionals", "/wireframes/highlights", :class=>"are-you-link category"
-          %li=link_to "VIP", "/wireframes/highlights", :class=>"are-you-link category"
-          %li=link_to "Press", "/wireframes/highlights", :class=>"are-you-link category"
+          -Page.find_by_slug('persona_pages').children.each do |page|
+            %li=link_to(page.title,page, :class => 'are-you-link category')
 #parallax_1.parallax
 =render('layouts/news_block')
 =render('layouts/footer')

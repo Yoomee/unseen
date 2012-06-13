@@ -1,4 +1,15 @@
 .container
+#parallax_1.parallax.parallax-subnav
+  .subnav-strip
+    .container
+      .row
+        .span2
+          =link_to raw("&larr; home"), "/", :class=>"subnav-back-link"
+        .span10.subnav-tabs  
+          %ul
+            -Page.find_by_slug('persona_pages').children.each do |child|
+              =li_with_active(child == page, link_to(child.title,child, :class => 'subnav-tab'))
+.container
   .row
     .span8.offset2.highlight-intro
       %h1.big-title.center.highlight-title
@@ -12,6 +23,8 @@
           =raw(page.text)
   .row
     =render('slideshows/tabbed_slideshow', :slideshow => page.slideshow) if page.slideshow
+    .span3.offset5
+      =link_to("Full program", "/program", :class => "black-btn more-middle")
 .container
   .row
     .span8
