@@ -26,7 +26,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @event.destroy
     flash_notice(@event)
-    redirect_to events_path
+    redirect_to program_path
   end
   
   def edit
