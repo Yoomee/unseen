@@ -31,4 +31,17 @@ class PagesController < ApplicationController
     end
   end
   
+  def set_view
+    session[:view] = %w{list block}.include?(params[:view]) ? params[:view] : 'list'
+    return_or_redirect_to(root_path)
+  end
+  
+  def show
+    if page.root.slug == 'amsterdam'
+      render :action => "views/amsterdam"
+    else
+      render :action => "views/#{page.view_name}"
+    end
+  end
+  
 end

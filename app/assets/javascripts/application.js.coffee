@@ -27,14 +27,11 @@ FairPage =
       fairBoxId = `$(this).data('fair-box-id')`
       $.scrollTo($("#fair_box_#{fairBoxId}"), 500)
 
-window.AmsterdamPage =
+ToggleViewLinks = 
   init: () ->
-    $('.subnav-tabs li.active a').click (event) ->
-      event.preventDefault()
-      AmsterdamPage.scroll()
-    AmsterdamPage.scroll()
-  scroll: () ->
-    $.scrollTo '#parallax_1', 500, {easing:'swing', axis:'y'}
+    $('.toggle-view-links a').tooltip
+      placement: 'right',
+      delay: {show: 1000, hide: 0}
 
 $(document).ready ->
   YmCms.Page.Form.showSlideshowTab()
@@ -52,4 +49,5 @@ $(document).ready ->
         value: term,
         text: term
       )
-  )    
+  )
+  # ToggleViewLinks.init()

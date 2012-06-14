@@ -921,6 +921,22 @@ a.block-or-line-icon {
   height: 3px;
   background: #fff;
 }
+.toggle-view-links {
+  padding: 10px 0 5px 0;
+}
+.toggle-view-links a {
+  float: left;
+  clear: both;
+  color: white;
+  font-size: 22px;
+  margin-bottom: 5px;  
+}
+.toggle-view-links a.active {
+  color: black;
+}
+.toggle-view-links a:hover {
+  text-decoration: none;
+}
 
 /*==========  program tabs  ==========*/
 .program-subnav-tabs {
@@ -1020,7 +1036,7 @@ a.program-tab {
 .mercury-textarea{
   color:#fff;
 }
-#new_page_box a {
+.new-page-box a {
   width: 100%;
   text-align: center;
   float: none;
@@ -1030,8 +1046,12 @@ a.program-tab {
   border: 2px dashed black;
   text-decoration: none;
 }
-#new_page_box.span4 a {
+.new-page-box.span4 a {
   font-size: 30px;
+}
+.block-item .new-page-box a {
+  height: 26px;
+  padding: 85px 0;
 }
 /*========== Press page view ==========*/
 
