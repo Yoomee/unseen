@@ -19,4 +19,17 @@ module ProgramHelper
     end
     link_to "I'm going", url, options
   end
+  
+  def venues_and_galleries_options
+    grouped_options_for_select([
+      [
+        'Venues',
+        Page.find_by_slug('venues').children.order(:title).map{|p|[p.title,p.id]}
+      ],
+      [
+        'Galleries',
+        Page.find_by_slug('galleries').children.order(:title).map{|p|[p.title,p.id]}
+      ]
+    ])
+  end
 end

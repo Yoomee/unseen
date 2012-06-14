@@ -23,6 +23,8 @@ class PagesController < ApplicationController
     page.parent_id = params[:parent_id]
     if page.parent.try(:slug) == "galleries"
       page.view_name = "gallery"
+    elsif page.parent.try(:slug) == "venues"
+      page.view_name = "gallery"
     elsif page.parent.try(:slug) == "news"
       page.view_name = "news"
     elsif page.parent.try(:slug) == "welcome"

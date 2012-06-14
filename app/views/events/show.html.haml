@@ -8,13 +8,13 @@
         .span6
           .row
             .span1 Date:
-            .span5=@event.date.strftime('%a %o %B')
+            .span5=link_to(@event.date.strftime('%a %o %B'),program_path(:day=>@event.date.strftime('%a').downcase,:anchor => 'program'))
           .row
             .span1 Time:
             .span5=@event.time_string
           .row
             .span1 Venue:
-            .span5=link_to(@event.venue)
+            .span5=link_to_self(@event.venue)
         .span2
           .pull-right
             =add_to_program_link(@event)
