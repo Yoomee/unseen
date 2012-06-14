@@ -50,11 +50,8 @@ $(document).ready ->
         text: term
       )
   )
-<<<<<<< HEAD
   $('a.add-to-program, #meet-people a').tooltip({placement:'bottom'})
   $('a.add-to-program').live 'ajax:beforeSend', (event) =>
     $(event.target).tooltip('hide')
     $(event.target).addClass('loading')
-=======
   # ToggleViewLinks.init()
->>>>>>> 7cbaa41d64d35f8304670977261ea850e2843888
