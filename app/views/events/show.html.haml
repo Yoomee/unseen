@@ -25,12 +25,16 @@
           =simple_format(@event.description)   
       -@event.category_list.each do |category|
         =tag_label(category.titleize)
-      %h2.normal-title.mt-3.meet-people-title MEET THESE PEOPLE
-      #meet-people
-        %em#no-one-going{:class => "#{'hide' if !@event.users.count.zero?}"} No one has said they're going yet, you can be the first!
-        -@event.users.each do |user|
-          =link_to(image_for(user, '60x60#'), user, :'data-user-id' => user.id, :title => user.to_s)
-        
+      .row
+        .span8
+          %h2.normal-title.mt-3.meet-people-title MEET THESE PEOPLE
+          #meet-people
+            %em#no-one-going{:class => "#{'hide' if !@event.users.count.zero?}"} No one has said they're going yet, you can be the first!
+            -@event.users.each do |user|
+              =link_to(image_for(user, '60x60#'), user, :'data-user-id' => user.id, :title => user.to_s)
+        .span8
+          %br
+          =add_to_program_link(@event)
     .span4
       %br
     .span8
