@@ -935,6 +935,9 @@ a.program-tab {
 .program-title {
   margin-bottom: 3px;
 }
+.program-title a:hover{
+  text-decoration:underline;
+}
 .program-item {
   padding-bottom: 25px;
   margin-bottom: 25px;
