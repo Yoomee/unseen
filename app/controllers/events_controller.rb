@@ -1,5 +1,17 @@
 class EventsController < ApplicationController
   
+  def add
+    @event = Event.find(params[:id])
+    current_user.events << @event
+    render :action => :add_remove
+  end
+  
+  def remove
+    @event = Event.find(params[:id])
+    current_user.events.delete(@event)
+    render :action => :add_remove
+  end
+  
   def create
     @event = Event.new(params[:event])
     if @event.save
@@ -14,7 +26,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @event.destroy
     flash_notice(@event)
-    redirect_to events_path
+    redirect_to program_path
   end
   
   def edit
