@@ -8,6 +8,7 @@
  *= require formtastic-bootstrap
  *= require ym_core
  *= require jquery-ui-bootstrap 
+ *= require font-awesome 
  *= require ym_cms
  *= require ym_posts
  *= require ym_search
