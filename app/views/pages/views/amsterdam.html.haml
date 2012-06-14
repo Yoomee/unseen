@@ -45,7 +45,7 @@
                 %li.subnav-tab
                   =link_to("+ Add page", new_child_page_path(:parent_id => amsterdam_page.id))
         .span1
-          =render("pages/toggle_view_links", :current_page => page_to_show)
+          =render("pages/toggle_view_links")
               
 -if page_to_show
   .container
@@ -57,9 +57,9 @@
     -if page_to_show.parent == amsterdam_page
       .row
         -if view_preference == 'block'
-          =render("pages/block_view", :pages => page_to_show.children)
+          =render("pages/block_view", :pages => page_to_show.children, :parent_page => page_to_show)
         -else
-          =render("pages/list_view", :pages => page_to_show.children)
+          =render("pages/list_view", :pages => page_to_show.children, :parent_page => page_to_show)
           =render("layouts/signup_column")
     -else
       -if page_to_show.image

@@ -5,7 +5,8 @@
         %h2.home-title
           News
     #latest_news
-      =render("pages/block_view", :pages => news_pages)
+      .row
+        =render("pages/block_view", :pages => news_pages)
       -if news_page.present?
         .row
           .span3.offset5

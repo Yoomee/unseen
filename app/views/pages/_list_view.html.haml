@@ -1,3 +1,5 @@
+-parent_page ||= pages.first.try(:parent)
+
 .span8
   -pages.each do |child_page|
     .row
@@ -12,7 +14,9 @@
             -child_page.category_list.each do |category|
               =tag_label(category.titleize)
         =link_to raw('&rarr; Read more'), child_page, :class => 'list_read_more'
-  -if controller_name=="pages" && can?(:new, Page) && (parent_page = pages.first.try(:parent))
+  -if controller_name=="pages" && can?(:new, Page) && parent_page
     .row
       .span2.fade_in.new-page-box
         =link_to("+ Add a subpage", new_child_page_path(:parent_id => parent_page.id))
+  -elsif pages.empty?
+    %p Coming soon

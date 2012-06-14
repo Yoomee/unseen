@@ -7,7 +7,8 @@ class PagesController < ApplicationController
   expose(:page_children) do
     if page
       if page.slug == "news"
-        page.children.order("created_at DESC")
+        children = page.children.order("created_at DESC")
+        params[:category].present? ? children.tagged_with(params[:category]) : children
       elsif page.slug == "galleries"
         page.children.order("title")
       else

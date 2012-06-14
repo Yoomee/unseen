@@ -7,7 +7,7 @@
   =form.input :retained_image, :as => :hidden
   =form.input :image, :as => :file, :label => "Cover image"
   =form.input :view_name, :as => :select, :collection => Page::view_names, :include_blank => false, :member_label => "titleize", :label => "Layout"
-  =form.input :category_list, :label => "Categories", :as => :select, :multiple => true, :collection => tag_list_options(:categories, page), :input_html => {:class => 'span8'}
+  =form.input :category_list, :label => "News categories", :as => :select, :multiple => true, :collection => Page::NEWS_CATEGORIES, :input_html => {:class => 'span8'}
   =form.input :page_tag_list, :label => "Tags", :as => :select, :multiple => true, :collection => tag_list_options(:page_tags, page), :input_html => {:class => 'span8'}
   =form.input :permalink_path, :label => "Permalink"
   =form.input :slug if current_user.try(:yoomee_staff?)

@@ -1,5 +1,16 @@
 .container
-#parallax_1.parallax
+#parallax_1.parallax.parallax-subnav
+  .subnav-strip
+    .container
+      .row
+        .span11
+          .subnav-tabs
+            %ul
+              =li_with_active(params[:category].blank?, link_to('All', page, :class => 'subnav-tab'))
+              -Page::NEWS_CATEGORIES.each do |category|
+                =li_with_active(params[:category]==category, link_to(category.humanize, page_path(page, :category => category), :class => 'subnav-tab'))
+        .span1
+          =render("pages/toggle_view_links", :current_page => page)
 .container
   .row
     .span12
@@ -11,9 +22,11 @@
           #page_text.mercury-region.center{:"data-type" => "editable"}
             =raw(page.text)
       .row
-        =render("pages/list_view", :pages => page_children)
-        =render("layouts/signup_column")
-
+        -if view_preference == 'block'
+          =render("pages/block_view", :pages => page_children, :parent_page => page)
+        -else
+          =render("pages/list_view", :pages => page_children, :parent_page => page)
+          =render("layouts/signup_column")
       .row
         .span8
           =options_panel do

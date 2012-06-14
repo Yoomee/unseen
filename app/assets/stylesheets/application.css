@@ -868,7 +868,8 @@ a.subnav-back-link {
   float: right;
   width: auto;
 }
-body.root_slug_amsterdam .subnav-tabs {
+body.root_slug_amsterdam .subnav-tabs,
+body.root_slug_news .subnav-tabs {
   float: left;
 }
 .subnav-tabs ul, .subnav-tabs li {
@@ -920,22 +921,6 @@ a.block-or-line-icon {
   margin: 0 2px 3px 0;
   height: 3px;
   background: #fff;
-}
-.toggle-view-links {
-  padding: 10px 0 5px 0;
-}
-.toggle-view-links a {
-  float: left;
-  clear: both;
-  color: white;
-  font-size: 22px;
-  margin-bottom: 5px;  
-}
-.toggle-view-links a.active {
-  color: black;
-}
-.toggle-view-links a:hover {
-  text-decoration: none;
 }
 
 /*==========  program tabs  ==========*/
