@@ -123,7 +123,7 @@ div, input {
   font-size: 16px;
   line-height: 20px;
 }
-input, a.call-to-action-link, .carousel-text p {
+input, a.call-to-action-link, .carousel-text p, p.event-image-caption {
   font-size: 13px;
   line-height: 16px;
 }
@@ -958,7 +958,6 @@ a.program-tab {
 }
 .add-to-program {
   margin-right: 5px;
-  float: left;
   width: 81px;
 }
 .add-to-program-active,
@@ -1253,4 +1252,7 @@ height: 40px;
 }
 #meet-people a{
   float:left;
+}
+.event-image-caption {
+  font-style:italic;
 }

@@ -2,7 +2,7 @@
 =render('events/nav')
 .container
   .row
-    .news_page.span8
+    .span8
       %h2.big-title.event-title.mt-2=@event.title
       .row.mt-2
         .span6
@@ -16,10 +16,13 @@
             .span1 Venue:
             .span5=link_to(@event.venue)
         .span2
-          =add_to_program_link(@event)
+          .pull-right
+            =add_to_program_link(@event)
       -if @event.image
-        .news_page_image.mt-2
+        .mt-2.mb-2
           =image_for(@event, "620x")
+          -if @event.image_caption
+            %p.mt-1.event-image-caption=@event.image_caption
       .page_text.mb-2
         #page_text
           =simple_format(@event.description)   
