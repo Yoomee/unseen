@@ -39,10 +39,11 @@ class PagesController < ApplicationController
   
   def show
     if page.root.slug == 'amsterdam'
-      render :action => "views/amsterdam"
-    else
-      render :action => "views/#{page.view_name}"
+      render(:action => "views/amsterdam") and return
+    elsif page.slug == 'news'
+      session[:news_category] = params[:category]
     end
+    render :action => "views/#{page.view_name}"
   end
   
 end

@@ -1,0 +1,12 @@
+#parallax_1.parallax.parallax-subnav
+  .subnav-strip
+    .container
+      .row
+        .span11
+          .subnav-tabs
+            %ul
+              =li_with_active(session[:news_category].blank?, link_to('All', news_page, :class => 'subnav-tab'))
+              -Page::NEWS_CATEGORIES.each do |category|
+                =li_with_active(session[:news_category]==category, link_to(category.humanize, page_path(news_page, :category => category), :class => 'subnav-tab'))
+        .span1
+          =render("pages/toggle_view_links")

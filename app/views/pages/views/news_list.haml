@@ -1,16 +1,5 @@
 .container
-#parallax_1.parallax.parallax-subnav
-  .subnav-strip
-    .container
-      .row
-        .span11
-          .subnav-tabs
-            %ul
-              =li_with_active(params[:category].blank?, link_to('All', page, :class => 'subnav-tab'))
-              -Page::NEWS_CATEGORIES.each do |category|
-                =li_with_active(params[:category]==category, link_to(category.humanize, page_path(page, :category => category), :class => 'subnav-tab'))
-        .span1
-          =render("pages/toggle_view_links", :current_page => page)
+=render("pages/news_nav", :current_page => page)
 .container
   .row
     .span12
@@ -26,7 +15,9 @@
           =render("pages/block_view", :pages => page_children, :parent_page => page)
         -else
           =render("pages/list_view", :pages => page_children, :parent_page => page)
-          =render("layouts/signup_column")
+          .span3.offset1
+            .row          
+              =render("layouts/signup_column")
       .row
         .span8
           =options_panel do

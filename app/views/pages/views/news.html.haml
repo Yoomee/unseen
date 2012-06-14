@@ -1,34 +1,80 @@
-.row
-  .news_page.span8
-    %h1
-      %span#page_title.mercury-region{:"data-type" => "editable"}
-        =raw(page.title)
-    %p.list_date_and_tag
-      =page.created_at.strftime("%e %B %Y")
-      -page.category_list.each do |category|
-        =tag_label(category.titleize)
-    -if page.image
-      .news_page_image
-        =image_for(page, "5100x380>")
-    .page_text
-      -if page.text.blank? && !viewing_mercury_edit? && can?(:edit, page)
-        #page_text
-          =mercury_edit_link("Click here to add some page content", mercury_update_page_path(page))
-      -else
-        #page_text.mercury-region{:"data-type" => "editable"}
-          =raw(page.text)
-    .share_this      
-      %p Share this
-      =link_to "Facebook", "http://facebook.com/sharer.php?u=#{request.url}", :popup => ['popUpWindow','height=350,width=600'], :class=>"share_link", :id=>"facebook_share_link" 
-      =link_to_function "Twitter", "(function(){window.twttr=window.twttr||{};var D=550,A=450,C=screen.height,B=screen.width,H=Math.round((B/2)-(D/2)),G=0,F=document,E;if(C>A){G=Math.round((C/2)-(A/2))}window.twttr.shareWin=window.open('http://twitter.com/share','',',left='+H+',top='+G+',width='+D+',height='+A+',personalbar=0,toolbar=0,scrollbars=1,resizable=1');E=F.createElement('script');E.src='http://platform.twitter.com/bookmarklets/share.js?v=1';F.getElementsByTagName('head')[0].appendChild(E)}())", :class=>"share_link", :id=>"twitter_share_link"      
-  .news_page_signup      
-    =render("layouts/signup_column")
-  .span8
-    =options_panel do
-      =back_link
-      -if can?(:edit, page)
-        =mercury_edit_link("Edit page content", mercury_update_page_path(page), :id => "mercury_edit_link")
-      =link_if_can("Edit page details", [:edit, page])
-      =link_if_can("Delete page", [:destroy, page], :confirm => "Are you sure?") unless page.slug.present?
-      -if can?(:new, Page)
-        =link_if_can("New page", new_child_page_path(:parent_id => page.parent_id))
+.container
+=render("pages/news_nav", :current_page => page)
+.container
+  .row
+    .news_page.span8
+      %h1
+        %span#page_title.mercury-region{:"data-type" => "editable"}
+          =raw(page.title)
+      %p.list_date_and_tag
+        =page.created_at.strftime("%e %B %Y")
+        -page.category_list.each do |category|
+          =tag_label(category.titleize)
+      -if page.image
+        .news_page_image
+          =image_for(page, "5100x380>")
+      .page_text
+        -if page.text.blank? && !viewing_mercury_edit? && can?(:edit, page)
+          #page_text
+            =mercury_edit_link("Click here to add some page content", mercury_update_page_path(page))
+        -else
+          #page_text.mercury-region{:"data-type" => "editable"}
+            =raw(page.text)
+      -if page.page_tag_list.present?
+        .row.mt-2.mb-2
+          .span8
+            %ul.tag-list.tag-list-horizontal
+              -page.page_tag_list.each do |category|
+                %li=tag_label(category.titleize.downcase)
+        
+      .share_this
+        %p Share this
+        =link_to "Facebook", "http://facebook.com/sharer.php?u=#{request.url}", :popup => ['popUpWindow','height=350,width=600'], :class=>"share_link", :id=>"facebook_share_link" 
+        =link_to_function "Twitter", "(function(){window.twttr=window.twttr||{};var D=550,A=450,C=screen.height,B=screen.width,H=Math.round((B/2)-(D/2)),G=0,F=document,E;if(C>A){G=Math.round((C/2)-(A/2))}window.twttr.shareWin=window.open('http://twitter.com/share','',',left='+H+',top='+G+',width='+D+',height='+A+',personalbar=0,toolbar=0,scrollbars=1,resizable=1');E=F.createElement('script');E.src='http://platform.twitter.com/bookmarklets/share.js?v=1';F.getElementsByTagName('head')[0].appendChild(E)}())", :class=>"share_link", :id=>"twitter_share_link"      
+    .news_page_signup.span4
+      -if !page.photographers.empty?
+        .row
+          .span4
+            %h2.normal-title.upcase See profile
+            .pull-left.clear.mb-2
+              -page.photographers.each do |photographer|
+                .row.mb-1
+                  .span1
+                    =link_to(image_for(photographer, "60x60#"), photographer)
+                  .span3
+                    =link_to_self(photographer)
+                    %br
+                    Photographer
+      -if !(other_stories = news_page.children.limit(3).tagged_with(page.page_tag_list, :any => true)).empty?
+        .row
+          .span4
+            %h2.normal-title.upcase Other stories
+            .pull-left.clear.mb-2
+              -other_stories.each do |story|
+                .row.mb-1
+                  .span1
+                    =link_to(image_for(story, "60x60#"), story)
+                  .span3
+                    =link_to_self(story)
+      -if !(events = Event.limit(3).tagged_with(page.page_tag_list, :any => true)).empty?
+        .row
+          .span4
+            %h2.normal-title.upcase Related programme
+            .pull-left.clear.mb-2
+              -events.each do |event|
+                .row.mb-1
+                  .span1
+                    =link_to(image_for(event, "60x60#"), event)
+                  .span3
+                    =link_to_self(event)
+      .row
+        =render("layouts/signup_column")
+    .span8
+      =options_panel do
+        =back_link
+        -if can?(:edit, page)
+          =mercury_edit_link("Edit page content", mercury_update_page_path(page), :id => "mercury_edit_link")
+        =link_if_can("Edit page details", [:edit, page])
+        =link_if_can("Delete page", [:destroy, page], :confirm => "Are you sure?") unless page.slug.present?
+        -if can?(:new, Page)
+          =link_if_can("New page", new_child_page_path(:parent_id => page.parent_id))

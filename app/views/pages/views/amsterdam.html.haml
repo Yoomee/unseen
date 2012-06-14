@@ -60,7 +60,9 @@
           =render("pages/block_view", :pages => page_to_show.children, :parent_page => page_to_show)
         -else
           =render("pages/list_view", :pages => page_to_show.children, :parent_page => page_to_show)
-          =render("layouts/signup_column")
+          .span3.offset1
+            .row
+              =render("layouts/signup_column")
     -else
       -if page_to_show.image
         .row

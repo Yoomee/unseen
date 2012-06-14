@@ -12,4 +12,3 @@
   =form.input :gallery_website
   =form.input :gallery_facebook
   =form.input :gallery_hours, :as => :text, :input_html => {:rows => 3}
-  =form.input :photographers, :collection => User.where(:role => 'photographer'), :input_html => {:"data-placeholder" => "Select photographers", :class => 'no-chosen span8'}
