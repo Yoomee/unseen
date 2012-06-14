@@ -17,6 +17,9 @@ Unseen::Application.routes.draw do
     end
   end
   
+  match "pages/view/list" => "pages#set_view", :view => 'list', :as => 'set_list_view'
+  match "pages/view/block" => "pages#set_view", :view => 'block', :as => 'set_block_view'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

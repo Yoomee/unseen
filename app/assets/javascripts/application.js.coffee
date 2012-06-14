@@ -15,7 +15,7 @@
 #= require_tree ./core
 
 window.YmCms.Page.Form.showSlideshowTab = () ->
-  if ($('#page_view_name').val() == "gallery") || ($('#page_view_name').val() == "persona_page")
+  if ($.inArray($('#page_view_name').val(), ["gallery", "persona_page"]) > -1) || $('#page_slug').val() == "amsterdam"
     $('.tabbable .nav li').has("a[href='#slideshow']").show()
   else
     $('.tabbable .nav li').has("a[href='#slideshow']").hide()
@@ -26,6 +26,12 @@ FairPage =
       event.preventDefault()
       fairBoxId = `$(this).data('fair-box-id')`
       $.scrollTo($("#fair_box_#{fairBoxId}"), 500)
+
+ToggleViewLinks = 
+  init: () ->
+    $('.toggle-view-links a').tooltip
+      placement: 'right',
+      delay: {show: 1000, hide: 0}
 
 $(document).ready ->
   YmCms.Page.Form.showSlideshowTab()
@@ -44,7 +50,11 @@ $(document).ready ->
         text: term
       )
   )
+<<<<<<< HEAD
   $('a.add-to-program, #meet-people a').tooltip({placement:'bottom'})
   $('a.add-to-program').live 'ajax:beforeSend', (event) =>
     $(event.target).tooltip('hide')
     $(event.target).addClass('loading')
+=======
+  # ToggleViewLinks.init()
+>>>>>>> 7cbaa41d64d35f8304670977261ea850e2843888

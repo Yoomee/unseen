@@ -1,0 +1,16 @@
+.block-view
+  -pages.each do |page|
+    .block-item.span4
+      .block-image.fade_in
+        =link_to(image_for(page, "300x200#"), page) if page.image
+      .block-text
+        %h3.block-title=link_to_self(page)
+        %p.list_date_and_tag
+          =page.created_at.strftime("%e %B %Y")
+          -page.category_list.each do |category|
+            =tag_label(category.titleize)
+        =link_to raw('&rarr; Read more'), page, :class => 'list_read_more'
+  -if controller_name=="pages" && can?(:new, Page) && (parent_page = pages.first.try(:parent))
+    .block-item.span4
+      .block-image.fade_in.new-page-box
+        =link_to("+ Add a subpage", new_child_page_path(:parent_id => parent_page.id))

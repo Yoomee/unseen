@@ -5,7 +5,7 @@
     %li=link_to "program", program_path
     %li=link_to("galleries", Page.find_by_slug("galleries") || "#")
     %li=link_to "community", "#"
-    %li.amsterdam-link=link_to "amsterdam", "#"
+    %li.amsterdam-link=link_to_slug("amsterdam", "amsterdam")
     -if false
       %li=link_to("press", Page.find_by_slug("press") || "#")
       %li=link_to("home", root_path)

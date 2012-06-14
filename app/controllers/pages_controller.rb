@@ -2,7 +2,8 @@ class PagesController < ApplicationController
   
   include YmCms::PagesController
   load_and_authorize_resource
-  
+
+  expose(:amsterdam_page) {Page.find_by_slug('amsterdam')}
   expose(:page_children) do
     if page
       if page.slug == "news"
@@ -25,7 +26,22 @@ class PagesController < ApplicationController
       page.view_name = "news"
     elsif page.parent.try(:slug) == "welcome"
       page.view_name = "highlight"
-    end  
+    elsif page.parent.try(:slug) == "amsterdam"
+      page.view_name = "amsterdam"
+    end
+  end
+  
+  def set_view
+    session[:view] = %w{list block}.include?(params[:view]) ? params[:view] : 'list'
+    return_or_redirect_to(root_path)
+  end
+  
+  def show
+    if page.root.slug == 'amsterdam'
+      render :action => "views/amsterdam"
+    else
+      render :action => "views/#{page.view_name}"
+    end
   end
   
 end
