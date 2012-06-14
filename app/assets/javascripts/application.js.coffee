@@ -15,7 +15,7 @@
 #= require_tree ./core
 
 window.YmCms.Page.Form.showSlideshowTab = () ->
-  if ($('#page_view_name').val() == "gallery") || ($('#page_view_name').val() == "persona_page")
+  if ($.inArray($('#page_view_name').val(), ["gallery", "persona_page"]) > -1) || $('#page_slug').val() == "amsterdam"
     $('.tabbable .nav li').has("a[href='#slideshow']").show()
   else
     $('.tabbable .nav li').has("a[href='#slideshow']").hide()
@@ -26,6 +26,15 @@ FairPage =
       event.preventDefault()
       fairBoxId = `$(this).data('fair-box-id')`
       $.scrollTo($("#fair_box_#{fairBoxId}"), 500)
+
+window.AmsterdamPage =
+  init: () ->
+    $('.subnav-tabs li.active a').click (event) ->
+      event.preventDefault()
+      AmsterdamPage.scroll()
+    AmsterdamPage.scroll()
+  scroll: () ->
+    $.scrollTo '#parallax_1', 500, {easing:'swing', axis:'y'}
 
 $(document).ready ->
   YmCms.Page.Form.showSlideshowTab()

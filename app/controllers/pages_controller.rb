@@ -2,7 +2,8 @@ class PagesController < ApplicationController
   
   include YmCms::PagesController
   load_and_authorize_resource
-  
+
+  expose(:amsterdam_page) {Page.find_by_slug('amsterdam')}
   expose(:page_children) do
     if page
       if page.slug == "news"
@@ -25,7 +26,9 @@ class PagesController < ApplicationController
       page.view_name = "news"
     elsif page.parent.try(:slug) == "welcome"
       page.view_name = "highlight"
-    end  
+    elsif page.parent.try(:slug) == "amsterdam"
+      page.view_name = "amsterdam"
+    end
   end
   
 end

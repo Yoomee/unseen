@@ -25,7 +25,7 @@ class Page < ActiveRecord::Base
   
   class << self
     def view_names
-      %w{basic tiled list gallery galleries news news_list about press fair persona_page}
+      %w{basic tiled list gallery galleries news news_list about press fair persona_page amsterdam}
     end
   end
   

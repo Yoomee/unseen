@@ -867,6 +867,9 @@ a.subnav-back-link {
   float: right;
   width: auto;
 }
+body.root_slug_amsterdam .subnav-tabs {
+  float: left;
+}
 .subnav-tabs ul, .subnav-tabs li {
 	list-style-type: none;
 	margin: 0;
