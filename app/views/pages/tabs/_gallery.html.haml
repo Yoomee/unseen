@@ -1,9 +1,3 @@
--content_for(:head) do
-  :javascript
-    $(document).ready(function() {
-      $('#page_photographers_input select').chosen();  
-    });
-    
 =form.inputs do
   =form.input :gallery_address, :as => :text, :input_html => {:rows => 4}
   =form.input :gallery_phone
