@@ -2,7 +2,12 @@ Unseen::Application.routes.draw do
 
   root :to => 'home#index'
   resources :wireframes, :only => [:index, :show]
-  resources :events, :except => [:index]
+  resources :events, :except => [:index] do
+    member do
+      post 'add', :as => 'add'
+      delete 'remove', :as => 'remove'
+    end
+  end
   match 'program(/:day)' => 'events#index', :as => 'program'
   resources :photographers
   match "press_accreditations", :to => "enquiries#index", :as => "press_accreditations"

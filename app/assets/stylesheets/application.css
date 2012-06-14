@@ -192,7 +192,7 @@ h6 a:hover {
 }
 .black-btn, .white-btn {
  color: white;
- background: black;
+ background-color: black;
  padding: 4px 8px;
  text-decoration: none;
  font-size: 16px;
@@ -207,13 +207,13 @@ h6 a:hover {
   float: left;
 }
 .black-btn:hover {
-  background: #fff;
+  background-color: #fff;
   color: #000;
   border-color: #000;
   text-decoration: none;
 }
 .white-btn, .white-btn:hover {
-  background: #fff;
+  background-color: #fff;
   color: #000;
 }
 
@@ -938,11 +938,22 @@ a.program-tab {
 }
 .add-to-program {
   margin-right: 5px;
-}
-.add-to-program {
-  
   float: left;
+  width: 81px;
 }
+.add-to-program-active,
+.add-to-program-active:hover{
+  color:#fff;
+  background-color:#6BBDB9;
+  border-color:#6BBDB9;
+}
+.add-to-program.loading{
+  height:auto;
+  text-indent:-9000em;
+  background-color:#fff;
+  border-color:#000;
+}
+
 .buy-ticket-btn {
 	float: right;
 }
@@ -1212,4 +1223,10 @@ height: 40px;
 /*========== Events ==========*/
 .event-title{
   text-transform:none;
+}
+.meet-people-title{
+  margin-bottom:10px;
+}
+#meet-people a{
+  float:left;
 }

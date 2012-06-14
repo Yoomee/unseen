@@ -1,6 +1,7 @@
 class Event < ActiveRecord::Base
   
   belongs_to :venue, :class_name => "Page"
+  has_and_belongs_to_many :users
   
   image_accessor :image
   
