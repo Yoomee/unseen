@@ -293,6 +293,7 @@ h6 a:hover {
 }
 #footer.container {
   padding-top: 40px;
+  padding-bottom: 40px;
   z-index: 3;
   clear: left;
   background: white;
@@ -1018,6 +1019,7 @@ a.program-tab {
 
 .options_panel {
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 /*========== Page show ==========*/
