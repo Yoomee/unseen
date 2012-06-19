@@ -610,11 +610,13 @@ a.home_small_title, a.home_small_title:hover {
 }
 
 .home_box {
-  height: 800px;
-  padding: 0px;
-  margin: 0;
-  position: relative;
-  z-index: 1;
+	z-index: 1;
+	position: relative;
+    float: left;
+  clear: both;
+  width: 100%;
+  height: 140px;
+  background: #000 url(/assets/home_bg_1.jpg);
 }
 #unseen_big_logo {
   position: fixed;
@@ -626,7 +628,7 @@ a.home_small_title, a.home_small_title:hover {
   z-index: 0;
 }
 #intro {
-  height: 730px;
+
 }
 .artist_name {
   display: block;
@@ -710,6 +712,7 @@ input#email {
 }
 #email.footer-email-field {
   border: 1px solid #fff;
+  border-radius:0;
 }
 #third {
   background: #211d1d url(/assets/home_bg_3.png) 50% 0 no-repeat scroll;
@@ -752,13 +755,6 @@ a.read_more {
 	width: 100%;
 	padding-bottom: 30px;
 	background: #fff;
-}
-.parallax {
-  float: left;
-  clear: both;
-  width: 100%;
-  height: 140px;
-  background: #d0dee8;
 }
 h2.home-title {
   text-align: center;
@@ -846,7 +842,7 @@ a#social-facebook {
   background: url(/assets/app-icon.png) no-repeat top center;
 }
 /*==========  subnav tabs  ==========*/
-.parallax.parallax-subnav {
+body .parallax-subnav {
   height: 180px;
 }
 .subnav-strip {
