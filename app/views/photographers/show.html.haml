@@ -22,7 +22,7 @@
                 =dragonfly_image_tag(photographer.default_image, "50x50#", :class => "mr-1 mb-1")
     .span4.offset2
       -if !photographer.galleries.empty?
-        %h2.small-title.upcase.mb-1 Represented by
+        %h2.normal-title.upcase.mb-1 Represented by
         .pull-left.clear.mb-2
           -photographer.galleries.each do |gallery|
             .row.mb-1
@@ -31,11 +31,11 @@
               .span3
                 =link_to_self(gallery)
       -if !photographer.links.empty?
-        %h2.small-title.upcase.mb-1 Contact
+        %h2.normal-title.upcase.mb-1 Contact
         .mb-2
           =render('links/list', :links => photographer.links)
       -if !photographer.user_tags.empty?
-        %h2.small-title.upcase.mb-1 Tags
+        %h2.normal-title.upcase.mb-1 Tags
         %ul.tag-list.tag-list-horizontal
           -photographer.user_tags.each do |tag|
             %li

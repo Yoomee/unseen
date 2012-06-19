@@ -4,7 +4,9 @@ class Page < ActiveRecord::Base
   
   has_one :slideshow, :as => :attachable, :dependent => :destroy
   has_and_belongs_to_many :photographers, :class_name => "User", :join_table => "galleries_photographers"
-    
+  has_and_belongs_to_many :galleries, :class_name => "Page", :join_table => "galleries_pages", :foreign_key => "page_id", :association_foreign_key => "gallery_id"
+  has_and_belongs_to_many :news_pages, :class_name => "Page", :join_table => "galleries_pages", :foreign_key => "gallery_id", :association_foreign_key => "page_id"
+  
   accepts_nested_attributes_for :slideshow, :reject_if => :all_blank
   
   before_save :delete_slideshow_if_no_slides
