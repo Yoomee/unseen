@@ -15,7 +15,7 @@
 #= require_tree ./core
 
 window.YmCms.Page.Form.showSlideshowTab = () ->
-  if ($('#page_view_name').val() == "gallery")
+  if ($.inArray($('#page_view_name').val(), ["gallery", "persona_page"]) > -1) || $('#page_slug').val() == "amsterdam"
     $('.tabbable .nav li').has("a[href='#slideshow']").show()
   else
     $('.tabbable .nav li').has("a[href='#slideshow']").hide()
@@ -27,6 +27,12 @@ FairPage =
       fairBoxId = `$(this).data('fair-box-id')`
       $.scrollTo($("#fair_box_#{fairBoxId}"), 500)
 
+ToggleViewLinks = 
+  init: () ->
+    $('.toggle-view-links a').tooltip
+      placement: 'right',
+      delay: {show: 1000, hide: 0}
+
 $(document).ready ->
   $('textarea.redactor').redactor()
   YmCms.Page.Form.showSlideshowTab()
@@ -36,7 +42,7 @@ $(document).ready ->
   $('#email').focus =>
     console.log $('#email').val() is 'email'
     $('#email').val('') if $('#email').val() is 'email'
-  $("select[multiple='multiple']").chosen(
+  $("select[multiple='multiple']:not(.no-chosen)").chosen(
     persistent_create_option: false,
     create_option_text: "Add",
     create_option: (term) ->
@@ -44,4 +50,10 @@ $(document).ready ->
         value: term,
         text: term
       )
-  )    
+  )
+  $('a.add-to-program, #meet-people a').tooltip({placement:'bottom'})
+  $('a.add-to-program').live 'ajax:beforeSend', (event) =>
+    $(event.target).tooltip('hide')
+    $(".add-to-program[data-event-id='#{$(event.target).data('event-id')}']").addClass('loading')
+  $('.tooltip-bottom').tooltip({placement:'bottom'})  
+  # ToggleViewLinks.init()

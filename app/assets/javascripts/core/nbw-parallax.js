@@ -80,7 +80,7 @@ $(document).ready(function() { //when the document is ready...
 		//if the second section is in view...
 		if($secondBG.hasClass("inview")){
 			//call the newPos function and change the background position
-			$secondBG.css({'backgroundPosition': newPos(50, windowHeight, pos, 1000, 0.3)});
+			$secondBG.css({'backgroundPosition': newPos(50, windowHeight, pos, 3000, 0.3)});
 			//call the newPos function and change the secnond background position
 			inner_image.css({'backgroundPosition': newPos(50, windowHeight, pos, 1250, 0.2)});
 			

@@ -1,82 +1,16 @@
-#unseen_big_logo
-#intro.inview.home_box{:class => next_home_background_class}
-  =render("layouts/header")
+=render("layouts/header")
+-if homepage_slideshow
+  =render("slideshows/home_slideshow", :slideshow => homepage_slideshow)
+  =link_if_can("Edit slideshow", [:edit, homepage_slideshow], :class => "pull-right mt-2 mr-2")
+#are-you.strip
   .container
     .row
-      .artist_name
-  .site_text_hide
-    %h2
-      Unseen Photo Fair
-      %br
-      19-23 September 2012
-      %br
-      Amsterdam  
-#second.home_box
-  .container
-    .row
-      .span8#latest_news
-        %h2.home_title.upcase What's on?
-        -[news_pages.shift(2), news_pages.shift(2)].each do |pages|
-          .row
-            -pages.each do |page|
-              .list_image.span2.fade_in
-                =link_to(image_for(page, "140x100#"), page) if page.image
-              .list_box.span6
-                %h3.list_title=link_to_self(page)
-                %p.list_date_and_tag
-                  =page.created_at.strftime("%e %B %Y")
-                  =" - #{page.news_category}" if page.news_category.present?
-                =link_to raw('&rarr; Read more'), page, :class => 'list_read_more'
-        -if news_page.present?
-          .row
-            .span2.offset2
-              =link_to("More news", news_page, :class => "black-btn")
-      .span3.offset1
-        .span3
-          %h2.home_title.upcase Follow us
-        .span3.facebook
-          =link_to("on Facebook", "http://www.facebook.com/UnseenPhotoFairAmsterdam", :target => "_blank", :class => "home_small_title")
-          .fb-like{:"data-href" => "http://www.facebook.com/UnseenPhotoFairAmsterdam", :"data-send" => "false", :"data-width" => "220", :"data-show-faces" => "false"}
-          .fb-like-box{:"data-href" => "http://www.facebook.com/UnseenPhotoFairAmsterdam", :"data-width" => "300", :"data-height" => "300", :"data-colorscheme" => "light", :"data-show-faces" => "true", :"data-border-color" => "#fff", :"data-stream" => "false", :"data-header" => "false"}
-        .span3.twitter
-          =link_to("http://twitter.com/UnseenPhotoFair", :target => "_blank", :class => "home_small_title") do
-            on Twitter
-            %i.twitter_bird
-        .span3#newsletter_signup
-          %h2.home_title.upcase Sign up for our newsletter
-          =form_tag("http://vandejong.us4.list-manage.com/subscribe/post?u=52fb8e1dfe01670076f8db384&id=7b61a45fa2") do
-            =text_field_tag "EMAIL", "email", :class => "span3 bold", :id => 'email'
-            =submit_tag 'Submit', :class => 'black-btn'
-            =#link_to("Submit", "#", :class => "black-btn")
-#third.home_box
-#fourth.home_box{:class => next_home_background_class}
-  .container
-    .row
-      .artist_name
-#fifth.home_box
-  .site_text_hide
-    %h2
-      Unseen brings the hidden treasures of the photography world into the limelight.
-    
-#sixth.home_box{:class => next_home_background_class}
-  .container
-    .row
-      .artist_name
-#seventh.home_box
-#eighth.home_box{:class => next_home_background_class}
-  .container
-    .row
-      .artist_name
-#ninth.home_box
-  .site_text_hide
-    %h2
-      During Unseen, contemporary photography will be at Amsterdam's beating heart, day and night
-  .container
-    .row
-      .artist_name
-#tenth.home_box{:class => next_home_background_class}
-  .container
-    .row
-      .artist_name
-#eleventh.home_box
-  =render('layouts/footer')
+      .span12
+        %h2.are-you-title
+          We have an emerging program, discover what unseen offers you:
+        %ul.are-you-list
+          -persona_pages.each do |page|
+            %li=link_to(page.title,page, :class => 'are-you-link category')
+#intro.home_box{:class => next_home_background_class}
+=render('layouts/news_block')
+=render('layouts/footer')

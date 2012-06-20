@@ -1,3 +1,9 @@
+-content_for(:head) do
+  :javascript
+    $(document).ready(function() {
+      $('#page_photographers_input select, #page_galleries_input select').chosen();  
+    });
+
 =form.inputs do
   =form.input(:parent, :collection => Page.without([page] + page.children)) unless Page.without([page] + page.children).empty?
   =form.input :title
@@ -8,10 +14,13 @@
   =form.input :retained_image, :as => :hidden
   =form.input :image, :as => :file, :label => "Cover image"
   =form.input :view_name, :as => :select, :collection => Page::view_names, :include_blank => false, :member_label => "titleize", :label => "Layout"
-  =form.input :category_list, :label => "Categories", :as => :select, :multiple => true, :collection => tag_list_options(:categories, page), :input_html => {:class => 'span8'}
+  =form.input :category_list, :label => "News categories", :as => :select, :multiple => true, :collection => Page::NEWS_CATEGORIES, :input_html => {:class => 'span8'}
   =form.input :page_tag_list, :label => "Tags", :as => :select, :multiple => true, :collection => tag_list_options(:page_tags, page), :input_html => {:class => 'span8'}
+  =form.input :photographers, :collection => User.where(:role => 'photographer').order('first_name'), :input_html => {:"data-placeholder" => "Select photographers", :class => 'no-chosen span8'}
+  -gallery_pages = Page.find_by_slug('galleries').try(:children)
+  =form.input :galleries, :collection => (gallery_pages ? gallery_pages.order('title') : nil), :input_html => {:"data-placeholder" => "Select galleries", :class => 'no-chosen span8'}
   =form.input :permalink_path, :label => "Permalink"
-  =form.input :slug if current_user.try(:yoomee_staff?)
+  =form.input :slug, :as => (current_user.try(:yoomee_staff?) ? :string : :hidden)
   .boolean.control-group.optional#page_published_input
     %label{:class => 'control-label'}
     .controls

@@ -1,0 +1,43 @@
+.container
+  .row
+    .span8.offset2.highlight-intro
+      %h1.big-title.center.highlight-title
+        Programme 2012
+    -if program_slideshow = Slideshow.find_by_slug('program')
+      =render("slideshows/tabbed_slideshow", :slideshow => program_slideshow)
+      =link_if_can("Edit slideshow", [:edit, program_slideshow], :class => "pull-right mt-2 mr-2")
+      .span3.offset5=link_to("Full programme", "#program", :class => "black-btn more-middle")
+#program
+=render('events/nav')
+.program-list.strip
+  .container
+    .row
+      .span12
+        %h1.big-title.center
+          =@date.strftime('%d %B')
+      -if @events.empty?
+        .span12 There aren't any events on this day yet.
+      -@events.each do |event|
+        .span12.program-item
+          .row
+            .span7
+              %h3.small-title.program-title
+                =link_to event.title, event
+              %p.program-subtitle
+                =event.time_string
+                at
+                =event.venue
+                -event.category_list.each do |category|
+                  =tag_label(category.titleize)
+            .span3.offset2
+              =add_to_program_link(event)
+              -if event.buy_tickets_url.present?
+                =link_to "Buy ticket", event.buy_tickets_url,:target => "_blank", :class=>"white-btn buy-ticket-btn"
+.container
+  .row
+    .span12
+      =options_panel do
+        =back_link
+        =link_if_can("New event", new_event_path)
+        -if venue_page = Page.find_by_slug('venues')
+          =link_to("New venue",  new_child_page_path(:parent_id => venue_page.id)) if can?(:new,Page)

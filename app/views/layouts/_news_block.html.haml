@@ -1,0 +1,13 @@
+.strip
+  .container
+    .row
+      .span12
+        %h2.home-title
+          News
+    #latest_news
+      .row
+        =render("pages/block_view", :pages => news_pages)
+      -if news_page.present?
+        .row
+          .span3.offset5
+            =link_to("More news", news_page, :class => "black-btn more-middle")

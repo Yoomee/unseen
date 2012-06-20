@@ -6,4 +6,5 @@
         =image_for(photo, "100x100#")
     =f.input :retained_image, :as => :hidden
     =f.input :image, :as => :file, :label => false
+    =f.input :caption, :input_html => {:rows => 2, :class => "span6"}
     =link_to_remove_association "x Remove photo", f, :class => "pull-left"
