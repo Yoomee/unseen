@@ -14,7 +14,7 @@
     .span8.offset2.highlight-intro
       %h1.big-title.center.highlight-title
         %span#page_title.mercury-region{:"data-type" => "editable"}
-          =raw(page.title)
+          TExt here
       -if page.text.blank? && !viewing_mercury_edit? && can?(:edit, page)
         %h2#page_text.small-title.highlight-title
           =mercury_edit_link("Click here to add some page content", mercury_update_page_path(page))

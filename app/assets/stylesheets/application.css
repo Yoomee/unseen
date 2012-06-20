@@ -642,7 +642,7 @@ a.home_small_title, a.home_small_title:hover {
   background: url(/assets/artist_name_1.png) no-repeat 50%;
 }
 .home_bg_1 {
-  background: url(/assets/home_bg_1.jpg) 50% 0 no-repeat fixed;
+  background: #000 url(/assets/home_bg_1.jpg) 50% 0 no-repeat fixed;
 }
 .home_bg_2 {
   background: #7c786f url(/assets/home_bg_4.jpg) 50% 0 no-repeat fixed;
@@ -673,10 +673,6 @@ a.home_small_title, a.home_small_title:hover {
   margin-top: 0px;
   padding-top: 30px;
   z-index: 3;
-}
-#second,
-#seventh {
-  background: #fff;  
 }
 #second #latest_news .span3 {
   margin-bottom: 20px;
@@ -728,8 +724,6 @@ input#email {
   left: 0;  
 }
 #seventh {
-  background: white url(/assets/home_bg_7.png) 50% 0 no-repeat scroll;	
-  z-index: 3;
 }
 #ninth {
   background: white url(/assets/home_bg_9.png) 50% 0 no-repeat scroll;	
@@ -802,6 +796,8 @@ h2.home-title {
 #call-to-actions {
   background: #000;
   color: #fff;
+  position: relative;
+  z-index: 1;
 }
 #call-to-actions .home-title {
   color: #fff;

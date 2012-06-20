@@ -2,9 +2,11 @@
   %ul.unstyled         
     %li=link_to("news", Page.find_by_slug("news") || "#")
     %li=link_to("fair", Page.find_by_slug("fair") || "#")
-    %li=link_to "program", program_path
+    %li=link_to "programme", program_path
     %li=link_to("galleries", Page.find_by_slug("galleries") || "#")
-    %li=link_to "community", "#"
+    %li{:class=>"tooltip-bottom", :title=>"coming soon"}
+      community
+    =#link_to "community", "#", :class=>"tooltip-bottom", :title=>"coming soon"
     %li.amsterdam-link=link_to_slug("amsterdam", "amsterdam")
     -if false
       %li=link_to("press", Page.find_by_slug("press") || "#")

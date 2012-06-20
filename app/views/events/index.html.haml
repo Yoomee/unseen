@@ -2,11 +2,11 @@
   .row
     .span8.offset2.highlight-intro
       %h1.big-title.center.highlight-title
-        Program 2012
+        Programme 2012
     -if program_slideshow = Slideshow.find_by_slug('program')
       =render("slideshows/tabbed_slideshow", :slideshow => program_slideshow)
       =link_if_can("Edit slideshow", [:edit, program_slideshow], :class => "pull-right mt-2 mr-2")
-      .span3.offset5=link_to("Full program", "#program", :class => "black-btn more-middle")
+      .span3.offset5=link_to("Full programme", "#program", :class => "black-btn more-middle")
 #program
 =render('events/nav')
 .program-list.strip

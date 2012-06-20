@@ -37,5 +37,6 @@
         =render("layouts/header")
         =yield_with_bootstrap(yield)
         .push
+      #second.home_box{:class => next_home_background_class}  
       .footer_wrapper
         =render('layouts/footer')

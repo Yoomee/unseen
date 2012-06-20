@@ -54,4 +54,5 @@ $(document).ready ->
   $('a.add-to-program').live 'ajax:beforeSend', (event) =>
     $(event.target).tooltip('hide')
     $(".add-to-program[data-event-id='#{$(event.target).data('event-id')}']").addClass('loading')
+  $('.tooltip-bottom').tooltip({placement:'bottom'})  
   # ToggleViewLinks.init()
