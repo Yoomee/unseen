@@ -11,7 +11,6 @@
  *= require ym_posts
  *= require ym_search
  *= require ym_tags
- *=// require_tree .
  *= require_self
 */
 

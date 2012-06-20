@@ -28,6 +28,7 @@ FairPage =
       $.scrollTo($("#fair_box_#{fairBoxId}"), 500)
 
 $(document).ready ->
+  $('textarea.redactor').redactor()
   YmCms.Page.Form.showSlideshowTab()
   FairPage.init()
   $('#page_view_name').change =>
