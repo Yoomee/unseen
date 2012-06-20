@@ -39,4 +39,5 @@
       =options_panel do
         =back_link
         =link_if_can("New event", new_event_path)
-        =link_to("New venue",  new_child_page_path(:parent_id => Page.find_by_slug('venues').id)) if can?(:new,Page)
+        -if venue_page = Page.find_by_slug('venues')
+          =link_to("New venue",  new_child_page_path(:parent_id => venue_page.id)) if can?(:new,Page)

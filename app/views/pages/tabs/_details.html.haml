@@ -19,7 +19,7 @@
   -gallery_pages = Page.find_by_slug('galleries').try(:children)
   =form.input :galleries, :collection => (gallery_pages ? gallery_pages.order('title') : nil), :input_html => {:"data-placeholder" => "Select galleries", :class => 'no-chosen span8'}
   =form.input :permalink_path, :label => "Permalink"
-  =form.input :slug if current_user.try(:yoomee_staff?)
+  =form.input :slug, :as => (current_user.try(:yoomee_staff?) ? :string : :hidden)
   .boolean.control-group.optional#page_published_input
     %label{:class => 'control-label'}
     .controls
