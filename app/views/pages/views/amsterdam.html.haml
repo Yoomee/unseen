@@ -57,9 +57,9 @@
     -if page_to_show.parent == amsterdam_page
       .row
         -if view_preference == 'block'
-          =render("pages/block_view", :pages => page_to_show.children, :parent_page => page_to_show)
+        =render("pages/block_view", :items => page_to_show.children, :parent_page => page_to_show)
         -else
-          =render("pages/list_view", :pages => page_to_show.children, :parent_page => page_to_show)
+          =render("pages/list_view", :items => page_to_show.children, :parent_page => page_to_show)
           .span3.offset1
             .row
               =render("layouts/signup_column")
