@@ -7,7 +7,7 @@ class Event < ActiveRecord::Base
   
   validates :title, :date, :starts_at, :ends_at, :venue, :presence => true
   
-  acts_as_taggable_on :categories
+  acts_as_taggable_on :categories, :page_tags
   
   #validates :image, :presence => true
   #validates_property :format, :of => :image, :in => [:jpeg, :jpg, :png, :gif], :message => "must be an image"

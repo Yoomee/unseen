@@ -26,7 +26,7 @@
       .page_text.mb-2
         #page_text
           =simple_format(@event.description)   
-      -@event.category_list.each do |category|
+      -[@event.category_list,@event.page_tag_list].flatten.each do |category|
         =tag_label(category.titleize)
       -if false  
         .row
