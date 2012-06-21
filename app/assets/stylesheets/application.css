@@ -1022,6 +1022,11 @@ a.program-tab {
 
 /*========== Page show ==========*/
 
+.mercury_edit_link,
+#mercury_edit_link {
+  display:none;
+}
+
 #page_text .mercury_edit_link {
   text-decoration: none;
   font-size: 15px;
