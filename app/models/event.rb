@@ -1,7 +1,13 @@
 class Event < ActiveRecord::Base
-  
+
+  include YmCore::Model
+
   belongs_to :venue, :class_name => "Page"
   has_and_belongs_to_many :users
+  
+  has_and_belongs_to_many :photographers, :class_name => "User", :join_table => "events_photographers"
+  has_and_belongs_to_many :galleries, :class_name => "Page", :join_table => "events_galleries", :foreign_key => "event_id", :association_foreign_key => "page_id"
+  
   
   image_accessor :image
   
