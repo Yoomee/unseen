@@ -82,5 +82,5 @@
         =back_link
         -if can?(:edit, page_to_show)
           =mercury_edit_link("Edit page content", mercury_update_page_path(page_to_show), :id => "mercury_edit_link")
-        =link_if_can("Edit page details", [:edit, page_to_show])
+        =link_if_can("Edit page", [:edit, page_to_show])
         =link_if_can("Delete page", [:destroy, page_to_show], :confirm => "Are you sure?") unless page_to_show.slug.present?

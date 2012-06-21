@@ -7,7 +7,21 @@
 =form.inputs do
   =form.input(:parent, :collection => Page.without([page] + page.children)) unless Page.without([page] + page.children).empty?
   =form.input :title
-  =form.input :text, :input_html => {:class => 'span8 redactor', :rows => 20}
+  -if page.slug == 'fair'
+    =form.input :fair_title_1, :label => "Section 1 title", :as => :text, :input_html => {:class => 'span8 redactor', :rows => 3}
+    =form.input :fair_1,       :label => "Section 1 left column", :as => :text, :input_html => {:class => 'span8 redactor', :rows => 10}
+    =form.input :fair_2,       :label => "Section 1 right column", :as => :text, :input_html => {:class => 'span8 redactor', :rows => 10}
+    =form.input :fair_title_2, :label => "Section 2 title", :as => :text, :input_html => {:class => 'span8 redactor', :rows => 3}
+    =form.input :fair_3,       :label => "Section 2 left column", :as => :text, :input_html => {:class => 'span8 redactor', :rows => 10}
+    =form.input :fair_4,       :label => "Section 2 right column", :as => :text, :input_html => {:class => 'span8 redactor', :rows => 10}
+    =form.input :fair_title_3, :label => "Section 3", :as => :text, :input_html => {:class => 'span8 redactor', :rows => 3}
+    =form.input :fair_5,       :label => "Section 3 text", :as => :text, :input_html => {:class => 'span8 redactor', :rows => 10}
+    =form.input :fair_title_4, :label => "Section 4", :as => :text, :input_html => {:class => 'span8 redactor', :rows => 3}
+    =form.input :fair_6,       :label => "Section 4 text", :as => :text, :input_html => {:class => 'span8 redactor', :rows => 10}
+  -else
+    =form.input :text, :input_html => {:class => 'span8 redactor', :rows => 20}
+    -if page.slug.in?(%w{press about})
+      =form.input :text_second, :as => :text, :input_html => {:class => 'span8 redactor', :rows => 20}, :label => "Right column text"
   -if !page.new_record? && page.image
     .control-group
       =image_for(page, "100x100#")
