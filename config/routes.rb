@@ -8,7 +8,7 @@ Unseen::Application.routes.draw do
       delete 'remove', :as => 'remove'
     end
   end
-  match 'program(/:day)' => 'events#index', :as => 'program'
+  match 'programme(/:day)' => 'events#index', :as => 'program'
   resources :photographers
   match "press_accreditations", :to => "enquiries#index", :as => "press_accreditations"
   resources :enquiries, :only => [] do
