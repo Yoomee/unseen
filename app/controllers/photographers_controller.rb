@@ -21,6 +21,12 @@ class PhotographersController < ApplicationController
     end
   end
   
+  def destroy
+    photographer.destroy
+    flash_notice(photographer)
+    return_or_redirect_to(photographers_path)
+  end
+  
   def index
     
   end

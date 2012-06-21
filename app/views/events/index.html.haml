@@ -27,7 +27,8 @@
                 =event.time_string
                 at
                 =event.venue
-                -event.category_list.each do |category|
+              %p
+                -[event.category_list,event.page_tag_list].flatten.each do |category|
                   =tag_label(category.titleize)
             .span3.offset2
               =#add_to_program_link(event)

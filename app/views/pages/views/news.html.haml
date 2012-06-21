@@ -11,12 +11,11 @@
         -page.category_list.each do |category|
           =tag_label(category.titleize)          
   .row
-    .news_page.span8
+    .news_page.span7
       -if page.image
         .news_page_image
-          =image_for(page, "5100x380>")
-      =render ('layouts/share_links')
-        
+          =image_for(page, "540x")
+          =render ('layouts/share_links')
       .page_text
         -if page.text.blank? && !viewing_mercury_edit? && can?(:edit, page)
           #page_text
@@ -30,45 +29,7 @@
             %ul.tag-list.tag-list-horizontal
               -page.page_tag_list.each do |category|
                 %li=tag_label(category.titleize.downcase)
-        
-    .news_page_signup.span4
-      -if !(profiles = page.photographers + page.galleries).empty?
-        .row
-          .span4
-            %h2.normal-title.upcase See profile
-            .pull-left.clear.mb-2
-              -profiles.each do |profile|
-                .row.mb-1
-                  .span1
-                    =link_to(image_for(profile, "60x60#"), profile)
-                  .span3
-                    =link_to_self(profile)
-                    %br
-                    =profile.is_a?(User) ? 'Photographer' : 'Gallery'
-      -if !(other_stories = news_page.children.limit(3).tagged_with(page.page_tag_list, :any => true)).empty?
-        .row
-          .span4
-            %h2.normal-title.upcase Other stories
-            .pull-left.clear.mb-2
-              -other_stories.each do |story|
-                .row.mb-1
-                  .span1
-                    =link_to(image_for(story, "60x60#"), story)
-                  .span3
-                    =link_to_self(story)
-      -if !(events = Event.limit(3).tagged_with(page.page_tag_list, :any => true)).empty?
-        .row
-          .span4
-            %h2.normal-title.upcase Related programme
-            .pull-left.clear.mb-2
-              -events.each do |event|
-                .row.mb-1
-                  .span1
-                    =link_to(image_for(event, "60x60#"), event)
-                  .span3
-                    =link_to_self(event)
-      .row
-        =render("layouts/signup_column")
+    =render('pages/related_right_col', :page_event => page)
     .span8
       =options_panel do
         =back_link

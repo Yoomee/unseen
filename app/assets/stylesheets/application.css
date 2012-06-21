@@ -90,7 +90,10 @@ a.category,
 #buy-ticket-link,
 .black-btn,
 .small-title p,
- .share_this p  {
+ .share_this p,
+ .share-link-text,
+ b,
+ .share_this {
   font-family: "Apercu Bold", "calibri", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: normal;
@@ -127,7 +130,7 @@ div, input {
   font-size: 16px;
   line-height: 20px;
 }
-input, a.call-to-action-link, .carousel-text p, p.event-image-caption {
+input, a.call-to-action-link, .carousel-text p, p.event-image-caption, .share-link-text {
   font-size: 13px;
   line-height: 16px;
 }
@@ -173,7 +176,7 @@ input {
   -moz-border-radius:0;
   border-color: #000;
 }
-h1#page_title {
+input#page_title {
   font-size: 19px;
   line-height: 22px;
   margin: 0 0 15px;
@@ -929,9 +932,11 @@ a.program-tab {
   padding-bottom: 28px;
 }
 /*==========  program list  ==========*/
-.program-title {
+.program-title,
+p.program-subtitle {
   margin-bottom: 3px;
 }
+
 .program-title a:hover{
   text-decoration:underline;
 }
@@ -1082,7 +1087,8 @@ p.press_visual_txt {
   margin-bottom: 0;
 }
 .news_page_signup {
-	margin-top: 90px;
+	margin-top: 0px;
+	float: right;
 }
 .news_page .list_date_and_tag {
 	margin: 15px 0 40px;
@@ -1097,20 +1103,30 @@ p.press_visual_txt {
   float: left;
   width: 100%;
   margin-bottom: 40px;
+  margin-top: 20px;
 }
 .share_link {
   display: block;
-  width: 26px;
   float: left;
-  margin: 5px 0 0 12px;
-	font-size: 26px;
+  margin: 0px 12px 0 0px;
+	
+
+}
+.share-link-text {
+  float: left;
+  margin: 2px;
+}
+.share_link i {
+  float: left;
+  margin: 0 6px 0 0;
+  font-size: 20px;
 
 }
 .share_link:hover {
   text-decoration: none;
 } 
 #twitter_share_link {
-	margin-left: 2px;
+
 
 }
 .share_this p {

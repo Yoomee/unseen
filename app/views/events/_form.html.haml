@@ -1,12 +1,22 @@
+-content_for(:head) do
+  :javascript
+    $(document).ready(function() {
+      $('#event_photographers_input select, #event_galleries_input select').chosen();  
+    });
+
 =semantic_form_for @event do |form|
   =form.inputs do
     =form.input :title
     =form.input :date, :as => :select, :collection => Event::DATES.map{|d| [d.strftime('%a %o %B'),d]}, :include_blank => false
     =form.input :starts_at, :as => :string, :input_html => {:class => 'timepicker'}
     =form.input :ends_at, :as => :string,  :input_html => {:class => 'timepicker'}
-    =form.input :venue, :collection => venues_and_galleries_options
+    =form.input :venue, :collection => venues_and_galleries_options(@event)
     =form.input :description, :input_html => {:rows => 8, :class => "span8"}
-    =form.input :category_list, :label => "Categories", :as => :select, :multiple => true, :collection => tag_list_options(:categories, @event), :input_html => {:class => 'span8'}
+    =form.input :category_list, :label => "News categories", :as => :select, :multiple => true, :collection => tag_list_options(:categories, @event), :input_html => {:class => 'span8'}
+    =form.input :page_tag_list, :label => "Tags", :as => :select, :multiple => true, :collection => tag_list_options(:page_tags, @event), :input_html => {:class => 'span8'}
+    =form.input :photographers, :collection => User.where(:role => 'photographer').order('first_name'), :input_html => {:"data-placeholder" => "Select photographers", :class => 'no-chosen span8'}
+    -gallery_pages = Page.find_by_slug('galleries').try(:children)
+    =form.input :galleries, :collection => (gallery_pages ? gallery_pages.order('title') : nil), :input_html => {:"data-placeholder" => "Select galleries", :class => 'no-chosen span8'}
     =form.input :retained_image, :as => :hidden
     =form.input :image, :as => :file
     =form.input :image_caption, :input_html => {:rows => 2, :class => "span8"}

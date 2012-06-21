@@ -2,7 +2,7 @@
 =render('events/nav')
 .container
   .row
-    .span8
+    .span7
       %h2.big-title.event-title.mt-2=@event.title
       .row.mt-2
         .span6
@@ -20,13 +20,13 @@
             =#add_to_program_link(@event)
       -if @event.image
         .mt-2.mb-2
-          =image_for(@event, "620x")
+          =image_for(@event, "540x")
           -if @event.image_caption
             %p.mt-1.event-image-caption=@event.image_caption
       .page_text.mb-2
         #page_text
           =simple_format(@event.description)   
-      -@event.category_list.each do |category|
+      -[@event.category_list,@event.page_tag_list].flatten.each do |category|
         =tag_label(category.titleize)
       -if false  
         .row
@@ -39,8 +39,9 @@
           .span8
             %br
             =add_to_program_link(@event)
-    .span4
+    .span1
       %br
+    =render('pages/related_right_col', :page_event => @event)
     .span8
       =options_panel do
         =back_link
