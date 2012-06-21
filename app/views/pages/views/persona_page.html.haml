@@ -8,13 +8,13 @@
         .span10.subnav-tabs  
           %ul
             -Page.find_by_slug('persona_pages').children.each do |child|
-              =li_with_active(child == page, link_to(child.title,child, :class => 'subnav-tab'))
+              =li_with_active(child == page, link_to(child.navigation_title.presence || child.title,child, :class => 'subnav-tab'))
 .container
   .row
     .span8.offset2.highlight-intro
       %h1.big-title.center.highlight-title
         %span#page_title.mercury-region{:"data-type" => "editable"}
-          TExt here
+          =raw(page.title)
       -if page.text.blank? && !viewing_mercury_edit? && can?(:edit, page)
         %h2#page_text.small-title.highlight-title
           =mercury_edit_link("Click here to add some page content", mercury_update_page_path(page))
