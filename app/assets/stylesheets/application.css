@@ -89,12 +89,13 @@ h6,
 a.category,
 #buy-ticket-link,
 .black-btn,
-.small-title p {
+.small-title p,
+ .share_this p  {
   font-family: "Apercu Bold", "calibri", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: normal;
 }
-h2.home-title, .big-title, .about_page_view #page_title {
+h2.home-title, .big-title, .about_page_view #page_title, #page_title {
   font-size: 60px;
   line-height: 60px;
   text-transform: uppercase;
@@ -103,7 +104,7 @@ h2.home-title, .big-title, .about_page_view #page_title {
   font-size: 36px;
   line-height: 36px;  
 }
-.nav ul, .nav li, #site_logo, h2#footer_site_logo, h2, .are-you-title, .block-title, .home-subtitle, .small-title, .small-title p {
+.nav ul, .nav li, #site_logo, h2#footer_site_logo, h2, .are-you-title, .block-title, .home-subtitle, .small-title, .small-title p, .share_this p {
 	font-size: 26px;
 	line-height: 28px; 
 }
@@ -111,7 +112,7 @@ h2.highlight-title {
   margin-bottom: 40px;
   text-align: center;
 }
-.normal-title {
+.normal-title  {
   font-size: 16px;
   line-height: 20px;
   font-family: "Apercu Bold", "calibri", Arial, sans-serif;
@@ -220,7 +221,9 @@ h6 a:hover {
   background-color: #fff;
   color: #000;
 }
-
+.alert {
+  margin-top: 20px;
+}
 /*========== Header ==========*/
 .site_text_hide {
   display: none;
@@ -1088,22 +1091,31 @@ p.press_visual_txt {
   
 }
 .news_page_image {
+  margin-bottom: 20px;
+}
+.share_this {
+  float: left;
+  width: 100%;
   margin-bottom: 40px;
 }
 .share_link {
   display: block;
-  width: 30px;
+  width: 26px;
   float: left;
-  margin: 0 10px 0 0;
-  text-indent: -9000em;
-  height: 42px;
-  background: url(/assets/share_link_facebook.png) no-repeat;
+  margin: 5px 0 0 12px;
+	font-size: 26px;
+
 }
+.share_link:hover {
+  text-decoration: none;
+} 
 #twitter_share_link {
-  background-image: url(/assets/share_link_twitter.png);
+	margin-left: 2px;
+
 }
 .share_this p {
   text-transform: uppercase;
+  float: left;
 }
 
 /*========== Slideshow ==========*/

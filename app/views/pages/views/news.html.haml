@@ -2,17 +2,21 @@
 =render("pages/news_nav", :current_page => page)
 .container
   .row
-    .news_page.span8
+    .news_page.span12
       %h1
         %span#page_title.mercury-region{:"data-type" => "editable"}
           =raw(page.title)
       %p.list_date_and_tag
         =page.created_at.strftime("%e %B %Y")
         -page.category_list.each do |category|
-          =tag_label(category.titleize)
+          =tag_label(category.titleize)          
+  .row
+    .news_page.span8
       -if page.image
         .news_page_image
           =image_for(page, "5100x380>")
+      =render ('layouts/share_links')
+        
       .page_text
         -if page.text.blank? && !viewing_mercury_edit? && can?(:edit, page)
           #page_text
@@ -27,10 +31,6 @@
               -page.page_tag_list.each do |category|
                 %li=tag_label(category.titleize.downcase)
         
-      .share_this
-        %p Share this
-        =link_to "Facebook", "http://facebook.com/sharer.php?u=#{request.url}", :popup => ['popUpWindow','height=350,width=600'], :class=>"share_link", :id=>"facebook_share_link" 
-        =link_to_function "Twitter", "(function(){window.twttr=window.twttr||{};var D=550,A=450,C=screen.height,B=screen.width,H=Math.round((B/2)-(D/2)),G=0,F=document,E;if(C>A){G=Math.round((C/2)-(A/2))}window.twttr.shareWin=window.open('http://twitter.com/share','',',left='+H+',top='+G+',width='+D+',height='+A+',personalbar=0,toolbar=0,scrollbars=1,resizable=1');E=F.createElement('script');E.src='http://platform.twitter.com/bookmarklets/share.js?v=1';F.getElementsByTagName('head')[0].appendChild(E)}())", :class=>"share_link", :id=>"twitter_share_link"      
     .news_page_signup.span4
       -if !(profiles = page.photographers + page.galleries).empty?
         .row
