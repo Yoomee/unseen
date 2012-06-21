@@ -8,8 +8,7 @@ class Ability
     # open ability
     can :create, Enquiry
     can [:show, :set_view], Page, :published => true
-    # TODO: uncomment when photographers become public
-    # can :read, :photographer
+    can :read, :photographer
     
     if user.try(:admin?)
       can :manage, :all
