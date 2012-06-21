@@ -485,6 +485,11 @@ h1#news_title {
 .list_date_and_tag {
 	margin: 4px 0 0;
 }
+.list_date_and_tag > span {
+  float:left;
+  margin-right:5px;
+  margin-top:3px;
+}
 .list_read_more, .list_date {
   float: left;
   clear: left;
@@ -785,11 +790,6 @@ a.category, #buy-ticket-link {
 a.category:hover {
   color: #fff;
   background: #000;
-}
-a.tag {
-  background: #e5e5e5;
-  padding: 2px 5px;
-  font-size: 13px;
 }
 h2.home-title {
 	margin-top: 15px;
@@ -1216,8 +1216,11 @@ height: 40px;
 }
 
 /*========== Tags ==========*/
-
-.tag-label {
+a.tag {
+  float:left;
+  margin: 1px 4px 5px 0px;
+}
+a.tag .tag-label {
   background-color: #E5E5E4;
   border-radius:0;
   -webkit-border-radius:0;
@@ -1226,6 +1229,7 @@ height: 40px;
   font-size: 13px;
   text-shadow: none;
   font-weight: normal;
+  padding:4px 4px 5px;
 }
 .tag-label:hover {
   color: black;
