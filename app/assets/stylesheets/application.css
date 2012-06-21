@@ -89,12 +89,16 @@ h6,
 a.category,
 #buy-ticket-link,
 .black-btn,
-.small-title p {
+.small-title p,
+ .share_this p,
+ .share-link-text,
+ b,
+ .share_this {
   font-family: "Apercu Bold", "calibri", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: normal;
 }
-h2.home-title, .big-title, .about_page_view #page_title {
+h2.home-title, .big-title, .about_page_view #page_title, #page_title {
   font-size: 60px;
   line-height: 60px;
   text-transform: uppercase;
@@ -103,7 +107,7 @@ h2.home-title, .big-title, .about_page_view #page_title {
   font-size: 36px;
   line-height: 36px;  
 }
-.nav ul, .nav li, #site_logo, h2#footer_site_logo, h2, .are-you-title, .block-title, .home-subtitle, .small-title, .small-title p {
+.nav ul, .nav li, #site_logo, h2#footer_site_logo, h2, .are-you-title, .block-title, .home-subtitle, .small-title, .small-title p, .share_this p {
 	font-size: 26px;
 	line-height: 28px; 
 }
@@ -111,7 +115,7 @@ h2.highlight-title {
   margin-bottom: 40px;
   text-align: center;
 }
-.normal-title {
+.normal-title  {
   font-size: 16px;
   line-height: 20px;
   font-family: "Apercu Bold", "calibri", Arial, sans-serif;
@@ -126,7 +130,7 @@ div, input {
   font-size: 16px;
   line-height: 20px;
 }
-input, a.call-to-action-link, .carousel-text p, p.event-image-caption {
+input, a.call-to-action-link, .carousel-text p, p.event-image-caption, .share-link-text {
   font-size: 13px;
   line-height: 16px;
 }
@@ -172,7 +176,7 @@ input {
   -moz-border-radius:0;
   border-color: #000;
 }
-h1#page_title {
+input#page_title {
   font-size: 19px;
   line-height: 22px;
   margin: 0 0 15px;
@@ -220,7 +224,9 @@ h6 a:hover {
   background-color: #fff;
   color: #000;
 }
-
+.alert {
+  margin-top: 20px;
+}
 /*========== Header ==========*/
 .site_text_hide {
   display: none;
@@ -1081,7 +1087,8 @@ p.press_visual_txt {
   margin-bottom: 0;
 }
 .news_page_signup {
-	margin-top: 90px;
+	margin-top: 0px;
+	float: right;
 }
 .news_page .list_date_and_tag {
 	margin: 15px 0 40px;
@@ -1090,22 +1097,41 @@ p.press_visual_txt {
   
 }
 .news_page_image {
+  margin-bottom: 20px;
+}
+.share_this {
+  float: left;
+  width: 100%;
   margin-bottom: 40px;
+  margin-top: 20px;
 }
 .share_link {
   display: block;
-  width: 30px;
   float: left;
-  margin: 0 10px 0 0;
-  text-indent: -9000em;
-  height: 42px;
-  background: url(/assets/share_link_facebook.png) no-repeat;
+  margin: 0px 12px 0 0px;
+	
+
 }
+.share-link-text {
+  float: left;
+  margin: 2px;
+}
+.share_link i {
+  float: left;
+  margin: 0 6px 0 0;
+  font-size: 20px;
+
+}
+.share_link:hover {
+  text-decoration: none;
+} 
 #twitter_share_link {
-  background-image: url(/assets/share_link_twitter.png);
+
+
 }
 .share_this p {
   text-transform: uppercase;
+  float: left;
 }
 
 /*========== Slideshow ==========*/

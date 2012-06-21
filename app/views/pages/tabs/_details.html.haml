@@ -21,7 +21,7 @@
     =form.input :fair_6,       :label => "Section 4 text", :as => :text, :input_html => {:class => 'span8 redactor', :rows => 10}
   -else
     =form.input :text, :input_html => {:class => 'span8 redactor', :rows => 20}
-    -if page.slug.in?(%w{press about})
+    -if page.slug.in?(%w{press about for_press})
       =form.input :text_second, :as => :text, :input_html => {:class => 'span8 redactor', :rows => 20}, :label => "Right column text"
   -if !page.new_record? && page.image
     .control-group
