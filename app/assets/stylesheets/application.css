@@ -140,6 +140,18 @@ input, a.call-to-action-link, .carousel-text p, p.event-image-caption, .share-li
 .nocase {
   text-transform: none;
 }
+.mt-1 {
+  margin-top: 20px;
+}
+.mt-2 {
+  margin-top: 40px;
+}
+.mb-1 {
+  margin-bottom: 20px;
+}
+.mb-2 {
+  margin-bottom: 40px;
+}
 
 /*========== Structure ==========*/
 
@@ -1103,7 +1115,7 @@ p.press_visual_txt {
   float: left;
   width: 100%;
   margin-bottom: 40px;
-  margin-top: 20px;
+  margin-top: 0px;
 }
 .share_link {
   display: block;
@@ -1269,5 +1281,5 @@ height: 40px;
   float:left;
 }
 .event-image-caption {
-  font-style:italic;
+
 }

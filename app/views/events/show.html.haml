@@ -2,9 +2,9 @@
 =render('events/nav')
 .container
   .row
-    .span7
+    .span12
       %h2.big-title.event-title.mt-2=@event.title
-      .row.mt-2
+      .row.mt-1
         .span6
           .row
             .span1 Date:
@@ -18,11 +18,14 @@
         .span2
           .pull-right
             =#add_to_program_link(@event)
+  .row.mt-2
+    .span7            
       -if @event.image
-        .mt-2.mb-2
+        .mb-1
           =image_for(@event, "540x")
           -if @event.image_caption
             %p.mt-1.event-image-caption=@event.image_caption
+      =render ('layouts/share_links')    
       .page_text.mb-2
         #page_text
           =simple_format(@event.description)   
