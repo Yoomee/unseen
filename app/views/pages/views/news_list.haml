@@ -8,7 +8,7 @@
           =raw(page.title)
       .row
         .span8.offset2
-          #page_text.mercury-region.center{:"data-type" => "editable"}
+          %h2#page_text.mercury-region.center{:"data-type" => "editable"}
             =raw(page.text)
       .row
         -if view_preference == 'block'

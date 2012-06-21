@@ -465,7 +465,6 @@ h1#galleries_title {
 h1#news_title {
 	text-align: center;
 	width: 100%;
-	margin-bottom: 60px;
 }
 .list_box {
   margin-bottom:42px;
@@ -620,7 +619,7 @@ a.home_small_title, a.home_small_title:hover {
     float: left;
   clear: both;
   width: 100%;
-  height: 140px;
+  height: 147px;
   background: #000 url(/assets/home_bg_1.jpg);
 }
 #unseen_big_logo {
@@ -844,7 +843,7 @@ a#social-facebook {
 }
 /*==========  subnav tabs  ==========*/
 body .parallax-subnav {
-  height: 180px;
+  height: 147px;
 }
 .subnav-strip {
   float: left;
@@ -853,7 +852,7 @@ body .parallax-subnav {
   height: 64px;
   padding: 0px;
   background: url(/assets/white-smoke.png);
-  margin: 116px 0 0 0;
+  margin: 83px 0 0 0;
 }
 a.subnav-back-link {
 	padding-top: 20px;
@@ -900,21 +899,21 @@ a.block-or-line-icon {
 	height: 18px;
 }
 .active .sb, .active .sl {
-  background: #000;
+  background: #fff;
 }
 
 .sb {
   width: 6px;
   height: 3px;
   margin: 0 2px 3px 0;
-  background: #fff;
+  background: #000;
   float: left;
 }
 .sl {
   width: 22px;
   margin: 0 2px 3px 0;
   height: 3px;
-  background: #fff;
+  background: #000;
 }
 
 /*==========  program tabs  ==========*/

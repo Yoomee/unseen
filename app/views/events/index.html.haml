@@ -30,7 +30,7 @@
                 -event.category_list.each do |category|
                   =tag_label(category.titleize)
             .span3.offset2
-              =add_to_program_link(event)
+              =#add_to_program_link(event)
               -if event.buy_tickets_url.present?
                 =link_to "Buy ticket", event.buy_tickets_url,:target => "_blank", :class=>"white-btn buy-ticket-btn"
 .container
