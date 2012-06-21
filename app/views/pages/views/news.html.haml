@@ -15,7 +15,7 @@
       -if page.image
         .news_page_image
           =image_for(page, "540x")
-          =render ('layouts/share_links')
+        =render ('layouts/share_links')
       .page_text
         -if page.text.blank? && !viewing_mercury_edit? && can?(:edit, page)
           #page_text
