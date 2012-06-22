@@ -1,10 +1,10 @@
 .share_this
   #twitter_link.share-btn
-    =link_to "Tweet", "http://twitter.com/share", :class=>"twitter-share-button", :"data-count"=>"horizontal", :"data-url" => "http://www.epicfriends.co.uk", :"data-text" => "Check out Epic Friends"
+    =link_to "Tweet", "http://twitter.com/share", :class=>"twitter-share-button", :"data-count"=>"horizontal", :"data-url" => "#{Settings.site_url + url_for(resource)}", :"data-text" => "Unseen Amsterdam"
     =javascript_include_tag 'http://platform.twitter.com/widgets.js'
   #facebook_link.share-btn
     :plain
-      <iframe src="//www.facebook.com/plugins/like.php?href=www.epicfriends.co.uk&amp;send=false&amp;layout=button_count&amp;width=50&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=segoe+ui&amp;height=21&amp;appId=165263253556568" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:80px; height:21px;" allowTransparency="true"></iframe>
+      <iframe src="//www.facebook.com/plugins/like.php?href=#{Settings.site_url + url_for(resource)}&amp;send=false&amp;layout=button_count&amp;width=50&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=segoe+ui&amp;height=21&amp;appId=165263253556568" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:80px; height:21px;" allowTransparency="true"></iframe>
 
 
   -if false
