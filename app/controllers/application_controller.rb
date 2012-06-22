@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
     if %w{list block}.include?(session[:view])
       session[:view]
     else
-      session[:view] = 'list'
+      session[:view] = 'block'
     end
   end
 

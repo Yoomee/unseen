@@ -9,13 +9,20 @@
           $(this).find('a').tab('show');  
         }
       },function(){});
+      $('.carousel-list li').click(function(){
+        var url = $(this).find('a').data('read-more-url');
+        if(url)
+          window.location.href = url;
+      });
     });
 .carousel.tabbable
   .span4.carousel-list
     %ul
       -slides.each_with_index do |slide,idx|
         %li{:class => "#{idx.zero? ? 'active' : ''}"}
-          =link_to(slide.title, "#slide#{idx}", :'data-toggle' => "tab")
+          =link_to(slide.title, "#slide#{idx}", :'data-toggle' => "tab", :'data-read-more-url' => slide.url)
+          =#link_to_url(slide.url, :title => '&rarr; Read more'.html_safe, :auto_target => true)
+          =#link_to('&rarr; Read more'.html_safe, slide.url, :title => '&rarr; Read more'.html_safe)
   .span8.carousel-image.tab-content
     -slides.each_with_index do |slide, idx|
       .slide.tab-pane{:id => "slide#{idx}", :class => "#{idx.zero? ? 'active' : ''}"}
@@ -25,4 +32,4 @@
           =image_for(slide, "620x380#")
         .span6.carousel-text
           %p=slide.caption
-          %p=link_to_url(slide.url, :title => '&rarr; Read more'.html_safe, :auto_target => true)
+          %p=link_to('&rarr; Read more'.html_safe, slide.url, :title => '&rarr; Read more'.html_safe)

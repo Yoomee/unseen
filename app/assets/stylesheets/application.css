@@ -130,6 +130,7 @@ h2.home-title, .big-title, .about_page_view #page_title, #page_title {
 }
 h2.highlight-title {
   margin-bottom: 40px;
+  margin-top: -20px;
   text-align: center;
 }
 .normal-title  {
@@ -257,6 +258,9 @@ h6 a:hover {
   margin-top: 20px;
 }
 /*========== Header ==========*/
+.container {
+  z-index: 1;
+}
 .site_text_hide {
   display: none;
 }
@@ -347,7 +351,8 @@ h6 a:hover {
 }
 .nav {
   min-height: 0px;
-  margin: 26px 0 0;
+  margin: 0px 0 0;
+  
 }
 .nav li{
   float:left;
@@ -379,7 +384,9 @@ h6 a:hover {
 }*/
 #header-links {
   margin: 24px 0 0 0;
+  height: 45px;
   width: 100%;
+  position: relative;
 
 }
 a.header-link {
@@ -414,7 +421,7 @@ a.header-link {
   position: relative;
 }
 h1 {
-  margin: 42px 0 28px;
+  margin: 55px 0 55px;
 }
 .about_page_view #page_title {
   text-align: center;
@@ -669,7 +676,7 @@ a.home_small_title, a.home_small_title:hover {
 }
 
 .home_box {
-	z-index: 1;
+	z-index: 0;
 	position: relative;
     float: left;
   clear: both;
@@ -687,7 +694,7 @@ a.home_small_title, a.home_small_title:hover {
   z-index: 0;
 }
 #intro {
-
+	margin-bottom: 50px;
 }
 .artist_name {
   display: block;
@@ -728,7 +735,7 @@ a.home_small_title, a.home_small_title:hover {
 }
 
 #second {
-  margin-top: 0px;
+  margin-top: 100px;
   padding-top: 30px;
   z-index: 3;
 }
@@ -798,11 +805,11 @@ a.read_more {
   clear: both;
 }
 .strip {
-	padding-top: 30px;
+	padding-top: 0px;
 	float: left;
 	clear: both;
 	width: 100%;
-	padding-bottom: 30px;
+	padding-bottom: 0px;
 	background: #fff;
 }
 h2.home-title {
@@ -820,6 +827,7 @@ ul.are-you-list, ul.are-you-list li {
 }
 ul.are-you-list {
   margin-left: 140px;
+  margin-bottom: 50px;
 }
 
 .are-you-link {
@@ -828,7 +836,7 @@ ul.are-you-list {
 
 
 h2.home-title {
-	margin-top: 15px;
+	margin-top: 55px;
 	margin-bottom: 55px;
 }
 /*========== Call to action ==========*/
@@ -937,6 +945,14 @@ a.block-or-line-icon {
 }
 .active .sb, .active .sl {
   background: #fff;
+}
+a.block-or-line-icon.active:hover .sb, a.block-or-line-icon.active:hover .sl {
+	background: #000;
+  
+}
+a.block-or-line-icon:hover .sb, a.block-or-line-icon:hover .sl {
+	background: #fff;
+  
 }
 
 .sb {
@@ -1121,6 +1137,9 @@ p.press_visual_txt {
 	margin-top: 0px;
 	float: right;
 }
+.news_page_signup .mb-1 {
+  margin-bottom: 5px;
+}
 .news_page .list_date_and_tag {
 	margin: 15px 0 40px;
 	float: left;
@@ -1304,5 +1323,6 @@ a.tag:hover .tag-label {
   float:left;
 }
 .event-image-caption {
+	margin-top: 7px;
 
 }
