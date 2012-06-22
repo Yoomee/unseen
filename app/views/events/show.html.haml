@@ -25,7 +25,7 @@
           =image_for(@event, "540x")
           -if @event.image_caption
             %p.mt-1.event-image-caption=@event.image_caption
-      =render ('layouts/share_links')    
+      =render('layouts/share_links', :resource => @event)
       .page_text.mb-2
         #page_text
           =simple_format(@event.description)   
