@@ -15,15 +15,33 @@
         =link_to "Twitter", "http://twitter.com/UnseenPhotoFair", :class=>"header-icon", :id=>"twitter_icon"
         =link_to "Facebook", "http://www.facebook.com/UnseenPhotoFairAmsterdam", :class=>"header-icon", :id=>"facebook_icon"
         =link_to "search", search_path, :class=>"header-link", :id=>"search_link"  
+        =link_to("press", Page.find_by_slug("press") || "#", :class=>"header-link", :id=>"contact_link")
         =link_to("contact", Page.find_by_slug("contact") || "#", :class=>"header-link", :id=>"contact_link")
         =link_to("about", Page.find_by_slug("about") || "#", :class=>"header-link")
         -if user_signed_in?
-          =link_to(t(:logout).downcase, sign_out_path, :method => :delete, :class=>"header-link", :id=>"login_link")
-          =link_to_self(current_user, :class => "header-link")
-          =link_to("sitemap", pages_path, :class => "header-link")
-          -if can?(:index, :photographer)
-            =link_to("photographers", photographers_path, :class => "header-link")
+          #logged-in-dropdown.btn-group
+            =link_to(current_user, :class => 'btn') do
+              %icon.icon-user
+              =current_user
+            =link_to('#', :data => {:toggle => "dropdown"}, :class => 'btn dropdown-toggle') do
+              %span.caret
+            %ul.dropdown-menu.pull-right
+              %li
+                =link_to(pages_path) do
+                  %icon.icon-sitemap
+                  Sitemap
+              %li.divider   
+              -if can?(:index, :photographer)  
+                %li
+                  =link_to(photographers_path) do
+                    %icon.icon-camera
+                    Edit Photographers
+                %li.divider       
+              %li
+                =link_to(sign_out_path, :method => :delete, :id=>"login_link") do
+                  %icon.icon-remove-sign
+                  Logout                                        
         -else
           =link_to(t(:login).downcase, sign_in_path(:next => request.path), :class=>"header-link", :id=>"login_link")
-          =link_to "register", "#", :class=>"header-link"
+          =#link_to "register", "#", :class=>"header-link"
       =render ("/layouts/nav")

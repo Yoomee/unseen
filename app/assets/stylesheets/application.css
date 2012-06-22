@@ -46,6 +46,15 @@ dl dd {
   color: #000;
   border-radius:0;
 }
+.btn-group.open {
+
+}
+ul.dropdown-menu.pull-right {
+  left: 0px;
+  top: 26px;
+  right: auto;
+}
+
 
 /*========== CSS3 magic ==========*/
 
@@ -357,13 +366,21 @@ h6 a:hover {
 .root_slug_amsterdam li.amsterdam-link a, .root_slug_news li.news-link a, .root_slug_fair li.fair-link a, .controller_events li.programme-link a, .root_slug_galleries li.galleries-link  {
    border-bottom: 4px solid;
 }
-
+#logged-in-dropdown {
+  float: left;
+  margin: 0 0 0 20px;
+}
+#logged-in-dropdown .icon-user {
+  margin-right: 5px;
+}
 /*.nav .active a {
   background: url(/assets/nav_active.png) no-repeat bottom left;
   padding-bottom: 4px;
 }*/
 #header-links {
   margin: 24px 0 0 0;
+  width: 100%;
+
 }
 a.header-link {
   float: right;
@@ -393,7 +410,7 @@ a.header-link {
   background: url(/assets/photo_bg.jpg) repeat-x 0 -300px;
 }
 .container {
-  z-index: 1;
+
   position: relative;
 }
 h1 {
@@ -752,10 +769,6 @@ input#email {
   border: 1px solid #fff;
   border-radius:0;
 }
-#third {
-  background: #211d1d url(/assets/home_bg_3.png) 50% 0 no-repeat scroll;
-  z-index: 3;  
-}
 #fifth {
   background: white url(/assets/home_bg_5.png) 50% 0 no-repeat scroll;
   z-index: 3;  
@@ -813,11 +826,6 @@ ul.are-you-list {
   margin-right: 20px;
 }
 
-a.tag {
-  background: #e5e5e5;
-  padding: 2px 5px;
-  font-size: 13px;
-}  
 
 h2.home-title {
 	margin-top: 15px;
@@ -1279,7 +1287,7 @@ a.tag .tag-label {
   font-weight: normal;
   padding:4px 4px 5px;
 }
-.tag-label:hover {
+a.tag:hover .tag-label {
   color: black;
   background-color: #fff;
 }

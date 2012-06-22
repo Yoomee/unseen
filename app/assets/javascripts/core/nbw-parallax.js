@@ -89,7 +89,7 @@ $(document).ready(function() { //when the document is ready...
 		//if the third section is in view...
 		if($thirdBG.hasClass("inview")){
 			//call the newPos function and change the background position
-      // $thirdBG.css({'backgroundPosition': newPos(50, windowHeight, pos, 2400, 1.2)});
+      $thirdBG.css({'backgroundPosition': newPos(50, windowHeight, pos, 600, 0.3)});
       // inner_image.css({'backgroundPosition': newPos(50, windowHeight, pos, 900, 0.2)});
 		}
 		

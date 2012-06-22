@@ -32,7 +32,7 @@
           =link_if_can("Edit amsterdam page details", [:edit, amsterdam_page])
 
 -page_to_show = (page == amsterdam_page) ? amsterdam_page.children.first : page
-#parallax_1.parallax.parallax-subnav.mt-2
+#intro.home_box.parallax-subnav{:class => next_home_background_class}
   .subnav-strip
     .container
       .row
