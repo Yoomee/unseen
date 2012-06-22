@@ -1,10 +1,10 @@
 #nav.nav.pull-right
   %ul.unstyled         
-    %li=link_to("news", Page.find_by_slug("news") || "#")
-    %li=link_to("fair", Page.find_by_slug("fair") || "#")
-    %li=link_to "programme", program_path
-    %li=link_to("galleries", Page.find_by_slug("galleries") || "#")
-    %li{:class=>"tooltip-bottom", :title=>"coming soon"}
+    %li.news-link=link_to("news", Page.find_by_slug("news") || "#")
+    %li.fair-link=link_to("fair", Page.find_by_slug("fair") || "#")
+    %li.programme-link=link_to "programme", program_path
+    %li.galleries-link=link_to("galleries", Page.find_by_slug("galleries") || "#")
+    %li.community-link{:class=>"tooltip-bottom", :title=>"coming soon"}
       community
     =#link_to "community", "#", :class=>"tooltip-bottom", :title=>"coming soon"
     %li.amsterdam-link=link_to_slug("amsterdam", "amsterdam")
