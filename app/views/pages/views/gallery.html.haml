@@ -1,7 +1,7 @@
 .container
   .row
     .span12
-      %h1.big-title
+      %h1.big-title.gallery-title
         %span#page_title.mercury-region{:"data-type" => "editable"}
           =raw(page.title)
 -if page.slideshow
@@ -34,7 +34,7 @@
             .row.mb-1
               .span1
                 =link_to(image_for(photographer, "60x60#"), photographer)
-              .span3
+              .span3.related-text
                 =link_to_self(photographer)
                 %br
                 Photographer
@@ -65,6 +65,7 @@
               fb:
               =link_to_url(page.gallery_facebook.gsub(/(http:\/\/)?(www\.)?/, ""))
       -if page.gallery_hours.present?
+        %br.clear
         %h2.normal-title.upcase Gallery hours
         %span.gallery_hours=simple_format(page.gallery_hours)
   

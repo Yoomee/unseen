@@ -8,7 +8,7 @@
             .row.mb-1
               .span1
                 =link_to(image_for(profile, "60x60#"), profile)
-              .span3
+              .span3.related-text
                 =link_to_self(profile)
                 %br
                 =profile.is_a?(User) ? 'Photographer' : 'Gallery'
@@ -21,7 +21,7 @@
             .row.mb-1
               .span1
                 =link_to(image_for(story, "60x60#"), story)
-              .span3
+              .span3.related-text
                 =link_to_self(story)
   -if !(events = Event.without(page_event.is_a?(Event) ? page_event : nil).tagged_with([page_event.page_tag_list, page_event.category_list].flatten, :any => true).limit(3)).empty?
     .row
@@ -32,7 +32,7 @@
             .row.mb-1
               .span1
                 =link_to(image_for(event, "60x60#"), event)
-              .span3
+              .span3.related-text
                 =link_to_self(event)
   .row
     =render("layouts/signup_column")

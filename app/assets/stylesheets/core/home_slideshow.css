@@ -45,6 +45,7 @@
 	width: 450px;
 	height: 105px;
 	padding: 15px;	
+	background: #fff;  
 	background: rgba(255,255,255,0.9);  
 }
 .home-slide-caption {

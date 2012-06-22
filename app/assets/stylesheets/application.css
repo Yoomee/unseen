@@ -137,7 +137,6 @@ h2.highlight-title {
   font-size: 16px;
   line-height: 20px;
   font-family: "Apercu Bold", "calibri", Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
   font-weight: normal;
   margin-bottom: 10px;
 }
@@ -169,6 +168,9 @@ input, a.call-to-action-link, .carousel-text p, p.event-image-caption, .share-li
 }
 .mb-2 {
   margin-bottom: 40px;
+}
+.related-text {
+  margin-left: 10px;
 }
 
 /*========== Structure ==========*/
@@ -239,7 +241,7 @@ h6 a:hover {
 
 }
 .more-middle {
-  margin-left: 30px;
+  margin-left: 20px;
   margin-bottom: 40px;
   clear: both;
   float: left;
@@ -455,6 +457,14 @@ h1 {
 .amsterdam_text {
   margin-top: 25px;
   margin-bottom: 40px;
+}
+
+h1.gallery-title {
+  margin-top: 25px;
+  margin-bottom:7px;
+}
+h3.slide-title {
+  margin-bottom: 11px;
 }
 
 .gallery_box {
@@ -681,6 +691,7 @@ a.home_small_title, a.home_small_title:hover {
     float: left;
   clear: both;
   width: 100%;
+  overflow: hidden;
   height: 147px;
   background: #000 url(/assets/home_bg_1.jpg);
 }
@@ -694,7 +705,7 @@ a.home_small_title, a.home_small_title:hover {
   z-index: 0;
 }
 #intro {
-	margin-bottom: 50px;
+	margin-bottom: 0px;
 }
 .artist_name {
   display: block;
@@ -709,8 +720,27 @@ a.home_small_title, a.home_small_title:hover {
 .home_bg_1 {
   background: #000 url(/assets/home_bg_1.jpg) 50% 0 no-repeat fixed;
 }
+.bg1 {
+  background: url(/assets/home_bg_inner_1.png) 50% 0 no-repeat fixed;
+  width: 406px;
+  height: 605px;
+  margin: 0px auto;
+}
+
 .home_bg_2 {
   background: #7c786f url(/assets/home_bg_4.jpg) 50% 0 no-repeat fixed;
+}
+.home_bg_2 .bg1 {
+   background-image: url(/assets/home_bg_inner_4.png);
+}
+.home_bg_3 .bg1 {
+   background-image: url(/assets/home_bg_inner_6.png);
+}
+.home_bg_4 .bg1 {
+   background-image: url(/assets/home_bg_inner_8.png);
+}
+.home_bg_5 .bg1 {
+   background-image: url(/assets/home_bg_inner_10.png);
 }
 .home_bg_2 .artist_name {
   background-image: url(/assets/artist_name_4.png);
@@ -736,7 +766,7 @@ a.home_small_title, a.home_small_title:hover {
 
 #second {
   margin-top: 100px;
-  padding-top: 30px;
+  padding-top: 0px;
   z-index: 3;
 }
 #second #latest_news .span3 {
@@ -817,7 +847,7 @@ h2.home-title {
 }
 h2.are-you-title {
   text-align: center;
-  margin: 0 0 30px;
+  margin: 30px 0 30px;
 }
 ul.are-you-list, ul.are-you-list li {
   margin: 0;
@@ -826,7 +856,7 @@ ul.are-you-list, ul.are-you-list li {
   list-style-type: none;
 }
 ul.are-you-list {
-  margin-left: 140px;
+  margin-left: 160px;
   margin-bottom: 50px;
 }
 
@@ -1149,6 +1179,10 @@ p.press_visual_txt {
 .news_page_image {
   margin-bottom: 20px;
 }
+.share-btn {
+  float: left;
+  margin: 0 5px 0 0;
+}
 .share_this {
   float: left;
   width: 100%;
@@ -1193,7 +1227,9 @@ p.press_visual_txt {
   margin-bottom: 50px;
 }
 .slideshow .slide-caption {
-
+	font-size: 13px;
+	line-height: 16px;
+	margin-top: 10px;
 }
 
 /*========== Fair ==========*/
