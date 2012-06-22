@@ -6,7 +6,7 @@
           News
     #latest_news
       .row
-        =render("pages/block_view", :pages => news_pages)
+        =render("pages/block_view", :items => news_pages)
       -if news_page.present?
         .row
           .span3.offset5

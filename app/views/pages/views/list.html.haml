@@ -7,7 +7,7 @@
       #page_text.mercury-region{:"data-type" => "editable"}
         =raw(page.text)
   .row
-    =render("pages/list_view", :pages => page_children)
+    =render("pages/list_view", :items => page_children)
   .row
     .span8
       =options_panel do

@@ -7,14 +7,16 @@
         %span#page_title.mercury-region{:"data-type" => "editable"}
           =raw(page.title)
       %p.list_date_and_tag
-        =page.created_at.strftime("%e %B %Y")
-        -page.category_list.each do |category|
-          =tag_label(category.titleize)          
+        %span=page.created_at.strftime("%e %B %Y")
+        -page.page_tags.each do |tag|
+          =link_to_tag(tag, :label_options => {:method => :titleize})        
   .row
     .news_page.span7
       -if page.image
         .news_page_image
           =image_for(page, "540x")
+          -if page.image_caption
+            %p.mt-1.event-image-caption=page.image_caption
         =render ('layouts/share_links')
       .page_text
         -if page.text.blank? && !viewing_mercury_edit? && can?(:edit, page)
@@ -27,8 +29,8 @@
         .row.mt-2.mb-2
           .span8
             %ul.tag-list.tag-list-horizontal
-              -page.page_tag_list.each do |category|
-                %li=tag_label(category.titleize.downcase)
+              -page.page_tags.each do |tag|
+                %li=link_to_tag(tag, :label_options => {:method => :titleize})
     =render('pages/related_right_col', :page_event => page)
     .span8
       =options_panel do

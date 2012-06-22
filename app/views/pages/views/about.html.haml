@@ -8,6 +8,8 @@
         .gallery_slideshow.fade_in
           .gallery_slideshow.fade_in
             =image_for(page, "770x446>")
+            -if page.image_caption
+              %p.mt-1.event-image-caption=page.image_caption
   .row
     .span6
       .page_text

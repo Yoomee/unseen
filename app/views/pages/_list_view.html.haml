@@ -1,22 +1,22 @@
--parent_page ||= pages.first.try(:parent)
+-parent_page ||= items.first.try(:parent)
 
 .span8
-  -pages.each do |child_page|
+  -items.each do |item|
     .row
       .list_image.span2.fade_in
-        -if child_page.image
-          =link_to(image_for(child_page, "140x100#"), child_page)
+        -if item.image
+          =link_to(image_for(item, "140x100#"), item)
       .list_box.span6
-        %h3.small-title.list_title=link_to_self(child_page)
-        -if page.slug == "news"
+        %h3.small-title.list_title=link_to_self(item)
+        -if defined?(page) && page.slug == "news"
           %p.list_date_and_tag
-            =child_page.created_at.strftime("%e %B %Y")
-            -child_page.category_list.each do |category|
-              =tag_label(category.titleize)
-        =link_to raw('&rarr; Read more'), child_page, :class => 'list_read_more'
+            %span=item.created_at.strftime("%e %B %Y")
+            -item.categories.each do |tag|
+              =link_to_tag(tag, :label_options => {:method => :titleize})
+        =link_to raw('&rarr; Read more'), item, :class => 'list_read_more'
   -if controller_name=="pages" && can?(:new, Page) && parent_page
     .row
       .span2.fade_in.new-page-box
         =link_to("+ Add a subpage", new_child_page_path(:parent_id => parent_page.id))
-  -elsif pages.empty?
+  -elsif items.empty?
     %p Coming soon
