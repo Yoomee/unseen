@@ -1,7 +1,7 @@
 .container
   .row
     .span12
-      %h1
+      %h1.big-title.gallery-title
         %span#page_title.mercury-region{:"data-type" => "editable"}
           =raw(page.title)
 -if page.slideshow
@@ -9,7 +9,7 @@
 .container
   .row
     .span4
-      %h2
+      %h2.mb-1
         =raw(page.title)
       .page_text
         -if page.text.blank? && !viewing_mercury_edit? && can?(:edit, page)
@@ -21,13 +21,26 @@
     .span4
       -if page.image
         =image_for(page, "250x")
+        -if page.image_caption
+          %p.mt-1.event-image-caption=page.image_caption
       -else
         .placeholder250x
           &nbsp;
     .span4
+      -if !page.photographers.empty?
+        %h2.normal-title.upcase.mb-1 Artists
+        .pull-left.clear.mb-2
+          -page.photographers.each do |photographer|
+            .row.mb-1
+              .span1
+                =link_to(image_for(photographer, "60x60#"), photographer)
+              .span3.related-text
+                =link_to_self(photographer)
+                %br
+                Photographer
       -if page.has_gallery_contact_details?
-        %h2.contact_title Contact
-        %ul.unstyled.gallery_contact_details
+        %h2.normal-title.upcase.clear Contact
+        %ul.unstyled.pull-left.clear.mb-2
           -if page.gallery_address.present?
             %li.gallery_address
               =simple_format(page.gallery_address)
@@ -52,7 +65,8 @@
               fb:
               =link_to_url(page.gallery_facebook.gsub(/(http:\/\/)?(www\.)?/, ""))
       -if page.gallery_hours.present?
-        %h2.gallery_hours_title Gallery hours
+        %br.clear
+        %h2.normal-title.upcase Gallery hours
         %span.gallery_hours=simple_format(page.gallery_hours)
   
   .row
@@ -61,7 +75,7 @@
         =back_link
         -if can?(:edit, page)
           =mercury_edit_link("Edit page content", mercury_update_page_path(page), :id => "mercury_edit_link")
-        =link_if_can("Edit page details", [:edit, page])
+        =link_if_can("Edit page", [:edit, page])
         =link_if_can("Delete page", [:destroy, page], :confirm => "Are you sure?") unless page.slug.present?
         -if can?(:new, Page)
           =link_if_can("New gallery", new_child_page_path(:parent_id => page.parent_id))

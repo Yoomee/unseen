@@ -1,0 +1,54 @@
+.container
+=render('events/nav')
+.container
+  .row
+    .span12
+      %h2.big-title.event-title.mt-2=@event.title
+      .row.mt-1
+        .span6
+          .row
+            .span1 Date:
+            .span5=link_to(@event.date.strftime('%a %o %B'),program_path(:day=>@event.date.strftime('%a').downcase,:anchor => 'program'))
+          .row
+            .span1 Time:
+            .span5=@event.time_string
+          .row
+            .span1 Venue:
+            .span5=link_to_self(@event.venue)
+        .span2
+          .pull-right
+            =#add_to_program_link(@event)
+  .row.mt-2
+    .span7            
+      -if @event.image
+        .mb-1
+          =image_for(@event, "540x")
+          -if @event.image_caption
+            %p.mt-1.event-image-caption=@event.image_caption
+      =render ('layouts/share_links')    
+      .page_text.mb-2
+        #page_text
+          =simple_format(@event.description)   
+      -[@event.categories,@event.page_tags].flatten.each do |tag|
+        =link_to_tag(tag, :label_options => {:method => :titleize})
+      -if false  
+        .row
+          .span8
+            %h2.normal-title.mt-3.meet-people-title MEET THESE PEOPLE
+            #meet-people
+              %em#no-one-going{:class => "#{'hide' if !@event.users.count.zero?}"} No one has said they're going yet, you can be the first!
+              -@event.users.each do |user|
+                =link_to(image_for(user, '60x60#'), user, :'data-user-id' => user.id, :title => user.to_s)
+          .span8
+            %br
+            =add_to_program_link(@event)
+    .span1
+      %br
+    =render('pages/related_right_col', :page_event => @event)
+    .span8
+      =options_panel do
+        =back_link
+        =link_if_can("Edit event", [:edit, @event])
+        =link_if_can("Delete event", [:destroy, @event], :confirm => "Are you sure?")
+        -if can?(:new, Event)
+          =link_if_can("New event", new_event_path)

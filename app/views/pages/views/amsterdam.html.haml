@@ -1,0 +1,105 @@
+-if viewing_mercury_edit? && page != amsterdam_page
+  .container
+-else
+  -unless page == amsterdam_page
+    -content_for(:head) do
+      :javascript
+        $(document).ready(function() {
+          $.scrollTo('#parallax_1');
+        });
+  .container
+    .row
+      .span12.highlight-intro
+        %h1.big-title.center.highlight-title
+          %span#page_title.mercury-region{:"data-type" => "editable"}
+            =raw(amsterdam_page.title)
+        -if amsterdam_page.text.blank? && !viewing_mercury_edit? && can?(:edit, amsterdam_page)
+          %h2#page_text.small-title.highlight-title
+            =mercury_edit_link("Click here to add some page content", mercury_update_page_path(amsterdam_page))
+        -else
+          %h2#page_text.mercury-region.small-title.highlight-title{:"data-type" => "editable"}
+            =raw(amsterdam_page.text)
+    .row
+      =render('slideshows/tabbed_slideshow', :slideshow => amsterdam_page.slideshow) if amsterdam_page.slideshow
+      .span3.offset5
+        =link_to("Full programme", program_path, :class => "black-btn more-middle")
+  .container
+    .row
+      .span8
+        =options_panel do
+          -if can?(:edit, amsterdam_page)
+            =mercury_edit_link("Edit amsterdam page content", mercury_update_page_path(amsterdam_page), :id => "mercury_edit_link")
+          =link_if_can("Edit amsterdam page details", [:edit, amsterdam_page])
+
+-page_to_show = (page == amsterdam_page) ? amsterdam_page.children.first : page
+#intro.home_box.parallax-subnav{:class => next_home_background_class}
+  .subnav-strip
+    .container
+      .row
+        .span11
+          .subnav-tabs
+            %ul
+              -Page.find_by_slug('amsterdam').children.each_with_index do |child, index|
+                =li_with_active((child == page_to_show) || (child == page_to_show.parent), link_to(child.title,child, :class => 'subnav-tab'))
+              -if can?(:create, Page)
+                %li.subnav-tab
+                  =link_to("+ Add page", new_child_page_path(:parent_id => amsterdam_page.id))
+        .span1
+          =render("pages/toggle_view_links")
+              
+-if page_to_show
+  .container
+    -if page_to_show.parent == amsterdam_page
+      .row
+        .span12
+          %h2.home-title
+            %span#page_title.mercury-region{:"data-type" => "editable"}
+              =raw(page_to_show.title)
+  
+        .row
+          -if view_preference == 'block'
+          =render("pages/block_view", :items => page_to_show.children, :parent_page => page_to_show)
+          -else
+            =render("pages/list_view", :items => page_to_show.children, :parent_page => page_to_show)
+            .span3.offset1
+              .row
+                =render("layouts/signup_column")
+    -else
+      .row
+        .news_page.span12
+          %h1
+            %span#page_title.mercury-region{:"data-type" => "editable"}
+              =raw(page.title)
+          %p.list_date_and_tag
+            %span=page.created_at.strftime("%e %B %Y")
+            -page.page_tags.each do |tag|
+              =link_to_tag(tag, :label_options => {:method => :titleize})        
+      .row
+        .news_page.span7
+          -if page.image
+            .news_page_image
+              =image_for(page, "540x")
+              -if page.image_caption
+                %p.mt-1.event-image-caption=page.image_caption
+            =render ('layouts/share_links')
+          .page_text
+            -if page.text.blank? && !viewing_mercury_edit? && can?(:edit, page)
+              #page_text
+                =mercury_edit_link("Click here to add some page content", mercury_update_page_path(page))
+            -else
+              #page_text.mercury-region{:"data-type" => "editable"}
+                =raw(page.text)
+          -if page.page_tag_list.present?
+            .row.mt-2.mb-2
+              .span8
+                %ul.tag-list.tag-list-horizontal
+                  -page.page_tags.each do |tag|
+                    %li=link_to_tag(tag, :label_options => {:method => :titleize})
+        =render('pages/related_right_col', :page_event => page)
+    .row
+      =options_panel do
+        =back_link
+        -if can?(:edit, page_to_show)
+          =mercury_edit_link("Edit page content", mercury_update_page_path(page_to_show), :id => "mercury_edit_link")
+        =link_if_can("Edit page", [:edit, page_to_show])
+        =link_if_can("Delete page", [:destroy, page_to_show], :confirm => "Are you sure?") unless page_to_show.slug.present?

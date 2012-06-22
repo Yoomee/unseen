@@ -1,0 +1,39 @@
+.container
+#intro.home_box.parallax-subnav{:class => next_home_background_class}
+  .subnav-strip
+    .container
+      .row
+        .span2
+          =link_to raw("&larr; home"), "/", :class=>"subnav-back-link"
+        .span10.subnav-tabs  
+          %ul
+            -Page.find_by_slug('persona_pages').children.each do |child|
+              =li_with_active(child == page, link_to(child.navigation_title.presence || child.title,child, :class => 'subnav-tab'))
+.container
+  .row
+    .span8.offset2.highlight-intro
+      %h1.big-title.center.highlight-title
+        %span#page_title.mercury-region{:"data-type" => "editable"}
+          =raw(page.title)
+      -if page.text.blank? && !viewing_mercury_edit? && can?(:edit, page)
+        %h2#page_text.small-title.highlight-title
+          =mercury_edit_link("Click here to add some page content", mercury_update_page_path(page))
+      -else
+        %h2#page_text.mercury-region.small-title.highlight-title{:"data-type" => "editable"}
+          =raw(page.text)
+  .row
+    =render('slideshows/tabbed_slideshow', :slideshow => page.slideshow) if page.slideshow
+    .span3.offset5
+      =link_to("Full programme", program_path, :class => "black-btn more-middle")
+#third.home_box{:class => next_home_background_class}
+  .bg1
+.container
+  .row
+    .span8
+      =options_panel do
+        -if can?(:edit, page)
+          =mercury_edit_link("Edit page content", mercury_update_page_path(page), :id => "mercury_edit_link")
+        =link_if_can("Edit page", [:edit, page])
+        =link_if_can("Delete page", [:destroy, page], :confirm => "Are you sure?") unless page.slug.present?
+        =link_if_can("New page", [:new, Page])
+=render('layouts/news_block')

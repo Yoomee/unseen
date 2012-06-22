@@ -8,6 +8,8 @@
         .gallery_slideshow.fade_in
           .gallery_slideshow.fade_in
             =image_for(page, "770x446>")
+            -if page.image_caption
+              %p.mt-1.event-image-caption=page.image_caption
   .row
     .span6
       .page_text
@@ -17,7 +19,7 @@
         -else
           #page_text.mercury-region{:"data-type" => "editable"}
             =raw(page.text)
-    .span4.offset1
+    .span4.offset2
       .page_text
         -if page.text_second.blank? && !viewing_mercury_edit? && can?(:edit, page)
           #page_text
@@ -30,6 +32,6 @@
         =back_link
         -if can?(:edit, page)
           =mercury_edit_link("Edit page content", mercury_update_page_path(page), :id => "mercury_edit_link")
-        =link_if_can("Edit page details", [:edit, page])
+        =link_if_can("Edit page", [:edit, page])
         =link_if_can("Delete page", [:destroy, page], :confirm => "Are you sure?") unless page.slug.present?
         =link_if_can("New page", [:new, Page])

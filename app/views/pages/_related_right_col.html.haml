@@ -1,0 +1,38 @@
+.news_page_signup.span4
+  -if !(profiles = page_event.photographers + page_event.galleries).empty?
+    .row
+      .span4
+        %h2.normal-title.upcase See profile
+        .pull-left.clear.mb-2
+          -profiles.each do |profile|
+            .row.mb-1
+              .span1
+                =link_to(image_for(profile, "60x60#"), profile)
+              .span3.related-text
+                =link_to_self(profile)
+                %br
+                =profile.is_a?(User) ? 'Photographer' : 'Gallery'
+  -if !(other_stories = news_page.children.without(page_event.is_a?(Page) ? page_event : nil).tagged_with([page_event.page_tag_list, page_event.category_list].flatten, :any => true).limit(3)).empty?
+    .row
+      .span4
+        %h2.normal-title.upcase Other stories
+        .pull-left.clear.mb-2
+          -other_stories.each do |story|
+            .row.mb-1
+              .span1
+                =link_to(image_for(story, "60x60#"), story)
+              .span3.related-text
+                =link_to_self(story)
+  -if !(events = Event.without(page_event.is_a?(Event) ? page_event : nil).tagged_with([page_event.page_tag_list, page_event.category_list].flatten, :any => true).limit(3)).empty?
+    .row
+      .span4
+        %h2.normal-title.upcase Related programme
+        .pull-left.clear.mb-2
+          -events.each do |event|
+            .row.mb-1
+              .span1
+                =link_to(image_for(event, "60x60#"), event)
+              .span3.related-text
+                =link_to_self(event)
+  .row
+    =render("layouts/signup_column")

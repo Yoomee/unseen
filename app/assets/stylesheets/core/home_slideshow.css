@@ -1,0 +1,90 @@
+/*==========  Homepage slideshow ==========*/
+
+.home-slideshow-container {
+  width: 100%;
+  overflow: hidden;
+  height: 450px;
+	float: left;
+	clear: left;
+  background: #000;
+  position: relative;
+}
+.home-slideshow {
+  float: left;
+  clear: both;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.home-slideshow-inner {
+  height: 100%;
+  position: absolute;
+  left: -980px;
+}
+.home-slide {
+  float: left;
+  width: 980px;
+  height: 450px;
+  position: relative;
+	left: 0;
+	opacity: 1;
+}
+.home-slide-prev,
+.home-slide-next {
+	opacity: 0.6;  
+  cursor: pointer;
+}
+#home-slideshow-caption {
+  position: absolute;
+  top: 275px;
+  right: 20px;  
+}
+#home-slideshow-caption,
+.home-slide-caption {
+	width: 450px;
+	height: 105px;
+	padding: 15px;	
+	background: #fff;  
+	background: rgba(255,255,255,0.9);  
+}
+.home-slide-caption {
+	position: absolute;
+	bottom: 40px;
+	right: 40px;
+	float: left;
+}
+#home-slideshow-caption .home-slide-caption {
+  top: 0;
+  left: 0;
+}
+.home-slide .home-slide-caption {
+  display: none;
+}
+.home-slide-caption .home-slide-title {
+  height: 76px;
+  overflow: hidden;  
+}
+.dots {
+  position: absolute;
+  bottom: 15px;
+  right: 15px; 
+}
+.dot {
+  float: left;
+  width: 10px;
+  margin: 0 7px 0 0;
+  height: 10px;
+  border-radius: 10px;
+  background: #ccc;
+/*  cursor: pointer;*/
+}
+.active-dot {
+  background: #000;
+}
+a.read_more {
+	font-size: 16px;
+	margin: 10px 0 0;
+	float: left;
+	clear: left;
+}

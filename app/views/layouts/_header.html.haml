@@ -1,33 +1,47 @@
 .container
   #header.row
-    .span4
+    .span3
       %h1#site_logo
-        %span
-          unseen photo fair
-        %span
-          19-23 sept 2012
-        %span
-          amsterdam        
-    .span8
-      #nav.nav.pull-right
-        %ul.unstyled
-          %li=link_to("home", root_path)
-          %li=link_to("news", Page.find_by_slug("news") || "#")
-          %li=link_to("fair", Page.find_by_slug("fair") || "#")
-          %li=link_to("galleries", Page.find_by_slug("galleries") || "#")
-          %li=link_to("press", Page.find_by_slug("press") || "#")
-          %li=link_to("about", Page.find_by_slug("about") || "#")
-      #header_links.pull-right
-        =link_to "Twitter", "http://twitter.com/UnseenPhotoFair", :class=>"header_icon", :id=>"twitter_icon"        
-        =link_to "Facebook", "http://www.facebook.com/UnseenPhotoFairAmsterdam", :class=>"header_icon", :id=>"facebook_icon"
-        =link_to "search", search_path, :class=>"header_link", :id=>"search_link"  
-        =link_to("contact", Page.find_by_slug("contact") || "#", :class=>"header_link", :id=>"contact_link")
+        =link_to root_path do
+          %span
+            unseen photo fair
+          %span
+            19-23 sept 2012
+          %span
+            amsterdam        
+    .span9
+      #header-links.pull-right
+        =link_to "buy ticket", "#", :class=>"header-link black-btn tooltip-bottom", :id=>"buy-ticket-link", :title=>"coming soon"
+        =link_to "Twitter", "http://twitter.com/UnseenPhotoFair", :class=>"header-icon", :id=>"twitter_icon"
+        =link_to "Facebook", "http://www.facebook.com/UnseenPhotoFairAmsterdam", :class=>"header-icon", :id=>"facebook_icon"
+        =link_to "search", search_path, :class=>"header-link", :id=>"search_link"  
+        =link_to("press", Page.find_by_slug("press") || "#", :class=>"header-link", :id=>"contact_link")
+        =link_to("contact", Page.find_by_slug("contact") || "#", :class=>"header-link", :id=>"contact_link")
+        =link_to("about", Page.find_by_slug("about") || "#", :class=>"header-link")
         -if user_signed_in?
-          =link_to(t(:logout).downcase, sign_out_path, :method => :delete, :class=>"header_link", :id=>"login_link")
-          =link_to_self(current_user, :class => "header_link")
-          =link_to("sitemap", pages_path, :class => "header_link")
-          -if can?(:index, :photographer)
-            =link_to("photographers", photographers_path, :class => "header_link")
+          #logged-in-dropdown.btn-group
+            =link_to(current_user, :class => 'btn') do
+              %icon.icon-user
+              =current_user
+            =link_to('#', :data => {:toggle => "dropdown"}, :class => 'btn dropdown-toggle') do
+              %span.caret
+            %ul.dropdown-menu.pull-right
+              %li
+                =link_to(pages_path) do
+                  %icon.icon-sitemap
+                  Sitemap
+              %li.divider   
+              -if can?(:index, :photographer)  
+                %li
+                  =link_to(photographers_path) do
+                    %icon.icon-camera
+                    Edit Photographers
+                %li.divider       
+              %li
+                =link_to(sign_out_path, :method => :delete, :id=>"login_link") do
+                  %icon.icon-remove-sign
+                  Logout                                        
         -else
-          =link_to(t(:login).downcase, sign_in_path(:next => request.path), :class=>"header_link", :id=>"login_link")
-        
+          =link_to(t(:login).downcase, sign_in_path(:next => request.path), :class=>"header-link", :id=>"login_link")
+          =#link_to "register", "#", :class=>"header-link"
+      =render ("/layouts/nav")

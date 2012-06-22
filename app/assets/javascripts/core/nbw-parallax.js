@@ -73,24 +73,25 @@ $(document).ready(function() { //when the document is ready...
 		if($firstBG.hasClass("inview")){
 			//call the newPos function and change the background position
 			$firstBG.css({'backgroundPosition': newPos(50, windowHeight, pos, 600, 0.5)}); 
-			inner_image.css({'backgroundPosition': newPos(50, windowHeight, pos, 250, 2)});
+			inner_image.css({'backgroundPosition': newPos(50, windowHeight, pos, 1400, 1.4)});
 			
 		}
 		
 		//if the second section is in view...
 		if($secondBG.hasClass("inview")){
 			//call the newPos function and change the background position
-			$secondBG.css({'backgroundPosition': newPos(50, windowHeight, pos, 1000, 0.3)});
+			$secondBG.css({'backgroundPosition': newPos(50, windowHeight, pos, 3000, 0.3)});
 			//call the newPos function and change the secnond background position
-			inner_image.css({'backgroundPosition': newPos(50, windowHeight, pos, 1250, 0.2)});
+			inner_image.css({'backgroundPosition': newPos(50, windowHeight, pos, 3000, 0.6)});
+
 			
 		}
 		
 		//if the third section is in view...
 		if($thirdBG.hasClass("inview")){
 			//call the newPos function and change the background position
-      // $thirdBG.css({'backgroundPosition': newPos(50, windowHeight, pos, 2400, 1.2)});
-      // inner_image.css({'backgroundPosition': newPos(50, windowHeight, pos, 900, 0.2)});
+      $thirdBG.css({'backgroundPosition': newPos(50, windowHeight, pos, 600, 0.3)});
+      inner_image.css({'backgroundPosition': newPos(50, windowHeight, pos, 1700, 1.4)});
 		}
 		
 		//if the fourth section is in view...

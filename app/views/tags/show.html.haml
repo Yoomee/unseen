@@ -1,15 +1,21 @@
--title "Tag - #{current_tag}"
+.container
+=render("pages/toggle_nav")
 .container
   .row
-    .span8
-      %h1 Latest posts
-  .row
-    .span2
-      %h3.mb-1 Trending tags
-      =render("tags/list", :tags => top_tags, :current_tag => current_tag)
-    .span8
-      %h2.tag_title.mb-2
-        =tag_label(current_tag)
-      -if can?(:create, Post)
-        =render("posts/remote_form", :post => current_user.posts.build)
-      =render("posts/posts", :posts => posts)
+    .span12
+      %h1#news_title.big-title.center
+        %span#page_title
+          Tag:
+          =current_tag.to_s.titleize
+      .row
+        -if view_preference == 'block'
+          =render("pages/block_view", :items => @taggables, :parent_page => nil)
+        -else
+          =render("pages/list_view", :items => @taggables, :parent_page => nil)
+          .span3.offset1
+            .row          
+              =render("layouts/signup_column")
+      .row
+        .span8
+          =options_panel do
+            =back_link

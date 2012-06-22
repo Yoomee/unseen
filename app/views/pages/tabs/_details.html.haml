@@ -1,16 +1,42 @@
+-content_for(:head) do
+  :javascript
+    $(document).ready(function() {
+      $('#page_photographers_input select, #page_galleries_input select').chosen();  
+    });
+
 =form.inputs do
   =form.input(:parent, :collection => Page.without([page] + page.children)) unless Page.without([page] + page.children).empty?
   =form.input :title
+  =form.input :navigation_title if page.parent.try(:slug) == 'persona_pages'
+  -if page.slug == 'fair'
+    =form.input :fair_title_1, :label => "Section 1 title", :as => :text, :input_html => {:class => 'span8 redactor', :rows => 3}
+    =form.input :fair_1,       :label => "Section 1 left column", :as => :text, :input_html => {:class => 'span8 redactor', :rows => 10}
+    =form.input :fair_2,       :label => "Section 1 right column", :as => :text, :input_html => {:class => 'span8 redactor', :rows => 10}
+    =form.input :fair_title_2, :label => "Section 2 title", :as => :text, :input_html => {:class => 'span8 redactor', :rows => 3}
+    =form.input :fair_3,       :label => "Section 2 left column", :as => :text, :input_html => {:class => 'span8 redactor', :rows => 10}
+    =form.input :fair_4,       :label => "Section 2 right column", :as => :text, :input_html => {:class => 'span8 redactor', :rows => 10}
+    =form.input :fair_title_3, :label => "Section 3", :as => :text, :input_html => {:class => 'span8 redactor', :rows => 3}
+    =form.input :fair_5,       :label => "Section 3 text", :as => :text, :input_html => {:class => 'span8 redactor', :rows => 10}
+    =form.input :fair_title_4, :label => "Section 4", :as => :text, :input_html => {:class => 'span8 redactor', :rows => 3}
+    =form.input :fair_6,       :label => "Section 4 text", :as => :text, :input_html => {:class => 'span8 redactor', :rows => 10}
+  -else
+    =form.input :text, :input_html => {:class => 'span8 redactor', :rows => 20}
+    -if page.slug.in?(%w{press about for_press})
+      =form.input :text_second, :as => :text, :input_html => {:class => 'span8 redactor', :rows => 20}, :label => "Right column text"
   -if !page.new_record? && page.image
     .control-group
-      =image_for(page, "100x100#")
+      =image_for(page, "100x100#")    
   =form.input :retained_image, :as => :hidden
   =form.input :image, :as => :file, :label => "Cover image"
+  =form.input :image_caption, :as => :text, :input_html => {:rows => 2, :class => "span8"}
   =form.input :view_name, :as => :select, :collection => Page::view_names, :include_blank => false, :member_label => "titleize", :label => "Layout"
-  =form.input :category_list, :label => "Categories", :as => :select, :multiple => true, :collection => tag_list_options(:categories, page), :input_html => {:class => 'span8'}
+  =form.input :category_list, :label => "News categories", :as => :select, :multiple => true, :collection => Page::NEWS_CATEGORIES, :input_html => {:class => 'span8'}
   =form.input :page_tag_list, :label => "Tags", :as => :select, :multiple => true, :collection => tag_list_options(:page_tags, page), :input_html => {:class => 'span8'}
+  =form.input :photographers, :collection => User.where(:role => 'photographer').order('first_name'), :input_html => {:"data-placeholder" => "Select photographers", :class => 'no-chosen span8'}
+  -gallery_pages = Page.find_by_slug('galleries').try(:children)
+  =form.input :galleries, :collection => (gallery_pages ? gallery_pages.order('title') : nil), :input_html => {:"data-placeholder" => "Select galleries", :class => 'no-chosen span8'}
   =form.input :permalink_path, :label => "Permalink"
-  =form.input :slug if current_user.try(:yoomee_staff?)
+  =form.input :slug, :as => (current_user.try(:yoomee_staff?) ? :string : :hidden)
   .boolean.control-group.optional#page_published_input
     %label{:class => 'control-label'}
     .controls

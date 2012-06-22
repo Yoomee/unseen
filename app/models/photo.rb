@@ -12,8 +12,4 @@ class Photo < ActiveRecord::Base
     false
   end
   
-  def caption
-    ""
-  end
-  
 end
