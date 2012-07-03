@@ -1,3 +1,4 @@
+=debug form.object.errors.full_messages
 =form.inputs do
   =form.input :accreditation, :as => :select, :collection => press_accreditation_options
   =form.input :title, :as => :select, :collection => ["Ms.", "Mr."]
@@ -15,7 +16,7 @@
   =form.input :zip_code, :label => "Zip code"
   =form.input :town
   #enquiry_country_input.control-group.select.required
-    =form.label :country, :class => "control-label"
+    =form.label :country, "Country *", :class => "control-label"
     .controls
       =form.country_select(:country, ["Netherlands"], :include_blank => true)
   =form.input :phone
