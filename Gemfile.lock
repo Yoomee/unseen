@@ -29,7 +29,7 @@ PATH
       ym_core
       ym_permalinks
       ym_videos
-    ym_core (0.0.1)
+    ym_core (0.1)
       bootstrap-will_paginate (~> 0.0.6)
       dragonfly (~> 0.9.10)
       formtastic (~> 2.0.2)
