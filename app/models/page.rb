@@ -19,10 +19,10 @@ class Page < ActiveRecord::Base
   validates :gallery_website, :url => true, :allow_blank => true  
   
   define_index do
-    where sanitize_sql(["published", true])
+    where sanitize_sql(["published_at IS NOT NULL AND published_at >= ?", Time.now])
     indexes title, :sortable => true
     indexes text
-    has parent_id, published, view_name, created_at, updated_at
+    has parent_id, published_at, view_name, created_at, updated_at
   end
   
   class << self
