@@ -22,7 +22,7 @@ class Page < ActiveRecord::Base
     where sanitize_sql(["published", true])
     indexes title, :sortable => true
     indexes text
-    has parent_id, published, view_name, created_at, updated_at
+    has parent_id, published_at, view_name, created_at, updated_at
   end
   
   class << self
