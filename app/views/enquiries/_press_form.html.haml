@@ -15,7 +15,7 @@
   =form.input :zip_code, :label => "Zip code"
   =form.input :town
   #enquiry_country_input.control-group.select.required
-    =form.label :country, :class => "control-label"
+    =form.label :country, "Country *", :class => "control-label"
     .controls
       =form.country_select(:country, ["Netherlands"], :include_blank => true)
   =form.input :phone
