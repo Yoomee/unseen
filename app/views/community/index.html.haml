@@ -1,0 +1,60 @@
+.container
+
+#intro.home_box.parallax-subnav{:class => next_home_background_class}
+  .subnav-strip
+    .container
+      .row
+        .span10
+          .subnav-tabs
+            %ul
+              =li_with_active(session[:news_category].blank?, link_to('Activity', root_path, :class => 'subnav-tab'))
+              =li_with_active(false, link_to('People', root_path, :class => 'subnav-tab'))
+        .span2 
+          -if current_user
+            =link_to('My Profile', user_path(current_user), :class => 'subnav-tab')
+          -else
+            =link_to('Log in / Register', sign_in_path,:class => 'subnav-tab')
+          
+.container
+  .row
+    .news_page.span12
+      %h1.big-title.center Community
+      
+  .row.mt-2
+    .news_page.span12.center
+      Community intro here
+
+
+  .row
+    .news_page.span12
+      %h2.big-title.center Activity
+      
+  .row.mt-2
+    .news_page.span12.center
+      Activity here
+     
+  .row
+    .news_page.span12
+      %h2.big-title.center Popular photos
+     
+  .row.mt-2
+    .news_page.span12.center
+      Photos here
+    
+
+  .row
+    .news_page.span12
+      %h2.big-title.center Popular events
+     
+  .row.mt-2
+    .news_page.span12.center
+      Events here
+    
+  .row
+    .news_page.span12
+      %h2.big-title.center On twitter
+     
+  .row.mt-2
+    .news_page.span12.center
+      Tweets here
+    
