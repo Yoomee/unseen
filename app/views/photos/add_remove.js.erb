@@ -1,0 +1,2 @@
+$('.add-to-favourites[data-photo-id="<%=@photo.id%>"]').replaceWith('<%=escape_javascript(add_to_favourites_link(@photo))%>');
+$('.add-to-favourites[data-photo-id="<%=@photo.id%>"]').tooltip({placement:'bottom'});

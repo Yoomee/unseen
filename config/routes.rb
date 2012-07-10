@@ -16,6 +16,12 @@ Unseen::Application.routes.draw do
       get 'legitimation'
     end
   end
+  resources :photos, :only => [] do
+    member do
+      post 'add', :as => 'add'
+      delete 'remove', :as => 'remove'
+    end
+  end
   
   match "community", :to => "community#index"
 
