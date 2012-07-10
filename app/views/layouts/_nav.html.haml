@@ -4,9 +4,7 @@
     %li.fair-link=link_to("fair", Page.find_by_slug("fair") || "#")
     %li.programme-link=link_to "programme", program_path
     %li.galleries-link=link_to("galleries", Page.find_by_slug("galleries") || "#")
-    %li.community-link{:class=>"tooltip-bottom", :title=>"coming soon"}
-      community
-    =#link_to "community", "#", :class=>"tooltip-bottom", :title=>"coming soon"
+    %li.community-link=link_to "community", community_path
     %li.amsterdam-link=link_to_slug("amsterdam", "amsterdam")
     -if false
       %li=link_to("press", Page.find_by_slug("press") || "#")
