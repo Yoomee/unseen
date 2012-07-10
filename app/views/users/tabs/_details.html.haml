@@ -5,7 +5,8 @@
   -if user.new_record?
     =form.input :password 
   -else
+    =form.input :job_title
     =form.input :bio, :input_html => {:rows => 5, :class => "span4"}
     =form.input :retained_image, :as => :hidden
     =form.input :image, :as => :file
-    =form.input :user_tag_list, :label => "Tags", :as => :select, :multiple => true, :collection => tag_list_options(:user_tags, user), :input_html => {:class => 'span8'}
+    =form.input :user_tag_list, :label => "Interests", :as => :select, :multiple => true, :collection => tag_list_options(:user_tags, user), :input_html => {:class => 'span8'}
