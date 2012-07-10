@@ -39,7 +39,6 @@ $(document).ready ->
   $('#page_view_name').change =>
     YmCms.Page.Form.showSlideshowTab()
   $('#email').focus =>
-    console.log $('#email').val() is 'email'
     $('#email').val('') if $('#email').val() is 'email'
   $("select[multiple='multiple']:not(.no-chosen)").chosen(
     persistent_create_option: false,
