@@ -3,8 +3,39 @@
     .span2
       =image_for(user, "140x")
     .span8
-      %h2.mb-2=title(user)
+      %h2=title(user)
+      %h3.mb-2=user.job_title unless user.job_title.blank?
       .row
+        -unless user.links.empty?
+          %ul.tag-list.tag-list-horizontal
+            -user.links.each do |link|
+              %li
+                =image_tag(link.favicon)
+                =link_to(link, link.url, :target => '_blank')
+        .action-link=link_to("edit links", edit_user_path(user, :anchor => "links")) if can?(:edit, user)
+    
+      
+  .row.mt-2
+    .span10
+      -unless user.user_tags.empty?
+        %h2.normal-title.upcase.mb-1 My Unseen Interests
+        .row
+          %ul.tag-list.tag-list-horizontal
+            -user.user_tags.each do |tag|
+              %li
+                =link_to_tag(tag, :label_options => {:method => :titleize})
+      .action-link
+        =link_to("edit interests", edit_user_path(user, :anchor => "details")) if can?(:edit, user)
+      .row.mt-2
+        .span10
+          -unless user.bio.blank?
+            %h2.normal-title.upcase.mb-1 Bio
+            .row
+              =user.bio
+          .action-link
+            =link_to("edit bio", edit_user_path(user, :anchor => "details")) if can?(:edit, user)
+
+      .row.mt-2
         -if can?(:create, Post)
           .span8
             =render("posts/remote_form", :post => current_user.posts.build(:target => (current_user==user ? nil : user)))
@@ -14,4 +45,4 @@
     .span12
       =options_panel do
         =back_link
-        =link_if_can("Edit user", [:edit, user])
+        =link_if_can("Edit profile", [:edit, user])
