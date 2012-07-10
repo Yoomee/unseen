@@ -958,7 +958,8 @@ a.subnav-back-link {
 }
 body.root_slug_amsterdam .subnav-tabs,
 body.root_slug_news .subnav-tabs,
-body.controller_tags .subnav-tabs {
+body.controller_tags .subnav-tabs,
+body.controller_community .subnav-tabs {
   float: left;
 }
 .subnav-tabs ul, .subnav-tabs li {
