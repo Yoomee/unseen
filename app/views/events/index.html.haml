@@ -31,7 +31,7 @@
                 -[event.categories,event.page_tags].flatten.each do |tag|
                   =link_to_tag(tag, :label_options => {:method => :titleize})
             .span3.offset2
-              =#add_to_program_link(event)
+              =add_to_program_link(event)
               -if event.buy_tickets_url.present?
                 =link_to "Buy tickets", event.buy_tickets_url,:target => "_blank", :class=>"white-btn buy-ticket-btn"
 .container
