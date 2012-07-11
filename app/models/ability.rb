@@ -9,12 +9,16 @@ class Ability
     can :create, Enquiry
     can [:show, :set_view], Page, :published => true
     can :read, :photographer
+    can :read, Photo
+    can :read, Event
     
     if user.try(:admin?)
       can :manage, :all
       # admin ability
     elsif user
       # user ability
+      can [:add, :remove], Event
+      can [:add, :remove], Photo
       can [:read, :create], Post
       can [:update, :destroy], Post, :user_id => user.id
       can [:update, :destroy], User, :id => user.id
