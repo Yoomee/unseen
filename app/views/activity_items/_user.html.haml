@@ -1,0 +1,10 @@
+.row
+  .span1
+    =link_to activity_item.user do
+      =image_for(activity_item.user, "60x60#")
+  .span3
+    =link_to_self(activity_item.user)
+    joined our community
+    .small-info-text
+      =time_ago_in_words(activity_item.created_at)
+      ago

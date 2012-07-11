@@ -1,0 +1,6 @@
+$('#activity-list').append('<%=escape_javascript(render("community/activity"))%>');
+<%if @activity_items.next_page%>
+  $('#more-activity-btn').attr('href','<%=community_path(:page => @activity_items.next_page)%>');
+<%else%>
+  $('#more-activity-btn').fadeOut();
+<%end%>
