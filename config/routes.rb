@@ -16,7 +16,7 @@ Unseen::Application.routes.draw do
       get 'legitimation'
     end
   end
-  resources :photos, :only => [] do
+  resources :photos, :only => [:show] do
     member do
       post 'add', :as => 'add'
       delete 'remove', :as => 'remove'

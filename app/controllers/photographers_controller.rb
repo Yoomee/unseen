@@ -40,6 +40,7 @@ class PhotographersController < ApplicationController
   end
   
   def show
+    @photographer = photographer
     if !photographer.photographer?
       redirect_to user_path(photographer)
     end
