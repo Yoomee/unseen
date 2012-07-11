@@ -14,6 +14,7 @@ class CommunityController < ApplicationController
       @activity_items = YmActivity::ActivityItem.includes(:user,:resource).paginate(:per_page => 6, :page => params[:page])
       @photos = Photo.popular.paginate(:per_page => 6, :page => params[:page])
       @events = Event.popular.paginate(:per_page => 6, :page => params[:page])
+      @tweets = view_context.latest_tweets('UnseenPhotoFair', :count => 30).first(4)
     end
   end
 
