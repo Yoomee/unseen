@@ -24,7 +24,7 @@ gem 'ym_videos',      "0.1"
 gem 'ym_links',       "0.1"
 gem 'ym_enquiries',   "0.1"
 
-gem 'ym_activity', :path => "~/Rails/Gems/ym_activity"
+gem 'ym_activity', "~> 0.1"#, :path => "~/Rails/Gems/ym_activity"
 
 ### Groups
 

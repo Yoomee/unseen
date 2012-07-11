@@ -77,14 +77,6 @@ PATH
       rails (~> 3.1.0)
       video_info
 
-PATH
-  remote: ~/Rails/Gems/ym_activity
-  specs:
-    ym_activity (0.0.1)
-      rails (~> 3.1.0)
-      ym_core
-      ym_users
-
 GEM
   remote: http://rubygems.org/
   remote: https://yoomee:wLjuGMTu30AvxVyIrq3datc73LVUkvo@gems.yoomee.com/
@@ -363,7 +355,11 @@ GEM
     ym_videos (0.1)
       rails (~> 3.1.0)
       video_info
-    yoomee-decent_exposure (1.2.1)
+    ym_activity (0.1)
+      rails (~> 3.1.0)
+      ym_core
+      ym_users
+
 
 PLATFORMS
   ruby
@@ -398,4 +394,4 @@ DEPENDENCIES
   ym_tags (~> 0.1)
   ym_users (~> 0.1.10)
   ym_videos (= 0.1)
-
+  ym_activity (~> 0.1)
