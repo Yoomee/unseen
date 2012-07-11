@@ -30,8 +30,13 @@
       %h2.big-title.center Activity
       
   .row.mt-2
-    .news_page.span12.center
-      Activity here
+    .news_page.span12
+      .row#activity-list
+        =render "activity"
+      .row.mb-2
+        .span12.center
+          -if @activity_items.next_page
+            =link_to "More", community_path(:page => @activity_items.next_page), :remote => true, :class => "black-btn", :id => "more-activity-btn"
      
   .row
     .news_page.span12
