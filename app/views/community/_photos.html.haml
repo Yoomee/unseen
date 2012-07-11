@@ -1,0 +1,9 @@
+-items.each do |photo|  
+  .span4.mb-2
+    .row
+      .span2
+        =link_to image_for(photo, "140x140#"), photo
+      .span2
+        %p=link_to photo.photographer, photo
+        %p
+          %em=photo.caption

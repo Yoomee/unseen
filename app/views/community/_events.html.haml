@@ -1,0 +1,11 @@
+-items.each do |event|  
+  .span6.popular-event
+    %h3.small-title.program-title
+      =link_to event.title, event
+    %p.program-subtitle
+      =event.date_time_string
+      at
+      =event.venue
+    %p
+      -[event.categories,event.page_tags].flatten.each do |tag|
+        =link_to_tag(tag, :label_options => {:method => :titleize})
