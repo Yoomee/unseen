@@ -31,20 +31,25 @@
       
   .row.mt-2
     .news_page.span12
-      .row#activity-list
-        =render "activity"
+      .row#activity_item-list
+        =render "activity_items", :items => @activity_items
       .row.mb-2
         .span12.center
           -if @activity_items.next_page
-            =link_to "More", community_path(:page => @activity_items.next_page), :remote => true, :class => "black-btn", :id => "more-activity-btn"
+            =link_to "More", community_path(:item_type => "activity_item", :page => @activity_items.next_page), :remote => true, :class => "black-btn", :id => "more-activity_item-btn"
      
   .row
     .news_page.span12
       %h2.big-title.center Popular photos
      
   .row.mt-2
-    .news_page.span12.center
-      Photos here
+    .news_page.span12
+      .row#photo-list
+        =render "photos", :items => @photos
+      .row.mb-2
+        .span12.center
+          -if @photos.next_page
+            =link_to "More", community_path(:item_type => "photo", :page => @photos.next_page), :remote => true, :class => "black-btn", :id => "more-photo-btn"
     
 
   .row
@@ -52,8 +57,13 @@
       %h2.big-title.center Popular events
      
   .row.mt-2
-    .news_page.span12.center
-      Events here
+    .news_page.span12
+      .row#event-list
+        =render "events", :items => @events
+      .row.mb-2
+        .span12.center
+          -if @events.next_page
+            =link_to "More", community_path(:item_type => "event", :page => @events.next_page), :remote => true, :class => "black-btn", :id => "more-event-btn"
     
   .row
     .news_page.span12
