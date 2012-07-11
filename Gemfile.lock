@@ -76,16 +76,9 @@ PATH
       rails (~> 3.1.0)
       video_info
 
-PATH
-  remote: ~/Rails/Gems/ym_activity
-  specs:
-    ym_activity (0.0.1)
-      rails (~> 3.1.0)
-      ym_core
-      ym_users
-
 GEM
   remote: http://rubygems.org/
+  remote: https://yoomee:wLjuGMTu30AvxVyIrq3datc73LVUkvo@gems.yoomee.com/
   specs:
     actionmailer (3.1.0)
       actionpack (= 3.1.0)
@@ -319,6 +312,10 @@ GEM
     will_paginate (3.0.3)
     xpath (0.1.4)
       nokogiri (~> 1.3)
+    ym_activity (0.1)
+      rails (~> 3.1.0)
+      ym_core
+      ym_users
     yoomee-decent_exposure (1.2.1)
 
 PLATFORMS
@@ -342,7 +339,7 @@ DEPENDENCIES
   sass-rails (~> 3.1.0)
   shoulda-matchers
   uglifier
-  ym_activity!
+  ym_activity (~> 0.1)
   ym_cms!
   ym_core!
   ym_enquiries!

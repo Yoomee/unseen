@@ -1,7 +1,7 @@
 require File.expand_path('../lib/ym_gem_loader', __FILE__) 
 
 source 'http://rubygems.org'
-
+source 'https://yoomee:wLjuGMTu30AvxVyIrq3datc73LVUkvo@gems.yoomee.com'
 
 ### Always used
 gem 'rails', '3.1.0'
@@ -29,7 +29,7 @@ gem 'cocoon'
 
 load_ym_gems!
 
-gem 'ym_activity', :path => "~/Rails/Gems/ym_activity"
+gem 'ym_activity', "~> 0.1"#, :path => "~/Rails/Gems/ym_activity"
 
 ### Groups
 
