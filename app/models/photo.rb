@@ -8,6 +8,8 @@ class Photo < ActiveRecord::Base
   validates :image, :presence => true
   validates_property :format, :of => :image, :in => [:jpeg, :jpg, :png, :gif], :message => "must be an image"
   
+  scope :popular, joins(:favourited_users).group("photos.id").order("COUNT(users.id)")
+    
   # so it can be used in slideshow partial
   def has_video?
     false

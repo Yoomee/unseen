@@ -15,6 +15,8 @@ class Event < ActiveRecord::Base
   
   acts_as_taggable_on :categories, :page_tags
   
+  scope :popular, joins(:users).group("events.id").order("COUNT(users.id)")
+  
   #validates :image, :presence => true
   #validates_property :format, :of => :image, :in => [:jpeg, :jpg, :png, :gif], :message => "must be an image"
   
@@ -30,6 +32,10 @@ class Event < ActiveRecord::Base
   
   def time_string
     "#{starts_at} - #{ends_at}"
+  end
+  
+  def date_time_string
+    "#{date.to_s(:date)} #{starts_at} - #{ends_at}"
   end
   
 end
