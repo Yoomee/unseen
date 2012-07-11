@@ -29,6 +29,8 @@ gem 'cocoon'
 
 load_ym_gems!
 
+gem 'ym_activity', :path => "~/Rails/Gems/ym_activity"
+
 ### Groups
 
 # Gems used only for assets and not required

@@ -76,6 +76,14 @@ PATH
       rails (~> 3.1.0)
       video_info
 
+PATH
+  remote: ~/Rails/Gems/ym_activity
+  specs:
+    ym_activity (0.0.1)
+      rails (~> 3.1.0)
+      ym_core
+      ym_users
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -334,6 +342,7 @@ DEPENDENCIES
   sass-rails (~> 3.1.0)
   shoulda-matchers
   uglifier
+  ym_activity!
   ym_cms!
   ym_core!
   ym_enquiries!
