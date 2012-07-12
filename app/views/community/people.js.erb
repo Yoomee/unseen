@@ -1,0 +1,13 @@
+<%if params[:tag]%>
+  $('#people').html('<%=escape_javascript(render("community/people", :people => @people))%>');
+<%elsif  !params[:page].present?%>
+  $('#people').html('<%=escape_javascript(render("community/people", :people => @people))%>');
+<%else%>
+  $('#people').append('<%=escape_javascript(render("community/people", :people => @people))%>');
+<%end%>
+<%if @people.next_page%>
+  $('#more-people-btn').attr('href','<%=community_people_path(:page => @people.next_page)%>');
+  $('#more-people-btn').fadeIn();
+<%else%>
+  $('#more-people-btn').fadeOut();
+<%end%>
