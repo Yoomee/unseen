@@ -1,19 +1,4 @@
-.container
-
-#intro.home_box.parallax-subnav{:class => next_home_background_class}
-  .subnav-strip
-    .container
-      .row
-        .span10
-          .subnav-tabs
-            %ul
-              =li_with_active(session[:news_category].blank?, link_to('Activity', root_path, :class => 'subnav-tab'))
-              =li_with_active(false, link_to('People', root_path, :class => 'subnav-tab'))
-        .span2 
-          -if current_user
-            =link_to('My Profile', user_path(current_user), :class => 'subnav-tab')
-          -else
-            =link_to('Log in / Register', sign_in_path,:class => 'subnav-tab')
+=render "community_nav"
           
 .container
   .row
