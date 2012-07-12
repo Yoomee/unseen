@@ -17,6 +17,8 @@ class User < ActiveRecord::Base
   define_index do
     indexes first_name, last_name, job_title, bio
     has created_at, updated_at
+    set_property :enable_star => 1
+    set_property :min_infix_len => 3
   end
 
   def photographer?
