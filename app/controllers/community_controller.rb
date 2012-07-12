@@ -25,7 +25,7 @@ class CommunityController < ApplicationController
     elsif params[:q]
       @query = strip_tags(params[:q]).to_s.strip
       if @query.present?
-        @people = User.search(@query)
+        @people = User.search(@query, :star => true)
       else
         @people = []
       end
