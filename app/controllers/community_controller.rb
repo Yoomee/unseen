@@ -17,5 +17,14 @@ class CommunityController < ApplicationController
       @tweets = view_context.latest_tweets('UnseenPhotoFair', :count => 30).first(4)
     end
   end
+  
+  def people
+    @tags = Tag.user_tags
+    if params[:tag]
+      @people = User.tagged_with(["#{params[:tag]}"]).paginate(:per_page => 10, :page => params[:page])
+    else
+      @people = User.order(:last_name).paginate(:per_page => 10, :page => params[:page])
+    end
+  end
 
 end

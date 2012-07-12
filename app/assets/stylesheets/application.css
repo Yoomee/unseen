@@ -1405,3 +1405,11 @@ a.tag:hover .tag-label {
   overflow: hidden;
   margin-bottom: 5px;
 }
+
+.community-person {
+  height: 80px;
+}
+ul.tag-list a span.label.selected {
+  background-color: #819FF7;
+  color: white;
+}

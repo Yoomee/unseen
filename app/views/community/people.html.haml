@@ -1,0 +1,42 @@
+=render "community_nav"
+          
+.container
+  .row
+    .news_page.span12
+      %h1.big-title.center People
+      
+  .row.mt-2
+    .news_page.span12.center
+      Sign up text here
+
+
+  .row.mt-2
+    .news_page.span12
+      .row
+        .span4
+          %form.form-search{:action => community_search_url, :method => 'get'}
+            =text_field_tag 'q', params[:q], :class => "input-medium search-query"
+            %input.btn{:type => 'submit', :value => "Search"}
+          .clearfix
+          -unless @tags.empty?
+            -original_tags = params[:tag] || []
+            %ul.tag-list
+              -@tags.each do |tag|
+                %li
+                  -param_tags = original_tags.dup
+                  -param_tags << tag.to_s unless param_tags.delete(tag.to_s)
+                  =link_to community_people_path(:tag => param_tags), :class => "tag", :remote => true do
+                    %span.label.tag-label{:class => "#{original_tags.include?(tag.to_s) ? 'selected'  : ''}"}
+                      =tag
+            .clearfix.mb-1
+            =link_to "Show all", community_people_path, :class => "black-btn", :remote => true
+          
+               
+        .span8
+          .row#people
+            =render "people"
+                
+          .row
+            .span6.center
+              =link_to "Load More", community_people_path(:page => @people.next_page), :class => "black-btn", :id => "more-people-btn", :remote => true
+              
