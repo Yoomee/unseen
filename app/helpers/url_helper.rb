@@ -11,10 +11,9 @@ module UrlHelper
   end 
   
   def edit_user_path(*args)
-    options = args.extract_options!
     user = args.first
     if user.photographer?
-      edit_photographer_path(user, options)
+      edit_photographer_path(*args)
     else
       super
     end
