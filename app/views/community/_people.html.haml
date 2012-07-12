@@ -5,3 +5,7 @@
   .span3.community-person
     %p=link_to_self(person)
     %p=person.try(:job_title)
+    %ul.tag-list.tag-list-horizontal
+      -person.user_tags.each do |tag|
+        %li
+          =link_to_tag(tag, :label_options => {:method => :titleize})

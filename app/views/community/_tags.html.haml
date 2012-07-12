@@ -1,0 +1,11 @@
+-original_tags = params[:tag] || []
+%ul.tag-list
+  -@tags.each do |tag|
+    %li
+      -param_tags = original_tags.dup
+      -param_tags << tag.to_s unless param_tags.delete(tag.to_s)
+      =link_to community_people_path(:tag => param_tags), :class => "tag", :remote => true do
+        %span.label.tag-label{:class => "#{original_tags.include?(tag.to_s) ? 'selected'  : ''}"}
+          =tag
+.clearfix.mb-1
+=link_to "Show all", community_people_path, :class => "black-btn", :remote => true
