@@ -1,0 +1,16 @@
+.container
+
+#intro.home_box.parallax-subnav{:class => next_home_background_class}
+  .subnav-strip
+    .container
+      .row
+        .span10
+          .subnav-tabs
+            %ul
+              =li_with_active(current_page?(community_path), link_to('Activity', community_path, :class => 'subnav-tab'))
+              =li_with_active(current_page?(community_people_path), link_to('People', community_people_path, :class => 'subnav-tab'))
+        .span2 
+          -if current_user
+            =link_to('My Profile', user_path(current_user), :class => 'subnav-tab')
+          -else
+            =link_to('Log in / Register', sign_in_path,:class => 'subnav-tab')
