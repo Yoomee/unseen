@@ -14,6 +14,11 @@ class User < ActiveRecord::Base
 
   accepts_nested_attributes_for :photos, :links, :reject_if => :all_blank, :allow_destroy => true
 
+  define_index do
+    indexes first_name, last_name, job_title, bio
+    has created_at, updated_at
+  end
+
   def photographer?
     role_is?(:photographer)
   end
