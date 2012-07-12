@@ -1398,6 +1398,34 @@ a.tag:hover .tag-label {
     font-size: 12px;
 }
 
+.span2.photo .photo-image-link {
+  width: 140px;
+  height: 140px;
+  margin-bottom: 10px;
+  position: relative;
+  float:left;
+}
+.span2.photo .photo-image-link img {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.span2.photo p.photographer,
+.span2.photo p.caption,
+.span2.photo p.gallery {
+  font-size: 13px;
+  margin: 0;
+  line-height: 16px;
+  color: #211D1D;
+}
+.container.user-profile p.job-title { 
+  font-family: "Apercu Regular", "calibri", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
 /*========== Community ==========*/
 
 #event-list .popular-event {
