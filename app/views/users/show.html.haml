@@ -1,30 +1,64 @@
-.container
+=render "community/community_nav"
 
-#intro.home_box.parallax-subnav{:class => next_home_background_class}
-  .subnav-strip
-    .container
-      .row
-        .span10
-          .subnav-tabs
-            %ul
-              =li_with_active(false, link_to('Activity', community_path, :class => 'subnav-tab'))
-              =li_with_active(false, link_to('People', community_people_path, :class => 'subnav-tab'))
-        .span2
-          .subnav-tabs
-            %ul
-            -if current_user
-              =li_with_active(true, link_to('My Profile', user_path(current_user), :class => 'subnav-tab'))
-            -else
-              =li_with_active(true, link_to('Log in / Register', sign_in_path,:class => 'subnav-tab'))
-
-.container
+.container.user-profile
   .row.mt-2
-    .span2
-      =image_for(user, "140x")  
+    .span1.mr-1
+      =image_for(user, "60x60#")  
     .span8
-      %h2=title(user)
-      %h3.mb-2=user.job_title unless user.job_title.blank?
+      %h2.medium-title=title(user)
+      %p.job-title=user.job_title unless user.job_title.blank?
+
+    
+  .row.mt-1
+    .span8
+      %p.normal-title.upcase.mb-1 My Collection
+      -if !user.favourite_photos.empty?
+        =user.favourite_photos.each_slice(4) do |photos|
+          .row
+            =render photos
+          
+      -elsif current_user == user
+        Why not find some photos and add them to your collection?
+      -else
+        ="#{user} hasn't got any favourite photos yet"
+                  
+      %p.normal-title.upcase.mt-2.mb-1 My Programme
+      -if !user.events.empty?
+        =render user.events
+      -elsif current_user == user
+        ="Check out #{link_to 'what\'s going on', program_path} and add some events to your programme".html_safe
+      -else
+        ="#{user} isn't going to any events yet".html_safe
+
+    .span3.offset1
+      %p.normal-title.upcase.upcase My Location
+  
+      -unless user.bio.blank?
+        %p.normal-title.upcase.mt-1 Bio
+        =simple_format(user.bio)
+      .clearfix
+      -if can?(:edit, user)
+        .action-link
+          =link_to(edit_user_path(user, :anchor => "details"))  do
+            %icon.icon-plus
+            edit bio
+        
+      -unless user.user_tags.empty?
+        %p.normal-title.upcase.mt-1 My Interests
+        %ul.tag-list.tag-list-horizontal
+          -user.user_tags.each do |tag|
+            %li
+              =link_to_tag(tag, :label_options => {:method => :titleize})
+      .clearfix
+      -if can?(:edit, user)
+        .action-link
+          =link_to(edit_user_path(user, :anchor => "details")) do
+            %icon.icon-plus
+            edit interests
+
+
       -unless user.links.empty?
+        %p.normal-title.upcase.mt-1 Contact Me
         %ul.tag-list.tag-list-horizontal
           -user.links.each do |link|
             %li
@@ -36,89 +70,7 @@
             =link_to(edit_user_path(user, :anchor => "links")) do
               %icon.icon-plus
               edit links
-    
-      
-  .row.mt-2
-    .span7
-      -unless user.user_tags.empty?
-        %h2.normal-title.upcase.mb-1 My Unseen Interests
-        %ul.tag-list.tag-list-horizontal
-          -user.user_tags.each do |tag|
-            %li
-              =link_to_tag(tag, :label_options => {:method => :titleize})
-      .clearfix
-      -if can?(:edit, user)
-        .action-link
-          =link_to(edit_user_path(user, :anchor => "details")) do
-            %icon.icon-plus
-            edit interests
-    .span5
-      %h2 Location
-  .row.mt-2
-    .span10
-      -unless user.bio.blank?
-        %h2.normal-title.upcase.mb-1 Bio
-        =simple_format(user.bio)
-      .clearfix
-      -if can?(:edit, user)
-        .action-link
-          =link_to(edit_user_path(user, :anchor => "details"))  do
-            %icon.icon-plus
-            edit bio
-          
-        
 
-  .row.mt-2
-    .span12
-      %h3.big-title.center My Programme
-      -if !user.events.empty?
-        -user.events.each do |event|
-          .span12.program-item
-            .row
-              .span7
-                %h3.small-title.program-title
-                  =link_to event.title, event
-                %p.program-subtitle
-                  =event.date_time_string
-                  at
-                  =event.venue
-                %p
-                  -[event.categories,event.page_tags].flatten.each do |tag|
-                    =link_to_tag(tag, :label_options => {:method => :titleize})
-      -elsif current_user == user
-        ="Check out #{link_to 'what\'s going on', program_path} and add some events to your programme".html_safe
-      -else
-        ="#{user} isn't going to any events yet"
-      
-  .row.mt-2
-    .span12
-      %h3.big-title.center My Collection
-  .row
-    -if !user.favourite_photos.empty?
-      -user.favourite_photos.each do |photo|
-        .span4.mt-2
-          .row
-            .span2
-              =image_for(photo, "140x100#")
-            .span2
-              %strong=link_to_self(photo.photographer)
-              %em=photo.caption
-    -elsif current_user == user
-      .span12
-        Why not find some photos and add them to your collection?
-    -else
-      .span12
-        ="#{user} hasn't got any favourite photos yet"
-
-
-
-
-  .row.mt-2
-    -if can?(:create, Post)
-      .span8
-        =render("posts/remote_form", :post => current_user.posts.build(:target => (current_user==user ? nil : user)))
-    .span8
-      =render("posts/posts", :posts => wall_posts)
 
 
   .row
