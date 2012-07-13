@@ -1,5 +1,3 @@
-require File.expand_path('../lib/ym_gem_loader', __FILE__) 
-
 source 'http://rubygems.org'
 source 'https://yoomee:wLjuGMTu30AvxVyIrq3datc73LVUkvo@gems.yoomee.com'
 
@@ -15,19 +13,16 @@ gem 'exception_notification'
 
 gem 'cocoon'
 
-# def ym_gem(gem_name, checkout = nil)
-#   return true unless gem_name
-#   if !File.directory?(gem_path = "vendor/gems/#{gem_name}")
-#     system("git clone -q git://git.yoomee.com:4321/gems/#{gem_name}.git #{gem_path}")
-#     system("git checkout #{checkout}") if checkout
-#   end
-#   gem gem_name, :path => "vendor/gems"
-# end
-
-# ym_gemfile = File.expand_path('../Gemfile.ym', __FILE__)
-# eval(IO.read(ym_gemfile), binding, ym_gemfile)
-
-load_ym_gems!
+gem 'ym_core',        "0.1"
+gem 'ym_cms',         "0.1"
+gem 'ym_permalinks',  "0.1"
+gem 'ym_posts',       "0.1"
+gem 'ym_search',      "0.1"
+gem 'ym_tags',        "0.1"
+gem 'ym_users',       "0.1"
+gem 'ym_videos',      "0.1"
+gem 'ym_links',       "0.1"
+gem 'ym_enquiries',   "0.1"
 
 gem 'ym_activity', "~> 0.1"#, :path => "~/Rails/Gems/ym_activity"
 
@@ -45,6 +40,7 @@ group :development do
   gem 'growl'
   gem 'yoomee', :git => "git://git.yoomee.com:4321/gems/yoomee.git", :branch => "rails3"
   gem 'ruby-debug19', :require => 'ruby-debug'
+  gem 'sqlite3'
 end
 
 # Use unicorn as the web server
