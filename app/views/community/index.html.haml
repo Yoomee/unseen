@@ -56,6 +56,9 @@
         .span12.center
           -if @events.next_page
             =link_to "More Events", community_path(:item_type => "event", :page => @events.next_page), :remote => true, :class => "black-btn", :id => "more-event-btn"
+            
+#intro.home_box{:class => next_home_background_class}
+  .bg1
 
 .container
   .row.mt-2
@@ -69,9 +72,7 @@
           .span6.mb-2
             .row
               .span1
-                =#image_tag(tweet.image_url)
-                =image_for(User.first, "60x60#")
-                =#link_to "Follow us", "http://twitter.com/UnseenPhotoFair", :class=>"call-to-action-link", :id=>"social-twitter", :target=>"_blank"
+                =image_tag(tweet.image_url)
               .span5
                 =auto_link(auto_link_twitter(tweet.text))
     .span12.center
