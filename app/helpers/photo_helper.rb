@@ -10,7 +10,7 @@ module PhotoHelper
       options[:method] = :delete
       options[:class] += " add-to-favourites add-to-favourites-active"
       link_text = "Unfavourite this work"
-    else
+    elsif current_user
       url = add_photo_path(photo)
       options[:method] = :post
       options[:class] += " add-to-favourites"
