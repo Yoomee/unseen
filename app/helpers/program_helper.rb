@@ -11,7 +11,7 @@ module ProgramHelper
       options[:method] = :delete
       options[:title] = "Remove from my programme"
       options[:class] += " white-btn add-to-program add-to-program-active"
-    else
+    elsif current_user
       url = add_event_path(event)
       options[:method] = :post
       options[:title] = "Add to my programme"
