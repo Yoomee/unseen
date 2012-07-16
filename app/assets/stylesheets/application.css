@@ -1461,3 +1461,23 @@ ul.tag-list a span.label.selected {
   background-color: #819FF7;
   color: white;
 }
+.span4 .community-photo-image-link {
+  width: 300px;
+  height: 300px;
+  margin-bottom: 10px;
+  position: relative;
+  float:left;
+}
+.span4 .community-photo-image-link img {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.span4 p.photographer,
+.span4 p.caption,
+.span4 p.gallery {
+  font-size: 13px;
+  margin: 0;
+  line-height: 16px;
+  color: #211D1D;
+}

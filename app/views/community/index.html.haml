@@ -2,60 +2,68 @@
           
 .container
   .row
-    .news_page.span12
-      %h1.big-title.center Community
-      
-  .row.mt-2
-    .news_page.span12.center
-      Community intro here
+    .span12.center
+      %h1.big-title Community
+      %p Welcome to the Unseen Activity area
+      %p Here you will find the latest activity
 
 
-  .row
-    .news_page.span12
-      %h2.big-title.center Activity
+  .row.mt-2
+    .span12
+      %p.normal-title.center Activity
       
   .row.mt-2
-    .news_page.span12
+    .span12
       .row#activity_item-list
         =render "activity_items", :items => @activity_items
       .row.mb-2
         .span12.center
           -if @activity_items.next_page
-            =link_to "More", community_path(:item_type => "activity_item", :page => @activity_items.next_page), :remote => true, :class => "black-btn", :id => "more-activity_item-btn"
-     
-  .row
-    .news_page.span12
-      %h2.big-title.center Popular photos
-     
+            =link_to "More Activity", community_path(:item_type => "activity_item", :page => @activity_items.next_page), :remote => true, :class => "black-btn", :id => "more-activity_item-btn"
+            
+            
+#intro.home_box{:class => next_home_background_class}
+  .bg1
+
+.container 
   .row.mt-2
-    .news_page.span12
+    .span12
+      %p.normal-title.center Popular photos
+   
+  .row.mt-2
+    .span12
       .row#photo-list
         =render "photos", :items => @photos
       .row.mb-2
         .span12.center
           -if @photos.next_page
-            =link_to "More", community_path(:item_type => "photo", :page => @photos.next_page), :remote => true, :class => "black-btn", :id => "more-photo-btn"
-    
+            =link_to "More Photos", community_path(:item_type => "photo", :page => @photos.next_page), :remote => true, :class => "black-btn", :id => "more-photo-btn"
 
-  .row
-    .news_page.span12
-      %h2.big-title.center Popular events
-     
+
+#intro.home_box{:class => next_home_background_class}
+  .bg1  
+
+.container
   .row.mt-2
-    .news_page.span12
+    .span12
+      %p.normal-title.center Popular events
+   
+  .row.mt-2
+    .span12
       .row#event-list
         =render "events", :items => @events
       .row.mb-2
         .span12.center
           -if @events.next_page
-            =link_to "More", community_path(:item_type => "event", :page => @events.next_page), :remote => true, :class => "black-btn", :id => "more-event-btn"
-    
-  .row
-    .news_page.span12
-      %h2.big-title.center On twitter
-     
+            =link_to "More Events", community_path(:item_type => "event", :page => @events.next_page), :remote => true, :class => "black-btn", :id => "more-event-btn"
+
+.container
   .row.mt-2
-    .news_page.span12
+    .span12
+      %h2.normal-title.center On twitter
+   
+  .row.mt-2
+    .span12
       .row#tweets
         -@tweets.each do |tweet|
           .span6.mb-2
@@ -63,6 +71,7 @@
               .span1
                 =#image_tag(tweet.image_url)
                 =image_for(User.first, "60x60#")
+                =#link_to "Follow us", "http://twitter.com/UnseenPhotoFair", :class=>"call-to-action-link", :id=>"social-twitter", :target=>"_blank"
               .span5
                 =auto_link(auto_link_twitter(tweet.text))
     .span12.center

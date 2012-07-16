@@ -1,11 +1,20 @@
--items.each do |event|  
-  .span6.popular-event
-    %h3.small-title.program-title
-      =link_to event.title, event
-    %p.program-subtitle
-      =event.date_time_string
-      at
-      =event.venue
-    %p
-      -[event.categories,event.page_tags].flatten.each do |tag|
-        =link_to_tag(tag, :label_options => {:method => :titleize})
+-items.each do |event|
+  .row.program-item
+    .span8.popular-event
+      %h3.small-title.program-title
+        =link_to event.title, event
+      %p.program-subtitle
+        =event.date_time_string
+        at
+        =event.venue
+      %p
+        -[event.categories,event.page_tags].flatten.each do |tag|
+          =link_to_tag(tag, :label_options => {:method => :titleize})
+        
+
+    .span4
+      -if event.users.include?(current_user)
+        =add_to_program_link(event)
+      .clearfix
+      %icon.icon-heart
+      =event.users.count
