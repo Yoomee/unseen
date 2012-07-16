@@ -106,7 +106,6 @@ core/jquery.localscroll.js: core/jquery.localscroll-69e740007c1e3c8c0ba6fbac423e
 core/jquery.scrollTo.js: core/jquery.scrollTo-b41425e572985c6d3c7ae2175bd06e40.js
 jquery-ui-bootstrap.ie.css: jquery-ui-bootstrap.ie-5b7d330c3a326d66f7e5dc8e85a93d00.css
 jquery.url.js: jquery.url-c23c29f5aa1d82aeb6f90e2dfb2329ad.js
-dragonfly/defaults/user.jpg: dragonfly/defaults/user-64d49ac6b434a0e94aa9681a3f664c59.jpg
 jquery.iframe-transport.js: jquery.iframe-transport-2d53a1737d6c182d1cb85cf84f9747d5.js
 jquery.remotipart.js: jquery.remotipart-640c1ac55776b28492211e8d900678bd.js
 mercury_save_btn_bg.png: mercury_save_btn_bg-a4b224e8fad17f2f8b80f5a9920bb4e0.png

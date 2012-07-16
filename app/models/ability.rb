@@ -11,6 +11,7 @@ class Ability
     can :read, :photographer
     can :read, Photo
     can :read, Event
+    can :show, User
     
     if user.try(:admin?)
       can :manage, :all
