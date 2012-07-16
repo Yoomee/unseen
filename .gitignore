@@ -12,3 +12,4 @@ log/*.pid
 tmp/
 vendor/gems
 chromedriver.log
+.eyrc
