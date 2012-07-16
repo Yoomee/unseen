@@ -3,4 +3,5 @@ development:
 test:
   html_strip: true
 production:
+  port: 9313
   html_strip: true
