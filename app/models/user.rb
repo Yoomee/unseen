@@ -8,7 +8,9 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :events, :order => "starts_at DESC, date"
   has_and_belongs_to_many :favourite_photos, :class_name => "Photo", :join_table => "photos_users"
 
-  after_create :record_activity  
+  after_create :record_activity
+  geocoded_by :address, :latitude  => :lat, :longitude => :lng
+  after_validation :geocode,  :if => lambda{ |obj| obj.address_changed? }
 
   acts_as_taggable_on :user_tags
 
@@ -19,6 +21,22 @@ class User < ActiveRecord::Base
     has created_at, updated_at
     set_property :enable_star => 1
     set_property :min_infix_len => 3
+  end
+  
+  def address
+    %w{city country}.map {|fld| send(fld)}.select(&:present?).join(', ')
+  end
+  
+  def address_changed?
+    city_changed? || country_changed?
+  end
+  
+  def has_lat_lng?
+    lat.present? && lng.present?
+  end
+  
+  def lat_lng_or_default
+    has_lat_lng? ? [lat,lng] : User::DEFAULT_LOCATION
   end
 
   def photographer?
@@ -31,3 +49,5 @@ class User < ActiveRecord::Base
   end
 
 end
+
+User::DEFAULT_LOCATION = [52.3744,4.898]

@@ -1,3 +1,13 @@
+-if user.has_lat_lng?
+  =google_maps_javascript_include_tag
+  =content_for :head do
+    :javascript
+      $(document).ready(function() {
+        UserMap.lat = #{user.lat};
+        UserMap.lng = #{user.lng};
+        UserMap.init()
+      });
+
 =render "community/community_nav"
 
 .container.user-profile
@@ -31,10 +41,34 @@
         ="#{user} isn't going to any events yet".html_safe
 
     .span3.offset1
-      %p.normal-title.upcase.upcase My Location
-  
-      -unless user.bio.blank?
-        %p.normal-title.upcase.mt-1 Bio
+      %p.normal-title.upcase My Location
+      
+      -if user.has_lat_lng?
+        %p=user.address
+        #map-canvas{:style => "height:220px;width:100%"}
+        -if can?(:edit_location, user)
+          .action-link
+            =link_to(edit_location_user_path(user)) do
+              %icon.icon-plus
+              edit location              
+      -elsif can?(:edit_location, user)
+        .alert.alert-error
+          %strong LOCATION MISSING 
+          %p We couldn't work out your location
+          .action-link
+            =link_to(edit_location_user_path(user)) do
+              %icon.icon-plus
+              edit location
+      -else
+        %p
+          =user.first_name
+          hasn't set their location yet      
+      
+      %p.normal-title.upcase.mt-1 Bio
+      -if user.bio.blank?
+        =user.first_name
+        hasn't entered a bio yet
+      -else
         =simple_format(user.bio)
       .clearfix
       -if can?(:edit, user)
@@ -43,8 +77,11 @@
             %icon.icon-plus
             edit bio
         
-      -unless user.user_tags.empty?
-        %p.normal-title.upcase.mt-1 My Interests
+      %p.normal-title.upcase.mt-1 My Interests
+      -if user.user_tags.empty?
+        =user.first_name
+        hasn't entered any interests yet
+      -else
         %ul.tag-list.tag-list-horizontal
           -user.user_tags.each do |tag|
             %li
@@ -57,19 +94,22 @@
             edit interests
 
 
-      -unless user.links.empty?
-        %p.normal-title.upcase.mt-1 Contact Me
+      %p.normal-title.upcase.mt-1 Contact Me
+      -if user.links.empty?
+        =user.first_name
+        has no contact details yet
+      -else
         %ul.tag-list.tag-list-horizontal
           -user.links.each do |link|
             %li
               =image_tag(link.favicon)
               =link_to(link, link.url, :target => '_blank')
         .clearfix
-        -if can?(:edit, user)
-          .action-link
-            =link_to(edit_user_path(user, :anchor => "links")) do
-              %icon.icon-plus
-              edit links
+      -if can?(:edit, user)
+        .action-link
+          =link_to(edit_user_path(user, :anchor => "links")) do
+            %icon.icon-plus
+            edit links
 
 
 
