@@ -13,16 +13,17 @@ gem 'exception_notification'
 
 gem 'cocoon'
 
-gem 'ym_core',        "0.1"
-gem 'ym_cms',         "0.1"
-gem 'ym_permalinks',  "0.1"
-gem 'ym_posts',       "0.1"
-gem 'ym_search',      "0.1"
-gem 'ym_tags',        "0.1"
-gem 'ym_users',       "0.1"
-gem 'ym_videos',      "0.1"
-gem 'ym_links',       "0.1"
-gem 'ym_enquiries',   "0.1"
+gem 'ym_core',        " ~> 0.1"#, :path => "~/Rails/Gems/ym_core"
+gem 'ym_cms',         "0.1"    #, :path => "~/Rails/Gems/ym_cms"
+gem 'ym_permalinks',  "0.1"    #, :path => "~/Rails/Gems/ym_permalinks"
+gem 'ym_posts',       "0.1"    #, :path => "~/Rails/Gems/ym_posts"
+gem 'ym_search',      "0.1"    #, :path => "~/Rails/Gems/ym_search"
+gem 'ym_tags',        "0.1"    #, :path => "~/Rails/Gems/ym_tags"
+gem 'ym_users',       "0.1"    #, :path => "~/Rails/Gems/ym_users"
+gem 'ym_videos',      "0.1"    #, :path => "~/Rails/Gems/ym_videos"
+gem 'ym_links',       "0.1"    #, :path => "~/Rails/Gems/ym_links"
+gem 'ym_enquiries',   "0.1"    #, :path => "~/Rails/Gems/ym_enquiries"
+
 
 gem 'ym_activity', "~> 0.1"#, :path => "~/Rails/Gems/ym_activity"
 
