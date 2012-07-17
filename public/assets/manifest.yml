@@ -173,8 +173,8 @@ loader-long.gif: loader-long-9dcd801c8b87e23a8d312a4b4001854c.gif
 loader-square.gif: loader-square-8db0dc946424aad099cacbe495fbd35f.gif
 jquery-ui-1.8.18.min.js: jquery-ui-1.8.18.min-2b1bbfa888b5b286c26fd54ebad400fb.js
 jquery-ui-1.8.18.css: jquery-ui-1.8.18-9f22ac371af0586dbe3dca5abb6e6c4d.css
-application.js: application-9d465148b4120d852994f53a2f9ed208.js
-application.css: application-421805776c32be0e5b93c8b2891fe496.css
+application.js: application-6768c502059a1dc74fe8dcd7afcd27b7.js
+application.css: application-facff8f017e52a75522614fe5e9442b0.css
 mercury.js: mercury-d31103cfe3c142424c5e92163294e4ad.js
 mercury.css: mercury-f47bfc04a130b4433044cff60932fabe.css
 mercury_overrides.css: mercury_overrides-5abe0c7cbb8f2af4c71fe9bba90f7746.css
