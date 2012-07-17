@@ -7,7 +7,7 @@
 #= require jquery
 #= require jquery_ujs
 #= require ym_core
-#= require ym_cms
+#= require ym_cms_override
 #= require ym_posts
 #= require ym_tags
 #= require ym_links
