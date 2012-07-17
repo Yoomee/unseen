@@ -1268,7 +1268,8 @@ p.press_visual_txt {
   padding: 4px 8px;
   text-decoration: none;
   text-transform: uppercase;
-  border: 2px dashed #fff;
+  border: 2px solid #fff;
+  background: #A0A0A0;
   width: 208px;
   text-align: center;
 }

@@ -52,13 +52,11 @@
               %icon.icon-plus
               edit location              
       -elsif can?(:edit_location, user)
-        .alert.alert-error
-          %strong LOCATION MISSING 
-          %p We couldn't work out your location
-          .action-link
-            =link_to(edit_location_user_path(user)) do
-              %icon.icon-plus
-              edit location
+        %p We couldn't work out your location
+        .action-link
+          =link_to(edit_location_user_path(user)) do
+            %icon.icon-plus
+            edit location
       -else
         %p
           =user.first_name
