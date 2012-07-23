@@ -20,6 +20,15 @@ Unseen::Application.routes.draw do
   match "pages/view/list" => "pages#set_view", :view => 'list', :as => 'set_list_view'
   match "pages/view/block" => "pages#set_view", :view => 'block', :as => 'set_block_view'
   
+  namespace :mobile do
+    root :to => "collect#index"
+    match "/collect", :to => "collect#index"
+    match "/fair", :to => "fair#index"
+    match "/me", :to => "me#index"
+    match "/more", :to => "more#index"
+    match "/news", :to => "news#index"
+  end
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
