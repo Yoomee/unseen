@@ -15,7 +15,7 @@ gem 'cocoon'
 
 gem 'ym_core',        "0.1"
 gem 'ym_cms',         "0.1"
-gem 'ym_permalinks',  "0.1"
+gem 'ym_permalinks',  "0.1.2"
 gem 'ym_posts',       "0.1"
 gem 'ym_search',      "0.1"
 gem 'ym_tags',        "0.1"
