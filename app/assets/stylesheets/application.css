@@ -274,8 +274,8 @@ h6 a:hover {
 #header a {
   text-decoration: none;
 }
-#header a:hover {
-  text-decoration: underline;
+#header-links a:hover {
+  border-bottom: 2px solid #000;
 }
 
 #search_link {
@@ -374,7 +374,7 @@ h6 a:hover {
 .nav a:hover {
   border-bottom: 4px solid;
 }
-.root_slug_amsterdam li.amsterdam-link a, .root_slug_news li.news-link a, .root_slug_fair li.fair-link a, .controller_events li.programme-link a, .root_slug_galleries li.galleries-link  {
+.root_slug_amsterdam li.amsterdam-link a, .root_slug_news li.news-link a, .root_slug_fair li.fair-link a, .controller_events li.programme-link a, .root_slug_galleries li.galleries-link a  {
    border-bottom: 4px solid;
 }
 #logged-in-dropdown {
