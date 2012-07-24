@@ -11,6 +11,7 @@
     =yield :head
     =google_analytics_js
   -body_tag do
-    =render('mobile/layouts/nav')
+    -if controller_name.pages?
+      =render('mobile/layouts/nav')
     =yield_with_bootstrap(render_flash, :container_class => 'container-fluid', :row_class => 'row-fluid')
     =yield_with_bootstrap(yield, :container_class => 'container-fluid', :row_class => 'row-fluid')
