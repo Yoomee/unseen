@@ -27,6 +27,10 @@ Unseen::Application.routes.draw do
     match "/me", :to => "me#index"
     match "/more", :to => "more#index"
     match "/news", :to => "news#index"
+    devise_scope :user do
+      get "sessions/new", :to => "sessions#new", :as => 'new_session'
+      post "sessions", :to => "sessions#create", :as => 'sessions'
+    end
   end
   
   # The priority is based upon order of creation:

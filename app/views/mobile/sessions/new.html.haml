@@ -1,0 +1,9 @@
+%h1=t(:login)
+=semantic_form_for(@user, :url => mobile_sessions_path) do |form|
+  =form.inputs do
+    =form.input :email
+    =form.input :password
+    =form.input :remember_me, :as => :hidden
+    =hidden_field_tag :next, mobile_me_path
+  =form.buttons do
+    =form.commit_button t(:login), :button_html => {:data => {:"loading-text" => "Logging in..."}}
