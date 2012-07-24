@@ -274,6 +274,10 @@ h6 a:hover {
 #header a {
   text-decoration: none;
 }
+#header a:hover {
+  text-decoration: underline;
+}
+
 #search_link {
   display: block;
   background: url(/assets/search_icon.png) no-repeat top left;
