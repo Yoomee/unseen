@@ -466,6 +466,11 @@ h1.gallery-title {
 h3.slide-title {
   margin-bottom: 11px;
 }
+.root_slug_galleries h3.slide-title {
+  font-size: 26px;
+  line-height: 28px; 
+  margin-bottom:0px;
+}
 
 .gallery_box {
 	height: 200px;
