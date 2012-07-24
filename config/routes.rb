@@ -22,6 +22,7 @@ Unseen::Application.routes.draw do
   
   namespace :mobile do
     root :to => "collect#index"
+    resources :pages, :only => [:show]
     match "/collect", :to => "collect#index"
     match "/fair", :to => "fair#index"
     match "/me", :to => "me#index"

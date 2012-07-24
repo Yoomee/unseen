@@ -1,1 +1,10 @@
-%h1 More
+.row-fluid
+  .span12
+    %h1=raw(@page.title)
+-@page.children.each do |page|
+  .row-fluid
+    .span4
+      =link_to(image_for(page, "178x140#"), mobile_page_path(page, :permalink => false))
+    .span8
+      %h3.small-title=link_to(page, mobile_page_path(page, :permalink => false))
+      =link_to raw('&rarr; Read more'), mobile_page_path(page, :permalink => false), :class => 'list_read_more'
