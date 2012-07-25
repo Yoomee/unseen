@@ -1379,11 +1379,12 @@ a.tag:hover .tag-label {
   padding:10px 0px;
 }
 .navbar .container-fluid {
-  padding:0px;
+  padding: 0;
+  width:100%;
 }
 .navbar-spacer {
   height:40px;
-  margin-bottom:20px;
+  margin-bottom:10px;
 }
 #mobile-nav a.back-link{
   margin:3px 0px 3px 10px; 
@@ -1396,4 +1397,17 @@ a.tag:hover .tag-label {
 
 body{
   width:100%;
+}
+.photos-table {
+  width:100%;
+}
+.photos-table img{
+  width:auto;
+}
+.photos-table td {
+  text-align:center;
+  padding:5px 0;
+}
+#photo-cell {
+  height:288px;
 }

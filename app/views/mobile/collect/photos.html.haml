@@ -1,0 +1,17 @@
+.row-fluid
+  .span2
+    =link_to('<',mobile_collect_photos_path(:page => @photos.previous_page))
+  .span8.center
+    %p
+      =@photos.current_page
+      of
+      =@photos.total_pages
+  .span2
+    =link_to('>',mobile_collect_photos_path(:page => @photos.next_page))
+.row-fluid
+  %table.photos-table
+    %tbody
+      -@photos.each_slice(4) do |photos|
+        %tr
+          -photos.each do |photo|
+            %td.span3=link_to(image_for_with_retina(photo, '62x62'),mobile_photo_path(photo))

@@ -5,10 +5,14 @@
         .span2
           %ul.nav
             %li
-              -if @page && (@page_title != @page.title)
+              -if @photo || (@page && (@page_title != @page.title))
                 =link_to("Back", :back)
               -else
                 %br
         .span8.center
           =link_to(@page_title.titleize, '#', :class => 'brand')
+        .span2
+          %ul.nav
+            %li
+              =link_to("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".html_safe, request.url)
 .navbar-spacer
