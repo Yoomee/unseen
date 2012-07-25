@@ -1,1 +1,6 @@
-%h1=current_user
+.row-fluid
+  .span3
+    =image_for_with_retina(@user, '61x61#')
+  .span9
+    %h2=@user.first_name
+    %h2=@user.last_name

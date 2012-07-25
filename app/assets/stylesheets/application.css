@@ -120,6 +120,9 @@ h2.home-title, .big-title, .about_page_view #page_title, #page_title {
   line-height: 60px;
   text-transform: uppercase;
 }
+form #page_title {
+  text-transform:none;
+}
 .home-slide-title, .medium-title {
   font-size: 36px;
   line-height: 36px;  

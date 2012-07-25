@@ -141,7 +141,7 @@ h2.home-title, .big-title, .about_page_view #page_title, #page_title {
   font-size: 36px;
   line-height: 36px;  
 }
-.nav ul, .nav li, #site_logo, h2#footer_site_logo, h2, .are-you-title, .block-title, .home-subtitle, .small-title, .small-title p, .share_this p {
+#site_logo, h2#footer_site_logo, h2, .are-you-title, .block-title, .home-subtitle, .small-title, .small-title p, .share_this p {
 	font-size: 26px;
 	line-height: 28px; 
 }
@@ -372,19 +372,12 @@ h6 a:hover {
   margin: 0px 0 0;
   
 }
-.nav li{
-  float:left;
-  margin-right:14px;
-}
 .nav li.amsterdam-link {
 	margin-right:0;
   
 }
 .nav a {
   text-decoration: none;
-}
-.nav a:hover {
-  border-bottom: 4px solid;
 }
 .root_slug_amsterdam li.amsterdam-link a, .root_slug_news li.news-link a, .root_slug_fair li.fair-link a, .controller_events li.programme-link a, .root_slug_galleries li.galleries-link  {
    border-bottom: 4px solid;
@@ -1380,18 +1373,27 @@ a.tag:hover .tag-label {
 }
 
 /*========== Mobile ==========*/
-#mobile-nav{
-  background:#494949;
-  color:#fff;
-  position:absolute;
-  top:0px;
-  width:100%;
-  padding:0px;
-  height:34px;
+.navbar .brand {
+  float:none;
+  margin:0px;
+  padding:10px 0px;
 }
-#mobile-nav-spacer {
-  height:34px;
+.navbar .container-fluid {
+  padding:0px;
+}
+.navbar-spacer {
+  height:40px;
+  margin-bottom:20px;
 }
 #mobile-nav a.back-link{
   margin:3px 0px 3px 10px; 
+}
+.container-fluid {
+  padding:0 5%;
+  width:90%;
+  overflow:hidden;
+}
+
+body{
+  width:100%;
 }

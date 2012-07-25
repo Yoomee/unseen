@@ -1,6 +1,14 @@
-.container-fluid#mobile-nav
-  .row-fluid
-    .span2
-      =link_to("Back",:back, :class => 'back-link btn btn-small')
-    .span8.center
-.container-fluid#mobile-nav-spacer
+.navbar.navbar-fixed-top
+  .navbar-inner
+    .container-fluid.center
+      .row-fluid
+        .span2
+          %ul.nav
+            %li
+              -if @page && (@page_title != @page.title)
+                =link_to("Back", :back)
+              -else
+                %br
+        .span8.center
+          =link_to(@page_title.titleize, '#', :class => 'brand')
+.navbar-spacer

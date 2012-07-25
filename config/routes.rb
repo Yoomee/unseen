@@ -24,6 +24,7 @@ Unseen::Application.routes.draw do
     root :to => "collect#index"
     resources :pages, :only => [:show]
     match "/collect", :to => "collect#index"
+    match "/explore", :to => "collect#explore", :as => "explore"
     match "/fair", :to => "fair#index"
     match "/me", :to => "me#index"
     match "/more", :to => "more#index"
