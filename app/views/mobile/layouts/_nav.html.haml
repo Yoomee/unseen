@@ -5,7 +5,7 @@
         .span2
           %ul.nav
             %li
-              -if @photo || (@page && (@page_title != @page.title))
+              -if @event || @photo || (@page && (@page_title != @page.title))
                 =link_to :back, :class => "back-link" do
                   %icon.icon-circle-arrow-left
               -else

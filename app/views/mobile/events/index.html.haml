@@ -1,0 +1,12 @@
+.row-fluid
+  -if @events.empty?
+    .span12 There aren't any events on this day yet.
+-@events.each do |event|
+  .row-fluid.mb-1
+    .span4
+      =link_to(image_for_with_retina(event, "83x70#"), mobile_event_path(event))
+    .span8
+      %h3.small-title
+        =link_to event.title, mobile_event_path(event)
+      %p.program-subtitle=event.time_string
+      %p.program-subtitle=event.venue

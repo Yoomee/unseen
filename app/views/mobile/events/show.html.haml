@@ -1,0 +1,20 @@
+.row-fluid
+  .span12
+    %h2.mb-1=@event.title
+  .span12
+    %p
+      =@event.date.strftime('%a %o %B,')
+      =@event.time_string
+    %p
+      Venue:
+      =@event.venue
+.row-fluid.mt-2
+  .span12
+    -if @event.image
+      .mb-1
+        =image_for_with_retina(@event, "540x")
+        -if @event.image_caption
+          %p.mt-1.event-image-caption=@event.image_caption
+  .page_text.mb-2
+    #page_text
+      =simple_format(@event.description)
