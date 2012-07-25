@@ -9,6 +9,7 @@ class Ability
     can :create, Enquiry
     can [:show, :set_view], Page, :published => true
     can :read, :photographer
+    can :read, :photo
     
     if user.try(:admin?)
       can :manage, :all
