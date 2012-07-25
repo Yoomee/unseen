@@ -4,4 +4,9 @@ class Mobile::PhotosController < MobileController
     @page_title = "Collect"
   end
   
+  def index
+    @page_title = "Collect"
+    @photos = Photo.paginate(:per_page => 16, :page => params[:page])
+  end
+  
 end

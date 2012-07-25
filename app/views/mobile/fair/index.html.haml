@@ -1,1 +1,6 @@
-%h1 Fair
+-@items.each do |title,path|
+  .row-fluid.mb-1
+    .span4
+      =link_to(image_for_with_retina(Page.last, "83x70#"), path)
+    .span8
+      %h3.small-title=link_to(title, path)

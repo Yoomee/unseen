@@ -1411,3 +1411,19 @@ body{
 #photo-cell {
   height:288px;
 }
+
+.next-prev-link {
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+a.next-prev-link:hover{
+}
+span.next-prev-link {
+  color:#ccc;
+}
+.navbar ul.nav li a.back-link {
+  padding: 8px 10px 3px;
+  line-height: 26px;
+  font-size: 22px;
+}
