@@ -6,7 +6,7 @@ class MobileController < ApplicationController
   
   private
   def set_retina
-    @retina = request.env["HTTP_SCREEN_SCALE"] == "2.0"
+    @retina = request.env["HTTP_SCREENSCALE"] == "2.0"
     if Rails.env.development?
       @retina = @retina || params[:retina].present?
     end
