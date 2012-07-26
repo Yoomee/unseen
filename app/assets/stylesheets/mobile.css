@@ -15,13 +15,13 @@
 
 @font-face {
 	font-family: 'Apercu Bold';
-	src: local('Apercu-Bold');
+	src: local('Apercu-Bold'), url('http://dl.dropbox.com/u/292336/unseen/apercu_bold.otf');
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
 	font-family: 'Apercu Regular';
-	src: local('Apercu-Regular');
+	src: local('Apercu-Regular'), url('http://dl.dropbox.com/u/292336/unseen/apercu_regular.otf');
 	font-weight: normal;
 	font-style: normal;
 }
