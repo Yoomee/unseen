@@ -57,6 +57,7 @@ home_bg_inner_10.png: home_bg_inner_10-512b85f5026f1276e4793527cf8190bf.png
 home_bg_inner_4.png: home_bg_inner_4-885db7643ae186559e4af38de96c79e9.png
 home_bg_inner_6.png: home_bg_inner_6-039c493c267f0e9da6c78e020c2d8604.png
 home_bg_inner_8.png: home_bg_inner_8-4c1b8fd2b4bed5d0fbf2eac09533a561.png
+iphone.png: iphone-36a64151d4e13023ea303eb5c57c19ac.png
 join-us-icon.png: join-us-icon-8f130178593affc2e7770ddbab6bd7ce.png
 jquery-ui-bootstrap/ui-bg_flat_0_aaaaaa_40x100.png: jquery-ui-bootstrap/ui-bg_flat_0_aaaaaa_40x100-2cf4f64704121d570c8c944feecb599d.png
 jquery-ui-bootstrap/ui-bg_glass_55_fbf9ee_1x400.png: jquery-ui-bootstrap/ui-bg_glass_55_fbf9ee_1x400-916459289665d5f737a0c3cbec8185fa.png
@@ -96,6 +97,8 @@ share_link_facebook.png: share_link_facebook-2ce1c05581718b9c9ca246efe6f431a7.pn
 share_link_twitter.png: share_link_twitter-fafd5df9a0c9f22372f0ba9d14213252.png
 social-link-facebook.png: social-link-facebook-32c2005373061d3aba26a08696c9fc5f.png
 social-link-twitter.png: social-link-twitter-dbf10ebaf3bd37668b61694a3612ff7b.png
+tab-bar-active.png: tab-bar-active-a6d08a2ad6be14ac394b1b25f744e234.png
+tab-bar.png: tab-bar-4689083676be69dbc3317014f1cd7a9b.png
 twitter_bird.png: twitter_bird-dc33186f8a1906e658771021dc17c71a.png
 unseen_bg.png: unseen_bg-6c2bbae56e9202598f51a74ad933de63.png
 vibrant_amsterdam.jpg: vibrant_amsterdam-8338dd29f02cb248c252ab0bcdfe9061.jpg
@@ -177,7 +180,7 @@ jquery-ui-1.8.18.css: jquery-ui-1.8.18-9f22ac371af0586dbe3dca5abb6e6c4d.css
 application.js: application-c6d54edbfb20dc7fdc581b9c63fb6c21.js
 application.css: application-9592a65f819bf7963643597fb2ff180c.css
 mobile.js: mobile-666e527c62701b2c4951dd9efc3b17bc.js
-mobile.css: mobile-15cfa34847cab1679f93b7821b0a238d.css
+mobile.css: mobile-9d433fd688e5ed7657a63749b24dda31.css
 mobile@2x.css: mobile@2x-1c9609bc58b1e77c196de29021583379.css
 mercury.js: mercury-d31103cfe3c142424c5e92163294e4ad.js
 mercury.css: mercury-f47bfc04a130b4433044cff60932fabe.css
