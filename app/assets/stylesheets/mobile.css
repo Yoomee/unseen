@@ -1438,3 +1438,39 @@ span.next-prev-link {
   line-height: 26px;
   font-size: 22px;
 }
+
+/*========== Simulator ==========*/
+#simulator {
+  width: 320px;
+  height: 591px;
+  margin-top: 0px;
+  background: url('/assets/iphone.png') no-repeat;
+  padding: 153px 28px 0px 32px;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+#simulator #tab-bar{
+  margin-top:-5px;
+  height:49px;
+  background: url('/assets/tab-bar.png') no-repeat;
+}
+#simulator #tab-bar li{
+  height:49px;
+  width:64px;
+  float:left;
+}
+#simulator #tab-bar li a{
+  height:100%;
+  width:100%;
+  text-indent: -9999em;
+  float:left;
+}
+#simulator #tab-bar li.active a{
+  background-image: url('/assets/tab-bar-active.png');
+  background-repeat:no-repeat;
+}
+#simulator #tab-bar li a[href="#fair"]   { background-position: 0px 0px;}
+#simulator #tab-bar li a[href="#news"]   { background-position: -64px 0px;}
+#simulator #tab-bar li a[href="#collect"]{ background-position: -128px 0px;}
+#simulator #tab-bar li a[href="#me"]     { background-position: -192px 0px;}
+#simulator #tab-bar li a[href="#more"]   { background-position: -256px 0px;}

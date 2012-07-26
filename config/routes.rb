@@ -21,7 +21,7 @@ Unseen::Application.routes.draw do
   match "pages/view/block" => "pages#set_view", :view => 'block', :as => 'set_block_view'
   
   namespace :mobile do
-    root :to => "collect#index"
+    root :to => "simulator#index"
     resources :pages,   :only => [:show]
     resources :photos,  :only => [:show, :index]
     resources :events,  :only => [:show]
