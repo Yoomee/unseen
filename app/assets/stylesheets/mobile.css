@@ -1408,8 +1408,19 @@ body{
   text-align:center;
   padding:5px 0;
 }
+#photos-grid td{
+  width: 23.404255317%;
+}
 #photo-cell {
   height:288px;
+}
+#photos-grid td img{
+  max-width:62px;
+  max-height:62px;
+}
+#photo-cell img{
+  max-width:288px;
+  max-height:288px;
 }
 
 .next-prev-link {

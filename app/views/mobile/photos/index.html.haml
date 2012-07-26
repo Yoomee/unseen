@@ -19,9 +19,10 @@
       %span.next-prev-link
         %icon.icon-chevron-right
 .row-fluid
-  %table.photos-table
-    %tbody
-      -@photos.each_slice(4) do |photos|
-        %tr
-          -photos.each do |photo|
-            %td.span3=link_to(image_for_with_retina(photo, '62x62'),mobile_photo_path(photo))
+  .span12
+    %table#photos-grid.photos-table
+      %tbody
+        -@photos.each_slice(4) do |photos|
+          %tr
+            -photos.each do |photo|
+              %td.span3=link_to(image_for_with_retina(photo, '62x62'),mobile_photo_path(photo))
