@@ -1,0 +1,10 @@
+%ul.unstyled.links
+  -links.each do |link|
+    %li
+      -if link.facebook?
+        fb:
+      -elsif link.twitter?
+        tw:
+      -else
+        w:
+      =link_to_url(link.url.gsub(/(http:\/\/)?(www\.)?/, "").gsub(/\/\z/, ""), :target => '_blank')

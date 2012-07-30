@@ -33,7 +33,7 @@
       -if !photographer.links.empty?
         %h2.normal-title.upcase.mb-1 Contact
         .mb-2
-          =render('links/list', :links => photographer.links)
+          =render('contact_list', :links => photographer.links)
       -if !photographer.user_tags.empty?
         %h2.normal-title.upcase.mb-1 Tags
         %ul.tag-list.tag-list-horizontal
