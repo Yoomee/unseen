@@ -1,11 +1,10 @@
 .container
-=render("pages/toggle_nav")
+=render("pages/tags_nav")
 .container
   .row
     .span12
       %h1#news_title.big-title.center
         %span#page_title
-          Tag:
           =current_tag.to_s.titleize
       .row
         -if view_preference == 'block'

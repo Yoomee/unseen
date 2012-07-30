@@ -956,7 +956,8 @@ a.subnav-back-link {
   width: auto;
 }
 body.root_slug_amsterdam .subnav-tabs,
-body.root_slug_news .subnav-tabs {
+body.root_slug_news .subnav-tabs,
+body.controller_tags .subnav-tabs {
   float: left;
 }
 .subnav-tabs ul, .subnav-tabs li {
@@ -974,7 +975,8 @@ a.subnav-tab:hover {
   text-decoration: none;
   background: #fff;
 } 
-.subnav-tabs .active a {
+.subnav-tabs .active a,
+.subnav-tabs .active span {
   background: #fff;
 } 
 .block-or-line {
