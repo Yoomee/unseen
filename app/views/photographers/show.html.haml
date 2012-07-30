@@ -21,15 +21,24 @@
               -5.times do
                 =dragonfly_image_tag(photographer.default_image, "50x50#", :class => "mr-1 mb-1")
     .span4.offset2
-      -if !photographer.galleries.empty?
+      -if !photographer.galleries.where("view_name = 'gallery'").empty?
         %h2.normal-title.upcase.mb-1 Represented by
         .pull-left.clear.mb-2
-          -photographer.galleries.each do |gallery|
+          -photographer.galleries.where("view_name = 'gallery'").each do |gallery|
             .row.mb-1
               .span1
                 =link_to(image_for(gallery, "60x60#"), gallery)
               .span3
                 =link_to_self(gallery)
+      -if !photographer.galleries.where("view_name != 'gallery'").empty?
+        %h2.normal-title.upcase.mb-1 Related Stories
+        .pull-left.clear.mb-2
+          -photographer.galleries.where("view_name != 'gallery'").each do |story|
+            .row.mb-1
+              .span1
+                =link_to(image_for(story, "60x60#"), story)
+              .span3
+                =link_to_self(story)
       -if !photographer.links.empty?
         %h2.normal-title.upcase.mb-1 Contact
         .mb-2
