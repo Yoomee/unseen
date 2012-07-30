@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :galleries, :class_name => "Page", :join_table => "galleries_photographers"
   has_and_belongs_to_many :events
   
-  acts_as_taggable_on :user_tags
+  acts_as_taggable_on :user_tags, :page_tags
   
   accepts_nested_attributes_for :photos, :links, :reject_if => :all_blank, :allow_destroy => true
   
