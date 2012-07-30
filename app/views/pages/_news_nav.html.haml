@@ -1,5 +1,3 @@
-
-
 #intro.home_box.parallax-subnav{:class => next_home_background_class}
   .subnav-strip
     .container
@@ -11,4 +9,5 @@
               -Page::NEWS_CATEGORIES.each do |category|
                 =li_with_active((session[:news_category] || page.categories.first.try(:to_s))==category, link_to(category.humanize, page_path(news_page, :category => category), :class => 'subnav-tab'))
         .span1
-          =render("pages/toggle_view_links")
+          -if page.slug == "news"
+            =render("pages/toggle_view_links")
