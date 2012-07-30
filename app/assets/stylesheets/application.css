@@ -105,7 +105,6 @@ h6,
 .nav ul,
 a.category,
 #buy-ticket-link,
-.black-btn,
 .small-title p,
  .share_this p,
  .share-link-text,
@@ -149,6 +148,12 @@ div, input {
   font-weight: normal;
   font-size: 16px;
   line-height: 20px;
+}
+.black-btn,
+.white-btn {
+  font-family: "Apercu Regular", "calibri", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: normal;
 }
 input, a.call-to-action-link, .carousel-text p, p.event-image-caption, .share-link-text {
   font-size: 13px;
@@ -252,7 +257,7 @@ h6 a:hover {
 .black-btn:hover {
   background-color: #fff;
   color: #000;
-  border-color: #fff;
+  border-color: #000;
   text-decoration: none;
 }
 .white-btn, .white-btn:hover {
