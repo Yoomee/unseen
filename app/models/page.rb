@@ -41,4 +41,4 @@ class Page < ActiveRecord::Base
   end
   
 end
-Page::NEWS_CATEGORIES = %w{collecting photographers galleries announcements festival}
+Page::NEWS_CATEGORIES = %w{collecting photographers galleries announcements fair-festival}

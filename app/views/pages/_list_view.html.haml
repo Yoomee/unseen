@@ -12,7 +12,11 @@
           %p.list_date_and_tag
             %span=item.created_at.strftime("%e %B %Y")
             -item.categories.each do |tag|
-              =link_to_tag(tag, :label_options => {:method => :titleize})
+              -if tag.name == 'fair-festival'
+                =link_to tag.to_tag, :class => "tag" do
+                  %span.label.tag-label Fair&Festival
+              -else
+                =link_to_tag(tag, :label_options => {:method => :titleize})
         =link_to raw('&rarr; Read more'), item, :class => 'list_read_more'
   -if controller_name=="pages" && can?(:new, Page) && parent_page
     .row
