@@ -5,9 +5,9 @@
         .span11
           .subnav-tabs
             %ul
-              =li_with_active((session[:news_category] || page.categories.first).blank?, link_to('All', news_page, :class => 'subnav-tab'))
+              =li_with_active((session[:news_category] || current_page.categories.first).blank?, link_to('All', news_page, :class => 'subnav-tab'))
               -Page::NEWS_CATEGORIES.each do |category|
-                =li_with_active((session[:news_category] || page.categories.first.try(:to_s))==category, link_to((category=='fair-festival' ? 'Fair&Festival': category.humanize), page_path(news_page, :category => category), :class => 'subnav-tab'))
+                =li_with_active((session[:news_category] || current_page.categories.first.try(:to_s))==category, link_to((category=='fair-festival' ? 'Fair&Festival': category.humanize), page_path(news_page, :category => category), :class => 'subnav-tab'))
         .span1
-          -if page.slug == "news"
+          -if current_page.slug == "news"
             =render("pages/toggle_view_links")

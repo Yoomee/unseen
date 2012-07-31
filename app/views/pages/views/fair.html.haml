@@ -5,15 +5,15 @@
     .row
       .span8.offset2
         %h2
-          %span#page_fair_title_1.mercury-region{:"data-type" => "editable"}
-            =raw(page.fair_title_1)
+          %span#page_fair_title_1
+            =raw(@page.fair_title_1)
     .row
       .span6
-        %p#page_fair_1.mercury-region{:"data-type" => "editable"}
-          =raw(page.fair_1)
+        %p#page_fair_1
+          =raw(@page.fair_1)
       .span6
-        %p#page_fair_2.mercury-region{:"data-type" => "editable"}
-          =raw(page.fair_2)
+        %p#page_fair_2
+          =raw(@page.fair_2)
         .scroll_to_arrows
           =link_to(raw("&darr;"), "#", :class => "scroll_to_fair_box scroll_down", :data => {:"fair-box-id" => 2})
 .fair_window{:class => next_fair_background_class}
@@ -22,15 +22,15 @@
     .row
       .span6.offset3
         %h2
-          %span#page_fair_title_2.mercury-region{:"data-type" => "editable"}
-            =raw(page.fair_title_2)
+          %span#page_fair_title_2
+            =raw(@page.fair_title_2)
     .row
       .span6
-        %p#page_fair_3.mercury-region{:"data-type" => "editable"}
-          =raw(page.fair_3)
+        %p#page_fair_3
+          =raw(@page.fair_3)
       .span6
-        %p#page_fair_4.mercury-region{:"data-type" => "editable"}
-          =raw(page.fair_4)
+        %p#page_fair_4
+          =raw(@page.fair_4)
         .scroll_to_arrows
           =link_to(raw("&uarr;"), "#", :class => "scroll_to_fair_box scroll_up", :data => {:"fair-box-id" => 1})
           =link_to(raw("&darr;"), "#", :class => "scroll_to_fair_box scroll_down", :data => {:"fair-box-id" => 3})
@@ -40,12 +40,12 @@
     .row
       .span6.offset3
         %h2
-          %span#page_fair_title_3.mercury-region{:"data-type" => "editable"}
-            =raw(page.fair_title_3)
+          %span#page_fair_title_3
+            =raw(@page.fair_title_3)
     .row
       .span6
-        %p#page_fair_5.mercury-region{:"data-type" => "editable"}
-          =raw(page.fair_5)
+        %p#page_fair_5
+          =raw(@page.fair_5)
       .span5.offset1
         =image_tag('fair_2.jpg')
         .scroll_to_arrows
@@ -57,23 +57,22 @@
     .row
       .span8.offset2
         %h2
-          %span#page_fair_title_4.mercury-region{:"data-type" => "editable"}
-            =raw(page.fair_title_4)
+          %span#page_fair_title_4
+            =raw(@page.fair_title_4)
     .row
       .span6
         =image_tag('fair_3.jpg')
       .span6
-        %span#page_fair_6.mercury-region{:"data-type" => "editable"}
-          =raw(page.fair_6)
+        %span#page_fair_6
+          =raw(@page.fair_6)
         .scroll_to_arrows 
           =link_to(raw("&uarr;"), "#", :class => "scroll_to_fair_box scroll_up", :data => {:"fair-box-id" => 3})
 .fair_window{:class => next_fair_background_class}
--if can?(:edit, page)
+-if can?(:edit, @page)
   .container#fair_options_panel
     .row
       .span8
         =options_panel do
           =back_link
-          =mercury_edit_link("Edit page content", mercury_update_page_path(page), :id => "mercury_edit_link")
-          =link_to("Edit page", edit_page_path(page))
+          =link_to("Edit page", edit_page_path(@page))
 =render('layouts/footer')

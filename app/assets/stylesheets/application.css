@@ -11,6 +11,7 @@
  *= require ym_core
  *= require jquery-ui-bootstrap 
  *= require font-awesome 
+ *= require redactor
  *= require ym_cms
  *= require ym_posts
  *= require ym_search
@@ -1261,7 +1262,7 @@ p.press_visual_txt {
   position: relative;
   z-index: 3;
 }
-.fair_box h2 .mercury-region {
+.fair_box h2 span {
   font-size: 60px;
   line-height: 60px;
 }
@@ -1277,9 +1278,6 @@ p.press_visual_txt {
 .fair_window {
   height: 250px;
   z-index: 1;
-}
-.fair_box .mercury-region {
-
 }
 .fair_bg_1 {
   background: #211d1d url(/assets/home_bg_1.jpg) 50% 0 no-repeat fixed;

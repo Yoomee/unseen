@@ -1,15 +1,15 @@
 .span12.about_page_view
   %h1
-    %span#page_title.mercury-region{:"data-type" => "editable"}
-      =raw(page.title)
-  -if page.image
+    %span#page_title
+      =raw(@page.title)
+  -if @page.image
     .row
       .span8
         .gallery_slideshow.fade_in
           .gallery_slideshow.fade_in
-            =image_for(page, "770x446>")
-            -if page.image_caption
-              %p.mt-1.event-image-caption=page.image_caption
+            =image_for(@page, "770x446>")
+            -if @page.image_caption
+              %p.mt-1.event-image-caption=@page.image_caption
   .row
     .span6
       .press_accreditation_text
@@ -17,30 +17,13 @@
         %p
           ="Media accreditation for Unseen is now available to all members of the media. Please complete your accreditation #{link_to('here', new_enquiry_path(:id => 'press'))}.".html_safe
       .page_text
-        -if page.text.blank? && !viewing_mercury_edit? && can?(:edit, page)
-          #page_text
-            =mercury_edit_link("Click here to add some page content", mercury_update_page_path(page))
-        -else
-          #page_text.mercury-region{:"data-type" => "editable"}
-            =raw(page.text)
+        #page_text
+          =raw(@page.text)
     .span3.offset3
       .page_text
-        -if page.text_second.blank? && !viewing_mercury_edit? && can?(:edit, page)
-          #page_text_second
-            =mercury_edit_link("Click here to add some page content", mercury_update_page_path(page))
-        -else
-          #page_text_second.mercury-region{:"data-type" => "editable"}
-            =raw(page.text_second)
+        #page_text_second
+          =raw(@page.text_second)
     #press_visuals.span8
-      -if false
-        .press_visual.span2
-          =image_tag "press_visual_1.jpg", :class=>"press_visual_img"
-          %p.press_visual_txt
-            Kahmann Gallery
-            %br
-            Katrien Franken
-            %br
-            2010
       .press_visual.span2
         =image_tag "press_visual_2.jpg", :class=>"press_visual_img"
         %p.press_visual_txt
@@ -156,10 +139,8 @@
     .span8
       =options_panel do
         =back_link
-        -if can?(:edit, page)
-          =mercury_edit_link("Edit page content", mercury_update_page_path(page), :id => "mercury_edit_link")
-        =link_if_can("Edit page", [:edit, page])
-        =link_if_can("Delete page", [:destroy, page], :confirm => "Are you sure?") unless page.slug.present?
+        =link_if_can("Edit page", [:edit, @page])
+        =link_if_can("Delete page", [:destroy, @page], :confirm => "Are you sure?") unless @page.slug.present?
         =link_if_can("New page", [:new, Page])
         -if can?(:read, Enquiry)
           =link_to("View all press accreditations", enquiries_path)

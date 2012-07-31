@@ -1,20 +1,20 @@
 .container
-=render("pages/news_nav", :current_page => page)
+=render("pages/news_nav", :current_page => @page)
 .container
   .row
     .span12
       %h1#news_title.big-title.center
-        %span#page_title.mercury-region{:"data-type" => "editable"}
-          =raw(page.title)
+        %span#page_title
+          =raw(@page.title)
       .row
         .span8.offset2
-          %h2#page_text.mercury-region.center{:"data-type" => "editable"}
-            =raw(page.text)
+          %h2#page_text.center
+            =raw(@page.text)
       .row
         -if view_preference == 'block'
-          =render("pages/block_view", :items => page_children, :parent_page => page)
+          =render("pages/block_view", :items => @page_children, :parent_page => @page)
         -else
-          =render("pages/list_view", :items => page_children, :parent_page => page)
+          =render("pages/list_view", :items => @page_children, :parent_page => @page)
           .span3.offset1
             .row          
               =render("layouts/signup_column")
@@ -22,7 +22,6 @@
         .span8
           =options_panel do
             =back_link
-            =mercury_edit_link("Edit page content", mercury_update_page_path(page), :id => "mercury_edit_link") if can?(:edit, page)
-            =link_if_can("Edit page", [:edit, page])
-            =link_if_can("Delete page", [:destroy, page], :confirm => "Are you sure?") unless page.slug.present?
+            =link_if_can("Edit page", [:edit, @page])
+            =link_if_can("Delete page", [:destroy, @page], :confirm => "Are you sure?") unless @page.slug.present?
             =link_if_can("New page", [:new, Page])

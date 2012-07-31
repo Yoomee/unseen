@@ -8,7 +8,7 @@
           =link_to(image_for(item, "140x100#"), item)
       .list_box.span6
         %h3.small-title.list_title=link_to_self(item)
-        -if defined?(page) && page.slug == "news"
+        -if defined?(@page) && @page.slug == "news"
           %p.list_date_and_tag
             %span=item.created_at.strftime("%e %B %Y")
             -item.categories.each do |tag|

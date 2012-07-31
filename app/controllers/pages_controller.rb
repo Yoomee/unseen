@@ -4,33 +4,19 @@ class PagesController < ApplicationController
   load_and_authorize_resource
 
   expose(:amsterdam_page) {Page.find_by_slug('amsterdam')}
-  expose(:page_children) do
-    if page
-      if page.slug == "news"
-        children = page.children.order("created_at DESC")
-        params[:category].present? ? children.tagged_with(params[:category]) : children
-      elsif page.slug == "galleries"
-        page.children.order("title")
-      else
-        page.children
-      end
-    else
-      Page.scoped
-    end
-  end
 
   def new
-    page.parent_id = params[:parent_id]
-    if page.parent.try(:slug) == "galleries"
-      page.view_name = "gallery"
-    elsif page.parent.try(:slug) == "venues"
-      page.view_name = "gallery"
-    elsif page.parent.try(:slug) == "news"
-      page.view_name = "news"
-    elsif page.parent.try(:slug) == "welcome"
-      page.view_name = "highlight"
-    elsif page.parent.try(:slug) == "amsterdam"
-      page.view_name = "amsterdam"
+    @page.parent_id = params[:parent_id]
+    if @page.parent.try(:slug) == "galleries"
+      @page.view_name = "gallery"
+    elsif @page.parent.try(:slug) == "venues"
+      @page.view_name = "gallery"
+    elsif @page.parent.try(:slug) == "news"
+      @page.view_name = "news"
+    elsif @page.parent.try(:slug) == "welcome"
+      @page.view_name = "highlight"
+    elsif @page.parent.try(:slug) == "amsterdam"
+      @page.view_name = "amsterdam"
     end
   end
   
@@ -40,12 +26,29 @@ class PagesController < ApplicationController
   end
   
   def show
-    if page.root.slug == 'amsterdam'
+    set_page_children
+    if @page.root.slug == 'amsterdam'
       render(:action => "views/amsterdam") and return
-    elsif page.slug == 'news'
+    elsif @page.slug == 'news'
       session[:news_category] = params[:category]
     end
-    render :action => "views/#{page.view_name}"
+    render :action => "views/#{@page.view_name}"
+  end
+  
+  private
+  def set_page_children
+    if @page
+      if @page.slug == "news"
+        children = @page.children.order("created_at DESC")
+        @page_children = params[:category].present? ? children.tagged_with(params[:category]) : children
+      elsif @page.slug == "galleries"
+        @page_children = @page.children.order("title")
+      else
+        @page_children = @page.children
+      end
+    else
+      @page_children = Page.scoped
+    end
   end
   
 end

@@ -30,7 +30,7 @@
           }(document, 'script', 'facebook-jssdk')
         );
       =yield
-    -elsif action_name=='show' && respond_to?(:page) && page==Page.find_by_slug('fair')
+    -elsif action_name=='show' && @page==Page.find_by_slug('fair')
       =yield
     -else
       .main_wrapper

@@ -1,13 +1,10 @@
 =content_for(:head) do
-  =javascript_include_tag('redactor/redactor.js')
-  =stylesheet_link_tag('redactor/css/redactor.css')
   :javascript
     $(document).ready(function() {
-      $('textarea.redactor').redactor({path:'/assets/redactor'})
       YmCms.Page.Form.init();  
     });
     
-=semantic_form_for(page, :multipart => true) do |form|
+=semantic_form_for(@page, :multipart => true) do |form|
   =tabs('details', ['gallery', 'Gallery details'], 'slideshow', :form => form)
 
   =form.buttons do
