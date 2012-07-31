@@ -6,7 +6,7 @@
   height: 450px;
 	float: left;
 	clear: left;
-  background: #000;
+  background: #fff;
   position: relative;
 }
 .home-slideshow {
@@ -28,11 +28,11 @@
   height: 450px;
   position: relative;
 	left: 0;
-	opacity: 1;
+  opacity: 1;
 }
 .home-slide-prev,
 .home-slide-next {
-	opacity: 0.6;  
+	opacity: 0.4;  
   cursor: pointer;
 }
 #home-slideshow-caption {
@@ -77,10 +77,11 @@
   height: 10px;
   border-radius: 10px;
   background: #ccc;
-/*  cursor: pointer;*/
+  cursor: pointer;
 }
 .active-dot {
   background: #000;
+  cursor: default;
 }
 a.read_more {
 	font-size: 16px;

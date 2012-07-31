@@ -11,10 +11,20 @@ window.HomeSlideshow =
       HomeSlideshow.resetInterval()
       $('div.home-slideshow .home-slide-next').live 'click', (event) ->
         event.preventDefault()
-        HomeSlideshow.nextSlide()
+        HomeSlideshow.nextSlide(1)
       $('div.home-slideshow .home-slide-prev').live 'click', (event) ->
         event.preventDefault()
-        HomeSlideshow.prevSlide()
+        HomeSlideshow.prevSlide(1)
+      $('div.dot').live 'click', (event) ->
+        event.preventDefault()
+        targetSlideNum = $(this).data('slide-num')
+        activeSlideNum = $('.home-slide-active').data('slide-num')
+        if targetSlideNum < activeSlideNum
+          HomeSlideshow.prevSlide(activeSlideNum - targetSlideNum)
+        else if targetSlideNum > activeSlideNum
+          HomeSlideshow.nextSlide(targetSlideNum - activeSlideNum)
+        
+        
     $(window).resize ->
       HomeSlideshow.reAlign()
     HomeSlideshow.reAlign()
@@ -26,37 +36,53 @@ window.HomeSlideshow =
     if HomeSlideshow.intervalTime != undefined
       if HomeSlideshow.interval != undefined
         window.clearInterval(HomeSlideshow.interval)
-      HomeSlideshow.interval = window.setInterval("HomeSlideshow.nextSlide()", HomeSlideshow.intervalTime)
-  nextSlide: () ->
+      HomeSlideshow.interval = window.setInterval("HomeSlideshow.nextSlide(1)", HomeSlideshow.intervalTime)
+  nextSlide: (numTimes) ->
+    duration = 500/numTimes
     HomeSlideshow.hideCaption()
     nextSlide = $('div.home-slideshow .home-slide-next')
     nextSlide.next().addClass('home-slide-next')
     activeSlide = $('div.home-slideshow .home-slide-active')
-    activeSlide.animate {opacity: 0.6}, 500, ->
+    activeSlide.animate {opacity: 0.4}, duration, ->
       $(this).removeClass('home-slide-active').addClass('home-slide-prev')
-    nextSlide.animate {opacity: 1}, 500, ->
-      $(this).removeClass('home-slide-next').addClass('home-slide-active')
-    $('div.home-slideshow div.home-slideshow-inner').animate {left: "-=#{HomeSlideshow.slideWidth}"}, 500, ->
-      HomeSlideshow.showCaption()
+    nextSlide.animate {opacity: 1}, duration, ->
+      $(this).removeClass('home-slide-next').addClass('home-slide-active')      
+    if numTimes == 1
+      easing = 'swing'
+    else
+      easing = 'linear'
+    $('div.home-slideshow div.home-slideshow-inner').animate {left: "-=#{HomeSlideshow.slideWidth}"}, duration, easing, ->
       prevSlide = $('div.home-slideshow .home-slide:first').removeClass('home-slide-prev')
       $('div.home-slideshow div.home-slideshow-inner').css('left', HomeSlideshow.slideWidth*-1).append(prevSlide.detach())
-      $($('div.home-slideshow .home-slide')[2]).addClass('home-slide-next')      
-      HomeSlideshow.resetInterval()
-  prevSlide: () ->
+      $($('div.home-slideshow .home-slide')[2]).addClass('home-slide-next')
+      if numTimes == 1
+        HomeSlideshow.showCaption()
+        HomeSlideshow.resetInterval()
+      else
+        HomeSlideshow.nextSlide(numTimes - 1)
+  prevSlide: (numTimes) ->
+    duration = 500/numTimes
     HomeSlideshow.hideCaption()    
     prevSlide = $('div.home-slideshow .home-slide-prev')
     activeSlide = $('div.home-slideshow .home-slide-active')
     nextSlide = $('div.home-slideshow .home-slide-next')
     lastSlide = $('div.home-slideshow .home-slide:last').addClass('home-slide-prev')
     $('div.home-slideshow div.home-slideshow-inner').css('left', HomeSlideshow.slideWidth*-2).prepend(lastSlide.detach())
-    prevSlide.animate {opacity: 1}, 500, ->     
+    prevSlide.animate {opacity: 1}, duration, ->     
       prevSlide.removeClass('home-slide-prev').addClass('home-slide-active')
-    activeSlide.animate {opacity: 0.6}, 500, ->
+    activeSlide.animate {opacity: 0.4}, duration, ->
       nextSlide.removeClass('home-slide-next')
       $(this).removeClass('home-slide-active').addClass('home-slide-next')
-    $('div.home-slideshow div.home-slideshow-inner').animate {left: "+=#{HomeSlideshow.slideWidth}"}, 500, ->
-      HomeSlideshow.showCaption()
-      HomeSlideshow.resetInterval()
+    if numTimes == 1
+      easing = 'swing'
+    else
+      easing = 'linear'      
+    $('div.home-slideshow div.home-slideshow-inner').animate {left: "+=#{HomeSlideshow.slideWidth}"}, duration, easing, ->
+      if numTimes == 1
+        HomeSlideshow.showCaption()      
+        HomeSlideshow.resetInterval()
+      else
+        HomeSlideshow.prevSlide(numTimes - 1)
   hideCaption: () ->
     $('#home-slideshow-caption .home-slide-caption').fadeOut(200)
   showCaption: () ->

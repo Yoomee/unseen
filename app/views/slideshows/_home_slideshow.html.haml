@@ -2,7 +2,7 @@
   =content_for(:head) do
     :javascript
       $(document).ready(function() {
-        HomeSlideshow.init();
+        HomeSlideshow.init({interval: 3000});
       });
   .container
     .row
@@ -14,7 +14,8 @@
         -slides = slideshow.slides
         -slides = ([slides.pop] + slides)
         -slides.each_with_index do |slide, index|
-          .home-slide{:class => home_slide_class(index), :id => "slide_#{index}"}
+          -slide_num = index.zero? ? slides.size : index
+          .home-slide{:class => home_slide_class(index), :"data-slide-num" => slide_num}
             =image_for(slide, "980x450#")
             .home-slide-caption{:style => 'display:none'}
               %h2.home-slide-title
@@ -23,4 +24,4 @@
               .dots
                 -slides.size.times do |dot_index|
                   -active = (index==0 && dot_index==slides.size-1) || (dot_index==index-1)
-                  .dot{:class => "#{active ? 'active-dot' : ''}"}
+                  .dot{:class => "#{active ? 'active-dot' : ''}", :"data-slide-num" => dot_index+1}
