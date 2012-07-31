@@ -32,8 +32,12 @@
 }
 .home-slide-prev,
 .home-slide-next {
-	opacity: 0.4;  
+  opacity: 0.4;  
   cursor: pointer;
+}
+.home-slide-prev:hover,
+.home-slide-next:hover {
+  opacity: 1;
 }
 #home-slideshow-caption {
   position: absolute;
