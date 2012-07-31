@@ -2,13 +2,23 @@
 
 -content_for(:head) do
   :javascript
+    var carouselInterval;
+    function nextTab(){
+      var currentTabIdx = parseInt($('.carousel ul li.active ').data('tab-idx'));
+      var nextTabIdx = (currentTabIdx + 1) % $('.carousel ul li').length;
+      $('.carousel ul li[data-tab-idx="' + nextTabIdx + '"] a').tab('show');
+    }
     $(document).ready(function() {
+      carouselInterval = setInterval("nextTab()",3000);
       $('.carousel-list li').hover(function(){
+        clearInterval(carouselInterval);
         if(!$(this).hasClass('active')){
-          $('.carousel-image .slide.active').removeClass('active').removeClass('in');
+          $('.carousel-image .slide.active').removeClass('active');
           $(this).find('a').tab('show');  
         }
-      },function(){});
+      },function(){
+        carouselInterval = setInterval("nextTab()",3000);
+      });
       $('.carousel-list li').click(function(){
         var url = $(this).find('a').data('read-more-url');
         if(url)
@@ -19,7 +29,7 @@
   .span4.carousel-list
     %ul
       -slides.each_with_index do |slide,idx|
-        %li{:class => "#{idx.zero? ? 'active' : ''}"}
+        %li{:class => "#{idx.zero? ? 'active' : ''}", :'data-tab-idx' => idx}
           =link_to(slide.title, "#slide#{idx}", :'data-toggle' => "tab", :'data-read-more-url' => slide.url)
           =#link_to_url(slide.url, :title => '&rarr; Read more'.html_safe, :auto_target => true)
           =#link_to('&rarr; Read more'.html_safe, slide.url, :title => '&rarr; Read more'.html_safe)
