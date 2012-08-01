@@ -4,8 +4,10 @@
       .pull-left.mr-2
         =image_for(@photographer, "60x60#")
       %h2.big-title.nocase=title(@photographer)
+      
 -if @photographer.photos.present?
   =render("slideshows/slideshow", :slides => @photos || @photographer.photos)
+  
 .container
   .row
     .span6
@@ -20,6 +22,7 @@
             .span3
               -5.times do
                 =dragonfly_image_tag(@photographer.default_image, "50x50#", :class => "mr-1 mb-1")
+
     .span4.offset2.news_page_signup
       -if !@photographer.galleries.where("view_name = 'gallery'").empty?
         %h2.normal-title.upcase.mb-1 Represented by
@@ -30,6 +33,7 @@
                 =link_to(image_for(gallery, "60x60#"), gallery)
               .span3
                 =link_to_self(gallery)
+
       -if !@photographer.galleries.where("view_name != 'gallery'").empty?
         %h2.normal-title.upcase.mb-1 Related Stories
         .pull-left.clear.mb-2
@@ -43,6 +47,7 @@
         %h2.normal-title.upcase.mb-1 Contact
         .mb-2
           =render('contact_list', :links => @photographer.links)
+
       -if !@photographer.user_tags.empty?
         %h2.normal-title.upcase.mb-1 Tags
         %ul.tag-list.tag-list-horizontal
