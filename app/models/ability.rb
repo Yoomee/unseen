@@ -7,7 +7,7 @@ class Ability
     
     # open ability
     can :create, Enquiry
-    can [:show, :set_view], Page, :published => true
+    can [:show, :set_view], Page, :draft => false
     can :read, :photographer
     
     if user.try(:admin?)

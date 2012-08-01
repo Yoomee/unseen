@@ -19,10 +19,10 @@ class Page < ActiveRecord::Base
   validates :gallery_website, :url => true, :allow_blank => true  
   
   define_index do
-    where "published_at IS NOT NULL AND published_at <= NOW()"
+    where "draft = 0 AND publication_date <= NOW()"
     indexes title, :sortable => true
     indexes text
-    has parent_id, published_at, view_name, created_at, updated_at
+    has parent_id, publication_date, view_name, created_at, updated_at
   end
   
   class << self
