@@ -889,7 +889,8 @@ h2.home-title {
 }
 /*========== Call to action ==========*/
 #call-to-actions {
-  background: #211d1d;
+/*  background: #211d1d;*/
+  background: #000000;
   color: #fff;
   position: relative;
   z-index: 1;
