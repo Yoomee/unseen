@@ -251,7 +251,7 @@ GEM
       ym_core (~> 0.1.8)
       ym_permalinks (~> 0.1)
       ym_videos (~> 0.1)
-    ym_core (0.1.15)
+    ym_core (0.1.16)
       bootstrap-will_paginate (~> 0.0.6)
       dragonfly (~> 0.9.10)
       formtastic (~> 2.0.2)
@@ -322,7 +322,7 @@ DEPENDENCIES
   sqlite3
   uglifier
   ym_cms (~> 0.3.1)
-  ym_core (~> 0.1.15)
+  ym_core (~> 0.1.16)
   ym_enquiries (= 0.1)
   ym_links (= 0.1)
   ym_permalinks (= 0.1.2)
