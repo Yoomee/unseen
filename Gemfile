@@ -13,13 +13,13 @@ gem 'exception_notification'
 
 gem 'cocoon'
 
-gem 'ym_core',        "~> 0.1.13"  #, :path => "~/Rails/Gems/ym_core"
+gem 'ym_core',        "~> 0.1.15"  #, :path => "~/Rails/Gems/ym_core"
 gem 'ym_cms',         "~> 0.3.1"   #, :path => "~/Rails/Gems/ym_cms"
 gem 'ym_permalinks',  "0.1.2"
 gem 'ym_posts',       "0.1"
 gem 'ym_search',      "0.1"
-gem 'ym_tags',        "~> 0.1" #, :path => "~/Rails/gems/ym_tags"
-gem 'ym_users',       "0.1"
+gem 'ym_tags',        "~> 0.1"     #, :path => "~/Rails/gems/ym_tags"
+gem 'ym_users',       "~> 0.1.10"  #, :path => "~/Rails/gems/ym_users"
 gem 'ym_videos',      "0.1"
 gem 'ym_links',       "0.1"
 gem 'ym_enquiries',   "0.1"
