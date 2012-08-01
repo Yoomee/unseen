@@ -72,7 +72,7 @@
               =image_for(@page, "540x")
               -if @page.image_caption
                 %p.mt-1.event-image-caption=@page.image_caption
-            =render('layouts/share_links', :resource => page)
+            =render('layouts/share_links', :resource => @page)
           .page_text
             #page_text
               =raw(@page.text)
