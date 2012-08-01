@@ -43,8 +43,8 @@ dl dd {
 }
 .tooltip-inner {
   background: #fff;
-  border: 2px solid #000;
-  color: #000;
+  border: 2px solid #211d1d;
+  color: #211d1d;
   border-radius:0;
 }
 .btn-group.open {
@@ -192,10 +192,10 @@ html, body {
 }
 body {
   background: #fff;
-  color: #000;
+  color: #211d1d;
 }
 a {
-  color: #000;
+  color: #211d1d;
   text-decoration: none;
 }
 form a {
@@ -206,7 +206,7 @@ form a:hover {
 }
 a:hover {
  text-decoration: underline; 
- color: #000;
+ color: #211d1d;
 }
 p {
 /*  font-family: georgia;*/
@@ -215,7 +215,7 @@ input {
   border-radius:0;
   -webkit-border-radius:0;
   -moz-border-radius:0;
-  border-color: #000;
+  border-color: #211d1d;
 }
 input#page_title {
   font-size: 19px;
@@ -241,12 +241,12 @@ h6 a:hover {
 }
 .black-btn, .white-btn {
  color: white;
- background-color: black;
+ background-color: #211d1d;
  padding: 4px 8px;
  text-decoration: none;
  font-size: 16px;
  text-transform: uppercase;
- border: 2px solid #000;
+ border: 2px solid #211d1d;
 
 }
 .more-middle {
@@ -257,13 +257,13 @@ h6 a:hover {
 }
 .black-btn:hover {
   background-color: #fff;
-  color: #000;
-  border-color: #000;
+  color: #211d1d;
+  border-color: #211d1d;
   text-decoration: none;
 }
 .white-btn, .white-btn:hover {
   background-color: #fff;
-  color: #000;
+  color: #211d1d;
 }
 .alert {
   margin-top: 20px;
@@ -284,7 +284,7 @@ h6 a:hover {
   text-decoration: none;
 }
 #header-links a:hover {
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid #211d1d;
 }
 
 #search_link {
@@ -414,8 +414,8 @@ a.header-link {
 	float: right;
 }
 #buy-ticket-link:hover {
-  background: #000;
-  border-color: #000;
+  background: #211d1d;
+  border-color: #211d1d;
   color: #fff;
 }
 
@@ -711,7 +711,7 @@ a.home_small_title, a.home_small_title:hover {
   width: 100%;
   overflow: hidden;
   height: 147px;
-  background: #000 url(/assets/home_bg_1.jpg);
+  background: #211d1d url(/assets/home_bg_1.jpg);
 }
 #unseen_big_logo {
   position: fixed;
@@ -736,7 +736,7 @@ a.home_small_title, a.home_small_title:hover {
   background: url(/assets/artist_name_1.png) no-repeat 50%;
 }
 .home_bg_1 {
-  background: #000 url(/assets/home_bg_1.jpg) 50% 0 no-repeat fixed;
+  background: #211d1d url(/assets/home_bg_1.jpg) 50% 0 no-repeat fixed;
 }
 .bg1 {
   background: url(/assets/home_bg_inner_1.png) 50% 0 no-repeat fixed;
@@ -764,7 +764,7 @@ a.home_small_title, a.home_small_title:hover {
   background-image: url(/assets/artist_name_4.png);
 }
 .home_bg_3 {
-  background:#000 url(/assets/home_bg_6.jpg) 50% 0 no-repeat fixed;
+  background:#211d1d url(/assets/home_bg_6.jpg) 50% 0 no-repeat fixed;
 }
 .home_bg_3 .artist_name {
   background-image: url(/assets/artist_name_6.png);
@@ -776,7 +776,7 @@ a.home_small_title, a.home_small_title:hover {
   background-image: url(/assets/artist_name_8.png);
 }
 .home_bg_5 {
-  background:#000 url(/assets/home_bg_10.jpg) 50% 0 no-repeat fixed;
+  background:#211d1d url(/assets/home_bg_10.jpg) 50% 0 no-repeat fixed;
 }
 .home_bg_5 .artist_name {
   background-image: url(/assets/artist_name_10.png);
@@ -798,7 +798,7 @@ a.home_small_title, a.home_small_title:hover {
 }
 #second .tweet_box {
   padding: 10px;
-  border: 2px solid black;
+  border: 2px solid #211d1d;
 }
 #second .twitter_handle {
   font-size: 12px;
@@ -818,7 +818,7 @@ input#email {
   padding: 6px;
   color: #ccc;
   background: none;
-  border: 1px solid #000;
+  border: 1px solid #211d1d;
 }
 #email.footer-email-field {
   border: 1px solid #fff;
@@ -889,7 +889,7 @@ h2.home-title {
 }
 /*========== Call to action ==========*/
 #call-to-actions {
-  background: #000;
+  background: #211d1d;
   color: #fff;
   position: relative;
   z-index: 1;
@@ -997,7 +997,7 @@ a.block-or-line-icon {
   background: #fff;
 }
 a.block-or-line-icon.active:hover .sb, a.block-or-line-icon.active:hover .sl {
-	background: #000;
+	background: #211d1d;
   
 }
 a.block-or-line-icon:hover .sb, a.block-or-line-icon:hover .sl {
@@ -1009,14 +1009,14 @@ a.block-or-line-icon:hover .sb, a.block-or-line-icon:hover .sl {
   width: 6px;
   height: 3px;
   margin: 0 2px 3px 0;
-  background: #000;
+  background: #211d1d;
   float: left;
 }
 .sl {
   width: 22px;
   margin: 0 2px 3px 0;
   height: 3px;
-  background: #000;
+  background: #211d1d;
 }
 
 /*==========  program tabs  ==========*/
@@ -1040,7 +1040,7 @@ p.program-subtitle {
 .program-item {
   padding-bottom: 25px;
   margin-bottom: 25px;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #211d1d;
 }
 .add-to-program {
   margin-right: 5px;
@@ -1056,7 +1056,7 @@ p.program-subtitle {
   height:auto;
   text-indent:-9000em;
   background-color:#fff;
-  border-color:#000;
+  border-color:#211d1d;
 }
 
 .buy-ticket-btn {
@@ -1081,7 +1081,7 @@ p.program-subtitle {
   text-align: center;
 }
 .carousel-list li {
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #211d1d;
   padding: 25px 60px;
   width: 180px;
   cursor: pointer;
@@ -1090,7 +1090,7 @@ p.program-subtitle {
   color: #fff;
 } 
 .carousel-list li.active{
-  background: #000;
+  background: #211d1d;
 }
 .carousel-image {
   position: relative;
@@ -1148,7 +1148,7 @@ p.program-subtitle {
   display: block;
   font-size: 19px;
   padding: 32px 0;
-  border: 2px dashed black;
+  border: 2px dashed #211d1d;
   text-decoration: none;
 }
 .new-page-box.span4 a {
@@ -1356,14 +1356,14 @@ a.tag .tag-label {
   border-radius:0;
   -webkit-border-radius:0;
   -moz-border-radius:0;
-  color: black;
+  color: #211d1d;
   font-size: 13px;
   text-shadow: none;
   font-weight: normal;
   padding:4px 4px 5px;
 }
 a.tag:hover .tag-label {
-  color: black;
+  color: #211d1d;
   background-color: #fff;
 }
 
