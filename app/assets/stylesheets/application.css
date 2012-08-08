@@ -977,7 +977,9 @@ a#social-facebook {
   background-position-x:-1100px;
 }
 
-
+#footer-video iframe{
+  margin-bottom: 60px;
+}
 
 /*==========  subnav tabs  ==========*/
 body .parallax-subnav {
