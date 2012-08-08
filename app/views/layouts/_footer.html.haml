@@ -1,4 +1,15 @@
 =render('layouts/call_to_actions')
+#footer-sponsors.strip
+  .container
+    .row
+      .span6
+        =link_to("Blockbusterfonds","http://www.blockbusterfonds.nl", :target => "_blank", :id => 'blockbusterfonds')
+      .span3
+        =link_to("Westergasfabriek","http://www.westergasfabriek.nl", :target => "_blank", :id => 'westergasfabriek')
+        =link_to("I amsterdam","http://www.iamsterdam.com", :target => "_blank", :id => 'iamsterdam')
+      .span3
+        =link_to("City of Amsterdam","http://www.amsterdam.nl", :target => "_blank", :id => 'cityofamsterdam')
+    
 .container#footer
   .row
     .span3
