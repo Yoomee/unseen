@@ -84,7 +84,7 @@
   cursor: pointer;
 }
 .active-dot {
-  background: #000;
+  background: #211d1d;
   cursor: default;
 }
 a.read_more {
