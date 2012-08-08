@@ -824,10 +824,6 @@ input#email {
   border: 1px solid #fff;
   border-radius:0;
 }
-#fifth {
-  background: white url(/assets/home_bg_5.png) 50% 0 no-repeat scroll;
-  z-index: 3;  
-}
 #sixth .artist_name {
   right: auto;
   left: 0;  

@@ -101,7 +101,11 @@ $(document).ready(function() { //when the document is ready...
 		}
 		//if the fifth section is in view...
     if($fifthBG.hasClass("inview")){
-    //  $fifthBG.css({'backgroundPosition': newPos(50, windowHeight, pos, 4050, 1.7)});
+			//call the newPos function and change the background position
+			$fifthBG.css({'backgroundPosition': newPos(50, windowHeight, pos, 3000, 0.3)});
+			//call the newPos function and change the secnond background position
+			inner_image.css({'backgroundPosition': newPos(50, windowHeight, pos, 4000, 0.6)});
+			
 		}
 		//if the sixth section is in view...
 		if($sixthBG.hasClass("inview")){
