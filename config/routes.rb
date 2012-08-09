@@ -24,6 +24,9 @@ Unseen::Application.routes.draw do
   end
   
   resources :users, :only => [] do
+    collection do
+      get 'welcome', :as => 'welcome'
+    end
     member do
       get 'location', :as => 'edit_location'
     end

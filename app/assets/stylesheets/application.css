@@ -254,6 +254,10 @@ h6 a:hover {
 .black-btn,
 .white-btn {
  color: white;
+ background:none;
+ border-radius:0;
+ box-shadow:none;
+ text-shadow:none;
  background-color: #211d1d;
  padding: 4px 8px;
  text-decoration: none;
@@ -268,8 +272,12 @@ h6 a:hover {
   clear: both;
   float: left;
 }
-.black-btn:hover,
-.black-btn.active {
+
+.black-btn:active {
+  background:#211d1d;
+}
+.black-btn.active,
+.black-btn:hover {
   background-color: #fff;
   color: #211d1d;
   border-color: #211d1d;
@@ -968,13 +976,6 @@ a#social-facebook {
 	text-decoration: none;
   background-position-y:-200px;
 } 
-
-#footer-sponsors a#westergasfabriek:hover{
-  background-position-y:0px;
-}
-
-#footer-sponsors #blockbusterfonds{
-}
 #footer-sponsors #westergasfabriek{
   background-position-x:-500px;
   height:45px;
@@ -1017,7 +1018,8 @@ body.root_slug_amsterdam .subnav-tabs,
 body.root_slug_news .subnav-tabs,
 body.controller_tags .subnav-tabs,
 body.controller_community .subnav-tabs,
-body.controller_users .subnav-tabs {
+body.controller_users .subnav-tabs,
+#community-nav .subnav-tabs{
   float: left;
 }
 .subnav-tabs ul, .subnav-tabs li {
@@ -1039,6 +1041,13 @@ a.subnav-tab:hover {
 .subnav-tabs .active span {
   background: #fff;
 } 
+
+#community-nav a.black-btn{
+  float: right;
+  margin: 15px 15px 0px 0px;
+  width: 110px;
+  text-align: center;
+}
 .block-or-line {
 	float: right;
 	margin: 10px 0 0;
@@ -1548,4 +1557,22 @@ ul.tag-list a span.label.selected {
   font-weight: bold;
   text-align: center;
   width: 110px;
+}
+
+#user_remember_me_input {
+  margin-top:-10px;
+  margin-bottom:10px;
+}
+
+#interest-picker a.tag{
+  display:inline-block;
+  float:none;
+  margin:0px 2px 4px 2px;
+}
+
+/*========== Interests ==========*/
+
+#interest-picker a.active .tag-label {
+  background :#211d1d;
+  color:#fff;
 }

@@ -23,7 +23,7 @@ class Ability
       can [:add, :remove], Photo
       can [:read, :create], Post
       can [:update, :destroy], Post, :user_id => user.id
-      can [:update, :location, :destroy], User, :id => user.id
+      can [:update, :location, :destroy, :welcome], User, :id => user.id
     end
   end
   
