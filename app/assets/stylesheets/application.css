@@ -954,13 +954,6 @@ a#social-facebook {
 	text-decoration: none;
   background-position-y:-200px;
 } 
-
-#footer-sponsors a#westergasfabriek:hover{
-  background-position-y:0px;
-}
-
-#footer-sponsors #blockbusterfonds{
-}
 #footer-sponsors #westergasfabriek{
   background-position-x:-500px;
   height:45px;
