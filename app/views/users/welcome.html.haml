@@ -1,0 +1,32 @@
+-content_for :head do
+  :javascript
+    $(document).ready(function() {
+      $('#interest-picker a.tag').click(function(e){
+        e.preventDefault();
+        var tag = $(this).data('tag');
+        var current_tags = $('#user_user_tag_list').val();
+        if($(this).hasClass('active')){
+          $('#user_user_tag_list').val(current_tags.replace(tag, ''));
+          $(this).removeClass('active');
+        } else {
+          $('#user_user_tag_list').val(current_tags + ', ' + tag);
+          $(this).addClass('active');
+        }
+      });  
+    });
+=render "community/community_nav"
+.container
+  .row
+    .span12
+      %h2.home-title Welcome
+    .span12
+      %h2.center.mb-2 Tell us what you are interested in by selecting your topics and interests. Choose as many as you like:
+    #interest-picker.span12.center.mb-2
+      -Tag.all.each do |tag|
+        =link_to('#', :class => "tag #{current_user.user_tags.include?(tag) ? 'active' : ''}", :'data-tag' => tag.name) do
+          %span.label.tag-label
+            =tag.to_s.titleize
+      =semantic_form_for current_user do |form|
+        =form.input :user_tag_list, :as => :hidden
+        =form.commit_button "Next", :button_html => {:class => 'black-btn mt-1'}
+    
