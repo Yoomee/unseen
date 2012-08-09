@@ -56,6 +56,9 @@ $(document).ready ->
     $(".add-to-program[data-event-id='#{$(event.target).data('event-id')}']").addClass('loading')
   $('a.favourite-btn').live 'ajax:beforeSend', (event) =>
     $(event.target).tooltip('hide').addClass('loading')
+  $('a.people-tag').live 'ajax:beforeSend', (event) =>
+    $(this).addClass('active')
+    $('#people').addClass('loading')
   $('.tooltip-bottom').tooltip({placement:'bottom'})
   $('.tooltip-bottom-white').tooltip({placement:'bottom'}).live 'mouseenter', (event) =>
     $('.tooltip').addClass('tooltip-white')

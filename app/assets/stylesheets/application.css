@@ -1541,6 +1541,10 @@ a.tag:hover .tag-label {
 
 .community-person {
   height: 80px;
+  overflow: hidden;  
+}
+.community-person .job-title {
+  font-size: 14px;
 }
 ul.tag-list a span.label.selected {
   background-color: #819FF7;
@@ -1592,20 +1596,21 @@ ul.tag-list a span.label.selected {
   width: 110px;
 }
 
+/*========== Welcome ==========*/
+
 #user_remember_me_input {
   margin-top:-10px;
   margin-bottom:10px;
 }
-
-#interest-picker a.tag{
+.tag-list-centered {
+  text-align: center;
+}
+.tag-list-centered .tag {
   display:inline-block;
   float:none;
   margin:0px 2px 4px 2px;
 }
-
-/*========== Interests ==========*/
-
-#interest-picker a.active .tag-label {
+a.active .tag-label {
   background :#211d1d;
   color:#fff;
 }

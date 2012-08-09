@@ -6,6 +6,7 @@ $('#tags').html('<%=escape_javascript(render("community/tags"))%>');
 <%else%>
   $('#people').append('<%=escape_javascript(render("community/people", :people => @people))%>');
 <%end%>
+  $('#people').removeClass('loading');
 <%if params[:page]%>
   $('#more-people-btn').attr('href','<%=community_people_path(:page => @people.next_page)%>');
   $('#more-people-btn').fadeIn();

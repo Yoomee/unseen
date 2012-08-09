@@ -39,7 +39,7 @@ class CommunityController < ApplicationController
         @people = []
       end
     else
-      @people = User.order(:last_name).paginate(:per_page => 10, :page => params[:page])
+      @people = User.order(:last_name)
     end
   end
 
