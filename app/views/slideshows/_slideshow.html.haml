@@ -20,7 +20,7 @@
             -else
               .photo-wrapper
                 -if current_user && slide.is_a?(Photo)
-                  =add_to_favourites_link(slide)
+                  =add_to_collection_link(slide)
                 =image_for(slide, "x450")
             .slide-caption
               =slide.caption

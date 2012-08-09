@@ -1307,7 +1307,7 @@ p.press_visual_txt {
   position: relative;
   float: left;
 }
-.photo-wrapper .add-to-favourites {
+.photo-wrapper .add-to-collection {
   position: absolute;
   bottom: 10px;
   right: 10px;
@@ -1317,15 +1317,15 @@ p.press_visual_txt {
   text-transform: uppercase;
   border: 2px solid #fff;
   background: #A0A0A0;
-  width: 208px;
+  width: 210px;
   text-align: center;
 }
-.photo-wrapper .add-to-favourites-active,
-.photo-wrapper .add-to-favourites-active:hover{
+.photo-wrapper .add-to-collection-active,
+.photo-wrapper .add-to-collection-active:hover{
   background-color:#6BBDB9;
   border: 2px solid #fff;
 }
-.photo-wrapper .add-to-favourites.loading{
+.photo-wrapper .add-to-collection.loading{
   height:auto;
   text-indent:-9000em;
   background-color:#fff;
