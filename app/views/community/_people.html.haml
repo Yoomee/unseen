@@ -1,11 +1,7 @@
 -@people.each do |person|
-  .span1.community-person
-    =link_to person do
-      =image_for(person, "60x60#")
-  .span3.community-person
-    %p=link_to_self(person)
-    %p=person.try(:job_title)
-    %ul.tag-list.tag-list-horizontal
-      -person.user_tags.each do |tag|
-        %li
-          =link_to_tag(tag, :label_options => {:method => :titleize})
+  .span1.community-person.mb-1
+    =link_to(image_for(person, "60x60#"), person)
+  .span2.community-person.mb-1
+    %p.mb-0=link_to_self(person)
+    %p.mb-0.job-title
+      =person.try(:job_title)
