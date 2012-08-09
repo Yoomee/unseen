@@ -1,4 +1,5 @@
 module ProgramHelper
+  
   def add_to_program_link(event, options ={})
     options.merge!(
       :remote => true,
@@ -17,7 +18,9 @@ module ProgramHelper
       options[:title] = "Add to my programme"
       options[:class] += " white-btn add-to-program"
     end
-    link_to "I'm going", url, options
+    link_to(url, options) do
+      content_tag(:i, "", :class => "icon-heart") + " I'm going"
+    end
   end
   
   def venues_and_galleries_options(event)
@@ -29,4 +32,5 @@ module ProgramHelper
       event.venue_id
     )
   end
+  
 end
