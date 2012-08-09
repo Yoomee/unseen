@@ -1,0 +1,2 @@
+$('.favourite-btn[data-resource-type="<%=@favourite.resource_type%>"][data-resource-id="<%=@favourite.resource_id%>"]').replaceWith('<%=escape_javascript(favourite_link(@favourite.resource))%>')
+$('.favourite-btn[data-resource-type="<%=@favourite.resource_type%>"][data-resource-id="<%=@favourite.resource_id%>"]').tooltip({placement:'bottom'});

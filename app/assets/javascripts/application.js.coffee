@@ -54,5 +54,9 @@ $(document).ready ->
   $('a.add-to-program').live 'ajax:beforeSend', (event) =>
     $(event.target).tooltip('hide')
     $(".add-to-program[data-event-id='#{$(event.target).data('event-id')}']").addClass('loading')
-  $('.tooltip-bottom').tooltip({placement:'bottom'})  
+  $('a.favourite-btn').live 'ajax:beforeSend', (event) =>
+    $(event.target).tooltip('hide').addClass('loading')
+  $('.tooltip-bottom').tooltip({placement:'bottom'})
+  $('.tooltip-bottom-white').tooltip({placement:'bottom'}).live 'mouseenter', (event) =>
+    $('.tooltip').addClass('tooltip-white')
   # ToggleViewLinks.init()

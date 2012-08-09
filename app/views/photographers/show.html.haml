@@ -13,6 +13,7 @@
     .span6
       -if @photographer.bio.present?
         =simple_format(@photographer.bio)
+      =favourite_link(@photographer)
       -if false
         .well
           .row

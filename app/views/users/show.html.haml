@@ -13,11 +13,10 @@
 .container.user-profile
   .row.mt-2.mb-3
     .span1.mr-1
-      =image_for(user, "60x60#")  
+      =image_for(user, "60x60#")
     .span8
       %h2.medium-title=title(user)
       %p.job-title=user.job_title unless user.job_title.blank?
-
     
   .row.mt-1
     .span8
@@ -26,9 +25,24 @@
         =user.collected_photos.each_slice(4) do |photos|
           .row
             =render photos
-          
       -elsif current_user == user
         Why not find some photos and add them to your collection?
+      -else
+        ="#{user} hasn't collected any photos yet"
+
+      %p.normal-title.upcase.mb-1 My Favourites
+      -if user.favourites.present?
+        =user.favourites.each_slice(2) do |favourites|
+          .row.mb-1
+            -favourites.each do |favourite|
+              .span1
+                =link_to(image_for(favourite.resource, "60x60#"), favourite.resource)
+              .span3.related-text
+                =link_to_self(favourite.resource)
+                %br
+                =favourite.humanized_resource_type
+      -elsif current_user == user
+        Look through the galleries and photographers and add them to your favourites.
       -else
         ="#{user} hasn't collected any photos yet"
                   
@@ -36,7 +50,7 @@
       -if !user.events.empty?
         =render user.events
       -elsif current_user == user
-        ="Check out #{link_to 'what\'s going on', program_path} and add some events to your programme".html_safe
+        ="Check out #{link_to 'what\'s going on', program_path} and add some events to your programme.".html_safe
       -else
         ="#{user} isn't going to any events yet".html_safe
 
@@ -91,7 +105,6 @@
             %icon.icon-plus
             edit interests
 
-
       %p.normal-title.upcase.mt-1 Contact Me
       -if user.links.empty?
         =user.first_name
@@ -113,8 +126,6 @@
           =link_to(edit_user_path(user, :anchor => "links")) do
             %icon.icon-plus
             edit links
-
-
 
   .row
     .span12

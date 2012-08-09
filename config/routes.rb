@@ -53,4 +53,7 @@ Unseen::Application.routes.draw do
     end
   end
 
+  resources :favourites, :only => [:destroy]
+  post "favourites" => "favourites#create", :as => "create_favourite"
+
 end

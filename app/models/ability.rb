@@ -18,6 +18,7 @@ class Ability
       # admin ability
     elsif user
       # user ability
+      can [:create, :destroy], Favourite
       can [:add, :remove], Event
       can [:add, :remove], Photo
       can [:read, :create], Post

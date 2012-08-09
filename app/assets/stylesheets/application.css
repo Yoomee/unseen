@@ -42,10 +42,18 @@ dl dd {
   text-decoration: underline;
 }
 .tooltip-inner {
-  background: #fff;
   border: 2px solid #211d1d;
-  color: #211d1d;
   border-radius:0;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+.tooltip-white .tooltip-inner {
+  border-color: white;
+  color: #211d1d;
+  background: #fff;
+}
+.tooltip-white.bottom .tooltip-arrow {
+  border-bottom: 5px solid white;
 }
 .btn-group.open {
 
@@ -243,7 +251,8 @@ h6 a:hover {
 .hide {
   display: none;
 }
-.black-btn, .white-btn {
+.black-btn,
+.white-btn {
  color: white;
  background-color: #211d1d;
  padding: 4px 8px;
@@ -259,7 +268,8 @@ h6 a:hover {
   clear: both;
   float: left;
 }
-.black-btn:hover {
+.black-btn:hover,
+.black-btn.active {
   background-color: #fff;
   color: #211d1d;
   border-color: #211d1d;
@@ -1101,7 +1111,8 @@ p.program-subtitle {
   background-color:#6BBDB9;
   border-color:#6BBDB9;
 }
-.add-to-program.loading{
+.add-to-program.loading,
+.favourite-btn.loading {
   height:auto;
   text-indent:-9000em;
   background-color:#fff;
@@ -1529,4 +1540,12 @@ ul.tag-list a span.label.selected {
   margin: 0;
   line-height: 16px;
   color: #211D1D;
+}
+
+/*========== Favourite button ==========*/
+
+.favourite-btn {
+  font-weight: bold;
+  text-align: center;
+  width: 110px;
 }

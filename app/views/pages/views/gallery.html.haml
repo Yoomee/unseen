@@ -14,6 +14,7 @@
       .page_text
         #page_text
           =raw(@page.text)
+      =favourite_link(@page)
     .span4
       -if @page.image
         =image_for(@page, "250x")
