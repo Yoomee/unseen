@@ -2,8 +2,6 @@
   =link_to image_for(photo, "140x140"), photo, :class => "photo-image-link"
   
   %p.photographer=link_to_self(photo.photographer)
-  -if photo.caption
-    %p.caption=photo.caption
   -if photo.photographer.galleries.first
-    %p.gallery=photo.photographer.galleries.first
+    %p.gallery=link_to_self(photo.photographer.galleries.first)
   .clearfix

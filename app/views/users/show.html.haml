@@ -22,15 +22,15 @@
   .row.mt-1
     .span8
       %p.normal-title.upcase.mb-1 My Collection
-      -if !user.favourite_photos.empty?
-        =user.favourite_photos.each_slice(4) do |photos|
+      -if !user.collected_photos.empty?
+        =user.collected_photos.each_slice(4) do |photos|
           .row
             =render photos
           
       -elsif current_user == user
         Why not find some photos and add them to your collection?
       -else
-        ="#{user} hasn't got any favourite photos yet"
+        ="#{user} hasn't collected any photos yet"
                   
       %p.normal-title.upcase.mt-2.mb-1 My Programme
       -if !user.events.empty?
@@ -97,11 +97,16 @@
         =user.first_name
         has no contact details yet
       -else
-        %ul.tag-list.tag-list-horizontal
+        %ul.unstyled
           -user.links.each do |link|
             %li
-              =image_tag(link.favicon)
-              =link_to(link, link.url, :target => '_blank')
+              -if site = link.host.to_s.match(/(facebook|linkedin|twitter)/).try(:[], 1)
+                =link_to(link.url, :target => "_blank") do
+                  %i{:class => "icon-#{site}-sign"}
+                  =link
+              -else
+                =image_tag(link.favicon)
+                =link_to(link, link.url, :target => '_blank')
         .clearfix
       -if can?(:edit, user)
         .action-link
