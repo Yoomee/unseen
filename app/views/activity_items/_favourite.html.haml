@@ -4,8 +4,8 @@
       =image_for(activity_item.user, "140x140")
   .span2
     =link_to_self(activity_item.user)
-    is going to 
-    =link_to_self(activity_item.resource)
+    favourited
+    =link_to_self(activity_item.resource.resource)
     .small-info-text
       =time_ago_in_words(activity_item.created_at)
       ago

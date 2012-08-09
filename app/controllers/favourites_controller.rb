@@ -4,6 +4,7 @@ class FavouritesController < ApplicationController
   
   def create
     @favourite = current_user.favourites.create(params[:favourite])
+    current_user.record_activity!(@favourite)
     render :action => "add_remove"    
   end
   
