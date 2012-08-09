@@ -34,6 +34,8 @@ Unseen::Application.routes.draw do
   
   match "community", :to => "community#index"
   match "community/people", :to => "community#people"
+  match "community/activity", :to => "community#activity"
+  match "community/photos", :to => "community#photos"
 
   match "pages/view/list" => "pages#set_view", :view => 'list', :as => 'set_list_view'
   match "pages/view/block" => "pages#set_view", :view => 'block', :as => 'set_block_view'

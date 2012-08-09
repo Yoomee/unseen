@@ -1,2 +1,5 @@
--items.each do |activity_item|  
-  .span4.mb-2=render("activity_items/#{activity_item.resource_type.downcase}", :activity_item => activity_item)
+.span12
+  -items.each_slice(6) do |activity_items|
+    .row
+      -activity_items.each do |activity_item|
+        .span2.mb-2=render("activity_items/#{activity_item.resource_type.downcase}", :activity_item => activity_item)

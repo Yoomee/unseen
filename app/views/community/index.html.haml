@@ -4,13 +4,11 @@
   .row
     .span12.center
       %h1.big-title Community
-      %p Welcome to the Unseen Activity area
-      %p Here you will find the latest activity
-
-
+    .span10.offset1.center
+      %h2.mb-2 Sign up and discover new work by known and emerging talents and build your personal photography collection
   .row.mt-2
     .span12
-      %p.normal-title.center Activity
+      %h2.center Latest activity
       
   .row.mt-2
     .span12
@@ -18,8 +16,7 @@
         =render "activity_items", :items => @activity_items
       .row.mb-2
         .span12.center
-          -if @activity_items.next_page
-            =link_to "More Activity", community_path(:item_type => "activity_item", :page => @activity_items.next_page), :remote => true, :class => "black-btn", :id => "more-activity_item-btn"
+          =link_to("See all activity", community_activity_path, :class => 'black-btn community-black-btn')
             
             
 #intro.home_box{:class => next_home_background_class}
@@ -28,7 +25,7 @@
 .container 
   .row.mt-2
     .span12
-      %p.normal-title.center Popular photos
+      %h2.center Popular photos
    
   .row.mt-2
     .span12
@@ -36,8 +33,7 @@
         =render "photos", :items => @photos
       .row.mb-2
         .span12.center
-          -if @photos.next_page
-            =link_to "More Photos", community_path(:item_type => "photo", :page => @photos.next_page), :remote => true, :class => "black-btn", :id => "more-photo-btn"
+          =link_to("See all", community_photos_path, :id => "community-black-btn-photos", :class => 'black-btn community-black-btn')
 
 
 #intro.home_box{:class => next_home_background_class}
@@ -46,7 +42,7 @@
 .container
   .row.mt-2
     .span12
-      %p.normal-title.center Popular events
+      %h2.center Popular events
    
   .row.mt-2
     .span12
@@ -54,8 +50,7 @@
         =render "events", :items => @events
       .row.mb-2
         .span12.center
-          -if @events.next_page
-            =link_to "More Events", community_path(:item_type => "event", :page => @events.next_page), :remote => true, :class => "black-btn", :id => "more-event-btn"
+          =link_to("Full programme", program_path, :id => "community-black-btn-programme", :class => 'black-btn community-black-btn')
             
 #intro.home_box{:class => next_home_background_class}
   .bg1
@@ -63,7 +58,7 @@
 .container
   .row.mt-2
     .span12
-      %h2.normal-title.center On twitter
+      %h2.center Unseen on Twitter
    
   .row.mt-2
     .span12
@@ -76,5 +71,5 @@
               .span5
                 =auto_link(auto_link_twitter(tweet.text))
     .span12.center
-      =link_to "More", "https://twitter.com/UnseenPhotoFair", :class => "black-btn", :target => "_blank"
+      =link_to "Follow us", "https://twitter.com/intent/user?screen_name=UnseenPhotoFair", :id => "community-black-btn-twitter", :class => "black-btn community-black-btn", :target => "_blank"
     

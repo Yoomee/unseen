@@ -1099,7 +1099,7 @@ a.program-tab {
 /*==========  program list  ==========*/
 .program-title,
 p.program-subtitle {
-  margin-bottom: 3px;
+  margin-bottom: 7px;
 }
 
 .program-title a:hover{
@@ -1112,13 +1112,14 @@ p.program-subtitle {
 }
 .add-to-program {
   margin-right: 5px;
-  width: 81px;
+  width: 101px;
+  text-align:center;
 }
 .add-to-program-active,
 .add-to-program-active:hover{
   color:#fff;
-  background-color:#6BBDB9;
-  border-color:#6BBDB9;
+  background-color:#211d1d;
+  border-color:#211d1d;
 }
 .add-to-program.loading,
 .favourite-btn.loading {
@@ -1342,7 +1343,7 @@ p.press_visual_txt {
 }
 .photo-wrapper .add-to-collection-active,
 .photo-wrapper .add-to-collection-active:hover{
-  background-color:#6BBDB9;
+  background-color:#211d1d;
   border: 2px solid #fff;
 }
 .photo-wrapper .add-to-collection.loading{
@@ -1486,14 +1487,14 @@ a.tag:hover .tag-label {
     font-size: 12px;
 }
 
-.span2.photo .photo-image-link {
+.span2 .photo-image-link {
   width: 140px;
   height: 140px;
   margin-bottom: 10px;
   position: relative;
   float:left;
 }
-.span2.photo .photo-image-link img {
+.span2 .photo-image-link img {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -1518,9 +1519,24 @@ a.tag:hover .tag-label {
 /*========== Community ==========*/
 
 #event-list .popular-event {
-  height: 85px;
+  height: 65px;
   overflow: hidden;
   margin-bottom: 5px;
+}
+
+#event-list .program-item{
+  border:none;
+  padding-bottom: 0px;
+  margin-bottom: 5px;
+}
+
+#event-list .event-right{
+  margin-top:5px;
+}
+
+#event-list hr{
+  border-color:#211d1d;
+  border-bottom:none;
 }
 
 .community-person {
@@ -1550,6 +1566,23 @@ ul.tag-list a span.label.selected {
   line-height: 16px;
   color: #211D1D;
 }
+
+.community-black-btn {
+  text-align:center;
+  padding: 4px 17px;
+}
+
+#community-black-btn-photos {
+  padding: 4px 50px;
+}
+#community-black-btn-programme {
+  padding: 4px 10px;
+}
+#community-black-btn-twitter {
+  padding: 4px 35px;
+}
+
+
 
 /*========== Favourite button ==========*/
 

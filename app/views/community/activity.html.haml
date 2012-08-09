@@ -1,0 +1,14 @@
+=render "community_nav"
+          
+.container
+  .row
+    .span12.center
+      %h1.big-title All Activity
+  .row.mt-2
+    .span12
+      .row#activity_item-list
+        =render "activity_items", :items => @activity_items
+      .row.mb-2
+        .span12.center
+          -if @activity_items.next_page
+            =link_to "More Activity", community_path(:item_type => "activity_item", :page => @activity_items.next_page, :per_page => 18 ), :remote => true, :class => "black-btn", :id => "more-activity_item-btn"
