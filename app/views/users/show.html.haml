@@ -97,11 +97,16 @@
         =user.first_name
         has no contact details yet
       -else
-        %ul.tag-list.tag-list-horizontal
+        %ul.unstyled
           -user.links.each do |link|
             %li
-              =image_tag(link.favicon)
-              =link_to(link, link.url, :target => '_blank')
+              -if site = link.host.to_s.match(/(facebook|linkedin|twitter)/).try(:[], 1)
+                =link_to(link.url, :target => "_blank") do
+                  %i{:class => "icon-#{site}-sign"}
+                  =link
+              -else
+                =image_tag(link.favicon)
+                =link_to(link, link.url, :target => '_blank')
         .clearfix
       -if can?(:edit, user)
         .action-link
