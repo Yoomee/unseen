@@ -1376,18 +1376,18 @@ a.tag:hover .tag-label {
 .navbar .brand {
   float:none;
   margin:0px;
-  padding:10px 0px;
+  padding:12px 0px;
 }
 .navbar .container-fluid {
   padding: 0;
   width:100%;
 }
 .navbar-spacer {
-  height:40px;
+  height:44px;
   margin-bottom:10px;
 }
 #mobile-nav a.back-link{
-  margin:3px 0px 3px 10px; 
+  margin:5px 0px 3px 10px; 
 }
 .container-fluid {
   padding:0 5%;

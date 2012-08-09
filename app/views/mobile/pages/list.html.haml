@@ -1,6 +1,7 @@
--(@page_children || @page.children).each do |page|
+-[(@page_children || @page.children).first].each do |page|
   .row-fluid.mb-1
-    .span4
-      =link_to(image_for_with_retina(page, "83x70#"), mobile_page_path(page, :permalink => false))
-    .span8
+    -#
+      .span4
+        =link_to(image_for_with_retina(page, "83x70#"), mobile_page_path(page, :permalink => false))
+    .span12
       %h3.small-title=link_to(page, mobile_page_path(page, :permalink => false))
