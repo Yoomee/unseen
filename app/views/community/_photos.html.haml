@@ -1,13 +1,10 @@
 -items.each do |photo|  
   .span4.mb-1
-    .row
-      =link_to image_for(photo, "300x300"), photo, :class => "community-photo-image-link"
-
-      %p.photographer=link_to_self(photo.photographer)
-      -if photo.caption
-        %p.caption=photo.caption
-      -if photo.photographer.galleries.first
-        %p.gallery=photo.photographer.galleries.first
-      %icon.icon-heart
-      =photo.collected_by_users.count
-      .clearfix
+    =link_to image_for(photo, "300x300"), photo, :class => "community-photo-image-link"
+    %p.photographer
+      %strong=link_to_self(photo.photographer)
+    -if photo.caption
+      %p.caption=photo.caption
+    %icon.icon-heart
+    =photo.collected_by_users.count
+    .clearfix

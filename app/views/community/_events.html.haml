@@ -7,14 +7,19 @@
         =event.date_time_string
         at
         =event.venue
-      %p
-        -[event.categories,event.page_tags].flatten.each do |tag|
-          =link_to_tag(tag, :label_options => {:method => :titleize})
-        
-
-    .span2.offset2
-      -if event.users.include?(current_user)
-        =add_to_program_link(event)
-      .clearfix
-      %icon.icon-heart
-      =event.users.count
+      -#
+        %p
+          -[event.categories,event.page_tags].flatten.each do |tag|
+            =link_to_tag(tag, :label_options => {:method => :titleize})
+    .span3.offset1.event-right
+      .row
+        .span2
+          -if event.users.include?(current_user)
+            =add_to_program_link(event)
+          -else
+            %br
+        .span1
+          %icon.icon-heart
+          =event.users.count
+    .span12
+      %hr

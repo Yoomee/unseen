@@ -1,0 +1,13 @@
+=render "community_nav"
+          
+.container
+  .row
+    .span12.center
+      %h1.big-title Popular photos
+  .row.mt-2
+    .span12
+      .row#photo-list
+        .span12
+          -@photos.each_slice(3) do |photos|
+            .row
+              =render "photos", :items => photos

@@ -1,6 +1,6 @@
 $('#<%=params[:item_type]%>-list').append('<%=escape_javascript(render("community/#{params[:item_type].pluralize}", :items => @items))%>');
 <%if @items.next_page%>
-  $('#more-<%=params[:item_type]%>-btn').attr('href','<%=community_path(:page => @items.next_page, :item_type => params[:item_type])%>');
+  $('#more-<%=params[:item_type]%>-btn').attr('href','<%=community_path(:page => @items.next_page, :item_type => params[:item_type],:per_page => params[:per_page] || 6)%>');
 <%else%>
   $('#more-<%=params[:item_type]%>-btn').fadeOut();
 <%end%>
