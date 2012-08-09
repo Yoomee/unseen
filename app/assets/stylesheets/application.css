@@ -1320,38 +1320,30 @@ p.press_visual_txt {
 .slideshow_container {
   margin-bottom: 50px;
 }
-.slideshow .slide-caption {
-	font-size: 13px;
-	line-height: 16px;
-	margin-top: 10px;
-}
 .photo-wrapper {
   position: relative;
   float: left;
 }
-.photo-wrapper .add-to-collection {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  color: white;
-  padding: 4px 8px;
+.slideshow .slide-caption {
+	font-size: 13px;
+	line-height: 16px;
+	margin-top: 10px;
+	float: left;
+}
+.slideshow .add-to-collection {
+  color: #ccc;
+  float: left;
+  margin: 10px 0 0 10px;
+  width: 15px;
+}
+.slideshow .add-to-collection:hover,
+.slideshow .add-to-collection-active {
+  color: #211d1d;
   text-decoration: none;
-  text-transform: uppercase;
-  border: 2px solid #fff;
-  background: #A0A0A0;
-  width: 210px;
-  text-align: center;
 }
-.photo-wrapper .add-to-collection-active,
-.photo-wrapper .add-to-collection-active:hover{
-  background-color:#211d1d;
-  border: 2px solid #fff;
-}
-.photo-wrapper .add-to-collection.loading{
+.slideshow .add-to-collection.loading {
   height:auto;
   text-indent:-9000em;
-  background-color:#fff;
-  border-color:#000;
 }
 
 /*========== Fair ==========*/

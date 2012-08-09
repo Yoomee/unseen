@@ -65,6 +65,8 @@ window.YmCms =
     init: (options) ->
       options = {} if options == undefined
       slideCount = $('div.slideshow .slide').length
+      $('div.slideshow .slide img').load ->
+        $(this).parents('.slide_inner').find('.slide-caption').css('width', $(this).width() - 25)
       if slideCount > 0
         YmCms.Slideshow.slideWidth = $('div.slideshow .slide').outerWidth(true)
         $('div.slideshow div.slideshow_inner').css('width', YmCms.Slideshow.slideWidth * $('div.slideshow .slide').length)
