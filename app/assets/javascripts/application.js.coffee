@@ -7,6 +7,7 @@
 #= require jquery
 #= require jquery_ujs
 #= require ym_core
+#= require redactor
 #= require ym_cms_override
 #= require ym_posts
 #= require ym_tags
@@ -37,6 +38,7 @@ ToggleViewLinks =
 $(document).ready ->
   YmCms.Page.Form.showSlideshowTab()
   FairPage.init()
+  Redactor.init()
   $('#page_view_name').change =>
     YmCms.Page.Form.showSlideshowTab()
   $('#email').focus =>
