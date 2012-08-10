@@ -85,7 +85,7 @@ window.YmCms =
     reAlign: () ->
       leftPos = ($(window).width() - 940)/2
       leftPos = 0 if leftPos < 0
-      $('.slideshow .slide_inner').css('left', leftPos)
+      $('.slideshow .slide').css('left', leftPos)
     resetInterval: () ->
       if YmCms.Slideshow.intervalTime != undefined
         if YmCms.Slideshow.interval != undefined
