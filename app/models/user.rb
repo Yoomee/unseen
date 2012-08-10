@@ -10,7 +10,6 @@ class User < ActiveRecord::Base
   has_many :favourites, :dependent => :destroy  
   has_and_belongs_to_many :galleries, :class_name => "Page", :join_table => "galleries_photographers"
   has_and_belongs_to_many :events, :order => "starts_at DESC, date"
-  has_and_belongs_to_many :collected_photos, :class_name => "Photo", :join_table => "photos_users"
   
   acts_as_taggable_on :user_tags, :page_tags
 

@@ -23,6 +23,8 @@ Unseen::Application.routes.draw do
     end
   end
   
+  match "slides/:id" => "pages#show", :as => 'slide'
+  
   resources :users, :only => [] do
     collection do
       get 'welcome', :as => 'welcome'
