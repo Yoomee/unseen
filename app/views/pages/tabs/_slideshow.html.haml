@@ -1,6 +1,6 @@
 -if @page.view_name == "gallery"
   -@page.photographers.each do |photographer|
-    %h3=photographer
+    %h3.mt-1=photographer
     %fieldset
       -photographer.photos.each do |photo|  
         %label.choice.checkbox{:for => "page_photo_ids_#{photo.id}"}
