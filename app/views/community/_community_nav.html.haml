@@ -13,7 +13,7 @@
                 =li_with_active(current_page?(user_path(current_user)), link_to('My Profile', current_user, :class => 'subnav-tab'))
         .span4
           -if current_user
-            =link_to('Log out', sign_out_path,:class => 'black-btn')
+            =link_to('Log out', sign_out_path,:method => :delete,:class => 'black-btn')
             =link_to('My settings', edit_user_path(current_user),:class => 'black-btn')
           -else
             =link_to('Log in', sign_in_path,:class => 'black-btn')
