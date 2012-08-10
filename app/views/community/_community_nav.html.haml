@@ -9,9 +9,12 @@
             %ul
               =li_with_active(current_page?(community_path), link_to('Activity', community_path, :class => 'subnav-tab'))
               =li_with_active(current_page?(community_people_path), link_to('People', community_people_path, :class => 'subnav-tab'))
+              -if current_user
+                =li_with_active(current_page?(user_path(current_user)), link_to('My Profile', current_user, :class => 'subnav-tab'))
         .span4
           -if current_user
-            =link_to('My profile', user_path(current_user),:class => 'black-btn')
+            =link_to('Log out', sign_out_path,:class => 'black-btn')
+            =link_to('My settings', edit_user_path(current_user),:class => 'black-btn')
           -else
-            =link_to('Register', sign_up_path,:class => 'black-btn')
             =link_to('Log in', sign_in_path,:class => 'black-btn')
+            =link_to('Register', sign_up_path,:class => 'black-btn')

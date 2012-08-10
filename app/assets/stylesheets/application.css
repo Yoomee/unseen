@@ -113,7 +113,6 @@ h5,
 h6,
 .nav ul,
 a.category,
-#buy-ticket-link,
 .small-title p,
  .share_this p,
  .share-link-text,
@@ -182,6 +181,9 @@ input, a.call-to-action-link, .carousel-text p, p.event-image-caption, .share-li
 }
 .mb-1 {
   margin-bottom: 20px;
+}
+.mb-15 {
+  margin-bottom: 30px;
 }
 .mb-2 {
   margin-bottom: 40px;
@@ -436,13 +438,6 @@ a.header-link {
 	margin: -5px 0 0 20px;
 	float: right;
 }
-#buy-ticket-link:hover {
-  background: #211d1d;
-  border-color: #211d1d;
-  color: #fff;
-}
-
-
 .big_background {
   float: right;
   width: 100%;
@@ -1483,7 +1478,7 @@ a.tag:hover .tag-label {
 .span2 .photo-image-link {
   width: 140px;
   height: 140px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   position: relative;
   float:left;
 }
@@ -1626,4 +1621,16 @@ a.active .tag-label {
 .login-auth-links {
   padding-top: 20px;
   float: left;
+}
+
+/*========== activity_item-list ==========*/
+
+.activity-item div,
+.activity-item a{
+  font-size: 13px;
+  line-height: 17px;
+}
+
+#community-title {
+  margin-bottom:16px;
 }

@@ -13,10 +13,16 @@
 .container.user-profile
   .row.mt-2.mb-3
     .span1.mr-1
-      =image_for(user, "60x60#")
+      -if user.image
+        =image_for(user, "60x60#")
+      -else
+        =link_to(image_for(user, "60x60#"), edit_user_path(user, :anchor => "details"), :id => 'user-image', :title => "Set your photo", :class => 'pull-left')
     .span8
       %h2.medium-title=title(user)
-      %p.job-title=user.job_title unless user.job_title.blank?
+      -if user.job_title.present?
+        %p.job-title=user.job_title
+      -elsif can?(:edit,user)
+        =link_to("Edit your job title +", edit_user_path(user, :anchor => "details"))
     
   .row.mt-1
     .span8
@@ -26,11 +32,13 @@
           .row
             =render photos
       -elsif current_user == user
-        Why not find some photos and add them to your collection?
+        Find your favourite photos in
+        %u=link_to("galleries", Page.find_by_slug('galleries'))
+        and photographers profiles and build your collection.
       -else
         ="#{user} hasn't collected any photos yet"
 
-      %p.normal-title.upcase.mb-1 My Favourites
+      %p.normal-title.upcase.mb-1.mt-3 My Favourites
       -if user.favourites.present?
         =user.favourites.each_slice(2) do |favourites|
           .row.mb-1
@@ -42,15 +50,19 @@
                 %br
                 =favourite.humanized_resource_type
       -elsif current_user == user
-        Look through the galleries and photographers and add them to your favourites.
+        Browse through the
+        %u=link_to("galleries", Page.find_by_slug('galleries'))
+        and photographers that will be attending the Unseen Photo Fair and add them to your selection.
       -else
-        ="#{user} hasn't collected any photos yet"
+        ="#{user} hasn't favourited any galleries or photographers."
                   
-      %p.normal-title.upcase.mt-2.mb-1 My Programme
+      %p.normal-title.upcase.mt-3 My Programme
       -if !user.events.empty?
         =render user.events
       -elsif current_user == user
-        ="Check out #{link_to 'what\'s going on', program_path} and add some events to your programme.".html_safe
+        Take a look at the
+        %u=link_to 'Unseen programme', program_path
+        and add some events yo your calendar.
       -else
         ="#{user} isn't going to any events yet".html_safe
 
@@ -61,33 +73,25 @@
         %p=user.address
         #map-canvas{:style => "height:220px;width:100%"}
         -if can?(:edit_location, user)
-          .action-link
-            =link_to(edit_location_user_path(user)) do
-              %icon.icon-plus
-              edit location              
+          =link_to("Edit location +",edit_location_user_path(user))
+            
       -elsif can?(:edit_location, user)
         %p We couldn't work out your location
-        .action-link
-          =link_to(edit_location_user_path(user)) do
-            %icon.icon-plus
-            edit location
+        =link_to("Edit location +",edit_location_user_path(user))
       -else
         %p
           =user.first_name
-          hasn't set their location yet      
+          hasn't set their location yet
       
       %p.normal-title.upcase.mt-1 Bio
-      -if user.bio.blank?
+      -if user.bio.blank? && current_user != user
         =user.first_name
         hasn't entered a bio yet
       -else
         =simple_format(user.bio)
       .clearfix
       -if can?(:edit, user)
-        .action-link
-          =link_to(edit_user_path(user, :anchor => "details"))  do
-            %icon.icon-plus
-            edit bio
+        =link_to("Edit your Bio +", edit_user_path(user, :anchor => "details"))
         
       %p.normal-title.upcase.mt-1 My Interests
       -if user.user_tags.empty?
@@ -99,14 +103,9 @@
             %li
               =link_to_tag(tag, :label_options => {:method => :titleize})
       .clearfix
-      -if can?(:edit, user)
-        .action-link
-          =link_to(edit_user_path(user, :anchor => "details")) do
-            %icon.icon-plus
-            edit interests
 
       %p.normal-title.upcase.mt-1 Contact Me
-      -if user.links.empty?
+      -if user.links.empty? && current_user != user
         =user.first_name
         has no contact details yet
       -else
@@ -122,10 +121,7 @@
                 =link_to(link, link.url, :target => '_blank')
         .clearfix
       -if can?(:edit, user)
-        .action-link
-          =link_to(edit_user_path(user, :anchor => "links")) do
-            %icon.icon-plus
-            edit links
+        =link_to("Add a link +", edit_user_path(user, :anchor => "details"))
 
   .row
     .span12

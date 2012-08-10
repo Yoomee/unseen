@@ -18,30 +18,34 @@
         =link_to("press", Page.find_by_slug("press") || "#", :class=>"header-link", :id=>"contact_link")
         =link_to("contact", Page.find_by_slug("contact") || "#", :class=>"header-link", :id=>"contact_link")
         =link_to("about", Page.find_by_slug("about") || "#", :class=>"header-link")
-        -if user_signed_in?
-          #logged-in-dropdown.btn-group
-            =link_to(current_user, :class => 'btn') do
-              %icon.icon-user
-              =current_user
-            =link_to('#', :data => {:toggle => "dropdown"}, :class => 'btn dropdown-toggle') do
-              %span.caret
-            %ul.dropdown-menu.pull-right
-              %li
-                =link_to(pages_path) do
-                  %icon.icon-sitemap
-                  Sitemap
-              %li.divider   
-              -if can?(:index, :photographer)  
+        -if !current_user
+          =link_to("login", sign_in_path, :class=>"header-link")
+          =link_to("register", sign_up_path, :class=>"header-link")
+        -#
+          -if user_signed_in?
+            #logged-in-dropdown.btn-group
+              =link_to(current_user, :class => 'btn') do
+                %icon.icon-user
+                =current_user
+              =link_to('#', :data => {:toggle => "dropdown"}, :class => 'btn dropdown-toggle') do
+                %span.caret
+              %ul.dropdown-menu.pull-right
                 %li
-                  =link_to(photographers_path) do
-                    %icon.icon-camera
-                    Edit Photographers
-                %li.divider       
-              %li
-                =link_to(sign_out_path, :method => :delete, :id=>"login_link") do
-                  %icon.icon-remove-sign
-                  Logout                                        
-        -else
-          =link_to(t(:login).downcase, sign_in_path(:next => request.path), :class=>"header-link", :id=>"login_link")
-          =#link_to "register", "#", :class=>"header-link"
+                  =link_to(pages_path) do
+                    %icon.icon-sitemap
+                    Sitemap
+                %li.divider   
+                -if can?(:index, :photographer)  
+                  %li
+                    =link_to(photographers_path) do
+                      %icon.icon-camera
+                      Edit Photographers
+                  %li.divider       
+                %li
+                  =link_to(sign_out_path, :method => :delete, :id=>"login_link") do
+                    %icon.icon-remove-sign
+                    Logout                                        
+          -else
+            =link_to(t(:login).downcase, sign_in_path(:next => request.path), :class=>"header-link", :id=>"login_link")
+            =#link_to "register", "#", :class=>"header-link"
       =render ("/layouts/nav")

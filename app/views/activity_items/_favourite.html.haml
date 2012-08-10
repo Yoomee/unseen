@@ -1,4 +1,4 @@
-.row
+.row.activity-item
   .span2
     =link_to activity_item.user, :class => "photo-image-link" do
       =image_for(activity_item.user, "140x140")
@@ -6,6 +6,6 @@
     =link_to_self(activity_item.user)
     favourited
     =link_to_self(activity_item.resource.resource)
-    .small-info-text
+    %div
       =time_ago_in_words(activity_item.created_at)
       ago

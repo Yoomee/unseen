@@ -1,10 +1,10 @@
-.row
+.row.activity-item
   .span2
     =link_to activity_item.resource, :class => "photo-image-link" do
       =image_for(activity_item.resource, "140x140")
     =link_to_self(activity_item.user)
     collected
     =link_to "a photo", activity_item.resource
-    .small-info-text
+    %div
       =time_ago_in_words(activity_item.created_at)
       ago
