@@ -8,7 +8,8 @@
         .span6
           .row
             .span1 Date:
-            .span5=link_to(@event.date.strftime('%a %o %B'),program_path(:day=>@event.date.strftime('%a').downcase,:anchor => 'program'))
+            .span5
+              =@event.dates.collect {|date| link_to(date.strftime('%a %o %B'), program_path(:day => date.strftime('%a').downcase, :anchor => 'program'))}.join("<br />").html_safe
           .row
             .span1 Time:
             .span5=@event.time_string

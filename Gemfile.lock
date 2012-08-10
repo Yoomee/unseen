@@ -81,6 +81,7 @@ GEM
     coffee-script-source (1.2.0)
     columnize (0.3.6)
     country-select (1.1.1)
+    datetimespan (0.1.0)
     devise (2.1.2)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
@@ -334,6 +335,7 @@ DEPENDENCIES
   cocoon
   coffee-rails (~> 3.1.0)
   country-select
+  datetimespan
   exception_notification
   factory_girl_rails
   formtastic-bootstrap!
