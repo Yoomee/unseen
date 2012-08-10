@@ -41,7 +41,7 @@ class EventsController < ApplicationController
 
   def index
     @date = Event::DATES.select{|d| d.strftime('%a') == params[:day].to_s.titleize}.first || Event::DATES.first
-    @events = Event.where(:date => @date).order(:starts_at)
+    @events = Event.on_date(@date).order(:starts_at)
   end
 
   def show
@@ -49,7 +49,7 @@ class EventsController < ApplicationController
   end
 
   def update
-    if @event.update_attributes!(params[:event])
+    if @event.update_attributes(params[:event])
       flash_notice(@event)
       redirect_to @event
     else
