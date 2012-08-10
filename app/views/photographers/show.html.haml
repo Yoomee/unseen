@@ -14,16 +14,6 @@
       -if @photographer.bio.present?
         =simple_format(@photographer.bio)
       =favourite_link(@photographer)
-      -if false
-        .well
-          .row
-            .span2
-              %h3.mb-1.upcase These people are interested
-              =link_to("Favourite", "#", :class => "btn")
-            .span3
-              -5.times do
-                =dragonfly_image_tag(@photographer.default_image, "50x50#", :class => "mr-1 mb-1")
-
     .span4.offset2.news_page_signup
       -if !@photographer.galleries.where("view_name = 'gallery'").empty?
         %h2.normal-title.upcase.mb-1 Represented by

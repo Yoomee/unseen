@@ -27,10 +27,11 @@
   .row.mt-1
     .span8
       %p.normal-title.upcase.mb-1 My Collection
-      -if !user.collected_photos.empty?
-        =user.collected_photos.each_slice(4) do |photos|
+      -if !user.favourites.photos.empty?
+        =user.favourites.photos.each_slice(4) do |favourites|
           .row
-            =render photos
+            -favourites.each do |favourite|
+              =render "photos/photo", :photo => favourite.resource
       -elsif current_user == user
         Find your favourite photos in
         %u=link_to("galleries", Page.find_by_slug('galleries'))
@@ -39,8 +40,8 @@
         ="#{user} hasn't collected any photos yet"
 
       %p.normal-title.upcase.mb-1.mt-3 My Favourites
-      -if user.favourites.present?
-        =user.favourites.each_slice(2) do |favourites|
+      -if user.favourites.not_photos.present?
+        =user.favourites.not_photos.each_slice(2) do |favourites|
           .row.mb-1
             -favourites.each do |favourite|
               .span1
