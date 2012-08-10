@@ -5,7 +5,8 @@
         %span#page_title
           =raw(@page.title)
 -if @page.slideshow
-  =render("slideshows/slideshow", :slideshow => @page.slideshow)
+  =render("slideshows/slideshow", :slides => @page.photos)
+  
 .container
   .row
     .span4
