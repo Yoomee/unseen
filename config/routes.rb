@@ -31,6 +31,7 @@ Unseen::Application.routes.draw do
       get 'location', :as => 'edit_location'
     end
   end
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   
   match "community", :to => "community#index"
   match "community/people", :to => "community#people"

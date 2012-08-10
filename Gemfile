@@ -13,6 +13,7 @@ gem 'exception_notification'
 
 gem 'cocoon'
 gem 'geocoder'
+gem "omniauth-facebook"
 
 gem 'ym_core',        "~> 0.1.16"  #, :path => "~/Rails/Gems/ym_core"
 gem 'ym_cms',         "~> 0.3.1"   #, :path => "~/Rails/Gems/ym_cms"

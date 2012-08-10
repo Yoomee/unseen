@@ -1607,3 +1607,23 @@ a.active .tag-label {
   background :#211d1d;
   color:#fff;
 }
+
+/*========== Login ==========*/
+
+.facebook-login-link {
+  text-indent: -3000em;
+  float: left;
+  background: url(/assets/fb_login_btn.png) no-repeat;
+  height: 22px;
+}
+.login-form {
+  float: right;
+}
+.login-or {
+  float: left;
+  margin: 20px 20px 0 0;
+}
+.login-auth-links {
+  padding-top: 20px;
+  float: left;
+}

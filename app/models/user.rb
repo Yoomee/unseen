@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
 
   include YmUsers::User
+  include User::FacebookAuth
+
+  devise :omniauthable
 
   has_many :photos, :foreign_key => "photographer_id"
   has_many :links, :as => :attachable, :class_name => "YmLinks::Link", :dependent => :destroy
