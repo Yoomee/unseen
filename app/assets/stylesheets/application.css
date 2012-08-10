@@ -114,10 +114,12 @@ h6,
 .nav ul,
 a.category,
 .small-title p,
- .share_this p,
- .share-link-text,
- b,
- .share_this {
+.share_this p,
+.share-link-text,
+b,
+.share_this,
+.black-btn,
+.white-btn {
   font-family: "Apercu Bold", "calibri", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: normal;
@@ -156,12 +158,6 @@ div, input {
   font-weight: normal;
   font-size: 16px;
   line-height: 20px;
-}
-.black-btn,
-.white-btn {
-  font-family: "Apercu Regular", "calibri", Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  font-weight: normal;
 }
 input, a.call-to-action-link, .carousel-text p, p.event-image-caption, .share-link-text {
   font-size: 13px;
@@ -1581,7 +1577,7 @@ ul.tag-list a span.label.selected {
 .favourite-btn {
   font-weight: bold;
   text-align: center;
-  width: 110px;
+  width: 112px;
 }
 
 /*========== Welcome ==========*/
