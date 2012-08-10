@@ -1,1 +1,11 @@
-=render("slideshows/fields", :form => form, :slideshow => (@page.slideshow || @page.build_slideshow))
+-if @page.view_name == "gallery"
+  -@page.photographers.each do |photographer|
+    %h3.mt-1=photographer
+    %fieldset
+      -photographer.photos.each do |photo|  
+        %label.choice.checkbox{:for => "page_photo_ids_#{photo.id}"}
+          =check_box_tag("page[photo_ids][]", photo.id, @page.photos.include?(photo), :id => "page_photo_ids_#{photo.id}")
+          =image_for(photo,"50x50#")
+          =photo.caption
+-else
+  =render("slideshows/fields", :form => form, :slideshow => (@page.slideshow || @page.build_slideshow))
