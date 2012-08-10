@@ -13,7 +13,10 @@
 .container.user-profile
   .row.mt-2.mb-3
     .span1.mr-1
-      =image_for(user, "60x60#")
+      -if user.image
+        =image_for(user, "60x60#")
+      -else
+        =link_to(image_for(user, "60x60#"), edit_user_path(user, :anchor => "details"), :id => 'user-image', :title => "Set your photo", :class => 'pull-left')
     .span8
       %h2.medium-title=title(user)
       -if user.job_title.present?
