@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
 
   include YmUsers::User
   include User::FacebookAuth
+  include User::TwitterAuth
 
   devise :omniauthable
 
