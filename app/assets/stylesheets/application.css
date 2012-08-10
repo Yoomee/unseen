@@ -1107,12 +1107,6 @@ p.program-subtitle {
   width: 101px;
   text-align:center;
 }
-.add-to-program-active,
-.add-to-program-active:hover{
-  color:#fff;
-  background-color:#211d1d;
-  border-color:#211d1d;
-}
 .add-to-program.loading,
 .favourite-btn.loading {
   height:auto;

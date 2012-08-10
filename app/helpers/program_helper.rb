@@ -11,12 +11,12 @@ module ProgramHelper
       url = remove_event_path(event)
       options[:method] = :delete
       options[:title] = "Remove from my programme"
-      options[:class] += " white-btn add-to-program add-to-program-active"
+      options[:class] += " black-btn add-to-program active"
     elsif current_user
       url = add_event_path(event)
       options[:method] = :post
       options[:title] = "Add to my programme"
-      options[:class] += " white-btn add-to-program"
+      options[:class] += " black-btn add-to-program"
     end
     link_to(url, options) do
       content_tag(:i, "", :class => "icon-heart") + " I'm going"
