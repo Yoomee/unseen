@@ -13,5 +13,5 @@
           -if current_user
             =link_to('My profile', user_path(current_user),:class => 'black-btn')
           -else
-            =link_to('Register', sign_up_path,:class => 'black-btn')
             =link_to('Log in', sign_in_path,:class => 'black-btn')
+            =link_to('Register', sign_up_path,:class => 'black-btn')
