@@ -8,12 +8,18 @@
           =current_tag.to_s.titleize
       .row
         -if view_preference == 'block'
-          =render("pages/block_view", :items => @taggables, :parent_page => nil)
+          =render("pages/block_view", :items => @other_taggables, :parent_page => nil)
+          .row
+            .span12
+              =render("community/people", :people => @user_taggables)
         -else
-          =render("pages/list_view", :items => @taggables, :parent_page => nil)
+          =render("pages/list_view", :items => @other_taggables, :parent_page => nil)
           .span3.offset1
             .row          
               =render("layouts/signup_column")
+          .row
+            .span12
+              =render("community/people", :people => @user_taggables)
       .row
         .span8
           =options_panel do
