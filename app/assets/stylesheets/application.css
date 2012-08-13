@@ -1564,7 +1564,9 @@ ul.tag-list a span.label.selected {
   padding: 4px 35px;
 }
 
-
+.span2.community-person.mb-1.small-left-margin {
+  margin-left: 10px;
+}
 
 /*========== Favourite button ==========*/
 
