@@ -30,7 +30,7 @@ class CommunityController < ApplicationController
   def people
     @tags = Tag.user_tags
     if params[:tag]
-      @people = User.tagged_with(["#{params[:tag]}"])
+      @people = User.tagged_with(["#{params[:tag]}"], :any => true)
     elsif params[:q]
       @query = strip_tags(params[:q]).to_s.strip
       if @query.present?
