@@ -43,7 +43,7 @@ class Event < ActiveRecord::Base
     if dates.size > 1
       date_string = DateTimeSpan.new(date, until_date, "%o %b %Y")
     else
-      date.strftime("%o %b %Y")
+      date_string = date.strftime("%o %b %Y")
     end
     "#{date_string} #{starts_at} - #{ends_at}"
   end
