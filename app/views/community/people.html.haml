@@ -29,4 +29,4 @@
             
       .row.mb-2  
         .span12.center  
-          =link_to "More", community_people_path(:page => @people.next_page), :remote => true, :class => "black-btn", :id => "more-people-btn"
+          =link_to "More", community_people_path(:page => @people.next_page), :remote => true, :class => "black-btn", :id => "more-people-btn" if @people.respond_to?(:next_page)
