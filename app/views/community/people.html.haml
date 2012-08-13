@@ -25,3 +25,8 @@
         .span12
           .row#people
             =render "people"
+            
+            
+      .row.mb-2  
+        .span12.center  
+          =link_to "More", community_people_path(:page => @people.next_page), :remote => true, :class => "black-btn", :id => "more-people-btn"

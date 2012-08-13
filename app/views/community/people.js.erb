@@ -8,8 +8,12 @@ $('#tags').html('<%=escape_javascript(render("community/tags"))%>');
 <%end%>
   $('#people').removeClass('loading');
 <%if params[:page]%>
-  $('#more-people-btn').attr('href','<%=community_people_path(:page => @people.next_page)%>');
-  $('#more-people-btn').fadeIn();
-<%else%>
-  $('#more-people-btn').fadeOut();
+  <%if @people.next_page %>
+    $('#more-people-btn').attr('href','<%=community_people_path(:page => @next_page)%>');
+    $('#more-people-btn').fadeIn();
+  <%else%>
+    $('#more-people-btn').fadeOut();
+    <%end%>
+  <%else%>
+    $('#more-people-btn').fadeOut();
 <%end%>

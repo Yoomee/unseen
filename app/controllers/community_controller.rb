@@ -39,7 +39,15 @@ class CommunityController < ApplicationController
         @people = []
       end
     else
-      @people = User.order(:last_name)
+      page = (params[:page].presence || 1).to_i
+      @next_page = page + 1
+      if page == 1
+        per_page = 100
+      else
+        per_page = 20
+        page += 4
+      end
+      @people = User.order('image_uid IS NULL, created_at DESC').paginate(:per_page => per_page, :page => page)
     end
   end
 
