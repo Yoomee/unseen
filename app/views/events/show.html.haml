@@ -5,17 +5,17 @@
     .span12
       %h2.big-title.event-title.mt-2=@event.title
       .row.mt-1
-        .span6
+        .span5
           .row
             .span1 Date:
-            .span5
+            .span4
               =@event.dates.collect {|date| link_to(date.strftime('%a %o %B'), program_path(:day => date.strftime('%a').downcase, :anchor => 'program'))}.join("<br />").html_safe
           .row
             .span1 Time:
-            .span5=@event.time_string
+            .span4=@event.time_string
           .row
             .span1 Venue:
-            .span5=link_to_self(@event.venue)
+            .span4=link_to_self(@event.venue)
         .span2
           .pull-right
             =add_to_program_link(@event)
