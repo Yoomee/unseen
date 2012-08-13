@@ -84,7 +84,7 @@
           =user.first_name
           hasn't set their location yet
       
-      %p.normal-title.upcase.mt-1 Bio
+      %p.normal-title.upcase.mt-2 Bio
       -if user.bio.blank? && current_user != user
         =user.first_name
         hasn't entered a bio yet
@@ -94,7 +94,7 @@
       -if can?(:edit, user)
         =link_to("Edit your Bio +", edit_user_path(user, :anchor => "details"))
         
-      %p.normal-title.upcase.mt-1 My Interests
+      %p.normal-title.upcase.mt-2 My Interests
       -if user.user_tags.empty?
         =user.first_name
         hasn't entered any interests yet
@@ -105,7 +105,7 @@
               =link_to_tag(tag, :label_options => {:method => :titleize})
       .clearfix
 
-      %p.normal-title.upcase.mt-1 Contact Me
+      %p.normal-title.upcase.mt-2 Contact Me
       -if user.links.empty? && current_user != user
         =user.first_name
         has no contact details yet
