@@ -40,7 +40,7 @@ class PagesController < ApplicationController
     if @page
       if @page.slug == "news"
         children = @page.children.order("created_at DESC")
-        @page_children = params[:category].present? ? children.tagged_with(params[:category]) : children
+        @page_children = params[:category].present? ? children.tagged_with(params[:category]).uniq : children
       elsif @page.slug == "galleries"
         @page_children = @page.children.order("title")
       else
