@@ -11,6 +11,7 @@ Devise.setup do |config|
   else
     # production
     config.omniauth :facebook, "246548905437706", "7e0f964b3561b0abd3be1952f4016bd0", :scope => "email"
+    config.omniauth :twitter, "PuIb3sfga2ctwfjR1O66og", "iw83rCHa5ealIcrJJ7syCZa42Ol47Bvh0CxwVknqIc"
   end
   
 end
