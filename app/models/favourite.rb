@@ -7,6 +7,8 @@ class Favourite < ActiveRecord::Base
   
   scope :photos, where("resource_type = 'Photo' OR resource_type = 'Slide'").includes(:resource)
   scope :not_photos, where("resource_type != 'Photo' AND resource_type != 'Slide'").includes(:resource)
+  
+  has_many :activity_items, :class_name => "YmActivity::ActivityItem", :dependent => :destroy, :as => :resource
 
   def humanized_resource_type
     case resource_type

@@ -13,6 +13,7 @@ class EventsController < ApplicationController
   def remove
     if current_user.events.include?(@event)
       current_user.events.delete(@event)
+      current_user.destroy_activity!(@event)
     end
     render :action => :add_remove
   end
