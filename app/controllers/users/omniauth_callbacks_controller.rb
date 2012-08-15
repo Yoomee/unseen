@@ -23,6 +23,29 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
   end
   
+  def linkedin
+    begin
+      @user = User.find_or_create_by_linkedin_oauth(request.env["omniauth.auth"], current_user)
+    rescue User::LinkedinAuth::ConnectedWithDifferentAccountError => e
+      flash[:error] = "You have already connected with a different LinkedIn account"
+      redirect_to root_path
+    rescue User::LinkedinAuth::AccountAlreadyUsedError => e
+      flash[:error] = "Someone else has already connected with this LinkedIn account"
+      redirect_to root_path
+    else
+      if @user.last_sign_in_at.nil?
+        flash[:notice] = "Successfully connected with your LinkedIn account."
+        sign_in(:user, @user, :event => :authentication)
+        redirect_to welcome_users_path
+      else
+        if @user.just_connected_linkedin?
+          flash[:notice] = "Successfully connected with your LinkedIn account."
+        end
+        sign_in_and_redirect @user, :event => :authentication
+      end
+    end
+  end
+  
   def twitter
     oauth = request.env["omniauth.auth"]
     if @user = current_user

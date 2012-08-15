@@ -14,4 +14,6 @@ Devise.setup do |config|
     config.omniauth :twitter, "PuIb3sfga2ctwfjR1O66og", "iw83rCHa5ealIcrJJ7syCZa42Ol47Bvh0CxwVknqIc"
   end
   
+  config.omniauth :linkedin, "hia8gc8cujoc", "3Z1rbdunvVUKMEKg", :client_options => {:request_token_path => '/uas/oauth/requestToken?scope=r_emailaddress'}, fields: ['id', 'first-name', 'last-name', 'headline', 'industry', 'picture-url', 'public-profile-url', 'email-address']
+  
 end

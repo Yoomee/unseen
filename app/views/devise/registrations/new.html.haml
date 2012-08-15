@@ -10,9 +10,10 @@
         We promise not to post to your account
         %br
         or spam your friends
-    .span2.offset5.center.mt-1.mb-2
+    .span8.offset2.center.mt-1.mb-2
       =link_to("Login with Facebook", user_omniauth_authorize_path(:facebook), :class => "oauth-login-link facebook-login-link")
       =link_to("Login with Twitter", user_omniauth_authorize_path(:twitter), :class => "oauth-login-link twitter-login-link")
+      =link_to("Login with LinkedIn", user_omniauth_authorize_path(:linkedin), :class => "oauth-login-link linkedin-login-link")
     .span12.center
       Or enter your email address manually
       %u=link_to("here", 'javascript:void()', :'data-toggle' => "collapse", :'data-target' => "#hard-way")

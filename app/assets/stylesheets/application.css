@@ -1600,37 +1600,39 @@ a.active .tag-label {
 
 /*========== Login ==========*/
 .oauth-login-link {
+  display:inline-block;
   text-indent: -3000em;
-  float: left;
-  width:160px;
-  height:23px;
   background: url(/assets/oauth_buttons.png) no-repeat;
-  clear:both;
-  margin-bottom:10px;
+  margin: 0px 10px 10px;
 }
 .facebook-login-link {
   background-position-y:0px;
   height: 22px;
+  width: 160px;
 }
 .twitter-login-link {
   background-position-y:-50px;
   height: 24px;
+  width: 151px;
 }
 .linkedin-login-link {
   background-position-y:-100px;
-  height: 24px;
+  height: 23px;
+  width: 134px;
 }
 
 .login-form {
   float: right;
+  padding-top:15px;
 }
 .login-or {
   float: left;
-  margin: 20px 20px 0 0;
+  margin: 35px 20px 0 0;
 }
 .login-auth-links {
   padding-top: 5px;
   float: left;
+  width:220px;
 }
 
 /*========== activity_item-list ==========*/

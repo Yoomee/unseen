@@ -15,6 +15,7 @@ gem 'cocoon'
 gem 'geocoder'
 gem 'datetimespan'
 gem 'omniauth-facebook'
+gem 'omniauth-linkedin'
 gem 'omniauth-twitter'
 
 gem 'ym_core',        "~> 0.1.16"  #, :path => "~/Rails/Gems/ym_core"
