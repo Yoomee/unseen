@@ -275,11 +275,10 @@ GEM
     will_paginate (3.0.3)
     xpath (0.1.4)
       nokogiri (~> 1.3)
-    ym_activity (0.1)
+    ym_activity (0.1.1)
       rails (~> 3.1.0)
-      ym_core (~> 0.1.8)
-      ym_permalinks (~> 0.1)
-      ym_videos (~> 0.1)
+      ym_core
+      ym_users
     ym_cms (0.3.2)
       rack-cache
       rails (~> 3.1.0)
@@ -360,7 +359,7 @@ DEPENDENCIES
   shoulda-matchers
   sqlite3
   uglifier
-  ym_activity (~> 0.1)
+  ym_activity (~> 0.1.1)
   ym_cms (~> 0.3.1)
   ym_core (~> 0.1.16)
   ym_enquiries (= 0.1)

@@ -8,6 +8,8 @@ class Event < ActiveRecord::Base
   has_and_belongs_to_many :photographers, :class_name => "User", :join_table => "events_photographers"
   has_and_belongs_to_many :galleries, :class_name => "Page", :join_table => "events_galleries", :foreign_key => "event_id", :association_foreign_key => "page_id"
   
+  has_many :activity_items, :class_name => "YmActivity::ActivityItem", :dependent => :destroy, :as => :resource
+  
   image_accessor :image
   
   validates :title, :date, :starts_at, :ends_at, :venue, :presence => true
