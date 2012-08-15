@@ -77,6 +77,7 @@ jquery-ui-bootstrap/ui-icons_cd0a0a_256x240.png: jquery-ui-bootstrap/ui-icons_cd
 jquery-ui-bootstrap/ui-icons_f6cf3b_256x240.png: jquery-ui-bootstrap/ui-icons_f6cf3b_256x240-0738d7cca1b5f72bf5664c8b48712a6c.png
 nav_active.png: nav_active-7d7806aa95c9bf6888a6a2076e3476b5.png
 news_image.jpg: news_image-dfdf28946350dee94e69ac41c9684741.jpg
+oauth_buttons.png: oauth_buttons-f827612bc1d1b797964ad6bead9bf1af.png
 photo_bg.jpg: photo_bg-4318f2cc1e42390b523b1c0cdcd3a7ea.jpg
 press_visual_1.jpg: press_visual_1-e288ffb7ca048ed2401c555b4dfb92be.jpg
 press_visual_10.jpg: press_visual_10-e9c9db5365756f39dacfd819d13b7e07.jpg
@@ -136,7 +137,7 @@ redactor_image_upload_error.png: redactor_image_upload_error-e17ee2fe9d32b63c47b
 jquery-ui-1.8.18.min.js: jquery-ui-1.8.18.min-2b1bbfa888b5b286c26fd54ebad400fb.js
 jquery-ui-1.8.18.css: jquery-ui-1.8.18-9f22ac371af0586dbe3dca5abb6e6c4d.css
 application.js: application-36f8626bb3019df54b31f6390f7015ba.js
-application.css: application-8ee88101129cf3be5bbe5639add46a4d.css
+application.css: application-113c6669c37f209181fce4fae8493db3.css
 mobile.js: mobile-1878bde6064ff6724146801917e09ca7.js
 mobile.css: mobile-9b3214fc2e4203c4a80830a8537ebb06.css
 mobile@2x.css: mobile@2x-1c9609bc58b1e77c196de29021583379.css
