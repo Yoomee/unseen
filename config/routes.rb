@@ -35,6 +35,12 @@ Unseen::Application.routes.draw do
   end
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   
+  resources :registrations, :only => [] do
+    collection do
+      post 'twitter', :as => 'twitter'
+    end
+  end
+  
   match "community", :to => "community#index"
   match "community/people", :to => "community#people"
   match "community/activity", :to => "community#activity"

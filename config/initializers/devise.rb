@@ -7,6 +7,7 @@ Devise.setup do |config|
   elsif %x{pwd}.match(/^\/data\/unseen_staging\//).present?
     # staging
     config.omniauth :facebook, "371405329597200", "9615893e5972dcc00a4c086275c439e9", :scope => "email"
+    config.omniauth :twitter, "EaIE2QsfHEnFyBunBTnfGw", "eZQQpnMTEjYEppz0tibl1PHpbMfm1J8rkUGNIjhk"
   else
     # production
     config.omniauth :facebook, "246548905437706", "7e0f964b3561b0abd3be1952f4016bd0", :scope => "email"

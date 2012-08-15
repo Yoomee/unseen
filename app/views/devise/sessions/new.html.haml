@@ -18,5 +18,5 @@
     .span4
       %h3.login-or or
       .login-auth-links
-        =link_to("Login with Facebook", user_omniauth_authorize_path(:facebook), :class => "facebook-login-link")
-        =link_to("Login with Twitter", user_omniauth_authorize_path(:twitter), :class => "twitter-login-link")
+        =link_to("Login with Facebook", user_omniauth_authorize_path(:facebook), :class => "oauth-login-link facebook-login-link")
+        =link_to("Login with Twitter", user_omniauth_authorize_path(:twitter), :class => "oauth-login-link twitter-login-link")
