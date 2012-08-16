@@ -47,6 +47,10 @@ class User < ActiveRecord::Base
   def photographer?
     role_is?(:photographer)
   end
+  
+  def text
+    bio
+  end
 
   private  
   def record_activity  
