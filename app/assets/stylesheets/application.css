@@ -1311,6 +1311,7 @@ p.press_visual_txt {
 .photo-wrapper {
   position: relative;
   float: left;
+  cursor: pointer;
 }
 .slideshow .slide-caption {
 	font-size: 13px;
