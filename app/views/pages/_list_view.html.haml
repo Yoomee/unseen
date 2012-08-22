@@ -10,7 +10,7 @@
         %h3.small-title.list_title=link_to_self(item)
         -if defined?(@page) && @page.slug == "news"
           %p.list_date_and_tag
-            %span=item.created_at.strftime("%e %B %Y")
+            %span=item.publication_date.strftime("%e %B %Y")
             -item.categories.each do |tag|
               -if tag.name == 'fair-festival'
                 =link_to tag.to_tag, :class => "tag" do

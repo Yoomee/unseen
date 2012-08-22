@@ -8,7 +8,7 @@
       .block-text
         %h3.block-title=link_to_self(item)
         %p.list_date_and_tag
-          %span=item.created_at.strftime("%e %B %Y")
+          %span=item.publication_date.strftime("%e %B %Y")
           -if item.respond_to?(:categories)
             -item.categories.each do |tag|
               -if tag.name == 'fair-festival'
