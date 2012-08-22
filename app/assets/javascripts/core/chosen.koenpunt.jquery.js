@@ -233,8 +233,8 @@ Copyright (c) 2011 by Harvest
         case 17:
           break;
         case 40:
-          if(this.create_option_showing)
-            this.search_results.find(".create-option a").click();
+          //if(this.create_option_showing)
+          //  this.search_results.find(".create-option a").click();
           break;
         default:
           return this.results_search();
@@ -907,7 +907,8 @@ Copyright (c) 2011 by Harvest
       var first_active, next_sib;
       if (!this.result_highlight) {
         first_active = this.search_results.find("li.active-result").first();
-        if (first_active) this.result_do_highlight($(first_active));
+        if (first_active)
+          this.result_do_highlight($(first_active));
       } else if (this.results_showing) {
         next_sib = this.result_highlight.nextAll("li.active-result").first();
         if (next_sib) this.result_do_highlight(next_sib);

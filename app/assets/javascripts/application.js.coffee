@@ -44,7 +44,7 @@ $(document).ready ->
   $('#email').focus =>
     $('#email').val('') if $('#email').val() is 'email'
   $("select[multiple='multiple']:not(.no-chosen)").chosen(
-    persistent_create_option: false,
+    persistent_create_option: true,
     create_option_text: "Add",
     create_option: (term) ->
       this.append_option(
