@@ -4,7 +4,7 @@
       %h1.big-title.gallery-title
         %span#page_title
           =raw(@page.title)
--if @page.slideshow
+-if @page.photos
   =render("slideshows/slideshow", :slides => @page.photos)
   
 .container
