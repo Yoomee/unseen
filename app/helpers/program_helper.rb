@@ -17,6 +17,11 @@ module ProgramHelper
       options[:method] = :post
       options[:title] = "Add to my programme"
       options[:class] += " black-btn add-to-program"
+    else
+      url = sign_in_path
+      options[:class] += " black-btn add-to-program"
+      options[:title] = "Log in or register to add to my programme"
+      options[:remote] = false
     end
     link_to(url, options) do
       content_tag(:i, "", :class => "icon-heart") + " I'm going"
