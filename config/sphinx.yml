@@ -1,7 +1,15 @@
 development:
-  html_strip: true
+  html_strip: true  
+  bin_path: /usr/local/bin
+  min_prefix_len: 1  
 test:
   html_strip: true
 production:
-  port: 9313
-  html_strip: true
+  html_strip: true  
+  min_prefix_len: 1
+  port: 9312
+  config_file: /data/unseen/shared/production.sphinx.conf
+  searchd_file_path: /data/unseen/shared/sphinx
+  searchd_log_path: /data/unseen/shared/searchd.log
+  query_log_file: /data/unseen/shared/searchd.query.log
+  pid_file: /data/unseen/shared/searchd.production.pid

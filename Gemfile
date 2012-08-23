@@ -10,6 +10,7 @@ gem "rake", "0.8.7"
 gem 'country-select'
 gem 'formtastic-bootstrap', :git => "git://github.com/cgunther/formtastic-bootstrap.git", :branch => "bootstrap-2"
 gem 'exception_notification'
+gem 'whenever', :require => false
 
 gem 'cocoon'
 gem 'geocoder'
