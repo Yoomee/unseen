@@ -20,4 +20,9 @@ class Photo < ActiveRecord::Base
     false
   end
   
+  def square_image_url_for_api
+    return nil if image.nil?
+    image.thumb("280x280").url
+  end
+  
 end
