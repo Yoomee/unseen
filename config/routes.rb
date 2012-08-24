@@ -56,23 +56,23 @@ Unseen::Application.routes.draw do
   end
   
 
-  namespace :mobile do
-    root :to => "simulator#index"
-    resources :pages,   :only => [:show]
-    resources :photos,  :only => [:show, :index]
-    resources :events,  :only => [:show]
-    match 'programme(/:day)' => 'events#index', :as => 'program'
-    match "/collect", :to => "collect#index"
-    match "/explore", :to => "collect#explore", :as => "explore"
-    match "/fair", :to => "fair#index"
-    match "/me", :to => "me#index"
-    match "/more", :to => "more#index"
-    match "/news", :to => "news#index"
-    devise_scope :user do
-      get "sessions/new", :to => "sessions#new", :as => 'new_session'
-      post "sessions", :to => "sessions#create", :as => 'sessions'
-    end
-  end
+  # namespace :mobile do
+  #   root :to => "simulator#index"
+  #   resources :pages,   :only => [:show]
+  #   resources :photos,  :only => [:show, :index]
+  #   resources :events,  :only => [:show]
+  #   match 'programme(/:day)' => 'events#index', :as => 'program'
+  #   match "/collect", :to => "collect#index"
+  #   match "/explore", :to => "collect#explore", :as => "explore"
+  #   match "/fair", :to => "fair#index"
+  #   match "/me", :to => "me#index"
+  #   match "/more", :to => "more#index"
+  #   match "/news", :to => "news#index"
+  #   devise_scope :user do
+  #     get "sessions/new", :to => "sessions#new", :as => 'new_session'
+  #     post "sessions", :to => "sessions#create", :as => 'sessions'
+  #   end
+  # end
 
   resources :favourites, :only => [:destroy]
   post "favourites" => "favourites#create", :as => "create_favourite"
