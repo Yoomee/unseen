@@ -29,16 +29,16 @@ class Event < ActiveRecord::Base
     [*(date..(until_date || date))]
   end
   
-  def image_url_for_api
-    return nil if image.nil?
-    image.thumb("280x").url
-  end
-
-  def image_height_for_api
-    return nil if image.nil?
-    image.thumb("280x").height
-  end
-   
+  # def image_url_for_api
+  #   return nil if image.nil?
+  #   image.thumb("280x").url
+  # end
+  # 
+  # def image_height_for_api
+  #   return nil if image.nil?
+  #   image.thumb("280x").height
+  # end
+  #  
   def day1
     dates.include?(Date.new(2012,9,19))
   end
