@@ -1571,6 +1571,10 @@ ul.tag-list a span.label.selected {
 .span2.community-person.mb-1.small-left-margin {
   margin-left: 10px;
 }
+#photo-list .span4 {
+  height: 375px;
+  overflow: hidden;
+}
 
 /*========== Favourite button ==========*/
 
