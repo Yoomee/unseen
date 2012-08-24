@@ -15,6 +15,8 @@ class Event < ActiveRecord::Base
   validates :title, :date, :starts_at, :ends_at, :venue, :presence => true
   validate :until_date_is_valid
   
+  before_save :set_api_image_fields
+  
   acts_as_taggable_on :categories, :page_tags
   
   scope :popular, joins(:users).group("events.id").order("COUNT(users.id)")
@@ -88,6 +90,14 @@ class Event < ActiveRecord::Base
     if date.present? && until_date.present? && until_date <= date
       errors.add(:until_date, "must be after the date above")
     end
+  end
+  
+  def set_api_image_fields
+    if !image.nil?
+      image_for_api = image.thumb("280x")
+      self.image_url_for_api = image_for_api.url
+      self.image_height_for_api = image_for_api.height
+    end  
   end
   
 end
