@@ -15,11 +15,13 @@
             -if slide.is_a?(Slide)
               %h3.slide-title.medium-title
                 =slide.title
+            -elsif controller_name == "pages"
+              %h3.slide-title.medium-title
+                =link_to_self(slide.photographer) if slide.photographer
             -if slide.has_video?
               %iframe{:width => 520, :height => 320, :src => slide.video_embed_url, :frameborder => 0, :allowfullscreen => true}
             -else
               .photo-wrapper
-                =link_to_self slide.photographer
                 =image_for(slide, "x450")
               .slide-caption=slide.caption
             =favourite_link(slide)
