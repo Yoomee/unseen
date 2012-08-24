@@ -27,6 +27,39 @@ class Event < ActiveRecord::Base
     [*(date..(until_date || date))]
   end
   
+  def api_image_url
+    return nil if image.nil?
+    image.thumb("280x").url
+  end
+  
+  def api_image_height
+    return nil if image.nil?
+    image.thumb("280x").height
+  end
+   
+  def day1
+    dates.include?(Date.new(2012,9,19))
+  end
+  def day2
+    dates.include?(Date.new(2012,9,20))
+  end
+  def day3
+    dates.include?(Date.new(2012,9,21))
+  end
+  def day4
+    dates.include?(Date.new(2012,9,22))
+  end
+  def day5
+    dates.include?(Date.new(2012,9,23))
+  end
+  def full_date_string
+    date
+  end
+  def venue_name
+    venue.to_s
+  end
+  
+  
   def starts_at
     read_attribute(:starts_at).try(:strftime,'%H:%M')
   end

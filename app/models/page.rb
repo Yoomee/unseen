@@ -37,6 +37,15 @@ class Page < ActiveRecord::Base
     [gallery_address, gallery_phone, gallery_email, gallery_website].any?(&:present?)
   end
   
+  def contact_details
+    parts = []
+    parts << gallery_address + "\n" unless gallery_address.blank?
+    parts << "t:#{gallery_phone}" unless gallery_phone.blank?
+    parts << "e:#{gallery_email}" unless gallery_email.blank?
+    parts << "w:#{gallery_website}" unless gallery_website.blank?
+    parts.join('\n')
+  end
+  
   private
   def delete_slideshow_if_no_slides
     slideshow.mark_for_destruction if slideshow && slideshow.slides.size.zero?
