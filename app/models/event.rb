@@ -27,12 +27,12 @@ class Event < ActiveRecord::Base
     [*(date..(until_date || date))]
   end
   
-  def api_image_url
+  def image_url_for_api
     return nil if image.nil?
     image.thumb("280x").url
   end
-  
-  def api_image_height
+
+  def image_height_for_api
     return nil if image.nil?
     image.thumb("280x").height
   end
