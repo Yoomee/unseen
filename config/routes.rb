@@ -48,6 +48,12 @@ Unseen::Application.routes.draw do
 
   match "pages/view/list" => "pages#set_view", :view => 'list', :as => 'set_list_view'
   match "pages/view/block" => "pages#set_view", :view => 'block', :as => 'set_block_view'
+  
+  namespace :api do
+    resources :events,  :only => [:index]
+    resources :galleries,  :only => [:index]
+  end
+  
 
   namespace :mobile do
     root :to => "simulator#index"
