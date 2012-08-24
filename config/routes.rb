@@ -52,6 +52,7 @@ Unseen::Application.routes.draw do
   namespace :api do
     resources :events,  :only => [:index]
     resources :galleries,  :only => [:index]
+    resources :photographers,  :only => [:index]
   end
   
 
