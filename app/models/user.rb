@@ -40,6 +40,11 @@ class User < ActiveRecord::Base
     lat.present? && lng.present?
   end
   
+  def image_url_for_api
+    return nil if image.nil?
+    image.thumb("55x55#").url
+  end
+  
   def lat_lng_or_default
     has_lat_lng? ? [lat,lng] : User::DEFAULT_LOCATION
   end
