@@ -50,9 +50,12 @@ Unseen::Application.routes.draw do
   match "pages/view/block" => "pages#set_view", :view => 'block', :as => 'set_block_view'
   
   namespace :api do
-    resources :events,  :only => [:index]
-    resources :galleries,  :only => [:index]
-    resources :photographers,  :only => [:index]
+    match 'events' => 'events#index'
+    match ':version/events' => 'events#index'
+    match 'galleries' => 'galleries#index'
+    match ':version/galleries' => 'galleries#index'
+    match 'photographers' => 'photographers#index'
+    match ':version/photographers' => 'photographers#index'
   end
   
 
