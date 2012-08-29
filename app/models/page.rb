@@ -48,6 +48,11 @@ class Page < ActiveRecord::Base
   end
   
   
+  def thumbnail_image_url_for_api
+    return nil if image.nil?
+    image.thumb("55x55#").url
+  end
+  
   private
   def delete_slideshow_if_no_slides
     slideshow.mark_for_destruction if slideshow && slideshow.slides.size.zero?
