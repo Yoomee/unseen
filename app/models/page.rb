@@ -12,6 +12,7 @@ class Page < ActiveRecord::Base
   accepts_nested_attributes_for :slideshow, :reject_if => :all_blank
   
   before_save :delete_slideshow_if_no_slides
+  before_save :set_api_image_fields
   
   has_snippets :gallery_address, :gallery_phone, :gallery_fax, :gallery_email, :gallery_website, :gallery_facebook, :gallery_hours, :text_second, :news_category, :fair_title_1, :fair_title_2, :fair_title_3, :fair_title_4, :fair_1, :fair_2, :fair_3, :fair_4, :fair_5, :fair_6, :navigation_title, :image_caption
   
@@ -46,10 +47,20 @@ class Page < ActiveRecord::Base
     parts.join('\n')
   end
   
+  
   private
   def delete_slideshow_if_no_slides
     slideshow.mark_for_destruction if slideshow && slideshow.slides.size.zero?
   end
+  
+  def set_api_image_fields
+    if !image.nil? && (image_url_for_api.blank? || image_uid_changed?)
+      image_for_api = image.thumb("280x")
+      self.image_url_for_api = image_for_api.url
+      self.image_height_for_api = image_for_api.height
+    end  
+  end
+  
   
 end
 Page::NEWS_CATEGORIES = %w{collecting photographers galleries announcements fair-festival}

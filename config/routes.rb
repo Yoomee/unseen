@@ -56,6 +56,7 @@ Unseen::Application.routes.draw do
     match ':version/galleries' => 'galleries#index'
     match 'photographers' => 'photographers#index'
     match ':version/photographers' => 'photographers#index'
+    match ':version/pages' => 'pages#index'
   end
   
 
