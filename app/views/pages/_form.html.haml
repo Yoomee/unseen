@@ -5,7 +5,7 @@
     });
     
 =semantic_form_for(@page, :multipart => true) do |form|
-  =tabs('details', ['gallery', 'Gallery details'], 'slideshow', :form => form)
+  =tabs('details', ['gallery', 'Gallery details'], 'slideshow', 'calls_to_action', :form => form)
 
   =form.buttons do
     =form.commit_button "Save"

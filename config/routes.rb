@@ -40,6 +40,8 @@ Unseen::Application.routes.draw do
       post 'twitter', :as => 'twitter'
     end
   end
+
+  resources :call_to_actions
   
   match "community", :to => "community#index"
   match "community/people", :to => "community#people"

@@ -1,0 +1,12 @@
+%h1 Call to action
+%p=image_for(@call_to_action, "300x")
+%p="URL - #{@call_to_action.url}"
+
+.row
+  .span8
+    =options_panel do
+      =back_link
+      =link_if_can("Edit call to action", [:edit, @call_to_action])
+      =link_if_can("Delete call to action", [:destroy, @call_to_action], :confirm => "Are you sure?")
+      -if can?(:new, CallToAction)
+        =link_if_can("New call to action", new_call_to_action_path)
