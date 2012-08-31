@@ -1,8 +1,8 @@
 .span2.photo.mb-1
-  =link_to image_for(photo, "140x140"), photo, :class => "photo-image-link"
+  =photo.photographer ? (link_to image_for(photo, "140x140"), photo) : image_for(photo, "140x140", :class => "photo-image-link")
   -if photo.is_a?(Slide)
     %p.gallery=photo.caption
-  -else
+  -elsif photo.photographer
     %p.photographer=link_to_self(photo.photographer)
     -if photo.photographer.galleries.first
       %p.gallery=link_to_self(photo.photographer.galleries.first)
