@@ -1,4 +1,4 @@
-.container
+.container.header-container
   #header.row
     .span3
       %h1#site_logo
@@ -35,11 +35,14 @@
                 =link_to(pages_path) do
                   %icon.icon-sitemap
                   Sitemap
-              %li.divider   
               %li
                 =link_to(photographers_path) do
-                  %icon.icon-camera
+                  %icon.icon-group
                   Edit Photographers
+              %li
+                =link_to(unseen_collection_path) do
+                  %icon.icon-camera
+                  Unseen Collection
               %li.divider
               %li
                 =link_to(call_to_actions_path) do

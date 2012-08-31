@@ -12,6 +12,7 @@ class Ability
     can :read, Photo
     can :read, Event
     can :show, User
+    can :index, CollectionPhoto
     
     if user.try(:admin?)
       can :manage, :all

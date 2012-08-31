@@ -1,0 +1,23 @@
+.container
+  .row
+    .span12.center
+      %h1.big-title#collection-title Unseen Collection
+    .span10.offset1.center
+      %h2.mb-15
+        The Unseen Collection is a unique collection of works
+        %br
+        for under 1,000 euro, contributed by galleries
+        %br
+        participating at the Unseen Photo Fair
+  .row.mt-2
+    .span12
+      .row
+        .span12
+          -@collection_photos.each_slice(3) do |photos|
+            .row.mb-2
+              =render "photos", :photos => photos
+  -if can?(:new, CollectionPhoto)
+    .row
+      .span12
+        =options_panel do
+          =link_to("+ Add a photo", new_collection_photo_path, :class => "btn")

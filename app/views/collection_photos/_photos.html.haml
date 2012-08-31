@@ -1,0 +1,23 @@
+-photos.each do |photo|
+  .span4.mb-1
+    .collection-photo
+      =image_for(photo, "300x300")
+    -if photo.line1.present?
+      %strong=photo.line1
+      %br
+    -if photo.line2.present?
+      %strong=photo.line2
+      %br
+    -if photo.text1.present?
+      .mb-1
+        =simple_format(photo.text1)
+    -if photo.text2.present?
+      =simple_format(photo.text2)
+    -if photo.email.present?
+      .mt-1
+        =mail_to(photo.email, "CONTACT GALLERY", :class => "black-btn")
+    -if can?(:edit, photo)
+      .mt-1
+        =link_to("Edit photo", edit_collection_photo_path(photo), :class => "mr-1")
+        =link_to("Delete photo", photo, :method => :delete, :confirm => "Are you sure?")
+    .clearfix

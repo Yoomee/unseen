@@ -7,7 +7,7 @@ test:
 production:
   html_strip: true  
   min_prefix_len: 1
-  port: 9312
+  port: 9313
   config_file: /data/unseen/shared/production.sphinx.conf
   searchd_file_path: /data/unseen/shared/sphinx
   searchd_log_path: /data/unseen/shared/searchd.log
