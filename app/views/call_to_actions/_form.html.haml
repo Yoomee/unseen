@@ -1,4 +1,4 @@
-=semantic_form_for @call_to_action do |form|
+=semantic_form_for (@call_to_action, :multipart => true) do |form|
   =form.input :retained_image, :as => :hidden
   =form.input :image, :as => :file
   =form.input :url
