@@ -7,6 +7,7 @@ class Photo < ActiveRecord::Base
   
   has_many :favourites, :as => :resource
   has_many :collected_by_users, :source => :user, :through => :favourites
+  has_and_belongs_to_many :galleries, :class_name => "Page", :join_table => "galleries_photos", :association_foreign_key => "gallery_id"
   
   image_accessor :image
   
