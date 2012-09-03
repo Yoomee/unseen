@@ -18,6 +18,7 @@ gem 'datetimespan'
 gem 'omniauth-facebook'
 gem 'omniauth-linkedin'
 gem 'omniauth-twitter'
+gem 'encryptor'
 
 gem 'ym_core',        "~> 0.1.16"  #, :path => "~/Rails/Gems/ym_core"
 gem 'ym_cms',         "~> 0.3.1"   #, :path => "~/Rails/Gems/ym_cms"

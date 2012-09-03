@@ -9,7 +9,9 @@ class ApplicationController < ActionController::Base
   helper_method :view_preference
   
   def after_sign_in_path_for(resource)
-    if resource.created_at > 5.minutes.ago
+    if session.delete(:api_auth)
+      api_redirect_path
+    elsif resource.created_at > 5.minutes.ago
       welcome_users_path
     else
       community_path

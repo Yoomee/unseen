@@ -57,6 +57,10 @@ Unseen::Application.routes.draw do
     match 'photographers' => 'photographers#index'
     match ':version/photographers' => 'photographers#index'
     match ':version/pages' => 'pages#index'
+    match 'authenticate' => 'sessions#api_authenticate', :as => 'authenticate'
+    match 'api_redirect' => 'sessions#api_redirect', :as => 'redirect'
+    
+    resources :favourites, :only => [:create,:destroy]
   end
   
 

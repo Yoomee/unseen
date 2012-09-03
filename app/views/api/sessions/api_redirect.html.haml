@@ -1,0 +1,7 @@
+-content_for(:head) do
+  :javascript
+    $(document).ready(function() {
+      window.location.href = "unseen://api/#{current_user.api_key}";
+    });
+
+%h4 Opening the Unseen app...
