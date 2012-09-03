@@ -1,0 +1,10 @@
+%h1 Calls to action
+%ul
+  -@call_to_actions.each do |call_to_action|
+    %li=link_to_self(call_to_action)
+.row
+  .span8
+    =options_panel do
+      =back_link
+      -if can?(:new, CallToAction)
+        =link_if_can("New call to action", new_call_to_action_path)

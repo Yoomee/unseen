@@ -1,0 +1,13 @@
+=semantic_form_for(@collection_photo) do |form|
+  =form.inputs do
+    =form.input :retained_image, :as => :hidden
+    -if @collection_photo.image && @collection_photo.errors[:image].blank?
+      =image_for(@collection_photo, "220x")
+    =form.input :image, :as => :file
+    =form.input :line1
+    =form.input :line2
+    =form.input :text1, :input_html => {:rows => 5}
+    =form.input :text2, :input_html => {:rows => 5}
+    =form.input :email
+  =form.buttons do
+    =form.commit_button "Save"

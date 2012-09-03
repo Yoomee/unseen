@@ -40,6 +40,8 @@ Unseen::Application.routes.draw do
       post 'twitter', :as => 'twitter'
     end
   end
+
+  resources :call_to_actions
   
   match "community", :to => "community#index"
   match "community/people", :to => "community#people"
@@ -48,6 +50,9 @@ Unseen::Application.routes.draw do
 
   match "pages/view/list" => "pages#set_view", :view => 'list', :as => 'set_list_view'
   match "pages/view/block" => "pages#set_view", :view => 'block', :as => 'set_block_view'
+  
+  resources :collection_photos
+  match "unseen-collection" => "collection_photos#index", :as => "unseen_collection"
   
   namespace :api do
     match 'events' => 'events#index'
@@ -62,7 +67,6 @@ Unseen::Application.routes.draw do
     
     resources :favourites, :only => [:create,:destroy]
   end
-  
 
   # namespace :mobile do
   #   root :to => "simulator#index"

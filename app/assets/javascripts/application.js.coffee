@@ -21,6 +21,10 @@ window.YmCms.Page.Form.showSlideshowTab = () ->
     $('.tabbable .nav li').has("a[href='#slideshow']").show()
   else
     $('.tabbable .nav li').has("a[href='#slideshow']").hide()
+  if ($.inArray($('#page_view_name').val(), ["news"]) > -1 || $('form.event').length)
+    $('.tabbable .nav li').has("a[href='#calls_to_action']").show()
+  else
+    $('.tabbable .nav li').has("a[href='#calls_to_action']").hide()
 
 FairPage =
   init: () ->
