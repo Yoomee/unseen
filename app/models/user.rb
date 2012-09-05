@@ -9,7 +9,8 @@ class User < ActiveRecord::Base
 
   has_many :photos, :foreign_key => "photographer_id", :dependent => :destroy
   has_many :links, :as => :attachable, :class_name => "YmLinks::Link", :dependent => :destroy
-  has_many :favourites, :dependent => :destroy  
+  has_many :favourites, :dependent => :destroy
+  has_many :favourites_as_photographer, :as => :resource, :class_name => "Favourite", :dependent => :destroy
   has_and_belongs_to_many :galleries, :class_name => "Page", :join_table => "galleries_photographers"
   has_and_belongs_to_many :events, :order => "starts_at DESC, date"
   

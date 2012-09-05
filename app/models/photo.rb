@@ -5,7 +5,7 @@ class Photo < ActiveRecord::Base
   belongs_to :photographer, :class_name => "User"
 #  has_and_belongs_to_many :collected_by_users, :class_name => "User", :join_table => "photos_users"
   
-  has_many :favourites, :as => :resource
+  has_many :favourites, :as => :resource, :dependent => :destroy
   has_many :collected_by_users, :source => :user, :through => :favourites
   has_and_belongs_to_many :galleries, :class_name => "Page", :join_table => "galleries_photos", :association_foreign_key => "gallery_id"
   
