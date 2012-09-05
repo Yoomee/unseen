@@ -65,7 +65,8 @@ Unseen::Application.routes.draw do
     match 'authenticate' => 'sessions#api_authenticate', :as => 'authenticate'
     match 'api_redirect' => 'sessions#api_redirect', :as => 'redirect'
     
-    resources :favourites, :only => [:create,:destroy]
+    resources :favourites, :only => [:index, :create,:destroy], :path => ':version/favourites'
+    match ':version/favourites_sync' => 'favourites#sync'
   end
 
   # namespace :mobile do
