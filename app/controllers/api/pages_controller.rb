@@ -6,6 +6,7 @@ class Api::PagesController < ApplicationController
       pages = Page.find_by_slug(:news).children
       pages += Page.find_by_slug(:app_more).children
       pages_json = pages.as_json(:only => [:id, :title, :text, :created_at, :publication_date, :parent_id], :methods => [:image_url_for_api,:image_height_for_api, :thumbnail_image_url_for_api])
+      pages_json.each{|p| p["title"] = @template.strip_tags(p["title"]).gsub('&nbsp;', ' ')}
       pages_json.each{|p| p["text"] = @template.strip_tags(p["text"]).gsub('&nbsp;', ' ')}
       render :json => pages_json
     else
