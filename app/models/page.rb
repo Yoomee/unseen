@@ -36,6 +36,17 @@ class Page < ActiveRecord::Base
     end
   end
   
+  def as_json(options ={})
+    serializable_hash(options).tap do |hash|
+      hash["title"] = @template.strip_tags(hash["title"].to_s).gsub('&nbsp;', ' ')
+      hash["text"] = @template.strip_tags(hash["text"].to_s).gsub('&nbsp;', ' ')
+      if parent.try(:slug) == "mobile_explore"
+        video_url = text.scan(/((https?:\/\/)?(www.)?youtube.com\/watch[^\s<]*v=[\w|-]+)/).first.try(:first)
+        hash["video_url"] = video_url if video_url
+      end
+    end
+  end
+  
   def has_gallery_contact_details?
     [gallery_address, gallery_phone, gallery_email, gallery_website].any?(&:present?)
   end

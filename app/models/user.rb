@@ -58,6 +58,12 @@ class User < ActiveRecord::Base
     ).strip.tr("+/","-_")
   end
   
+  def as_json(options ={})
+    serializable_hash(options).tap do |hash|
+      hash["bio"] = @template.strip_tags(hash["bio"].to_s).gsub('&nbsp;', ' ')
+    end
+  end
+  
   def has_lat_lng?
     lat.present? && lng.present?
   end

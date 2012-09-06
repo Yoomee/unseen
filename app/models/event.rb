@@ -27,20 +27,18 @@ class Event < ActiveRecord::Base
   #validates :image, :presence => true
   #validates_property :format, :of => :image, :in => [:jpeg, :jpg, :png, :gif], :message => "must be an image"
   
+  
+  def as_json(options ={})
+    serializable_hash(options).tap do |hash|
+      hash["title"] = @template.strip_tags(hash["title"].to_s).gsub('&nbsp;', ' ')
+      hash["description"] = @template.strip_tags(hash["description"].to_s).gsub('&nbsp;', ' ')
+    end
+  end
+  
   def dates
     [*(date..(until_date || date))]
   end
   
-  # def image_url_for_api
-  #   return nil if image.nil?
-  #   image.thumb("280x").url
-  # end
-  # 
-  # def image_height_for_api
-  #   return nil if image.nil?
-  #   image.thumb("280x").height
-  # end
-  #  
   def day1
     dates.include?(Date.new(2012,9,19))
   end
