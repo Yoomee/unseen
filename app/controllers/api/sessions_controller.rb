@@ -18,9 +18,9 @@ class Api::SessionsController < ApplicationController
         "UserID" => current_user.id,
         "UserApiKey" => current_user.api_key,
         "UserFirstName" => current_user.first_name,
-        "UserLastName" => current_user.last_name,
-        "UserImageURL" => current_user.image.thumb("55x55#").url
+        "UserLastName" => current_user.last_name
       }
+      user_params["UserImageURL"] = current_user.image.thumb("55x55#").url if current_user.image
       redirect_to "unseen://api?#{user_params.to_query}"
     end
   end
