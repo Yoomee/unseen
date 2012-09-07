@@ -60,7 +60,7 @@ class User < ActiveRecord::Base
   
   def as_json(options ={})
     serializable_hash(options).tap do |hash|
-      hash["bio"] = @template.strip_tags(hash["bio"].to_s).gsub('&nbsp;', ' ')
+      hash["bio"] = @template.strip_tags(hash["bio"].to_s).gsub('&nbsp;', ' ') if hash["bio"]
     end
   end
   

@@ -38,8 +38,8 @@ class Page < ActiveRecord::Base
   
   def as_json(options ={})
     serializable_hash(options).tap do |hash|
-      hash["title"] = @template.strip_tags(hash["title"].to_s).gsub('&nbsp;', ' ')
-      hash["text"] = @template.strip_tags(hash["text"].to_s).gsub('&nbsp;', ' ')
+      hash["title"] = @template.strip_tags(hash["title"].to_s).gsub('&nbsp;', ' ') if hash["title"]
+      hash["text"] = @template.strip_tags(hash["text"].to_s).gsub('&nbsp;', ' ')  if hash["text"]
       if parent.try(:slug) == "mobile_explore"
         video_url = text.scan(/((https?:\/\/)?(www.)?youtube.com\/watch[^\s<]*v=[\w|-]+)/).first.try(:first)
         hash["video_url"] = video_url if video_url

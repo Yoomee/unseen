@@ -30,8 +30,8 @@ class Event < ActiveRecord::Base
   
   def as_json(options ={})
     serializable_hash(options).tap do |hash|
-      hash["title"] = @template.strip_tags(hash["title"].to_s).gsub('&nbsp;', ' ')
-      hash["description"] = @template.strip_tags(hash["description"].to_s).gsub('&nbsp;', ' ')
+      hash["title"] = @template.strip_tags(hash["title"].to_s).gsub('&nbsp;', ' ') if hash["title"].present?
+      hash["description"] = @template.strip_tags(hash["description"].to_s).gsub('&nbsp;', ' ') if hash["description"].present?
     end
   end
   
