@@ -6,7 +6,7 @@
     -if program_slideshow = Slideshow.find_by_slug('program')
       =render("slideshows/tabbed_slideshow", :slideshow => program_slideshow)
       =link_if_can("Edit slideshow", [:edit, program_slideshow], :class => "pull-right mt-2 mr-2")
-      .span3.offset5=link_to("Full programme", "#program", :class => "black-btn more-middle")
+      .span3.offset5=link_to("Full programme", "#program", :class => "black-btn more-middle scroll-to-program")
 #program
 =render('events/nav')
 .program-list.strip
