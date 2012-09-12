@@ -58,7 +58,7 @@ GEM
     archive-tar-minitar (0.5.2)
     arel (2.2.3)
     bcrypt-ruby (3.0.1)
-    bootstrap-will_paginate (0.0.7)
+    bootstrap-will_paginate (0.0.8)
       will_paginate
     builder (3.0.0)
     cancan (1.6.8)
@@ -127,11 +127,13 @@ GEM
       thor (~> 0.14.6)
     guard-rspec (0.6.0)
       guard (>= 0.10.0)
-    haml (3.1.6)
+    haml (3.1.7)
     hashie (1.2.0)
     highline (1.6.13)
     hike (1.2.1)
     hpricot (0.8.6)
+    html_truncator (0.3.0)
+      nokogiri (~> 1.4)
     httpauth (0.1)
     i18n (0.6.0)
     jquery-rails (1.0.19)
@@ -267,7 +269,6 @@ GEM
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
-    truncate_html (0.5.5)
     tzinfo (0.3.33)
     uglifier (1.2.3)
       execjs (>= 0.3.0)
@@ -292,16 +293,16 @@ GEM
       ym_core (~> 0.1.8)
       ym_permalinks (~> 0.1)
       ym_videos (~> 0.1)
-    ym_core (0.1.18)
+    ym_core (0.1.21)
       bootstrap-will_paginate (~> 0.0.6)
       dragonfly (~> 0.9.10)
       formtastic (~> 2.0.2)
       haml
+      html_truncator (~> 0.2)
       jquery-rails
       rails (~> 3.1.0)
       rails_config (~> 0.2.6)
       rinku
-      truncate_html
       will_paginate (~> 3.0.3)
       yoomee-decent_exposure
     ym_enquiries (0.1)
@@ -371,7 +372,7 @@ DEPENDENCIES
   whenever
   ym_activity (~> 0.1.1)
   ym_cms (~> 0.3.1)
-  ym_core (~> 0.1.16)
+  ym_core (~> 0.1.21)
   ym_enquiries (= 0.1)
   ym_links (= 0.1)
   ym_permalinks (= 0.1.2)

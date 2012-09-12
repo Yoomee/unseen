@@ -20,7 +20,7 @@ gem 'omniauth-linkedin'
 gem 'omniauth-twitter'
 gem 'encryptor'
 
-gem 'ym_core',        "~> 0.1.16"  #, :path => "~/Rails/Gems/ym_core"
+gem 'ym_core',        "~> 0.1.21"  # , :path => "~/Rails/Gems/ym_core"
 gem 'ym_cms',         "~> 0.3.1"   #, :path => "~/Rails/Gems/ym_cms"
 gem 'ym_permalinks',  "0.1.2"
 gem 'ym_posts',       "0.1"
