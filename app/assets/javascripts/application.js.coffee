@@ -31,7 +31,7 @@ FairPage =
     $('.scroll_to_fair_box').click (event) ->
       event.preventDefault()
       fairBoxId = `$(this).data('fair-box-id')`
-      $.scrollTo($("#fair_box_#{fairBoxId}"), 500)
+      $.scrollTo($("#fair_box_#{fairBoxId}"), 750)
 
 ToggleViewLinks = 
   init: () ->
@@ -68,4 +68,7 @@ $(document).ready ->
   $('.tooltip-bottom').tooltip({placement:'bottom'})
   $('.tooltip-bottom-white').tooltip({placement:'bottom'}).live 'mouseenter', (event) =>
     $('.tooltip').addClass('tooltip-white')
+  $('.scroll-to-program').click (event) ->
+      event.preventDefault()
+      $.scrollTo($("#program"), 750)
   # ToggleViewLinks.init()

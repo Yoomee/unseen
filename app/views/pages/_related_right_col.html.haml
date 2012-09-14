@@ -1,4 +1,9 @@
 .news_page_signup.span4
+  -if page_event.try(:call_to_actions).present?
+    .row
+      .span4.call-to-actions.mb-15
+        -page_event.call_to_actions.each do |cta|
+          =link_to(image_for(cta), externalize_url(cta.url))
   -if !(profiles = page_event.photographers + page_event.galleries).empty?
     .row
       .span4
@@ -12,12 +17,6 @@
                 =link_to_self(profile)
                 %br
                 =profile.is_a?(User) ? 'Photographer' : 'Gallery'
-  -if page_event.try(:call_to_actions).present?
-    .row
-      .span4
-        -page_event.call_to_actions.each do |cta|
-          .mb-15
-            =link_to image_for(cta, "300x"), externalize_url(cta.url)
 
   -if !(other_stories = news_page.children.without(page_event.is_a?(Page) ? page_event : nil).tagged_with([page_event.page_tag_list, page_event.category_list].flatten, :any => true).limit(3)).empty?
     .row
