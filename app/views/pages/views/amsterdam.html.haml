@@ -1,9 +1,8 @@
--unless @page == amsterdam_page
-  -content_for(:head) do
-    :javascript
-      $(document).ready(function() {
-        $.scrollTo('#parallax_1');
-      });
+-content_for(:head) do
+  :javascript
+    $(document).ready(function() {
+      $.scrollTo($('#intro'),750);
+    });
 .container
   .row
     .span12.highlight-intro
