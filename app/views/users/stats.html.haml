@@ -35,14 +35,14 @@
       %td.span6 Photo favouritings
       %td=Favourite.where(:deleted => false, :resource_type => "Photo").count
     %tr
-      %td.span6 Gallery favouritings
-      %td=Favourite.where(:deleted => false, :resource_type => "Page").count
+      %td.span6 Event favouritings
+      %td=Favourite.where(:deleted => false, :resource_type => "Event").count
     %tr
       %td.span6 Photographer favouritings
       %td=Favourite.where(:deleted => false, :resource_type => "User").count
     %tr
-      %td.span6 Event favouritings
-      %td=Favourite.where(:deleted => false, :resource_type => "Event").count
+      %td.span6 Gallery favouritings
+      %td=Favourite.where(:deleted => false, :resource_type => "Page").count
 
   %h2.mb-1 User locations
   %h3 Country
@@ -55,7 +55,7 @@
   %table.table.table-striped
     -User.where("country != '' AND country IS NOT NULL").group("country, city").select("*,COUNT(id) as user_count").order("user_count DESC").each do |user|
       %tr
-        %td.span6=[user.city, user.country].compact.join(', ')
+        %td.span6=[user.city, user.country].compact.join(', ').sub(/^,/,'- ,')
         %td=user.user_count
   
     
