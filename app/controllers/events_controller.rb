@@ -3,18 +3,15 @@ class EventsController < ApplicationController
   load_and_authorize_resource
 
   def add
-    unless current_user.events.include?(@event)
-      current_user.events << @event
-      current_user.record_activity!(@event)
-    end
+    @favourite = current_user.favourites.find_or_create_by_resource_type_and_resource_id("Event",@event.id)
+    current_user.record_activity!(@favourite)
     render :action => :add_remove
   end
 
   def remove
-    if current_user.events.include?(@event)
-      current_user.events.delete(@event)
-      current_user.destroy_activity!(@event)
-    end
+    @favourite = Favourite.where(:user_id => current_user, :resource_type => "Event", :resource_id => @event.id).first
+    @favourite.activity_items.destroy_all
+    @favourite.update_attribute(:deleted, true)
     render :action => :add_remove
   end
 

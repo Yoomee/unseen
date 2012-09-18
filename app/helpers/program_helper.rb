@@ -7,7 +7,7 @@ module ProgramHelper
     )
     options[:class] ||= ""
     options[:class] += " pull-left" unless options[:class] =~ /pull-right/
-    if current_user && current_user.events.include?(event)
+    if current_user && event.favourited_by_users.include?(current_user)
       url = remove_event_path(event)
       options[:method] = :delete
       options[:title] = "Remove from my programme"

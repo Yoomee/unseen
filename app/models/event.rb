@@ -8,6 +8,9 @@ class Event < ActiveRecord::Base
   has_and_belongs_to_many :photographers, :class_name => "User", :join_table => "events_photographers"
   has_and_belongs_to_many :galleries, :class_name => "Page", :join_table => "events_galleries", :foreign_key => "event_id", :association_foreign_key => "page_id"
   
+  has_many :favourites, :as => :resource, :dependent => :destroy, :conditions => {:deleted => false}
+  has_many :favourited_by_users, :source => :user, :through => :favourites, :uniq => true
+  
   has_and_belongs_to_many :call_to_actions
   
   has_many :activity_items, :class_name => "YmActivity::ActivityItem", :dependent => :destroy, :as => :resource
@@ -21,7 +24,9 @@ class Event < ActiveRecord::Base
   
   acts_as_taggable_on :categories, :page_tags
   
-  scope :popular, joins(:users).group("events.id").order("COUNT(users.id)")
+  #scope :popular, joins(:users).group("events.id").order("COUNT(users.id)")
+  scope :popular, joins(:favourites).where("favourites.deleted = 0").group("events.id").order("COUNT(favourites.id) DESC")
+  
   scope :on_date, lambda {|date| where(["events.date <= :date AND IFNULL(events.until_date, events.date) >= :date", {:date => date}]) }
   
   #validates :image, :presence => true

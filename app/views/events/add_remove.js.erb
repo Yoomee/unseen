@@ -1,6 +1,6 @@
 $('.add-to-program[data-event-id="<%=@event.id%>"]').replaceWith('<%=escape_javascript(add_to_program_link(@event))%>');
 $('.add-to-program[data-event-id="<%=@event.id%>"]').tooltip({placement:'bottom'});
-<%if @event.users.include?(current_user)%>
+<%if @event.favourited_by_users.include?(current_user)%>
   var userLink = $('<%=escape_javascript(link_to(image_for(current_user, '60x60#'), current_user, :'data-user-id' => current_user.id, :title => current_user.to_s))%>');
   userLink.tooltip({placement:'bottom'});
   userLink.hide();
@@ -8,7 +8,7 @@ $('.add-to-program[data-event-id="<%=@event.id%>"]').tooltip({placement:'bottom'
   $('#no-one-going').hide('fade', 'slow', function(){userLink.fadeIn('slow');});
 <%else%>
   $('a[data-user-id="<%=current_user.id%>"]').hide('fade','slow',function(){
-    <%if @event.users.count.zero?%>$('#no-one-going:hidden').fadeIn('slow');<%end%>
+    <%if @event.favourited_by_users.count.zero?%>$('#no-one-going:hidden').fadeIn('slow');<%end%>
     $('a[data-user-id="<%=current_user.id%>"]').remove();
   })
 <%end%>
