@@ -63,13 +63,16 @@
   .row.mt-2
     .span12
       .row#tweets
-        -@tweets.each do |tweet|
-          .span6.mb-2
+        -@tweets.each_slice(2) do |tweets|
+          .span12
             .row
-              .span1
-                =image_tag(tweet.image_url)
-              .span5
-                =auto_link(auto_link_twitter(tweet.text))
+              -tweets.each do |tweet|
+                .span6.mb-2
+                  .row
+                    .span1
+                      =image_tag(tweet.image_url)
+                    .span5
+                      =auto_link(auto_link_twitter(tweet.text))
     .span12.center
       =link_to "Follow us", "https://twitter.com/intent/user?screen_name=UnseenPhotoFair", :id => "community-black-btn-twitter", :class => "black-btn community-black-btn", :target => "_blank"
     
