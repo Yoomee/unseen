@@ -1,0 +1,64 @@
+=content_for :head do
+  =javascript_include_tag "https://www.google.com/jsapi"
+  %script{:type=>"text/javascript", :src => "https://www.google.com/jsapi"}
+  :javascript
+    google.load("visualization", "1", {packages:["corechart"]});
+    google.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Date');
+      data.addColumn('number', 'Registrations');
+      data.addRows(#{@registrations.inspect});
+      var chart = new google.visualization.ColumnChart(document.getElementById('registrations'));
+      chart.draw(data, {width: 940, height: 250, legend: 'none', chartArea: {left: 50, top: 20, right: 50, bottom:0}, colors:['#000']});
+    }
+
+  -title "User statistics"
+.span12
+  %h2.mb-1 Registrations & logins
+  %table.table.table-striped
+    %tr
+      %td.span6 Total registrations
+      %td=@users.count
+    %tr
+      %td.span6 Total logins
+      %td=User.sum(:sign_in_count)
+  %h3 Registrations per day
+  #registrations
+
+  %h2.mb-1 Favouriting
+  %table.table.table-striped
+    %tr
+      %td.span6 Total favouritings
+      %td=Favourite.where(:deleted => false).count
+    %tr
+      %td.span6 Photo favouritings
+      %td=Favourite.where(:deleted => false, :resource_type => "Photo").count
+    %tr
+      %td.span6 Gallery favouritings
+      %td=Favourite.where(:deleted => false, :resource_type => "Page").count
+    %tr
+      %td.span6 Photographer favouritings
+      %td=Favourite.where(:deleted => false, :resource_type => "User").count
+    %tr
+      %td.span6 Event favouritings
+      %td=Favourite.where(:deleted => false, :resource_type => "Event").count
+
+  %h2.mb-1 User locations
+  %h3 Country
+  %table.table.table-striped
+    -User.where("country != '' AND country IS NOT NULL").group("country").select("*,COUNT(id) as user_count").order("user_count DESC").each do |user|
+      %tr
+        %td.span6=user.country
+        %td=user.user_count
+  %h3 City, Country
+  %table.table.table-striped
+    -User.where("country != '' AND country IS NOT NULL").group("country, city").select("*,COUNT(id) as user_count").order("user_count DESC").each do |user|
+      %tr
+        %td.span6=[user.city, user.country].compact.join(', ')
+        %td=user.user_count
+  
+    
+.span12
+  =options_panel do
+    =back_link

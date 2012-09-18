@@ -47,6 +47,10 @@
                 =link_to(call_to_actions_path) do
                   %icon.icon-bullhorn
                   Edit Calls to action
+              %li
+                =link_to(stats_users_path) do
+                  %icon.icon-bar-chart
+                  Community statistics
               %li.divider
               %li
                 =link_to(sign_out_path, :method => :delete, :id=>"login_link") do

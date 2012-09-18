@@ -331,7 +331,7 @@ GEM
       acts-as-taggable-on (~> 2.2.2)
       rails (~> 3.1.0)
       rails3-jquery-autocomplete
-    ym_users (0.1.11)
+    ym_users (0.1.13)
       cancan
       devise (~> 2.1.0)
       rails (~> 3.1.0)

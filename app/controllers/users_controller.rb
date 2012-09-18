@@ -15,4 +15,14 @@ class UsersController < ApplicationController
     end
   end
   
+  def stats
+    @users = User.where(:role => nil)
+    @registrations = [].tap do |arr|
+      @users.where("created_at >= ?",2.months.ago).group("DATE(created_at)").count.each do |date, count|
+        arr << [date.strftime("%d/%m/%y"), count]
+      end
+    end
+  end
+  
+  
 end
