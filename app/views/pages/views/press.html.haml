@@ -12,10 +12,11 @@
               %p.mt-1.event-image-caption=@page.image_caption
   .row
     .span6
-      .press_accreditation_text
-        %h2.mt-2 Press Accreditation
-        %p
-          ="Media accreditation for Unseen is now available to all members of the media. Please complete your accreditation #{link_to('here', new_enquiry_path(:id => 'press'))}.".html_safe
+      -#
+        .press_accreditation_text
+          %h2.mt-2 Press Accreditation
+          %p
+            ="Media accreditation for Unseen is now available to all members of the media. Please complete your accreditation #{link_to('here', new_enquiry_path(:id => 'press'))}.".html_safe
       .page_text
         #page_text
           =raw(@page.text)
