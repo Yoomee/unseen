@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  
+
   include YmCms::PagesController
   load_and_authorize_resource
 
@@ -20,12 +20,12 @@ class PagesController < ApplicationController
       @page.view_name = "amsterdam"
     end
   end
-  
+
   def set_view
     session[:view] = %w{list block}.include?(params[:view]) ? params[:view] : 'list'
     return_or_redirect_to(root_path)
   end
-  
+
   def show
     set_page_children
     if @page.root.slug == 'amsterdam'
@@ -35,12 +35,12 @@ class PagesController < ApplicationController
     end
     render :action => "views/#{@page.view_name}"
   end
-  
+
   private
   def set_page_children
     if @page
       if @page.slug == "news"
-        children = @page.children.order("publication_date DESC")
+        children = @page.children.order("publication_date DESC, created_at DESC")
         @page_children = params[:category].present? ? children.tagged_with(params[:category], :on => 'categories').uniq : children
       elsif @page.slug == "galleries"
         @page_children = @page.children.order("title")
@@ -51,5 +51,5 @@ class PagesController < ApplicationController
       @page_children = Page.scoped
     end
   end
-  
+
 end
