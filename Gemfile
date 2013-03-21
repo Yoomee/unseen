@@ -44,7 +44,8 @@ end
 
 group :development do
   gem 'growl'
-  gem 'yoomee', :git => "git://git.yoomee.com:4321/gems/yoomee.git", :branch => "rails3"
+  #gem 'yoomee', :git => "git://git.yoomee.com:4321/gems/yoomee.git", :branch => "rails3"
+  gem 'ym_tools'
   gem 'ruby-debug19', :require => 'ruby-debug'
   gem 'sqlite3'
 end
