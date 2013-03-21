@@ -16,7 +16,7 @@
         =link_to "Facebook", "http://www.facebook.com/UnseenPhotoFairAmsterdam", :class=>"header-icon", :id=>"facebook_icon"
         =link_to "search", search_path, :class=>"header-link", :id=>"search_link"  
         =link_to("press", Page.find_by_slug("press") || "#", :class=>"header-link", :id=>"contact_link")
-        =link_to("contact", Page.find_by_slug("contact") || "#", :class=>"header-link", :id=>"contact_link")
+        =#link_to("contact", Page.find_by_slug("contact") || "#", :class=>"header-link", :id=>"contact_link") //removing for now
         =link_to("about", Page.find_by_slug("about") || "#", :class=>"header-link")
         -if current_user
           =link_to(current_user, current_user, :class=>"header-link")

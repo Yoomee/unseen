@@ -27,7 +27,7 @@
         =link_to "Twitter", "http://twitter.com/UnseenPhotoFair", :class=>"header-icon", :id=>"twitter_icon"
         =link_to "Facebook", "http://www.facebook.com/UnseenPhotoFairAmsterdam", :class=>"header-icon", :id=>"facebook_icon"
         =link_to "search", search_path, :class=>"header-link", :id=>"search_link"  
-        =link_to("contact", Page.find_by_slug("contact") || "#", :class=>"header-link", :id=>"contact_link")
+        =#link_to("contact", Page.find_by_slug("contact") || "#", :class=>"header-link", :id=>"contact_link")
         -if user_signed_in?
           =link_to(t(:logout).downcase, sign_out_path, :method => :delete, :class=>"header-link", :id=>"login_link")
           =link_to_self(current_user, :class => "header-link")
