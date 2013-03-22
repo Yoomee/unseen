@@ -8,6 +8,7 @@
   =form.input(:parent, :collection => Page.without([@page] + @page.children)) unless Page.without([@page] + @page.children).empty?
   =form.input :title
   =form.input :navigation_title if @page.parent.try(:slug) == 'persona_pages'
+  =form.input :navigation_title if @page.parent.try(:slug) == 'press'
   -if @page.slug == 'fair'
     =form.input :fair_title_1, :label => "Section 1 title", :as => :text, :input_html => {:class => 'span8 redactor', :rows => 3}
     =form.input :fair_1,       :label => "Section 1 left column", :as => :text, :input_html => {:class => 'span8 redactor', :rows => 10}

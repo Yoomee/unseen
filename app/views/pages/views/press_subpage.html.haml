@@ -1,0 +1,37 @@
+.container
+=render("pages/press_nav", :current_page => @page)
+.container
+  .row
+    .news_page.span12
+      %h1
+        %span#page_title
+          =raw(@page.title)
+      %p.list_date_and_tag
+        %span=@page.publication_date.strftime("%e %B %Y")
+        -@page.page_tags.each do |tag|
+          =link_to_tag(tag, :label_options => {:method => :titleize})        
+  .row
+    .news_page.span7
+      -if @page.image
+        .news_page_image
+          =image_for(@page, "540x")
+          -if @page.image_caption
+            %p.event-image-caption=@page.image_caption
+        =#render('layouts/share_links', :resource => @page)
+      .page_text
+        #page_text
+          =raw(@page.text)
+      -if @page.page_tag_list.present?
+        .row.mt-2.mb-2
+          .span8
+            %ul.tag-list.tag-list-horizontal
+              -@page.page_tags.each do |tag|
+                %li=link_to_tag(tag, :label_options => {:method => :titleize})
+
+    .span8
+      =options_panel do
+        =back_link
+        =link_if_can("Edit page", [:edit, @page])
+        =link_if_can("Delete page", [:destroy, @page], :confirm => "Are you sure?") unless @page.slug.present?
+        -if can?(:new, Page)
+          =link_if_can("New page", new_child_page_path(:parent_id => @page.parent_id))

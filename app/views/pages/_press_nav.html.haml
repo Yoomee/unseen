@@ -1,0 +1,15 @@
+-page_to_show = (@page == press_page) ? press_page.children.first : @page
+#intro.home_box.parallax-subnav{:class => next_home_background_class}
+  .subnav-strip
+    .container
+      .row
+        .span12
+          .subnav-tabs
+            %ul
+              -Page.find_by_slug('press').children.each_with_index do |child, index|
+                =li_with_active((child == page_to_show) || (child == page_to_show.parent), link_to(child.navigation_title,child, :class => 'subnav-tab'))
+              -if false  
+                -if can?(:create, Page)
+                  %li.subnav-tab
+                    =link_to("+ Add page", new_child_page_path(:parent_id => press_page.id))
+

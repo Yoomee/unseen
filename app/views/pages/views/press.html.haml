@@ -1,147 +1,179 @@
-.span12.about_page_view
-  %h1
-    %span#page_title
-      =raw(@page.title)
-  -if @page.image
-    .row
-      .span8
-        .gallery_slideshow.fade_in
-          .gallery_slideshow.fade_in
-            =image_for(@page, "770x446>")
-            -if @page.image_caption
-              %p.mt-1.event-image-caption=@page.image_caption
+.container
+=render("pages/press_nav", :current_page => @page)
+.container
   .row
-    .span6
-      -#
-        .press_accreditation_text
-          %h2.mt-2 Press Accreditation
-          %p
-            ="Media accreditation for Unseen is now available to all members of the media. Please complete your accreditation #{link_to('here', new_enquiry_path(:id => 'press'))}.".html_safe
-      .page_text
-        #page_text
-          =raw(@page.text)
-    .span3.offset3
-      .page_text
-        #page_text_second
-          =raw(@page.text_second)
-    #press_visuals.span8
-      .press_visual.span2
-        =image_tag "press_visual_2.jpg", :class=>"press_visual_img"
-        %p.press_visual_txt
-          Les Filles du Calvaire
-          %br
-          Laura Henno
-          %br
-          2007
-      .press_visual.span2
-        =image_tag "press_visual_3.jpg", :class=>"press_visual_img"
-        %p.press_visual_txt
-          m97
-          %br
-          Jiang Zhi
-          %br
-          2011
-      .press_visual.span2
-        =image_tag "press_visual_4.jpg", :class=>"press_visual_img"
-        %p.press_visual_txt
-          Martin Asbaeck
-          %br
-          Ebbe Stub Wittrup
-          %br
-          2011
-      .press_visual.span2
-        =image_tag "press_visual_6.jpg", :class=>"press_visual_img"
-        %p.press_visual_txt
-          The Third Gallery Aya
-          %br
-          Hiromi Kakimoto
-      .press_visual.span2
-        =image_tag "press_visual_7.jpg", :class=>"press_visual_img"
-        %p.press_visual_txt
-          Motive Gallery/Van Zoetendaal
-          %br
-          Koos Breukel/Roy Villevoye
-          %br
-          2011
-      .press_visual.span2
-        =image_tag "press_visual_15.jpg", :class=>"press_visual_img"
-        %p.press_visual_txt
-          The Third Gallery Aya
-          %br
-          Yuko Tada       
-      -if false
+    .span12
+      %h1#news_title.big-title.center
+        %span#page_title
+          =#raw(@page.title)
+          Press
+      .row
+        .span8.offset2.mb-2
+          %h2#page_text.center
+            =raw(@page.text)
+      .row
+        =render("pages/block_view", :items => @page_children, :parent_page => @page)
+
+      .row
+        .span8
+          =options_panel do
+            =back_link
+            =link_if_can("Edit page", [:edit, @page])
+            =link_if_can("Delete page", [:destroy, @page], :confirm => "Are you sure?") unless @page.slug.present?
+            =link_if_can("New page", [:new, Page])
+
+
+
+
+
+
+
+-if false
+
+  .span12.about_page_view
+    %h1
+      %span#page_title
+        =raw(@page.title)
+    -if @page.image
+      .row
+        .span8
+          .gallery_slideshow.fade_in
+            .gallery_slideshow.fade_in
+              =image_for(@page, "770x446>")
+              -if @page.image_caption
+                %p.mt-1.event-image-caption=@page.image_caption
+    .row
+      .span6
+        -#
+          .press_accreditation_text
+            %h2.mt-2 Press Accreditation
+            %p
+              ="Media accreditation for Unseen is now available to all members of the media. Please complete your accreditation #{link_to('here', new_enquiry_path(:id => 'press'))}.".html_safe
+        .page_text
+          #page_text
+            =raw(@page.text)
+      .span3.offset3
+        .page_text
+          #page_text_second
+            =raw(@page.text_second)
+      #press_visuals.span8
         .press_visual.span2
-          =image_tag "press_visual_8.jpg", :class=>"press_visual_img"
+          =image_tag "press_visual_2.jpg", :class=>"press_visual_img"
           %p.press_visual_txt
-            Aando Fine Art
+            Les Filles du Calvaire
             %br
-            Kim Boske
+            Laura Henno
             %br
-            2012         
+            2007
         .press_visual.span2
-          =image_tag "press_visual_9.jpg", :class=>"press_visual_img"
+          =image_tag "press_visual_3.jpg", :class=>"press_visual_img"
           %p.press_visual_txt
-            Galerie Les filles du Calvaire
+            m97
             %br
-            Dorothée Smith
-            %br
-            2008
-        .press_visual.span2
-          =image_tag "press_visual_10.jpg", :class=>"press_visual_img"
-          %p.press_visual_txt
-            Kahmann Gallery
-            %br
-            Blommers & Schumm
-            %br
-            2011    
-        .press_visual.span2
-          =image_tag "press_visual_11.jpg", :class=>"press_visual_img"
-          %p.press_visual_txt
-            Martin Asbaek
-            %br
-            Trine Søndergaard
-            %br
-            2008-2011
-        .press_visual.span2
-          =image_tag "press_visual_12.jpg", :class=>"press_visual_img"
-          %p.press_visual_txt
-            Robert Morat
-            %br
-            Andy Sewell
-            %br
-            2011          
-        .press_visual.span2
-          =image_tag "press_visual_13.jpg", :class=>"press_visual_img"
-          %p.press_visual_txt
-            Seelevel Gallery
-            %br
-            Isabelle Wenzel
-            %br
-            2012                    
-        .press_visual.span2
-          =image_tag "press_visual_14.jpg", :class=>"press_visual_img"
-          %p.press_visual_txt
-            Wouter van Leeuwen
-            %br
-            Katsumi Omori
+            Jiang Zhi
             %br
             2011
         .press_visual.span2
-          =image_tag "press_visual_5.jpg", :class=>"press_visual_img"
+          =image_tag "press_visual_4.jpg", :class=>"press_visual_img"
           %p.press_visual_txt
-            Robert Morat
+            Martin Asbaeck
             %br
-            Andrew Phelps
+            Ebbe Stub Wittrup
             %br
-            2007
-    .span3.offset1
-      .row            
-        =render("layouts/signup_column")
-    .span8
-      =options_panel do
-        =back_link
-        =link_if_can("Edit page", [:edit, @page])
-        =link_if_can("Delete page", [:destroy, @page], :confirm => "Are you sure?") unless @page.slug.present?
-        =link_if_can("New page", [:new, Page])
-        -if can?(:read, Enquiry)
-          =link_to("View all press accreditations", enquiries_path)
+            2011
+        .press_visual.span2
+          =image_tag "press_visual_6.jpg", :class=>"press_visual_img"
+          %p.press_visual_txt
+            The Third Gallery Aya
+            %br
+            Hiromi Kakimoto
+        .press_visual.span2
+          =image_tag "press_visual_7.jpg", :class=>"press_visual_img"
+          %p.press_visual_txt
+            Motive Gallery/Van Zoetendaal
+            %br
+            Koos Breukel/Roy Villevoye
+            %br
+            2011
+        .press_visual.span2
+          =image_tag "press_visual_15.jpg", :class=>"press_visual_img"
+          %p.press_visual_txt
+            The Third Gallery Aya
+            %br
+            Yuko Tada       
+        -if false
+          .press_visual.span2
+            =image_tag "press_visual_8.jpg", :class=>"press_visual_img"
+            %p.press_visual_txt
+              Aando Fine Art
+              %br
+              Kim Boske
+              %br
+              2012         
+          .press_visual.span2
+            =image_tag "press_visual_9.jpg", :class=>"press_visual_img"
+            %p.press_visual_txt
+              Galerie Les filles du Calvaire
+              %br
+              Dorothée Smith
+              %br
+              2008
+          .press_visual.span2
+            =image_tag "press_visual_10.jpg", :class=>"press_visual_img"
+            %p.press_visual_txt
+              Kahmann Gallery
+              %br
+              Blommers & Schumm
+              %br
+              2011    
+          .press_visual.span2
+            =image_tag "press_visual_11.jpg", :class=>"press_visual_img"
+            %p.press_visual_txt
+              Martin Asbaek
+              %br
+              Trine Søndergaard
+              %br
+              2008-2011
+          .press_visual.span2
+            =image_tag "press_visual_12.jpg", :class=>"press_visual_img"
+            %p.press_visual_txt
+              Robert Morat
+              %br
+              Andy Sewell
+              %br
+              2011          
+          .press_visual.span2
+            =image_tag "press_visual_13.jpg", :class=>"press_visual_img"
+            %p.press_visual_txt
+              Seelevel Gallery
+              %br
+              Isabelle Wenzel
+              %br
+              2012                    
+          .press_visual.span2
+            =image_tag "press_visual_14.jpg", :class=>"press_visual_img"
+            %p.press_visual_txt
+              Wouter van Leeuwen
+              %br
+              Katsumi Omori
+              %br
+              2011
+          .press_visual.span2
+            =image_tag "press_visual_5.jpg", :class=>"press_visual_img"
+            %p.press_visual_txt
+              Robert Morat
+              %br
+              Andrew Phelps
+              %br
+              2007
+      .span3.offset1
+        .row            
+          =render("layouts/signup_column")
+      .span8
+        =options_panel do
+          =back_link
+          =link_if_can("Edit page", [:edit, @page])
+          =link_if_can("Delete page", [:destroy, @page], :confirm => "Are you sure?") unless @page.slug.present?
+          =link_if_can("New page", [:new, Page])
+          -if can?(:read, Enquiry)
+            =link_to("View all press accreditations", enquiries_path)
