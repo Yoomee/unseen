@@ -2,5 +2,7 @@
 # So this model provides a way to group together profiles that are for the same photographer
 
 class PhotographerParent < ActiveRecord::Base
+  
+  has_many :photographers, :class_name => "User"
 
 end
