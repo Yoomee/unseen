@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
   has_many :favourites_as_photographer, :as => :resource, :class_name => "Favourite", :dependent => :destroy
   has_and_belongs_to_many :galleries, :class_name => "Page", :join_table => "galleries_photographers"
   has_and_belongs_to_many :events, :order => "starts_at DESC, date"
+  belongs_to :photographer_parent
   
   acts_as_taggable_on :user_tags, :page_tags
 
@@ -64,8 +65,27 @@ class User < ActiveRecord::Base
     end
   end
   
+  def create_photographer_clone(edition)
+    clone = User.new(:role => 'photographer', :edition => edition)
+    clone.first_name = first_name
+    clone.last_name = last_name
+    clone.bio =  bio
+    clone.image_uid = image_uid
+    clone.email = "#{edition}_#{email}"
+    clone.password = "#{first_name} #{edition}"
+    clone.password_confirmation = clone.password 
+    clone.job_title = job_title
+    clone.photographer_parent_id = photographer_parent_id
+    clone.save
+    clone
+  end
+  
   def has_lat_lng?
     lat.present? && lng.present?
+  end
+  
+  def has_latest_edition?
+    photographer_parent.photographers.last.edition == User::LATEST_EDITION
   end
   
   def image_url_for_api
@@ -81,6 +101,10 @@ class User < ActiveRecord::Base
     role_is?(:photographer)
   end
   
+  def profiles
+    photographer_parent.photographers
+  end
+  
   def text
     bio
   end
@@ -94,3 +118,4 @@ end
 
 User::DEFAULT_LOCATION = [52.3744,4.898]
 User::API_SECRET = "'?8v@3Y?iYM#6@i7-)isU!7AR8FV4yT"
+User::LATEST_EDITION = "2013"

@@ -21,6 +21,12 @@ class PhotographersController < ApplicationController
     end
   end
   
+  def clone
+    clone = photographer.create_photographer_clone(User::LATEST_EDITION)
+    flash[:notice] = "Created a copy of #{clone} for #{clone.edition}"
+    return_or_redirect_to(photographer_path(clone))
+  end
+  
   def destroy
     photographer.destroy
     flash_notice(photographer)

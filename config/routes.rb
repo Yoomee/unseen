@@ -32,6 +32,7 @@ Unseen::Application.routes.draw do
     end
     member do
       get 'location', :as => 'edit_location'
+      post  'clone' => 'photographers#clone'
     end
   end
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }

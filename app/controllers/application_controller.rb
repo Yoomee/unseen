@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   AUTH_USERS = { "unseen" => "photo123" }
   
   CURRENT_EDITION = "2012"
+  LATEST_EDITION = "2013"
 
   helper_method :view_preference
   
