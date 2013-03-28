@@ -1,11 +1,30 @@
-%h1=title('Photographers')
--if photographers.empty?
-  %p There are no photographers on the site yet.
--else
-  %ul
-    -photographers.each do |photographer|
-      %li
-        =link_to_self(photographer)
+.container
+  .row
+    .news_page.span12
+      %h1.big-title.center Photographers
+      
+  .row.mt-2
+    .news_page.span10.offset1.center
+      %h2
+        Discover unseen work and emerging photography talent. 
+        %br
+        Join the Unseen Community and save them to
+        %br
+        your personal profile.
+
+  .row.mt-2
+    .news_page.span12
+      .row          
+        .span12
+          .row#people
+            =render "photographers"
+            
+            
+      .row.mb-2  
+        .span12.center  
+          =link_to "More", community_people_path(:page => @people.next_page), :remote => true, :class => "black-btn", :id => "more-people-btn" if @people.respond_to?(:next_page)
+          
+
 
 =options_panel do
   =back_link

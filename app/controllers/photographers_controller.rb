@@ -28,7 +28,8 @@ class PhotographersController < ApplicationController
   end
   
   def index
-    
+    @edition = params[:edition].nil? ? CURRENT_EDITION : params[:edition]
+    @photographers = User.where(:role => 'photographer', :edition => @edition)
   end
   
   def update

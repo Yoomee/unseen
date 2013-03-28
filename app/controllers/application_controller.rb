@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
   before_filter :authenticate
 
   AUTH_USERS = { "unseen" => "photo123" }
+  
+  CURRENT_EDITION = "2012"
 
   helper_method :view_preference
   

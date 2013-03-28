@@ -9,6 +9,7 @@ Unseen::Application.routes.draw do
     end
   end
   match 'programme(/:day)' => 'events#index', :as => 'program'
+  match 'photographers/edition/:edition' => 'photographers#index'
   resources :photographers
   match "press_accreditations", :to => "enquiries#index", :as => "press_accreditations"
   resources :enquiries, :only => [] do
