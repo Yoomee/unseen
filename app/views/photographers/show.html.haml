@@ -20,7 +20,7 @@
       %form
         %select{:onchange => "location = this.options[this.selectedIndex].value;"}
           -@photographer.profiles.each do |profile|
-            %option{:value => profile.id}=profile.edition
+            %option{:value => profile.id, selected: profile.id == photographer.id}=profile.edition
     
       -if !@photographer.galleries.where("view_name = 'gallery'").empty?
         %h2.normal-title.upcase.mb-1 Represented by
