@@ -1,5 +1,5 @@
 -url = photographer.new_record? ? photographers_path : photographer_path(photographer)
 =semantic_form_for(photographer, :as => 'photographer', :url => url, :multipart => true) do |form|
-  =tabs('details', 'links', 'photos', :form => form)
+  =tabs('details', 'links', 'photos', 'edition', :form => form)
   =form.buttons do
     =form.commit_button "Save"

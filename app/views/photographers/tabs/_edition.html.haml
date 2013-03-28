@@ -1,0 +1,4 @@
+=form.inputs do
+  %p
+    Which edition does this photographer profile belong to?
+  =form.input :edition, :as => :select, :collection => editions, :prompt => "Please select..."
