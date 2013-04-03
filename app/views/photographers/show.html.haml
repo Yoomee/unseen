@@ -15,13 +15,13 @@
         =simple_format(@photographer.bio)
       =favourite_link(@photographer)
     .span4.offset2.news_page_signup
-      %h2.normal-title.upcase.mb-1
-        Attendance 
-      %form
-        %select{:onchange => "location = this.options[this.selectedIndex].value;"}
-          -@photographer.profiles.each do |profile|
-            %option{:value => profile.id, selected: profile.id == photographer.id}=profile.edition
-    
+      -if current_user.try(:admin?)
+        %h2.normal-title.upcase.mb-1
+          Attendance 
+        %form
+          %select{:onchange => "location = this.options[this.selectedIndex].value;"}
+            -@photographer.profiles.each do |profile|
+              %option{:value => profile.id, selected: profile.id == photographer.id}=profile.edition    
       -if !@photographer.galleries.where("view_name = 'gallery'").empty?
         %h2.normal-title.upcase.mb-1 Represented by
         .pull-left.clear.mb-2
