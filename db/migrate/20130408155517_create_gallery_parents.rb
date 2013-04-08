@@ -4,6 +4,7 @@ class CreateGalleryParents < ActiveRecord::Migration
       t.timestamps
     end
     GalleryParent.reset_column_information
+    Page.reset_column_information
     Page.find_all_by_view_name(:gallery).each do |gallery|
      parent = GalleryParent.create
      gallery.update_attributes(:gallery_parent_id => parent.id, :edition => "2012")
