@@ -11,6 +11,8 @@ class Page < ActiveRecord::Base
   
   has_and_belongs_to_many :call_to_actions
   
+  belongs_to :gallery_parent
+  
   accepts_nested_attributes_for :slideshow, :reject_if => :all_blank
   
   before_save :delete_slideshow_if_no_slides
