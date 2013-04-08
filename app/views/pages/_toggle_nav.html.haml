@@ -1,6 +1,14 @@
-#intro.home_box.parallax-subnav{:class => next_home_background_class}  
-  .subnav-strip  
-    .container  
-      .row  
-        .span12  
-          =render("pages/toggle_view_links")
+#intro.home_box.parallax-subnav{:class => next_home_background_class}
+  .subnav-strip
+    .container
+      .row
+        .span11
+          .subnav-tabs
+            %ul
+              =li_with_active(false, link_to('Galleries', '', :class => 'subnav-tab'))
+              =li_with_active(false, link_to('Photographers', '', :class => 'subnav-tab'))
+              =li_with_active(false, link_to('Unseen Collection', 'collection_photo_path', :class => 'subnav-tab'))
+              
+        .span1
+          -if @page
+            =render("pages/toggle_view_links") unless @page.view_name == 'gallery'
