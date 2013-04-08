@@ -49,8 +49,20 @@ class Page < ActiveRecord::Base
     end
   end
   
+  def create_gallery_clone(edition)
+    clone = self.dup
+    clone.edition = edition
+    clone.slug = ""
+    clone.save
+    clone
+  end
+  
   def has_gallery_contact_details?
     [gallery_address, gallery_phone, gallery_email, gallery_website].any?(&:present?)
+  end
+  
+  def has_latest_edition?
+    gallery_parent.galleries.last.edition == User::LATEST_EDITION
   end
   
   def contact_details

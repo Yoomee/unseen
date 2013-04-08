@@ -44,6 +44,12 @@ Unseen::Application.routes.draw do
       post 'twitter', :as => 'twitter'
     end
   end
+  
+  resources :pages do
+    member do 
+      post  'clone' => 'galleries#clone'
+    end
+  end 
 
   resources :call_to_actions
   

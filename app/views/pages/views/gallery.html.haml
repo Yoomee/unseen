@@ -77,3 +77,6 @@
         =link_if_can("Delete page", [:destroy, @page], :confirm => "Are you sure?") unless @page.slug.present?
         -if can?(:new, Page)
           =link_if_can("New gallery", new_child_page_path(:parent_id => @page.parent_id))
+        -if !@page.has_latest_edition?
+          =link_if_can("Create copy for #{User::LATEST_EDITION}", [:clone, @page], :confirm => "Are you sure you want to create a copy of this gallery for #{User::LATEST_EDITION}?", :method => :post) 
+     
