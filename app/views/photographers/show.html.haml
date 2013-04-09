@@ -17,7 +17,7 @@
         =simple_format(@photographer.bio)
       =favourite_link(@photographer)
     .span4.offset2.news_page_signup
-      -if current_user.try(:admin?)
+      -if current_user.try(:admin?) && controller_name=="photographers" 
         %h2.normal-title.upcase.mb-1
           Attendance 
         %form
