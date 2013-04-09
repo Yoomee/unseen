@@ -51,6 +51,7 @@ class Page < ActiveRecord::Base
   
   def create_gallery_clone(edition)
     clone = self.dup
+    clone.permalink_path = "#{self.permalinks.first.path}_#{edition}"
     clone.edition = edition
     clone.slug = ""
     clone.save
