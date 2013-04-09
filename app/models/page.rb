@@ -15,6 +15,7 @@ class Page < ActiveRecord::Base
   
   accepts_nested_attributes_for :slideshow, :reject_if => :all_blank
   
+  after_initialize :set_default_edition
   before_save :delete_slideshow_if_no_slides
   before_save :set_api_image_fields
   
@@ -86,7 +87,7 @@ class Page < ActiveRecord::Base
     image.thumb("55x55#").url
   end
   
-  private
+  private  
   def delete_slideshow_if_no_slides
     slideshow.mark_for_destruction if slideshow && slideshow.slides.size.zero?
   end
@@ -97,6 +98,10 @@ class Page < ActiveRecord::Base
       self.image_url_for_api = image_for_api.url
       self.image_height_for_api = image_for_api.height
     end  
+  end
+  
+  def set_default_edition
+    self.edition ||= User::LATEST_EDITION
   end
   
   
