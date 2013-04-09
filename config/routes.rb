@@ -10,9 +10,10 @@ Unseen::Application.routes.draw do
   end
   match 'programme(/:day)' => 'events#index', :as => 'program'
   match 'photographers/edition/:edition' => 'photographers#index'
-  match 'galleries/edition/:edition' => 'galleries#index'
   
   resources :photographers
+  resources :galleries
+  
   match "press_accreditations", :to => "enquiries#index", :as => "press_accreditations"
   resources :enquiries, :only => [] do
     member do
