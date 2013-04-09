@@ -5,9 +5,9 @@
         .span11
           .subnav-tabs
             %ul
-              =li_with_active(false, link_to('Galleries', '', :class => 'subnav-tab'))
-              =li_with_active(false, link_to('Photographers', '', :class => 'subnav-tab'))
-              =li_with_active(false, link_to('Unseen Collection', 'collection_photo_path', :class => 'subnav-tab'))
+              =li_with_active(controller_name=='galleries' || @page.try(:is_a_gallery?), link_to('Galleries', galleries_path, :class => 'subnav-tab'))
+              =li_with_active(controller_name=='photographers', link_to('Photographers', photographers_path, :class => 'subnav-tab'))
+              =li_with_active(controller_name=='collection_photos', link_to('Unseen Collection', unseen_collection_path, :class => 'subnav-tab'))
               
         .span1
           -if @page

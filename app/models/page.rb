@@ -69,6 +69,10 @@ class Page < ActiveRecord::Base
     gallery_parent.galleries.last.edition == User::LATEST_EDITION
   end
   
+  def is_a_gallery?
+    view_name == 'gallery' || view_name == 'galleries'
+  end
+  
   def contact_details
     parts = []
     parts << gallery_address + "\n" unless gallery_address.blank?
