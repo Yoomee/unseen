@@ -74,6 +74,9 @@ class Page < ActiveRecord::Base
     parts.join('\n')
   end
   
+  def profiles
+    gallery_parent.galleries
+  end
   
   def thumbnail_image_url_for_api
     return nil if image.nil?
