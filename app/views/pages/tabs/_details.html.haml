@@ -33,9 +33,8 @@
   =form.input :view_name, :as => :select, :collection => Page::view_names, :include_blank => false, :member_label => "titleize", :label => "Layout" 
   =form.input :category_list, :label => "News categories", :as => :tag_list, :collection => Page::NEWS_CATEGORIES, :input_html => {:class => 'span8'}
   =form.input :page_tag_list, :label => "Tags", :as => :tag_list, :input_html => {:class => 'span8'}
-  =form.input :photographers, :collection => User.where(:role => 'photographer').order('first_name'), :input_html => {:"data-placeholder" => "Select photographers", :class => 'no-chosen span8'}
-  -gallery_pages = Page.find_by_slug('galleries').try(:children)
-  =form.input :galleries, :collection => (gallery_pages ? gallery_pages.order('title') : nil), :input_html => {:"data-placeholder" => "Select galleries", :class => 'no-chosen span8'}
+  =form.input :photographers, :collection => User.where(:role => 'photographer', :edition => @page.edition).order('first_name'), :input_html => {:"data-placeholder" => "Select photographers", :class => 'no-chosen span8'}, :label => "Photographer profiles #{@page.edition}"
+  =form.input :galleries, :collection => Page.where(:view_name => 'gallery', :edition => @page.edition).order(:title), :input_html => {:"data-placeholder" => "Select galleries", :class => 'no-chosen span8'}, :label => "Gallery profiles #{@page.edition}" unless @page.view_name=='gallery'
   =form.input :permalink_path, :label => "Permalink"
   =form.input :slug, :as => (current_user.try(:yoomee_staff?) ? :string : :hidden)
   .control-group
