@@ -33,9 +33,13 @@ class PhotographersController < ApplicationController
     return_or_redirect_to(photographers_path)
   end
   
+  def edition
+    @photographers = User.where(:role => 'photographer', :edition => params[:edition])
+    render :action => 'index'
+  end
+  
   def index
-    @edition = params[:edition].nil? ? CURRENT_EDITION : params[:edition]
-    @photographers = User.where(:role => 'photographer', :edition => @edition)
+    redirect_to photographers_edition_path(:edition => CURRENT_EDITION)
   end
   
   def update

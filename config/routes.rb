@@ -9,7 +9,7 @@ Unseen::Application.routes.draw do
     end
   end
   match 'programme(/:day)' => 'events#index', :as => 'program'
-  match 'photographers/edition/:edition' => 'photographers#index'
+  match 'photographers/edition/:edition' => 'photographers#edition', :as => 'photographers_edition'
   
   resources :photographers
   resources :galleries

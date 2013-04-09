@@ -8,7 +8,7 @@ class Ability
     # open ability
     can :create, Enquiry
     can [:show, :set_view], Page, :draft => false
-    can :read, :photographer
+    can [:read, :edition], :photographer
     can :read, Photo
     can :read, Event
     can :show, User
