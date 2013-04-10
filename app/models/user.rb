@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
   
   acts_as_taggable_on :user_tags, :page_tags
 
+  before_save :build_photographer_parent
   after_create :record_activity
   geocoded_by :address, :latitude  => :lat, :longitude => :lng
   after_validation :geocode,  :if => lambda{ |obj| obj.address_changed? }
@@ -112,6 +113,12 @@ class User < ActiveRecord::Base
   private  
   def record_activity  
     record_activity!(self)  
+  end
+  
+  def build_photographer_parent
+    if role == "photographer" && photographer_parent.nil?
+      self.photographer_parent = PhotographerParent.create
+    end
   end
 
 end
