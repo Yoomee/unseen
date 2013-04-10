@@ -5,9 +5,9 @@
       .row
         .span12
           .subnav-tabs
-            %ul
-              -Page.find_by_slug('press').children.each_with_index do |child, index|
-                =li_with_active((child == page_to_show) || (child == page_to_show.parent), link_to(child.navigation_title,child, :class => 'subnav-tab'))
+            %ul              
+              -Page.find_by_slug('press2').children.each_with_index do |child, index|
+                =li_with_active((child == page_to_show) || (child == page_to_show.parent), link_to(child.title,child, :class => 'subnav-tab'))
               -if false  
                 -if can?(:create, Page)
                   %li.subnav-tab
