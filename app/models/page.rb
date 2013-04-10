@@ -17,6 +17,7 @@ class Page < ActiveRecord::Base
   
   after_initialize :set_default_edition
   before_save :delete_slideshow_if_no_slides
+  before_save :build_gallery_parent
   before_save :set_api_image_fields
   
   has_snippets :gallery_address, :gallery_phone, :gallery_fax, :gallery_email, :gallery_website, :gallery_facebook, :gallery_hours, :text_second, :news_category, :fair_title_1, :fair_title_2, :fair_title_3, :fair_title_4, :fair_1, :fair_2, :fair_3, :fair_4, :fair_5, :fair_6, :navigation_title, :image_caption
@@ -94,6 +95,12 @@ class Page < ActiveRecord::Base
   private  
   def delete_slideshow_if_no_slides
     slideshow.mark_for_destruction if slideshow && slideshow.slides.size.zero?
+  end
+  
+  def build_gallery_parent
+    if view_name == "gallery" && gallery_parent.nil?
+      self.gallery_parent = GalleryParent.create
+    end
   end
   
   def set_api_image_fields
