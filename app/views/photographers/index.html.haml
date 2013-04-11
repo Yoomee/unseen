@@ -28,10 +28,11 @@
           =link_to "More", community_people_path(:page => @people.next_page), :remote => true, :class => "black-btn", :id => "more-people-btn" if @people.respond_to?(:next_page)
           
 
-
-=options_panel do
-  =back_link
-  -if can?(:new, :photographer)
-    =link_to("Add photographer", new_photographer_path)
+  .row
+    .span12
+      =options_panel do
+        =back_link
+        -if can?(:new, :photographer)
+          =link_to("Add photographer", new_photographer_path)
   
       
