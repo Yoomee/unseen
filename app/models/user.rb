@@ -86,7 +86,7 @@ class User < ActiveRecord::Base
   end
   
   def has_latest_edition?
-    photographer_parent.photographers.last.edition == User::LATEST_EDITION
+    photographer_parent.photographers.last.edition == Settings.edition.latest
   end
   
   def image_url_for_api
@@ -125,4 +125,3 @@ end
 
 User::DEFAULT_LOCATION = [52.3744,4.898]
 User::API_SECRET = "'?8v@3Y?iYM#6@i7-)isU!7AR8FV4yT"
-User::LATEST_EDITION = "2013"

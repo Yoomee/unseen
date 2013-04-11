@@ -67,7 +67,7 @@ class Page < ActiveRecord::Base
   end
   
   def has_latest_edition?
-    gallery_parent.galleries.last.edition == User::LATEST_EDITION
+    gallery_parent.galleries.last.edition == Setting.edition.latest
   end
   
   def is_a_gallery?
@@ -112,7 +112,7 @@ class Page < ActiveRecord::Base
   end
   
   def set_default_edition
-    self.edition ||= User::LATEST_EDITION
+    self.edition ||= Settings.edition.latest
   end
   
   
