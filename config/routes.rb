@@ -65,6 +65,8 @@ Unseen::Application.routes.draw do
   resources :collection_photos
   match "unseen-collection" => "collection_photos#index", :as => "unseen_collection"
   
+  resources :press_releases, :path => "press-releases"
+  
   namespace :api do
     match 'events' => 'events#index'
     match ':version/events' => 'events#index'

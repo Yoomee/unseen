@@ -1,5 +1,8 @@
 .container
-=render("pages/news_nav", :current_page => @page)
+-if @page.parent.try(:slug) == "press_images"
+  =render("pages/press_nav", :current_page => @page)
+-else
+  =render("pages/news_nav", :current_page => @page)
 .container
   .row
     .news_page.span12

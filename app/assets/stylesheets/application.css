@@ -601,6 +601,11 @@ h1#news_title {
 .block-image {
 	margin-bottom: 25px;	
 }
+.block-image-press-release{
+  background:#324C82;
+  height:200px;
+  width:300px; 
+}
 .block-text {
   height: 180px;
 }
@@ -1023,6 +1028,7 @@ body.controller_tags .subnav-tabs,
 body.controller_community .subnav-tabs,
 body.controller_users .subnav-tabs,
 #community-nav .subnav-tabs,
+.press-releases .subnav-tabs,
 body.root_slug_press .subnav-tabs{
   float: left;
 }

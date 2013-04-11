@@ -13,6 +13,7 @@ class Ability
     can :read, Event
     can :show, User
     can :index, CollectionPhoto
+    can :read, PressRelease
     
     if user.try(:admin?)
       can :manage, :all

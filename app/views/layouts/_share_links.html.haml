@@ -5,7 +5,9 @@
   #facebook_link.share-btn
     :plain
       <iframe src="//www.facebook.com/plugins/like.php?href=#{Settings.site_url + url_for(resource)}&amp;send=false&amp;layout=button_count&amp;width=50&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=segoe+ui&amp;height=21&amp;appId=165263253556568" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:80px; height:21px;" allowTransparency="true"></iframe>
-
+  -if resource.is_a?(Page) && resource.parent.try(:slug) == "press_images" && resource.image
+    #press_image_download
+      =link_to('Download image', resource.image.url, :class => 'black-btn pull-right')
 
   -if false
 

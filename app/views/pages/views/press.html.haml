@@ -1,3 +1,4 @@
+-title @page.title
 .container
 =render("pages/press_nav", :current_page => @page)
 .container
@@ -5,7 +6,6 @@
     .span12
       %h1#news_title.big-title.center
         %span#page_title
-          =#raw(@page.title)
           Press
       .row
         .span8.offset2.mb-2

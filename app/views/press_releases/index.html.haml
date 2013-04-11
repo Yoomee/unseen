@@ -1,0 +1,21 @@
+.container
+=render("pages/press_nav", :current_page => @page)
+.container
+  .row
+    .span12
+      %h1#news_title.big-title.center
+        %span#page_title
+          Press
+  .row
+    .block-view
+      -@press_releases.each do |press_release|
+        .block-item.span4
+          =link_to press_release do
+            .block-image.fade_in.block-image-press-release
+          .block-text
+            %h3.block-title=link_to_self(press_release)
+            %p.list_date_and_tag
+              %span=press_release.date.strftime("%e %B %Y")
+    
+  =options_panel do
+    =link_if_can("New press release", [:new, PressRelease])

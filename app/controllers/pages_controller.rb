@@ -15,7 +15,7 @@ class PagesController < ApplicationController
       @page.view_name = "gallery"
     elsif @page.parent.try(:slug) == "press"
       @page.view_name = "press_subpage"      
-    elsif @page.parent.try(:slug) == "news"
+    elsif @page.parent.try(:slug) == "news" || @page.parent.try(:slug) == "press_images"
       @page.view_name = "news"
     elsif @page.parent.try(:slug) == "welcome"
       @page.view_name = "highlight"
