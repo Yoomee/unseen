@@ -16,6 +16,12 @@
             %h3.block-title=link_to_self(press_release)
             %p.list_date_and_tag
               %span=press_release.date.strftime("%e %B %Y")
+            -if can?(:edit,press_release)
+              %br.clearfix
+              %br
+              =link_if_can("Edit", [:edit,press_release])
+              &middot;
+              =link_if_can("Delete", [:destroy,press_release], :confirm => "Are you sure?")
     
   =options_panel do
     =link_if_can("New press release", [:new, PressRelease])
