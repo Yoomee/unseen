@@ -87,6 +87,10 @@ class Page < ActiveRecord::Base
     self[:number_of_related_pages].presence || 3
   end
 
+  def number_of_related_programme_items
+    self[:number_of_related_programme_items].presence || 3
+  end
+
   def profiles
     gallery_parent.galleries
   end
