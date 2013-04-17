@@ -6,9 +6,10 @@
       .block-image.fade_in
         =link_to(image_for(item, "300x200#"), item) if item.image
       .block-text
-        %h4.sub-heading=item.sub_heading
+        -if item.respond_to?(:sub_heading)
+          %h4.sub-heading=item.sub_heading
         %h3.block-title=link_to_self(item)
-        -if item.view_name == 'gallery'
+        -if item.is_a?(Page) && item.view_name == 'gallery'
           %p.list_date_and_tag
             %span=item.gallery_city_country
         -else
