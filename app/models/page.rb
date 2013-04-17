@@ -14,7 +14,10 @@ class Page < ActiveRecord::Base
   has_and_belongs_to_many :photos, :class_name => "Photo", :join_table => "galleries_photos", :foreign_key => "gallery_id"
   
   has_and_belongs_to_many :call_to_actions
-  
+
+  has_many :favourites, :as => :resource, :dependent => :destroy, :conditions => {:deleted => false}
+  has_many :favourited_by_users, :source => :user, :through => :favourites, :uniq => true
+
   belongs_to :gallery_parent
   
   accepts_nested_attributes_for :slideshow, :reject_if => :all_blank
