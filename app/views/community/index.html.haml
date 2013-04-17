@@ -5,7 +5,9 @@
     .span12.center
       %h1.big-title#community-title Community
     .span10.offset1.center
-      %h2.mb-15 Sign up and discover new work by known and emerging talents and build your personal photography collection
+      %h2.mb-15
+        =snippet_text(:community_intro, 'Sign up and discover new work by known and emerging talents and build your personal photography collection').gsub(/\n/, '<br/>').html_safe
+        %small=edit_snippet_link(:community_intro)
   .row.mt-2
     .span12
       %h2.center Latest activity
