@@ -48,7 +48,7 @@
   
         .row
           -if view_preference == 'block'
-          =render("pages/block_view", :items => page_to_show.children, :parent_page => page_to_show)
+            =render("pages/block_view", :items => page_to_show.children, :parent_page => page_to_show)
           -else
             =render("pages/list_view", :items => page_to_show.children, :parent_page => page_to_show)
             .span3.offset1
