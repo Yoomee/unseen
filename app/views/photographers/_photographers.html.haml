@@ -5,5 +5,5 @@
     =link_to(image_for(photographer, "60x60#"), photographer)
   .span2.community-person.mb-1.small-left-margin
     %p.mb-0=link_to_self(photographer)
-    %p.mb-0.job-title
-      =photographer.try(:job_title)
+    -if gallery = (photographer.try(:galleries) || []).first
+      %p.mb-0.job-title=link_to_self(gallery)

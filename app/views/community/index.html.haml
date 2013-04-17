@@ -6,29 +6,8 @@
       %h1.big-title#community-title Community
     .span10.offset1.center
       %h2.mb-15
-        =snippet_text(:community_intro, 'Sign up and discover new work by known and emerging talents and build your personal photography collection').gsub(/\n/, '<br/>').html_safe
-        %small=edit_snippet_link(:community_intro)
-  .row.mt-2
-    .span12
-      %h2.center Latest activity
-      
-  .row.mt-2
-    .span12
-      .row#activity_item-list
-        =render "activity_items", :items => @activity_items
-      .row.mb-2
-        .span12.center
-          =link_to("See all activity", community_activity_path, :class => 'black-btn community-black-btn')
-            
-            
-#intro.home_box{:class => next_home_background_class}
-  .bg1
-
-.container 
-  .row.mt-2
-    .span12
-      %h2.center Popular photos
-   
+        =snippet_text(:community_collect_intro, "Discover unseen work and emerging photography talent.\nJoin the Unseen Community and start collecting your own works by saving them to your profile").gsub(/\n/, '<br/>').html_safe
+        %small=edit_snippet_link(:community_collect_intro)
   .row.mt-2
     .span12
       .row#photo-list
@@ -36,7 +15,6 @@
       .row.mb-2
         .span12.center
           =link_to("See all", community_photos_path, :id => "community-black-btn-photos", :class => 'black-btn community-black-btn')
-
 
 #intro.home_box{:class => next_home_background_class}
   .bg1  

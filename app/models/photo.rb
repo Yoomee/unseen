@@ -15,6 +15,7 @@ class Photo < ActiveRecord::Base
   validates_property :format, :of => :image, :in => [:jpeg, :jpg, :png, :gif], :message => "must be an image"
   
   scope :popular, joins(:favourites).group("photos.id").order("COUNT(favourites.id) DESC")
+  scope :from_edition, lambda {|edition| joins(:photographer).where(:users => {:edition => edition})}
     
   # so it can be used in slideshow partial
   def has_video?
