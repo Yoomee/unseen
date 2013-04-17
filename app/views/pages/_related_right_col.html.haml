@@ -18,7 +18,7 @@
                 %br
                 =profile.is_a?(User) ? 'Photographer' : 'Gallery'
 
-  -if !(other_stories = news_page.children.without(page_event.is_a?(Page) ? page_event : nil).tagged_with([page_event.page_tag_list, page_event.category_list].flatten, :any => true).limit(3)).empty?
+  -if (other_stories = news_page.children.without(page_event.is_a?(Page) ? page_event : nil).tagged_with([page_event.page_tag_list, page_event.category_list].flatten, :any => true).limit(page_event.number_of_related_pages).uniq).present?
     .row
       .span4
         %h2.normal-title.upcase Other stories
