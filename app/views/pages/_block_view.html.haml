@@ -6,6 +6,7 @@
       .block-image.fade_in
         =link_to(image_for(item, "300x200#"), item) if item.image
       .block-text
+        %h4.sub-heading=item.sub_heading
         %h3.block-title=link_to_self(item)
         -if item.view_name == 'gallery'
           %p.list_date_and_tag
