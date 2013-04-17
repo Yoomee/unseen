@@ -6,7 +6,7 @@
           %span
             unseen photo fair
           %span
-            26-29 sept 2013
+            =snippet_text(:festival_date, '26-29 sept 2013')
           %span
             amsterdam
     .span9
@@ -49,6 +49,10 @@
                 =link_to(call_to_actions_path) do
                   %icon.icon-bullhorn
                   Edit Calls to action
+              %li
+                =link_to(snippets_path) do
+                  %icon.icon-pencil
+                  Edit Site snippets                  
               %li
                 =link_to(stats_users_path) do
                   %icon.icon-bar-chart

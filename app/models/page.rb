@@ -82,7 +82,15 @@ class Page < ActiveRecord::Base
     parts << "w:#{gallery_website}" unless gallery_website.blank?
     parts.join('\n')
   end
-  
+
+  def number_of_related_pages
+    self[:number_of_related_pages].presence || 3
+  end
+
+  def number_of_related_programme_items
+    self[:number_of_related_programme_items].presence || 3
+  end
+
   def profiles
     gallery_parent.galleries
   end

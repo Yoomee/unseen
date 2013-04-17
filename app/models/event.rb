@@ -62,6 +62,15 @@ class Event < ActiveRecord::Base
   def full_date_string
     date
   end
+
+  def number_of_related_pages
+    self[:number_of_related_pages].presence || 3
+  end
+
+  def number_of_related_programme_items
+    self[:number_of_related_programme_items].presence || 3
+  end
+
   def venue_name
     venue.to_s
   end
