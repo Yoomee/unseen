@@ -3,17 +3,13 @@
 .container
 
   .row
-    .news_page.span12
+    .span12
       %h1.big-title.center Photographers
-      
-  .row.mt-2
+  .row
     .news_page.span10.offset1.center
-      %h2
-        Discover unseen work and emerging photography talent. 
-        %br
-        Join the Unseen Community and save them to
-        %br
-        your personal profile.
+      %h2.mb-15
+        =snippet_text(:photographers_intro, "Discover unseen work and emerging photography talent.\nJoin the Unseen Community and save them to your personal profile").gsub(/\n/, '<br/>').html_safe
+        %small=edit_snippet_link(:photographers_intro)
 
   .row.mt-2
     .news_page.span12
