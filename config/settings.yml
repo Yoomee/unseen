@@ -2,3 +2,6 @@ site_url: http://unseenamsterdam.com
 site_email: info@unseenamsterdam.com
 live_site_url: http://unseenamsterdam.com
 google_analytics: UA-30248338-1
+edition:
+  current: '2013'
+  latest: '2013'
