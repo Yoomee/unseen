@@ -3,16 +3,12 @@
 .container
   .row
     .news_page.span12
-      %h1.big-title.center People
-      
+      %h1.big-title.center People      
   .row.mt-2
     .news_page.span10.offset1.center
-      %h2
-        Unseen is a meeting place for photography enthusiasts. 
-        %br
-        Browse these Unseen topics and
-        %br
-        connect with others
+      %h2.mb-15    
+        =snippet_text(:community_people_intro, "Unseen is a meeting place for photography enthusiasts.\nBrowse these Unseen topics and connect with others").gsub(/\n/, '<br/>').html_safe
+        %small=edit_snippet_link(:community_people_intro)
   -if !@tags.empty?
     .row.mt-1
       .span12
