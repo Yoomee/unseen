@@ -67,7 +67,7 @@ class Page < ActiveRecord::Base
   end
   
   def has_latest_edition?
-    gallery_parent.galleries.last.edition == Setting.edition.latest
+    gallery_parent.galleries.last.edition == Settings.edition.latest
   end
   
   def is_a_gallery?
