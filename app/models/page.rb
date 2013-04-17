@@ -20,7 +20,7 @@ class Page < ActiveRecord::Base
   before_save :build_gallery_parent
   before_save :set_api_image_fields
   
-  has_snippets :gallery_address, :gallery_phone, :gallery_fax, :gallery_email, :gallery_website, :gallery_facebook, :gallery_hours, :text_second, :news_category, :fair_title_1, :fair_title_2, :fair_title_3, :fair_title_4, :fair_1, :fair_2, :fair_3, :fair_4, :fair_5, :fair_6, :navigation_title, :image_caption
+  has_snippets :gallery_address, :gallery_city_country, :gallery_phone, :gallery_fax, :gallery_email, :gallery_website, :gallery_facebook, :gallery_hours, :text_second, :news_category, :fair_title_1, :fair_title_2, :fair_title_3, :fair_title_4, :fair_1, :fair_2, :fair_3, :fair_4, :fair_5, :fair_6, :navigation_title, :image_caption
   
   acts_as_taggable_on :categories, :page_tags
   
