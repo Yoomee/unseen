@@ -1,0 +1,13 @@
+#meet-people
+  -if item.favourited_by_users.count.zero?
+    %em#no-one-going
+    -case
+    -when item.is_a?(Event)
+      No one has said they're going yet, you can be the first!
+    -when item.is_a?(Page)
+      No one has added this gallery to their collection yet, you can be the first!
+    -when item.is_a?(User)
+      No one has added this photographer to their collection yet, you can be the first!
+  -else
+    -item.favourited_by_users.each do |user|
+      =link_to(image_for(user, '67x67#'), user, :'data-user-id' => user.id, :title => user.to_s)

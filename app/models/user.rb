@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   has_many :links, :as => :attachable, :class_name => "YmLinks::Link", :dependent => :destroy
   has_many :favourites, :dependent => :destroy
   has_many :favourites_as_photographer, :as => :resource, :class_name => "Favourite", :dependent => :destroy
+  has_many :favourited_by_users, :source => :user, :through => :favourites_as_photographer, :uniq => true
   has_and_belongs_to_many :galleries, :class_name => "Page", :join_table => "galleries_photographers"
   has_and_belongs_to_many :events, :order => "starts_at DESC, date"
   belongs_to :photographer_parent

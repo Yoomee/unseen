@@ -11,21 +11,28 @@
   
 .container
   .row
-    .span4
-      %h2.mb-1
-        =raw(@page.title)
-      .page_text
-        #page_text
-          =raw(@page.text)
-      =favourite_link(@page)
-    .span4
-      -if @page.image
-        =image_for(@page, "250x")
-        -if @page.image_caption
-          %p.mt-1.event-image-caption=@page.image_caption
-      -else
-        .placeholder250x
-          &nbsp;
+    .span8
+      .row
+        .span4
+          %h2.mb-1
+            =raw(@page.title)
+          .page_text
+            #page_text
+              =raw(@page.text)
+          =favourite_link(@page)
+        .span4
+          -if @page.image
+            =image_for(@page, "250x")
+            -if @page.image_caption
+              %p.mt-1.event-image-caption=@page.image_caption
+          -else
+            .placeholder250x
+              &nbsp;
+      .row
+        .span8
+          %h2.normal-title.mt-3.meet-people-title THESE PEOPLE FAVOURITED THIS GALLERY
+          =render 'events/favourited_by', :item => @page
+
     .span4.news_page_signup
       -if current_user.try(:admin?)
         %h2.normal-title.upcase.mb-1
