@@ -26,18 +26,21 @@
     
   .row.mt-1
     .span8
-      %p.normal-title.upcase.mb-1 My Collection
-      -if !user.favourites.photos.empty?
-        =user.favourites.photos.each_slice(4) do |favourites|
-          .row
-            -favourites.each do |favourite|
-              =render "photos/photo", :photo => favourite.resource
-      -elsif current_user == user
-        Find your favourite photos in
-        %u=link_to("galleries", Page.find_by_slug('galleries'))
-        and photographers profiles and build your collection.
+      -if user.favourites.photos.empty?
+        -if current_user == user
+          Find your favourite photos in
+          %u=link_to("galleries", Page.find_by_slug('galleries'))
+          and photographers profiles and build your collection.
+        -else
+          ="#{user} hasn't collected any photos yet"
       -else
-        ="#{user} hasn't collected any photos yet"
+        -user.editions_with_favourite_photos.each do |edition|
+          %p.normal-title.upcase.mb-1="My Collection #{edition}"
+          =user.favourite_photos_for_edition(edition).each_slice(4) do |photos|
+            .row
+              -photos.each do |photo|
+                =render "photos/photo", :photo => photo
+
 
       %p.normal-title.upcase.mb-1.mt-3 My Favourites
       -if user.favourites.not_photos.present?

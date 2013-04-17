@@ -2,6 +2,8 @@ class Photo < ActiveRecord::Base
   
   include YmCore::Model
   
+  before_save :set_edition
+  
   belongs_to :photographer, :class_name => "User"
 #  has_and_belongs_to_many :collected_by_users, :class_name => "User", :join_table => "photos_users"
   
@@ -25,6 +27,11 @@ class Photo < ActiveRecord::Base
   def image_url_for_api
     return nil if image.nil?
     image.thumb("290x290").url
+  end
+  
+  private
+  def set_edition
+    self.edition = photographer.try(:edition)
   end
   
 end
