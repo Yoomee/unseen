@@ -5,7 +5,7 @@
     });
 
 =semantic_form_for(@event) do |form|
-  =tabs('details', 'pages/tabs/calls_to_action', :form => form)
+  =tabs('details', 'pages/tabs/calls_to_action', 'pages/tabs/related_pages', :form => form)
 
   =form.buttons do
     =form.commit_button "Save"
