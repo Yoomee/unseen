@@ -34,13 +34,12 @@
           =render 'events/favourited_by', :item => @page
 
     .span4.news_page_signup
-      -if current_user.try(:admin?)
-        %h2.normal-title.upcase.mb-1
-          Attendance 
-        %form
-          %select{:onchange => "location = this.options[this.selectedIndex].value;"}
-            -@page.profiles.each do |profile|
-              %option{:value => page_path(profile.id), selected: profile.id == @page.id}=profile.edition    
+      %h2.normal-title.upcase.mb-1
+        Attendance 
+      %form
+        %select{:onchange => "location = this.options[this.selectedIndex].value;"}
+          -@page.profiles.each do |profile|
+            %option{:value => page_path(profile.id), selected: profile.id == @page.id}=profile.edition
 
       -if !@page.photographers.empty?
         %h2.normal-title.upcase.mb-1 Artists

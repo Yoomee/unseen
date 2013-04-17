@@ -23,13 +23,13 @@
           %h2.normal-title.mt-3.meet-people-title THESE PEOPLE FAVOURITED THIS PHOTOGRAPHER
           =render 'events/favourited_by', :item => @photographer
     .span4.news_page_signup
-      -if current_user.try(:admin?) && controller_name=="photographers" 
+      -if controller_name=="photographers"
         %h2.normal-title.upcase.mb-1
           Attendance 
         %form
           %select{:onchange => "location = this.options[this.selectedIndex].value;"}
             -@photographer.profiles.each do |profile|
-              %option{:value => profile.id, selected: profile.id == photographer.id}=profile.edition    
+              %option{:value => profile.id, :selected => profile.id == photographer.id}=profile.edition
       -if !@photographer.galleries.where("view_name = 'gallery'").empty?
         %h2.normal-title.upcase.mb-1 Represented by
         .pull-left.clear.mb-2
