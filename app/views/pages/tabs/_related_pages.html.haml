@@ -1,3 +1,7 @@
 =form.inputs do
-  =form.input :number_of_related_pages, :as => :select, :collection => (1 ... 10).to_a, :prompt => "Please select..."
-  =form.input :number_of_related_programme_items, :as => :select, :collection => (1 ... 10).to_a, :prompt => "Please select..."
+  %p Select the number of related pages and programme items - the default is 3
+  %p If you don't add specific related pages or related programme items, the tags will be used to add them instead.
+  =form.input :number_of_related_pages, :as => :select, :collection => (1 ... 10).to_a, :prompt => 'Please select...'
+  =form.input :related_pages, :collection => news_page.children.order(:title), :input_html => { 'data-placeholder' => 'Choose some pages' }
+  =form.input :number_of_related_events, :label => 'Number of related programme items', :as => :select, :collection => (1 ... 10).to_a, :prompt => 'Please select...'
+  =form.input :related_events, :collection => Event.order(:title), :label => 'Related programme items', :input_html => { 'data-placeholder' => 'Choose some programme items' }
