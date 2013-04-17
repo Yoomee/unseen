@@ -14,7 +14,11 @@ class Event < ActiveRecord::Base
   has_and_belongs_to_many :call_to_actions
   
   has_many :activity_items, :class_name => "YmActivity::ActivityItem", :dependent => :destroy, :as => :resource
-  
+
+  has_many :related_items, :as => :resource
+  has_many :related_pages, :through => :related_items, :class_name => 'Page', :source => :item, :source_type => 'Page'
+  has_many :related_events, :through => :related_items, :class_name => 'Event', :source => :item, :source_type => 'Event'
+
   image_accessor :image
   
   validates :title, :date, :starts_at, :ends_at, :venue, :presence => true
@@ -63,12 +67,12 @@ class Event < ActiveRecord::Base
     date
   end
 
-  def number_of_related_pages
-    self[:number_of_related_pages].presence || 3
+  def number_of_related_events
+    self[:number_of_related_events].presence || 3
   end
 
-  def number_of_related_programme_items
-    self[:number_of_related_programme_items].presence || 3
+  def number_of_related_pages
+    self[:number_of_related_pages].presence || 3
   end
 
   def venue_name

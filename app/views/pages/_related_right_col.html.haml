@@ -18,23 +18,23 @@
                 %br
                 =profile.is_a?(User) ? 'Photographer' : 'Gallery'
 
-  -if (other_stories = news_page.children.without(page_event.is_a?(Page) ? page_event : nil).tagged_with([page_event.page_tag_list, page_event.category_list].flatten, :any => true).uniq.first(page_event.number_of_related_pages)).present?
+  -if other_stories(page_event).present?
     .row
       .span4
         %h2.normal-title.upcase Other stories
         .pull-left.clear.mb-2
-          -other_stories.each do |story|
+          -other_stories(page_event).each do |story|
             .row.mb-1
               .span1
                 =link_to(image_for(story, "60x60#"), story)
               .span3.related-text
                 =link_to_self(story)
-  -if (events = Event.without(page_event.is_a?(Event) ? page_event : nil).tagged_with([page_event.page_tag_list, page_event.category_list].flatten, :any => true).uniq.first(page_event.number_of_related_programme_items)).present?
+  -if events(page_event).present?
     .row
       .span4
         %h2.normal-title.upcase Related programme
         .pull-left.clear.mb-2
-          -events.each do |event|
+          -events(page_event).each do |event|
             .row.mb-1
               .span1
                 =link_to(image_for(event, "60x60#"), event)

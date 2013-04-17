@@ -6,7 +6,11 @@ class Page < ActiveRecord::Base
   has_and_belongs_to_many :photographers, :class_name => "User", :join_table => "galleries_photographers"
   has_and_belongs_to_many :galleries, :class_name => "Page", :join_table => "galleries_pages", :foreign_key => "page_id", :association_foreign_key => "gallery_id"
   has_and_belongs_to_many :news_pages, :class_name => "Page", :join_table => "galleries_pages", :foreign_key => "gallery_id", :association_foreign_key => "page_id"
-  
+
+  has_many :related_items, :as => :resource
+  has_many :related_pages, :through => :related_items, :class_name => 'Page', :source => :item, :source_type => 'Page'
+  has_many :related_events, :through => :related_items, :class_name => 'Event', :source => :item, :source_type => 'Event'
+
   has_and_belongs_to_many :photos, :class_name => "Photo", :join_table => "galleries_photos", :foreign_key => "gallery_id"
   
   has_and_belongs_to_many :call_to_actions
@@ -83,12 +87,12 @@ class Page < ActiveRecord::Base
     parts.join('\n')
   end
 
-  def number_of_related_pages
-    self[:number_of_related_pages].presence || 3
+  def number_of_related_events
+    self[:number_of_related_events].presence || 3
   end
 
-  def number_of_related_programme_items
-    self[:number_of_related_programme_items].presence || 3
+  def number_of_related_pages
+    self[:number_of_related_pages].presence || 3
   end
 
   def profiles
