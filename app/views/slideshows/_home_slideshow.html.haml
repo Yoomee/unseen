@@ -16,7 +16,7 @@
         -slides.each_with_index do |slide, index|
           -slide_num = index.zero? ? slides.size : index
           .home-slide{:class => home_slide_class(index), :"data-slide-num" => slide_num}
-            =image_for(slide, "980x450#")
+            =link_to(image_for(slide, "980x450#"),slide.url)
             .home-slide-caption{:style => 'display:none'}
               %h2.home-slide-title
                 =link_to(slide.title.to_s, slide.url)

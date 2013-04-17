@@ -8,16 +8,20 @@
       .block-text
         %h4.sub-heading=item.sub_heading
         %h3.block-title=link_to_self(item)
-        %p.list_date_and_tag
-          %span=item.respond_to?(:publication_date) ? item.publication_date.strftime("%e %B %Y") : item.created_at.strftime("%e %B %Y")
-          -if item.respond_to?(:categories)
-            -item.categories.each do |tag|
-              -if tag.name == 'fair-festival'
-                =link_to tag.to_tag, :class => "tag" do
-                  %span.label.tag-label Fair&Festival
-              -else
-                =link_to_tag(tag, :label_options => {:method => :titleize})
-        =link_to raw('&rarr; Read more'), item, :class => 'list_read_more' unless parent_page.try(:slug) == "press_images"
+        -if item.view_name == 'gallery'
+          %p.list_date_and_tag
+            %span=item.gallery_city_country
+        -else
+          %p.list_date_and_tag
+            %span=item.respond_to?(:publication_date) ? item.publication_date.strftime("%e %B %Y") : item.created_at.strftime("%e %B %Y")
+            -if item.respond_to?(:categories)
+              -item.categories.each do |tag|
+                -if tag.name == 'fair-festival'
+                  =link_to tag.to_tag, :class => "tag" do
+                    %span.label.tag-label Fair&Festival
+                -else
+                  =link_to_tag(tag, :label_options => {:method => :titleize})
+          =link_to raw('&rarr; Read more'), item, :class => 'list_read_more' unless parent_page.try(:slug) == "press_images"
   -if controller_name=="pages" && can?(:new, Page) && parent_page
     .block-item.span4
       .block-image.fade_in.new-page-box
