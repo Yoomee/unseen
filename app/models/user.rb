@@ -82,14 +82,6 @@ class User < ActiveRecord::Base
     clone
   end
   
-  def editions_with_favourite_photos
-    Photo.where(['id IN (?)', favourites.photos.collect(&:resource_id)]).group(:edition).collect(&:edition)
-  end
-  
-  def favourite_photos_for_edition(edition)
-    Photo.where(['id IN (?) AND edition = ?', favourites.photos.collect(&:resource_id), edition])
-  end
-  
   def has_lat_lng?
     lat.present? && lng.present?
   end

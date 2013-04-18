@@ -1,14 +1,16 @@
 class Favourite < ActiveRecord::Base
 
+  before_save :set_edition
+
   belongs_to :user
   belongs_to :resource, :polymorphic => true
 
   validates_presence_of :user, :resource
   
   default_scope where(:deleted => false)
-  scope :photos, where(:resource_type => 'Photo').group(:resource_id).includes(:resource)
+  scope :photos, where(:resource_type => 'Photo')
   scope :events, where(:resource_type => 'Event').group(:resource_id).includes(:resource)
-  scope :not_photos, where("resource_type != 'Photo' AND resource_type != 'Slide'").includes(:resource)
+  scope :not_photos, where("resource_type != 'Photo' AND resource_type != 'Slide'")
   
   has_many :activity_items, :class_name => "YmActivity::ActivityItem", :dependent => :destroy, :as => :resource
   
@@ -74,6 +76,12 @@ class Favourite < ActiveRecord::Base
       hash[:photographer] = resource.as_json(:only => [:id])
     end
     hash
+  end
+
+  private
+  def set_edition
+    return true if !resource.respond_to?(:edition)
+    self.edition = resource.try(:edition)
   end
 
 end

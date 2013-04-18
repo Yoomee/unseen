@@ -48,6 +48,10 @@ class Event < ActiveRecord::Base
     [*(date..(until_date || date))]
   end
   
+  def edition
+    date.year.to_s
+  end
+  
   def day1
     dates.include?(Date.new(2012,9,19))
   end

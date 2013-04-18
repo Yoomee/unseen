@@ -27,40 +27,42 @@
   .row.mt-1
     .span8
       -if user.favourites.photos.empty?
-        -if current_user == user
+        %p.normal-title.upcase.mb-1="My Collection"
+        -if logged_in_as?(user)
           Find your favourite photos in
           %u=link_to("galleries", Page.find_by_slug('galleries'))
           and photographers profiles and build your collection.
         -else
-          %p.normal-title.upcase.mb-1="My Collection"
           ="#{user} hasn't collected any photos yet"
       -else
-        -user.editions_with_favourite_photos.each do |edition|
+        -user.favourites.photos.group(:edition).collect(&:edition).reverse.each do |edition|
           %p.normal-title.upcase.mb-1="My Collection #{edition}"
-          =user.favourite_photos_for_edition(edition).each_slice(4) do |photos|
+          =user.favourites.photos.where(:edition => edition).each_slice(4) do |favourites|
             .row
-              -photos.each do |photo|
-                =render "photos/photo", :photo => photo
+              -favourites.each do |favourite|
+                =render "photos/photo", :photo => favourite.resource
+      .mt-3
+        -if user.favourites.not_photos.empty?
+          %p.normal-title.upcase.mb-1="My Favourites"
+          -if logged_in_as?(user)
+            Browse through the
+            %u=link_to("galleries", Page.find_by_slug('galleries'))
+            and photographers that will be attending the Unseen Photo Fair and add them to your selection.
+          -else
+            ="#{user} hasn't favourited any galleries or photographers."
+        -else
+          -user.favourites.not_photos.group(:edition).collect(&:edition).reverse.each do |edition|
+            %p.normal-title.upcase.mb-1="My Favourites #{edition}"
+            =user.favourites.not_photos.where(:edition => edition).each_slice(2) do |favourites|
+              .row.mb-1
+                -favourites.each do |favourite|
+                  .span1
+                    =link_to(image_for(favourite.resource, "60x60#"), favourite.resource)
+                  .span3.related-text
+                    =link_to_self(favourite.resource)
+                    %br
+                    =favourite.humanized_resource_type
 
-
-      %p.normal-title.upcase.mb-1.mt-3 My Favourites
-      -if user.favourites.not_photos.present?
-        =user.favourites.not_photos.each_slice(2) do |favourites|
-          .row.mb-1
-            -favourites.each do |favourite|
-              .span1
-                =link_to(image_for(favourite.resource, "60x60#"), favourite.resource)
-              .span3.related-text
-                =link_to_self(favourite.resource)
-                %br
-                =favourite.humanized_resource_type
-      -elsif current_user == user
-        Browse through the
-        %u=link_to("galleries", Page.find_by_slug('galleries'))
-        and photographers that will be attending the Unseen Photo Fair and add them to your selection.
-      -else
-        ="#{user} hasn't favourited any galleries or photographers."
-                  
       %p.normal-title.upcase.mt-3 My Programme
       -if !user.events.empty?
         =render user.events
