@@ -929,24 +929,22 @@ h2.home-title {
 }
 a.call-to-action-link {
   display: block;
-  width: 80px;
+  width: 60px;
   margin: 0px 0 0 10px;
   padding: 65px 0 0 ;
   height: 20px;
   text-align: center;
   float: left;
   color: #fff;
-  background: url(/assets/footer.png) no-repeat -1485px 0px;
+  background: url(/assets/footer.png) no-repeat -1495px 0px;
 }
 a.call-to-action-link:hover {
 	text-decoration: none;
   background-position-y:-200px;
 } 
 a#social-facebook {
-  background-position-x: -1385px;
-  margin-left: 65px;
+  background-position-x: -1395px;
 }
-
 .email-signup-form {
 	float: left;
 	margin: 0 0 0 50px;
@@ -966,6 +964,31 @@ a#social-facebook {
   clear: both;
   margin-bottom: 10px;
 }
+#social-tumblr,
+#social-linkedin {
+  background-image: none;
+  padding: 0;
+}
+#social-tumblr i,
+#social-linkedin i {
+  font-size: 45px;  
+  color: black;
+  background-color: white;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 15px;
+  border-radius:10px;
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;  
+}
+#social-tumblr:hover i {
+  background-color: #2C4762;
+}
+#social-linkedin:hover i {
+  background-color: #50A1CB;
+}
+
+
 
 /*========== Sponsors ==========*/
 #footer-sponsors {

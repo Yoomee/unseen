@@ -2,13 +2,13 @@
   %h2.normal-title.upcase Sign up for our newsletter
   =form_tag("http://vandejong.us4.list-manage.com/subscribe/post?u=52fb8e1dfe01670076f8db384&id=7b61a45fa2") do
     =text_field_tag "EMAIL", "email", :class => "span3 bold", :id => 'email'
-    =submit_tag 'Submit', :class => 'black-btn'              
+    =submit_tag 'Submit', :class => 'black-btn'
 .span3.facebook.news_follow
   %h2.normal-title.upcase Follow us
-  =link_to("http://www.facebook.com/UnseenPhotoFairAmsterdam", :target => "_blank", :class => "") do
-    %span#facebook_icon.header-icon
-    Facebook
-.span3.twitter.news_follow.mb-2
-  =link_to("http://twitter.com/UnseenPhotoFair", :target => "_blank", :class => "") do
-    %span#twitter_icon.header-icon
-    Twitter
+  =link_to("Facebook", "http://www.facebook.com/UnseenPhotoFairAmsterdam", :target => "_blank")
+.span3.twitter.news_follow
+  =link_to("Twitter", "http://twitter.com/UnseenPhotoFair", :target => "_blank")
+.span3.tumblr.news_follow
+  =link_to("Tumblr", "http://unseenphotofair.tumblr.com", :target => "_blank")
+.span3.linkedin.news_follow.mb-2
+  =link_to("LinkedIn", "http://www.linkedin.com/company/unseen", :target => "_blank")
