@@ -92,5 +92,5 @@
         -if can?(:new, Page)
           =link_if_can("New gallery", new_child_page_path(:parent_id => @page.parent_id))
         -if !@page.has_latest_edition?
-          =link_if_can("Create copy for #{Settings.edition.latest}", [:clone, @page], :confirm => "Are you sure you want to create a copy of this gallery for #{Settings.edition.latest}?", :method => :post) 
+          =link_if_can("Create copy for #{Settings.editions.last}", [:clone, @page], :confirm => "Are you sure you want to create a copy of this gallery for #{Settings.editions.last}?", :method => :post) 
      

@@ -67,4 +67,4 @@
         =link_if_can("Edit photographer", [:edit, @photographer])
         =link_if_can("Delete photographer", [:destroy, @photographer], :confirm => "Are you sure - this will also delete all the photographer's photos?")
         -if !@photographer.has_latest_edition?
-          =link_if_can("Create profile for #{Settings.edition.latest}", [:clone, @photographer], :confirm => "Are you sure you want to create a profile for #{Settings.edition.latest}?", :method => :post)
+          =link_if_can("Create profile for #{Settings.editions.last}", [:clone, @photographer], :confirm => "Are you sure you want to create a profile for #{Settings.editions.last}?", :method => :post)

@@ -82,12 +82,16 @@ class User < ActiveRecord::Base
     clone
   end
   
+  def editions_with_favourites(scope_name)
+    Settings.editions.reverse & favourites.send(scope_name).group(:edition).collect(&:edition)
+  end
+  
   def has_lat_lng?
     lat.present? && lng.present?
   end
   
   def has_latest_edition?
-    photographer_parent.photographers.last.edition == Settings.edition.latest
+    photographer_parent.photographers.last.edition == Settings.editions.last
   end
   
   def image_url_for_api

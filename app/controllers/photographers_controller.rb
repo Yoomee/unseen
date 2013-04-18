@@ -22,7 +22,7 @@ class PhotographersController < ApplicationController
   end
   
   def clone
-    clone = photographer.create_photographer_clone(Settings.edition.latest)
+    clone = photographer.create_photographer_clone(Settings.editions.last)
     flash[:notice] = "Created a copy of #{clone} for #{clone.edition}"
     return_or_redirect_to(photographer_path(clone))
   end
@@ -39,7 +39,7 @@ class PhotographersController < ApplicationController
   end
   
   def index
-    redirect_to photographers_edition_path(:edition => Settings.edition.current)
+    redirect_to photographers_edition_path(:edition => Settings.current_edition)
   end
   
   def update

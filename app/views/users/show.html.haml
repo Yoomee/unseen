@@ -35,7 +35,7 @@
         -else
           ="#{user} hasn't collected any photos yet"
       -else
-        -user.favourites.photos.group(:edition).collect(&:edition).reverse.each do |edition|
+        -user.editions_with_favourites('photos').each do |edition|
           %p.normal-title.upcase.mb-1="My Collection #{edition}"
           =user.favourites.photos.where(:edition => edition).each_slice(4) do |favourites|
             .row
@@ -51,7 +51,7 @@
           -else
             ="#{user} hasn't favourited any galleries or photographers."
         -else
-          -user.favourites.not_photos.group(:edition).collect(&:edition).reverse.each do |edition|
+          -user.editions_with_favourites('not_photos').each do |edition|
             %p.normal-title.upcase.mb-1="My Favourites #{edition}"
             =user.favourites.not_photos.where(:edition => edition).each_slice(2) do |favourites|
               .row.mb-1
