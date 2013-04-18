@@ -32,6 +32,7 @@
           %u=link_to("galleries", Page.find_by_slug('galleries'))
           and photographers profiles and build your collection.
         -else
+          %p.normal-title.upcase.mb-1="My Collection"
           ="#{user} hasn't collected any photos yet"
       -else
         -user.editions_with_favourite_photos.each do |edition|
