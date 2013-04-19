@@ -5,6 +5,9 @@
       =form.label :date
       .controls
         =form.date_select :date, {:order => [:day, :month, :year], :default => @press_release.created_at}, :class => "span2"
+    =form.input :retained_file, :as => :hidden
     =form.input :file, :as => :file
+    =form.input :retained_image, :as => :hidden
+    =form.input :image, :as => :image
   =form.buttons do
     =form.commit_button "Save"
