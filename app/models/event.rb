@@ -34,7 +34,7 @@ class Event < ActiveRecord::Base
   scope :on_date, lambda {|date| where(["events.date <= :date AND IFNULL(events.until_date, events.date) >= :date", {:date => date}]) }
   
   #validates :image, :presence => true
-  #validates_property :format, :of => :image, :in => [:jpeg, :jpg, :png, :gif], :message => "must be an image"
+  #validates_property :format, :of => :image, :in => [:jpeg, :JPEG, :jpg, :JPG, :png, :PNG, :gif, :GIF], :message => "must be an image"
   
   
   def as_json(options ={})

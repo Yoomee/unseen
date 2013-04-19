@@ -14,7 +14,7 @@ class Photo < ActiveRecord::Base
   image_accessor :image
   
   validates :image, :presence => true
-  validates_property :format, :of => :image, :in => [:jpeg, :jpg, :png, :gif], :message => "must be an image"
+  validates_property :format, :of => :image, :in => [:jpeg, :JPEG, :jpg, :JPG, :png, :PNG, :gif, :GIF], :message => "must be an image"
   
   scope :popular, joins(:favourites).group("photos.id").order("COUNT(favourites.id) DESC")
   scope :from_edition, lambda {|edition| joins(:photographer).where(:users => {:edition => edition})}
