@@ -14,7 +14,7 @@
             %span=item.gallery_city_country
         -else
           %p.list_date_and_tag
-            -unless parent_page.slug == 'info'
+            -unless parent_page.try(:slug) == 'info'
               %span=item.respond_to?(:publication_date) ? item.publication_date.strftime("%e %B %Y") : item.created_at.strftime("%e %B %Y")
             -if item.respond_to?(:categories)
               -item.categories.each do |tag|
@@ -23,8 +23,8 @@
                     %span.label.tag-label Fair&Festival
                 -else
                   =link_to_tag(tag, :label_options => {:method => :titleize})
-          -unless %w{press_images info news}.include?(parent_page.try(:slug))
-            =link_to raw('&rarr; Read more' + parent_page.slug), item, :class => 'list_read_more'
+          - unless %w{press_images info news}.include?(parent_page.try(:slug))
+            =link_to raw('&rarr; Read more'), item, :class => 'list_read_more'
   -if controller_name=="pages" && can?(:new, Page) && parent_page
     .block-item.span4
       .block-image.fade_in.new-page-box
