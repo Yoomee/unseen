@@ -3,7 +3,7 @@
     %li.news-link=link_to("news", Page.find_by_slug("news") || "#")
     %li.fair-link=link_to("fair", Page.find_by_slug("fair") || "#")
     %li.programme-link=link_to "programme", program_path
-    %li.galleries-link=link_to("galleries", Page.find_by_slug("galleries") || "#")
+    %li.galleries-link=link_to("galleries", Page.find_by_slug("galleries_#{Settings.current_edition}") || "#")
     %li.community-link=link_to "community", community_path
     %li.amsterdam-link=link_to_slug("amsterdam", "amsterdam")
     -if false
