@@ -22,7 +22,6 @@ class Page < ActiveRecord::Base
   
   accepts_nested_attributes_for :slideshow, :reject_if => :all_blank
   
-  after_initialize :set_default_edition
   before_save :delete_slideshow_if_no_slides
   before_save :build_gallery_parent
   before_save :set_api_image_fields
@@ -125,11 +124,6 @@ class Page < ActiveRecord::Base
       self.image_height_for_api = image_for_api.height
     end  
   end
-  
-  def set_default_edition
-    self.edition ||= Settings.editions.last
-  end
-  
   
 end
 Page::NEWS_CATEGORIES = %w{collecting photographers galleries announcements fair-festival}

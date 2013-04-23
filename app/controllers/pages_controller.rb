@@ -9,6 +9,7 @@ class PagesController < ApplicationController
   def new
     @page.parent_id = params[:parent_id]
     @page.publication_date = Time.now
+    @page.edition ||= Settings.editions.last
     if @page.parent.try(:slug) == "galleries"
       @page.view_name = "gallery"
     elsif @page.parent.try(:slug) == "venues"
