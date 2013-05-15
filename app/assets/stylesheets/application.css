@@ -432,6 +432,9 @@ a.header-link {
   float: right;
   margin: 0 14px 0 0;
 }
+.controller_press_releases a.press-link, .root_slug_press2 a.press-link, .root_slug_about a.about-link, .controller_users.action_show a.profile-link, .controller_registrations.action_new a.sign-up-link, .controller_sessions.action_new a.sign-in-link {
+  border-bottom: 2px solid #211D1D;
+}
 
 #buy-ticket-link {
 	margin: -5px 0 0 20px;

@@ -17,14 +17,13 @@
         =link_to '', "http://twitter.com/UnseenPhotoFair", :class=>"header-icon", :icon => 'twitter-sign', :title => "Twitter", :target => '_blank'
         =link_to '', "http://www.facebook.com/UnseenPhotoFairAmsterdam", :class=>"header-icon", :icon => 'facebook-sign', :title => "Facebook", :target => '_blank'
         =link_to '', search_path, :class=>"header-link", :id=>"search_ink", :icon => 'search'
-        =link_to("press", press_releases_path, :class=>"header-link", :id=>"contact_link")
-        =#link_to("contact", Page.find_by_slug("contact") || "#", :class=>"header-link", :id=>"contact_link") //removing for now
-        =link_to("about", Page.find_by_slug("about") || "#", :class=>"header-link")
+        =link_to("press", press_releases_path, :class=>"header-link press-link")
+        =link_to("about", Page.find_by_slug("about"), :class=>"header-link about-link")
         -if current_user
-          =link_to(current_user, current_user, :class=>"header-link")
-        -else current_user
-          =link_to("login", sign_in_path, :class=>"header-link")
-          =link_to("register", sign_up_path, :class=>"header-link")
+          =link_to(current_user, current_user, :class=>"header-link profile-link")
+        -else
+          =link_to("login", sign_in_path, :class=>"header-link sign-in-link")
+          =link_to("register", sign_up_path, :class=>"header-link sign-up-link")
         -if current_user && current_user.admin?
           #logged-in-dropdown.btn-group
             =link_to(current_user, :class => 'btn') do
