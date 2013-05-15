@@ -18,7 +18,6 @@
                   %span.label.tag-label Fair&Festival
               -else
                 =link_to_tag(tag, :label_options => {:method => :titleize})
-        =link_to raw('&rarr; Read more'), item, :class => 'list_read_more'
   -if controller_name=="pages" && can?(:new, Page) && parent_page
     .row
       .span2.fade_in.new-page-box
