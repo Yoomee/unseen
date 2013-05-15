@@ -9,6 +9,9 @@
       .list_box.span6
         %h4.sub-heading=item.sub_heading
         %h3.small-title.list_title=link_to_self(item)
+        -if item.is_a?(Page) && item.view_name == 'gallery'
+          %p.list_date_and_tag
+            %span=item.gallery_city_country
         -if defined?(@page) && @page.slug == "news"
           %p.list_date_and_tag
             %span=item.respond_to?(:publication_date) ? item.publication_date.strftime("%e %B %Y") : item.created_at.strftime("%e %B %Y")
