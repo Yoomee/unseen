@@ -18,27 +18,41 @@
                 %br
                 =profile.is_a?(User) ? 'Photographer' : 'Gallery'
 
-  -if other_stories(page_event).present?
+
+  -if @page.try(:parent).slug == 'info'
     .row
       .span4
-        %h2.normal-title.upcase Other stories
+        %h2.normal-title.upcase Related info
         .pull-left.clear.mb-2
-          -other_stories(page_event).each do |story|
+          -Page.find_by_slug(:info).children.without(page_event).order(:position).each do |story|
             .row.mb-1
               .span1
                 =link_to(image_for(story, "60x60#"), story)
               .span3.related-text
                 =link_to_self(story)
-  -if events(page_event).present?
-    .row
-      .span4
-        %h2.normal-title.upcase Related programme
-        .pull-left.clear.mb-2
-          -events(page_event).each do |event|
-            .row.mb-1
-              .span1
-                =link_to(image_for(event, "60x60#"), event)
-              .span3.related-text
-                =link_to_self(event)
+
+  -else
+    -if other_stories(page_event).present?
+      .row
+        .span4
+          %h2.normal-title.upcase Other stories
+          .pull-left.clear.mb-2
+            -other_stories(page_event).each do |story|
+              .row.mb-1
+                .span1
+                  =link_to(image_for(story, "60x60#"), story)
+                .span3.related-text
+                  =link_to_self(story)
+    -if events(page_event).present?
+      .row
+        .span4
+          %h2.normal-title.upcase Related programme
+          .pull-left.clear.mb-2
+            -events(page_event).each do |event|
+              .row.mb-1
+                .span1
+                  =link_to(image_for(event, "60x60#"), event)
+                .span3.related-text
+                  =link_to_self(event)
   .row
     =render("layouts/signup_column")
