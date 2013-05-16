@@ -7,3 +7,5 @@
     %p.mb-0=link_to_self(person)
     %p.mb-0.job-title
       =person.try(:job_title)
+    -if gallery = (person.try(:galleries) || []).first
+      %p.mb-0.job-title=link_to_self(gallery)
