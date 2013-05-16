@@ -34,7 +34,7 @@ class PhotographersController < ApplicationController
   end
   
   def edition
-    @photographers = User.where(:role => 'photographer', :edition => params[:edition])
+    @photographers = User.where(:role => 'photographer', :edition => params[:edition]).order(:last_name, :first_name)
     render :action => 'index'
   end
   
