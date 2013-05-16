@@ -6,4 +6,6 @@
     -if photo.caption
       %p.caption=photo.caption
     =favourite_link(photo)
+    -if current_path == community_activity_path
+      =photo.favourites.count
     .clearfix
