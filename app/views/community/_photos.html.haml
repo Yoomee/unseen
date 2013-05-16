@@ -5,6 +5,5 @@
       %strong=link_to_self(photo.photographer)
     -if photo.caption
       %p.caption=photo.caption
-    %icon.icon-heart
-    =photo.favourites.count
+    =favourite_link(photo)
     .clearfix
