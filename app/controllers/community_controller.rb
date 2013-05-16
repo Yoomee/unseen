@@ -12,15 +12,15 @@ class CommunityController < ApplicationController
         Photo.popular.paginate(:per_page => per_page, :page => params[:page])
       end
     else
-      @activity_items = YmActivity::ActivityItem.includes(:user,:resource).paginate(:per_page => 12, :page => params[:page])
       @photos = Photo.from_edition(Settings.current_edition).random(9)
-      @events = Event.popular.paginate(:per_page => 6, :page => params[:page])
-      @tweets = view_context.latest_tweets('UnseenPhotoFair', :count => 30, :trim_user => false).first(4)
     end
   end
   
   def activity
     @activity_items = YmActivity::ActivityItem.includes(:user,:resource).paginate(:per_page => 18, :page => params[:page])
+    @events = Event.popular.paginate(:per_page => 6, :page => params[:page])
+    @photos = Photo.popular.paginate(:per_page => 6, :page => params[:page])
+    @tweets = view_context.latest_tweets('UnseenPhotoFair', :count => 30, :trim_user => false).first(4)
   end
   
   def photos
