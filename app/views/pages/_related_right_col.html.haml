@@ -19,7 +19,7 @@
                 =profile.is_a?(User) ? 'Photographer' : 'Gallery'
 
 
-  -if @page.try(:parent).slug == 'info'
+  -if page_event.try(:parent).present? && page_event.try(:parent).slug == 'info'
     .row
       .span4
         %h2.normal-title.upcase Related info
