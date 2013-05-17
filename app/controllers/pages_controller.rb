@@ -46,7 +46,7 @@ class PagesController < ApplicationController
       if @page.slug == "news"
         children = @page.children.order("publication_date DESC, created_at DESC")
         @page_children = params[:category].present? ? children.tagged_with(params[:category], :on => 'categories').uniq : children
-      elsif @page.slug.match "galleries"
+      elsif @page.slug.try(:match, "galleries")
         @page_children = @page.children.order("title")
       else
         @page_children = @page.children
