@@ -20,12 +20,18 @@
               =render("layouts/signup_column")
       .row
         .span8
-          %h2.normal-title.upcase.mb-1
-            Attendance
-          %form
-            %select{ :onchange => "location = this.options[this.selectedIndex].value;" }
+
+          .btn-group.attendance
+            .btn Attendance
+            .btn.dropdown-toggle{ :'data-toggle' => 'dropdown' }
+              %i.icon-caret-down
+            %ul.dropdown-menu
               -editions.each do |edition|
-                %option{ :value => page_path(Page.find_by_slug("galleries-#{edition}")), :selected => "galleries-#{edition}" == @page.slug }=edition
+                %li
+                  =link_to page_path(Page.find_by_slug("galleries_#{edition}")) do
+                    =edition
+                    -if @page.slug == "galleries_#{edition}"
+                      %i.icon-ok
 
       .row
         .span8
