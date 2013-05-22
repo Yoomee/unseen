@@ -99,6 +99,7 @@ GEM
       actionmailer (>= 3.0.4)
     execjs (1.3.0)
       multi_json (~> 1.0)
+    ey_config (0.0.6)
     factory_girl (3.0.0)
       activesupport (>= 3.0.0)
     factory_girl_rails (3.0.0)
@@ -150,6 +151,7 @@ GEM
     multipart-post (1.1.5)
     mysql2 (0.3.11)
     net-ssh (2.2.1)
+    newrelic_rpm (3.6.2.96)
     nokogiri (1.5.2)
     oauth (0.4.6)
     oauth2 (0.8.0)
@@ -357,12 +359,14 @@ DEPENDENCIES
   datetimespan
   encryptor
   exception_notification
+  ey_config
   factory_girl_rails
   formtastic-bootstrap!
   geocoder
   growl
   guard-rspec
   mysql2
+  newrelic_rpm
   omniauth-facebook
   omniauth-linkedin
   omniauth-twitter

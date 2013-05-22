@@ -20,6 +20,9 @@ gem 'omniauth-linkedin'
 gem 'omniauth-twitter'
 gem 'encryptor'
 
+gem 'newrelic_rpm'
+gem 'ey_config'
+
 gem 'ym_core',        "~> 0.1.59"  #, :path => "~/Rails/Gems/ym_core"
 gem 'ym_cms',         "~> 0.3.9"   #, :path => "~/Rails/Gems/ym_cms"
 gem 'ym_permalinks',  "0.1.2"
