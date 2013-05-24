@@ -21,17 +21,15 @@
       .row
         .span8
 
-          .btn-group.attendance
+          .btn-group#attendance
             .btn Attendance
             .btn.dropdown-toggle{ :'data-toggle' => 'dropdown' }
               %i.icon-caret-down
             %ul.dropdown-menu
               -editions.each do |edition|
-                %li
+                %li{ :class => @page.slug == "galleries_#{edition}" ? 'active' : '' }
                   =link_to page_path(Page.find_by_slug("galleries_#{edition}")) do
                     =edition
-                    -if @page.slug == "galleries_#{edition}"
-                      %i.icon-ok
 
       .row
         .span8

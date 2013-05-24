@@ -34,17 +34,15 @@
           =render 'events/favourited_by', :item => @page
 
     .span4.news_page_signup
-      .btn-group.attendance.mb-2
+      .btn-group#attendance
         .btn Attendance
         .btn.dropdown-toggle{ :'data-toggle' => 'dropdown' }
           %i.icon-caret-down
         %ul.dropdown-menu
           -@page.profiles.each do |profile|
-            %li
+            %li{ :class => @page.id == profile.id ? 'active' : '' }
               =link_to page_path(profile.id) do
                 =profile.edition
-                -if @page.id == profile.id
-                  %i.icon-ok
 
       -if !@page.photographers.empty?
         %h2.normal-title.upcase.mb-1 Artists

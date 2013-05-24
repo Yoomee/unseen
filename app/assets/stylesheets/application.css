@@ -120,7 +120,9 @@ a.category,
 b,
 .share_this,
 .black-btn,
-.white-btn {
+.white-btn,
+.btn-group#attendance .btn,
+.btn-group#attendance .btn a {
   font-family: "Apercu Bold", "calibri", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: normal;
@@ -254,7 +256,8 @@ h6 a:hover {
   display: none;
 }
 .black-btn,
-.white-btn {
+.white-btn,
+.btn-group#attendance .btn {
  color: white;
  border-radius:0;
  box-shadow:none;
@@ -286,7 +289,8 @@ input.black-btn {
   border-color: #211d1d;
   text-decoration: none;
 }
-.white-btn, .white-btn:hover {
+.white-btn, .white-btn:hover,
+.btn-group#attendance .btn {
   background-color: #fff;
   color: #211d1d;
 }
@@ -1707,4 +1711,49 @@ a.active .tag-label {
 #community-title,
 #collection-title {
   margin-bottom:16px;
+}
+
+/*========== Attendance dropdown selector ==========*/
+.btn-group#attendance .btn {
+  background-image: none;
+}
+.btn-group#attendance .btn:first-child {
+  border-right: none;
+}
+.btn-group#attendance .btn.dropdown-toggle {
+  border-left: none;
+}
+.btn-group#attendance .dropdown-menu {
+  min-width: 140px;
+}
+.btn-group#attendance .dropdown-menu li {
+  /*width: 140px;*/
+}
+.btn-group#attendance .dropdown-menu li > a:hover,
+.btn-group#attendance .dropdown-menu .active > a,
+.btn-group#attendance .dropdown-menu .active > a:hover {
+  background: #211d1d;
+  color: white;
+}
+.btn-group#attendance {
+  margin-bottom: 40px;
+}
+.btn-group#attendance.open {
+  margin-bottom: 44px;
+}
+.btn-group#attendance.open .btn {
+  border-bottom: none;
+  padding-bottom: 2px;
+}
+.btn-group#attendance.open .dropdown-menu {
+  margin-top: 0px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  border: 2px solid #211d1d;
+  border-top: none;
+}
+.slug_galleries_2012 .btn-group#attendance,
+.slug_galleries_2013 .btn-group#attendance {
+  margin-top: -70px;
 }
