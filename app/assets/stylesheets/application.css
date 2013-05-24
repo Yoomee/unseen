@@ -959,12 +959,12 @@ a#social-facebook {
 }
 #join-us-icon {
   background: url(/assets/join-us-icon.png) no-repeat center 10px;
-  background: url(/assets/footer.png) no-repeat -1585px 0px;
+  background: url(/assets/footer.png) no-repeat -1593px 0px;
   margin-left: 77px;
 }
 #app-icon {
   background: url(/assets/app-icon.png) no-repeat top center;
-  background: url(/assets/footer.png) no-repeat -1685px 0px;
+  background: url(/assets/footer.png) no-repeat -1697px 0px;
 }
 .news_page_signup .call-to-actions a {
   float: left;
