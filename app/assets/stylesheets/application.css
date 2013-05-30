@@ -411,7 +411,7 @@ input.black-btn {
 .nav a:hover {
   border-bottom: 4px solid;
 }
-.root_slug_amsterdam li.amsterdam-link a, .root_slug_news li.news-link a, .root_slug_fair li.fair-link a, .controller_events li.programme-link a, .root_slug_galleries li.galleries-link a, .root_slug_galleries_2013 li.galleries-link a , .controller_photographers.action_edition li.galleries-link a, .controller_collection_photos.action_index li.galleries-link a, .controller_community li.community-link a {
+.root_slug_amsterdam li.amsterdam-link a, .root_slug_news li.news-link a, .root_slug_info li.info-link a, .controller_events li.programme-link a, .root_slug_galleries li.galleries-link a, .root_slug_galleries_2013 li.galleries-link a , .controller_photographers.action_edition li.galleries-link a, .controller_collection_photos.action_index li.galleries-link a, .controller_community li.community-link a {
    border-bottom: 4px solid;
 }
 #logged-in-dropdown {
