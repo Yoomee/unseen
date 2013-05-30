@@ -1,8 +1,7 @@
 .container
--if @page.slug == "info"
-  =render("pages/info_nav", :current_page => @page)
--else
+-unless @page.slug == "info"
   =render("pages/news_nav", :current_page => @page)
+
 .container
   .row
     .span12
