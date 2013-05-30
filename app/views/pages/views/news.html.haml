@@ -2,7 +2,7 @@
 -if @page.parent.try(:slug) == "press_images"
   =render("pages/press_nav", :current_page => @page)
 -elsif @page.parent.try(:slug) == "info"
-  =render("pages/info_nav", :current_page => @page)
+  =# don't show news_nav
 -else
   =render("pages/news_nav", :current_page => @page)
 .container
