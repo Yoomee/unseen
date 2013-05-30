@@ -17,6 +17,18 @@
         .span12
           .row#people
             =render "photographers"
+  .row
+    .span8
+
+      .btn-group#attendance
+        .btn Attendance
+        .btn.dropdown-toggle{ :'data-toggle' => 'dropdown' }
+          %i.icon-caret-down
+        %ul.dropdown-menu
+          -editions.each do |edition|
+            %li{ :class => params[:edition] == edition ? 'active' : '' }
+              =link_to photographers_edition_path(:edition => edition) do
+                =edition
             
             
       .row.mb-2  

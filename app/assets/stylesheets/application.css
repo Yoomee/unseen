@@ -1726,9 +1726,6 @@ a.active .tag-label {
 .btn-group#attendance .dropdown-menu {
   min-width: 140px;
 }
-.btn-group#attendance .dropdown-menu li {
-  /*width: 140px;*/
-}
 .btn-group#attendance .dropdown-menu li > a:hover,
 .btn-group#attendance .dropdown-menu .active > a,
 .btn-group#attendance .dropdown-menu .active > a:hover {
