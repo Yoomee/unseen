@@ -13,7 +13,7 @@
         %span#page_title
           =raw(@page.title)
       %p.list_date_and_tag
-        %span=@page.publication_date.strftime("%e %B %Y")
+        %span=@page.publication_date.strftime("%e %B %Y") unless @page.parent.try(:slug) == "info"
         -@page.page_tags.each do |tag|
           =link_to_tag(tag, :label_options => {:method => :titleize})        
   .row
