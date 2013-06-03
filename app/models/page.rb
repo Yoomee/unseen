@@ -77,11 +77,15 @@ class Page < ActiveRecord::Base
     gallery_parent.galleries.last.edition == Settings.editions.last
   end
 
+  def image_exists?
+    File.exists?("#{Rails.root}/data/dragonfly/#{Rails.env}/#{read_attribute(:image_uid)}")
+  end
+
   def image_uid
-    if self[:image_uid].nil? && self.gallery_parent.galleries.first[:image_uid].present?
-      self.gallery_parent.galleries.order(:created_at).first.image_uid
+    if !image_exists? && gallery_with_image = gallery_parent.galleries.detect(&:image_exists?)
+      gallery_with_image.read_attribute(:image_uid)
     else
-      self[:image_uid]
+      read_attribute(:image_uid)
     end
   end
 
