@@ -1,0 +1,15 @@
+-params[:id] ||= params[:enquiry][:form_name]
+
+-if @enquiry.form_name == 'press'
+  .container
+  =render '/pages/press_nav'
+.container
+  .row
+    .span12
+      %h1=title(@enquiry.form_title)
+      -if @enquiry.form_intro.present?
+        %p=@enquiry.form_intro
+      =render("form", :enquiry => @enquiry)
+
+      =options_panel do
+        =back_link

@@ -8,4 +8,5 @@
               =li_with_active(controller_name.press_releases?, link_to('Press releases', press_releases_path, :class => 'subnav-tab'))
               -Page.find_by_slug('press2').children.order(:position).each_with_index do |child, index|
                 =li_with_active((child == @page) || (child == @page.try(:parent)), link_to(child.title,child, :class => 'subnav-tab'))
+              =li_with_active(controller_name.enquiries?, link_to('Press accreditation', new_press_accreditation_path, :class => 'subnav-tab'))
 

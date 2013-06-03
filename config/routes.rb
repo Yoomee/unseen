@@ -15,6 +15,7 @@ Unseen::Application.routes.draw do
   resources :galleries
   
   match "press_accreditations", :to => "enquiries#index", :as => "press_accreditations"
+  get "press-accreditation", :to => "enquiries#new", :id => 'press', :as => "new_press_accreditation"
   resources :enquiries, :only => [] do
     member do
       get 'legitimation'
