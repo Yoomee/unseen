@@ -76,7 +76,15 @@ class Page < ActiveRecord::Base
   def has_latest_edition?
     gallery_parent.galleries.last.edition == Settings.editions.last
   end
-  
+
+  def image_uid
+    if self[:image_uid].nil? && self.gallery_parent.galleries.first[:image_uid].present?
+      self.gallery_parent.galleries.order(:created_at).first.image_uid
+    else
+      self[:image_uid]
+    end
+  end
+
   def is_a_gallery?
     view_name == 'gallery' || view_name == 'galleries'
   end
