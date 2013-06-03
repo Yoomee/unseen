@@ -63,6 +63,7 @@ class Page < ActiveRecord::Base
     clone.publication_date = Date.today
     clone.parent_id = Page.find_by_slug("galleries_#{edition}").id
     clone.edition = edition
+    clone.image = nil
     clone.slug = ""
     clone.save
     clone
