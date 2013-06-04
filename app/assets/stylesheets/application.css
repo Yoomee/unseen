@@ -1377,21 +1377,6 @@ p.press_visual_txt {
 	margin-top: 10px;
 	float: left;
 }
-.slideshow .add-to-collection {
-  color: #ccc;
-  float: left;
-  margin: 10px 0 0 10px;
-  width: 15px;
-}
-.slideshow .add-to-collection:hover,
-.slideshow .add-to-collection-active {
-  color: #211d1d;
-  text-decoration: none;
-}
-.slideshow .add-to-collection.loading {
-  height:auto;
-  text-indent:-9000em;
-}
 
 /*========== Fair ==========*/
 
@@ -1636,13 +1621,32 @@ ul.tag-list a span.label.selected {
   overflow: hidden;
 }
 
-/*========== Favourite button ==========*/
+/*========== Favourite and links ==========*/
 
 .favourite-btn {
   font-weight: bold;
   text-align: center;
   width: 120px;
 }
+.add-to-collection {
+  color: #ccc;
+  float: left;
+  margin: 0;
+  width: 15px;
+}
+.slideshow .add-to-collection {
+  margin: 10px 0 0 10px;
+}
+.add-to-collection:hover,
+.add-to-collection-active {
+  color: #211d1d;
+  text-decoration: none;
+}
+.add-to-collection.loading {
+  height:auto;
+  text-indent:-9000em;
+}
+
 
 /*========== Welcome ==========*/
 
