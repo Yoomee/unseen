@@ -1,6 +1,8 @@
 class Enquiry < ActiveRecord::Base
   
   include YmEnquiries::Enquiry
+
+  scope :for_year, lambda { |year| where("created_at >= ? and created_at <= ?", "#{year}0101", "#{year}1231")}
   
   image_accessor :image
   file_accessor :legitimation

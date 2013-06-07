@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">ID</Data></Cell>
+        <% Enquiry.new(:form_name => 'press').fields.each do |field| %>
+          <% case field %>
+          <% when :image_uid %>
+            <Cell><Data ss:Type="String">Image</Data></Cell>
+          <% when :legitimation_uid %>
+            <Cell><Data ss:Type="String">Legitimation</Data></Cell>
+          <% else %>
+            <Cell><Data ss:Type="String"><%= field.to_s.humanize %></Data></Cell>
+          <% end %>
+        <% end %>
+      </Row>
+    <% @enquiries.each do |enquiry| %>
+      <Row>
+        <Cell><Data ss:Type="Number"><%= enquiry.id %></Data></Cell>
+        <% enquiry.enquiry_fields.each do |field| %>
+          <% case field.name %>
+          <% when 'image_uid' %>
+            <Cell><Data ss:Type="String"><%= "#{Settings.site_url}#{enquiry.image.url}" if field.value.present? %></Data></Cell>
+          <% when 'legitimation_uid' %>
+            <Cell><Data ss:Type="String"><%= legitimation_enquiry_url(enquiry) if field.value.present? %></Data></Cell>
+          <% else %>
+            <Cell><Data ss:Type="String"><%= field.value %></Data></Cell>
+          <% end %>
+        <% end %>
+      </Row>
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>

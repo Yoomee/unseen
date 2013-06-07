@@ -1,4 +1,6 @@
-%h1=title("Press accreditations")
+%h1
+  =title("Press accreditations")
+  %small=link_to 'download all - xls', enquiries_path(:format => :xls)
 -if @enquiries.empty?
   %p
     There are currently no press accreditations.
