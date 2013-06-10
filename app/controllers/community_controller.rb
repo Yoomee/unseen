@@ -9,10 +9,14 @@ class CommunityController < ApplicationController
       when "event"
         Event.popular.paginate(:per_page => per_page, :page => params[:page])
       when "photo"
-        Photo.popular.paginate(:per_page => per_page, :page => params[:page])
+        if params[:action] == 'index' && params[:controller] == 'community'
+          Photo.from_edition(Settings.current_edition).paginate(:per_page => per_page, :page => params[:page])
+        else
+          Photo.popular.paginate(:per_page => per_page, :page => params[:page])
+        end
       end
     else
-      @photos = Photo.from_edition(Settings.current_edition).random(9)
+      @photos = Photo.from_edition(Settings.current_edition).paginate(:per_page => 45, :page => params[:page])
     end
   end
   

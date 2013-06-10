@@ -14,4 +14,4 @@
         =render "photos", :items => @photos
       .row.mb-2
         .span12.center
-          =link_to("See all", community_photos_path, :id => "community-black-btn-photos", :class => 'black-btn community-black-btn')
+          =link_to("See more", community_path(:item_type => 'photo', :page => @photos.next_page, :per_page => 45), :id => "more-photo-btn", :class => 'black-btn community-black-btn', :remote => true)
