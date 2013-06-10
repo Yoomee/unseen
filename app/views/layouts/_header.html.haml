@@ -56,6 +56,10 @@
                 =link_to(stats_users_path) do
                   %icon.icon-bar-chart
                   Community statistics
+              %li
+                =link_to(press_accreditations_path) do
+                  %icon.icon-camera-retro
+                  Press accreditations
               %li.divider
               %li
                 =link_to(sign_out_path, :method => :delete, :id=>"login_link") do
