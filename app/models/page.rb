@@ -82,7 +82,7 @@ class Page < ActiveRecord::Base
   end
 
   def image_uid
-    if !image_exists? && gallery_with_image = gallery_parent.galleries.detect(&:image_exists?)
+    if !image_exists? && gallery_parent && gallery_with_image = gallery_parent.galleries.detect(&:image_exists?)
       gallery_with_image.read_attribute(:image_uid)
     else
       read_attribute(:image_uid)
