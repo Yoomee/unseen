@@ -40,6 +40,8 @@ class EventsController < ApplicationController
   def index
     @date = Event::DATES.select{|d| d.strftime('%a') == params[:day].to_s.titleize}.first || Event::DATES.first
     @events = Event.on_date(@date).order(:starts_at)
+    @venues = @events.collect(&:venue).uniq
+    @days = [1,2,3,4,5]
   end
 
   def show

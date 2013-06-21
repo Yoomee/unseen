@@ -1,39 +1,97 @@
+-content_for :head do
+  =javascript_include_tag('programme')
+  :javascript
+    Programme.minLeft = -"#{(@venues.size - 5)*160}";
+    $(document).ready(function() {
+      Programme.init();
+    });
+  
 .container
-  .row
-    .span8.offset2.highlight-intro
-      %h1.big-title.center.highlight-title
-        Programme 2012
-    -if program_slideshow = Slideshow.find_by_slug('program')
-      =render("slideshows/tabbed_slideshow", :slideshow => program_slideshow)
-      =link_if_can("Edit slideshow", [:edit, program_slideshow], :class => "pull-right mt-2 mr-2")
-      .span3.offset5=link_to("Full programme", "#program", :class => "black-btn more-middle scroll-to-program")
+  -unless Rails.env.development?
+    .row
+      .span8.offset2.highlight-intro
+        %h1.big-title.center.highlight-title
+          Programme 2012
+      -if program_slideshow = Slideshow.find_by_slug('program')
+        =render("slideshows/tabbed_slideshow", :slideshow => program_slideshow)
+        =link_if_can("Edit slideshow", [:edit, program_slideshow], :class => "pull-right mt-2 mr-2")
+        .span3.offset5=link_to("Full programme", "#program", :class => "black-btn more-middle scroll-to-program")
 #program
 =render('events/nav')
-.program-list.strip
+.program-calendar.strip
   .container
     .row
-      .span12
+      .span3
+        %ul.unstyled.mt-3
+          %li.active.pull-left=link_to('Calendar', '#calendar', :data => {:toggle => 'tab'}, :icon => 'calendar', :class => 'black-btn')
+          %li.pull-left.ml-1=link_to('List', '#list', :data => {:toggle => 'tab'}, :icon => "list", :class => 'black-btn')
+      .span6
         %h1.big-title.center
           =@date.strftime('%d %B')
-      -if @events.empty?
-        .span12 There aren't any events on this day yet.
-      -@events.each do |event|
-        .span12.program-item
-          .row
-            .span7
-              %h3.small-title.program-title
-                =link_to event.title, event
-              %p.program-subtitle
-                =event.time_string
-                at
-                =event.venue
-              %p
-                -[event.categories,event.page_tags].flatten.each do |tag|
-                  =link_to_tag(tag, :label_options => {:method => :titleize})
-            .span4.offset1
-              =add_to_program_link(event)
-              -if event.buy_tickets_url.present?
-                =link_to "Buy tickets", event.buy_tickets_url,:target => "_blank", :class=>"white-btn buy-ticket-btn"
+.tab-content
+  .tab-pane.active#calendar
+    .container
+      .row
+        .span12
+          #prog_container
+            #programme_calendar          
+              #prog_hours
+                .prog_arrow.prog_arrow_left
+                  =link_to_function(content_tag(:i, nil, :class => 'icon-arrow-left'), "Programme.scroll(0)");
+                .hours
+                  -(9..23).each do |hour|
+                    .hour="%d:00" % hour
+                .prog_arrow.prog_arrow_left
+                  =link_to_function(content_tag(:i, nil, :class => 'icon-arrow-left'), "Programme.scroll(0)");
+              #prog_wrapper
+                .prog_arrow#top_scroll_right.prog_arrow_right{:class => @venues.size > 4 ? 'active_arrow' : ''}
+                  =link_to_function(content_tag(:i, nil, :class => 'icon-arrow-right'), "Programme.scroll(1)");
+                .prog_arrow#bottom_scroll_right.prog_arrow_right{:class => @venues.size > 4 ? 'active_arrow' : ''}
+                  =link_to_function(content_tag(:i, nil, :class => 'icon-arrow-right'), "Programme.scroll(1)");
+                .timetable
+                  .venue_cols
+                    -@events.group_by(&:venue).each do |venue, events|
+                      .venue_col
+                        .col_title.top{:title => venue}=venue
+                        -events.each do |event|
+                          -height = (event.duration_in_hours * 100).round - 1
+                          =link_to(event, :class => "session #{'short' if event.duration_in_hours < 0.17}", :style => "top:#{((event.starts_at_offset(9)*100).round)+40}px;height:#{height}px;", "data-offset" => event.starts_at_offset(9)*100) do
+                            .session_content
+                              .title=event
+                            .session_hover
+                              .title=event
+                              .details
+                                =event.time_string
+                              -if (tags = [event.categories,event.page_tags].flatten).present?
+                                .footer
+                                  -tags.first(3).each do |tag|
+                                    .tag
+                                      %span.label.tag-label=tag
+                  
+                        .col_title.bottom=venue
+  .tab-pane#list  
+    .program-list.strip
+      .container
+        .row
+          -if @events.empty?
+            .span12 There aren't any events on this day yet.
+          -@events.each do |event|
+            .span12.program-item
+              .row
+                .span7
+                  %h3.small-title.program-title
+                    =link_to event.title, event
+                  %p.program-subtitle
+                    =event.time_string
+                    at
+                    =event.venue
+                  %p
+                    -[event.categories,event.page_tags].flatten.each do |tag|
+                      =link_to_tag(tag, :label_options => {:method => :titleize})
+                .span4.offset1
+                  =add_to_program_link(event)
+                  -if event.buy_tickets_url.present?
+                    =link_to "Buy tickets", event.buy_tickets_url,:target => "_blank", :class=>"white-btn buy-ticket-btn"
 .container
   .row
     .span12

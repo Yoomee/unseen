@@ -67,6 +67,13 @@ class Event < ActiveRecord::Base
   def day5
     dates.include?(Date.new(2012,9,23))
   end
+  
+  def duration_in_hours
+    return 1 if starts_at_before_type_cast.nil? || ends_at.nil? || read_attribute(:starts_at) > read_attribute(:ends_at)
+    dur = ((read_attribute(:ends_at) - read_attribute(:starts_at))/3600)
+    (dur*12).round.to_f/12
+  end
+  
   def full_date_string
     date
   end
@@ -83,11 +90,16 @@ class Event < ActiveRecord::Base
     venue.to_s
   end
   
-  
   def starts_at
     read_attribute(:starts_at).try(:strftime,'%H:%M')
   end
   alias_method :starts_at_before_type_cast, :starts_at
+  
+  def starts_at_offset(hour)
+    return nil if read_attribute(:starts_at).nil?
+    off = (read_attribute(:starts_at).seconds_since_midnight - (hour*3600))/3600
+    (off*12).round.to_f/12
+  end
   
   def ends_at
     read_attribute(:ends_at).try(:strftime,'%H:%M')
