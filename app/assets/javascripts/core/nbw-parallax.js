@@ -76,6 +76,18 @@ $(document).ready(function() { //when the document is ready...
 			inner_image.css({'backgroundPosition': newPos(50, windowHeight, pos, 1400, 1.4)});
 			
 		}
+    
+		//homepage first parallax
+		if($tenthBG.hasClass("inview")){
+			//call the newPos function and change the background position
+			$tenthBG.css({'backgroundPosition': newPos(50, windowHeight, pos, 1600, 0.3)}); 
+			inner_image.css({'backgroundPosition': newPos(50, windowHeight, pos, 1400, 1.4)});
+			
+		}
+    
+
+    
+    
 		
 		//if the second section is in view...
 		if($secondBG.hasClass("inview")){
@@ -123,10 +135,7 @@ $(document).ready(function() { //when the document is ready...
 		if($ninthBG.hasClass("inview")){
 		  // $ninthBG.css({'backgroundPosition': newPos(50, windowHeight, pos, 7250, 1.2)});
 		}				
-		//if the tenth section is in view...
-		if($tenthBG.hasClass("inview")){
-			$tenthBG.css({'backgroundPosition': newPos(50, windowHeight, pos, 7250, 0.2)});
-		}				
+	
 		
 			
 		$('#pixels').html(pos); //display the number of pixels scrolled at the bottom of the page
