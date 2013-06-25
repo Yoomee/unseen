@@ -21,15 +21,15 @@
 .program-calendar.strip
   .container
     .row
-      .span3
-        %ul.unstyled.mt-3
-          %li.active.pull-left=link_to('Calendar', '#calendar', :data => {:toggle => 'tab'}, :icon => 'calendar', :class => 'black-btn')
-          %li.pull-left.ml-1=link_to('List', '#list', :data => {:toggle => 'tab'}, :icon => "list", :class => 'black-btn')
-      .span6
+      .span6.offset3
         %h1.big-title.center
           =@date.strftime('%d %B')
+      .span3
+        %ul.unstyled#program-tab-nav.pull-right
+          %li.active.pull-left=link_to('List', '#list', :data => {:toggle => 'tab'}, :icon => "list", :class => 'black-btn')
+          %li.pull-left=link_to('Calendar', '#calendar', :data => {:toggle => 'tab'}, :icon => 'calendar', :class => 'black-btn')
 .tab-content
-  .tab-pane.active#calendar
+  .tab-pane#calendar
     .container
       .row
         .span12
@@ -51,25 +51,31 @@
                 .timetable
                   .venue_cols
                     -@events.group_by(&:venue).each do |venue, events|
+                      -hours_array = []
+                      -events.each do |event|
+                        -event.duration_in_hours.to_i.times do |n|
+                          -hours_array[event.starts_at_hour + n - 9] ||= []
+                          -hours_array[event.starts_at_hour + n - 9] << event.id
                       .venue_col
                         .col_title.top{:title => venue}=venue
                         -events.each do |event|
                           -height = (event.duration_in_hours * 100).round - 1
-                          =link_to(event, :class => "session #{'short' if event.duration_in_hours < 0.17}", :style => "top:#{((event.starts_at_offset(9)*100).round)+40}px;height:#{height}px;", "data-offset" => event.starts_at_offset(9)*100) do
+                          -x_offset = hours_array[event.starts_at_hour - 9].index(event.id)
+                          =link_to(event, :class => "session #{'short' if event.duration_in_hours < 0.17} session-offset-#{x_offset}", :style => "top:#{((event.starts_at_offset(9)*100).round)+40}px;height:#{height}px;", "data-offset" => event.starts_at_offset(9)*100) do
                             .session_content
                               .title=event
                             .session_hover
-                              .title=event
-                              .details
-                                =event.time_string
+                              %p.title=event
+                              %p.time=event.time_string
+                              %p.description=truncate(strip_tags(event.description), :length => 150, :separator => ' ')
                               -if (tags = [event.categories,event.page_tags].flatten).present?
                                 .footer
                                   -tags.first(3).each do |tag|
                                     .tag
-                                      %span.label.tag-label=tag
+                                      %span.label.tag-label=tag.to_s.titleize
                   
                         .col_title.bottom=venue
-  .tab-pane#list  
+  .tab-pane.active#list  
     .program-list.strip
       .container
         .row
