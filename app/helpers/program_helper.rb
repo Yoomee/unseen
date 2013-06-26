@@ -31,8 +31,8 @@ module ProgramHelper
   def venues_and_galleries_options(event)
     grouped_options_for_select(
       [
-        ['Venues',    Page.find_by_slug('venues').children.order(:title).map{|p|[p.title,p.id]}],
-        ['Galleries', Page.find_by_slug('galleries').children.order(:title).map{|p|[p.title,p.id]}]
+        ['Venues',    Page.find_by_slug("venues_#{Settings.current_edition}").children.order(:title).map{|p|[p.title,p.id]}],
+        ['Galleries', Page.find_by_slug("galleries_#{Settings.current_edition}").children.order(:title).map{|p|[p.title,p.id]}]
       ],
       event.venue_id
     )

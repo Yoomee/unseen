@@ -140,4 +140,4 @@ class Event < ActiveRecord::Base
   
 end
 
-Event::DATES = (Date.new(2012,9,19)..Date.new(2012,9,23)).to_a
+Event::DATES = (Date.new(2013,9,26)..Date.new(2013,9,29)).to_a

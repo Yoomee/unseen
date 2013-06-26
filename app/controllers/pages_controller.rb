@@ -12,7 +12,7 @@ class PagesController < ApplicationController
     @page.edition ||= Settings.editions.last
     if @page.parent.try(:slug) == "galleries"
       @page.view_name = "gallery"
-    elsif @page.parent.try(:slug) == "venues"
+    elsif @page.parent.try(:slug) =~ /^venues/
       @page.view_name = "gallery"
     elsif @page.parent.try(:slug) == "press"
       @page.view_name = "press_subpage"      

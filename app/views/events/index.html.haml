@@ -11,7 +11,8 @@
     .row
       .span8.offset2.highlight-intro
         %h1.big-title.center.highlight-title
-          Programme 2012
+          Programme
+          =Settings.current_edition
       -if program_slideshow = Slideshow.find_by_slug('program')
         =render("slideshows/tabbed_slideshow", :slideshow => program_slideshow)
         =link_if_can("Edit slideshow", [:edit, program_slideshow], :class => "pull-right mt-2 mr-2")
@@ -33,76 +34,80 @@
     .container
       .row
         .span12
-          #prog_container
-            #programme_calendar          
-              #prog_hours
-                .prog_arrow.prog_arrow_left
-                  =link_to_function(content_tag(:i, nil, :class => 'icon-arrow-left'), "Programme.scroll(0)");
-                .hours
-                  -(9..23).each do |hour|
-                    .hour="%d:00" % hour
-                .prog_arrow.prog_arrow_left
-                  =link_to_function(content_tag(:i, nil, :class => 'icon-arrow-left'), "Programme.scroll(0)");
-              #prog_wrapper
-                .prog_arrow#top_scroll_right.prog_arrow_right{:class => @venues.size > 4 ? 'active_arrow' : ''}
-                  =link_to_function(content_tag(:i, nil, :class => 'icon-arrow-right'), "Programme.scroll(1)");
-                .prog_arrow#bottom_scroll_right.prog_arrow_right{:class => @venues.size > 4 ? 'active_arrow' : ''}
-                  =link_to_function(content_tag(:i, nil, :class => 'icon-arrow-right'), "Programme.scroll(1)");
-                .timetable
-                  .venue_cols
-                    -@events.group_by(&:venue).each do |venue, events|
-                      -hours_array = []
-                      -events.each do |event|
-                        -event.duration_in_hours.to_i.times do |n|
-                          -hours_array[event.starts_at_hour + n - 9] ||= []
-                          -hours_array[event.starts_at_hour + n - 9] << event.id
-                      .venue_col
-                        .col_title.top{:title => venue}=venue
+          -if @events.empty?
+            There aren't any events scheduled for this day yet.
+          -else
+            #prog_container
+              #programme_calendar          
+                #prog_hours
+                  .prog_arrow.prog_arrow_left
+                    =link_to_function(content_tag(:i, nil, :class => 'icon-arrow-left'), "Programme.scroll(0)");
+                  .hours
+                    -(9..23).each do |hour|
+                      .hour="%d:00" % hour
+                  .prog_arrow.prog_arrow_left
+                    =link_to_function(content_tag(:i, nil, :class => 'icon-arrow-left'), "Programme.scroll(0)");
+                #prog_wrapper
+                  .prog_arrow#top_scroll_right.prog_arrow_right{:class => @venues.size > 4 ? 'active_arrow' : ''}
+                    =link_to_function(content_tag(:i, nil, :class => 'icon-arrow-right'), "Programme.scroll(1)");
+                  .prog_arrow#bottom_scroll_right.prog_arrow_right{:class => @venues.size > 4 ? 'active_arrow' : ''}
+                    =link_to_function(content_tag(:i, nil, :class => 'icon-arrow-right'), "Programme.scroll(1)");
+                  .timetable
+                    .venue_cols
+                      -@events.group_by(&:venue).each do |venue, events|
+                        -hours_array = []
                         -events.each do |event|
-                          -height = (event.duration_in_hours * 100).round - 1
-                          -x_offset = hours_array[event.starts_at_hour - 9].index(event.id)
-                          =link_to(event, :class => "session #{'short' if event.duration_in_hours < 0.17} session-offset-#{x_offset}", :style => "top:#{((event.starts_at_offset(9)*100).round)+40}px;height:#{height}px;", "data-offset" => event.starts_at_offset(9)*100) do
-                            .session_content
-                              .title=event
-                            .session_hover
-                              %p.title=event
-                              %p.time=event.time_string
-                              %p.description=truncate(strip_tags(event.description), :length => 150, :separator => ' ')
-                              -if (tags = [event.categories,event.page_tags].flatten).present?
-                                .footer
-                                  -tags.first(3).each do |tag|
-                                    .tag
-                                      %span.label.tag-label=tag.to_s.titleize
+                          -event.duration_in_hours.to_i.times do |n|
+                            -hours_array[event.starts_at_hour + n - 9] ||= []
+                            -hours_array[event.starts_at_hour + n - 9] << event.id
+                        .venue_col
+                          .col_title.top{:title => venue}=venue
+                          -events.each do |event|
+                            -height = (event.duration_in_hours * 100).round - 1
+                            -x_offset = hours_array[event.starts_at_hour - 9].index(event.id)
+                            =link_to(event, :class => "session #{'short' if event.duration_in_hours < 0.17} session-offset-#{x_offset}", :style => "top:#{((event.starts_at_offset(9)*100).round)+40}px;height:#{height}px;", "data-offset" => event.starts_at_offset(9)*100) do
+                              .session_content
+                                .title=event
+                              .session_hover
+                                %p.title=event
+                                %p.time=event.time_string
+                                %p.description=truncate(strip_tags(event.description), :length => 150, :separator => ' ')
+                                -if (tags = [event.categories,event.page_tags].flatten).present?
+                                  .footer
+                                    -tags.first(3).each do |tag|
+                                      .tag
+                                        %span.label.tag-label=tag.to_s.titleize
                   
-                        .col_title.bottom=venue
+                          .col_title.bottom=venue
   .tab-pane.active#list  
     .program-list.strip
       .container
         .row
-          -if @events.empty?
-            .span12 There aren't any events on this day yet.
-          -@events.each do |event|
-            .span12.program-item
-              .row
-                .span7
-                  %h3.small-title.program-title
-                    =link_to event.title, event
-                  %p.program-subtitle
-                    =event.time_string
-                    at
-                    =event.venue
-                  %p
-                    -[event.categories,event.page_tags].flatten.each do |tag|
-                      =link_to_tag(tag, :label_options => {:method => :titleize})
-                .span4.offset1
-                  =add_to_program_link(event)
-                  -if event.buy_tickets_url.present?
-                    =link_to "Buy tickets", event.buy_tickets_url,:target => "_blank", :class=>"white-btn buy-ticket-btn"
+          .span12
+            -if @events.empty?
+              There aren't any events scheduled for this day yet.
+            -@events.each do |event|
+              .program-item
+                .row
+                  .span7
+                    %h3.small-title.program-title
+                      =link_to event.title, event
+                    %p.program-subtitle
+                      =event.time_string
+                      at
+                      =event.venue
+                    %p
+                      -[event.categories,event.page_tags].flatten.each do |tag|
+                        =link_to_tag(tag, :label_options => {:method => :titleize})
+                  .span4.offset1
+                    =add_to_program_link(event)
+                    -if event.buy_tickets_url.present?
+                      =link_to "Buy tickets", event.buy_tickets_url,:target => "_blank", :class=>"white-btn buy-ticket-btn"
 .container
   .row
     .span12
       =options_panel do
         =back_link
         =link_if_can("New event", new_event_path)
-        -if venue_page = Page.find_by_slug('venues')
+        -if venue_page = Page.find_by_slug("venues_#{Settings.current_edition}")
           =link_to("New venue",  new_child_page_path(:parent_id => venue_page.id)) if can?(:new,Page)
