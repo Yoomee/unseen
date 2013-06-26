@@ -11,7 +11,7 @@
             amsterdam
     .span9
       #header-links.pull-right
-        =link_to "Buy tickets", "http://sum008.summit.nl/unseenamsterdam", :class=>"header-link black-btn", :id=>"buy-ticket-link", :target=>"_blank"
+        =link_to "Buy tickets", Page.find_by_slug(:buy_tickets) || '#', :class=>"header-link black-btn", :id=>"buy-ticket-link"
         =link_to '', "http://www.linkedin.com/company/unseen", :class => 'header-icon', :icon => 'linkedin-sign', :title => "LinkedIn", :target => '_blank'
         =link_to '', "http://unseenphotofair.tumblr.com", :class => 'header-icon', :icon => 'tumblr-sign', :title => "Tumblr", :target => '_blank'
         =link_to '', "http://twitter.com/UnseenPhotoFair", :class=>"header-icon", :icon => 'twitter-sign', :title => "Twitter", :target => '_blank'
