@@ -787,7 +787,9 @@ a.home_small_title, a.home_small_title:hover {
   left: 35%;
   background-repeat:repeat-y;
 }
-
+.home_bg_1 .bg1 {
+   background-image: url(/assets/home_bg_inner_1.png);
+}
 .home_bg_2 {
   background: #6cbbc2 url(/assets/home_bg_2.jpg) 50% 0 fixed;
 }
