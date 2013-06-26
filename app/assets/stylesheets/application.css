@@ -785,7 +785,7 @@ a.home_small_title, a.home_small_title:hover {
   position: absolute;
   top: -100px;
   left: 35%;
-  
+  background-repeat:repeat-y;
 }
 
 .home_bg_2 {
