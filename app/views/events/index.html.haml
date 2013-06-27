@@ -27,10 +27,20 @@
           =@date.strftime('%d %B')
       .span3
         %ul.unstyled#program-tab-nav.pull-right
-          %li.active.pull-left=link_to('List', '#list', :data => {:toggle => 'tab'}, :icon => "list", :class => 'black-btn')
-          %li.pull-left=link_to('Calendar', '#calendar', :data => {:toggle => 'tab'}, :icon => 'calendar', :class => 'black-btn')
+          %li.active.pull-left
+            =link_to('#calendar', :data => {:toggle => 'tab'}, :class => 'black-btn') do
+              %span.block-or-line-icon.show-block
+                -9.times do
+                  .sb
+              %span.tab-label Calendar
+          %li.pull-left
+            =link_to('#list', :data => {:toggle => 'tab'}, :class => 'black-btn') do
+              %span.block-or-line-icon.show-line
+                -3.times do
+                  .sl
+              %span.tab-label List
 .tab-content
-  .tab-pane#calendar
+  .tab-pane.active#calendar
     .container
       .row
         .span12
@@ -65,21 +75,15 @@
                           -events.each do |event|
                             -height = (event.duration_in_hours * 100).round - 1
                             -x_offset = hours_array[event.starts_at_hour - 9].index(event.id)
-                            =link_to(event, :class => "session #{'short' if event.duration_in_hours < 0.17} session-offset-#{x_offset}", :style => "top:#{((event.starts_at_offset(9)*100).round)+40}px;height:#{height}px;", "data-offset" => event.starts_at_offset(9)*100) do
+                            =link_to(event, :class => "session #{'short' if event.duration_in_hours < 0.17} session-offset-#{x_offset}", :style => "top:#{((event.starts_at_offset(9)*100).round)+39}px;height:#{height}px;", "data-offset" => event.starts_at_offset(9)*100) do
                               .session_content
                                 .title=event
                               .session_hover
                                 %p.title=event
                                 %p.time=event.time_string
                                 %p.description=truncate(strip_tags(event.description), :length => 150, :separator => ' ')
-                                -if (tags = [event.categories,event.page_tags].flatten).present?
-                                  .footer
-                                    -tags.first(3).each do |tag|
-                                      .tag
-                                        %span.label.tag-label=tag.to_s.titleize
-                  
                           .col_title.bottom=venue
-  .tab-pane.active#list  
+  .tab-pane#list  
     .program-list.strip
       .container
         .row

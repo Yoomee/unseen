@@ -32,8 +32,8 @@ var Programme = {
       $('.venue_cols').animate({'left':newLeft});
       Programme.left = newLeft;
       switch(newLeft){
-        case 0:$('.prog_arrow_left').removeClass('active_arrow');break;
-        case Programme.minLeft:$('.prog_arrow_right').removeClass('active_arrow');break;
+        case 0:$('.prog_arrow_left').removeClass('active_arrow');$('.prog_arrow_right').addClass('active_arrow');break;
+        case Programme.minLeft:$('.prog_arrow_right').removeClass('active_arrow');$('.prog_arrow_left').addClass('active_arrow');break;
         default:$('.prog_arrow').addClass('active_arrow');break;
       }
     }        

@@ -1114,7 +1114,7 @@ a.subnav-tab:hover {
 	float: right;
 	margin: 10px 0 0;
 }
-a.block-or-line-icon {
+.block-or-line-icon {
 	display: block;
 	text-indent: -9000em;
 	float: right;
@@ -1783,8 +1783,12 @@ a.active .tag-label {
 #program-tab-nav{
   margin-top:75px;
 }
+#program-tab-nav a {
+  float:left;
+}
+
 #program-tab-nav li:first-child a.black-btn {
-  border-right:none;
+  margin-right:5px;
 }
 #program-tab-nav .active a.black-btn {
   background-color: #fff;
@@ -1795,6 +1799,35 @@ a.active .tag-label {
 #program-tab-nav .active a:hover {
   cursor:default;
 }
+#program-tab-nav .block-or-line-icon {
+  float:left;
+  padding-right:2px;
+  width:21px;
+  overflow:hidden;
+  margin:2px 1px 0px 0px;
+}
+#program-tab-nav .tab-label {
+  margin-top:1px;
+  float:left;
+}
+#program-tab-nav .sb{
+  width:5px;
+}
+#program-tab-nav .sl{
+  width:19px;
+}
+#program-tab-nav .sb,
+#program-tab-nav .sl {
+  background: #fff;
+}
+#program-tab-nav a:hover .sb,
+#program-tab-nav a:hover .sl{
+  background: #000;
+}
+#program-tab-nav .active .sb,
+#program-tab-nav .active .sl {
+  background: #000;
+}
 
 #prog_container .row{
 }
@@ -1804,31 +1837,34 @@ a.active .tag-label {
   clear:both;
   float:left;
   width:65px;
-  margin-right:5px;
+  margin-right:8px;
+}
+#prog_hours .prog_arrow:last-child {
+  margin-top:-1px;
 }
 
 #prog_container .prog_arrow {
-  font-size:24px;
-  line-height:35px;
-  color:#fff;
-  background:#000;
-  height:40px;
+  font-size:22px;
+  line-height:37px;
+  height:38px;
+  border: 1px solid #000;
   text-align:center;
+  background:#fff;
 }
 
 #prog_container .prog_arrow a:hover {
   text-decoration:none;
-  cursor:default; 
+  cursor:default;
 }
-
 #prog_container .prog_arrow a{
-  color:#999;
+  color:#ccc;
   display: block;
   float: left;
   width: 100%;
+  height:100%;
 }
 #prog_container .active_arrow a {
-  color:#fff;
+  color:#000;
 }
 #prog_container .prog_arrow_left a {
 }
@@ -1836,25 +1872,28 @@ a.active .tag-label {
 }
 #prog_container .active_arrow a:hover{
   cursor:pointer;
+  background:#000;
+  color:#fff;
 }
 
 
 #prog_container .col_title {
   text-align:center;
+  text-transform:uppercase;
   position:absolute;
-  width:155px;
+  background:#fff;
+  width:150px;
   font-size:16px;
-  line-height:40px;
-  color:#fff;
-  background:#000;
-  height:40px;
+  line-height:38px;
+  border: 1px solid #000;
+  height:38px;
   white-space:nowrap;
   overflow:hidden;
   text-overflow:ellipsis;
 }
 
 #prog_container #top_scroll_right, #prog_container #bottom_scroll_right {
-  width: 70px;
+  width: 65px;
   position: absolute;
   right: 0px;
   z-index: 20;
@@ -1870,8 +1909,8 @@ a.active .tag-label {
 }
 
 #prog_wrapper {
-  width:870px;
-  height:1580px;
+  width:867px;
+  height:1579px;
   float:left;
   position:relative;
   overflow:hidden;
@@ -1887,8 +1926,8 @@ a.active .tag-label {
 }
 
 #prog_wrapper .venue_col {
-  width:155px;
-  margin-right:5px;
+  width:152px;
+  margin-right:8px;
   float:left;
   height:100%;
   position:relative;
@@ -1909,7 +1948,6 @@ a.active .tag-label {
 }
 
 #prog_header h5 {
-  font-family:'VAG Rounded W02 Bold', arial, sans-serif;
 	letter-spacing: 1px;
 	text-transform: uppercase;
 	float:left;
@@ -1958,7 +1996,6 @@ a.active .tag-label {
 }
 
 #prog_header .day {
-  font-family:'VAG Rounded W02 Bold', arial, sans-serif;
 	text-transform: uppercase;
 	font-size:17px;
 	float:left;
@@ -1991,21 +2028,24 @@ a.active .tag-label {
 
 
 .timetable .session {
-  width:153px;
+  width:150px;
   height:99px;
   border: 1px solid #000;
   float:left;
   position:absolute;
   top:0;
   left:0;
-  background-color:#CCCCCC;
+  background-color:#eee;
 }
-.timetable .session-offset-1{ width:133px; left: 20px; margin-top:15px}
-.timetable .session-offset-2{ width:113px; left: 40px; margin-top:30px}
-.timetable .session-offset-3{ width: 93px; left: 60px; margin-top:45px}
-.timetable .session-offset-4{ width: 73px; left: 80px; margin-top:60px}
-.timetable .session-offset-5{ width: 53px; left:100px; margin-top:75px}
-.timetable .session-offset-6{ width: 33px; left:120px; margin-top:90px}
+.timetable .session:hover {
+  background-color:#ccc;
+}
+.timetable .session-offset-1{ width:130px; left: 20px; margin-top:15px}
+.timetable .session-offset-2{ width:110px; left: 40px; margin-top:30px}
+.timetable .session-offset-3{ width: 90px; left: 60px; margin-top:45px}
+.timetable .session-offset-4{ width: 70px; left: 80px; margin-top:60px}
+.timetable .session-offset-5{ width: 50px; left:100px; margin-top:75px}
+.timetable .session-offset-6{ width: 30px; left:120px; margin-top:90px}
 
 
 .timetable .session_content {
