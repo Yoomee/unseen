@@ -2052,6 +2052,8 @@ a.active .tag-label {
   float:left;
   padding:5px 5%;
   width:90%;
+  height:100%;
+  height: calc(100% - 10px);
   font-size:11px;
   line-height:14px;
   overflow:hidden;

@@ -67,14 +67,15 @@
                       -@events.group_by(&:venue).each do |venue, events|
                         -hours_array = []
                         -events.each do |event|
-                          -event.duration_in_hours.to_i.times do |n|
-                            -hours_array[event.starts_at_hour + n - 9] ||= []
-                            -hours_array[event.starts_at_hour + n - 9] << event.id
+                          -offset = (event.starts_at_hour * 6).floor
+                          -(event.duration_in_hours*6).to_i.times do |n|
+                            -hours_array[offset + n] ||= []
+                            -hours_array[offset + n] << event.id
                         .venue_col
                           .col_title.top{:title => venue}=venue
                           -events.each do |event|
                             -height = (event.duration_in_hours * 100).round - 1
-                            -x_offset = hours_array[event.starts_at_hour - 9].index(event.id)
+                            -x_offset = hours_array[(event.starts_at_hour * 6).floor].try(:index, event.id)
                             =link_to(event, :class => "session #{'short' if event.duration_in_hours < 0.17} session-offset-#{x_offset}", :style => "top:#{((event.starts_at_offset(9)*100).round)+39}px;height:#{height}px;", "data-offset" => event.starts_at_offset(9)*100) do
                               .session_content
                                 .title=event

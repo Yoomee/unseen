@@ -96,7 +96,7 @@ class Event < ActiveRecord::Base
   alias_method :starts_at_before_type_cast, :starts_at
   
   def starts_at_hour
-    read_attribute(:starts_at).hour
+    read_attribute(:starts_at).hour + (read_attribute(:starts_at).min.to_f / 60)
   end
   
   def starts_at_offset(hour)
