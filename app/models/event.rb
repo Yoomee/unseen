@@ -52,20 +52,10 @@ class Event < ActiveRecord::Base
     date.year.to_s
   end
   
-  def day1
-    dates.include?(Date.new(2012,9,19))
-  end
-  def day2
-    dates.include?(Date.new(2012,9,20))
-  end
-  def day3
-    dates.include?(Date.new(2012,9,21))
-  end
-  def day4
-    dates.include?(Date.new(2012,9,22))
-  end
-  def day5
-    dates.include?(Date.new(2012,9,23))
+  (1..5).each do |n|
+    define_method "day#{n}" do
+      dates.include?(Event::DATES[n-1])
+    end
   end
   
   def duration_in_hours

@@ -75,6 +75,7 @@ Unseen::Application.routes.draw do
     match ':version/galleries' => 'galleries#index'
     match 'photographers' => 'photographers#index'
     match ':version/photographers' => 'photographers#index'
+    match ':version/photos' => 'photos#index'
     match ':version/pages' => 'pages#index'
     match 'authenticate' => 'sessions#api_authenticate', :as => 'authenticate'
     match 'api_redirect' => 'sessions#api_redirect', :as => 'redirect'

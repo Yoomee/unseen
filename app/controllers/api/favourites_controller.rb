@@ -20,7 +20,8 @@ class Api::FavouritesController < ApplicationController
   end
   
   def index
-    render :json => Favourite.unscoped.where(:user_id => current_api_user.id)
+    edition = params[:version].to_i < 10 ? "2012" : params[:version]
+    render :json => Favourite.unscoped.where(:user_id => current_api_user.id, :edition => edition)
   end
   
   def sync
@@ -42,7 +43,8 @@ class Api::FavouritesController < ApplicationController
       end
       current_api_user.record_activity!(new_favourite) if new_favourite && new_favourite.valid?
     end
-    render :json => Favourite.unscoped.where(:user_id => current_api_user)
+    edition = params[:version].to_i < 10 ? "2012" : params[:version]
+    render :json => Favourite.unscoped.where(:user_id => current_api_user, :edition => edition)
   end
   
   private
