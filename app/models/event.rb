@@ -36,6 +36,14 @@ class Event < ActiveRecord::Base
   #validates :image, :presence => true
   #validates_property :format, :of => :image, :in => [:jpeg, :JPEG, :jpg, :JPG, :png, :PNG, :gif, :GIF], :message => "must be an image"
   
+  class << self
+    
+    def festival_dates(edition = Settings.current_edition)
+      Event::FESTIVAL_DATES[edition].to_a
+    end
+    
+  end
+  
   
   def as_json(options ={})
     serializable_hash(options).tap do |hash|
@@ -54,7 +62,7 @@ class Event < ActiveRecord::Base
   
   (1..5).each do |n|
     define_method "day#{n}" do
-      dates.include?(Event::DATES[n-1])
+      dates.include?(Event.festival_dates(edition)[n-1])
     end
   end
   
@@ -130,4 +138,7 @@ class Event < ActiveRecord::Base
   
 end
 
-Event::DATES = (Date.new(2013,9,26)..Date.new(2013,9,29)).to_a
+Event::FESTIVAL_DATES = {
+  '2012' => Date.new(2012,9,19)..Date.new(2013,9,23),
+  '2013' => Date.new(2013,9,26)..Date.new(2013,9,29)
+}

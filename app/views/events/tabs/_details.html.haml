@@ -1,7 +1,7 @@
 =form.inputs do
   =form.input :title
-  =form.input :date, :as => :select, :collection => Event::DATES.map{|d| [d.strftime('%a %o %B'),d]}, :include_blank => false
-  =form.input :until_date, :as => :select, :collection => Event::DATES.map{|d| [d.strftime('%a %o %B'),d]}, :include_blank => true
+  =form.input :date, :as => :select, :collection => Event.festival_dates.map{|d| [d.strftime('%a %o %B'),d]}, :include_blank => false
+  =form.input :until_date, :as => :select, :collection => Event.festival_dates.map{|d| [d.strftime('%a %o %B'),d]}, :include_blank => true
   =form.input :starts_at, :as => :string, :input_html => {:class => 'timepicker'}
   =form.input :ends_at, :as => :string,  :input_html => {:class => 'timepicker'}
   =form.input :venue, :collection => venues_and_galleries_options(@event)
