@@ -36,7 +36,7 @@
               %li{ :class => params[:edition] == edition ? 'active' : '' }
                 =link_to collection_photos_edition_path(edition) do
                   =edition
-  -if can?(:new, CollectionPhoto) && params[:edition] == Settings.current_edition || params[:edition] == 'bgl'
+  -if can?(:new, CollectionPhoto) && (params[:edition] == Settings.current_edition || params[:edition] == 'bgl')
     .row
       .span12
         =options_panel do
