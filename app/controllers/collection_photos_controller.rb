@@ -5,7 +5,7 @@ class CollectionPhotosController < ApplicationController
   def create
     if @collection_photo.save
       flash_notice(@collection_photo)
-      redirect_to collection_photos_path
+      redirect_to collection_photos_edition_path(:edition => @collection_photo.edition)
     else
       render :action => "new"
     end
@@ -17,16 +17,20 @@ class CollectionPhotosController < ApplicationController
     redirect_to collection_photos_path
   end
   
-  def edit
-    
+  def edit  
+  end
+  
+  def edition
+    @collection_photos = CollectionPhoto.where(:edition => params[:edition])
+    render :action => 'index'
   end
   
   def index
-    @collection_photos = CollectionPhoto.all
+    redirect_to collection_photos_edition_path(:edition => Settings.current_edition)
   end
-  
+
   def new
-    
+    @collection_photo.edition = params[:edition].presence || Settings.current_edition
   end
   
   def update

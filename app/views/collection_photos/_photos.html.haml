@@ -13,9 +13,9 @@
         =simple_format(photo.text1)
     -if photo.text2.present?
       =simple_format(photo.text2)
-    -if photo.email.present?
+    -if photo.contactable?
       .mt-1
-        =mail_to(photo.email, "CONTACT GALLERY", :class => "black-btn")
+        =mail_to(photo.email, "Contact", :subject => photo.email_subject, :cc => photo.email_cc, :class => "black-btn")
     -if can?(:edit, photo)
       .mt-1
         =link_to("Edit photo", edit_collection_photo_path(photo), :class => "mr-1")

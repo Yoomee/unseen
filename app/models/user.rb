@@ -72,7 +72,7 @@ class User < ActiveRecord::Base
     clone.first_name = first_name
     clone.last_name = last_name
     clone.bio =  bio
-    clone.image_uid = image_uid
+    clone.image = image.dup
     clone.email = "#{edition}_#{email}"
     clone.password = "#{first_name} #{edition}"
     clone.password_confirmation = clone.password 

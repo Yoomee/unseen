@@ -121,8 +121,8 @@ b,
 .share_this,
 .black-btn,
 .white-btn,
-.btn-group#attendance .btn,
-.btn-group#attendance .btn a,
+.btn-group.btn-group-edition .btn,
+.btn-group.btn-group-edition .btn a,
 .session_hover p.title {
   font-family: "Apercu Bold", "calibri", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -258,7 +258,7 @@ h6 a:hover {
 }
 .black-btn,
 .white-btn,
-.btn-group#attendance .btn {
+.btn-group.btn-group-edition .btn {
  color: white;
  border-radius:0;
  box-shadow:none;
@@ -291,7 +291,7 @@ input.black-btn {
   text-decoration: none;
 }
 .white-btn, .white-btn:hover,
-.btn-group#attendance .btn {
+.btn-group.btn-group-edition .btn {
   background-color: #fff;
   color: #211d1d;
 }
@@ -1736,36 +1736,39 @@ a.active .tag-label {
   margin-bottom:16px;
 }
 
-/*========== Attendance dropdown selector ==========*/
-.btn-group#attendance .btn {
+/*========== Edition dropdown selector ==========*/
+.btn-group.btn-group-edition .btn {
   background-image: none;
 }
-.btn-group#attendance .btn:first-child {
+.btn-group.btn-group-edition .btn:first-child {
   border-right: none;
 }
-.btn-group#attendance .btn.dropdown-toggle {
+.btn-group.btn-group-edition .btn.dropdown-toggle {
   border-left: none;
 }
-.btn-group#attendance .dropdown-menu {
+.btn-group.btn-group-edition .dropdown-menu {
   min-width: 140px;
 }
-.btn-group#attendance .dropdown-menu li > a:hover,
-.btn-group#attendance .dropdown-menu .active > a,
-.btn-group#attendance .dropdown-menu .active > a:hover {
+.btn-group.btn-group-edition#collection .dropdown-menu {
+  min-width: 137px;
+}
+.btn-group.btn-group-edition .dropdown-menu li > a:hover,
+.btn-group.btn-group-edition .dropdown-menu .active > a,
+.btn-group.btn-group-edition .dropdown-menu .active > a:hover {
   background: #211d1d;
   color: white;
 }
-.btn-group#attendance {
+.btn-group.btn-group-edition {
   margin-bottom: 40px;
 }
-.btn-group#attendance.open {
+.btn-group.btn-group-edition.open {
   margin-bottom: 44px;
 }
-.btn-group#attendance.open .btn {
+.btn-group.btn-group-edition.open .btn {
   border-bottom: none;
   padding-bottom: 2px;
 }
-.btn-group#attendance.open .dropdown-menu {
+.btn-group.btn-group-edition.open .dropdown-menu {
   margin-top: 0px;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -1773,8 +1776,8 @@ a.active .tag-label {
   border: 2px solid #211d1d;
   border-top: none;
 }
-.slug_galleries_2012 .btn-group#attendance,
-.slug_galleries_2013 .btn-group#attendance {
+.slug_galleries_2012 .btn-group.btn-group-edition,
+.slug_galleries_2013 .btn-group.btn-group-edition {
   margin-top: -70px;
 }
 

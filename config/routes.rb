@@ -65,6 +65,8 @@ Unseen::Application.routes.draw do
   
   resources :collection_photos
   match "unseen-collection" => "collection_photos#index", :as => "unseen_collection"
+  match 'unseen-collection/edition/:edition' => 'collection_photos#edition', :as => 'collection_photos_edition'
+  match 'bankgiroloterij' => 'collection_photos#edition', :edition => 'bgl'
   
   resources :press_releases, :path => "press-releases"
   
