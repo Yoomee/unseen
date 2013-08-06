@@ -12,7 +12,7 @@
               =@event.dates.collect {|date| link_to(date.strftime('%a %o %B'), program_path(:day => date.strftime('%a').downcase, :anchor => 'program'))}.join("<br />").html_safe
           .row
             .span1 Time:
-            .span4=@event.time_string
+            .span4=@event.time_string_with_dots
           .row
             .span1 Venue:
             .span4=@event.venue

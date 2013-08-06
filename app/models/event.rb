@@ -112,13 +112,17 @@ class Event < ActiveRecord::Base
     "#{starts_at} - #{ends_at}"
   end
   
+  def time_string_with_dots
+    time_string.gsub(':', '.')
+  end
+  
   def date_time_string
     if dates.size > 1
       date_string = DateTimeSpan.new(date, until_date, "%o %b %Y")
     else
       date_string = date.strftime("%o %b %Y")
     end
-    "#{date_string} #{starts_at} - #{ends_at}"
+    "#{date_string} #{time_string_with_dots}"
   end
   
   private

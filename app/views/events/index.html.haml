@@ -81,9 +81,10 @@
                                 .title=event
                               .session_hover
                                 %p.title=event
-                                %p.time=event.time_string
+                                %p.time=event.time_string_with_dots
                                 %p.description=truncate(strip_tags(event.description), :length => 150, :separator => ' ')
                           .col_title.bottom=venue
+                    .fade_block
   .tab-pane#list  
     .program-list.strip
       .container
@@ -98,7 +99,7 @@
                     %h3.small-title.program-title
                       =link_to event.title, event
                     %p.program-subtitle
-                      =event.time_string
+                      =event.time_string_with_dots
                       at
                       =event.venue
                     %p
