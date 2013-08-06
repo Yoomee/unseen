@@ -114,9 +114,17 @@ class Page < ActiveRecord::Base
     gallery_parent.galleries
   end
   
+  def program_col_width
+    Page::PROGRAM_VENUES.select{|v| v[0] == id}[0].try(:last) || 1
+  end
+  
   def thumbnail_image_url_for_api
     return nil if image.nil?
     image.thumb("55x55#").url
+  end
+  
+  def venue_position
+    Page::PROGRAM_VENUES.collect(&:first).index(id) || 10000
   end
   
   private  
@@ -140,3 +148,11 @@ class Page < ActiveRecord::Base
   
 end
 Page::NEWS_CATEGORIES = %w{collecting photographers galleries announcements fair-festival}
+Page::PROGRAM_VENUES = [
+  [485, 2],
+  [486, 3],
+  [488, 1],
+  [490, 1],
+  [518, 1],
+  [487, 1]
+]

@@ -1891,6 +1891,12 @@ a.active .tag-label {
   overflow:hidden;
   text-overflow:ellipsis;
 }
+#prog_container .venue_col_2x .col_title {
+  width:310px;
+}
+#prog_container .venue_col_3x .col_title {
+  width:470px;
+}
 
 #prog_container #top_scroll_right, #prog_container #bottom_scroll_right {
   width: 65px;
@@ -1910,7 +1916,7 @@ a.active .tag-label {
 
 #prog_wrapper {
   width:867px;
-  height:1579px;
+  height:1379px;
   float:left;
   position:relative;
   overflow:hidden;
@@ -1924,6 +1930,22 @@ a.active .tag-label {
   left:0px;
   height:100%;
 }
+#prog_wrapper .fade_block {
+  height: 1299px;
+  width: 67px;
+  z-index: 100;
+  position: absolute;
+  right: 0;
+  top: 40px;
+  pointer-events: none;
+  background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* IE10+ */
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+}
 
 #prog_wrapper .venue_col {
   width:152px;
@@ -1931,6 +1953,12 @@ a.active .tag-label {
   float:left;
   height:100%;
   position:relative;
+}
+#prog_wrapper .venue_col_2x {
+  width:312px;
+}
+#prog_wrapper .venue_col_3x {
+  width:472px;
 }
 
 .venue_col .top {
@@ -2035,10 +2063,15 @@ a.active .tag-label {
   position:absolute;
   top:0;
   left:0;
-  background-color:#eee;
+  z-index:1;
+  background-color:#e5f9f7;
+}
+.timetable .venue_col_even .session {
+  background-color:#a6ddd9;
 }
 .timetable .session:hover {
-  background-color:#ccc;
+  z-index:2;
+  background-color:#00aa99;
 }
 .timetable .session-offset-1{ width:130px; left: 20px; margin-top:15px}
 .timetable .session-offset-2{ width:110px; left: 40px; margin-top:30px}
@@ -2046,6 +2079,23 @@ a.active .tag-label {
 .timetable .session-offset-4{ width: 70px; left: 80px; margin-top:60px}
 .timetable .session-offset-5{ width: 50px; left:100px; margin-top:75px}
 .timetable .session-offset-6{ width: 30px; left:120px; margin-top:90px}
+
+.timetable .venue_col_2x .session-offset-1{ width:150px; left:160px; margin-top: 0px}
+.timetable .venue_col_2x .session-offset-2{ width:130px; left: 20px; margin-top:15px}
+.timetable .venue_col_2x .session-offset-3{ width:130px; left:180px; margin-top:15px}
+.timetable .venue_col_2x .session-offset-4{ width:110px; left: 40px; margin-top:30px}
+.timetable .venue_col_2x .session-offset-5{ width:110px; left:200px; margin-top:30px}
+.timetable .venue_col_2x .session-offset-6{ width: 90px; left: 60px; margin-top:45px}
+.timetable .venue_col_2x .session-offset-7{ width: 90px; left:220px; margin-top:45px}
+
+.timetable .venue_col_3x .session-offset-1{ width:150px; left:160px; margin-top: 0px}
+.timetable .venue_col_3x .session-offset-2{ width:150px; left:320px; margin-top: 0px}
+.timetable .venue_col_3x .session-offset-3{ width:130px; left: 20px; margin-top:15px}
+.timetable .venue_col_3x .session-offset-4{ width:130px; left:180px; margin-top:15px}
+.timetable .venue_col_3x .session-offset-5{ width:130px; left:340px; margin-top:15px}
+.timetable .venue_col_3x .session-offset-6{ width:110px; left: 40px; margin-top:30px}
+.timetable .venue_col_3x .session-offset-7{ width:110px; left:200px; margin-top:30px}
+.timetable .venue_col_3x .session-offset-8{ width:110px; left:360px; margin-top:30px}
 
 
 .timetable .session_content {

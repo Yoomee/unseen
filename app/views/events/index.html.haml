@@ -1,7 +1,7 @@
 -content_for :head do
   =javascript_include_tag('programme')
   :javascript
-    Programme.minLeft = -"#{(@venues.size - 5)*160}";
+    Programme.minLeft = -"#{(@venues.sum(&:program_col_width) - 5)*160}";
     $(document).ready(function() {
       Programme.init();
     });
@@ -53,8 +53,8 @@
                   .prog_arrow.prog_arrow_left
                     =link_to_function(content_tag(:i, nil, :class => 'icon-arrow-left'), "Programme.scroll(0)");
                   .hours
-                    -(9..23).each do |hour|
-                      .hour="%d:00" % hour
+                    -(11..23).each do |hour|
+                      .hour="%d.00" % hour
                   .prog_arrow.prog_arrow_left
                     =link_to_function(content_tag(:i, nil, :class => 'icon-arrow-left'), "Programme.scroll(0)");
                 #prog_wrapper
@@ -64,19 +64,20 @@
                     =link_to_function(content_tag(:i, nil, :class => 'icon-arrow-right'), "Programme.scroll(1)");
                   .timetable
                     .venue_cols
-                      -@events.group_by(&:venue).each do |venue, events|
+                      -@venues.each do |venue|
+                        -events = @events.select{|e| e.venue_id == venue.id}
                         -hours_array = []
                         -events.each do |event|
                           -offset = (event.starts_at_hour * 6).floor
                           -(event.duration_in_hours*6).to_i.times do |n|
                             -hours_array[offset + n] ||= []
                             -hours_array[offset + n] << event.id
-                        .venue_col
+                        .venue_col{:class => "#{cycle('venue_col_odd','venue_col_even')} venue_col_#{venue.program_col_width}x"}
                           .col_title.top{:title => venue}=venue
                           -events.each do |event|
                             -height = (event.duration_in_hours * 100).round - 1
                             -x_offset = hours_array[(event.starts_at_hour * 6).floor].try(:index, event.id)
-                            =link_to(event, :class => "session #{'short' if event.duration_in_hours < 0.17} session-offset-#{x_offset}", :style => "top:#{((event.starts_at_offset(9)*100).round)+39}px;height:#{height}px;", "data-offset" => event.starts_at_offset(9)*100) do
+                            =link_to(event, :class => "session #{'short' if event.duration_in_hours < 0.17} session-offset-#{x_offset}", :style => "top:#{((event.starts_at_offset(11)*100).round)+39}px;height:#{height}px;", "data-offset" => event.starts_at_offset(11)*100) do
                               .session_content
                                 .title=event
                               .session_hover
