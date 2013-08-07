@@ -31,8 +31,8 @@
               %li{ :class => params[:edition] == edition ? 'active' : '' }
                 =link_to collection_photos_edition_path(edition) do
                   =edition
-  -if can?(:new, CollectionPhoto) && (params[:edition] == Settings.current_edition || params[:edition] == 'bgl')
+  -if can?(:new, CollectionPhoto)
     .row
       .span12
         =options_panel do
-          =link_to("+ Add a photo", new_collection_photo_path(:edition => (params[:edition] == 'bgl' ? 'bgl' : nil)), :class => "btn")
+          =link_to("+ Add a photo", new_collection_photo_path(:edition => params[:edition]), :class => "btn")
