@@ -1081,7 +1081,7 @@ body.controller_users .subnav-tabs,
 body.root_slug_press .subnav-tabs,
 body.root_slug_galleries_2013 .subnav-tabs,
 body.controller_photographers .subnav-tabs,
-body.controller_collection_photos.action_index .subnav-tabs {
+body.controller_collection_photos.action_edition .subnav-tabs {
   float: left;
 }
 .subnav-tabs ul, .subnav-tabs li {
