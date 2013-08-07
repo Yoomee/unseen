@@ -4,3 +4,5 @@ live_site_url: http://unseenamsterdam.com
 google_analytics: UA-30248338-1
 editions: ['2012', '2013']
 current_edition: '2013'
+twitter:
+  bearer_token: AAAAAAAAAAAAAAAAAAAAAE6ORQAAAAAAIHgBvYwKX6VNYCvOAopBkW4XGl8%3D0wGL20mu9A5u12JvTMhsdbteFi77SPOnE1wURuKTjA
