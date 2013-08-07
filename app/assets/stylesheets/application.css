@@ -1884,7 +1884,7 @@ a.active .tag-label {
   text-align:center;
   text-transform:uppercase;
   position:absolute;
-  background:#fff;
+  background:#e5f9f7;
   width:150px;
   font-size:16px;
   line-height:38px;
@@ -2069,6 +2069,7 @@ a.active .tag-label {
   z-index:1;
   background-color:#e5f9f7;
 }
+#prog_container .venue_col_even .col_title,
 .timetable .venue_col_even .session {
   background-color:#a6ddd9;
 }
