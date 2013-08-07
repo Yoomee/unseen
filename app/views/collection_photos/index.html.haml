@@ -9,14 +9,9 @@
         -else
           Unseen Collection
     .span10.offset1.center
-      -if params[:edition] == 'bgl'
-      -else
-        %h2.mb-15
-          The Unseen Collection is a unique collection of works
-          %br
-          for under 1,000 euro, contributed by galleries
-          %br
-          participating at the Unseen Photo Fair
+      %h2.mb-15
+        =snippet_text("unseen_collection_intro_#{params[:edition]}", "The Unseen Collection is a unique collection of works\nfor prices up to 1,000 euros, contributed by galleries\nparticipating at Unseen Photo Fair #{params[:edition]}").gsub(/\n/, '<br/>').html_safe
+        %small=edit_snippet_link("unseen_collection_intro_#{params[:edition]}")
   .row.mt-2
     .span12
       .row
