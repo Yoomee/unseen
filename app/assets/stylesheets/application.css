@@ -963,10 +963,13 @@ a.call-to-action-link {
 }
 a.call-to-action-link:hover {
 	text-decoration: none;
-  background-position-y:-200px;
+  background-position:-1495px -200px;
 } 
 a#social-facebook {
-  background-position-x: -1395px;
+  background-position: -1395px 0px;
+}
+a#social-facebook:hover{
+  background-position: -1395px -200px;
 }
 .email-signup-form {
 	float: left;
@@ -1030,18 +1033,27 @@ a#social-facebook {
 
 #footer-sponsors a:hover {
 	text-decoration: none;
-  background-position-y:-200px;
+  background-position:0px -200px;
 } 
 #footer-sponsors #westergasfabriek{
-  background-position-x:-500px;
+  background-position:-500px 0px;
   height:45px;
 }
+#footer-sponsors #westergasfabriek:hover{
+  background-position:-500px -200px;
+}
 #footer-sponsors #iamsterdam{
-  background-position-x:-800px;
+  background-position:-800px 0px;
   height:65px;
 }
+#footer-sponsors #iamsterdam:hover{
+  background-position:-800px -200px;
+}
 #footer-sponsors #cityofamsterdam{
-  background-position-x:-1100px;
+  background-position:-1100px 0px;
+}
+#footer-sponsors #cityofamsterdam:hover{
+  background-position:-1100px -200px;
 }
 
 #footer-video iframe{
