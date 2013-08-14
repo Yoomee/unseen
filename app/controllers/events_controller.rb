@@ -40,7 +40,7 @@ class EventsController < ApplicationController
   def index
     @date = Event.festival_dates.select{|d| d.strftime('%a') == params[:day].to_s.titleize}.first || Event.festival_dates.first
     @events = Event.on_date(@date).order(:starts_at)
-    @venues = @events.collect(&:venue).uniq.sort_by(&:venue_position)
+    @venues = @events.collect(&:venue).uniq.compact.sort_by(&:venue_position)
     @days = [1,2,3,4]
   end
 
