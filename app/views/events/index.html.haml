@@ -76,7 +76,10 @@
                           .col_title.top{:title => venue}=venue
                           -events.each do |event|
                             -height = (event.duration_in_hours * 100).round - 1
-                            -x_offset = hours_array[(event.starts_at_hour * 6).floor].try(:index, event.id)
+                            -if venue.id == 488
+                              -x_offset = event.page_tag_list.include?("films") ? 1 : 0
+                            -else
+                              -x_offset = hours_array[(event.starts_at_hour * 6).floor].try(:index, event.id)
                             =link_to(event, :class => "session #{'short' if event.duration_in_hours < 0.17} session-offset-#{x_offset}", :style => "top:#{((event.starts_at_offset(11)*100).round)+39}px;height:#{height}px;", "data-offset" => event.starts_at_offset(11)*100) do
                               .session_content
                                 .title=event
