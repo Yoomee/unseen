@@ -2,6 +2,7 @@ module User::TwitterAuth
 
   def self.included(base)
     base.validate :twitter_uid, :uniqueness => true
+    base.send(:attr_accessor,:twitter_image_url)
     base.boolean_accessor :just_connected_twitter
     base.extend ClassMethods
   end
@@ -29,6 +30,7 @@ module User::TwitterAuth
     if full_name.blank?
       self.full_name = auth.extra.raw_info.name
     end
+    self.twitter_image_url = auth.info.image.sub('_normal', '')
     self.twitter_screen_name = auth.extra.raw_info.screen_name
     connect_to_twitter_uid(auth.uid)
   end
@@ -42,9 +44,7 @@ module User::TwitterAuth
     else
       self.twitter_uid = uid
       self.just_connected_twitter = true
-      if image.nil?
-        self.image_url = "https://api.twitter.com/1/users/profile_image?screen_name=#{twitter_screen_name}&size=original"
-      end
+      self.image_url = self.twitter_image_url unless image
     end
   end
   

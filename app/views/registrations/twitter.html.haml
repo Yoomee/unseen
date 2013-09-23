@@ -10,6 +10,7 @@
         =form.input :first_name, :as => :hidden
         =form.input :last_name, :as => :hidden
         =form.input :twitter_uid, :as => :hidden
+        =form.input :twitter_image_url, :as=> :hidden
         =form.input :twitter_screen_name, :as => :hidden
       -if @show_password
         =form.commit_button t(:login), :button_html => {:class => "black-btn", :data => {:"loading-text" => "Logging in..."}}
