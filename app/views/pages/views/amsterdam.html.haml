@@ -1,7 +1,10 @@
 -content_for(:head) do
   :javascript
     $(document).ready(function() {
-      $.scrollTo($('#intro'),750);
+      if(window.location.pathname.replace('-1','') == "/amsterdam")
+        setTimeout("$.scrollTo($('#intro'),750);", 500);
+      else
+        $.scrollTo($('#intro'),750);
     });
 .container
   .row
