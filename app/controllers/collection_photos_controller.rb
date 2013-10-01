@@ -5,7 +5,11 @@ class CollectionPhotosController < ApplicationController
   def create
     if @collection_photo.save
       flash_notice(@collection_photo)
-      redirect_to collection_photos_edition_path(:edition => @collection_photo.edition)
+      if @collection_photo.edition == 'bgl'
+        redirect_to bankgiroloterij_path
+      else
+        redirect_to collection_photos_edition_path(:edition => @collection_photo.edition)
+      end
     else
       render :action => "new"
     end
@@ -36,7 +40,11 @@ class CollectionPhotosController < ApplicationController
   def update
     if @collection_photo.update_attributes(params[:collection_photo])
       flash_notice(@collection_photo)
-      redirect_to collection_photos_path
+      if @collection_photo.edition == 'bgl'
+        redirect_to bankgiroloterij_path
+      else
+        redirect_to collection_photos_edition_path(:edition => @collection_photo.edition)
+      end
     else
       render :action => "edit"
     end
