@@ -9,7 +9,7 @@
     =form.input :text1, :input_html => {:rows => 5}
     =form.input :text2, :input_html => {:rows => 5}
     =form.input :edition, :as => :hidden
-    -if @collection_photo.current_edition?
+    -if @collection_photo.current_edition? || @collection_photo.edition == 'bgl'
       %h3 Contact details
       =form.input :email, :label => "Email address"
       =form.input :email_cc, :label => "CC email address"
