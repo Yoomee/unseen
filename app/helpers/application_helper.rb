@@ -1,7 +1,7 @@
 module ApplicationHelper
   
   def editions
-    ["2012", "2013"]
+    Settings.editions
   end
   
 end
