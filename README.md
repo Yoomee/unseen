@@ -4,3 +4,4 @@
 * In `config/settings.yml`, add the new edition to the `editions` array and set it as the `current_edition` if it's ready to go live now.
 * Add the festival dates to `Event::FESTIVAL_DATES` in `app/models/event.rb`
 * Commit the changes, push and deploy.
+* Set the edition of the two new CMS pages to the new edition.
