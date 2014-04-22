@@ -144,5 +144,6 @@ end
 
 Event::FESTIVAL_DATES = {
   '2012' => Date.new(2012,9,19)..Date.new(2013,9,23),
-  '2013' => Date.new(2013,9,26)..Date.new(2013,9,29)
+  '2013' => Date.new(2013,9,26)..Date.new(2013,9,29),
+  '2014' => Date.new(2014,9,18)..Date.new(2014,9,21)
 }
