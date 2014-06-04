@@ -4,7 +4,7 @@ class EnquiriesController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @enquiries = Enquiry.for_year('2013').order('created_at DESC')
+    @enquiries = Enquiry.for_year('2014').order('created_at DESC')
     respond_to do |format|
       format.html
       format.xls do
