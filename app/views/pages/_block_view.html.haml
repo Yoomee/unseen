@@ -15,7 +15,7 @@
             %span=item.gallery_city_country
         -else
           %p.list_date_and_tag
-            -unless parent_page.try(:slug) == 'info' || page_root_parent == vip_page
+            -unless parent_page.try(:slug) == 'info' || page_root_parent == Page.find_by_slug('vip')
               %span=item.respond_to?(:publication_date) ? item.publication_date.strftime("%e %B %Y") : item.created_at.strftime("%e %B %Y")
             -if item.respond_to?(:categories)
               -item.categories.each do |tag|

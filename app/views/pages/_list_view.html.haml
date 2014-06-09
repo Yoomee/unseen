@@ -14,7 +14,8 @@
             %span=item.gallery_city_country
         -if defined?(@page) && @page.slug == "news"
           %p.list_date_and_tag
-            %span=item.respond_to?(:publication_date) ? item.publication_date.strftime("%e %B %Y") : item.created_at.strftime("%e %B %Y")
+            -unless parent_page.try(:slug) == 'info' || page_root_parent == Page.find_by_slug('vip')
+              %span=item.respond_to?(:publication_date) ? item.publication_date.strftime("%e %B %Y") : item.created_at.strftime("%e %B %Y")
             -item.categories.each do |tag|
               -if tag.name == 'fair-festival'
                 =link_to tag.to_tag, :class => "tag" do
