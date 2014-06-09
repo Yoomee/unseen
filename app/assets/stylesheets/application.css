@@ -1,4 +1,4 @@
-/* @override 
+/* @override
 	http://localhost:3000/assets/application.css?body=1
 */
 
@@ -9,8 +9,8 @@
  *= require_tree ./core
  *= require formtastic-bootstrap
  *= require ym_core
- *= require jquery-ui-bootstrap 
- *= require font-awesome 
+ *= require jquery-ui-bootstrap
+ *= require font-awesome
  *= require font-awesome-social
  *= require redactor
  *= require ym_cms
@@ -76,7 +76,7 @@ ul.dropdown-menu.pull-right {
     opacity: 0;
 }
 }
- 
+
 @-webkit-keyframes fade_in {
 0% {
     opacity: 0;
@@ -95,7 +95,7 @@ ul.dropdown-menu.pull-right {
     -webkit-animation-timing-function: ease-in;
     -webkit-animation-iteration-count: 1;
 }
- 
+
 .fade_in.fade_one {-webkit-animation-delay: 0, 0;}
 .fade_in.fade_two {-webkit-animation-delay: 0, 0.3s;}
 .fade_in.fade_three {-webkit-animation-delay: 0, 0.6s;}
@@ -138,11 +138,11 @@ form #page_title {
 }
 .home-slide-title, .medium-title {
   font-size: 36px;
-  line-height: 36px;  
+  line-height: 36px;
 }
 .nav ul, .nav li, #site_logo, h2#footer_site_logo, h2, .are-you-title, .block-title, .home-subtitle, .small-title, .small-title p, .share_this p {
 	font-size: 26px;
-	line-height: 28px; 
+	line-height: 28px;
 }
 h2.highlight-title {
   margin-bottom: 40px;
@@ -222,7 +222,7 @@ form a:hover {
   color: #ccc;
 }
 a:hover {
- text-decoration: underline; 
+ text-decoration: underline;
  color: #211d1d;
 }
 p {
@@ -324,7 +324,7 @@ input.black-btn {
   width: 16px;
   height: 16px;
   margin: 1px 6px 0 8px;
-  
+
 }
 
 /*hide search for now until we have it wired in*/
@@ -396,7 +396,7 @@ input.black-btn {
 .nav {
   min-height: 0px;
   margin: 0px 0 0;
-  
+
 }
 .nav li{
   float:left;
@@ -404,7 +404,7 @@ input.black-btn {
 }
 .nav li.amsterdam-link {
 	margin-right:0;
-  
+
 }
 .nav a {
   text-decoration: none;
@@ -471,7 +471,7 @@ h1 {
 }
 .about_page_view  #page_text_second a {
 	text-decoration: none;
-  
+
 }
 
 
@@ -506,7 +506,7 @@ h3.slide-title {
 }
 .root_slug_galleries h3.slide-title {
   font-size: 26px;
-  line-height: 28px; 
+  line-height: 28px;
   margin-bottom:0px;
 }
 
@@ -515,23 +515,23 @@ h3.slide-title {
 	margin-bottom: 30px;
 	overflow: hidden;
 	position: relative;
-  
+
 }
 .gallery_box {
   position: absolute;
   z-index: 3;
   top: 0;
   left: 0;
-  
+
 }
 .gallery_text {
   padding: 10px;
   position: relative;
   height: 200px;
   z-index: 20;
-  
+
   /*-webkit-box-shadow:inset 0px 1px 5px rgba(255,255,255,0.3), inset 0px 1px 0px rgba(255,255,255,0.3);*/
-  
+
   border-radius:2px
 }
 .gallery_box:hover {
@@ -557,7 +557,7 @@ h3.slide-title {
 .gallery_box a:hover {
   color: rgba(0,0,0,1);
   text-decoration: none;
-  
+
 }
 .gallery_box a:hover .gallery_image {
 	opacity: 0.6;
@@ -587,7 +587,7 @@ h1#news_title {
   margin-bottom:5px;
 }
 .list_date_and_tag, .list_read_more {
-	margin: 0;	
+	margin: 0;
 	width: 100%;
 	font-size: 16px;
 	line-height: 20px;
@@ -607,12 +607,12 @@ h1#news_title {
 }
 /*========== Block view ==========*/
 .block-image {
-  margin-bottom: 25px;  
+  margin-bottom: 25px;
 }
 .block-image-press-release{
   background:#324C82;
   height:200px;
-  width:300px; 
+  width:300px;
 }
 .block-text {
   height: 180px;
@@ -649,12 +649,12 @@ h4.sub-heading {
 }
 .push {
   clear: both;
-   height: 160px;  
+   height: 160px;
 }
 .footer_wrapper {
 	clear: both;
 	height: 160px;
-  
+
 }
 
 
@@ -692,7 +692,7 @@ body.controller_home #footer.container, body.controller_fair #footer.container {
   width: 100%;
 }
 #second .facebook .fb-like {
-  position: absolute;  
+  position: absolute;
   background: white;
   z-index: 4;
   top: 30px;
@@ -732,7 +732,7 @@ i.twitter_bird {
 }
 
 a.home_small_title, a.home_small_title:hover {
-  text-decoration: none;    
+  text-decoration: none;
 }
 #fifth {
 	background-position:  50px -45px;
@@ -832,7 +832,7 @@ a.home_small_title, a.home_small_title:hover {
   padding-top: 0px;
   z-index: 3;
   background-position: 50% 87px;
-  
+
 }
 #second #latest_news .span3 {
   margin-bottom: 20px;
@@ -873,12 +873,12 @@ input#email {
 }
 #sixth .artist_name {
   right: auto;
-  left: 0;  
+  left: 0;
 }
 #seventh {
 }
 #ninth {
-  background: white url(/assets/home_bg_9.png) 50% 0 no-repeat scroll;	
+  background: white url(/assets/home_bg_9.png) 50% 0 no-repeat scroll;
   z-index: 3;
 }
 #eleventh {
@@ -964,7 +964,7 @@ a.call-to-action-link {
 a.call-to-action-link:hover {
 	text-decoration: none;
   background-position:-1495px -200px;
-} 
+}
 a#social-facebook {
   background-position: -1395px 0px;
 }
@@ -974,7 +974,7 @@ a#social-facebook:hover{
 .email-signup-form {
 	float: left;
 	margin: 0 0 0 50px;
-  
+
 }
 #join-us-icon {
   background: url(/assets/join-us-icon.png) no-repeat center 10px;
@@ -997,7 +997,7 @@ a#social-facebook:hover{
 }
 #social-tumblr i,
 #social-linkedin i {
-  font-size: 45px;  
+  font-size: 45px;
   color: black;
   background-color: white;
   width: 50px;
@@ -1005,7 +1005,7 @@ a#social-facebook:hover{
   margin-bottom: 15px;
   border-radius:10px;
   -webkit-border-radius:10px;
-  -moz-border-radius:10px;  
+  -moz-border-radius:10px;
 }
 #social-tumblr:hover i {
   background-color: #2C4762;
@@ -1034,7 +1034,7 @@ a#social-facebook:hover{
 #footer-sponsors a:hover {
 	text-decoration: none;
   background-position:0px -194px;
-} 
+}
 #footer-sponsors #westergasfabriek{
   background-position:-500px 0px;
   height:45px;
@@ -1077,7 +1077,7 @@ body .parallax-subnav {
 a.subnav-back-link {
 	padding-top: 20px;
 	float: left;
-  
+
 }
 .subnav-tabs {
   float: right;
@@ -1110,11 +1110,11 @@ body.controller_collection_photos.action_edition .subnav-tabs {
 a.subnav-tab:hover {
   text-decoration: none;
   background: #fff;
-} 
+}
 .subnav-tabs .active a,
 .subnav-tabs .active span {
   background: #fff;
-} 
+}
 
 #community-nav a.black-btn{
   float: right;
@@ -1140,11 +1140,11 @@ a.subnav-tab:hover {
 }
 a.block-or-line-icon.active:hover .sb, a.block-or-line-icon.active:hover .sl {
 	background: #211d1d;
-  
+
 }
 a.block-or-line-icon:hover .sb, a.block-or-line-icon:hover .sl {
 	background: #fff;
-  
+
 }
 
 .sb {
@@ -1226,7 +1226,7 @@ p.program-subtitle {
 }
 .carousel-list li.active a{
   color: #fff;
-} 
+}
 .carousel-list li.active{
   background: #211d1d;
 }
@@ -1239,7 +1239,7 @@ p.program-subtitle {
   display:block;
 }
 .carousel-image img {
-	float: left; 
+	float: left;
 }
 .carousel-text p,
 .carousel-text a {
@@ -1343,7 +1343,7 @@ p.press_visual_txt {
 	margin: 15px 0 40px;
 	float: left;
 	clear: left;
-  
+
 }
 .news_page_image {
   margin-bottom: 20px;
@@ -1362,7 +1362,7 @@ p.press_visual_txt {
   display: block;
   float: left;
   margin: 0px 12px 0 0px;
-	
+
 
 }
 .share-link-text {
@@ -1377,7 +1377,7 @@ p.press_visual_txt {
 }
 .share_link:hover {
   text-decoration: none;
-} 
+}
 #twitter_share_link {
 
 
@@ -1390,7 +1390,7 @@ p.press_visual_txt {
 /*========== Slideshow ==========*/
 
 #add_slide_link {
-  text-decoration: none;  
+  text-decoration: none;
 }
 .slideshow_container {
   margin-bottom: 50px;
@@ -1419,9 +1419,9 @@ p.press_visual_txt {
   line-height: 60px;
 }
 .fair_box h2 {
-  margin:0 0 30px 0;  
+  margin:0 0 30px 0;
   text-align:center;
-  text-transform:uppercase;  
+  text-transform:uppercase;
 }
 .fair_box p {
   font-size:20px;
@@ -1451,7 +1451,7 @@ p.press_visual_txt {
   text-decoration: none;
   margin: 0px 0px 0 0;
   position: absolute;
-  display: inline-block;  
+  display: inline-block;
   top: 0;
 }
 .scroll_down {
@@ -1479,7 +1479,7 @@ height: 40px;
 }
 #fair.container .row h1, #fair.container .row h2 {
   font-size: 35px;
-  text-transform:uppercase;  
+  text-transform:uppercase;
   text-align: center;
   margin-bottom: 30px;
 }
@@ -1563,7 +1563,7 @@ a.tag:hover .tag-label {
   line-height: 16px;
   color: #211D1D;
 }
-.container.user-profile p.job-title { 
+.container.user-profile p.job-title {
   font-family: "Apercu Regular", "calibri", Arial, sans-serif;
   font-size: 18px;
   line-height: 20px;
@@ -1597,7 +1597,7 @@ a.tag:hover .tag-label {
 
 .community-person {
   height: 80px;
-  overflow: hidden;  
+  overflow: hidden;
 }
 .community-person .job-title {
   font-size: 14px;
@@ -2232,7 +2232,7 @@ a.active .tag-label {
 }
 
 .programme_list_item .details{
-  
+
 }
 
 .programme_list_item .tags {
@@ -2281,4 +2281,10 @@ a.active .tag-label {
   height: 40px;
   margin-bottom:0px;
   border-color:#fff;
+}
+
+/*========== vip page ==========*/
+
+.vip .subnav-tabs li {
+  width: 120px;
 }
