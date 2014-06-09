@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   load_and_authorize_resource
 
   expose(:amsterdam_page) {Page.find_by_slug('amsterdam')}
+  expose(:vip_page) {Page.find_by_slug('vip')}
   expose(:press_page) {Page.find_by_slug('press')}
 
   def new
@@ -15,7 +16,7 @@ class PagesController < ApplicationController
     elsif @page.parent.try(:slug) =~ /^venues/
       @page.view_name = "gallery"
     elsif @page.parent.try(:slug) == "press"
-      @page.view_name = "press_subpage"      
+      @page.view_name = "press_subpage"
     elsif @page.parent.try(:slug) == "news" || @page.parent.try(:slug) == "press_images"
       @page.view_name = "news"
     elsif @page.parent.try(:slug) == "welcome"
@@ -34,8 +35,10 @@ class PagesController < ApplicationController
     set_page_children
     if @page.root.slug == 'amsterdam'
       render(:action => "views/amsterdam") and return
+    elsif @page.root.slug == 'vip'
+      render(:action => "views/vip") and return
     elsif @page.slug == 'news'
-      session[:news_category] = params[:category]   
+      session[:news_category] = params[:category]
     end
     render :action => "views/#{@page.view_name}"
   end

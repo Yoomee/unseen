@@ -1,48 +1,80 @@
 -content_for(:head) do
-  :javascript
-    $(document).ready(function() {
-      if(window.location.pathname.replace('-1','') == "/amsterdam")
-        setTimeout("$.scrollTo($('#intro'),750);", 500);
-      else
-        $.scrollTo($('#intro'),750);
-    });
+  :coffeescript
+    $(document).ready ->
+      $('#js-ticket-link').click (e) ->
+        e.preventDefault()
+        $.scrollTo($('#js-ticket'), 750);
+      $('.js-programme-link').click (e) ->
+        e.preventDefault()
+        $.scrollTo($('#js-programme'), 750);
+
 .container
   .row
     .span12.highlight-intro
       %h1.big-title.center.highlight-title
         %span#page_title
-          =raw(amsterdam_page.title)
+          =raw(vip_page.title)
       %h2#page_text.small-title.highlight-title
-        =raw(amsterdam_page.text)
+        =raw(vip_page.text)
   .row
-    =render('slideshows/tabbed_slideshow', :slideshow => amsterdam_page.slideshow) if amsterdam_page.slideshow
-    .span3.offset5
-      =link_to("Full programme", program_path, :class => "black-btn more-middle")
+    =render('slideshows/tabbed_slideshow', :slideshow => vip_page.slideshow) if vip_page.slideshow
+    .span3.offset3
+      =link_to("Get your e-ticket", '#', :class => "black-btn more-middle", :id => 'js-ticket-link')
+    .span3
+      =link_to("Full programme", '#', :class => "black-btn more-middle js-programme-link")
 .container
   .row
     .span8
       =options_panel do
-        =link_if_can("Edit amsterdam page details", [:edit, amsterdam_page])
+        =link_if_can("Edit vip page details", [:edit, vip_page])
 
--page_to_show = (@page == amsterdam_page) ? amsterdam_page.children.first : @page
-#intro.home_box.parallax-subnav{:class => next_home_background_class}
+.home_box.parallax-subnav{:class => next_home_background_class}
+
+.container
+  .row
+    .highlight-intro.span12
+      %h1.big-title.center.highlight-title.mb-2
+        %span#page_title#js-ticket
+          VIP E-TICKETS
+      %h2#page_text.small-title.highlight-title
+        We kindly ask you to use your voucher code, that you can find on your person-
+        %br
+        al VIP invitation, to login. Your VIP e-ticket will be sent to you by email. This
+        %br
+        e-ticket is valid for you and one guest. At the fair we kindly as you to present
+        %br
+        this e-ticket at the Unseen VIP Desk where you and your guest will receive a
+        %br
+        VIP wristband, providing you with unlimited access to the Fair, the Festival
+        %br
+        Programme and the exclusive Unseen Unlimited activities.
+      %p.center
+        %iframe{:allowtransparency => "true", :frameborder => "0", :height => "525", :marginheight => "0", :marginwidth => "0", :name => "paymentMenu", :scrolling => "auto", :src => "https://frontoffice.paylogic.nl/?event_id=94728&amp;point_of_sale_id=9904", :width => "450"}
+
+
+  .row
+    .span3.offset5
+      =link_to("Full programme", '#', :class => "black-btn more-middle js-programme-link")
+
+-page_to_show = (@page == vip_page) ? vip_page.children.first : @page
+#js-programme.home_box.parallax-subnav{:class => next_home_background_class}
   .subnav-strip
     .container
       .row
         .span11
           .subnav-tabs
             %ul
-              -Page.find_by_slug('amsterdam').children.each_with_index do |child, index|
+              -Page.find_by_slug('vip').children.each_with_index do |child, index|
                 =li_with_active((child == page_to_show) || (child == page_to_show.parent), link_to(child.title,child, :class => 'subnav-tab'))
               -if can?(:create, Page)
                 %li.subnav-tab
-                  =link_to("+ Add page", new_child_page_path(:parent_id => amsterdam_page.id))
+                  =link_to("+ Add page", new_child_page_path(:parent_id => vip_page.id))
         .span1
           =render("pages/toggle_view_links")
 
 -if page_to_show
   .container
-    -if page_to_show.parent == amsterdam_page
+    -if page_to_show.parent == vip_page
       .row
         .span12
           %h2.home-title
