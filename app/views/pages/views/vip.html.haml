@@ -1,12 +1,15 @@
 -content_for(:head) do
   :coffeescript
     $(document).ready ->
+      unless window.location.pathname.replace("-1", "") is "/vip"
+        $.scrollTo $("#js-programme"), 750
       $('#js-ticket-link').click (e) ->
         e.preventDefault()
         $.scrollTo($('#js-ticket'), 750);
       $('.js-programme-link').click (e) ->
         e.preventDefault()
         $.scrollTo($('#js-programme'), 750);
+
 
 .container
   .row
@@ -32,7 +35,7 @@
 
 .container
   .row
-    .highlight-intro.span12
+    .highlight-intro.span12.mt-2
       %h1.big-title.center.highlight-title.mb-2
         %span#page_title#js-ticket
           VIP E-TICKETS
@@ -49,7 +52,7 @@
         %br
         Programme and the exclusive Unseen Unlimited activities.
       %p.center
-        %iframe{:allowtransparency => "true", :frameborder => "0", :height => "525", :marginheight => "0", :marginwidth => "0", :name => "paymentMenu", :scrolling => "auto", :src => "https://frontoffice.paylogic.nl/?event_id=94728&amp;point_of_sale_id=9904", :width => "450"}
+        %iframe{:allowtransparency => true, :frameborder => 0, :height => 300, :marginheight => 0, :marginwidth => 0, :name => "paymentMenu", :scrolling => "auto", :src => "https://frontoffice.paylogic.nl/?event_id=94728&amp;point_of_sale_id=9904", :width => 450 }
 
 
   .row
@@ -96,7 +99,6 @@
             %span#page_title
               =raw(@page.title)
           %p.list_date_and_tag
-            %span=@page.created_at.strftime("%e %B %Y")
             -@page.page_tags.each do |tag|
               =link_to_tag(tag, :label_options => {:method => :titleize})
       .row
