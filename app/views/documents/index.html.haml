@@ -1,0 +1,44 @@
+.container
+#intro.home_box.parallax-subnav{:class => next_home_background_class}
+.container
+  .row
+    .span12
+      %h1#news_title.big-title.center
+        %span#page_title
+          Documents
+      .row
+        .span8
+          -@documents.each do |document|
+            .row
+              .span12
+                .media
+                  .media-body
+                    .row
+                      .span9
+                        %h3.media-heading=link_to_self(document)
+                      .span3
+                        =link_to('Download', document, :class => 'black-btn')
+                    .clearfix
+                    .media-description
+                      =simple_format(document.description)
+                    .media-footer.text-muted
+                      %p
+                        Added
+                        =document.created_at.to_s(:month_day_year_or_not)
+                        -unless document.updated_at.to_date == document.created_at.to_date
+                          &middot
+                          Updated
+                          =document.updated_at.to_s(:month_day_year_or_not)
+                      -if current_user.try(:admin?)
+                        %p
+                          =link_to('Edit document', edit_document_path(document))
+                          &middot
+                          =link_to('Delete document', document_path(document), :method => :delete, :confirm => 'Are you sure you want to delete this document?')
+
+      .center=will_paginate(@documents)
+
+
+      .row
+        .span8
+          =options_panel do
+            =link_if_can('New document', [:new, Document])

@@ -1,10 +1,10 @@
 # Don't delete comments, they are used in gems for adding abilities
 class Ability
-  
+
   include CanCan::Ability
-  
+
   def initialize(user)
-    
+
     # open ability
     can :create, Enquiry
     can [:show, :set_view], Page, :draft => false
@@ -14,7 +14,8 @@ class Ability
     can :show, User
     can [:index, :edition], CollectionPhoto
     can :read, PressRelease
-    
+    can :read, Document
+
     if user.try(:admin?)
       can :manage, :all
       # admin ability
@@ -28,5 +29,5 @@ class Ability
       can [:update, :location, :destroy, :welcome, :edit_location], User, :id => user.id
     end
   end
-  
+
 end

@@ -2288,3 +2288,25 @@ a.active .tag-label {
 .vip .subnav-tabs li {
   width: 120px;
 }
+
+/*========== Documents ==========*/
+.media {
+  border-bottom:1px solid #ccc;
+  margin-top:30px;
+  padding-bottom:30px;
+}
+.media:last-child {
+  border-bottom: none;
+}
+.media p{
+  font-size:90%;
+}
+.media-description p{
+  margin-top:15px;
+}
+.media-heading {
+  margin:15px 0px 9px;
+}
+.text-muted {
+color: #999;
+}

@@ -1,5 +1,7 @@
 Unseen::Application.routes.draw do
 
+  resources :documents
+
   root :to => 'home#index'
   resources :wireframes, :only => [:index, :show]
   resources :events, :except => [:index] do
@@ -10,10 +12,10 @@ Unseen::Application.routes.draw do
   end
   match 'programme(/:day)' => 'events#index', :as => 'program'
   match 'photographers/edition/:edition' => 'photographers#edition', :as => 'photographers_edition'
-  
+
   resources :photographers
   resources :galleries
-  
+
   get "press-accreditations", :to => "enquiries#index", :as => "press_accreditations"
   get "press-accreditation", :to => "enquiries#new", :id => 'press', :as => "new_press_accreditation"
   resources :enquiries, :only => [] do
@@ -27,9 +29,9 @@ Unseen::Application.routes.draw do
       delete 'remove', :as => 'remove'
     end
   end
-  
+
   match "slides/:id" => "pages#show", :as => 'slide'
-  
+
   resources :users, :only => [] do
     collection do
       get 'welcome', :as => 'welcome'
@@ -40,21 +42,21 @@ Unseen::Application.routes.draw do
     end
   end
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-  
+
   resources :registrations, :only => [] do
     collection do
       post 'twitter', :as => 'twitter'
     end
   end
-  
+
   resources :pages do
-    member do 
+    member do
       post  'clone' => 'galleries#clone'
     end
-  end 
+  end
 
   resources :call_to_actions
-  
+
   match "community", :to => "community#index"
   match "community/people", :to => "community#people"
   match "community/activity", :to => "community#activity"
@@ -62,14 +64,14 @@ Unseen::Application.routes.draw do
 
   match "pages/view/list" => "pages#set_view", :view => 'list', :as => 'set_list_view'
   match "pages/view/block" => "pages#set_view", :view => 'block', :as => 'set_block_view'
-  
+
   resources :collection_photos
   match "unseen-collection" => "collection_photos#index", :as => "unseen_collection"
   match 'unseen-collection/edition/:edition' => 'collection_photos#edition', :as => 'collection_photos_edition'
   match 'bankgiroloterij' => 'collection_photos#edition', :edition => 'bgl'
-  
+
   resources :press_releases, :path => "press-releases"
-  
+
   namespace :api do
     match 'events' => 'events#index'
     match ':version/events' => 'events#index'
@@ -81,7 +83,7 @@ Unseen::Application.routes.draw do
     match ':version/pages' => 'pages#index'
     match 'authenticate' => 'sessions#api_authenticate', :as => 'authenticate'
     match 'api_redirect' => 'sessions#api_redirect', :as => 'redirect'
-    
+
     resources :favourites, :only => [:index, :create,:destroy], :path => ':version/favourites'
     match ':version/favourites_sync' => 'favourites#sync'
   end
