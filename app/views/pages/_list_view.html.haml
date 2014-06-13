@@ -14,7 +14,7 @@
             %span=item.gallery_city_country
         -if defined?(@page) && @page.slug == "news"
           %p.list_date_and_tag
-            -unless parent_page.try(:slug) == 'info' || page_root_parent == Page.find_by_slug('vip')
+            -unless parent_page.try(:slug) == 'info' ||  Page.where(slug: ['amsterdam', 'vip']).include?(page_root_parent)
               %span=item.respond_to?(:publication_date) ? item.publication_date.strftime("%e %B %Y") : item.created_at.strftime("%e %B %Y")
             -item.categories.each do |tag|
               -if tag.name == 'fair-festival'
