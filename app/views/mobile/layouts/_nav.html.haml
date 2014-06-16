@@ -1,8 +1,8 @@
 .navbar.navbar-fixed-top
   .navbar-inner
     .container-fluid.center
-      .row-fluid
-        .span2
+      .row
+        .col-md-2
           %ul.nav
             %li
               -if @event || @photo || (@page && (@page_title != @page.title))
@@ -10,9 +10,9 @@
                   %icon.icon-circle-arrow-left
               -else
                 %br
-        .span8.center
+        .col-md-8.center
           =link_to(@page_title.titleize, '#', :class => 'brand')
-        .span2
+        .col-md-2
           %ul.nav
             %li
               =link_to("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".html_safe, request.url)

@@ -10,7 +10,7 @@
   .slideshow
     .slideshow_inner
       -slides.each_with_index do |slide, index|
-        .span12.slide{:class => "#{index == 1 ? 'next_slide' : ''}"}
+        .col-md-12.slide{:class => "#{index == 1 ? 'next_slide' : ''}"}
           .slide_inner
             -if slide.is_a?(Slide)
               %h3.slide-title.medium-title

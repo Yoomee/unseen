@@ -834,13 +834,13 @@ a.home_small_title, a.home_small_title:hover {
   background-position: 50% 87px;
 
 }
-#second #latest_news .span3 {
+#second #latest_news .col-md-3 {
   margin-bottom: 20px;
 }
-#second #latest_news .span3 a {
+#second #latest_news .col-md-3 a {
   text-decoration: none;
 }
-#second .span6 .span4 {
+#second .col-md-6 .col-md-4 {
   margin-bottom: 10px;
 }
 #second .tweet_box {
@@ -1104,7 +1104,7 @@ body.controller_collection_photos.action_edition .subnav-tabs {
 .subnav-tab {
 	float: left;
 	padding: 20px;
-	height: 24px;
+	height: 64px;
 	text-align: center;
 }
 a.subnav-tab:hover {
@@ -1289,7 +1289,7 @@ p.program-subtitle {
   border: 2px dashed #211d1d;
   text-decoration: none;
 }
-.new-page-box.span4 a {
+.new-page-box.col-md-4 a {
   font-size: 30px;
 }
 .block-item .new-page-box a {
@@ -1543,21 +1543,21 @@ a.tag:hover .tag-label {
     font-size: 12px;
 }
 
-.span2 .photo-image-link {
+.col-md-2 .photo-image-link {
   width: 140px;
   height: 140px;
   margin-bottom: 15px;
   position: relative;
   float:left;
 }
-.span2 .photo-image-link img {
+.col-md-2 .photo-image-link img {
   position: absolute;
   left: 0;
   bottom: 0;
 }
-.span2.photo p.photographer,
-.span2.photo p.caption,
-.span2.photo p.gallery {
+.col-md-2.photo p.photographer,
+.col-md-2.photo p.caption,
+.col-md-2.photo p.gallery {
   font-size: 13px;
   margin: 0;
   line-height: 16px;
@@ -1606,23 +1606,23 @@ ul.tag-list a span.label.selected {
   background-color: #819FF7;
   color: white;
 }
-.span4 .community-photo-image-link,
-.span4 .collection-photo {
+.col-md-4 .community-photo-image-link,
+.col-md-4 .collection-photo {
   width: 300px;
   height: 300px;
   margin-bottom: 10px;
   position: relative;
   float:left;
 }
-.span4 .community-photo-image-link img,
-.span4 .collection-photo img {
+.col-md-4 .community-photo-image-link img,
+.col-md-4 .collection-photo img {
   position: absolute;
   left: 0;
   bottom: 0;
 }
-.span4 p.photographer,
-.span4 p.caption,
-.span4 p.gallery {
+.col-md-4 p.photographer,
+.col-md-4 p.caption,
+.col-md-4 p.gallery {
   font-size: 13px;
   margin: 0;
   line-height: 16px;
@@ -1644,10 +1644,10 @@ ul.tag-list a span.label.selected {
   padding: 4px 35px;
 }
 
-.span2.community-person.mb-1.small-left-margin {
+.col-md-2.community-person.mb-1.small-left-margin {
   margin-left: 10px;
 }
-#photo-list .span4 {
+#photo-list .col-md-4 {
   height: 375px;
   overflow: hidden;
 }

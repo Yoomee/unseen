@@ -2,14 +2,14 @@
 =render("pages/press_nav", :current_page => @page)
 .container
   .row
-    .span12
+    .col-md-12
       %h1#news_title.big-title.center
         %span#page_title
           Press
   .row
     .block-view
       -@press_releases.each do |press_release|
-        .block-item.span4
+        .block-item.col-md-4
           =link_to(press_release) do
             -if press_release.image
               =image_for(press_release, '300x200#', :class => 'block-image fade_in')

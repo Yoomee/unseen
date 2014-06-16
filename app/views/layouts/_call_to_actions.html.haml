@@ -1,10 +1,10 @@
 #call-to-actions.strip
   .container
     .row
-      .span12
+      .col-md-12
         %h2.home-title
           Stay up to date
-      .span4.social-links
+      .col-md-4.social-links
         %h3.home-subtitle
           Connect with
           %br
@@ -13,14 +13,14 @@
         =link_to "Twitter", "http://twitter.com/UnseenPhotoFair", :class=>"call-to-action-link", :id=>"social-twitter", :target=>"_blank"
         =link_to 'Tumblr', "http://unseenphotofair.tumblr.com", :class => 'call-to-action-link', :id => "social-tumblr", :icon => 'tumblr', :title => "Tumblr"
         =link_to 'LinkedIn', "http://www.linkedin.com/company/unseen", :class => 'call-to-action-link', :id => "social-linkedin", :icon => 'linkedin', :title => "LinkedIn"
-      .span4
+      .col-md-4
         %h3.home-subtitle
           Sign up for our newsletter
         .email-signup-form    
           =form_tag("http://vandejong.us4.list-manage.com/subscribe/post?u=52fb8e1dfe01670076f8db384&id=7b61a45fa2") do
             =text_field_tag "EMAIL", "your email", :class => "span3 bold", :id => 'email', :class=>"footer-email-field"
             =submit_tag 'Submit', :class => 'black-btn white-btn'  
-      .span4
+      .col-md-4
         %h3.home-subtitle
           Sign up now
           %br

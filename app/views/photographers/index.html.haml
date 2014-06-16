@@ -3,22 +3,22 @@
 .container
 
   .row
-    .span12
+    .col-md-12
       %h1.big-title.center Photographers
   .row
-    .news_page.span10.offset1.center
+    .news_page.col-md-10.col-md-offset-1.center
       %h2.mb-15
         =snippet_text(:photographers_intro, "Discover unseen work and emerging photography talent.\nJoin the Unseen Community and save them to your personal profile").gsub(/\n/, '<br/>').html_safe
         %small=edit_snippet_link(:photographers_intro)
 
   .row.mt-2
-    .news_page.span12
+    .news_page.col-md-12
       .row          
-        .span12
+        .col-md-12
           .row#people
             =render "photographers"
   .row
-    .span8
+    .col-md-8
 
       .btn-group.btn-group-edition
         .btn Attendance
@@ -32,12 +32,12 @@
             
             
       .row.mb-2  
-        .span12.center  
+        .col-md-12.center  
           =link_to "More", community_people_path(:page => @people.next_page), :remote => true, :class => "black-btn", :id => "more-people-btn" if @people.respond_to?(:next_page)
           
 
   .row
-    .span12
+    .col-md-12
       =options_panel do
         =back_link
         -if can?(:new, :photographer)

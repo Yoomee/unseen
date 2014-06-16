@@ -2,17 +2,17 @@
 #footer-sponsors.strip
   .container
     .row
-      .span6
+      .col-md-6
         =link_to("Blockbusterfonds","http://www.blockbusterfonds.nl", :target => "_blank", :id => 'blockbusterfonds')
-      .span3
+      .col-md-3
         =link_to("Westergasfabriek","http://www.westergasfabriek.nl", :target => "_blank", :id => 'westergasfabriek')
         =link_to("I amsterdam","http://www.iamsterdam.com", :target => "_blank", :id => 'iamsterdam')
-      .span3
+      .col-md-3
         =link_to("City of Amsterdam","http://www.amsterdam.nl", :target => "_blank", :id => 'cityofamsterdam')
     
 .container#footer
   .row
-    .span3
+    .col-md-3
       %h2#footer_site_logo
         =link_to root_path do
           %span
@@ -21,7 +21,7 @@
             =snippet_text(:festival_date, '26-29 sept 2013')
           %span
             amsterdam           
-    .span9
+    .col-md-9
       =render ("/layouts/nav")
       #header-links.pull-right
         =link_to '', "http://www.linkedin.com/company/unseen", :class => 'header-icon', :icon => 'linkedin-sign', :title => "LinkedIn", :target => '_blank'

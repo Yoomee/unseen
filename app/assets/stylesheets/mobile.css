@@ -32,7 +32,7 @@
 [class*="span"] img{
   width:90%;
 }
-.span12 img{
+.col-md-12 img{
   width:100%;
 }
 
@@ -778,13 +778,13 @@ a.home_small_title, a.home_small_title:hover {
   padding-top: 0px;
   z-index: 3;
 }
-#second #latest_news .span3 {
+#second #latest_news .col-md-3 {
   margin-bottom: 20px;
 }
-#second #latest_news .span3 a {
+#second #latest_news .col-md-3 a {
   text-decoration: none;
 }
-#second .span6 .span4 {
+#second .col-md-6 .col-md-4 {
   margin-bottom: 10px;
 }
 #second .tweet_box {
@@ -1137,7 +1137,7 @@ p.program-subtitle {
   border: 2px dashed black;
   text-decoration: none;
 }
-.new-page-box.span4 a {
+.new-page-box.col-md-4 a {
   font-size: 30px;
 }
 .block-item .new-page-box a {

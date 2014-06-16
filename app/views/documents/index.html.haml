@@ -2,21 +2,21 @@
 #intro.home_box.parallax-subnav{:class => next_home_background_class}
 .container
   .row
-    .span12
+    .col-md-12
       %h1#news_title.big-title.center
         %span#page_title
           Documents
       .row
-        .span8
+        .col-md-8
           -@documents.each do |document|
             .row
-              .span12
+              .col-md-12
                 .media
                   .media-body
                     .row
-                      .span9
+                      .col-md-9
                         %h3.media-heading=link_to_self(document)
-                      .span3
+                      .col-md-3
                         =link_to('Download', document, :class => 'black-btn')
                     .clearfix
                     .media-description
@@ -39,6 +39,6 @@
 
 
       .row
-        .span8
+        .col-md-8
           =options_panel do
             =link_if_can('New document', [:new, Document])

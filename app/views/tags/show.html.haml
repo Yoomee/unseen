@@ -2,7 +2,7 @@
 =render("pages/tags_nav")
 .container
   .row
-    .span12
+    .col-md-12
       %h1#news_title.big-title.center
         %span#page_title
           =current_tag.to_s.titleize
@@ -10,17 +10,17 @@
         -if view_preference == 'block'
           =render("pages/block_view", :items => @other_taggables, :parent_page => nil)
           .row
-            .span12
+            .col-md-12
               =render("community/people", :people => @user_taggables)
         -else
           =render("pages/list_view", :items => @other_taggables, :parent_page => nil)
-          .span3.offset1
+          .col-md-3.col-md-offset-1
             .row          
               =render("layouts/signup_column")
           .row
-            .span12
+            .col-md-12
               =render("community/people", :people => @user_taggables)
       .row
-        .span8
+        .col-md-8
           =options_panel do
             =back_link

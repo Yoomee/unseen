@@ -1,6 +1,6 @@
 .container.header-container
   #header.row
-    .span3
+    .col-md-3
       %h1#site_logo
         =link_to root_path do
           %span
@@ -9,7 +9,7 @@
             =snippet_text(:festival_date, '26-29 sept 2013')
           %span
             amsterdam
-    .span9
+    .col-md-9
       #header-links.pull-right
         =link_to "Buy tickets", Page.find_by_slug(:buy_tickets) || '#', :class=>"header-link black-btn", :id=>"buy-ticket-link"
         =link_to '', "http://www.linkedin.com/company/unseen", :class => 'header-icon', :icon => 'linkedin-sign', :title => "LinkedIn", :target => '_blank'

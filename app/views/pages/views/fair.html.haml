@@ -3,15 +3,15 @@
 .fair_box#fair_box_1
   .container
     .row
-      .span8.offset2
+      .col-md-8.col-md-offset-2
         %h2
           %span#page_fair_title_1
             =raw(@page.fair_title_1)
     .row
-      .span6
+      .col-md-6
         %p#page_fair_1
           =raw(@page.fair_1)
-      .span6
+      .col-md-6
         %p#page_fair_2
           =raw(@page.fair_2)
         .scroll_to_arrows
@@ -20,15 +20,15 @@
 .fair_box#fair_box_2
   .container
     .row
-      .span6.offset3
+      .col-md-6.col-md-offset-3
         %h2
           %span#page_fair_title_2
             =raw(@page.fair_title_2)
     .row
-      .span6
+      .col-md-6
         %p#page_fair_3
           =raw(@page.fair_3)
-      .span6
+      .col-md-6
         %p#page_fair_4
           =raw(@page.fair_4)
         .scroll_to_arrows
@@ -38,15 +38,15 @@
 .fair_box#fair_box_3
   .container
     .row
-      .span6.offset3
+      .col-md-6.col-md-offset-3
         %h2
           %span#page_fair_title_3
             =raw(@page.fair_title_3)
     .row
-      .span6
+      .col-md-6
         %p#page_fair_5
           =raw(@page.fair_5)
-      .span5.offset1
+      .col-md-5.col-md-offset-1
         =image_tag('fair_2.jpg')
         .scroll_to_arrows
           =link_to(raw("&uarr;"), "#", :class => "scroll_to_fair_box scroll_up", :data => {:"fair-box-id" => 2})
@@ -55,14 +55,14 @@
 .fair_box#fair_box_4
   .container
     .row
-      .span8.offset2
+      .col-md-8.col-md-offset-2
         %h2
           %span#page_fair_title_4
             =raw(@page.fair_title_4)
     .row
-      .span6
+      .col-md-6
         =image_tag('fair_3.jpg')
-      .span6
+      .col-md-6
         %span#page_fair_6
           =raw(@page.fair_6)
         .scroll_to_arrows 
@@ -71,7 +71,7 @@
 -if can?(:edit, @page)
   .container#fair_options_panel
     .row
-      .span8
+      .col-md-8
         =options_panel do
           =back_link
           =link_to("Edit page", edit_page_path(@page))

@@ -1,23 +1,23 @@
 =render "community/community_nav"
 .container
   .row
-    .span12
+    .col-md-12
       %h2.home-title#community-title Sign up
-    .span10.offset1
+    .col-md-10.col-md-offset-1
       %h2.center
         It's easy to log in with one of these sites you already use.
         %br
         We promise not to post to your account
         %br
         or spam your friends
-    .span8.offset2.center.mt-1.mb-2
+    .col-md-8.col-md-offset-2.center.mt-1.mb-2
       =link_to("Login with Facebook", user_omniauth_authorize_path(:facebook), :class => "oauth-login-link facebook-login-link")
       =link_to("Login with Twitter", user_omniauth_authorize_path(:twitter), :class => "oauth-login-link twitter-login-link")
       =link_to("Login with LinkedIn", user_omniauth_authorize_path(:linkedin), :class => "oauth-login-link linkedin-login-link")
-    .span12.center
+    .col-md-12.center
       Or enter your email address manually
       %u=link_to("here", 'javascript:void()', :'data-toggle' => "collapse", :'data-target' => "#hard-way")
-    .span6.offset3.collapse#hard-way
+    .col-md-6.col-md-offset-3.collapse#hard-way
       =semantic_form_for(resource, :as => resource_name, :url => users_path) do |form|
         =form.inputs do
           =form.input :email

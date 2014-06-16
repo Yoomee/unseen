@@ -1,12 +1,12 @@
 -parent_page ||= items.first.try(:parent)
 
-.span8
+.col-md-8
   -items.each do |item|
     .row
-      .list_image.span2.fade_in
+      .list_image.col-md-2.fade_in
         -if item.image
           =link_to(image_for(item, "140x100#"), item)
-      .list_box.span6
+      .list_box.col-md-6
         %h4.sub-heading=item.sub_heading
         %h3.small-title.list_title=link_to_self(item)
         -if item.is_a?(Page) && item.view_name == 'gallery'
@@ -24,7 +24,7 @@
                 =link_to_tag(tag, :label_options => {:method => :titleize})
   -if controller_name=="pages" && can?(:new, Page) && parent_page
     .row
-      .span2.fade_in.new-page-box
+      .col-md-2.fade_in.new-page-box
         =link_to("+ Add a subpage", new_child_page_path(:parent_id => parent_page.id))
   -elsif items.empty?
     %p Coming soon

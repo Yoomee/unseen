@@ -2,27 +2,27 @@
           
 .container
   .row
-    .span12.center
+    .col-md-12.center
       %h1.big-title People      
   .row.mt-2
-    .news_page.span10.offset1.center
+    .news_page.col-md-10.col-md-offset-1.center
       %h2.mb-15    
         =snippet_text(:community_people_intro, "Unseen is a meeting place for photography enthusiasts.\nBrowse these Unseen topics and connect with others").gsub(/\n/, '<br/>').html_safe
         %small=edit_snippet_link(:community_people_intro)
   -if !@tags.empty?
     .row.mt-1
-      .span12
+      .col-md-12
         #tags.center
           =render "tags"
 
   .row.mt-2
-    .news_page.span12
+    .news_page.col-md-12
       .row          
-        .span12
+        .col-md-12
           .row#people
             =render "people"
             
             
       .row.mb-2  
-        .span12.center  
+        .col-md-12.center  
           =link_to "More", community_people_path(:page => @people.next_page), :remote => true, :class => "black-btn", :id => "more-people-btn" if @people.respond_to?(:next_page)

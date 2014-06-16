@@ -1,9 +1,9 @@
 -@photographers ||= photographers
 
 -@photographers.each do |photographer|
-  .span1.community-person.mb-1
+  .col-md-1.community-person.mb-1
     =link_to(image_for(photographer, "60x60#"), photographer)
-  .span2.community-person.mb-1.small-left-margin
+  .col-md-2.community-person.mb-1.small-left-margin
     %p.mb-0=link_to_self(photographer)
     -if gallery = (photographer.try(:galleries) || []).first
       %p.mb-0.job-title=link_to_self(gallery)

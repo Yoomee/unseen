@@ -1,6 +1,6 @@
 -items.each do |event|
   .row.program-item
-    .span8.popular-event
+    .col-md-8.popular-event
       %h3.small-title.program-title
         =link_to event.title, event
       %p.program-subtitle
@@ -11,15 +11,15 @@
         %p
           -[event.categories,event.page_tags].flatten.each do |tag|
             =link_to_tag(tag, :label_options => {:method => :titleize})
-    .span3.offset1.event-right
+    .col-md-3.col-md-offset-1.event-right
       .row
-        .span2
+        .col-md-2
           -if event.users.include?(current_user)
             =add_to_program_link(event)
           -else
             %br
-        .span1
+        .col-md-1
           %icon.icon-heart
           =event.favourites.count
-    .span12
+    .col-md-12
       %hr

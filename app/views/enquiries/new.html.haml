@@ -5,7 +5,7 @@
   =render '/pages/press_nav'
 .container
   .row
-    .span12
+    .col-md-12
       %h1=title(@enquiry.form_title)
       -if @enquiry.form_intro.present?
         %p=@enquiry.form_intro

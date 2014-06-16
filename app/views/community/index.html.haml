@@ -2,16 +2,16 @@
           
 .container
   .row
-    .span12.center
+    .col-md-12.center
       %h1.big-title#community-title Community
-    .span10.offset1.center
+    .col-md-10.col-md-offset-1.center
       %h2.mb-15
         =snippet_text(:community_collect_intro, "Discover unseen work and emerging photography talent.\nJoin the Unseen Community and start collecting your own works by saving them to your profile").gsub(/\n/, '<br/>').html_safe
         %small=edit_snippet_link(:community_collect_intro)
   .row.mt-2
-    .span12
+    .col-md-12
       .row#photo-list
         =render "photos", :items => @photos
       .row.mb-2
-        .span12.center
+        .col-md-12.center
           =link_to("See more", community_path(:item_type => 'photo', :page => @photos.next_page, :per_page => 45), :id => "more-photo-btn", :class => 'black-btn community-black-btn', :remote => true)

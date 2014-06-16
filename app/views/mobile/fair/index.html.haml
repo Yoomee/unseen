@@ -1,7 +1,7 @@
 -@items.each do |title,path|
-  .row-fluid.mb-1
+  .row.mb-1
     -#
-      .span4
+      .col-md-4
         =link_to(image_for_with_retina(Page.last, "83x70#"), path)
-    .span12
+    .col-md-12
       %h3.small-title=link_to(title, path)
