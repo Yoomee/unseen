@@ -1500,6 +1500,10 @@ height: 40px;
   float:left;
   margin: 1px 4px 5px 0px;
 }
+label {
+  font-size: 13px;
+  color: #333333;
+}
 .tag .tag-label {
   background-color: #E5E5E4;
   border-radius:0;
