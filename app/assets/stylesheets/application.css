@@ -958,7 +958,6 @@ a.call-to-action-link {
   width: 60px;
   margin: 0px 0 0 10px;
   padding: 65px 0 0 ;
-  height: 20px;
   text-align: center;
   float: left;
   color: #fff;
@@ -1655,6 +1654,7 @@ ul.tag-list a span.label.selected {
 .favourite-btn {
   font-weight: bold;
   text-align: center;
+  padding: 4px 14px;
 }
 .add-to-collection {
   color: #ccc;
@@ -2287,15 +2287,15 @@ a.active .tag-label {
 }
 
 /*========== Documents ==========*/
-.media {
+.media-box {
   border-bottom:1px solid #ccc;
   margin-top:30px;
   padding-bottom:30px;
 }
-.media:last-child {
+.media-box:last-child {
   border-bottom: none;
 }
-.media p{
+.media-box p{
   font-size:90%;
 }
 .media-description p{

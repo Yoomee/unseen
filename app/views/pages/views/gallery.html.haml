@@ -13,14 +13,14 @@
   .row
     .col-md-8
       .row
-        .col-md-4
+        .col-md-6
           %h2.mb-1
             =raw(@page.title)
           .page_text
             #page_text
               =raw(@page.text)
           =favourite_link(@page)
-        .col-md-4
+        .col-md-6
           -if @page.image
             =image_for(@page, "250x")
             -if @page.image_caption
@@ -29,7 +29,7 @@
             .placeholder250x
               &nbsp;
       .row
-        .col-md-8
+        .col-md-12
           %h2.normal-title.mt-3.meet-people-title THESE PEOPLE FAVOURITED THIS GALLERY
           =render 'events/favourited_by', :item => @page
 
@@ -48,10 +48,9 @@
         %h2.normal-title.upcase.mb-1 Artists
         .pull-left.clear.mb-2
           -@page.photographers.each do |photographer|
-            .row.mb-1
-              .col-md-1
-                =link_to(image_for(photographer, "60x60#"), photographer)
-              .col-md-3.related-text
+            .media.mb-1
+              =link_to(image_for(photographer, "60x60#", :class => 'media-object'), photographer, :class => 'pull-left')
+              .media-body.related-text
                 =link_to_self(photographer)
                 %br
                 Photographer
