@@ -1660,6 +1660,9 @@ ul.tag-list a span.label.selected {
   text-align: center;
   padding: 4px 14px;
 }
+.favourite-btn.add-to-collection {
+  padding: 0;
+}
 .add-to-collection {
   color: #ccc;
   float: left;
@@ -2311,3 +2314,4 @@ a.active .tag-label {
 .text-muted {
 color: #999;
 }
+
