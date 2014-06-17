@@ -31,7 +31,7 @@
       .row
         .col-md-11
           .subnav-tabs
-            %ul
+            %ul.list-unstyled
               -Page.find_by_slug('amsterdam').children.each_with_index do |child, index|
                 =li_with_active((child == page_to_show) || (child == page_to_show.parent), link_to(child.title,child, :class => 'subnav-tab'))
               -if can?(:create, Page)

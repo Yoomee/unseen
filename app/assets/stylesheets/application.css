@@ -194,6 +194,9 @@ input, a.call-to-action-link, .carousel-text p, p.event-image-caption, .share-li
 .mb-3 {
   margin-bottom: 50px;
 }
+.p-0{
+  padding: 0;
+}
 
 .related-text {
   margin-left: 10px;
@@ -1079,10 +1082,7 @@ a.subnav-back-link {
 	float: left;
 
 }
-.subnav-tabs {
-  float: right;
-  width: auto;
-}
+
 body.root_slug_amsterdam .subnav-tabs,
 body.root_slug_news .subnav-tabs,
 body.controller_tags .subnav-tabs,
@@ -1166,7 +1166,6 @@ a.block-or-line-icon:hover .sb, a.block-or-line-icon:hover .sl {
 	float: left;
 }
 a.program-tab {
-  width: 195px;
   padding-top: 12px;
   padding-bottom: 28px;
 }
@@ -1207,7 +1206,7 @@ p.program-subtitle {
   margin: 0px 0 50px;
 }
 .carousel-list {
-  float: right;
+  float: left;
   margin: 0;
 }
 .carousel-list ul, .carousel-list li {
@@ -1221,7 +1220,6 @@ p.program-subtitle {
 .carousel-list li {
   border-bottom: 1px solid #211d1d;
   padding: 25px 60px;
-  width: 180px;
   cursor: pointer;
 }
 .carousel-list li.active a{
@@ -1657,7 +1655,6 @@ ul.tag-list a span.label.selected {
 .favourite-btn {
   font-weight: bold;
   text-align: center;
-  width: 120px;
 }
 .add-to-collection {
   color: #ccc;

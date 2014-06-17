@@ -14,7 +14,7 @@
   .row
     .col-md-8
       .row
-        .col-md-6
+        .col-md-9
           -if @photographer.bio.present?
             =simple_format(@photographer.bio)
           =favourite_link(@photographer)
@@ -38,9 +38,9 @@
         .pull-left.clear.mb-2
           -@photographer.galleries.where("view_name = 'gallery'").each do |gallery|
             .row.mb-1
-              .col-md-1
-                =link_to(image_for(gallery, "60x60#"), gallery)
               .col-md-3
+                =link_to(image_for(gallery, "60x60#"), gallery)
+              .col-md-8
                 =link_to_self(gallery)
 
       -if !@photographer.galleries.where("view_name != 'gallery'").empty?
