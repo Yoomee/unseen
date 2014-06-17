@@ -14,7 +14,7 @@
   =form.input :address1, :label => "Address"
   =form.input :zip_code, :label => "Zip code"
   =form.input :town
-  #enquiry_country_input.control-group.select.required
+  #enquiry_country_input.form-group.select.required
     =form.label :country, "Country *", :class => "control-label"
     .controls
       =form.country_select(:country, ["Netherlands"], :include_blank => true)
@@ -27,7 +27,7 @@
   =form.input :publication_address1, :label => "Address"
   =form.input :publication_zip_code, :label => "Zip code"
   =form.input :publication_town, :label => "Town"
-  #enquiry_publication_country_input.control-group.select.required
+  #enquiry_publication_country_input.form-group.select.required
     =form.label :publication_country, "Country", :class => "control-label"
     .controls
       =form.country_select(:publication_country, ["Netherlands"], :include_blank => true)

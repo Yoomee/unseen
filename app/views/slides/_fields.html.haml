@@ -8,7 +8,7 @@
       .col-md-5
         %label.control-label Media
         -if !slide.new_record? && slide.image
-          .control-group
+          .form-group
             =image_for(slide, "340x200#")
         =slide_form.input :retained_image, :as => :hidden
         =slide_form.input :media_type, :as => :radio, :collection => Slide::MEDIA_TYPES, :input_html => {:class => 'media_type_choice'}, :wrapper_html => {:class => 'no-padding'}
