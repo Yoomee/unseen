@@ -1,7 +1,7 @@
 =semantic_form_for(@press_release) do |form|
   =form.inputs do
     =form.input :title
-    .control-group
+    .form-group
       =form.label :date
       .controls
         =form.date_select :date, {:order => [:day, :month, :year], :default => @press_release.created_at}, :class => "span2"
