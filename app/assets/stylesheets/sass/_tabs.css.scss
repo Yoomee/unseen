@@ -1,0 +1,106 @@
+/*==========  subnav tabs  ==========*/
+body .parallax-subnav {
+  height: 147px;
+}
+.subnav-strip {
+  float: left;
+  text-transform: uppercase;
+  width: 100%;
+  height: 64px;
+  position: relative;
+  padding: 0px;
+  background: url(/assets/white-smoke.png);
+  margin: 83px 0 0 0;
+}
+a.subnav-back-link {
+  padding-top: 20px;
+  float: left;
+
+}
+
+body.root_slug_amsterdam .subnav-tabs,
+body.root_slug_news .subnav-tabs,
+body.controller_tags .subnav-tabs,
+body.controller_community .subnav-tabs,
+body.controller_users .subnav-tabs,
+#community-nav .subnav-tabs,
+.press-releases .subnav-tabs,
+body.root_slug_press .subnav-tabs,
+body.root_slug_galleries_2013 .subnav-tabs,
+body.controller_photographers .subnav-tabs,
+body.controller_collection_photos.action_edition .subnav-tabs {
+  float: left;
+}
+.subnav-tabs ul, .subnav-tabs li {
+  list-style-type: none;
+  margin: 0;
+  float: left;
+}
+.subnav-tab {
+  float: left;
+  padding: 20px;
+  height: 64px;
+  text-align: center;
+}
+a.subnav-tab:hover {
+  text-decoration: none;
+  background: #fff;
+}
+.subnav-tabs .active a,
+.subnav-tabs .active span {
+  background: #fff;
+}
+
+#community-nav a.black-btn{
+  float: right;
+  margin: 15px 15px 0px 0px;
+  width: 110px;
+  text-align: center;
+}
+.block-or-line {
+  float: right;
+  margin: 10px 0 0;
+}
+.block-or-line-icon {
+  display: block;
+  text-indent: -9000em;
+  float: right;
+  clear: both;
+  margin: 0px 0 8px 0;
+  width: 24px;
+  height: 18px;
+}
+.active .sb, .active .sl {
+  background: #fff;
+}
+a.block-or-line-icon.active:hover .sb, a.block-or-line-icon.active:hover .sl {
+  background: #211d1d;
+
+}
+a.block-or-line-icon:hover .sb, a.block-or-line-icon:hover .sl {
+  background: #fff;
+
+}
+
+.sb {
+  width: 6px;
+  height: 3px;
+  margin: 0 2px 3px 0;
+  background: #211d1d;
+  float: left;
+}
+.sl {
+  width: 22px;
+  margin: 0 2px 3px 0;
+  height: 3px;
+  background: #211d1d;
+}
+
+/*==========  program tabs  ==========*/
+.program-subnav-tabs {
+  float: left;
+}
+a.program-tab {
+  padding-top: 12px;
+  padding-bottom: 28px;
+}

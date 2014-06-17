@@ -13,6 +13,6 @@
         =form.input :twitter_image_url, :as=> :hidden
         =form.input :twitter_screen_name, :as => :hidden
       -if @show_password
-        =form.commit_button t(:login), :button_html => {:class => "black-btn", :data => {:"loading-text" => "Logging in..."}}
+        =form.commit_button t(:login), :button_html => {:class => "black-btn mt-1", :data => {:"loading-text" => "Logging in..."}}
       -else
         =form.commit_button "Sign up", :button_html => {:class => "black-btn", :data => {:"loading-text" => "Signing up..."}}

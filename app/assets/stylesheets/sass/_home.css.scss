@@ -1,0 +1,253 @@
+
+/*========== Homepage ==========*/
+
+body.controller_home #footer.container, body.controller_fair #footer.container {
+  padding: 40px 0;
+}
+#second .facebook {
+  position: relative;
+  height: 230px;
+  margin-bottom: 30px;
+}
+#second .facebook .home_small_title {
+  width: 100%;
+}
+#second .facebook .fb-like {
+  position: absolute;
+  background: white;
+  z-index: 4;
+  top: 30px;
+  padding: 13px 0;
+}
+#second .facebook .fb-like-box {
+  position: absolute;
+  top: 70px;
+  left: -10px;
+  overflow: hidden;
+  height: 150px;
+  width: 100%;
+}
+#second .facebook .fb-like-box iframe {
+  float: left;
+  margin-top: -112px;
+}
+#second .twitter h4 {
+  margin-bottom: 10px;
+}
+i.twitter_bird {
+  background: url(/assets/twitter_bird.png);
+  width: 32px;
+  height: 18px;
+  display: inline-block;
+}
+.home_small_title {
+  margin-bottom: 10px;
+  display: block;
+}
+.facebook.news_follow {
+  margin-top: 40px;
+}
+.news_follow .home_small_title {
+  margin: 0;
+  font-size: 18px;
+}
+
+a.home_small_title, a.home_small_title:hover {
+  text-decoration: none;
+}
+#fifth {
+  background-position:  50px -45px;
+}
+.home_box {
+  z-index: 0;
+  position: relative;
+    float: left;
+  clear: both;
+  width: 100%;
+  overflow: hidden;
+  height: 147px;
+  background: #211d1d url(/assets/home_bg_1.jpg);
+}
+#unseen_big_logo {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  background: url(/assets/unseen_bg.png) no-repeat center top;
+  width: 100%;
+  height: 762px;
+  z-index: 0;
+}
+#intro {
+  margin-bottom: 0px;
+  background-position: 50% -185px;
+  position: relative;
+}
+#tenth {
+  background-position: 50% 201px;
+
+}
+.artist_name {
+  display: block;
+  float: left;
+  position: absolute;
+  top: 70px;
+  right: 0px;
+  width: 170px;
+  height: 500px;
+  background: url(/assets/artist_name_1.png) no-repeat 50%;
+}
+.home_bg_1 {
+  background: #3b421f url(/assets/home_bg_1.jpg) 50% 201px fixed;
+}
+.bg1 {
+  width: 406px;
+  height: 605px;
+  margin: 0px auto;
+  position: absolute;
+  top: -100px;
+  left: 35%;
+  background-repeat:repeat-y;
+}
+.home_bg_1 .bg1 {
+   background-image: url(/assets/home_bg_inner_1.png);
+}
+.home_bg_2 {
+  background: #6cbbc2 url(/assets/home_bg_2.jpg) 50% 0 fixed;
+}
+.home_bg_2 .bg1 {
+   background-image: url(/assets/home_bg_inner_2.png);
+}
+.home_bg_3 .bg1 {
+   background-image: url(/assets/home_bg_inner_3.png);
+}
+.home_bg_4 .bg1 {
+   background-image: url(/assets/home_bg_inner_4.png);
+}
+.home_bg_5 .bg1 {
+   background-image: url(/assets/home_bg_inner_5.png);
+}
+.home_bg_2 .artist_name {
+  background-image: url(/assets/artist_name_4.png);
+}
+.home_bg_3 {
+  background:#211d1d url(/assets/home_bg_3.jpg) 50% 0  fixed;
+}
+.home_bg_3 .artist_name {
+  background-image: url(/assets/artist_name_6.png);
+}
+.home_bg_4 {
+  background: #638a8e url(/assets/home_bg_4.jpg) 50% 0 fixed;
+}
+.home_bg_4 .artist_name {
+  background-image: url(/assets/artist_name_8.png);
+}
+.home_bg_5 {
+  background:#e2d3cb url(/assets/home_bg_5.jpg) 50% 0 fixed;
+}
+.home_bg_5 .artist_name {
+  background-image: url(/assets/artist_name_10.png);
+}
+
+#second {
+  margin-top: 100px;
+  padding-top: 0px;
+  z-index: 3;
+  background-position: 50% 87px;
+
+}
+#second #latest_news .col-md-3 {
+  margin-bottom: 20px;
+}
+#second #latest_news .col-md-3 a {
+  text-decoration: none;
+}
+#second .col-md-6 .col-md-4 {
+  margin-bottom: 10px;
+}
+#second .tweet_box {
+  padding: 10px;
+  border: 2px solid #211d1d;
+}
+#second .twitter_handle {
+  font-size: 12px;
+  margin: 5px 0 0 20px;
+}
+#second #newsletter_signup {
+  margin-top: 40px;
+}
+#second #newsletter_signup a.black-btn {
+
+  float: left;
+}
+#second #newsletter_signup h2 {
+  margin-bottom: 10px;
+}
+input#email {
+  padding: 6px;
+  color: #ccc;
+  background: none;
+  border: 1px solid #211d1d;
+}
+#email.footer-email-field {
+  border: 1px solid #fff;
+  border-radius:0;
+}
+#sixth .artist_name {
+  right: auto;
+  left: 0;
+}
+#seventh {
+}
+#ninth {
+  background: white url(/assets/home_bg_9.png) 50% 0 no-repeat scroll;
+  z-index: 3;
+}
+#eleventh {
+  background: white;
+  height: 213px;
+  z-index: 3;
+}
+a.read_more {
+  font-size: 16px;
+  margin: 10px 0 0;
+  float: left;
+  clear: left;
+}
+.container {
+  clear: both;
+}
+.strip {
+  padding-top: 0px;
+  float: left;
+  clear: both;
+  width: 100%;
+  padding-bottom: 0px;
+  background: #fff;
+}
+h2.home-title {
+  text-align: center;
+}
+h2.are-you-title {
+  text-align: center;
+  margin: 30px 0 30px;
+}
+ul.are-you-list, ul.are-you-list li {
+  margin: 0;
+  padding: 0;
+  float: left;
+  list-style-type: none;
+}
+ul.are-you-list {
+  margin-left: 160px;
+  margin-bottom: 50px;
+}
+
+.are-you-link {
+  margin-right: 20px;
+}
+
+
+h2.home-title {
+  margin-top: 55px;
+  margin-bottom: 55px;
+}

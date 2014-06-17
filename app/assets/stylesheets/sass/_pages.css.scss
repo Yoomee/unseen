@@ -1,0 +1,325 @@
+
+/*========== Press page view ==========*/
+
+#press_visuals {
+  margin-top: 60px;
+}
+p.press_visual_txt {
+  font-size: 14px;
+  line-height: 16px;
+  margin-top: 5px;
+}
+.press_visual {
+  height: 210px;
+}
+.press_accreditation_text {
+  margin-bottom: 30px;
+}
+.press_accreditation_text a {
+  text-decoration: underline;
+}
+
+/*========== News page view ==========*/
+
+.news_page #page_title {
+  text-transform: none;
+}
+.news_page h1 {
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+.news_page h3.sub-heading {
+  text-transform: uppercase;
+  font-family: "Apercu Bold", "calibri", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+  margin-top: 55px;
+}
+.news_page_signup {
+  margin-top: 0px;
+  float: right;
+}
+.news_page_signup .mb-1 {
+  margin-bottom: 5px;
+}
+.news_page .list_date_and_tag {
+  margin: 15px 0 40px;
+  float: left;
+  clear: left;
+
+}
+.news_page_image {
+  margin-bottom: 20px;
+}
+.share-btn {
+  float: left;
+  margin: 0 5px 0 0;
+}
+.share_this {
+  float: left;
+  width: 100%;
+  margin-bottom: 40px;
+  margin-top: 0px;
+}
+.share_link {
+  display: block;
+  float: left;
+  margin: 0px 12px 0 0px;
+}
+.share-link-text {
+  float: left;
+  margin: 2px;
+}
+.share_link i {
+  float: left;
+  margin: 0 6px 0 0;
+  font-size: 20px;
+}
+.share_link:hover {
+  text-decoration: none;
+}
+.share_this p {
+  text-transform: uppercase;
+  float: left;
+}
+
+/*========== Fair ==========*/
+
+.fair_box {
+  padding: 120px 0 200px;
+  position: relative;
+  z-index: 3;
+}
+.fair_box h2 span {
+  font-size: 60px;
+  line-height: 60px;
+}
+.fair_box h2 {
+  margin:0 0 30px 0;
+  text-align:center;
+  text-transform:uppercase;
+}
+.fair_box p {
+  font-size:20px;
+  line-height:25px;
+}
+.fair_window {
+  height: 250px;
+  z-index: 1;
+}
+.fair_bg_1 {
+  background: #211d1d url(/assets/home_bg_1.jpg) 50% 0 no-repeat fixed;
+}
+.fair_bg_2 {
+  background: #211d1d url(/assets/home_bg_4.jpg) 50% 0 no-repeat fixed;
+}
+.fair_bg_3 {
+  background: #211d1d url(/assets/home_bg_6.jpg) 50% 0 no-repeat fixed;
+}
+.fair_bg_4 {
+  background: #211d1d url(/assets/home_bg_8.jpg) 50% 0 no-repeat fixed;
+}
+.fair_bg_5 {
+  background: #211d1d url(/assets/home_bg_10.jpg) 50% 0 no-repeat fixed;
+}
+.scroll_to_fair_box {
+  font-size: 25px;
+  text-decoration: none;
+  margin: 0px 0px 0 0;
+  position: absolute;
+  display: inline-block;
+  top: 0;
+}
+.scroll_down {
+  left: 0;
+}
+.scroll_up {
+  right: 0;
+}
+.scroll_to_fair_box:hover {
+  text-decoration: none;
+}
+.scroll_to_arrows {
+position: absolute;
+bottom: -90px;
+left: 450px;
+width: 50px;
+height: 40px;
+}
+#fair_options_panel {
+  z-index: 2;
+}
+/*
+#fair.container .row {
+  margin-bottom: 150px;
+}
+#fair.container .row h1, #fair.container .row h2 {
+  font-size: 35px;
+  text-transform:uppercase;
+  text-align: center;
+  margin-bottom: 30px;
+}
+#fair.container .row p {
+  font-size: 20px;
+  line-height: 25px;
+}
+*/
+
+
+
+
+/*========== User profiles ==========*/
+.action-link a {
+    color: #A0A0A0;
+    font-size: 12px;
+}
+
+.col-md-2 .photo-image-link {
+  width: 140px;
+  height: 140px;
+  margin-bottom: 15px;
+  position: relative;
+  float:left;
+}
+.col-md-2 .photo-image-link img {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.col-md-2.photo p.photographer,
+.col-md-2.photo p.caption,
+.col-md-2.photo p.gallery {
+  font-size: 13px;
+  margin: 0;
+  line-height: 16px;
+  color: #211D1D;
+}
+.container.user-profile p.job-title {
+  font-family: "Apercu Regular", "calibri", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: normal;
+  margin-top: 4px;
+  margin-bottom: 0px;
+}
+
+/*========== Community ==========*/
+
+#event-list .popular-event {
+  height: 65px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+#event-list .program-item{
+  border:none;
+  padding-bottom: 0px;
+  margin-bottom: 5px;
+}
+
+#event-list .event-right{
+  margin-top:5px;
+}
+
+#event-list hr{
+  border-color:#211d1d;
+  border-bottom:none;
+}
+
+.community-person {
+  height: 80px;
+  overflow: hidden;
+}
+.community-person .job-title {
+  font-size: 14px;
+}
+ul.tag-list a span.label.selected {
+  background-color: #819FF7;
+  color: white;
+}
+.col-md-4 .community-photo-image-link,
+.col-md-4 .collection-photo {
+  width: 300px;
+  height: 300px;
+  margin-bottom: 10px;
+  position: relative;
+  float:left;
+}
+.col-md-4 .community-photo-image-link img,
+.col-md-4 .collection-photo img {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.col-md-4 p.photographer,
+.col-md-4 p.caption,
+.col-md-4 p.gallery {
+  font-size: 13px;
+  margin: 0;
+  line-height: 16px;
+  color: #211D1D;
+}
+.community-black-btn {
+  text-align:center;
+  padding: 4px 17px;
+}
+#community-black-btn-photos {
+  padding: 4px 50px;
+}
+#community-black-btn-programme {
+  padding: 4px 10px;
+}
+#community-black-btn-twitter {
+  padding: 4px 35px;
+}
+.col-md-2.community-person.mb-1.small-left-margin {
+  margin-left: 10px;
+}
+#photo-list .col-md-4 {
+  height: 375px;
+  overflow: hidden;
+}
+
+/*========== Login ==========*/
+
+.oauth-login-link {
+  display:inline-block;
+  text-indent: -3000em;
+  background: url(/assets/oauth_buttons.png) no-repeat;
+  margin: 0px 10px 10px;
+}
+.facebook-login-link {
+  background-position:0px 0px;
+  height: 22px;
+  width: 160px;
+}
+.twitter-login-link {
+  background-position:0 -50px;
+  height: 24px;
+  width: 151px;
+}
+.linkedin-login-link {
+  background-position:0 -100px;
+  height: 23px;
+  width: 134px;
+}
+
+.login-form {
+  float: right;
+  padding-top:15px;
+}
+.login-or {
+  float: left;
+  margin: 35px 20px 0 0;
+}
+.login-auth-links {
+  padding-top: 5px;
+  float: left;
+  width:220px;
+}
+
+/*========== vip page ==========*/
+
+.vip .subnav-tabs li {
+  width: 120px;
+}

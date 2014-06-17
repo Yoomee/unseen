@@ -38,9 +38,9 @@
         .pull-left.clear.mb-2
           -@photographer.galleries.where("view_name = 'gallery'").each do |gallery|
             .row.mb-1
-              .col-md-5
+              .col-md-4
                 =link_to(image_for(gallery, "60x60#"), gallery)
-              .col-md-7
+              .col-md-8
                 =link_to_self(gallery)
 
       -if !@photographer.galleries.where("view_name != 'gallery'").empty?

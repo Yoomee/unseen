@@ -45,15 +45,16 @@
                 =profile.edition
 
       -if !@page.photographers.empty?
-        %h2.normal-title.upcase.mb-1 Artists
-        .pull-left.clear.mb-2
-          -@page.photographers.each do |photographer|
-            .media.mb-1
-              =link_to(image_for(photographer, "60x60#", :class => 'media-object'), photographer, :class => 'pull-left')
-              .media-body.related-text
-                =link_to_self(photographer)
-                %br
-                Photographer
+        .col-md-12.p-0
+          %h2.normal-title.upcase.mb-1 Artists
+          .mb-2
+            -@page.photographers.each do |photographer|
+              .media.mb-1
+                =link_to(image_for(photographer, "60x60#", :class => 'media-object'), photographer, :class => 'pull-left')
+                .media-body.related-text
+                  =link_to_self(photographer)
+                  %br
+                  Photographer
       -if @page.has_gallery_contact_details?
         %h2.normal-title.upcase.clear Contact
         %ul.list-unstyled.pull-left.clear.mb-2

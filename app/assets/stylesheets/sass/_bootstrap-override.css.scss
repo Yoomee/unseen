@@ -1,0 +1,42 @@
+
+/*========== Bootstrap extensions ==========*/
+.icon-gray {
+  background-image: url("/assets/core/glyphicons-halflings-gray.png");
+}
+.radio {
+  padding-left: 0;
+}
+.radio .choices {
+  padding-left: 28px;
+}
+dl dd {
+  font-weight: normal;
+}
+.dl-horizontal dt {
+  width: 150px;
+}
+.dl-horizontal dd {
+  margin-left: 160px;
+}
+.underline {
+  text-decoration: underline;
+}
+.tooltip-inner {
+  border: 2px solid #211d1d;
+  border-radius:0;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+.tooltip-white .tooltip-inner {
+  border-color: white;
+  color: #211d1d;
+  background: #fff;
+}
+.tooltip-white.bottom .tooltip-arrow {
+  border-bottom: 5px solid white;
+}
+ul.dropdown-menu.pull-right {
+  left: 0px;
+  top: 26px;
+  right: auto;
+}

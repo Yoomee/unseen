@@ -1,0 +1,55 @@
+
+// Set responsive break points
+// -------------------------
+
+
+@mixin media-query($media-query) {
+
+  @if $media-query == xs {
+
+      @media only screen and (min-width: 450px ) { @content; }
+  }
+  @if $media-query == xs-max {
+
+      @media only screen and (max-width:768px) { @content; }
+  }  
+  @if $media-query == sm {
+
+      @media only screen and (min-width:769px) { @content; }
+  }
+
+  @if $media-query == sm-max {
+
+      @media only screen and (max-width:992px) { @content; }
+  }
+
+  @if $media-query == md {
+
+      @media only screen and (min-width:993px) { @content; }
+  }
+  @if $media-query == md-max {
+
+      @media only screen and (max-width:1199px) { @content; }
+  }
+
+  @if $media-query == lg {
+
+      @media only screen and (min-width:1200px) { @content; }
+  }
+
+  @if $media-query == xl {
+
+      @media only screen and (min-width: 1400px) { @content; }
+  }
+
+   @if $media-query == xxl {
+
+       @media only screen and (min-width: 1700px) { @content; }
+
+    }
+
+}
+
+
+
+

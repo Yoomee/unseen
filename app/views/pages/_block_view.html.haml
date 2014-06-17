@@ -3,7 +3,7 @@
 
 .block-view
   -items.each do |item|
-    .block-item.col-md-4
+    .block-item.col-md-4.col-sm-4.col-xs-12
       .block-image.fade_in
         =link_to(image_for(item, "300x200#"), item) if item.image
       .block-text
@@ -27,7 +27,7 @@
           - unless %w{press_images info news}.include?(parent_page.try(:slug))
             =link_to raw('&rarr; Read more'), item, :class => 'list_read_more'
   -if controller_name=="pages" && can?(:new, Page) && parent_page
-    .block-item.col-md-4
+    .block-item.col-md-4.col-sm-4.col-xs-4
       .block-image.fade_in.new-page-box
         =link_to("+ Add a subpage", new_child_page_path(:parent_id => parent_page.id))
   -elsif items.empty? && controller_name != 'tags'

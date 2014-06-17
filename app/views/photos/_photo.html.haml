@@ -1,4 +1,4 @@
-.col-md-2.photo.mb-1
+.col-md-3.photo.mb-1
   =photo.photographer ? (link_to image_for(photo, "140x140"), photo) : image_for(photo, "140x140", :class => "photo-image-link")
   -if photo.is_a?(Slide)
     %p.gallery=photo.caption

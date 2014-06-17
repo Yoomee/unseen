@@ -26,7 +26,7 @@
       });
     });
 .carousel.tabbable
-  .col-sm-12.carousel-image.tab-content
+  .carousel-image.tab-content
     -slides.each_with_index do |slide, idx|
       .slide.tab-pane{:id => "slide#{idx}", :class => "#{idx.zero? ? 'active' : ''}"}
         -if slide.has_video?
@@ -36,7 +36,7 @@
         .col-md-6.carousel-text
           %p=slide.caption
           %p=link_to('&rarr; Read more'.html_safe, slide.url, :title => '&rarr; Read more'.html_safe)
-  .col-sm-4.carousel-list.p-0
+  .col-md-4.carousel-list.p-0
     %ul.list-unstyled
       -slides.each_with_index do |slide,idx|
         %li{:class => "#{idx.zero? ? 'active' : 'col-md-12'}", :'data-tab-idx' => idx}

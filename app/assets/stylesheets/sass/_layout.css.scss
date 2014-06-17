@@ -1,0 +1,221 @@
+/*========== Header ==========*/
+
+.container {
+  z-index: 1;
+}
+.site_text_hide {
+  display: none;
+}
+#header {
+  height: 120px;
+  position: relative;
+  z-index: 50;
+}
+.header-container {
+  z-index: 10;
+}
+#header a {
+  text-decoration: none;
+}
+
+#search_link {
+  display: block;
+  background: url(/assets/search_icon.png) no-repeat top left;
+  text-indent: -9000em;
+  width: 16px;
+  height: 16px;
+  margin: 1px 6px 0 8px;
+
+}
+
+/*hide search for now until we have it wired in*/
+#search_icon {
+  display: none;
+}
+.header-icon {
+  display: block;
+  float: right;
+  width: 22px;
+  height: 20px;
+  font-size:18px;
+}
+.news_follow .header-icon {
+  position: relative;
+  float: left;
+  margin: 5px 7px 0 0;
+}
+#facebook_icon {
+  background-position: -20px 0px;
+}
+.news_follow #facebook_icon {
+  background-position: -22px 0px;
+}
+.news_follow #twitter_icon {
+  background-position: -44px 0px;
+}
+#twitter_icon {
+  background-position: -40px 0px;
+}
+#site_logo {
+  float: left;
+  font-weight:normal;
+  margin: 14px 0 0;
+  width: 100%;
+}
+#site_logo span {
+  float: left;
+  clear: left;
+  width: 100%;
+}
+#header_right {
+  float: right;
+  margin-top:15px;
+}
+#header_right h2 {
+  text-align: right;
+  float: right;
+}
+#header_right h2 span {
+  float: right;
+  clear: right;
+}
+#footer.container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  z-index: 3;
+  clear: left;
+  background: white;
+}
+#footer h2 span {
+  display:block;
+  float: left;
+  clear: both;
+}
+#footer .nav {
+  margin-top:0;
+}
+.nav {
+  min-height: 0px;
+  margin: 0px 0 0;
+
+}
+.nav li{
+  float:left;
+  margin-right:14px;
+}
+.nav li.amsterdam-link {
+  margin-right:0;
+
+}
+.nav a {
+  text-decoration: none;
+}
+.nav a:hover {
+  border-bottom: 4px solid;
+}
+.root_slug_amsterdam li.amsterdam-link a, .root_slug_news li.news-link a, .root_slug_info li.info-link a, .controller_events li.programme-link a, .root_slug_galleries li.galleries-link a, .root_slug_galleries_2013 li.galleries-link a , .controller_photographers.action_edition li.galleries-link a, .controller_collection_photos.action_index li.galleries-link a, .controller_community li.community-link a {
+   border-bottom: 4px solid;
+}
+#logged-in-dropdown {
+  float: left;
+  margin: 0 0 0 20px;
+}
+#logged-in-dropdown .icon-user {
+  margin-right: 5px;
+}
+/*.nav .active a {
+  background: url(/assets/nav_active.png) no-repeat bottom left;
+  padding-bottom: 4px;
+}*/
+#header-links {
+  margin: 24px 0 0 0;
+  height: 45px;
+  width: 100%;
+  position: relative;
+
+}
+a.header-link {
+  float: right;
+  margin: 0 14px 0 0;
+}
+.controller_press_releases a.press-link, .root_slug_press2 a.press-link, .root_slug_about a.about-link, .controller_users.action_show a.profile-link, .controller_registrations.action_new a.sign-up-link, .controller_sessions.action_new a.sign-in-link {
+  border-bottom: 2px solid #211D1D;
+}
+#buy-ticket-link {
+  margin: -5px 0 0 20px;
+  float: right;
+}
+
+/*========== Footer ==========*/
+
+#footer_site_logo {
+  font-size:24px;
+}
+#footer.container {
+  z-index: 3;
+  background: white;
+}
+#footer h2 span {
+  display:block;
+}
+#footer .nav {
+  margin-top:0;
+}
+.main_wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -160px; /* the bottom margin is the negative value of the footer's height */
+}
+.push {
+  clear: both;
+   height: 160px;
+}
+.footer_wrapper {
+  clear: both;
+  height: 160px;
+
+}
+
+/*========== Sponsors ==========*/
+#footer-sponsors {
+  background: #D3D3D3;
+  position: relative;
+  z-index: 1;
+  padding: 70px 0px 50px;
+}
+#footer-sponsors a{
+  height:110px;
+  background: url(/assets/footer.png) no-repeat 0px 0px;
+  width:100%;
+  float:left;
+  text-indent: -9000em;
+}
+
+#footer-sponsors a:hover {
+  text-decoration: none;
+  background-position:0px -194px;
+}
+#footer-sponsors #westergasfabriek{
+  background-position:-500px 0px;
+  height:45px;
+}
+#footer-sponsors #westergasfabriek:hover{
+  background-position:-500px -200px;
+}
+#footer-sponsors #iamsterdam{
+  background-position:-800px 0px;
+  height:65px;
+}
+#footer-sponsors #iamsterdam:hover{
+  background-position:-800px -200px;
+}
+#footer-sponsors #cityofamsterdam{
+  background-position:-1100px 0px;
+}
+#footer-sponsors #cityofamsterdam:hover{
+  background-position:-1100px -200px;
+}
+#footer-video iframe{
+  margin-bottom: 60px;
+}
