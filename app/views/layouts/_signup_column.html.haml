@@ -1,14 +1,14 @@
-.col-md-3#newsletter_signup.news_follow
+.col-md-12#newsletter_signup.news_follow
   %h2.normal-title.upcase Sign up for our newsletter
   =form_tag("http://vandejong.us4.list-manage.com/subscribe/post?u=52fb8e1dfe01670076f8db384&id=7b61a45fa2") do
     =text_field_tag "EMAIL", "email", :class => "span3 bold", :id => 'email'
     =submit_tag 'Submit', :class => 'black-btn'
-.col-md-3.facebook.news_follow
+.col-md-12.facebook.news_follow
   %h2.normal-title.upcase Follow us
   =link_to("Facebook", "http://www.facebook.com/UnseenPhotoFairAmsterdam", :target => "_blank", :icon => 'facebook-sign')
-.col-md-3.twitter.news_follow
+.col-md-12.twitter.news_follow
   =link_to("Twitter", "http://twitter.com/UnseenPhotoFair", :target => "_blank", :icon => 'twitter-sign')
-.col-md-3.tumblr.news_follow
+.col-md-12.tumblr.news_follow
   =link_to("Tumblr", "http://unseenphotofair.tumblr.com", :target => "_blank", :icon => 'tumblr-sign')
-.col-md-3.linkedin.news_follow.mb-2
+.col-md-12.linkedin.news_follow.mb-2
   =link_to("LinkedIn", "http://www.linkedin.com/company/unseen", :target => "_blank", :icon => 'linkedin-sign')

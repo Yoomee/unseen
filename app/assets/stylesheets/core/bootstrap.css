@@ -401,7 +401,6 @@ h2,
 .h2,
 h3,
 .h3 {
-  margin-top: 20px;
   margin-bottom: 10px;
 }
 h1 small,
@@ -424,7 +423,6 @@ h5,
 .h5,
 h6,
 .h6 {
-  margin-top: 10px;
   margin-bottom: 10px;
 }
 h4 small,
@@ -4577,13 +4575,6 @@ a.thumbnail.active {
 .media-body {
   overflow: hidden;
   zoom: 1;
-}
-.media,
-.media .media {
-  margin-top: 15px;
-}
-.media:first-child {
-  margin-top: 0;
 }
 .media-object {
   display: block;
