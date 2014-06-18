@@ -1,6 +1,9 @@
 /*==========  subnav tabs  ==========*/
 body .parallax-subnav {
   height: 147px;
+  @include media-query(xs-max) {
+    height: auto;
+  }
 }
 .subnav-strip {
   float: left;
@@ -11,11 +14,13 @@ body .parallax-subnav {
   padding: 0px;
   background: url(/assets/white-smoke.png);
   margin: 83px 0 0 0;
+    @include media-query(xs-max) {
+    height: auto;
+  }
 }
 a.subnav-back-link {
   padding-top: 20px;
   float: left;
-
 }
 
 body.root_slug_amsterdam .subnav-tabs,
@@ -31,16 +36,30 @@ body.controller_photographers .subnav-tabs,
 body.controller_collection_photos.action_edition .subnav-tabs {
   float: left;
 }
+.subnav-tabs{
+  float: right;
+  @include media-query(xs-max) {
+    float: none;
+  }
+}
 .subnav-tabs ul, .subnav-tabs li {
   list-style-type: none;
   margin: 0;
   float: left;
+  @include media-query(xs-max) {
+    float: none;
+  }
 }
 .subnav-tab {
   float: left;
   padding: 20px;
   height: 64px;
   text-align: center;
+  @include media-query(xs-max) {
+    float:none;
+    display: block;
+    text-align: left;
+  }
 }
 a.subnav-tab:hover {
   text-decoration: none;

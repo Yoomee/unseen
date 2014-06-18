@@ -58,18 +58,20 @@ a.home_small_title, a.home_small_title:hover {
 #fifth {
   background-position:  50px -45px;
 }
+.controller_pages .home_box{
+  @include media-query(sm-max) {
+    overflow: visible;
+  }
+}
 .home_box {
   z-index: 0;
   position: relative;
-    float: left;
+  float: left;
   clear: both;
   width: 100%;
   overflow: hidden;
   height: 147px;
   background: #211d1d url(/assets/home_bg_1.jpg);
-  @include media-query(sm-max) {
-    display: none;
-  }
 }
 #unseen_big_logo {
   position: fixed;

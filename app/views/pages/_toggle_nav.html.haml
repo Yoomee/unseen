@@ -3,8 +3,8 @@
   .subnav-strip
     .container
       .row
-        .col-md-11
-          .subnav-tabs.pull-right
+        .col-md-11.p-0
+          .subnav-tabs
             %ul.list-unstyled
               =li_with_active(controller_name=='galleries' || @page.try(:is_a_gallery?), link_to('Galleries', galleries_path, :class => 'subnav-tab'))
               =li_with_active(controller_name=='photographers', link_to('Photographers', photographers_path, :class => 'subnav-tab'))
