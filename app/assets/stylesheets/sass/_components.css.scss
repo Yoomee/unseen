@@ -192,6 +192,9 @@ color: #999;
 .carousel-list {
   float: left;
   margin: 0;
+  @include media-query(sm-max) {
+    width: 100%;
+  } 
 }
 .carousel-list ul, .carousel-list li {
   float: left;
@@ -217,6 +220,9 @@ color: #999;
   overflow:hidden;
   float:left;
   display:block;
+  @include media-query(sm-max) {
+    width: 100%;
+  } 
 }
 .carousel-image img {
   float: left;
@@ -254,6 +260,12 @@ color: #999;
 }
 .block-text {
   height: 180px;
+  @include media-query(xs-max) {
+    display: inline-block;
+    height: auto;
+    margin-bottom: 30px;
+    width: 100%;
+  }
 }
 h4.sub-heading {
   text-transform: uppercase;
