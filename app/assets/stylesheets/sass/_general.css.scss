@@ -97,6 +97,12 @@ input.black-btn {
 .alert {
   margin-top: 20px;
 }
+.mobile-show {
+  display: none;
+  @include media-query (sm-max) {
+    display: block;
+  } 
+}
 .big_background {
   float: right;
   width: 100%;

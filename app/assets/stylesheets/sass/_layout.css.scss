@@ -93,7 +93,16 @@
 }
 #footer .nav {
   margin-top:0;
+  @include media-query (sm-max) {
+    display: none;
+  }
 }
+#footer #header-links {
+  @include media-query (xs-max) {
+    display: none;
+  }
+}
+
 .nav {
   min-height: 0px;
   margin: 0px 0 0;

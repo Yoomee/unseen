@@ -3,6 +3,9 @@
 
 body.controller_home #footer.container, body.controller_fair #footer.container {
   padding: 40px 0;
+  @include media-query (sm-max) {
+    padding: 40px 15px;
+  }
 }
 #second .facebook {
   position: relative;
