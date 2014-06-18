@@ -49,6 +49,13 @@ p.program-subtitle {
   float: left;
 }
 
+div.slideshow .slide{
+  width:940px;
+  @include media-query(sm-max) {
+    width: 300px;
+  }
+}
+
 /*========== Events ==========*/
 
 .event-title{

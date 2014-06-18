@@ -1,4 +1,4 @@
-.news_page_signup.col-md-4
+.news_page_signup.col-md-4.col-sm-4.col-xs-12
   -if page_event.try(:call_to_actions).present?
     .row
       .col-md-4.call-to-actions.mb-15
@@ -24,7 +24,7 @@
     .row
       .col-xs-12
         %h2.normal-title.upcase Related info
-        .pull-left.clear.mb-2.col-md-12
+        .pull-left.clear.mb-2.col-md-12.p-0
           -Page.find_by_slug(:info).children.without(page_event).order(:position).each do |story|
             .media-mb-1
               =link_to(image_for(story, "60x60#", :class => 'media-object'), story, :class => 'pull-left')

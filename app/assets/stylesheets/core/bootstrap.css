@@ -42,6 +42,9 @@ audio:not([controls]) {
 template {
   display: none;
 }
+img {
+  max-width: 100% !important;
+}
 a {
   background: transparent;
 }

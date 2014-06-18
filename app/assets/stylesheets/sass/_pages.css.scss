@@ -50,6 +50,11 @@ p.press_visual_txt {
 }
 .news_page_image {
   margin-bottom: 20px;
+  img{
+    @include media-query(xs-max) {
+      width: 100%;
+    }
+  }
 }
 .share-btn {
   float: left;

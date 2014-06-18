@@ -17,7 +17,7 @@
         -@page.page_tags.each do |tag|
           =link_to_tag(tag, :label_options => {:method => :titleize})        
   .row
-    .news_page.col-md-7
+    .news_page.col-md-7.col-sm-7.col-xs-12
       -if @page.image
         .news_page_image
           =image_for(@page, "540x")
@@ -34,7 +34,7 @@
               -@page.page_tags.each do |tag|
                 %li=link_to_tag(tag, :label_options => {:method => :titleize})
     =render('pages/related_right_col', :page_event => @page)
-    .col-md-8
+    .col-md-7.col-sm-7.col-xs-12
       =options_panel do
         =back_link
         =link_if_can("Edit page", [:edit, @page])
