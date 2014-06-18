@@ -1,68 +1,77 @@
-.container.header-container
-  #header.row
-    .col-md-3
-      %h1#site_logo
-        =link_to root_path do
-          %span
-            unseen photo fair
-          %span
-            =snippet_text(:festival_date, '26-29 sept 2013')
-          %span
-            amsterdam
-    .col-md-9
-      #header-links.pull-right
-        =link_to "Buy tickets", Page.find_by_slug(:buy_tickets) || '#', :class=>"header-link black-btn", :id=>"buy-ticket-link"
-        =link_to '', "http://www.linkedin.com/company/unseen", :class => 'header-icon', :icon => 'linkedin-sign', :title => "LinkedIn", :target => '_blank'
-        =link_to '', "http://unseenphotofair.tumblr.com", :class => 'header-icon', :icon => 'tumblr-sign', :title => "Tumblr", :target => '_blank'
-        =link_to '', "http://twitter.com/UnseenPhotoFair", :class=>"header-icon", :icon => 'twitter-sign', :title => "Twitter", :target => '_blank'
-        =link_to '', "http://www.facebook.com/UnseenPhotoFairAmsterdam", :class=>"header-icon", :icon => 'facebook-sign', :title => "Facebook", :target => '_blank'
-        =link_to '', search_path, :class=>"header-link", :id=>"search_ink", :icon => 'search'
-        =link_to("press", press_releases_path, :class=>"header-link press-link")
-        =link_to("about", Page.find_by_slug("about"), :class=>"header-link about-link")
-        -if current_user
-          =link_to(current_user, current_user, :class=>"header-link profile-link")
-        -else
-          =link_to("login", sign_in_path, :class=>"header-link sign-in-link")
-          =link_to("register", sign_up_path, :class=>"header-link sign-up-link")
-        -if current_user && current_user.admin?
-          #logged-in-dropdown.btn-group
-            =link_to(current_user, :class => 'btn') do
-              %icon.icon-user
-              =current_user
-            =link_to('#', :data => {:toggle => "dropdown"}, :class => 'btn dropdown-toggle') do
-              %span.caret
-            %ul.dropdown-menu.pull-right
-              %li
-                =link_to(pages_path) do
-                  %icon.icon-sitemap
-                  Sitemap
-              %li
-                =link_to(photographers_path) do
-                  %icon.icon-group
-                  Edit Photographers
-              %li
-                =link_to(unseen_collection_path) do
-                  %icon.icon-camera
-                  Unseen Collection
-              %li
-                =link_to(call_to_actions_path) do
-                  %icon.icon-bullhorn
-                  Edit Calls to action
-              %li
-                =link_to(snippets_path) do
-                  %icon.icon-pencil
-                  Edit Site snippets                  
-              %li
-                =link_to(stats_users_path) do
-                  %icon.icon-bar-chart
-                  Community statistics
-              %li
-                =link_to(press_accreditations_path) do
-                  %icon.icon-camera-retro
-                  Press accreditations
-              %li.divider
-              %li
-                =link_to(sign_out_path, :method => :delete, :id=>"login_link") do
-                  %icon.icon-remove-sign
-                  Logout
-      =render ("/layouts/nav")
+.container
+  .row
+    .col-xs-12
+      %nav.navbar{role: "navigation"}
+        .container
+          .navbar-header
+            %button.navbar-toggle{"data-target" => "#main-navigation-collapse", "data-toggle" => "collapse", type: "button"}
+              %span.sr-only Toggle navigation
+              MENU
+            %h1#site_logo
+              =link_to root_path do
+                %span
+                  unseen photo fair
+                %span
+                  =snippet_text(:festival_date, '26-29 sept 2013')
+                %span
+                  amsterdam
+
+          #main-navigation-collapse.collapse.navbar-collapse
+            .pull-right.top-sub-nav
+              =link_to "Buy tickets", Page.find_by_slug(:buy_tickets) || '#', :class=>"header-link black-btn", :id=>"buy-ticket-link"
+              %span.social-nav-links
+                =link_to '', "http://www.linkedin.com/company/unseen", :class => 'header-icon', :icon => 'linkedin-sign', :title => "LinkedIn", :target => '_blank'
+                =link_to '', "http://unseenphotofair.tumblr.com", :class => 'header-icon', :icon => 'tumblr-sign', :title => "Tumblr", :target => '_blank'
+                =link_to '', "http://twitter.com/UnseenPhotoFair", :class=>"header-icon", :icon => 'twitter-sign', :title => "Twitter", :target => '_blank'
+                =link_to '', "http://www.facebook.com/UnseenPhotoFairAmsterdam", :class=>"header-icon", :icon => 'facebook-sign', :title => "Facebook", :target => '_blank'
+                
+              =link_to '', search_path, :class=>"header-link", :id=>"search_ink", :icon => 'search'
+              =link_to("press", press_releases_path, :class=>"header-link press-link")
+              =link_to("about", Page.find_by_slug("about"), :class=>"header-link about-link")
+              -if current_user
+                =link_to(current_user, current_user, :class=>"header-link profile-link")
+              -else
+                =link_to("login", sign_in_path, :class=>"header-link sign-in-link")
+                =link_to("register", sign_up_path, :class=>"header-link sign-up-link")
+              -if current_user && current_user.admin?
+                #logged-in-dropdown.btn-group
+                  =link_to(current_user, :class => 'btn') do
+                    %icon.icon-user
+                    =current_user
+                  =link_to('#', :data => {:toggle => "dropdown"}, :class => 'btn dropdown-toggle') do
+                    %span.caret
+                  %ul.dropdown-menu.pull-right
+                    %li
+                      =link_to(pages_path) do
+                        %icon.icon-sitemap
+                        Sitemap
+                    %li
+                      =link_to(photographers_path) do
+                        %icon.icon-group
+                        Edit Photographers
+                    %li
+                      =link_to(unseen_collection_path) do
+                        %icon.icon-camera
+                        Unseen Collection
+                    %li
+                      =link_to(call_to_actions_path) do
+                        %icon.icon-bullhorn
+                        Edit Calls to action
+                    %li
+                      =link_to(snippets_path) do
+                        %icon.icon-pencil
+                        Edit Site snippets                  
+                    %li
+                      =link_to(stats_users_path) do
+                        %icon.icon-bar-chart
+                        Community statistics
+                    %li
+                      =link_to(press_accreditations_path) do
+                        %icon.icon-camera-retro
+                        Press accreditations
+                    %li.divider
+                    %li
+                      =link_to(sign_out_path, :method => :delete, :id=>"login_link") do
+                        %icon.icon-remove-sign
+                        Logout
+            =render ("/layouts/nav")

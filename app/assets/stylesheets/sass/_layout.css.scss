@@ -13,6 +13,7 @@
 }
 .header-container {
   z-index: 10;
+  padding: 0px;
 }
 #header a {
   text-decoration: none;
@@ -60,7 +61,7 @@
   float: left;
   font-weight:normal;
   margin: 14px 0 0;
-  width: 100%;
+  display: inline-block;
 }
 #site_logo span {
   float: left;
@@ -112,6 +113,67 @@
   float:left;
   margin-right:14px;
 }
+
+#main-navigation-collapse .nav li {
+  font-size: 25px;
+  @include media-query (sm-max) {
+    font-size: 20px;
+  }
+  @include media-query (xs-max) {
+    float: none;
+    display: block;
+    text-align: center;
+    margin-right: 0px;
+    margin-bottom: 15px;
+  }
+}
+
+.header-link#buy-ticket-link {
+  @include media-query (xs-max) {
+    display: block;
+    margin: 0;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+.social-nav-links {
+  @include media-query (xs-max) {
+    display: none;
+    width: 100%;
+    margin-bottom: 20px;
+    .header-icon {
+      float: none;
+      display: inline-block;
+    }
+  }
+}
+
+a.header-link {
+  @include media-query (xs-max) {
+    float: none !important;
+  }
+}
+
+#nav {
+  @include media-query (xs-max) {
+    width: 100%;
+  }
+}
+
+.top-sub-nav {
+  margin-top: 23px;
+  margin-bottom: 20px;
+  @include media-query (sm-max) {
+    margin-top: 18px;
+    margin-bottom: 13px;
+  }
+  @include media-query (xs-max) {
+    float: none !important;
+    text-align: center;
+  }
+}
+
 .nav li.amsterdam-link {
   margin-right:0;
 
