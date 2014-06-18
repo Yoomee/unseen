@@ -29,7 +29,7 @@
   .subnav-strip
     .container
       .row
-        .col-md-11
+        .col-md-11.p-0
           .subnav-tabs
             %ul.list-unstyled
               -Page.find_by_slug('amsterdam').children.each_with_index do |child, index|
@@ -43,48 +43,51 @@
 -if page_to_show
   .container
     -if page_to_show.parent == amsterdam_page
-      .row
+      .row.m-0
         .col-md-12
           %h2.home-title
             %span#page_title
               =raw(page_to_show.title)
 
         .row
-          -if view_preference == 'block'
-            =render("pages/block_view", :items => page_to_show.children, :parent_page => page_to_show)
-          -else
-            =render("pages/list_view", :items => page_to_show.children, :parent_page => page_to_show)
-            .col-md-3.col-md-offset-1
-              .row
-                =render("layouts/signup_column")
+          .col-md-12
+            -if view_preference == 'block'
+              =render("pages/block_view", :items => page_to_show.children, :parent_page => page_to_show)
+            -else
+              =render("pages/list_view", :items => page_to_show.children, :parent_page => page_to_show)
+              .col-md-3.col-md-offset-1
+                .row
+                  =render("layouts/signup_column")
     -else
       .row
-        .news_page.col-md-12.mt-2
-          %h1
-            %span#page_title
-              =raw(@page.title)
-          %p.list_date_and_tag
-            %span=@page.created_at.strftime("%e %B %Y")
-            -@page.page_tags.each do |tag|
-              =link_to_tag(tag, :label_options => {:method => :titleize})
+        .col-md-12
+          .news_page.col-md-12.mt-2
+            %h1
+              %span#page_title
+                =raw(@page.title)
+            %p.list_date_and_tag
+              %span=@page.created_at.strftime("%e %B %Y")
+              -@page.page_tags.each do |tag|
+                =link_to_tag(tag, :label_options => {:method => :titleize})
       .row
-        .news_page.col-md-7
-          -if @page.image
-            .news_page_image
-              =image_for(@page, "540x")
-              -if @page.image_caption
-                %p.mt-1.event-image-caption=@page.image_caption
-            =render('layouts/share_links', :resource => @page)
-          .page_text
-            #page_text
-              =raw(@page.text)
-          -if @page.page_tag_list.present?
-            .row.mt-2.mb-2
-              .col-md-8
-                %ul.tag-list.tag-list-horizontal
-                  -@page.page_tags.each do |tag|
-                    %li=link_to_tag(tag, :label_options => {:method => :titleize})
-        =render('pages/related_right_col', :page_event => @page)
+        .col-md-12
+          .news_page.col-md-7
+            -if @page.image
+              .news_page_image
+                =image_for(@page, "540x")
+                -if @page.image_caption
+                  %p.mt-1.event-image-caption=@page.image_caption
+              =render('layouts/share_links', :resource => @page)
+            .page_text
+              #page_text
+                =raw(@page.text)
+            -if @page.page_tag_list.present?
+              .row.mt-2.mb-2
+                .col-md-8
+                  %ul.tag-list.tag-list-horizontal
+                    -@page.page_tags.each do |tag|
+                      %li=link_to_tag(tag, :label_options => {:method => :titleize})
+          =render('pages/related_right_col', :page_event => @page)
     .row
       =options_panel do
         =back_link

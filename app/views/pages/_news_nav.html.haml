@@ -2,7 +2,7 @@
   .subnav-strip
     .container
       .row
-        .col-md-11
+        .col-md-11.p-0
           .subnav-tabs
             %ul.list-unstyled
               =li_with_active((session[:news_category] || current_page.categories.first).blank?, link_to('All', news_page, :class => 'subnav-tab'))
