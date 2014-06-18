@@ -191,14 +191,18 @@ a.header-link {
   background: #D3D3D3;
   position: relative;
   z-index: 1;
-  padding: 70px 0px 50px;
+  padding: 70px 0px 20px;
+  @include media-query(sm-max) {
+    text-align: center;
+  }
 }
 #footer-sponsors a{
   height:110px;
   background: url(/assets/footer.png) no-repeat 0px 0px;
   width:100%;
-  float:left;
   text-indent: -9000em;
+  display: inline-block;
+  margin-bottom: 30px;
 }
 
 #footer-sponsors a:hover {
@@ -208,6 +212,7 @@ a.header-link {
 #footer-sponsors #westergasfabriek{
   background-position:-500px 0px;
   height:45px;
+  width: 186px;
 }
 #footer-sponsors #westergasfabriek:hover{
   background-position:-500px -200px;
@@ -215,12 +220,14 @@ a.header-link {
 #footer-sponsors #iamsterdam{
   background-position:-800px 0px;
   height:65px;
+  width: 181px;
 }
 #footer-sponsors #iamsterdam:hover{
   background-position:-800px -200px;
 }
 #footer-sponsors #cityofamsterdam{
   background-position:-1100px 0px;
+  width: 194px;
 }
 #footer-sponsors #cityofamsterdam:hover{
   background-position:-1100px -200px;
