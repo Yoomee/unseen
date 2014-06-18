@@ -180,6 +180,9 @@ height: 40px;
   margin-bottom: 15px;
   position: relative;
   float:left;
+  @include media-query(xs-max) {
+    width: auto;
+  }
 }
 .col-md-2 .photo-image-link img {
   position: absolute;
@@ -227,9 +230,20 @@ height: 40px;
 }
 
 .community-person {
-  height: 80px;
   overflow: hidden;
+  float: left;
 }
+.activity-item .photo-image-link img{
+  @include media-query(xs-max) {
+    position: relative;
+  }
+}
+.activity-item .photo-image-link {
+  @include media-query(xs-max) {
+    height: auto;
+  }
+}
+
 .community-person .job-title {
   font-size: 14px;
 }
@@ -282,7 +296,7 @@ ul.tag-list a span.label.selected {
   margin-left: 10px;
 }
 #photo-list .col-md-4 {
-  height: 375px;
+  height: auto;
   overflow: hidden;
 }
 
