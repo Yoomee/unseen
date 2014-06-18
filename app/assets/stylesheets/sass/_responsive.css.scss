@@ -21,6 +21,7 @@ $md-end:          $lg-start - 1px!default;
   @if $media-query == xs {
 
       @media only screen and (min-width: $xs-start) { @content; }
+
   }
   @if $media-query == xs-max {
 
@@ -60,7 +61,6 @@ $md-end:          $lg-start - 1px!default;
        @media only screen and (min-width: $xxl-start) { @content; }
 
     }
-
 }
 
 .visible-desk { 

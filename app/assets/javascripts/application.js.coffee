@@ -14,6 +14,7 @@
 #= require ym_links
 #= require cocoon
 #= require maps
+#= require fitvids
 #= require_tree ./core
 
 window.YmCms.Page.Form.showSlideshowTab = () ->
@@ -72,3 +73,8 @@ $(document).ready ->
       event.preventDefault()
       $.scrollTo($("#program"), 750)
   # ToggleViewLinks.init()
+
+
+  $(".container").fitVids()
+  return
+

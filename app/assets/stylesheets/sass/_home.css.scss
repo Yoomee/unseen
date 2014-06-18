@@ -70,6 +70,9 @@ a.home_small_title, a.home_small_title:hover {
   overflow: hidden;
   height: 147px;
   background: #211d1d url(/assets/home_bg_1.jpg);
+  @include media-query(sm-max) {
+    display: none;
+  }
 }
 #unseen_big_logo {
   position: fixed;
@@ -101,6 +104,9 @@ a.home_small_title, a.home_small_title:hover {
 }
 .home_bg_1 {
   background: #3b421f url(/assets/home_bg_1.jpg) 50% 201px fixed;
+  @include media-query(sm-max) {
+    background-attachment: scroll;
+  }
 }
 .bg1 {
   width: 406px;
@@ -110,12 +116,18 @@ a.home_small_title, a.home_small_title:hover {
   top: -100px;
   left: 35%;
   background-repeat:repeat-y;
+  @include media-query(sm-max) {
+    display: none;
+  }
 }
 .home_bg_1 .bg1 {
    background-image: url(/assets/home_bg_inner_1.png);
 }
 .home_bg_2 {
   background: #6cbbc2 url(/assets/home_bg_2.jpg) 50% 0 fixed;
+  @include media-query(sm-max) {
+    background-attachment: scroll;
+  }
 }
 .home_bg_2 .bg1 {
    background-image: url(/assets/home_bg_inner_2.png);
@@ -134,18 +146,27 @@ a.home_small_title, a.home_small_title:hover {
 }
 .home_bg_3 {
   background:#211d1d url(/assets/home_bg_3.jpg) 50% 0  fixed;
+  @include media-query(sm-max) {
+    background-attachment: scroll;
+  }
 }
 .home_bg_3 .artist_name {
   background-image: url(/assets/artist_name_6.png);
 }
 .home_bg_4 {
   background: #638a8e url(/assets/home_bg_4.jpg) 50% 0 fixed;
+    @include media-query(sm-max) {
+    background-attachment: scroll;
+  }
 }
 .home_bg_4 .artist_name {
   background-image: url(/assets/artist_name_8.png);
 }
 .home_bg_5 {
   background:#e2d3cb url(/assets/home_bg_5.jpg) 50% 0 fixed;
+  @include media-query(sm-max) {
+    background-attachment: scroll;
+  }
 }
 .home_bg_5 .artist_name {
   background-image: url(/assets/artist_name_10.png);
@@ -234,15 +255,17 @@ h2.are-you-title {
   text-align: center;
   margin: 30px 0 30px;
 }
-ul.are-you-list, ul.are-you-list li {
+ul.are-you-list li {
   margin: 0;
   padding: 0;
-  float: left;
+  display: inline;
   list-style-type: none;
+  line-height: 2.5em;
 }
 ul.are-you-list {
-  margin-left: 160px;
   margin-bottom: 50px;
+  display: block;
+  text-align: center;
 }
 
 .are-you-link {
@@ -253,4 +276,115 @@ ul.are-you-list {
 h2.home-title {
   margin-top: 55px;
   margin-bottom: 55px;
+}
+
+
+
+/* ------ Slideshow  -----------*/
+
+/*==========  Homepage slideshow ==========*/
+
+.home-slideshow-container {
+  width: 100%;
+  overflow: hidden;
+  height: 450px;
+  float: left;
+  clear: left;
+  background: #fff;
+  position: relative;
+}
+.home-slideshow {
+  float: left;
+  clear: both;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.home-slideshow-inner {
+  height: 100%;
+  position: absolute;
+  left: -980px;
+}
+.home-slide {
+  float: left;
+  width: 980px;
+  height: 450px;
+  position: relative;
+  left: 0;
+  opacity: 1;
+}
+.home-slide-prev,
+.home-slide-next {
+  opacity: 0.4;  
+  cursor: pointer;
+}
+.home-slide-prev:hover,
+.home-slide-next:hover {
+  opacity: 1;
+}
+#home-slideshow-caption {
+  position: absolute;
+  top: 275px;
+  right: 20px;  
+  @include media-query(sm-max) {
+    right: 0;
+    bottom: 0;
+  }
+}
+#home-slideshow-caption,
+.home-slide-caption {
+  width: 450px;
+  height: 105px;
+  padding: 15px;  
+  background: #fff;  
+  background: rgba(255,255,255,0.9);  
+  @include media-query(xs-max) {
+    width: 100%;
+  }
+}
+.home-slide-caption {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  float: left;
+  @include media-query(xs-max) {
+    right: 0;
+    bottom: 0;
+  }
+}
+#home-slideshow-caption .home-slide-caption {
+  top: 0;
+  left: 0;
+}
+.home-slide .home-slide-caption {
+  display: none;
+}
+.home-slide-caption .home-slide-title {
+  height: 76px;
+  overflow: hidden;  
+}
+.dots {
+  position: absolute;
+  bottom: 15px;
+  right: 15px; 
+}
+.dot {
+  float: left;
+  width: 10px;
+  margin: 0 7px 0 0;
+  height: 10px;
+  border-radius: 10px;
+  background: #ccc;
+  cursor: pointer;
+}
+.active-dot {
+  background: #211d1d;
+  cursor: default;
+}
+a.read_more {
+  font-size: 16px;
+  margin: 10px 0 0;
+  float: left;
+  clear: left;
 }

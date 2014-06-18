@@ -242,6 +242,9 @@ color: #999;
 .block-image {
   margin-bottom: 25px;
   img{
+    @include media-query(sm-max) {
+      width: 100%;
+    } 
   }
 }
 .block-image-press-release{
