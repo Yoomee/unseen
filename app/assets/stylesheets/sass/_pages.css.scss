@@ -323,3 +323,37 @@ ul.tag-list a span.label.selected {
 .vip .subnav-tabs li {
   width: 120px;
 }
+
+/*========== Page show ==========*/
+
+.mercury_edit_link,
+#mercury_edit_link {
+  display:none;
+}
+#page_text a {
+  text-decoration: underline;
+}
+#page_text .mercury_edit_link {
+  text-decoration: none;
+  font-size: 15px;
+}
+.mercury-textarea{
+  color:#fff;
+}
+.new-page-box a {
+  width: 100%;
+  text-align: center;
+  float: none;
+  display: block;
+  font-size: 19px;
+  padding: 32px 0;
+  border: 2px dashed #211d1d;
+  text-decoration: none;
+}
+.new-page-box.col-md-4 a {
+  font-size: 30px;
+}
+.block-item .new-page-box a {
+  height: 26px;
+  padding: 85px 0;
+}
