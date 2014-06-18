@@ -38,6 +38,12 @@ p.press_visual_txt {
 .news_page_signup {
   margin-top: 0px;
   float: right;
+  @include media-query(sm-max) {
+    margin-top: 40px;
+    float: none;
+    padding-top: 40px;
+    border-top: 1px solid black;
+  }
 }
 .news_page_signup .mb-1 {
   margin-bottom: 5px;
@@ -50,8 +56,9 @@ p.press_visual_txt {
 }
 .news_page_image {
   margin-bottom: 20px;
-  img{
-    @include media-query(xs-max) {
+  img {
+    max-width: 100%;
+     @include media-query(xs-max) {
       width: 100%;
     }
   }
