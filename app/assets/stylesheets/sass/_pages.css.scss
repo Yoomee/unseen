@@ -243,13 +243,19 @@ ul.tag-list a span.label.selected {
   height: 300px;
   margin-bottom: 10px;
   position: relative;
-  float:left;
+  display:inline-block;
+  @include media-query(sm-max) {
+    width: 100%;
+  }
 }
 .col-md-4 .community-photo-image-link img,
 .col-md-4 .collection-photo img {
   position: absolute;
   left: 0;
   bottom: 0;
+  @include media-query(sm-max) {
+    width: 100%;
+  }
 }
 .col-md-4 p.photographer,
 .col-md-4 p.caption,

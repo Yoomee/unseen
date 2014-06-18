@@ -2,7 +2,7 @@
   .subnav-strip
     .container
       .row
-        .col-sm-12.subnav-tabs.program-subnav-tabs  
-          %ul.col-sm-12.list-unstyled
+        .col-sm-12.subnav-tabs.program-subnav-tabs.p-0  
+          %ul.col-sm-12.list-unstyled.p-0
             -Event.festival_dates.each do |date|
-              =li_with_active(@date == date,  link_to(date.strftime('%A<br/>%d.%m').html_safe, program_path(:day => date.strftime('%a').downcase, :anchor => 'program'), :class=>"subnav-tab program-tab col-sm-12"), :class => 'col-sm-3 p-0')
+              =li_with_active(@date == date,  link_to(date.strftime('%A<br/>%d.%m').html_safe, program_path(:day => date.strftime('%a').downcase, :anchor => 'program'), :class=>"subnav-tab program-tab col-sm-12"), :class => 'col-sm-3 col-xs-12')

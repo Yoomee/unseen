@@ -4,7 +4,7 @@
   .subnav-strip
     .container#community-nav
       .row
-        .col-md-8
+        .col-md-8.p-0
           .subnav-tabs
             %ul.list-unstyled
               =li_with_active(current_page?(community_path), link_to('Start collecting', community_path, :class => 'subnav-tab'))
@@ -12,7 +12,7 @@
               =li_with_active(current_page?(community_activity_path), link_to('Latest activity', community_activity_path, :class => 'subnav-tab'))
               -if current_user
                 =li_with_active(current_page?(user_path(current_user)), link_to('My Profile', current_user, :class => 'subnav-tab'))
-        .col-md-4
+        .col-md-4.reg-btns.mb-1
           -if current_user
             =link_to('Log out', sign_out_path,:method => :delete,:class => 'black-btn')
             =link_to('My settings', edit_user_path(current_user),:class => 'black-btn')
