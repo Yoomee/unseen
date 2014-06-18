@@ -103,7 +103,6 @@
     display: none;
   }
 }
-
 .nav {
   min-height: 0px;
   margin: 0px 0 0;
@@ -113,7 +112,6 @@
   float:left;
   margin-right:14px;
 }
-
 #main-navigation-collapse .nav li {
   font-size: 25px;
   @include media-query (sm-max) {
@@ -127,7 +125,6 @@
     margin-bottom: 15px;
   }
 }
-
 .header-link#buy-ticket-link {
   @include media-query (xs-max) {
     display: block;
@@ -136,7 +133,6 @@
     margin-bottom: 20px;
   }
 }
-
 .social-nav-links {
   @include media-query (xs-max) {
     display: none;
@@ -148,7 +144,6 @@
     }
   }
 }
-
 a.header-link {
   @include media-query (xs-max) {
     float: none !important;
