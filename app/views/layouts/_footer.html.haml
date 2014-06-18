@@ -12,7 +12,7 @@
     
 .container#footer
   .row
-    .col-md-3
+    .col-md-3.col-sm-4.col-xs-7
       %h2#footer_site_logo
         =link_to root_path do
           %span
@@ -21,8 +21,10 @@
             =snippet_text(:festival_date, '26-29 sept 2013')
           %span
             amsterdam           
-    .col-md-9
+    .col-md-9.col-sm-8.col-xs-5
       =render ("/layouts/nav")
+      =link_to('Back to top', '#header', :class => 'mobile-show pull-right', :icon => 'arrow-up')
+      
       #header-links.pull-right
         =link_to '', "http://www.linkedin.com/company/unseen", :class => 'header-icon', :icon => 'linkedin-sign', :title => "LinkedIn", :target => '_blank'
         =link_to '', "http://unseenphotofair.tumblr.com", :class => 'header-icon', :icon => 'tumblr-sign', :title => "Tumblr", :target => '_blank'
