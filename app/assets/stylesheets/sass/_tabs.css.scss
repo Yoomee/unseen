@@ -16,6 +16,7 @@ body .parallax-subnav {
   margin: 83px 0 0 0;
     @include media-query(xs-max) {
     height: auto;
+    margin: 0;
   }
 }
 a.subnav-back-link {
@@ -75,6 +76,10 @@ a.subnav-tab:hover {
 .subnav-tabs .active a,
 .subnav-tabs .active span {
   background: #fff;
+  @include media-query(xs-max) {
+    background: #000;
+    color: #fff;
+  }
 }
 
 #community-nav a.black-btn{
