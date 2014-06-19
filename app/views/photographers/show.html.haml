@@ -34,24 +34,21 @@
                 =link_to photographer_path(profile.id) do
                   =profile.edition
       -if !@photographer.galleries.where("view_name = 'gallery'").empty?
+
         %h2.normal-title.upcase.mb-1 Represented by
         .pull-left.clear.mb-2
           -@photographer.galleries.where("view_name = 'gallery'").each do |gallery|
-            .row.mb-1
-              .col-md-4
-                =link_to(image_for(gallery, "60x60#"), gallery)
-              .col-md-8
-                =link_to_self(gallery)
+            .media.mb-1
+              =link_to(image_for(gallery, "60x60#", :class => 'media-object'), gallery, :class => 'pull-left')
+              .media-body=link_to_self(gallery)
 
       -if !@photographer.galleries.where("view_name != 'gallery'").empty?
         %h2.normal-title.upcase.mb-1 Related Stories
         .pull-left.clear.mb-2
           -@photographer.galleries.where("view_name != 'gallery'").each do |story|
-            .row.mb-1
-              .col-md-1
-                =link_to(image_for(story, "60x60#"), story)
-              .col-md-3
-                =link_to_self(story)
+            .media.mb-1
+              =link_to(image_for(story, "60x60#", :class => 'media-object'), story, :class => 'pull-left')
+              .media-body=link_to_self(story)
       -if !@photographer.links.empty?
         %h2.normal-title.upcase.mb-1 Contact
         .mb-2

@@ -16,11 +16,9 @@
         %small=edit_snippet_link("unseen_collection_intro_#{params[:edition]}")
   .row.mt-2
     .col-md-12
-      .row
-        .col-md-12
-          -@collection_photos.each_slice(3) do |photos|
-            .row.mb-2
-              =render "photos", :photos => photos
+      -@collection_photos.each_slice(3) do |photos|
+        .row.mb-2
+          =render "photos", :photos => photos
   -unless params[:edition] == 'bgl'
     .row
       .col-md-8
