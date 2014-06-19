@@ -338,14 +338,29 @@ ul.tag-list a span.label.selected {
   height: 23px;
   width: 134px;
 }
-
 .login-form {
   float: right;
   padding-top:15px;
+  @include media-query (xs-max) {
+    float: none;
+    margin-bottom: 30px;
+    input:not([type='checkbox']) {
+      width: 100%;
+    }
+  }
+}
+.login-form form {
+  margin-bottom: 18px;
 }
 .login-or {
   float: left;
   margin: 35px 20px 0 0;
+  @include media-query (xs-max) {
+    float: none;
+    margin: 0px 0px 30px;
+    text-align: center;
+    display: block;
+  }
 }
 .login-auth-links {
   padding-top: 5px;
