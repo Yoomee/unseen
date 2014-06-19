@@ -268,6 +268,9 @@ ul.are-you-list {
   margin-bottom: 50px;
   display: block;
   text-align: center;
+  @include media-query(sm-max) {
+    padding-left: 0px;
+  }
 }
 
 .are-you-link {

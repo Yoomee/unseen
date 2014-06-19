@@ -273,6 +273,7 @@ ul.tag-list a span.label.selected {
   display:inline-block;
   @include media-query(sm-max) {
     width: 100%;
+    height: auto;
   }
 }
 .col-md-4 .community-photo-image-link img,
@@ -281,6 +282,7 @@ ul.tag-list a span.label.selected {
   left: 0;
   bottom: 0;
   @include media-query(sm-max) {
+    position: static;
     width: 100%;
   }
 }
