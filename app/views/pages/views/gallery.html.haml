@@ -20,7 +20,7 @@
             #page_text
               =raw(@page.text)
           =favourite_link(@page)
-        .col-md-6
+        .col-md-6.col-sm-12.page-image
           -if @page.image
             =image_for(@page, "250x")
             -if @page.image_caption
