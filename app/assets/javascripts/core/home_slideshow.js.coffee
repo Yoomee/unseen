@@ -98,7 +98,7 @@ window.HomeSlideshow =
 #     # for auto scrolling
 #     YmCms.Slideshow.intervalTime = options.interval
 #     YmCms.Slideshow.resetInterval()
-#     $('div.slideshow .slide-nav').click (event) ->
+#     $('.slide-nav').click (event) ->
 #       event.preventDefault()
 #       YmCms.Slideshow.nextSlide()
 #     $('div.slideshow .slide').click (event) ->

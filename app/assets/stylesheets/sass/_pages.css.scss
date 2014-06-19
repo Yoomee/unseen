@@ -220,9 +220,10 @@ height: 40px;
 
 /*========== Gallery ==========*/
 
-.page-image{
+.page-image, .page-image img{
   @include media-query(sm-max) {
     margin-top:20px;
+    clear: both;
   }
 }
 
