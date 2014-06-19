@@ -397,7 +397,20 @@ a.active .tag-label {
   background :#211d1d;
   color:#fff;
 }
-
+.control-group input:not([type='checkbox']) {
+  display: inline-block;
+  width: 214px;
+  height: 26px;
+  padding: 4px;
+  margin-bottom: 9px;
+  font-size: 13px;
+  line-height: 18px;
+  color: #555555;
+  border: 1px solid #cccccc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
 
 /*=========Meda objcts ========*/
 
