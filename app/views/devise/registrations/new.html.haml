@@ -14,10 +14,10 @@
       =link_to("Login with Facebook", user_omniauth_authorize_path(:facebook), :class => "oauth-login-link facebook-login-link")
       =link_to("Login with Twitter", user_omniauth_authorize_path(:twitter), :class => "oauth-login-link twitter-login-link")
       =link_to("Login with LinkedIn", user_omniauth_authorize_path(:linkedin), :class => "oauth-login-link linkedin-login-link")
-    .col-md-12.center
+    .col-md-12.center.mb-1
       Or enter your email address manually
       %u=link_to("here", 'javascript:void()', :'data-toggle' => "collapse", :'data-target' => "#hard-way")
-    .col-md-6.col-md-offset-3.collapse#hard-way
+    .col-md-6.col-md-offset-3.collapse#hard-way.signup-form.col-sm-6.col-sm-offset-3
       =semantic_form_for(resource, :as => resource_name, :url => users_path) do |form|
         =form.inputs do
           =form.input :email

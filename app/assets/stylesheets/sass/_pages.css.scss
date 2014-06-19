@@ -338,6 +338,16 @@ ul.tag-list a span.label.selected {
   height: 23px;
   width: 134px;
 }
+.signup-form {
+  @include media-query (xs-max) {
+    float: none;
+    margin-bottom: 30px;
+    input:not([type='checkbox']) {
+      width: 100%;
+    }
+  }
+}
+
 .login-form {
   float: right;
   padding-top:15px;
