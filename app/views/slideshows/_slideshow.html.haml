@@ -12,6 +12,8 @@
       -slides.each_with_index do |slide, index|
         .col-md-12.slide{:class => "#{index == 1 ? 'next_slide' : ''}"}
           .slide_inner
+            =link_to('', '', :class => 'slide-next slide-nav', :icon => 'arrow-right')
+            =link_to('', '', :class => 'slide-prev slide-nav', :icon => 'arrow-left')
             -if slide.is_a?(Slide)
               %h3.slide-title.medium-title
                 =slide.title
