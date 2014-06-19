@@ -36,11 +36,11 @@
       -if !@photographer.galleries.where("view_name = 'gallery'").empty?
 
         %h2.normal-title.upcase.mb-1 Represented by
-        .pull-left.clear.mb-2
+        .pull-left.clear.mb-2.col-md-12.col-xs-12.p-0
           -@photographer.galleries.where("view_name = 'gallery'").each do |gallery|
             .media.mb-1
               =link_to(image_for(gallery, "60x60#", :class => 'media-object'), gallery, :class => 'pull-left')
-              .media-body=link_to_self(gallery)
+              .media-body.col-md-8.col-xs-8.p-0=link_to_self(gallery)
 
       -if !@photographer.galleries.where("view_name != 'gallery'").empty?
         %h2.normal-title.upcase.mb-1 Related Stories
