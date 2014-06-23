@@ -1,4 +1,5 @@
 -parent_page ||= items.first.try(:parent)
+-page_root_parent ||= items.first.try(:root)
 
 .col-md-8
   -items.each do |item|
