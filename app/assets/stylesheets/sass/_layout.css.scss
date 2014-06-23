@@ -266,15 +266,17 @@ a.header-link {
   text-decoration: none;
   background-position:0px -194px;
 }
-
 #footer-sponsors #blockbusterfonds {
-  width: 294px;
+  width: 450px;
+  @include media-query(sm-max) {
+    width: 294px;
+  }
 }
-
 #footer-sponsors #westergasfabriek{
   background-position:-500px 0px;
   height:45px;
   width: 186px;
+  margin-bottom: 0px;
 }
 #footer-sponsors #westergasfabriek:hover{
   background-position:-500px -200px;
