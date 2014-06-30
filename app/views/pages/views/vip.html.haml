@@ -43,7 +43,7 @@
         =snippet_text(:vip_ticket_intro, "We kindly ask you to use your voucher code, that you can find on your person-\nal VIP invitation, to login. Your VIP e-ticket will be sent to you by email. This\ne-ticket is valid for you and one guest. At the fair we kindly as you to present\nthis e-ticket at the Unseen VIP Desk where you and your guest will receive a\nVIP wristband, providing you with unlimited access to the Fair, the Festival\nProgramme and the exclusive Unseen Unlimited activities.").gsub(/\n/, '<br/>').html_safe
         %small=edit_snippet_link(:vip_ticket_intro)
       %p.center
-        %iframe{:allowtransparency => true, :frameborder => 0, :height => 300, :marginheight => 0, :marginwidth => 0, :name => "paymentMenu", :scrolling => "auto", :src => "https://frontoffice.paylogic.nl/?event_id=94728&amp;point_of_sale_id=9904", :width => 450 }
+        %iframe{:allowtransparency => true, :frameborder => 0, :height => 520, :marginheight => 0, :marginwidth => 0, :name => "paymentMenu", :scrolling => "auto", :src => "https://frontoffice.paylogic.nl/?event_id=94728&amp;point_of_sale_id=9904", :width => 450 }
 
       %p.center.mt-2.mb-2
         =link_to("Full programme", '#', :class => "black-btn js-programme-link center")
