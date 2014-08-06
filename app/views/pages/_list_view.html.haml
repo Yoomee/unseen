@@ -28,5 +28,5 @@
     .row
       .span2.fade_in.new-page-box
         =link_to("+ Add a subpage", new_child_page_path(:parent_id => parent_page.id))
-  -elsif items.empty?
+  -elsif items.empty? && controller_name != 'tags'
     %p Coming soon
