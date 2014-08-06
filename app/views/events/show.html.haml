@@ -20,7 +20,7 @@
           .pull-right
             =add_to_program_link(@event)
   .row.mt-2
-    .span7            
+    .span7
       -if @event.image
         .mb-1
           =image_for(@event, "540x")
@@ -29,7 +29,7 @@
       =render('layouts/share_links', :resource => @event)
       .page_text.mb-2
         #page_text
-          =simple_format(@event.description)   
+          =raw(@event.description)
       -[@event.categories,@event.page_tags].flatten.each do |tag|
         =link_to_tag(tag, :label_options => {:method => :titleize})
       .row

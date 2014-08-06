@@ -5,7 +5,7 @@
   =form.input :starts_at, :as => :string, :input_html => {:class => 'timepicker'}
   =form.input :ends_at, :as => :string,  :input_html => {:class => 'timepicker'}
   =form.input :venue, :collection => venues_and_galleries_options(@event)
-  =form.input :description, :input_html => {:rows => 8, :class => "span8"}
+  =form.input :description, :as => :redactor, :input_html => {:rows => 8, :class => "span8"}
   =form.input :category_list, :label => "News categories", :as => :select, :multiple => true, :collection => tag_list_options(:categories, @event), :input_html => {:class => 'span8'}
   =form.input :page_tag_list, :label => "Tags", :as => :select, :multiple => true, :collection => tag_list_options(:page_tags, @event), :input_html => {:class => 'span8'}
   =form.input :photographers, :collection => User.where(:role => 'photographer').order('first_name'), :input_html => {:"data-placeholder" => "Select photographers", :class => 'no-chosen span8'}
