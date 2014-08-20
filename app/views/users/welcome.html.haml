@@ -17,11 +17,11 @@
 =render "community/community_nav"
 .container
   .row
-    .span12
+    .col-md-12
       %h2.home-title Welcome
-    .span12
+    .col-md-12
       %h2.center.mb-2 Tell us what you are interested in by selecting your topics and interests. Choose as many as you like:
-    #interest-picker.span12.mb-2.tag-list-centered
+    #interest-picker.col-md-12.mb-2.tag-list-centered
       -Tag.all.each do |tag|
         =link_to('#', :class => "tag #{current_user.user_tags.include?(tag) ? 'active' : ''}", :'data-tag' => tag.name) do
           %span.label.tag-label

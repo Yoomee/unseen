@@ -1,6 +1,6 @@
 .row.activity-item
-  .span2
-    =link_to activity_item.resource, :class => "photo-image-link" do
+  .col-md-12
+    =link_to activity_item.resource, :class => "photo-image-link col-md-4 col-sm-4" do
       =image_for(activity_item.resource, "140x140")
     =link_to_self(activity_item.user)
     collected

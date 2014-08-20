@@ -1,26 +1,26 @@
 .row
-  .span12.about_page_view
+  .col-md-12.about_page_view
     %h1
       %span#page_title
         =raw(@page.title)
     -if @page.image
       .row
-        .span8
+        .col-md-8
           .gallery_slideshow.fade_in
             .gallery_slideshow.fade_in
               =image_for(@page, "770x446>")
               -if @page.image_caption
                 %p.mt-1.event-image-caption=@page.image_caption
     .row
-      .span6
+      .col-md-6
         .page_text
           #page_text
             =raw(@page.text)
-      .span4.offset2
+      .col-md-4.col-md-offset-2
         .page_text
           #page_text_second
             =raw(@page.text_second)
-      .span8
+      .col-md-8
         =options_panel do
           =back_link
           =link_if_can("Edit page", [:edit, @page])

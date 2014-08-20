@@ -26,7 +26,7 @@
     -if @page.slug.in?(%w{press about for_press})
       =form.input :text_second, :as => :text, :input_html => {:class => 'span8 redactor', :rows => 20}, :label => "Right column text"
   -if !@page.new_record? && @page.image
-    .control-group
+    .form-group
       =image_for(@page, "100x100#")    
   =form.input :retained_image, :as => :hidden
   =form.input :image, :as => :file, :label => "Cover image"
@@ -38,7 +38,7 @@
   =form.input :galleries, :collection => Page.where(:view_name => 'gallery', :edition => @page.edition).order(:title), :input_html => {:"data-placeholder" => "Select galleries", :class => 'no-chosen span8'}, :label => "Gallery profiles #{@page.edition}" unless @page.view_name=='gallery'
   =form.input :permalink_path, :label => "Permalink"
   =form.input :slug, :as => (current_user.try(:yoomee_staff?) ? :string : :hidden)
-  .control-group
+  .form-group
     =form.label :publication_date
     .controls
       =form.date_select :publication_date, {:order => [:day, :month, :year], :prompt => @page.new_record?, :default => @page.created_at}, :class => "span2"

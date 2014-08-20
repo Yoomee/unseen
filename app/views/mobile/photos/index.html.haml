@@ -1,28 +1,28 @@
-.row-fluid
-  .span3
+.row
+  .col-md-3
     -if @photos.previous_page
       =link_to mobile_photos_path(:page => @photos.previous_page), :class => "next-prev-link" do
         %icon.icon-chevron-left
     -else
       %span.next-prev-link
         %icon.icon-chevron-left
-  .span6.center
+  .col-md-6.center
     %p
       =@photos.current_page
       of
       =@photos.total_pages
-  .span3
+  .col-md-3
     -if @photos.next_page
       =link_to mobile_photos_path(:page => @photos.next_page), :class => "next-prev-link" do
         %icon.icon-chevron-right
     -else
       %span.next-prev-link
         %icon.icon-chevron-right
-.row-fluid
-  .span12
+.row
+  .col-md-12
     %table#photos-grid.photos-table
       %tbody
         -@photos.each_slice(4) do |photos|
           %tr
             -photos.each do |photo|
-              %td.span3=link_to(image_for_with_retina(photo, '62x62'),mobile_photo_path(photo))
+              %td.col-md-3=link_to(image_for_with_retina(photo, '62x62'),mobile_photo_path(photo))

@@ -2,7 +2,7 @@
 =render("pages/toggle_nav", :current_page => @page)
 .container
   .row
-    .span12
+    .col-md-12
       %h1.big-title.gallery-title
         %span#page_title
           =raw(@page.title)
@@ -11,16 +11,16 @@
   
 .container
   .row
-    .span8
+    .col-md-8
       .row
-        .span4
+        .col-md-6
           %h2.mb-1
             =raw(@page.title)
           .page_text
             #page_text
               =raw(@page.text)
           =favourite_link(@page)
-        .span4
+        .col-md-6.col-sm-12.page-image
           -if @page.image
             =image_for(@page, "250x")
             -if @page.image_caption
@@ -29,11 +29,11 @@
             .placeholder250x
               &nbsp;
       .row
-        .span8
+        .col-md-12
           %h2.normal-title.mt-3.meet-people-title THESE PEOPLE FAVOURITED THIS GALLERY
           =render 'events/favourited_by', :item => @page
 
-    .span4.news_page_signup
+    .col-md-4.news_page_signup
       .btn-group.btn-group-edition
         .btn Attendance
         .btn.dropdown-toggle{ :'data-toggle' => 'dropdown' }
@@ -45,19 +45,19 @@
                 =profile.edition
 
       -if !@page.photographers.empty?
-        %h2.normal-title.upcase.mb-1 Artists
-        .pull-left.clear.mb-2
-          -@page.photographers.each do |photographer|
-            .row.mb-1
-              .span1
-                =link_to(image_for(photographer, "60x60#"), photographer)
-              .span3.related-text
-                =link_to_self(photographer)
-                %br
-                Photographer
+        .col-md-12.p-0
+          %h2.normal-title.upcase.mb-1 Artists
+          .mb-2
+            -@page.photographers.each do |photographer|
+              .media.mb-1
+                =link_to(image_for(photographer, "60x60#", :class => 'media-object'), photographer, :class => 'pull-left')
+                .media-body.related-text
+                  =link_to_self(photographer)
+                  %br
+                  Photographer
       -if @page.has_gallery_contact_details?
         %h2.normal-title.upcase.clear Contact
-        %ul.unstyled.pull-left.clear.mb-2
+        %ul.list-unstyled.pull-left.clear.mb-2
           -if @page.gallery_address.present?
             %li.gallery_address
               =simple_format(@page.gallery_address)
@@ -87,7 +87,7 @@
         %span.gallery_hours=simple_format(@page.gallery_hours)
   
   .row
-    .span12
+    .col-md-12
       =options_panel do
         =back_link
         =link_if_can("Edit page", [:edit, @page])

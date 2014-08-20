@@ -8,7 +8,7 @@
     });
 .container
   .row
-    .span12.highlight-intro
+    .col-md-12.highlight-intro
       %h1.big-title.center.highlight-title
         %span#page_title
           =raw(amsterdam_page.title)
@@ -16,11 +16,11 @@
         =raw(amsterdam_page.text)
   .row
     =render('slideshows/tabbed_slideshow', :slideshow => amsterdam_page.slideshow) if amsterdam_page.slideshow
-    .span3.offset5
+    .col-md-3.col-md-offset-5
       =link_to("Full programme", program_path, :class => "black-btn more-middle")
 .container
   .row
-    .span8
+    .col-md-8
       =options_panel do
         =link_if_can("Edit amsterdam page details", [:edit, amsterdam_page])
 
@@ -29,62 +29,65 @@
   .subnav-strip
     .container
       .row
-        .span11
+        .col-md-11.p-0
           .subnav-tabs
-            %ul
+            %ul.list-unstyled
               -Page.find_by_slug('amsterdam').children.each_with_index do |child, index|
                 =li_with_active((child == page_to_show) || (child == page_to_show.parent), link_to(child.title,child, :class => 'subnav-tab'))
               -if can?(:create, Page)
                 %li.subnav-tab
                   =link_to("+ Add page", new_child_page_path(:parent_id => amsterdam_page.id))
-        .span1
+        .col-md-1
           =render("pages/toggle_view_links")
 
 -if page_to_show
   .container
     -if page_to_show.parent == amsterdam_page
-      .row
-        .span12
+      .row.m-0
+        .col-md-12
           %h2.home-title
             %span#page_title
               =raw(page_to_show.title)
 
         .row
-          -if view_preference == 'block'
-            =render("pages/block_view", :items => page_to_show.children, :parent_page => page_to_show)
-          -else
-            =render("pages/list_view", :items => page_to_show.children, :parent_page => page_to_show)
-            .span3.offset1
-              .row
-                =render("layouts/signup_column")
+          .col-md-12
+            -if view_preference == 'block'
+              =render("pages/block_view", :items => page_to_show.children, :parent_page => page_to_show)
+            -else
+              =render("pages/list_view", :items => page_to_show.children, :parent_page => page_to_show)
+              .col-md-3.col-md-offset-1
+                .row
+                  =render("layouts/signup_column")
     -else
       .row
-        .news_page.span12.mt-2
-          %h1
-            %span#page_title
-              =raw(@page.title)
-          %p.list_date_and_tag
-            %span=@page.created_at.strftime("%e %B %Y")
-            -@page.page_tags.each do |tag|
-              =link_to_tag(tag, :label_options => {:method => :titleize})
+        .col-md-12
+          .news_page.col-md-12.mt-2
+            %h1
+              %span#page_title
+                =raw(@page.title)
+            %p.list_date_and_tag
+              %span=@page.created_at.strftime("%e %B %Y")
+              -@page.page_tags.each do |tag|
+                =link_to_tag(tag, :label_options => {:method => :titleize})
       .row
-        .news_page.span7
-          -if @page.image
-            .news_page_image
-              =image_for(@page, "540x")
-              -if @page.image_caption
-                %p.mt-1.event-image-caption=@page.image_caption
-            =render('layouts/share_links', :resource => @page)
-          .page_text
-            #page_text
-              =raw(@page.text)
-          -if @page.page_tag_list.present?
-            .row.mt-2.mb-2
-              .span8
-                %ul.tag-list.tag-list-horizontal
-                  -@page.page_tags.each do |tag|
-                    %li=link_to_tag(tag, :label_options => {:method => :titleize})
-        =render('pages/related_right_col', :page_event => @page)
+        .col-md-12
+          .news_page.col-md-7
+            -if @page.image
+              .news_page_image
+                =image_for(@page, "540x")
+                -if @page.image_caption
+                  %p.mt-1.event-image-caption=@page.image_caption
+              =render('layouts/share_links', :resource => @page)
+            .page_text
+              #page_text
+                =raw(@page.text)
+            -if @page.page_tag_list.present?
+              .row.mt-2.mb-2
+                .col-md-8
+                  %ul.tag-list.tag-list-horizontal
+                    -@page.page_tags.each do |tag|
+                      %li=link_to_tag(tag, :label_options => {:method => :titleize})
+          =render('pages/related_right_col', :page_event => @page)
     .row
       =options_panel do
         =back_link

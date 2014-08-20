@@ -3,13 +3,13 @@
   .subnav-strip
     .container
       .row
-        .span11
+        .col-md-11.col-sm-11.p-0
           .subnav-tabs
-            %ul
+            %ul.list-unstyled
               =li_with_active(controller_name=='galleries' || @page.try(:is_a_gallery?), link_to('Galleries', galleries_path, :class => 'subnav-tab'))
               =li_with_active(controller_name=='photographers', link_to('Photographers', photographers_path, :class => 'subnav-tab'))
               =li_with_active(controller_name=='collection_photos', link_to('Unseen Collection', unseen_collection_path, :class => 'subnav-tab'))
               
-        .span1
+        .col-md-1
           -if @page
             =render("pages/toggle_view_links") unless @page.view_name == 'gallery'

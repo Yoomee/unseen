@@ -1,58 +1,54 @@
-.news_page_signup.span4
+.news_page_signup.col-md-4.col-sm-4.col-xs-12
   -if page_event.try(:call_to_actions).present?
     .row
-      .span4.call-to-actions.mb-15
+      .col-md-4.call-to-actions.mb-15
         -page_event.call_to_actions.each do |cta|
           =link_to(image_for(cta), externalize_url(cta.url))
   -if !(profiles = page_event.photographers + page_event.galleries).empty?
     .row
-      .span4
+      .col-xs-12
         %h2.normal-title.upcase See profile
-        .pull-left.clear.mb-2
+        .pull-left.clear.mb-2.col-md-12
           -profiles.each do |profile|
-            .row.mb-1
-              .span1
-                =link_to(image_for(profile, "60x60#"), profile)
-              .span3.related-text
+            .media.mb-1
+              =link_to(image_for(profile, "60x60#", :class => 'media-object'), profile, :class => 'pull-left')
+              .media-body.related-text
                 =link_to_self(profile)
                 %br
                 =profile.is_a?(User) ? 'Photographer' : 'Gallery'
+                
+
 
 
   -if page_event.try(:parent).present? && page_event.try(:parent).slug == 'info'
     .row
-      .span4
+      .col-xs-12
         %h2.normal-title.upcase Related info
-        .pull-left.clear.mb-2
+        .pull-left.clear.mb-2.col-md-12.p-0
           -Page.find_by_slug(:info).children.without(page_event).order(:position).each do |story|
-            .row.mb-1
-              .span1
-                =link_to(image_for(story, "60x60#"), story)
-              .span3.related-text
-                =link_to_self(story)
+            .media-mb-1
+              =link_to(image_for(story, "60x60#", :class => 'media-object'), story, :class => 'pull-left')
+              .media-body.related-text=link_to_self(story)
 
   -else
     -if other_stories(page_event).present?
       .row
-        .span4
+        .col-xs-12
           %h2.normal-title.upcase Other stories
-          .pull-left.clear.mb-2
+          .pull-left.clear.mb-2.col-md-12
             -other_stories(page_event).each do |story|
-              .row.mb-1
-                .span1
-                  =link_to(image_for(story, "60x60#"), story)
-                .span3.related-text
-                  =link_to_self(story)
+              .media.mb-1
+                =link_to(image_for(story, "60x60#", :class => 'media-object'), story, :class => 'pull-left')
+                .media-body.related-text=link_to_self(story)
+   
     -if events(page_event).present?
       .row
-        .span4
+        .col-xs-12
           %h2.normal-title.upcase Related programme
-          .pull-left.clear.mb-2
+          .pull-left.clear.mb-2.col-md-12
             -events(page_event).each do |event|
-              .row.mb-1
-                .span1
-                  =link_to(image_for(event, "60x60#"), event)
-                .span3.related-text
-                  =link_to_self(event)
+              .media.mb-1
+                =link_to(image_for(event, "60x60#", :class => 'media-object'), event, :class => 'pull-left')
+                .media-body.related-text=link_to_self(event)
   .row
     =render("layouts/signup_column")

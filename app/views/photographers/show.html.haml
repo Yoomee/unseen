@@ -2,7 +2,7 @@
 =render("pages/toggle_nav", :current_page => @page)
 .container
   .row.mt-2
-    .span12
+    .col-md-12
       .pull-left.mr-2
         =image_for(@photographer, "60x60#")
       %h2.big-title.nocase=title(@photographer)
@@ -12,17 +12,17 @@
   
 .container
   .row
-    .span8
+    .col-md-8
       .row
-        .span6
+        .col-md-9
           -if @photographer.bio.present?
             =simple_format(@photographer.bio)
           =favourite_link(@photographer)
       .row
-        .span8
+        .col-md-8
           %h2.normal-title.mt-3.meet-people-title THESE PEOPLE FAVOURITED THIS PHOTOGRAPHER
           =render 'events/favourited_by', :item => @photographer
-    .span4.news_page_signup
+    .col-md-4.news_page_signup
       -if controller_name=="photographers"
         .btn-group.btn-group-edition
           .btn Attendance
@@ -34,24 +34,21 @@
                 =link_to photographer_path(profile.id) do
                   =profile.edition
       -if !@photographer.galleries.where("view_name = 'gallery'").empty?
+
         %h2.normal-title.upcase.mb-1 Represented by
-        .pull-left.clear.mb-2
+        .pull-left.clear.mb-2.col-md-12.col-xs-12.p-0
           -@photographer.galleries.where("view_name = 'gallery'").each do |gallery|
-            .row.mb-1
-              .span1
-                =link_to(image_for(gallery, "60x60#"), gallery)
-              .span3
-                =link_to_self(gallery)
+            .media.mb-1
+              =link_to(image_for(gallery, "60x60#", :class => 'media-object'), gallery, :class => 'pull-left')
+              .media-body.col-md-8.col-xs-8.p-0=link_to_self(gallery)
 
       -if !@photographer.galleries.where("view_name != 'gallery'").empty?
         %h2.normal-title.upcase.mb-1 Related Stories
         .pull-left.clear.mb-2
           -@photographer.galleries.where("view_name != 'gallery'").each do |story|
-            .row.mb-1
-              .span1
-                =link_to(image_for(story, "60x60#"), story)
-              .span3
-                =link_to_self(story)
+            .media.mb-1
+              =link_to(image_for(story, "60x60#", :class => 'media-object'), story, :class => 'pull-left')
+              .media-body=link_to_self(story)
       -if !@photographer.links.empty?
         %h2.normal-title.upcase.mb-1 Contact
         .mb-2
@@ -64,7 +61,7 @@
             %li
               =link_to_tag(tag, :label_options => {:method => :titleize})
   .row
-    .span12
+    .col-md-12
       =options_panel do
         =back_link
         =link_if_can("Edit photographer", [:edit, @photographer])

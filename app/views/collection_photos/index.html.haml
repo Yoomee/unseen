@@ -2,7 +2,7 @@
 =render("pages/toggle_nav") unless params[:edition] == 'bgl'
 .container
   .row
-    .span12.center
+    .col-md-12.center
       %h1.big-title#collection-title
         -if params[:edition] == 'bgl'
           De BankGiro Loterij
@@ -10,20 +10,18 @@
           Talent Collectie
         -else
           Unseen Collection
-    .span10.offset1.center
+    .col-md-10.col-md-offset-1.center
       %h2.mb-15
         =snippet_text("unseen_collection_intro_#{params[:edition]}", "The Unseen Collection is a unique collection of works\nfor prices up to 1,000 euros, contributed by galleries\nparticipating at Unseen Photo Fair #{params[:edition]}").gsub(/\n/, '<br/>').html_safe
         %small=edit_snippet_link("unseen_collection_intro_#{params[:edition]}")
   .row.mt-2
-    .span12
-      .row
-        .span12
-          -@collection_photos.each_slice(3) do |photos|
-            .row.mb-2
-              =render "photos", :photos => photos
+    .col-md-12
+      -@collection_photos.each_slice(3) do |photos|
+        .row.mb-2
+          =render "photos", :photos => photos
   -unless params[:edition] == 'bgl'
     .row
-      .span8
+      .col-md-8
         .btn-group.btn-group-edition#collection
           .btn Collection
           .btn.dropdown-toggle{ :'data-toggle' => 'dropdown' }
@@ -35,6 +33,6 @@
                   =edition
   -if can?(:new, CollectionPhoto)
     .row
-      .span12
+      .col-md-12
         =options_panel do
           =link_to("+ Add a photo", new_collection_photo_path(:edition => params[:edition]), :class => "btn")

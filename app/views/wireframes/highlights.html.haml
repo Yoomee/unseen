@@ -3,9 +3,9 @@
   .subnav-strip
     .container
       .row
-        .span2
+        .col-md-2
           =link_to raw("&larr; home"), "/", :class=>"subnav-back-link"
-        .span10.subnav-tabs  
+        .col-md-10.subnav-tabs  
           %ul
             %li=link_to "Public", "/public", :class=>"subnav-tab active"
             %li=link_to "Collectors", "/collectors", :class=>"subnav-tab"
@@ -15,27 +15,27 @@
             %li=link_to "Press", "/press", :class=>"subnav-tab"        
 .container
   .row
-    .span8.offset2.highlight-intro
+    .col-md-8.col-md-offset-2.highlight-intro
       %h1.big-title.center.highlight-title
         Discover
       %h2.small-title.highlight-title
         Discover new photographic talent and new work of established photographer.
   .row
     .carousel
-      .span4.carousel-list
+      .col-md-4.carousel-list
         %ul
           %li.active Special VIP program
           %li Overview participating galleries
           %li Lecture by collector Bill Hunt
           %li Sign up for our collectors tour on Friday          
-      .span8.carousel-image
+      .col-md-8.carousel-image
         =image_tag ("carousel-image.jpg")
-        .span6.carousel-text
+        .col-md-6.carousel-text
           %p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the...
           %p
             &rarr; Read more
             
-    .span3.offset5
+    .col-md-3.col-md-offset-5
       =link_to("More", "#", :class => "black-btn more-middle")
 
       

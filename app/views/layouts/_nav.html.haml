@@ -1,5 +1,5 @@
 #nav.nav.pull-right
-  %ul.unstyled         
+  %ul.list-unstyled     
     %li.news-link=link_to("news", Page.find_by_slug("news") || "#")
     %li.info-link=link_to("info", Page.find_by_slug("info") || "#")
     %li.programme-link=link_to "programme", program_path

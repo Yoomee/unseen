@@ -7,7 +7,7 @@
   -else
     =form.input :job_title
     =form.input :city
-    #user_country_input.control-group.select.required
+    #user_country_input.form-group.select.required
     =form.label :country, "Country *", :class => "control-label"
     .controls
       =form.country_select(:country, ["Netherlands"], :include_blank => true)

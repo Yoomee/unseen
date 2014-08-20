@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
     if %w{list block}.include?(session[:view])
       session[:view]
     else
-      session[:view] = 'block'
+      session[:view] = request.user_agent =~ /Mobile|webOS/ ? 'list' : 'block'
     end
   end
 

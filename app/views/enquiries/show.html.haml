@@ -1,9 +1,9 @@
-.span12
+.col-md-12
   %h1=title("Enquiry")
 -if @enquiry.image
-  .span2
+  .col-md-2
     =image_for(@enquiry, "140x140#")
-.span10
+.col-md-10
   %dl.dl-horizontal
     -@enquiry.enquiry_fields.each do |field|
       -if field.name == ("legitimation_uid") && field.value.present?
@@ -17,7 +17,7 @@
         %dd=field.value
     %dt Sent on
     %dd=@enquiry.created_at.to_s(:date_and_time)
-.span12
+.col-md-12
   =options_panel do
     =link_to("Back", enquiries_path)
     =link_to("Delete enquiry", @enquiry, :confirm => 'Are you sure?', :method => :delete)

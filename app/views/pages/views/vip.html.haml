@@ -13,7 +13,7 @@
 
 .container
   .row
-    .span12.highlight-intro
+    .col-md-12.highlight-intro
       %h1.big-title.center.highlight-title
         %span#page_title
           =raw(vip_page.title)
@@ -21,13 +21,13 @@
         =raw(vip_page.text)
   .row
     =render('slideshows/tabbed_slideshow', :slideshow => vip_page.slideshow) if vip_page.slideshow
-    .span3.offset3
+    .col-md-3.col-md-offset-3
       =link_to("Get your e-ticket", '#', :class => "black-btn more-middle", :id => 'js-ticket-link')
-    .span3
+    .col-md-3
       =link_to("Full programme", '#', :class => "black-btn more-middle js-programme-link")
 .container
   .row
-    .span8
+    .col-md-8
       =options_panel do
         =link_if_can("Edit vip page details", [:edit, vip_page])
 
@@ -35,7 +35,7 @@
 
 .container
   .row
-    .highlight-intro.span12
+    .highlight-intro.col-md-12
       %h1.big-title.center.highlight-title.mb-2#page_title#js-ticket
         VIP E-TICKETS
 
@@ -53,7 +53,7 @@
   .subnav-strip
     .container
       .row
-        .span11
+        .col-md-11
           .subnav-tabs
             %ul
               -Page.find_by_slug('vip').children.each_with_index do |child, index|
@@ -61,14 +61,14 @@
               -if can?(:create, Page)
                 %li.subnav-tab
                   =link_to("+ Add page", new_child_page_path(:parent_id => vip_page.id))
-        .span1
+        .col-md-1
           =render("pages/toggle_view_links")
 
 -if page_to_show
   .container
     -if page_to_show.parent == vip_page
       .row
-        .span12
+        .col-md-12
           %h2.home-title
             %span#page_title
               =raw(page_to_show.title)
@@ -78,12 +78,12 @@
             =render("pages/block_view", :items => page_to_show.children, :parent_page => page_to_show)
           -else
             =render("pages/list_view", :items => page_to_show.children, :parent_page => page_to_show)
-            .span3.offset1
+            .col-md-3.col-md-offset-1
               .row
                 =render("layouts/signup_column")
     -else
       .row
-        .news_page.span12.mt-2
+        .news_page.col-md-12.mt-2
           %h1
             %span#page_title
               =raw(@page.title)
@@ -91,7 +91,7 @@
             -@page.page_tags.each do |tag|
               =link_to_tag(tag, :label_options => {:method => :titleize})
       .row
-        .news_page.span7
+        .news_page.col-md-7
           -if @page.image
             .news_page_image
               =image_for(@page, "540x")
@@ -103,7 +103,7 @@
               =raw(@page.text)
           -if @page.page_tag_list.present?
             .row.mt-2.mb-2
-              .span8
+              .col-md-8
                 %ul.tag-list.tag-list-horizontal
                   -@page.page_tags.each do |tag|
                     %li=link_to_tag(tag, :label_options => {:method => :titleize})

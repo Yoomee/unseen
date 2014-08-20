@@ -3,7 +3,7 @@
   -@call_to_actions.each do |call_to_action|
     %li=link_to_self(call_to_action)
 .row
-  .span8
+  .col-md-8
     =options_panel do
       =back_link
       -if can?(:new, CallToAction)

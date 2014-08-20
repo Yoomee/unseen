@@ -1,5 +1,5 @@
 -items.each do |photo|  
-  .span4.mb-1
+  .col-md-4.col-sm-4.col-xs-6.mb-1
     =link_to image_for(photo, "300x300"), photo, :class => "community-photo-image-link"
     %p.photographer
       %strong=link_to_self(photo.photographer)

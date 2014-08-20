@@ -2,17 +2,20 @@
 #footer-sponsors.strip
   .container
     .row
-      .span6
+      .col-md-6
         =link_to("Blockbusterfonds","http://www.blockbusterfonds.nl", :target => "_blank", :id => 'blockbusterfonds')
-      .span3
-        =link_to("Westergasfabriek","http://www.westergasfabriek.nl", :target => "_blank", :id => 'westergasfabriek')
+        .clearfix
+      .col-md-3.col-sm-6
+        =link_to("Westergasfabriek","http://www.westergasfabriek.nl", :target => "_blank", :id => 'westergasfabriek', :class => 'mb-0')
+        .clearfix
         =link_to("I amsterdam","http://www.iamsterdam.com", :target => "_blank", :id => 'iamsterdam')
-      .span3
+        .clearfix
+      .col-md-3.col-sm-6
         =link_to("City of Amsterdam","http://www.amsterdam.nl", :target => "_blank", :id => 'cityofamsterdam')
-    
+        .clearfix
 .container#footer
   .row
-    .span3
+    .col-md-3.col-sm-4.col-xs-7
       %h2#footer_site_logo
         =link_to root_path do
           %span
@@ -21,8 +24,10 @@
             =snippet_text(:festival_date, '26-29 sept 2013')
           %span
             amsterdam           
-    .span9
+    .col-md-9.col-sm-8.col-xs-5
       =render ("/layouts/nav")
+      =link_to('Back to top', '#header', :class => 'mobile-show pull-right', :icon => 'arrow-up')
+      
       #header-links.pull-right
         =link_to '', "http://www.linkedin.com/company/unseen", :class => 'header-icon', :icon => 'linkedin-sign', :title => "LinkedIn", :target => '_blank'
         =link_to '', "http://unseenphotofair.tumblr.com", :class => 'header-icon', :icon => 'tumblr-sign', :title => "Tumblr", :target => '_blank'

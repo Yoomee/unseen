@@ -2,20 +2,20 @@
           
 .container
   .row
-    .span12.center
+    .col-md-12.center
       %h1.big-title Latest Activity
   .row.mt-2
-    .news_page.span10.offset1.center
+    .news_page.col-md-10.col-md-offset-1.center
       %h2.mb-15    
         =snippet_text(:community_activity_intro, "Sign up and discover new work by known and emerging talents and build your personal photography collection").gsub(/\n/, '<br/>').html_safe
         %small=edit_snippet_link(:community_activity_intro)
       
   .row.mt-2
-    .span12
+    .col-md-12
       .row#activity_item-list
         =render "activity_items", :items => @activity_items
       .row.mb-2
-        .span12.center
+        .col-md-12.center
           -if @activity_items.next_page
             =link_to "More Activity", community_path(:item_type => "activity_item", :page => @activity_items.next_page, :per_page => 18 ), :remote => true, :class => "black-btn", :id => "more-activity_item-btn"
 
@@ -25,15 +25,15 @@
 
 .container
   .row.mt-2
-    .span12
+    .col-md-12
       %h2.center Popular photos
 
   .row.mt-2
-    .span12
+    .col-md-12
       .row#photo-list
         =render "photos", :items => @photos
       .row.mb-2
-        .span12.center
+        .col-md-12.center
           =link_to("See all", community_photos_path, :id => "community-black-btn-photos", :class => 'black-btn community-black-btn')
 
 #intro.home_box{:class => next_home_background_class}
@@ -41,15 +41,15 @@
 
 .container
   .row.mt-2
-    .span12
+    .col-md-12
       %h2.center Popular events
 
   .row.mt-2
-    .span12
+    .col-md-12
       .row#event-list
         =render "events", :items => @events
       .row.mb-2
-        .span12.center
+        .col-md-12.center
           =link_to("Full programme", program_path, :id => "community-black-btn-programme", :class => 'black-btn community-black-btn')
 
 #intro.home_box{:class => next_home_background_class}
@@ -57,21 +57,21 @@
 
 .container
   .row.mt-2
-    .span12
+    .col-md-12
       %h2.center Unseen on Twitter
 
   .row.mt-2
-    .span12
+    .col-md-12
       .row#tweets
         -@tweets.each_slice(2) do |tweets|
-          .span12
+          .col-md-12
             .row
               -tweets.each do |tweet|
-                .span6.mb-2
+                .col-md-6.mb-2
                   .row
-                    .span1
+                    .col-md-1
                       =image_tag(tweet.image_url)
-                    .span5
+                    .col-md-5
                       =auto_link(auto_link_twitter(tweet.text))
-    .span12.center
+    .col-md-12.center
       =link_to "Follow us", "https://twitter.com/intent/user?screen_name=UnseenPhotoFair", :id => "community-black-btn-twitter", :class => "black-btn community-black-btn", :target => "_blank"

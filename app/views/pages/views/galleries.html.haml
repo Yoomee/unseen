@@ -2,12 +2,12 @@
 =render("pages/toggle_nav", :current_page => @page)
 .container
   .row
-    .span12
+    .col-md-12
       %h1#news_title.big-title.center
         %span#page_title
           =raw(@page.title)
       .row
-        .span8.offset2.mb-2
+        .col-md-8.col-md-offset-2.mb-2
           %h2#page_text.center
             =raw(@page.text)
       .row
@@ -15,12 +15,11 @@
           =render("pages/block_view", :items => @page_children, :parent_page => @page)
         -else
           =render("pages/list_view", :items => @page_children, :parent_page => @page)
-          .span3.offset1
+          .col-md-3.col-md-offset-1
             .row          
               =render("layouts/signup_column")
       .row
-        .span8
-
+        .col-md-8
           .btn-group.btn-group-edition
             .btn Attendance
             .btn.dropdown-toggle{ :'data-toggle' => 'dropdown' }
@@ -32,7 +31,7 @@
                     =edition
 
       .row
-        .span8
+        .col-md-8
           =options_panel do
             =back_link
             =link_if_can("Edit page", [:edit, @page])

@@ -6,7 +6,7 @@
       });
   .container
     .row
-      .span12
+      .col-md-12
         #home-slideshow-caption
   .home-slideshow-container
     .home-slideshow
@@ -17,7 +17,7 @@
           -slide_num = index.zero? ? slides.size : index
           .home-slide{:class => home_slide_class(index), :"data-slide-num" => slide_num}
             =link_to(image_for(slide, "980x450#"),slide.url)
-            .home-slide-caption{:style => 'display:none'}
+            .home-slide-caption.col-md-12{:style => 'display:none'}
               %h2.home-slide-title
                 =link_to(slide.title.to_s, slide.url)
               =link_to(raw("&rarr; Read more"), slide.url, :class => "read_more")

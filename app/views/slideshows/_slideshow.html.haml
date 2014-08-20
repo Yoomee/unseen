@@ -4,14 +4,19 @@
   :javascript
     $(document).ready(function() {
       YmCms.Slideshow.init();
+      $('.slide-next').click(function(event) {
+        event.preventDefault();
+        YmCms.Slideshow.nextSlide();
+      });
     });
 
 .slideshow_container
   .slideshow
     .slideshow_inner
       -slides.each_with_index do |slide, index|
-        .span12.slide{:class => "#{index == 1 ? 'next_slide' : ''}"}
+        .col-md-12.slide{:class => "#{index == 1 ? 'next_slide' : ''}"}
           .slide_inner
+            =link_to('', '', :class => 'slide-next', :icon => 'arrow-right')
             -if slide.is_a?(Slide)
               %h3.slide-title.medium-title
                 =slide.title

@@ -2,25 +2,25 @@
 =render('events/nav')
 .container
   .row
-    .span12
+    .col-md-12
       %h2.big-title.event-title.mt-2=@event.title
       .row.mt-1
-        .span5
+        .col-md-5
           .row
-            .span1 Date:
-            .span4
+            .col-md-1 Date:
+            .col-md-4
               =@event.dates.collect {|date| link_to(date.strftime('%a %o %B'), program_path(:day => date.strftime('%a').downcase, :anchor => 'program'))}.join("<br />").html_safe
           .row
-            .span1 Time:
-            .span4=@event.time_string_with_dots
+            .col-md-1 Time:
+            .col-md-4=@event.time_string_with_dots
           .row
-            .span1 Venue:
-            .span4=@event.venue
-        .span2
+            .col-md-1 Venue:
+            .col-md-4=@event.venue
+        .col-md-2
           .pull-right
             =add_to_program_link(@event)
   .row.mt-2
-    .span7
+    .col-md-7
       -if @event.image
         .mb-1
           =image_for(@event, "540x")
@@ -33,16 +33,16 @@
       -[@event.categories,@event.page_tags].flatten.each do |tag|
         =link_to_tag(tag, :label_options => {:method => :titleize})
       .row
-        .span8
+        .col-md-8
           %h2.normal-title.mt-3.meet-people-title MEET THESE PEOPLE
           =render 'events/favourited_by', :item => @event
-        .span8
+        .col-md-8
           %br
           =add_to_program_link(@event)
-    .span1
+    .col-md-1
       %br
     =render('pages/related_right_col', :page_event => @event)
-    .span8
+    .col-md-8
       =options_panel do
         =back_link
         =link_if_can("Edit event", [:edit, @event])

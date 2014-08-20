@@ -1,14 +1,14 @@
 =slideshow_form.semantic_fields_for(:slides, slide) do |slide_form|
   =slide_form.inputs(:class => "inputs slide_inputs") do
     .row
-      .span6
+      .col-md-6
         =slide_form.input :title
         =slide_form.input :caption, :as => :text, :input_html => {:rows => 7, :class => 'span6'}
         =slide_form.input :url, :label => "Link"
-      .span5
+      .col-md-5
         %label.control-label Media
         -if !slide.new_record? && slide.image
-          .control-group
+          .form-group
             =image_for(slide, "340x200#")
         =slide_form.input :retained_image, :as => :hidden
         =slide_form.input :media_type, :as => :radio, :collection => Slide::MEDIA_TYPES, :input_html => {:class => 'media_type_choice'}, :wrapper_html => {:class => 'no-padding'}

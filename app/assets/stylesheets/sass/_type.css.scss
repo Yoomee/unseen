@@ -1,0 +1,114 @@
+/*========== Font ==========*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.nav ul,
+a.category,
+.small-title p,
+.share_this p,
+.share-link-text,
+b,
+.share_this,
+.black-btn,
+.white-btn,
+.btn-group.btn-group-edition .btn,
+.btn-group.btn-group-edition .btn a,
+.session_hover p.title {
+  font-family: "Apercu Bold", "calibri", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: normal;
+}
+h2.home-title, .big-title, .about_page_view #page_title, #page_title {
+  font-size: 60px;
+  line-height: 60px;
+  text-transform: uppercase;
+  @include media-query(sm-max) {
+    font-size: 40px;
+    line-height: 40px;
+  }
+}
+form #page_title {
+  text-transform:none;
+}
+.home-slide-title, .medium-title {
+  font-size: 36px;
+  line-height: 36px;
+}
+.nav ul, .nav li, #site_logo, h2#footer_site_logo, h2, .are-you-title, .block-title, .home-subtitle, .small-title, .small-title p, .share_this p {
+  font-size: 26px;
+  line-height: 28px;
+  @include media-query(sm-max) {
+    font-size: 20px;
+    line-height: 22px;
+  }
+}
+h2.highlight-title {
+  margin-bottom: 40px;
+  margin-top: -20px;
+  text-align: center;
+}
+.normal-title  {
+  font-size: 16px;
+  line-height: 20px;
+  font-family: "Apercu Bold", "calibri", Arial, sans-serif;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+body, p,
+div, input {
+  font-family: "Apercu Regular", "calibri", Arial, sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+}
+input, a.call-to-action-link, .carousel-text p, p.event-image-caption, .share-link-text {
+  font-size: 13px;
+  line-height: 16px;
+}
+input[type="text"], input[type="password"], input[type="email"], .ui-autocomplete-input, textarea, .uneditable-input {
+    border: 1px solid #CCCCCC;
+    border-radius: 3px;
+    color: #808080;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 18px;
+    padding: 4px;
+}
+.center {
+  text-align: center;
+}
+.nocase {
+  text-transform: none;
+}
+.mt-1 {
+  margin-top: 20px;
+}
+.mt-2 {
+  margin-top: 40px;
+}
+.mt-3 {
+  margin-top: 60px;
+}
+.mb-1 {
+  margin-bottom: 20px;
+}
+.mb-15 {
+  margin-bottom: 30px;
+}
+.mb-2 {
+  margin-bottom: 40px;
+}
+.mb-3 {
+  margin-bottom: 50px;
+}
+.p-0{
+  padding: 0;
+}
+
+.related-text {
+  margin-left: 10px;
+}

@@ -1,15 +1,15 @@
-.span8
+.col-md-8
   %h1
     %span#page_title
       =raw(@page.title)
   .row
-    .span8
+    .col-md-8
       #page_text
         =raw(@page.text)
   .row
     =render("pages/list_view", :items => @page_children)
   .row
-    .span8
+    .col-md-8
       =options_panel do
         =back_link
         =link_if_can("Edit page", [:edit, @page])
