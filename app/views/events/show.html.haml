@@ -5,18 +5,18 @@
     .col-md-12
       %h2.big-title.event-title.mt-2=@event.title
       .row.mt-1
-        .col-md-5
+        .col-md-4
           .row
-            .col-md-1 Date:
-            .col-md-4
+            .col-md-3 Date:
+            .col-md-9
               =@event.dates.collect {|date| link_to(date.strftime('%a %o %B'), program_path(:day => date.strftime('%a').downcase, :anchor => 'program'))}.join("<br />").html_safe
           .row
-            .col-md-1 Time:
-            .col-md-4=@event.time_string_with_dots
+            .col-md-3 Time:
+            .col-md-9=@event.time_string_with_dots
           .row
-            .col-md-1 Venue:
-            .col-md-4=@event.venue
-        .col-md-2
+            .col-md-3 Venue:
+            .col-md-9=@event.venue
+        .col-md-3
           .pull-right
             =add_to_program_link(@event)
   .row.mt-2
