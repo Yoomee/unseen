@@ -55,8 +55,9 @@
           =render('photographers/contact_list', :links => @photographer.links)
 
       -if !@photographer.user_tags.empty?
+        .clearfix
         %h2.normal-title.upcase.mb-1 Tags
-        %ul.tag-list.tag-list-horizontal
+        %ul.tag-list.tag-list-horizontal.list-unstyled
           -@photographer.user_tags.each do |tag|
             %li
               =link_to_tag(tag, :label_options => {:method => :titleize})
