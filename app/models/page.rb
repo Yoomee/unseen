@@ -149,8 +149,9 @@ class Page < ActiveRecord::Base
 end
 Page::NEWS_CATEGORIES = %w{collecting photographers galleries announcements fair-festival}
 Page::PROGRAM_VENUES = [
-  [912, 2],
-  [917, 1],
-  [915, 1],
-  [913, 3]
+  [912, 3],
+  [915, 2],
+  [917, 2],
+  [921, 3],
+  [913, 4]
 ]
