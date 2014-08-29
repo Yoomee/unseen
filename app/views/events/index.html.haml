@@ -1,7 +1,6 @@
 -content_for :head do
   =javascript_include_tag('programme')
   :javascript
-    Programme.minLeft = -"#{(@venues.sum(&:program_col_width) - 5)*160}";
     $(document).ready(function() {
       Programme.init();
     });
@@ -47,7 +46,7 @@
             There aren't any events scheduled for this day yet.
           -else
             #prog_container
-              #programme_calendar          
+              #programme_calendar
                 #prog_hours
                   .prog_arrow.prog_arrow_left
                     =link_to_function(content_tag(:i, nil, :class => 'icon-arrow-left'), "Programme.scroll(0)");
@@ -71,7 +70,7 @@
                           -(event.duration_in_hours*6).to_i.times do |n|
                             -hours_array[offset + n] ||= []
                             -hours_array[offset + n] << event.id
-                        .venue_col{:class => "#{cycle('venue_col_odd','venue_col_even')} venue_col_#{venue.program_col_width}x"}
+                        .venue_col{:class => "#{cycle('venue_col_odd','venue_col_even')}"}
                           .col_title.top{:title => venue}=venue
                           -events.each do |event|
                             -height = (event.duration_in_hours * 100).round - 1
@@ -79,7 +78,7 @@
                               -x_offset = event.page_tag_list.include?("films") ? 1 : 0
                             -else
                               -x_offset = hours_array[(event.starts_at_hour * 6).floor].try(:index, event.id)
-                            =link_to(event, :class => "session #{'short' if event.duration_in_hours < 0.17} session-offset-#{x_offset}", :style => "top:#{((event.starts_at_offset(11)*100).round)+39}px;height:#{height}px;", "data-offset" => event.starts_at_offset(11)*100) do
+                            =link_to(event, :class => "session#{' short' if event.duration_in_hours < 0.17} session-offset-#{x_offset}", :style => "top:#{((event.starts_at_offset(11)*100).round)+39}px;height:#{height}px;", "data-offset" => event.starts_at_offset(11)*100) do
                               .session_content
                                 .title=event
                               .session_hover
@@ -88,7 +87,7 @@
                                 %p.description=truncate(strip_tags(event.description), :length => 150, :separator => ' ')
                           .col_title.bottom=venue
                     .fade_block
-  .tab-pane#list  
+  .tab-pane#list
     .program-list.strip
       .container
         .row
