@@ -7,6 +7,18 @@
   .row
     .col-md-12
       %h1=title(@enquiry.form_title)
+      .row
+        .col-ms-12.mb-3
+          %h2 PRESS PREVIEW
+          %p
+            The press preview on Wednesday 17 September includes the following:
+            %ul
+              %li 11.30: Doors open
+              %li 11.45: Welcome presentation by Sasha Stone, Managing Director Unseen
+              %li 12.00-12.30: Entry to the fair in the presence of gallerists and the Unseen Board of Directors
+              %li 17.00: End of press preview
+
+          %p Press passes and information packets can be collected upon the presentation of a valid identification from 11.30 on Wednesday 17 September. You can access the Unseen fair and festival during regular opening hours with your Unseen press pass.
       -if @enquiry.form_intro.present?
         %p=@enquiry.form_intro
       =render("form", :enquiry => @enquiry)
