@@ -8,7 +8,7 @@ gem "rake", "0.8.7"
 
 ### Frequently used
 gem 'country-select'
-gem 'formtastic-bootstrap', :git => "git://github.com/cgunther/formtastic-bootstrap.git", :branch => "bootstrap-2"
+gem 'formtastic-bootstrap'
 gem 'exception_notification'
 gem 'whenever', :require => false
 

@@ -1,4 +1,4 @@
 =form.inputs do
   =form.hidden_field :call_to_action_ids, :name => "#{form.object.class.to_s.downcase}[call_to_action_ids][]", :value => " "
-  =form.input :call_to_actions, :collection => CallToAction.all, :multiple => true,  :input_html => {:"data-placeholder" => "Select calls to action", :class => 'span8'}, :label => "Add some calls to action..."
+  =form.input :call_to_actions, :collection => CallToAction.all, :multiple => true,  :input_html => {:"data-placeholder" => "Select calls to action", :class => 'col-xs-12'}, :label => "Add some calls to action..."
 

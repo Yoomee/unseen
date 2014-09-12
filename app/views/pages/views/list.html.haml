@@ -2,6 +2,7 @@
   %h1
     %span#page_title
       =raw(@page.title)
+
   .row
     .col-md-8
       #page_text
@@ -15,4 +16,3 @@
         =link_if_can("Edit page", [:edit, @page])
         =link_if_can("Delete page", [:destroy, @page], :confirm => "Are you sure?") unless @page.slug.present?
         =link_if_can("New page", new_child_page_path(:parent_id => @page.id)) if can?(:new,Page)
-        
